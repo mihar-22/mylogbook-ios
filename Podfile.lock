@@ -1,0 +1,21 @@
+PODS:
+  - Alamofire (4.2.0)
+  - JVFloatLabeledTextField (1.1.1)
+  - KeychainAccess (3.0.1)
+  - SCLAlertView (0.7.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - JVFloatLabeledTextField
+  - KeychainAccess
+  - SCLAlertView
+
+SPEC CHECKSUMS:
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  JVFloatLabeledTextField: 0e5524b097f102036214dd8279edc8ecf08b5e18
+  KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
+  SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
+
+PODFILE CHECKSUM: 9f61bf56ae9a3e3e0602453b2c625da57a7ad5a0
+
+COCOAPODS: 1.1.1
