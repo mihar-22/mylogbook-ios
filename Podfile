@@ -6,4 +6,5 @@ target 'Mylogbook' do
 	pod 'Alamofire', '~> 4.0'
 	pod 'KeychainAccess'
 	pod 'SCLAlertView'
+	pod 'AlamofireObjectMapper', '~> 4.0'
 end
