@@ -19,6 +19,8 @@ enum Validation: Validatable {
     case email
     case alpha
     case alphaSpace
+    case alphaNum
+    case alphaNumSpace
     
     var error: String {
         switch self {
@@ -36,6 +38,10 @@ enum Validation: Validatable {
             return "Only letters (a-z)"
         case .alphaSpace:
             return "Only letters (a-z) and spaces are allowed"
+        case .alphaNum:
+            return "Only letters (a-z) and numbers (0-9) are allowed"
+        case .alphaNumSpace:
+            return "Only letters (a-z), numbers (0-9) and spaces are allowed"
         }
     }
     
@@ -55,6 +61,10 @@ enum Validation: Validatable {
             return regexTest(value, "^[A-Za-z]+$")
         case .alphaSpace:
             return regexTest(value, "^[A-Za-z\\s]+$")
+        case .alphaNum:
+            return regexTest(value, "^[A-Za-z0-9]+$")
+        case .alphaNumSpace:
+            return regexTest(value, "^[A-Za-z0-9\\s]+$")
         }
     }
     
