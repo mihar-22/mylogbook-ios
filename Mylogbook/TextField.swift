@@ -72,13 +72,13 @@ class TextField: JVFloatLabeledTextField {
     // MARK: Responder Handlers
     
     override func becomeFirstResponder() -> Bool {
-        if isValid || !isDirty { styleFocused() }
+        if isValid || (!isDirty && isValid) { styleFocused() }
         
         return super.becomeFirstResponder()
     }
     
     override func resignFirstResponder() -> Bool {
-        if isValid || !isDirty { styleNormal() }
+        if isValid || (!isDirty && isValid) { styleNormal() }
         
         return super.resignFirstResponder()
     }
