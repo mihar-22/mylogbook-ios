@@ -361,8 +361,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="165-Sd-6HQ" kind="relationship" relationship="viewControllers" id="pOx-FM-noC"/>
                         <segue destination="WJx-YF-NHt" kind="relationship" relationship="viewControllers" id="xOh-0W-7NU"/>
+                        <segue destination="165-Sd-6HQ" kind="relationship" relationship="viewControllers" id="pOx-FM-noC"/>
+                        <segue destination="zf2-IF-MT2" kind="relationship" relationship="viewControllers" id="cZU-nM-hfy"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgE-3w-OrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -616,9 +617,257 @@
             </objects>
             <point key="canvasLocation" x="1577" y="1326"/>
         </scene>
+        <!--Supervisors-->
+        <scene sceneID="H5P-Zi-Tz4">
+            <objects>
+                <viewController id="zf2-IF-MT2" customClass="SupervisorsController" customModule="Mylogbook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jAM-aX-t2i"/>
+                        <viewControllerLayoutGuide type="bottom" id="mbG-cv-ti5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QOb-1f-4tf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C6q-aw-Iyc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="U7a-eg-vBh"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Supervisors" id="vWi-d4-yLJ">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TrW-OO-KMd">
+                                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="Q4b-pn-jV9" kind="presentation" identifier="newSupervisorSegue" id="hh4-YO-80O"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9HK-4f-9xi">
+                                <rect key="frame" x="16" y="68" width="351" height="534"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SupervisorCell" id="gdY-Jk-fY9" customClass="SupervisorCell" customModule="Mylogbook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="351" height="74"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gdY-Jk-fY9" id="uaf-MY-ag0">
+                                            <rect key="frame" x="0.0" y="0.0" width="351" height="73"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zUh-1o-44U">
+                                                    <rect key="frame" x="8" y="8" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="Oy9-ve-KbQ"/>
+                                                        <constraint firstAttribute="height" constant="60" id="yTJ-UX-hDD"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9c-Aq-lE4">
+                                                    <rect key="frame" x="84" y="18" width="45" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="License" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zcg-jh-zsZ">
+                                                    <rect key="frame" x="85" y="43" width="44" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="A9c-Aq-lE4" firstAttribute="top" secondItem="uaf-MY-ag0" secondAttribute="topMargin" constant="10" id="2S3-JK-5UP"/>
+                                                <constraint firstItem="Zcg-jh-zsZ" firstAttribute="leading" secondItem="zUh-1o-44U" secondAttribute="trailing" constant="17" id="BL2-uT-Hbp"/>
+                                                <constraint firstItem="A9c-Aq-lE4" firstAttribute="leading" secondItem="zUh-1o-44U" secondAttribute="trailing" constant="16" id="E1w-Nc-qkG"/>
+                                                <constraint firstItem="zUh-1o-44U" firstAttribute="leading" secondItem="uaf-MY-ag0" secondAttribute="leadingMargin" id="STG-Iq-ryp"/>
+                                                <constraint firstItem="zUh-1o-44U" firstAttribute="top" secondItem="uaf-MY-ag0" secondAttribute="topMargin" id="ayR-wF-iUa"/>
+                                                <constraint firstItem="Zcg-jh-zsZ" firstAttribute="top" secondItem="A9c-Aq-lE4" secondAttribute="bottom" constant="4" id="kOR-EP-NG7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="avatarImage" destination="zUh-1o-44U" id="JPD-Q2-bSZ"/>
+                                            <outlet property="licenseLabel" destination="Zcg-jh-zsZ" id="lg7-lD-l73"/>
+                                            <outlet property="nameLabel" destination="A9c-Aq-lE4" id="BW7-jf-sMY"/>
+                                            <segue destination="Q4b-pn-jV9" kind="presentation" identifier="editSupervisorSegue" id="0tk-44-fN9"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C6q-aw-Iyc" firstAttribute="leading" secondItem="QOb-1f-4tf" secondAttribute="leading" id="0Xz-ym-qGw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9HK-4f-9xi" secondAttribute="trailing" constant="-8" id="58a-4H-rYY"/>
+                            <constraint firstItem="C6q-aw-Iyc" firstAttribute="top" secondItem="jAM-aX-t2i" secondAttribute="bottom" constant="-20" id="Inu-eO-ktu"/>
+                            <constraint firstAttribute="trailing" secondItem="C6q-aw-Iyc" secondAttribute="trailing" id="NpB-9g-qyt"/>
+                            <constraint firstItem="mbG-cv-ti5" firstAttribute="top" secondItem="9HK-4f-9xi" secondAttribute="bottom" constant="16" id="SK3-rp-vK0"/>
+                            <constraint firstItem="9HK-4f-9xi" firstAttribute="top" secondItem="C6q-aw-Iyc" secondAttribute="bottom" constant="4" id="Yx2-f5-3hJ"/>
+                            <constraint firstItem="9HK-4f-9xi" firstAttribute="leading" secondItem="QOb-1f-4tf" secondAttribute="leadingMargin" id="yrE-at-BKy"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Supervisors" id="NB8-8n-qeY"/>
+                    <connections>
+                        <outlet property="supervisorsTable" destination="9HK-4f-9xi" id="6L8-Gp-otl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hQy-DQ-U7I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="780" y="2053"/>
+        </scene>
+        <!--New Car-->
+        <scene sceneID="H3B-8C-iPs">
+            <objects>
+                <viewController id="Q4b-pn-jV9" userLabel="New Car" customClass="NewSupervisorController" customModule="Mylogbook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WKh-P3-Vbk"/>
+                        <viewControllerLayoutGuide type="bottom" id="weM-kz-Hsf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nto-So-5Fu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3mR-WL-VUa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Lyw-kZ-wFu"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="New Supervisor" id="uCj-DI-hhs">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="vXN-6w-iEa">
+                                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="didTapClose:" destination="Q4b-pn-jV9" id="P2i-cY-D4L"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="wwT-5Q-yag">
+                                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="didTapSave:" destination="Q4b-pn-jV9" id="2Zd-dY-ZNP"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HpQ-MD-TQN">
+                                <rect key="frame" x="88" y="104" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="INf-QB-7fu"/>
+                                    <constraint firstAttribute="width" constant="200" id="y9w-ML-2ke"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="AoM-Hs-6Ok" userLabel="Form">
+                                <rect key="frame" x="16" y="244" width="343" height="280"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5u0-JU-Zst" userLabel="Registration Field">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="64"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="License Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NLL-Pt-EsR" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
+                                                <color key="tintColor" red="0.20000000000000001" green="0.74117647060000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="BCO-5c-Svx"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycT-RZ-XDO">
+                                                <rect key="frame" x="0.0" y="48" width="343" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2Q5-Ie-EIj" userLabel="Make Field">
+                                        <rect key="frame" x="0.0" y="80" width="343" height="64"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ko-l2-0Gi" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
+                                                <color key="tintColor" red="0.20000000000000001" green="0.74117647060000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="YMV-eE-6RB"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="namePhonePad" returnKeyType="next"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0d-Pm-S9c">
+                                                <rect key="frame" x="0.0" y="48" width="343" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="obo-zr-P2M" userLabel="Model Field">
+                                        <rect key="frame" x="0.0" y="160" width="343" height="64"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="LastName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OgR-Mn-UgN" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
+                                                <color key="tintColor" red="0.20000000000000001" green="0.74117647060000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="XdD-mG-4k5"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="namePhonePad" returnKeyType="next"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovL-Wc-iNt">
+                                                <rect key="frame" x="0.0" y="48" width="343" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s34-a9-RlR" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="240" width="343" height="40"/>
+                                        <color key="tintColor" red="0.20000000000000001" green="0.74117647060000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="SMS-bP-FCb"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3mR-WL-VUa" firstAttribute="top" secondItem="Nto-So-5Fu" secondAttribute="top" id="7rl-41-zOI"/>
+                            <constraint firstItem="HpQ-MD-TQN" firstAttribute="top" secondItem="3mR-WL-VUa" secondAttribute="bottom" constant="40" id="8hB-vB-ILT"/>
+                            <constraint firstItem="AoM-Hs-6Ok" firstAttribute="top" secondItem="HpQ-MD-TQN" secondAttribute="bottom" constant="40" id="Ckk-bA-4RT"/>
+                            <constraint firstItem="AoM-Hs-6Ok" firstAttribute="leading" secondItem="Nto-So-5Fu" secondAttribute="leadingMargin" id="MoY-s0-UHF"/>
+                            <constraint firstItem="3mR-WL-VUa" firstAttribute="leading" secondItem="Nto-So-5Fu" secondAttribute="leading" id="Nhp-ZV-ssy"/>
+                            <constraint firstAttribute="trailing" secondItem="3mR-WL-VUa" secondAttribute="trailing" id="q2p-og-W2f"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AoM-Hs-6Ok" secondAttribute="trailing" id="svB-bd-8bc"/>
+                            <constraint firstItem="HpQ-MD-TQN" firstAttribute="centerX" secondItem="Nto-So-5Fu" secondAttribute="centerX" id="y86-XL-Ib8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="avatarImage" destination="HpQ-MD-TQN" id="0hl-t8-5Ua"/>
+                        <outlet property="firstNameErrorLabel" destination="d0d-Pm-S9c" id="Wxo-YF-uLd"/>
+                        <outlet property="firstNameField" destination="4Ko-l2-0Gi" id="77P-zA-iMv"/>
+                        <outlet property="genderField" destination="s34-a9-RlR" id="HKA-aA-CAy"/>
+                        <outlet property="lastNameErrorLabel" destination="ovL-Wc-iNt" id="oGd-w6-2ZI"/>
+                        <outlet property="lastNameField" destination="OgR-Mn-UgN" id="nGj-CS-DZy"/>
+                        <outlet property="licenseErrorLabel" destination="ycT-RZ-XDO" id="Rqj-Rx-SNP"/>
+                        <outlet property="licenseField" destination="NLL-Pt-EsR" id="aat-Mg-6ux"/>
+                        <outlet property="navItem" destination="uCj-DI-hhs" id="Xa0-1m-Q7S"/>
+                        <outlet property="saveButton" destination="wwT-5Q-yag" id="XL2-gr-od3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uRa-uX-OW7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1577" y="2052"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Hb2-1e-Hpd"/>
         <segue reference="PrZ-48-vgD"/>
+        <segue reference="0tk-44-fN9"/>
     </inferredMetricsTieBreakers>
 </document>
