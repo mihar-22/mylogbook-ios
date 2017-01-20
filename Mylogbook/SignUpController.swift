@@ -1,5 +1,6 @@
 
 import UIKit
+import PopupDialog
 
 class SignUpController: UIViewController {
     let validator = Validator()
@@ -81,30 +82,6 @@ class SignUpController: UIViewController {
         }
     }
     
-    // MARK: Alerts
-    
-    func showEmailTakenAlert() {
-        let alert = Alert()
-        
-        alert.addPositiveButton("LOG IN") { self.navigateToLoginScene() }
-        
-        alert.addCloseButton("CLOSE")
-            
-        alert.showError("Email Taken", subTitle: "\nThis email is already taken, try logging in or forgot password on the log in page.\n")
-    }
-    
-    func showEmailConfirmationAlert() {
-        let alert = Alert()
-        
-        alert.addPositiveButton("OPEN MAIL") { self.navigateToMailBox() }
-
-        alert.addPositiveButton("LOG IN") { self.navigateToLoginScene() }
-        
-        alert.addCloseButton("CLOSE")
-        
-        alert.showSuccess("One More Step",subTitle: "\nAn email has been sent to you. Please go to your inbox and click on the link. This will help verify your account and keep your details safe!\n")
-    }
-    
     // MARK: Keychain
     
     func storeUserDetails() {
@@ -127,6 +104,34 @@ class SignUpController: UIViewController {
         if UIApplication.shared.canOpenURL(mailUrl) {
             UIApplication.shared.open(mailUrl, options: [:], completionHandler: nil)
         }
+    }
+}
+
+// MARK: Alertable
+
+extension SignUpController: Alertable {
+    func showEmailTakenAlert() {
+        let title = "Email Taken"
+        
+        let message = "This email is already taken, try logging in or forgot password on the log in page."
+        
+        let cancelButton = CancelButton(title: "CANCEL", action: nil)
+        
+        let logInButton = DefaultButton(title: "LOG IN") { self.navigateToLoginScene() }
+        
+        showAlert(title: title, message: message, buttons: [cancelButton, logInButton])
+    }
+    
+    func showEmailConfirmationAlert() {        
+        let title = "One More Step"
+        
+        let message = "An email has been sent to you. Please go to your inbox and click on the link. This will help verify your account and keep your details safe!"
+        
+        let cancelButton = CancelButton(title: "LOGIN") { self.navigateToLoginScene() }
+        
+        let openMailButton = DefaultButton(title: "OPEN MAIL") { self.navigateToMailBox() }
+        
+        showAlert(title: title, message: message, buttons: [cancelButton, openMailButton])
     }
 }
 

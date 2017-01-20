@@ -1,5 +1,6 @@
 
 import UIKit
+import PopupDialog
 
 class CarsController: UIViewController {
     
@@ -44,23 +45,6 @@ class CarsController: UIViewController {
         }
     }
     
-    // MARK: Alerts
-    
-    func showCarDeletionPrompt(indexPath: IndexPath) {
-        let alert = Alert()
-        
-        alert.addNegativeButton("DELETE") { self.deleteCar(indexPath: indexPath) }
-        
-        alert.addPositiveButton("CANCEL") {
-            alert.hideView()
-            
-            self.carsTable.isEditing = false
-        }
-        
-        alert.showInfo("Delete Car", subTitle: "\nAre you sure you want to delete this car permanently?\n")
-    }
-    
-    
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -77,6 +61,22 @@ class CarsController: UIViewController {
                 }
             }
         }
+    }
+}
+
+// MARK: Alertable
+
+extension CarsController: Alertable {
+    func showCarDeletionPrompt(indexPath: IndexPath) {
+        let title = "Delete Car"
+        
+        let message = "Are you sure you want to delete this car permanently?"
+        
+        let cancelButton = CancelButton(title: "CANCEL") { self.carsTable.isEditing = false; }
+        
+        let deleteButton = DestructiveButton(title: "DELETE") { self.deleteCar(indexPath: indexPath) }
+            
+        showAlert(title: title, message: message, buttons: [cancelButton, deleteButton])
     }
 }
 

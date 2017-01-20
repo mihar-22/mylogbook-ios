@@ -1,5 +1,6 @@
 
 import UIKit
+import PopupDialog
 
 class SupervisorsController: UIViewController {
     
@@ -44,23 +45,6 @@ class SupervisorsController: UIViewController {
         }
     }
     
-    // MARK: Alerts
-    
-    func showSupervisorDeletionPrompt(indexPath: IndexPath) {
-        let alert = Alert()
-        
-        alert.addNegativeButton("DELETE") { self.deleteSupervisor(indexPath: indexPath) }
-        
-        alert.addPositiveButton("CANCEL") {
-            alert.hideView()
-            
-            self.supervisorsTable.isEditing = false
-        }
-        
-        alert.showInfo("Delete Supervisor", subTitle: "\nAre you sure you want to delete this supervisor permanently?\n")
-    }
-    
-    
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -77,6 +61,22 @@ class SupervisorsController: UIViewController {
                 }
             }
         }
+    }
+}
+
+// MARK: Alertable
+
+extension SupervisorsController: Alertable {
+    func showSupervisorDeletionPrompt(indexPath: IndexPath) {
+        let title = "Delete Supervisor"
+        
+        let message = "Are you sure you want to delete this supervisor permanently?"
+        
+        let cancelButton = CancelButton(title: "CANCEL") { self.supervisorsTable.isEditing = false; }
+        
+        let deleteButton = DestructiveButton(title: "DELETE") { self.deleteSupervisor(indexPath: indexPath) }
+        
+        showAlert(title: title, message: message, buttons: [cancelButton, deleteButton])
     }
 }
 

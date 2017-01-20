@@ -503,7 +503,7 @@
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OIR-y2-i4E">
-                                <rect key="frame" x="87.5" y="104" width="200" height="100"/>
+                                <rect key="frame" x="88" y="104" width="200" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="AK7-zv-ogh"/>
                                     <constraint firstAttribute="height" constant="100" id="bTe-e7-9CM"/>

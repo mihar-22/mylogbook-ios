@@ -1,5 +1,6 @@
 
 import UIKit
+import PopupDialog
 
 class LogInController: UIViewController {
     let validator = Validator()
@@ -103,34 +104,6 @@ class LogInController: UIViewController {
         }
     }
     
-    // MARK: Alerts
-    
-    func showInvalidCredentialsAlert() {
-        let alert = Alert()
-        
-        alert.addCloseButton("TRY AGAIN")
-        
-        alert.showError("Log In Failed", subTitle: "\nLog in failed due to a bad email and password combination OR you have not verified your email.\n")
-    }
-    
-    func showInvalidEmailAlert() {
-        let alert = Alert()
-        
-        alert.addCloseButton("TRY AGAIN")
-        
-        alert.showError("Bad Email", subTitle: "\nA reset link could not be sent because no account exists with this email.\n")
-    }
-    
-    func showForgotPasswordLinkSentAlert() {
-        let alert = Alert()
-        
-        alert.addPositiveButton("OPEN MAIL") { self.navigateToMailBox() }
-        
-        alert.addCloseButton("CLOSE")
-        
-        alert.showError("Reset Link Sent", subTitle: "\nAn email has been sent to you. Please go to your inbox and click on the link. The link will provide you with a form to reset your password.\n")
-    }
-    
     // MARK: Keychain
     
     func attemptToPrefillForm() {
@@ -158,6 +131,42 @@ class LogInController: UIViewController {
         if UIApplication.shared.canOpenURL(mailUrl) {
             UIApplication.shared.open(mailUrl, options: [:], completionHandler: nil)
         }
+    }
+}
+
+// MARK: Alertable
+
+extension LogInController: Alertable {
+    func showInvalidCredentialsAlert() {
+        let title = "Log In Failed"
+        
+        let message = "Log in failed due to a bad email and password combination or you have not verified your email."
+        
+        let cancelButton = CancelButton(title: "TRY AGAIN", action: nil)
+        
+        showAlert(title: title, message: message, buttons: [cancelButton])
+    }
+    
+    func showInvalidEmailAlert() {
+        let title = "Bad Email"
+        
+        let message = "A reset link could not be sent because no account exists with this email."
+        
+        let cancelButton = CancelButton(title: "TRY AGAIN", action: nil)
+        
+        showAlert(title: title, message: message, buttons: [cancelButton])
+    }
+    
+    func showForgotPasswordLinkSentAlert() {
+        let title = "Reset Link Sent"
+        
+        let message = "An email has been sent to you. Please go to your inbox and click on the link. The link will provide you with a form to reset your password."
+        
+        let cancelButton = CancelButton(title: "CANCEL", action: nil)
+        
+        let openMailButton = DefaultButton(title: "OPEN MAIL") { self.navigateToMailBox() }
+        
+        showAlert(title: title, message: message, buttons: [cancelButton, openMailButton])
     }
 }
 

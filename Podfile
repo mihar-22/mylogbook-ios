@@ -5,6 +5,6 @@ target 'Mylogbook' do
 	pod 'JVFloatLabeledTextField'
 	pod 'Alamofire', '~> 4.0'
 	pod 'KeychainAccess'
-	pod 'SCLAlertView'
+	pod 'PopupDialog', '~> 0.5'
 	pod 'AlamofireObjectMapper', '~> 4.0'
 end
