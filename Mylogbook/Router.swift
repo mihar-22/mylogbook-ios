@@ -10,22 +10,28 @@ protocol Routable: URLConvertible, URLRequestConvertible {
     var parameters: Parameters? { get }
 }
 
+// MARK: URL Convertible
+
 extension Routable {
     func asURL() throws -> URL {
         let endPoint = "\(Env.MLB_API_BASE)/\(Self.resource)/\(self.path)"
         
         return try endPoint.asURL()
     }
-    
+}
+
+// MARK: URL Request Convertible
+
+extension Routable {
     func asURLRequest() throws -> URLRequest {
-        let url = try self.asURL()
+        let url = try asURL()
         
         var urlRequest = URLRequest(url: url)
         
-        urlRequest.httpMethod = self.method.rawValue
+        urlRequest.httpMethod = method.rawValue
         
         urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
         
-        return try URLEncoding.default.encode(urlRequest, with: self.parameters)
+        return try URLEncoding.default.encode(urlRequest, with: parameters)
     }
 }
