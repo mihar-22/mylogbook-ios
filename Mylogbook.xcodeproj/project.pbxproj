@@ -148,7 +148,6 @@
 		C964FC311E236FCE00D07FBF /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				C9EBBD5C1E2C5F0E00B5E509 /* Cells */,
 				C964FC321E236FD900D07FBF /* TextField.swift */,
 				C96697D71E261B8800D21095 /* Alert.swift */,
 			);
@@ -160,6 +159,7 @@
 			children = (
 				C970BCE71E319D9E00E1129A /* SupervisorsController.swift */,
 				C970BCE91E319F3500E1129A /* NewSupervisorController.swift */,
+				C970BCEF1E31A96300E1129A /* SupervisorCell.swift */,
 			);
 			name = Supervisors;
 			sourceTree = "<group>";
@@ -212,20 +212,12 @@
 			path = Mylogbook;
 			sourceTree = "<group>";
 		};
-		C9EBBD5C1E2C5F0E00B5E509 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				C9EBBD5D1E2C5F2100B5E509 /* CarCell.swift */,
-				C970BCEF1E31A96300E1129A /* SupervisorCell.swift */,
-			);
-			name = Cells;
-			sourceTree = "<group>";
-		};
 		C9EBBD5F1E2C61AD00B5E509 /* Cars */ = {
 			isa = PBXGroup;
 			children = (
 				C9EBBD601E2C61B700B5E509 /* CarsController.swift */,
 				C9EBBD701E2DA20F00B5E509 /* NewCarController.swift */,
+				C9EBBD5D1E2C5F2100B5E509 /* CarCell.swift */,
 			);
 			name = Cars;
 			sourceTree = "<group>";

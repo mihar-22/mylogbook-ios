@@ -406,7 +406,7 @@
                                         <rect key="frame" x="0.0" y="28" width="351" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="leu-hi-DBM" id="6sY-jm-GQF">
-                                            <rect key="frame" x="0.0" y="0.0" width="351" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="351" height="73.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0nh-wf-7gn">
@@ -653,7 +653,7 @@
                                         <rect key="frame" x="0.0" y="28" width="351" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gdY-Jk-fY9" id="uaf-MY-ag0">
-                                            <rect key="frame" x="0.0" y="0.0" width="351" height="73"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="351" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zUh-1o-44U">
@@ -867,7 +867,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Hb2-1e-Hpd"/>
+        <segue reference="hh4-YO-80O"/>
         <segue reference="PrZ-48-vgD"/>
-        <segue reference="0tk-44-fN9"/>
     </inferredMetricsTieBreakers>
 </document>
