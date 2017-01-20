@@ -26,6 +26,11 @@
 		C9CDFA8E1DEFDB2800CE0A2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CDFA8C1DEFDB2800CE0A2D /* LaunchScreen.storyboard */; };
 		C9EBBD571E2882E200B5E509 /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD561E2882E200B5E509 /* LogInController.swift */; };
 		C9EBBD5B1E28C45000B5E509 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD5A1E28C45000B5E509 /* DashboardController.swift */; };
+		C9EBBD5E1E2C5F2100B5E509 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD5D1E2C5F2100B5E509 /* CarCell.swift */; };
+		C9EBBD611E2C61B700B5E509 /* CarsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD601E2C61B700B5E509 /* CarsController.swift */; };
+		C9EBBD651E2C65D000B5E509 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD641E2C65D000B5E509 /* Car.swift */; };
+		C9EBBD671E2C669900B5E509 /* CarRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD661E2C669900B5E509 /* CarRoute.swift */; };
+		C9EBBD711E2DA20F00B5E509 /* NewCarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD701E2DA20F00B5E509 /* NewCarController.swift */; };
 		C9F1B98D1E094DCC002D4D61 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1B98C1E094DCC002D4D61 /* Env.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +58,11 @@
 		C9CDFA8F1DEFDB2800CE0A2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9EBBD561E2882E200B5E509 /* LogInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
 		C9EBBD5A1E28C45000B5E509 /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		C9EBBD5D1E2C5F2100B5E509 /* CarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
+		C9EBBD601E2C61B700B5E509 /* CarsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarsController.swift; sourceTree = "<group>"; };
+		C9EBBD641E2C65D000B5E509 /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		C9EBBD661E2C669900B5E509 /* CarRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarRoute.swift; sourceTree = "<group>"; };
+		C9EBBD701E2DA20F00B5E509 /* NewCarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCarController.swift; sourceTree = "<group>"; };
 		C9F1B98C1E094DCC002D4D61 /* Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,8 +106,8 @@
 		C935B7371E0A7C9100FD7FFF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C99FC90E1E1B5AF7003BAEC2 /* SignUpController.swift */,
-				C9EBBD561E2882E200B5E509 /* LogInController.swift */,
+				C9EBBD6F1E2D9A9E00B5E509 /* Auth */,
+				C9EBBD5F1E2C61AD00B5E509 /* Cars */,
 				C9EBBD5A1E28C45000B5E509 /* DashboardController.swift */,
 			);
 			name = Controllers;
@@ -118,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				C935B7351E0A6FFE00FD7FFF /* AuthRoute.swift */,
+				C9EBBD661E2C669900B5E509 /* CarRoute.swift */,
 			);
 			name = Routes;
 			sourceTree = "<group>";
@@ -125,6 +136,7 @@
 		C964FC311E236FCE00D07FBF /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				C9EBBD5C1E2C5F0E00B5E509 /* Cells */,
 				C964FC321E236FD900D07FBF /* TextField.swift */,
 				C96697D71E261B8800D21095 /* Alert.swift */,
 			);
@@ -161,6 +173,7 @@
 		C9CDFA7F1DEFDB2800CE0A2D /* Mylogbook */ = {
 			isa = PBXGroup;
 			children = (
+				C9EBBD6E1E2C855600B5E509 /* Models */,
 				C964FC311E236FCE00D07FBF /* UI */,
 				C99FC9121E1B90A0003BAEC2 /* Validator */,
 				C935B73A1E0B7A2E00FD7FFF /* Networking */,
@@ -176,6 +189,40 @@
 				C9CDFA871DEFDB2800CE0A2D /* Mylogbook.xcdatamodeld */,
 			);
 			path = Mylogbook;
+			sourceTree = "<group>";
+		};
+		C9EBBD5C1E2C5F0E00B5E509 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C9EBBD5D1E2C5F2100B5E509 /* CarCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		C9EBBD5F1E2C61AD00B5E509 /* Cars */ = {
+			isa = PBXGroup;
+			children = (
+				C9EBBD601E2C61B700B5E509 /* CarsController.swift */,
+				C9EBBD701E2DA20F00B5E509 /* NewCarController.swift */,
+			);
+			name = Cars;
+			sourceTree = "<group>";
+		};
+		C9EBBD6E1E2C855600B5E509 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C9EBBD641E2C65D000B5E509 /* Car.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		C9EBBD6F1E2D9A9E00B5E509 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				C99FC90E1E1B5AF7003BAEC2 /* SignUpController.swift */,
+				C9EBBD561E2882E200B5E509 /* LogInController.swift */,
+			);
+			name = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,8 +351,11 @@
 			files = (
 				C9EBBD5B1E28C45000B5E509 /* DashboardController.swift in Sources */,
 				C9F1B98D1E094DCC002D4D61 /* Env.swift in Sources */,
+				C9EBBD671E2C669900B5E509 /* CarRoute.swift in Sources */,
 				C99FC90F1E1B5AF7003BAEC2 /* SignUpController.swift in Sources */,
 				C9CDFA891DEFDB2800CE0A2D /* Mylogbook.xcdatamodeld in Sources */,
+				C9EBBD711E2DA20F00B5E509 /* NewCarController.swift in Sources */,
+				C9EBBD611E2C61B700B5E509 /* CarsController.swift in Sources */,
 				C964FC331E236FD900D07FBF /* TextField.swift in Sources */,
 				C99FC9141E1BB395003BAEC2 /* Validator.swift in Sources */,
 				C99FC9181E1BB534003BAEC2 /* Validation.swift in Sources */,
@@ -317,7 +367,9 @@
 				C92AA0311E15185A00A92067 /* Theme.swift in Sources */,
 				C9CDFA811DEFDB2800CE0A2D /* AppDelegate.swift in Sources */,
 				C935B7361E0A6FFE00FD7FFF /* AuthRoute.swift in Sources */,
+				C9EBBD651E2C65D000B5E509 /* Car.swift in Sources */,
 				C908D3C71E24D5BF00A4E91C /* Keychain.swift in Sources */,
+				C9EBBD5E1E2C5F2100B5E509 /* CarCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,7 +492,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3B6A91E9A10AA0CD1E0E3142 /* Pods-Mylogbook.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F35GF67S6P;
 				INFOPLIST_FILE = Mylogbook/Info.plist;
@@ -456,7 +508,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3234582784334DC66A81283C /* Pods-Mylogbook.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F35GF67S6P;
 				INFOPLIST_FILE = Mylogbook/Info.plist;
