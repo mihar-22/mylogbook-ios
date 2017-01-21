@@ -6,10 +6,15 @@ import UIKit
 struct FieldAttributes {
     let validations: [Validation]
     let errorLabel: UILabel
+    var validity = false
     
     init(_ errorLabel: UILabel, _ validations: [Validation]) {
         self.errorLabel = errorLabel
         self.validations = validations
+    }
+    
+    mutating func setValidity(_ validity: Bool) {
+        self.validity = validity
     }
 }
 
@@ -24,6 +29,8 @@ protocol ValidatorDelegate {
 
 class Validator {
     var delegate: ValidatorDelegate?
+    
+    private var isUpdatingUI = true
     
     private var actionButton: UIBarButtonItem?
     
@@ -45,8 +52,12 @@ class Validator {
     
     // MARK: Validation
     
-    func forceValidateAllFields() {
+    func revalidate(updateUI: Bool) {
+        isUpdatingUI = updateUI
+        
         for field in fields.keys { editingChangedHandler(field) }
+        
+        if !isUpdatingUI { isUpdatingUI = true }
     }
     
     private func validateField(_ value: String, _ validations: [Validation]) -> Validation? {
@@ -56,7 +67,35 @@ class Validator {
     }
     
     private func isAllFieldsValid() -> Bool {
-        return !(fields.keys.map({ $0.isValid }).contains(false))
+        return !(fields.values.map({ $0.validity }).contains(false))
+    }
+    
+    private func validHandler(_ field: TextField) {
+        fields[field]!.setValidity(true)
+        
+        updateUI(field, isValid: true, error: nil)
+        
+        if isAllFieldsValid() { actionButton?.isEnabled = true }
+        
+        delegate?.validationSuccessful(field)
+    }
+    
+    private func invalidHandler(_ field: TextField, _ error: String?) {
+        fields[field]!.setValidity(false)
+        
+        updateUI(field, isValid: false, error: error)
+        
+        actionButton?.isEnabled = false
+        
+        delegate?.validationFailed(field)
+    }
+    
+    private func updateUI(_ field: TextField, isValid: Bool, error: String?) {
+        guard isUpdatingUI else { return }
+        
+        field.isValid = isValid
+        
+        setErrorMessage(field, error: error)
     }
     
     private func setErrorMessage(_ field: TextField, error: String?) {
@@ -64,26 +103,6 @@ class Validator {
         
         errorLabel.isHidden = (error == nil)
         errorLabel.text = error
-    }
-    
-    private func validHandler(_ field: TextField) {
-        field.isValid = true
-        
-        setErrorMessage(field, error: nil)
-        
-        if isAllFieldsValid() { actionButton?.isEnabled = true }
-        
-        delegate?.validationSuccessful(field)
-    }
-    
-    private func invalidHandler(_ field: TextField, _ failedValidation: Validation) {
-        field.isValid = false
-        
-        setErrorMessage(field, error: failedValidation.error)
-        
-        actionButton?.isEnabled = false
-        
-        delegate?.validationFailed(field)
     }
     
     // MARK: Target Handlers
@@ -94,7 +113,7 @@ class Validator {
         let validations = fields[field]!.validations
         
         if let failedValidation = validateField(text, validations) {
-            invalidHandler(field, failedValidation)
+            invalidHandler(field, failedValidation.error)
             
             return
         }

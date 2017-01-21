@@ -23,9 +23,9 @@ class LogInController: UIViewController {
     // MARK: View Lifecycle
     
     override func viewDidLoad() {
-        attemptToPrefillForm()
-
         setupValidator()
+        
+        attemptToPrefillForm()
         
         setupTextFields()
     }
@@ -40,8 +40,6 @@ class LogInController: UIViewController {
         validator.addField(emailTextField, emailErrorLabel, [.required, .email])
         
         validator.addField(passwordTextField, passwordErrorLabel, [.required, .minLength(min: 6)])
-        
-        validator.forceValidateAllFields()
     }
     
     // MARK: Text Field
@@ -110,6 +108,8 @@ class LogInController: UIViewController {
         emailTextField.text = Keychain.shared.email ?? ""
         
         passwordTextField.text = Keychain.shared.password ?? ""
+        
+        validator.revalidate(updateUI: false)
     }
     
     func storeUserDetails(_ data: [String: Any]) {
@@ -182,10 +182,10 @@ extension LogInController: TextFieldDelegate {
 
 extension LogInController: ValidatorDelegate {
     func validationSuccessful(_ textField: TextField) {
-        if textField.tag == 0 { forgotPasswordButton.isEnabled = true }
+        if textField.tag == emailTextField.tag { forgotPasswordButton.isEnabled = true }
     }
     
     func validationFailed(_ textField: TextField) {
-        if textField.tag == 0 { forgotPasswordButton.isEnabled = false }
+        if textField.tag == emailTextField.tag { forgotPasswordButton.isEnabled = false }
     }
 }

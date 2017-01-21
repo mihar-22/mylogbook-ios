@@ -80,7 +80,7 @@ class NewCarController: UIViewController {
         typeField.text = editingCar!.type!.capitalized
         // set type image here
         
-        validator.forceValidateAllFields()
+        validator.revalidate(updateUI: false)
     }
     
     // MARK: Actions

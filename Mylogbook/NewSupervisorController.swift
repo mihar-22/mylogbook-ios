@@ -69,7 +69,7 @@ class NewSupervisorController: UIViewController {
         genderField.text = editingSupervisor!.gender!.capitalized
         // set avatar image here
         
-        validator.forceValidateAllFields()
+        validator.revalidate(updateUI: false)
     }
     
     // MARK: Actions

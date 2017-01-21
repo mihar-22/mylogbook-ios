@@ -31,7 +31,7 @@ class TextField: JVFloatLabeledTextField {
     
     private var isDirty = false
 
-    var isValid = false {
+    var isValid = true {
         didSet {
             styleUpdate()
         }
