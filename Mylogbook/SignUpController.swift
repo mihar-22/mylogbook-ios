@@ -127,7 +127,7 @@ extension SignUpController: Alertable {
         
         let message = "An email has been sent to you. Please go to your inbox and click on the link. This will help verify your account and keep your details safe!"
         
-        let cancelButton = CancelButton(title: "LOGIN") { self.navigateToLoginScene() }
+        let cancelButton = CancelButton(title: "LOG IN") { self.navigateToLoginScene() }
         
         let openMailButton = DefaultButton(title: "OPEN MAIL") { self.navigateToMailBox() }
         
