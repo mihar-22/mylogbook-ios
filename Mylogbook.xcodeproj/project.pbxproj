@@ -15,11 +15,12 @@
 		C935B7361E0A6FFE00FD7FFF /* AuthRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935B7351E0A6FFE00FD7FFF /* AuthRoute.swift */; };
 		C935B73C1E0B7A4600FD7FFF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935B73B1E0B7A4600FD7FFF /* Router.swift */; };
 		C95B3B881E31CB4100533FB6 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B3B871E31CB4100533FB6 /* Alert.swift */; };
+		C95B3B8C1E33360900533FB6 /* ResourceRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B3B8B1E33360900533FB6 /* ResourceRoute.swift */; };
+		C95B3B8E1E33402100533FB6 /* Resourcable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B3B8D1E33402100533FB6 /* Resourcable.swift */; };
 		C964FC331E236FD900D07FBF /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C964FC321E236FD900D07FBF /* TextField.swift */; };
 		C970BCE81E319D9E00E1129A /* SupervisorsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCE71E319D9E00E1129A /* SupervisorsController.swift */; };
 		C970BCEA1E319F3500E1129A /* NewSupervisorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCE91E319F3500E1129A /* NewSupervisorController.swift */; };
 		C970BCEC1E31A83E00E1129A /* Supervisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCEB1E31A83E00E1129A /* Supervisor.swift */; };
-		C970BCEE1E31A90A00E1129A /* SupervisorRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCED1E31A90A00E1129A /* SupervisorRoute.swift */; };
 		C970BCF01E31A96300E1129A /* SupervisorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCEF1E31A96300E1129A /* SupervisorCell.swift */; };
 		C99FC90F1E1B5AF7003BAEC2 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC90E1E1B5AF7003BAEC2 /* SignUpController.swift */; };
 		C99FC9141E1BB395003BAEC2 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC9131E1BB395003BAEC2 /* Validator.swift */; };
@@ -34,7 +35,6 @@
 		C9EBBD5E1E2C5F2100B5E509 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD5D1E2C5F2100B5E509 /* CarCell.swift */; };
 		C9EBBD611E2C61B700B5E509 /* CarsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD601E2C61B700B5E509 /* CarsController.swift */; };
 		C9EBBD651E2C65D000B5E509 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD641E2C65D000B5E509 /* Car.swift */; };
-		C9EBBD671E2C669900B5E509 /* CarRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD661E2C669900B5E509 /* CarRoute.swift */; };
 		C9EBBD711E2DA20F00B5E509 /* NewCarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD701E2DA20F00B5E509 /* NewCarController.swift */; };
 		C9F1B98D1E094DCC002D4D61 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1B98C1E094DCC002D4D61 /* Env.swift */; };
 /* End PBXBuildFile section */
@@ -50,11 +50,12 @@
 		C935B7351E0A6FFE00FD7FFF /* AuthRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRoute.swift; sourceTree = "<group>"; };
 		C935B73B1E0B7A4600FD7FFF /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		C95B3B871E31CB4100533FB6 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		C95B3B8B1E33360900533FB6 /* ResourceRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceRoute.swift; sourceTree = "<group>"; };
+		C95B3B8D1E33402100533FB6 /* Resourcable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resourcable.swift; sourceTree = "<group>"; };
 		C964FC321E236FD900D07FBF /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		C970BCE71E319D9E00E1129A /* SupervisorsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupervisorsController.swift; sourceTree = "<group>"; };
 		C970BCE91E319F3500E1129A /* NewSupervisorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSupervisorController.swift; sourceTree = "<group>"; };
 		C970BCEB1E31A83E00E1129A /* Supervisor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Supervisor.swift; sourceTree = "<group>"; };
-		C970BCED1E31A90A00E1129A /* SupervisorRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupervisorRoute.swift; sourceTree = "<group>"; };
 		C970BCEF1E31A96300E1129A /* SupervisorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupervisorCell.swift; sourceTree = "<group>"; };
 		C99FC90E1E1B5AF7003BAEC2 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		C99FC9131E1BB395003BAEC2 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
@@ -71,7 +72,6 @@
 		C9EBBD5D1E2C5F2100B5E509 /* CarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
 		C9EBBD601E2C61B700B5E509 /* CarsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarsController.swift; sourceTree = "<group>"; };
 		C9EBBD641E2C65D000B5E509 /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
-		C9EBBD661E2C669900B5E509 /* CarRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarRoute.swift; sourceTree = "<group>"; };
 		C9EBBD701E2DA20F00B5E509 /* NewCarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCarController.swift; sourceTree = "<group>"; };
 		C9F1B98C1E094DCC002D4D61 /* Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,8 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				C935B7351E0A6FFE00FD7FFF /* AuthRoute.swift */,
-				C9EBBD661E2C669900B5E509 /* CarRoute.swift */,
-				C970BCED1E31A90A00E1129A /* SupervisorRoute.swift */,
+				C95B3B8B1E33360900533FB6 /* ResourceRoute.swift */,
 			);
 			name = Routes;
 			sourceTree = "<group>";
@@ -227,6 +226,7 @@
 			children = (
 				C9EBBD641E2C65D000B5E509 /* Car.swift */,
 				C970BCEB1E31A83E00E1129A /* Supervisor.swift */,
+				C95B3B8D1E33402100533FB6 /* Resourcable.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -366,18 +366,17 @@
 			files = (
 				C9EBBD5B1E28C45000B5E509 /* DashboardController.swift in Sources */,
 				C9F1B98D1E094DCC002D4D61 /* Env.swift in Sources */,
-				C9EBBD671E2C669900B5E509 /* CarRoute.swift in Sources */,
 				C970BCF01E31A96300E1129A /* SupervisorCell.swift in Sources */,
 				C99FC90F1E1B5AF7003BAEC2 /* SignUpController.swift in Sources */,
 				C9CDFA891DEFDB2800CE0A2D /* Mylogbook.xcdatamodeld in Sources */,
 				C9EBBD711E2DA20F00B5E509 /* NewCarController.swift in Sources */,
 				C9EBBD611E2C61B700B5E509 /* CarsController.swift in Sources */,
-				C970BCEE1E31A90A00E1129A /* SupervisorRoute.swift in Sources */,
 				C964FC331E236FD900D07FBF /* TextField.swift in Sources */,
 				C99FC9141E1BB395003BAEC2 /* Validator.swift in Sources */,
 				C99FC9181E1BB534003BAEC2 /* Validation.swift in Sources */,
 				C970BCEA1E319F3500E1129A /* NewSupervisorController.swift in Sources */,
 				C9EBBD571E2882E200B5E509 /* LogInController.swift in Sources */,
+				C95B3B8C1E33360900533FB6 /* ResourceRoute.swift in Sources */,
 				C970BCEC1E31A83E00E1129A /* Supervisor.swift in Sources */,
 				C908D3C51E24D4B500A4E91C /* Adapters.swift in Sources */,
 				C92AA02E1E1233D800A92067 /* Session.swift in Sources */,
@@ -387,6 +386,7 @@
 				C9CDFA811DEFDB2800CE0A2D /* AppDelegate.swift in Sources */,
 				C935B7361E0A6FFE00FD7FFF /* AuthRoute.swift in Sources */,
 				C9EBBD651E2C65D000B5E509 /* Car.swift in Sources */,
+				C95B3B8E1E33402100533FB6 /* Resourcable.swift in Sources */,
 				C970BCE81E319D9E00E1129A /* SupervisorsController.swift in Sources */,
 				C908D3C71E24D5BF00A4E91C /* Keychain.swift in Sources */,
 				C9EBBD5E1E2C5F2100B5E509 /* CarCell.swift in Sources */,

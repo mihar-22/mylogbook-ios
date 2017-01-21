@@ -22,7 +22,7 @@ class CarsController: UIViewController {
     // MARK: Networking
     
     func getCars() {
-        let route = CarRoute.index
+        let route = ResourceRoute<Car>.index
         
         Session.shared.requestCollection(route) { (response: ApiResponse<[Car]>) in
             guard let carCollection = response.data else { return }
@@ -38,7 +38,7 @@ class CarsController: UIViewController {
     func deleteCar(indexPath: IndexPath) {
         let car = cars[indexPath.row]
         
-        let route = CarRoute.destroy(car)
+        let route = ResourceRoute<Car>.destroy(car)
         
         Session.shared.requestJSON(route) { _ in
             self.removeCarFromTable(indexPath: indexPath)

@@ -22,7 +22,7 @@ class SupervisorsController: UIViewController {
     // MARK: Networking
     
     func getSupervisors() {
-        let route = SupervisorRoute.index
+        let route = ResourceRoute<Supervisor>.index
         
         Session.shared.requestCollection(route) { (response: ApiResponse<[Supervisor]>) in
             guard let supervisorCollection = response.data else { return }
@@ -38,7 +38,7 @@ class SupervisorsController: UIViewController {
     func deleteSupervisor(indexPath: IndexPath) {
         let supervisor = supervisors[indexPath.row]
         
-        let route = SupervisorRoute.destroy(supervisor)
+        let route = ResourceRoute<Supervisor>.update(supervisor)
         
         Session.shared.requestJSON(route) { _ in
             self.removeSupervisorFromTable(indexPath: indexPath)

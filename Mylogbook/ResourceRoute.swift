@@ -1,26 +1,25 @@
 
 import Alamofire
+import ObjectMapper
 
-// MARK: Supervisor Route
+// MARK: Resource Route
 
-enum SupervisorRoute {
+enum ResourceRoute<Model: Resourceable> {
     case index
-    case store(Supervisor)
-    case update(Supervisor)
-    case destroy(Supervisor)
+    case store(Model)
+    case update(Model)
+    case destroy(Model)
 }
 
-// MARK: Routable
-
-extension SupervisorRoute: Routable {
-    static let resource = "supervisors"
+extension ResourceRoute: Routable {
+    static var resource: String { return Model.resource }
     
     var path: String {
         switch self {
         case .index, .store:
             return ""
-        case .update(let supervisor), .destroy(let supervisor):
-            return "\(supervisor.id!)"
+        case .update(let model), .destroy(let model):
+            return "\(model.id!)"
         }
     }
     
@@ -41,9 +40,8 @@ extension SupervisorRoute: Routable {
         switch self {
         case .index, .destroy:
             return nil
-        case .store(let supervisor), .update(let supervisor):
-            return supervisor.toJSON()
+        case .store(let model), .update(let model):
+            return model.toJSON()
         }
     }
 }
-

@@ -3,7 +3,9 @@ import ObjectMapper
 
 // MARK: Car
 
-class Car: Mappable {
+class Car: Resourceable {
+    static let resource = "cars"
+    
     var id: Int?
     var make: String?
     var model: String?

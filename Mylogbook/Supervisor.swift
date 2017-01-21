@@ -3,7 +3,9 @@ import ObjectMapper
 
 // MARK: Supervisor
 
-class Supervisor: Mappable {
+class Supervisor: Resourceable {
+    static let resource = "supervisors"
+    
     var id: Int?
     var firstName: String?
     var lastName: String?

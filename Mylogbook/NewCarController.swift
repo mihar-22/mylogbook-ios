@@ -129,7 +129,7 @@ class NewCarController: UIViewController {
     func saveCar() {
         let car = Car(registration: registration!, make: make!, model: model!, type: type!)
         
-        let route = CarRoute.store(car)
+        let route = ResourceRoute<Car>.store(car)
         
         Session.shared.requestJSON(route) { response in
             car.id = response.data?["id"] as? Int
@@ -146,7 +146,7 @@ class NewCarController: UIViewController {
         editingCar!.model = model!
         editingCar!.type = type!
         
-        let route = CarRoute.update(editingCar!)
+        let route = ResourceRoute<Car>.update(editingCar!)
         
         Session.shared.requestJSON(route) { response in
             self.delegate?.carUpdated(self.editingCar!)

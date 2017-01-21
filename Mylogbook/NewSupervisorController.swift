@@ -122,7 +122,7 @@ class NewSupervisorController: UIViewController {
                                     gender: gender!,
                                     avatar: avatar)
         
-        let route = SupervisorRoute.store(supervisor)
+        let route = ResourceRoute<Supervisor>.store(supervisor)
         
         Session.shared.requestJSON(route) { response in
             supervisor.id = response.data?["id"] as? Int
@@ -140,7 +140,7 @@ class NewSupervisorController: UIViewController {
         editingSupervisor!.gender = gender!
         editingSupervisor!.avatar = avatar
         
-        let route = SupervisorRoute.update(editingSupervisor!)
+        let route = ResourceRoute<Supervisor>.update(editingSupervisor!)
         
         Session.shared.requestJSON(route) { response in
             self.delegate?.supervisorUpdated(self.editingSupervisor!)
