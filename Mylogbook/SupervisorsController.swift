@@ -2,47 +2,18 @@
 import UIKit
 import PopupDialog
 
-class SupervisorsController: UIViewController {
+class SupervisorsController: UIViewController, ResourceViewControllable {
     
-    var supervisors = [Supervisor]()
+    var collection = [Supervisor]()
     
     // MARK: Outlets
     
-    @IBOutlet weak var supervisorsTable: UITableView!
-    
+    @IBOutlet weak var collectionTable: UITableView!
     
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
-        setupTable()
-        
-        getSupervisors()
-    }
-    
-    // MARK: Networking
-    
-    func getSupervisors() {
-        let route = ResourceRoute<Supervisor>.index
-        
-        Session.shared.requestCollection(route) { (response: ApiResponse<[Supervisor]>) in
-            guard let supervisorCollection = response.data else { return }
-            
-            self.supervisorsTable.beginUpdates()
-            
-            for supervisor in supervisorCollection { self.addSupervisorToTable(supervisor) }
-            
-            self.supervisorsTable.endUpdates()
-        }
-    }
-    
-    func deleteSupervisor(indexPath: IndexPath) {
-        let supervisor = supervisors[indexPath.row]
-        
-        let route = ResourceRoute<Supervisor>.update(supervisor)
-        
-        Session.shared.requestJSON(route) { _ in
-            self.removeSupervisorFromTable(indexPath: indexPath)
-        }
+        viewDidLoadHandler()
     }
     
     // MARK: Navigation
@@ -53,9 +24,9 @@ class SupervisorsController: UIViewController {
             
             if segue.identifier == "editSupervisorSegue" {
                 if let selectedCell = sender as? SupervisorCell {
-                    let indexPath = supervisorsTable.indexPath(for: selectedCell)!
+                    let indexPath = collectionTable.indexPath(for: selectedCell)!
                     
-                    let supervisor = supervisors[indexPath.row]
+                    let supervisor = collection[indexPath.row]
                     
                     viewController.editingSupervisor = supervisor
                 }
@@ -72,9 +43,9 @@ extension SupervisorsController: Alertable {
         
         let message = "Are you sure you want to delete this supervisor permanently?"
         
-        let cancelButton = CancelButton(title: "CANCEL") { self.supervisorsTable.isEditing = false; }
+        let cancelButton = CancelButton(title: "CANCEL") { self.collectionTable.isEditing = false; }
         
-        let deleteButton = DestructiveButton(title: "DELETE") { self.deleteSupervisor(indexPath: indexPath) }
+        let deleteButton = DestructiveButton(title: "DELETE") { self.deleteModel(indexPath: indexPath) }
         
         showAlert(title: title, message: message, buttons: [cancelButton, deleteButton])
     }
@@ -84,43 +55,23 @@ extension SupervisorsController: Alertable {
 
 extension SupervisorsController: NewSupervisorDelegate {
     func supervisorAdded(_ supervisor: Supervisor) {
-        addSupervisorToTable(supervisor)
+        addToTable(supervisor)
     }
     
     func supervisorUpdated(_ supervisor: Supervisor) {
-        supervisorsTable.reloadData()
+        collectionTable.reloadData()
     }
 }
 
 // MARK: Table View - Data Source + Delegate
 
 extension SupervisorsController: UITableViewDataSource, UITableViewDelegate {
-    func setupTable() {
-        supervisorsTable.dataSource = self
-        
-        supervisorsTable.delegate = self
-        
-        supervisorsTable.tableFooterView = UIView()
-    }
-    
-    func addSupervisorToTable(_ supervisor: Supervisor) {
-        supervisors.append(supervisor)
-        
-        supervisorsTable.insertRows(at: [IndexPath(row: self.supervisors.count - 1, section: 0)], with: .automatic)
-    }
-    
-    func removeSupervisorFromTable(indexPath: IndexPath) {
-        self.supervisors.remove(at: indexPath.row)
-        
-        self.supervisorsTable.deleteRows(at: [indexPath], with: .automatic)
-    }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return supervisors.count
+        return collection.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -136,7 +87,7 @@ extension SupervisorsController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func configureCell(_ cell: SupervisorCell, indexPath: IndexPath) {
-        let supervisor = supervisors[indexPath.row]
+        let supervisor = collection[indexPath.row]
         
         cell.nameLabel.text = "\(supervisor.firstName!) \(supervisor.lastName!)"
         cell.licenseLabel.text = supervisor.license!
