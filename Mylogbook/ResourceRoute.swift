@@ -18,7 +18,9 @@ extension ResourceRoute: Routable {
         switch self {
         case .index, .store:
             return ""
-        case .update(let model), .destroy(let model):
+        case .update(let model):
+            return "\(model.id!)"
+        case .destroy(let model):
             return "\(model.id!)"
         }
     }
@@ -40,7 +42,9 @@ extension ResourceRoute: Routable {
         switch self {
         case .index, .destroy:
             return nil
-        case .store(let model), .update(let model):
+        case .store(let model):
+            return model.toJSON()
+        case .update(let model):
             return model.toJSON()
         }
     }
