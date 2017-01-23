@@ -18,6 +18,7 @@
 		C95B3B8C1E33360900533FB6 /* ResourceRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B3B8B1E33360900533FB6 /* ResourceRoute.swift */; };
 		C95B3B8E1E33402100533FB6 /* Resourcable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B3B8D1E33402100533FB6 /* Resourcable.swift */; };
 		C95B3B901E34721700533FB6 /* ResourceViewControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B3B8F1E34721700533FB6 /* ResourceViewControllable.swift */; };
+		C95B3B9E1E35FABD00533FB6 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B3B9D1E35FABD00533FB6 /* NavigationBar.swift */; };
 		C964FC331E236FD900D07FBF /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C964FC321E236FD900D07FBF /* TextField.swift */; };
 		C970BCE81E319D9E00E1129A /* SupervisorsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCE71E319D9E00E1129A /* SupervisorsController.swift */; };
 		C970BCEA1E319F3500E1129A /* NewSupervisorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCE91E319F3500E1129A /* NewSupervisorController.swift */; };
@@ -54,6 +55,7 @@
 		C95B3B8B1E33360900533FB6 /* ResourceRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceRoute.swift; sourceTree = "<group>"; };
 		C95B3B8D1E33402100533FB6 /* Resourcable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resourcable.swift; sourceTree = "<group>"; };
 		C95B3B8F1E34721700533FB6 /* ResourceViewControllable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceViewControllable.swift; sourceTree = "<group>"; };
+		C95B3B9D1E35FABD00533FB6 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		C964FC321E236FD900D07FBF /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		C970BCE71E319D9E00E1129A /* SupervisorsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupervisorsController.swift; sourceTree = "<group>"; };
 		C970BCE91E319F3500E1129A /* NewSupervisorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSupervisorController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				C964FC321E236FD900D07FBF /* TextField.swift */,
 				C95B3B871E31CB4100533FB6 /* Alert.swift */,
+				C95B3B9D1E35FABD00533FB6 /* NavigationBar.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				C99FC9141E1BB395003BAEC2 /* Validator.swift in Sources */,
 				C99FC9181E1BB534003BAEC2 /* Validation.swift in Sources */,
 				C970BCEA1E319F3500E1129A /* NewSupervisorController.swift in Sources */,
+				C95B3B9E1E35FABD00533FB6 /* NavigationBar.swift in Sources */,
 				C9EBBD571E2882E200B5E509 /* LogInController.swift in Sources */,
 				C95B3B8C1E33360900533FB6 /* ResourceRoute.swift in Sources */,
 				C95B3B901E34721700533FB6 /* ResourceViewControllable.swift in Sources */,
