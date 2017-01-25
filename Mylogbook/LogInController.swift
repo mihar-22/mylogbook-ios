@@ -13,9 +13,6 @@ class LogInController: UIViewController {
     @IBOutlet weak var emailTextField: TextField!
     @IBOutlet weak var passwordTextField: TextField!
     
-    @IBOutlet weak var emailErrorLabel: UILabel!
-    @IBOutlet weak var passwordErrorLabel: UILabel!
-    
     @IBOutlet weak var doneButton: UIBarButtonItem!
     
     @IBOutlet weak var forgotPasswordButton: UIButton!
@@ -37,19 +34,19 @@ class LogInController: UIViewController {
         
         validator.setActionButton(doneButton)
 
-        validator.addField(emailTextField, emailErrorLabel, [.required, .email])
+        validator.add(emailTextField, [.required, .email])
         
-        validator.addField(passwordTextField, passwordErrorLabel, [.required, .minLength(min: 6)])
+        validator.add(passwordTextField, [.required, .minLength(min: 6)])
     }
     
     // MARK: Text Field
     
     func setupTextFields() {
-        emailTextField.tag = 0
-        emailTextField.delegate = self
+        emailTextField.field.tag = 0
+        emailTextField.field.delegate = self
         
-        passwordTextField.tag = 1
-        passwordTextField.delegate = self
+        passwordTextField.field.tag = 1
+        passwordTextField.field.delegate = self
     }
     
     // MARK: Actions
@@ -109,7 +106,7 @@ class LogInController: UIViewController {
         
         passwordTextField.text = Keychain.shared.password ?? ""
         
-        validator.revalidate(updateUI: false)
+        validator.revalidate()
     }
     
     func storeUserDetails(_ data: [String: Any]) {

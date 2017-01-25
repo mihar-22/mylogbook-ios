@@ -21,10 +21,10 @@ class NewSupervisorController: UIViewController {
     
     let validator = Validator()
 
-    var firstName: String? { return firstNameField.text }
-    var lastName: String? { return lastNameField.text }
-    var license: String? { return licenseField.text }
-    var gender: String? { return genderField.text?.lowercased() }
+    var firstName: String? { return firstNameTextField.text }
+    var lastName: String? { return lastNameTextField.text }
+    var license: String? { return licenseTextField.text }
+    var gender: String? { return genderTextField.text?.lowercased() }
     var avatar: Int = 1
     
     let genders = ["Male", "Female"]
@@ -35,14 +35,10 @@ class NewSupervisorController: UIViewController {
     
     @IBOutlet weak var avatarImage: UIImageView!
     
-    @IBOutlet weak var firstNameField: TextField!
-    @IBOutlet weak var lastNameField: TextField!
-    @IBOutlet weak var licenseField: TextField!
-    @IBOutlet weak var genderField: TextField!
-    
-    @IBOutlet weak var firstNameErrorLabel: UILabel!
-    @IBOutlet weak var lastNameErrorLabel: UILabel!
-    @IBOutlet weak var licenseErrorLabel: UILabel!
+    @IBOutlet weak var firstNameTextField: TextField!
+    @IBOutlet weak var lastNameTextField: TextField!
+    @IBOutlet weak var licenseTextField: TextField!
+    @IBOutlet weak var genderTextField: TextField!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -63,13 +59,13 @@ class NewSupervisorController: UIViewController {
     func setupEditing() {
         navItem.title = "Edit Supervisor"
         
-        firstNameField.text = editingSupervisor!.firstName
-        lastNameField.text = editingSupervisor!.lastName
-        licenseField.text = editingSupervisor!.license
-        genderField.text = editingSupervisor!.gender!.capitalized
+        firstNameTextField.text = editingSupervisor!.firstName
+        lastNameTextField.text = editingSupervisor!.lastName
+        licenseTextField.text = editingSupervisor!.license
+        genderTextField.text = editingSupervisor!.gender!.capitalized
         // set avatar image here
         
-        validator.revalidate(updateUI: false)
+        validator.revalidate()
     }
     
     // MARK: Actions
@@ -88,17 +84,17 @@ class NewSupervisorController: UIViewController {
     // MARK: Text Field
     
     func setupTextFields() {
-        licenseField.tag = 0
-        licenseField.delegate = self
+        licenseTextField.field.tag = 0
+        licenseTextField.field.delegate = self
         
-        firstNameField.tag = 1
-        firstNameField.delegate = self
+        firstNameTextField.field.tag = 1
+        firstNameTextField.field.delegate = self
         
-        lastNameField.tag = 2
-        lastNameField.delegate = self
+        lastNameTextField.field.tag = 2
+        lastNameTextField.field.delegate = self
         
-        genderField.tag = 3
-        genderField.delegate = self
+        genderTextField.field.tag = 3
+        genderTextField.field.delegate = self
     }
     
     // MARK: Validator
@@ -106,11 +102,11 @@ class NewSupervisorController: UIViewController {
     func setupValidator() {
         validator.setActionButton(saveButton)
         
-        validator.addField(firstNameField, firstNameErrorLabel, [.required, .alpha, .maxLength(max: 50)])
+        validator.add(firstNameTextField, [.required, .alpha, .maxLength(max: 50)])
         
-        validator.addField(lastNameField, lastNameErrorLabel, [.required, .alpha, .maxLength(max: 50)])
+        validator.add(lastNameTextField, [.required, .alpha, .maxLength(max: 50)])
         
-        validator.addField(licenseField, licenseErrorLabel, [.required, .alphaNum, .maxLength(max: 10)])
+        validator.add(licenseTextField, [.required, .alphaNum, .maxLength(max: 10)])
     }
     
     // MARK: Networking
@@ -169,8 +165,8 @@ extension NewSupervisorController: UIPickerViewDelegate, UIPickerViewDataSource 
         genderPicker.delegate = self
         genderPicker.dataSource = self
         
-        genderField.inputView = genderPicker
-        genderField.text = genders[0]
+        genderTextField.text = genders[0]
+        genderTextField.field.inputView = genderPicker
         
         // set avatar image here
     }
@@ -188,7 +184,7 @@ extension NewSupervisorController: UIPickerViewDelegate, UIPickerViewDataSource 
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        genderField.text = genders[row]
+        genderTextField.text = genders[row]
         
         // set avatar image here
         

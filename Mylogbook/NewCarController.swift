@@ -21,10 +21,10 @@ class NewCarController: UIViewController {
     
     let validator = Validator()
     
-    var registration: String? { return registrationField.text }
-    var make: String? { return makeField.text }
-    var model: String? { return modelField.text }
-    var type: String? { return typeField.text?.lowercased() }
+    var registration: String? { return registrationTextField.text }
+    var make: String? { return makeTextField.text }
+    var model: String? { return modelTextField.text }
+    var type: String? { return typeTextField.text?.lowercased() }
     
     let carTypes = [
         "Sedan",
@@ -46,14 +46,10 @@ class NewCarController: UIViewController {
     
     @IBOutlet weak var typeImage: UIImageView!
     
-    @IBOutlet weak var registrationField: TextField!
-    @IBOutlet weak var makeField: TextField!
-    @IBOutlet weak var modelField: TextField!
-    @IBOutlet weak var typeField: TextField!
-    
-    @IBOutlet weak var registrationErrorLabel: UILabel!
-    @IBOutlet weak var makeErrorLabel: UILabel!
-    @IBOutlet weak var modelErrorLabel: UILabel!
+    @IBOutlet weak var registrationTextField: TextField!
+    @IBOutlet weak var makeTextField: TextField!
+    @IBOutlet weak var modelTextField: TextField!
+    @IBOutlet weak var typeTextField: TextField!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -74,13 +70,13 @@ class NewCarController: UIViewController {
     func setupEditing() {
         navItem.title = "Edit Car"
         
-        registrationField.text = editingCar!.registration
-        makeField.text = editingCar!.make
-        modelField.text = editingCar!.model
-        typeField.text = editingCar!.type!.capitalized
+        registrationTextField.text = editingCar!.registration
+        makeTextField.text = editingCar!.make
+        modelTextField.text = editingCar!.model
+        typeTextField.text = editingCar!.type!.capitalized
         // set type image here
         
-        validator.revalidate(updateUI: false)
+        validator.revalidate()
     }
     
     // MARK: Actions
@@ -99,17 +95,17 @@ class NewCarController: UIViewController {
     // MARK: Text Field
     
     func setupTextFields() {
-        registrationField.tag = 0
-        registrationField.delegate = self
+        registrationTextField.field.tag = 0
+        registrationTextField.field.delegate = self
 
-        makeField.tag = 1
-        makeField.delegate = self
+        makeTextField.field.tag = 1
+        makeTextField.field.delegate = self
         
-        modelField.tag = 2
-        modelField.delegate = self
+        modelTextField.field.tag = 2
+        modelTextField.field.delegate = self
         
-        typeField.tag = 3
-        typeField.delegate = self
+        typeTextField.field.tag = 3
+        typeTextField.field.delegate = self
     }
     
     // MARK: Validator
@@ -117,11 +113,11 @@ class NewCarController: UIViewController {
     func setupValidator() {
         validator.setActionButton(saveButton)
         
-        validator.addField(registrationField, registrationErrorLabel, [.required, .alphaNum, .maxLength(max: 6)])
+        validator.add(registrationTextField, [.required, .alphaNum, .maxLength(max: 6)])
         
-        validator.addField(makeField, makeErrorLabel, [.required, .alphaSpace, .maxLength(max: 50)])
+        validator.add(makeTextField, [.required, .alphaSpace, .maxLength(max: 50)])
         
-        validator.addField(modelField, modelErrorLabel, [.required, .alphaNumSpace, .maxLength(max: 50)])
+        validator.add(modelTextField, [.required, .alphaNumSpace, .maxLength(max: 50)])
     }
     
     // MARK: Networking
@@ -175,8 +171,8 @@ extension NewCarController: UIPickerViewDelegate, UIPickerViewDataSource {
         typePicker.delegate = self
         typePicker.dataSource = self
         
-        typeField.inputView = typePicker
-        typeField.text = carTypes[0]
+        typeTextField.text = carTypes[0]
+        typeTextField.field.inputView = typePicker
         
         // set type image here
     }
@@ -194,7 +190,7 @@ extension NewCarController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        typeField.text = carTypes[row]
+        typeTextField.text = carTypes[row]
         
         // set type image here
         

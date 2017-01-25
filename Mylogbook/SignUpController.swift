@@ -14,11 +14,7 @@ class SignUpController: UIViewController {
     @IBOutlet weak var nameTextField: TextField!
     @IBOutlet weak var emailTextField: TextField!
     @IBOutlet weak var passwordTextField: TextField!
-    
-    @IBOutlet weak var nameErrorlabel: UILabel!
-    @IBOutlet weak var emailErrorLabel: UILabel!
-    @IBOutlet weak var passwordErrorLabel: UILabel!
-    
+        
     @IBOutlet weak var createButton: UIBarButtonItem!
     
     // MARK: View Lifecycle
@@ -34,24 +30,24 @@ class SignUpController: UIViewController {
     func setupValidator() {
         validator.setActionButton(createButton)
 
-        validator.addField(nameTextField, nameErrorlabel, [.required, .alphaSpace, .maxLength(max: 50)])
+        validator.add(nameTextField, [.required, .alphaSpace, .maxLength(max: 50)])
         
-        validator.addField(emailTextField, emailErrorLabel, [.required, .email])
+        validator.add(emailTextField, [.required, .email])
         
-        validator.addField(passwordTextField, passwordErrorLabel, [.required, .minLength(min: 6)])
+        validator.add(passwordTextField, [.required, .minLength(min: 6)])
     }
     
     // MARK: Text Field
     
     func setupTextFields() {
-        nameTextField.tag = 0
-        nameTextField.delegate = self
+        nameTextField.field.tag = 0
+        nameTextField.field.delegate = self
         
-        emailTextField.tag = 1
-        emailTextField.delegate = self
+        emailTextField.field.tag = 1
+        emailTextField.field.delegate = self
         
-        passwordTextField.tag = 2
-        passwordTextField.delegate = self
+        passwordTextField.field.tag = 2
+        passwordTextField.field.delegate = self
     }
     
     // MARK: Actions

@@ -1,137 +1,141 @@
 
 import UIKit
-import JVFloatLabeledTextField
-
-// MARK: Text Field Delegate
-
-protocol TextFieldDelegate: UITextFieldDelegate {
-    func setupTextFields() -> Void
-    func textFieldShouldReturnHandler(_ textField: UITextField) -> Bool
-}
-
-extension TextFieldDelegate {
-    func textFieldShouldReturnHandler(_ textField: UITextField) -> Bool {
-        let nextTag = textField.tag + 1
-        
-        // Superview of superview since text fields are within stack views that contain their error
-        if let nextTextField = textField.superview?.superview?.viewWithTag(nextTag) as? UITextField {
-            let _ = nextTextField.becomeFirstResponder()
-        } else {
-            textField.resignFirstResponder()
-        }
-        
-        return false
-    }
-}
 
 // MARK: Text Field
 
-class TextField: JVFloatLabeledTextField {
-    private let inputLine = CALayer()
-    
-    private var isDirty = false
+@IBDesignable
+class TextField: UIView, Nibable {
 
-    var isValid = true {
-        didSet {
-            styleUpdate()
+    var view: UIView!
+    
+    var viewBottomConstraint: NSLayoutConstraint!
+    
+    var text: String? {
+        get {
+            return field.text
+        }
+        
+        set(text) {
+            field.text = text
         }
     }
     
+    var error: String? {
+        get {
+            return errorLabel.text
+        }
+
+        set(error) {
+            errorLabel.text = error
+            
+            update()
+        }
+    }
+    
+    // MARK: IB Inspectables
+    
+    @IBInspectable var placeholder: String? {
+        get {
+            return field.placeholder
+        }
+        
+        set(placeholder) {
+            field.placeholder = placeholder
+        }
+    }
+    
+    @IBInspectable var capitalization: Int {
+        get {
+            return field.autocapitalizationType.rawValue
+        }
+        
+        set(capitalization) {
+            field.autocapitalizationType = UITextAutocapitalizationType(rawValue: capitalization)!
+        }
+    }
+    
+    @IBInspectable var keyboardType: Int {
+        get {
+            return field.keyboardType.rawValue
+        }
+        
+        set(keyboardType) {
+            field.keyboardType = UIKeyboardType(rawValue: keyboardType)!
+        }
+    }
+    
+    @IBInspectable var returnKeyType: Int {
+        get {
+            return field.returnKeyType.rawValue
+        }
+        
+        set(returnKeyType) {
+            field.returnKeyType = UIReturnKeyType(rawValue: returnKeyType)!
+        }
+    }
+
+    @IBInspectable var secureTextEntry: Bool {
+        get {
+            return field.isSecureTextEntry
+        }
+        
+        set(isSecureTextEntry) {
+            field.isSecureTextEntry = isSecureTextEntry
+        }
+    }
+    
+    // MARK: Outlets
+    
+    @IBOutlet weak var field: JVTextField!
+    
+    @IBOutlet weak var errorLabel: UILabel!
+
+    // MARK: Initializers
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-
-        setup()
+        
+        _init()
     }
     
-    // MARK: Setup
-    
-    private func setup() {
-        addInputLine()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
-        addTarget(self, action: #selector(editingChangedHandler), for: .editingChanged)
-        
-        styleNormal()
+        _init()
     }
     
-    // MARK: Layers + Subviews
-    
-    private func addInputLine() {
-        inputLine.backgroundColor = DarkTheme.base(.divider).uiColor.cgColor
+    private func _init() {
+        initNib()
         
-        inputLine.frame = CGRect(x: 0, y: bounds.height - 1.0, width: bounds.width, height: 2)
+        viewBottomConstraint = view.bottomAnchor.constraint(equalTo: field.bottomAnchor,
+                                                            constant: field.inputLine.frame.height)
         
-        layer.addSublayer(inputLine)
+        viewBottomConstraint.isActive = true
+        
+        errorLabel.text = nil
     }
     
-    // MARK: Target Handlers
+    // MARK: Layout
     
-    @objc private func editingChangedHandler() {
-        if !isDirty { isDirty = true }
-    }
-    
-    // MARK: Responder Handlers
-    
-    override func becomeFirstResponder() -> Bool {
-        if isValid || (!isDirty && isValid) { styleFocused() }
-        
-        return super.becomeFirstResponder()
-    }
-    
-    override func resignFirstResponder() -> Bool {
-        if isValid || (!isDirty && isValid) { styleNormal() }
-        
-        return super.resignFirstResponder()
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: view.frame.width, height: 65)
     }
     
     // MARK: Styling
     
-    private func styleUpdate() {
-        if (!isValid) {
-            styleError()
-        } else if isFirstResponder {
-            styleFocused()
+    private func update() {
+        if error == nil {
+            field.isValid = true
+            
+            errorLabel.isHidden = true
+            
+            viewBottomConstraint.isActive = true
         } else {
-            styleNormal()
+            field.isValid = false
+            
+            errorLabel.isHidden = false
+            
+            viewBottomConstraint.isActive = false
         }
-    }
-    
-    private func styleNormal() {
-        // Floating Label
-        floatingLabelTextColor = DarkTheme.base(.hint).uiColor
-        floatingLabelActiveTextColor = DarkTheme.brand.uiColor
-        
-        // Border
-        borderStyle = .none
-        
-        // Placeholder
-        placeholderColor = DarkTheme.base(.hint).uiColor
-        
-        // Input
-        textColor = DarkTheme.base(.primary).uiColor
-        
-        // Tint
-        tintColor = DarkTheme.brand.uiColor
-        
-        // Input Line
-        inputLine.backgroundColor = DarkTheme.base(.divider).uiColor.cgColor
-    }
-    
-    private func styleFocused() {
-        styleNormal()
-        
-        // Input Line
-        inputLine.backgroundColor = DarkTheme.brand.uiColor.cgColor
-    }
-    
-    private func styleError() {
-        // Floating Label
-        floatingLabelTextColor = DarkTheme.error.uiColor
-        floatingLabelActiveTextColor = DarkTheme.error.uiColor
-        
-        // Tint
-        tintColor = DarkTheme.error.uiColor
-        
-        // Input Line
-        inputLine.backgroundColor = DarkTheme.error.uiColor.cgColor
     }
 }

@@ -95,71 +95,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="AyN-XI-Wr3" userLabel="Form">
-                                <rect key="frame" x="24" y="80" width="327" height="224"/>
+                                <rect key="frame" x="24" y="80" width="327" height="158"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zpp-PT-23k" userLabel="Name Field">
-                                        <rect key="frame" x="0.0" y="0.0" width="327" height="64"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5at-fa-adJ" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="327" height="40"/>
-                                                <color key="tintColor" red="0.20000000000000001" green="0.74117647060000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="Ay7-1q-hok"/>
-                                                </constraints>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="namePhonePad" returnKeyType="next"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sL2-1f-R9N">
-                                                <rect key="frame" x="0.0" y="48" width="327" height="16"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ac0-Yh-aev" userLabel="Email Field">
-                                        <rect key="frame" x="0.0" y="80" width="327" height="64"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0xI-aH-xI0" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="327" height="40"/>
-                                                <color key="tintColor" red="0.20000000000000001" green="0.74117647060000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="9dS-w4-pVF"/>
-                                                </constraints>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0w-mB-W4I">
-                                                <rect key="frame" x="0.0" y="48" width="327" height="16"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zbc-RY-3AW" userLabel="Password Field">
-                                        <rect key="frame" x="0.0" y="160" width="327" height="64"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Umb-EC-2SA" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="327" height="40"/>
-                                                <color key="tintColor" red="0.20000000000000001" green="0.74117647060000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="gbv-Wc-BfI"/>
-                                                </constraints>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcC-PU-0Zj">
-                                                <rect key="frame" x="0.0" y="48" width="327" height="16"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tcz-Zz-4qi" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Full Name"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybf-OR-cgb" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="58" width="327" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="keyboardType">
+                                                <integer key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQO-Yx-k6k" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="116" width="327" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="secureTextEntry" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                <integer key="value" value="9"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                             </stackView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cL9-Sq-PyU">
@@ -198,12 +172,9 @@
                     <navigationItem key="navigationItem" title="Sign Up" id="6Iq-r5-H4H"/>
                     <connections>
                         <outlet property="createButton" destination="akV-cm-ddE" id="DTp-HK-V2y"/>
-                        <outlet property="emailErrorLabel" destination="s0w-mB-W4I" id="xbz-ay-YrG"/>
-                        <outlet property="emailTextField" destination="0xI-aH-xI0" id="DCF-Oa-M2G"/>
-                        <outlet property="nameErrorlabel" destination="sL2-1f-R9N" id="KPj-JK-5rP"/>
-                        <outlet property="nameTextField" destination="5at-fa-adJ" id="NO3-fw-LIG"/>
-                        <outlet property="passwordErrorLabel" destination="YcC-PU-0Zj" id="sfJ-iO-3v1"/>
-                        <outlet property="passwordTextField" destination="Umb-EC-2SA" id="Yde-Yc-J12"/>
+                        <outlet property="emailTextField" destination="ybf-OR-cgb" id="nJC-IG-hrr"/>
+                        <outlet property="nameTextField" destination="Tcz-Zz-4qi" id="xON-PV-Wlp"/>
+                        <outlet property="passwordTextField" destination="bQO-Yx-k6k" id="5Fb-fA-fW8"/>
                         <segue destination="4G5-9U-MMS" kind="presentation" identifier="logInSegue" id="Hb2-1e-Hpd"/>
                     </connections>
                 </viewController>
@@ -246,54 +217,36 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ofU-Ix-3Gi" userLabel="Form">
-                                <rect key="frame" x="16" y="80" width="343" height="144"/>
+                                <rect key="frame" x="16" y="80" width="343" height="100"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qz0-Xc-Vh0" userLabel="Email Field">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="64"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P5R-2f-1mv" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
-                                                <color key="tintColor" red="0.20000000000000001" green="0.74117647060000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="rYQ-or-LJU"/>
-                                                </constraints>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMQ-uP-txh">
-                                                <rect key="frame" x="0.0" y="48" width="343" height="16"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="S35-IV-bUG" userLabel="Password Field">
-                                        <rect key="frame" x="0.0" y="80" width="343" height="64"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Hx-P3-YR8" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
-                                                <color key="tintColor" red="0.20000000000000001" green="0.74117647060000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="Wso-vR-m9c"/>
-                                                </constraints>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIQ-Xj-ay4">
-                                                <rect key="frame" x="0.0" y="48" width="343" height="16"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJq-0J-9Qp" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="keyboardType">
+                                                <integer key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSP-hn-eOT" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="58" width="343" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                <integer key="value" value="9"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="secureTextEntry" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZi-3p-Poh">
-                                <rect key="frame" x="245" y="232" width="114" height="28"/>
+                                <rect key="frame" x="245" y="188" width="114" height="28"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                 <state key="normal" title="Forgot Password?">
                                     <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -320,11 +273,9 @@
                     </view>
                     <connections>
                         <outlet property="doneButton" destination="45c-rP-Ceh" id="cth-jA-hkn"/>
-                        <outlet property="emailErrorLabel" destination="qMQ-uP-txh" id="hdU-Hp-Hkm"/>
-                        <outlet property="emailTextField" destination="P5R-2f-1mv" id="4rv-oR-7rs"/>
+                        <outlet property="emailTextField" destination="NJq-0J-9Qp" id="4kH-Ke-1iS"/>
                         <outlet property="forgotPasswordButton" destination="BZi-3p-Poh" id="RwS-ca-I6y"/>
-                        <outlet property="passwordErrorLabel" destination="oIQ-Xj-ay4" id="eQk-BQ-oLA"/>
-                        <outlet property="passwordTextField" destination="2Hx-P3-YR8" id="zFi-76-x5o"/>
+                        <outlet property="passwordTextField" destination="ZSP-hn-eOT" id="Njy-Kn-SU4"/>
                         <segue destination="JZh-Vk-QfD" kind="show" identifier="userLoggedInSegue" id="N6D-Qa-Ptd"/>
                     </connections>
                 </viewController>
@@ -368,7 +319,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgE-3w-OrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175" y="967"/>
+            <point key="canvasLocation" x="-175" y="1552"/>
         </scene>
         <!--Cars-->
         <scene sceneID="7ap-dF-duq">
@@ -510,81 +461,60 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="NYj-JX-eOM" userLabel="Form">
-                                <rect key="frame" x="16" y="244" width="343" height="280"/>
+                                <rect key="frame" x="16" y="244" width="343" height="216"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="633-Lm-Aac" userLabel="Registration Field">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="64"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Registration Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XF9-vY-jZF" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
-                                                <color key="tintColor" red="0.20000000000000001" green="0.74117647060000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="vqc-e6-0Qb"/>
-                                                </constraints>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTC-4v-QD0">
-                                                <rect key="frame" x="0.0" y="48" width="343" height="16"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZPr-YD-dOX" userLabel="Make Field">
-                                        <rect key="frame" x="0.0" y="80" width="343" height="64"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Make" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KkG-TL-Iuv" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
-                                                <color key="tintColor" red="0.20000000000000001" green="0.74117647060000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="hc8-Fe-wbf"/>
-                                                </constraints>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1q-7n-hih">
-                                                <rect key="frame" x="0.0" y="48" width="343" height="16"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ixM-Hy-GCe" userLabel="Model Field">
-                                        <rect key="frame" x="0.0" y="160" width="343" height="64"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Model" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ve-dg-WdF" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
-                                                <color key="tintColor" red="0.20000000000000001" green="0.74117647060000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="Bia-lP-9nb"/>
-                                                </constraints>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHN-21-Dny">
-                                                <rect key="frame" x="0.0" y="48" width="343" height="16"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l8O-Rf-go3" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="240" width="343" height="40"/>
-                                        <color key="tintColor" red="0.20000000000000001" green="0.74117647060000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Upr-Ao-01s"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
-                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHn-XI-hH3" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Registration Number"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihu-52-2RT" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="58" width="343" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Make"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tv1-zo-yDy" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="116" width="343" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Model"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etH-xi-jHd" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="174" width="343" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Type"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                <integer key="value" value="9"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -601,16 +531,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="makeErrorLabel" destination="B1q-7n-hih" id="gNX-2W-wXF"/>
-                        <outlet property="makeField" destination="KkG-TL-Iuv" id="E63-1s-GNT"/>
-                        <outlet property="modelErrorLabel" destination="tHN-21-Dny" id="6IN-b6-MED"/>
-                        <outlet property="modelField" destination="3Ve-dg-WdF" id="0te-en-AVE"/>
+                        <outlet property="makeTextField" destination="ihu-52-2RT" id="sMO-Xk-ah7"/>
+                        <outlet property="modelTextField" destination="tv1-zo-yDy" id="cLC-br-4dM"/>
                         <outlet property="navItem" destination="qba-Pi-Qh7" id="Pcm-UF-zXW"/>
-                        <outlet property="registrationErrorLabel" destination="BTC-4v-QD0" id="i8h-rk-wOO"/>
-                        <outlet property="registrationField" destination="XF9-vY-jZF" id="NWS-i4-Ge9"/>
+                        <outlet property="registrationTextField" destination="eHn-XI-hH3" id="0qV-RO-4fB"/>
                         <outlet property="saveButton" destination="zC2-E6-5Ca" id="hMT-Vk-5V7"/>
-                        <outlet property="typeField" destination="l8O-Rf-go3" id="QwI-dW-HzI"/>
                         <outlet property="typeImage" destination="OIR-y2-i4E" id="RhC-Tq-vDI"/>
+                        <outlet property="typeTextField" destination="etH-xi-jHd" id="znG-Up-dcz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pc6-GF-6z2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -715,10 +642,10 @@
             </objects>
             <point key="canvasLocation" x="780" y="2053"/>
         </scene>
-        <!--New Car-->
+        <!--New Supervisor-->
         <scene sceneID="H3B-8C-iPs">
             <objects>
-                <viewController id="Q4b-pn-jV9" userLabel="New Car" customClass="NewSupervisorController" customModule="Mylogbook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Q4b-pn-jV9" userLabel="New Supervisor" customClass="NewSupervisorController" customModule="Mylogbook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WKh-P3-Vbk"/>
                         <viewControllerLayoutGuide type="bottom" id="weM-kz-Hsf"/>
@@ -757,81 +684,60 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="AoM-Hs-6Ok" userLabel="Form">
-                                <rect key="frame" x="16" y="244" width="343" height="280"/>
+                                <rect key="frame" x="16" y="244" width="343" height="216"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5u0-JU-Zst" userLabel="Registration Field">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="64"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="License Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NLL-Pt-EsR" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
-                                                <color key="tintColor" red="0.20000000000000001" green="0.74117647060000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="BCO-5c-Svx"/>
-                                                </constraints>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycT-RZ-XDO">
-                                                <rect key="frame" x="0.0" y="48" width="343" height="16"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2Q5-Ie-EIj" userLabel="Make Field">
-                                        <rect key="frame" x="0.0" y="80" width="343" height="64"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ko-l2-0Gi" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
-                                                <color key="tintColor" red="0.20000000000000001" green="0.74117647060000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="YMV-eE-6RB"/>
-                                                </constraints>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="namePhonePad" returnKeyType="next"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0d-Pm-S9c">
-                                                <rect key="frame" x="0.0" y="48" width="343" height="16"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="obo-zr-P2M" userLabel="Model Field">
-                                        <rect key="frame" x="0.0" y="160" width="343" height="64"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="LastName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OgR-Mn-UgN" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
-                                                <color key="tintColor" red="0.20000000000000001" green="0.74117647060000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="XdD-mG-4k5"/>
-                                                </constraints>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="namePhonePad" returnKeyType="next"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovL-Wc-iNt">
-                                                <rect key="frame" x="0.0" y="48" width="343" height="16"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s34-a9-RlR" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="240" width="343" height="40"/>
-                                        <color key="tintColor" red="0.20000000000000001" green="0.74117647060000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="SMS-bP-FCb"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
-                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdu-8p-LAl" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="License Number"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oop-d8-G60" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="58" width="343" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="First Name"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LMN-CX-Ssq" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="116" width="343" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Last Name"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4l-CC-GuE" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="174" width="343" height="42"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Gender"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                <integer key="value" value="9"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -849,13 +755,10 @@
                     </view>
                     <connections>
                         <outlet property="avatarImage" destination="HpQ-MD-TQN" id="0hl-t8-5Ua"/>
-                        <outlet property="firstNameErrorLabel" destination="d0d-Pm-S9c" id="Wxo-YF-uLd"/>
-                        <outlet property="firstNameField" destination="4Ko-l2-0Gi" id="77P-zA-iMv"/>
-                        <outlet property="genderField" destination="s34-a9-RlR" id="HKA-aA-CAy"/>
-                        <outlet property="lastNameErrorLabel" destination="ovL-Wc-iNt" id="oGd-w6-2ZI"/>
-                        <outlet property="lastNameField" destination="OgR-Mn-UgN" id="nGj-CS-DZy"/>
-                        <outlet property="licenseErrorLabel" destination="ycT-RZ-XDO" id="Rqj-Rx-SNP"/>
-                        <outlet property="licenseField" destination="NLL-Pt-EsR" id="aat-Mg-6ux"/>
+                        <outlet property="firstNameTextField" destination="oop-d8-G60" id="qhh-J1-RTg"/>
+                        <outlet property="genderTextField" destination="y4l-CC-GuE" id="emK-ax-nmv"/>
+                        <outlet property="lastNameTextField" destination="LMN-CX-Ssq" id="GAw-vX-KoV"/>
+                        <outlet property="licenseTextField" destination="wdu-8p-LAl" id="SCr-5j-jeR"/>
                         <outlet property="navItem" destination="uCj-DI-hhs" id="Xa0-1m-Q7S"/>
                         <outlet property="saveButton" destination="wwT-5Q-yag" id="XL2-gr-od3"/>
                     </connections>
