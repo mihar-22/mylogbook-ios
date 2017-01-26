@@ -165,16 +165,22 @@ extension NewCarController: TextFieldDelegate {
 extension NewCarController: UIPickerViewDelegate, UIPickerViewDataSource {
     func setupTypePicker() {
         let typePicker = UIPickerView()
-        
-        typePicker.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 150)
-        
         typePicker.delegate = self
         typePicker.dataSource = self
         
+        let toolbar = UIToolbar()
+        toolbar.restyle(.normal)
+        toolbar.addDoneButton(target: self, action: #selector(pickerDoneHandler(_:)))
+        
         typeTextField.text = carTypes[0]
         typeTextField.field.inputView = typePicker
+        typeTextField.field.inputAccessoryView = toolbar
         
         // set type image here
+    }
+    
+    func pickerDoneHandler(_ sender: UIBarButtonItem) {
+       let _ = typeTextField.field.resignFirstResponder()
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -193,8 +199,6 @@ extension NewCarController: UIPickerViewDelegate, UIPickerViewDataSource {
         typeTextField.text = carTypes[row]
         
         // set type image here
-        
-        view.endEditing(true)
     }
 }
 
