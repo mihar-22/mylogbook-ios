@@ -51,17 +51,19 @@ class Validator {
     }
     
     func revalidate() {
-        for field in textField.keys {
-            var isValid = true
-            
-            if validate(field) != nil {
-                isValid = false
-                
-                break
-            }
+        for (field, textField) in textField {
+            let isValid = (validate(field) == nil)
             
             validity[field] = isValid
+            
+            if isValid {
+                delegate?.validationSuccessful(textField)
+            } else {
+                delegate?.validationFailed(textField)
+            }
         }
+        
+        if isAllFieldsValid() { actionButton?.isEnabled = true }
     }
         
     private func isAllFieldsValid() -> Bool {
