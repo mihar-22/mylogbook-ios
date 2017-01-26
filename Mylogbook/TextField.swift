@@ -136,6 +136,8 @@ class TextField: UIView, Nibable {
             errorLabel.isHidden = false
             
             viewBottomConstraint.isActive = false
+            
+            UIView.animate(withDuration: 0.4) { self.view.layoutIfNeeded() }
         }
     }
 }
