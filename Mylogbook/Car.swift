@@ -12,6 +12,8 @@ class Car: Resourceable {
     var registration: String?
     var type: String?
     
+    var name: String { return "\(make!) \(model!)" }
+    
     required init?(map: Map) {}
     
     init(registration: String, make: String, model: String, type: String) {

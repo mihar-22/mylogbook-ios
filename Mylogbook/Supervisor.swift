@@ -13,6 +13,8 @@ class Supervisor: Resourceable {
     var gender: String?
     var avatar: Int?
     
+    var fullName: String { return "\(firstName!) \(lastName!)" }
+    
     required init?(map: Map) {}
     
     init(firstName: String, lastName: String, license: String, gender: String, avatar: Int) {
