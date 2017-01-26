@@ -89,7 +89,7 @@ extension CarsController: UITableViewDataSource, UITableViewDelegate {
     func configureCell(_ cell: CarCell, indexPath: IndexPath) {
         let car = collection[indexPath.row]
         
-        cell.nameLabel.text = "\(car.make!) \(car.model!)"
+        cell.nameLabel.text = car.name
         cell.registrationLabel.text = car.registration!
         // set typeImage here
     }

@@ -89,7 +89,7 @@ extension SupervisorsController: UITableViewDataSource, UITableViewDelegate {
     func configureCell(_ cell: SupervisorCell, indexPath: IndexPath) {
         let supervisor = collection[indexPath.row]
         
-        cell.nameLabel.text = "\(supervisor.firstName!) \(supervisor.lastName!)"
+        cell.nameLabel.text = supervisor.fullName
         cell.licenseLabel.text = supervisor.license!
         // set avatarImage here
     }
