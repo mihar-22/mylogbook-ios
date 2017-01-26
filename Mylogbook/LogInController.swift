@@ -22,9 +22,9 @@ class LogInController: UIViewController {
     override func viewDidLoad() {
         setupValidator()
         
-        attemptToPrefillForm()
-        
         setupTextFields()
+        
+        attemptToPrefillForm()
     }
     
     // MARK: Validator
@@ -179,10 +179,10 @@ extension LogInController: TextFieldDelegate {
 
 extension LogInController: ValidatorDelegate {
     func validationSuccessful(_ textField: TextField) {
-        if textField.tag == emailTextField.tag { forgotPasswordButton.isEnabled = true }
+        if textField.field.tag == emailTextField.field.tag { forgotPasswordButton.isEnabled = true }
     }
     
     func validationFailed(_ textField: TextField) {
-        if textField.tag == emailTextField.tag { forgotPasswordButton.isEnabled = false }
+        if textField.field.tag == emailTextField.field.tag { forgotPasswordButton.isEnabled = false }
     }
 }
