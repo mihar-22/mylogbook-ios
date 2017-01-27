@@ -91,7 +91,7 @@ extension SupervisorsController: UITableViewDataSource, UITableViewDelegate {
         
         cell.nameLabel.text = supervisor.fullName
         cell.licenseLabel.text = supervisor.license!
-        // set avatarImage here
+        // set gender image here
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

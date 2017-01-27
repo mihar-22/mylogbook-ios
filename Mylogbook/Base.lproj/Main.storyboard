@@ -908,8 +908,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="avatarImage" destination="HpQ-MD-TQN" id="0hl-t8-5Ua"/>
                         <outlet property="firstNameTextField" destination="oop-d8-G60" id="qhh-J1-RTg"/>
+                        <outlet property="genderImage" destination="HpQ-MD-TQN" id="xy9-lp-SGd"/>
                         <outlet property="genderTextField" destination="y4l-CC-GuE" id="emK-ax-nmv"/>
                         <outlet property="lastNameTextField" destination="LMN-CX-Ssq" id="GAw-vX-KoV"/>
                         <outlet property="licenseTextField" destination="wdu-8p-LAl" id="SCr-5j-jeR"/>

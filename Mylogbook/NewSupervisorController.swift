@@ -25,7 +25,6 @@ class NewSupervisorController: UIViewController {
     var lastName: String? { return lastNameTextField.text }
     var license: String? { return licenseTextField.text }
     var gender: String? { return genderTextField.text?.lowercased() }
-    var avatar: Int = 1
     
     let genders = ["Male", "Female"]
     
@@ -33,7 +32,7 @@ class NewSupervisorController: UIViewController {
     
     @IBOutlet weak var navItem: UINavigationItem!
     
-    @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var genderImage: UIImageView!
     
     @IBOutlet weak var firstNameTextField: TextField!
     @IBOutlet weak var lastNameTextField: TextField!
@@ -63,7 +62,7 @@ class NewSupervisorController: UIViewController {
         lastNameTextField.text = editingSupervisor!.lastName
         licenseTextField.text = editingSupervisor!.license
         genderTextField.text = editingSupervisor!.gender!.capitalized
-        // set avatar image here
+        // set gender image here
         
         validator.revalidate()
     }
@@ -112,11 +111,7 @@ class NewSupervisorController: UIViewController {
     // MARK: Networking
     
     func saveSupervisor() {
-        let supervisor = Supervisor(firstName: firstName!,
-                                    lastName: lastName!,
-                                    license: license!,
-                                    gender: gender!,
-                                    avatar: avatar)
+        let supervisor = Supervisor(firstName: firstName!, lastName: lastName!, license: license!, gender: gender!)
         
         let route = ResourceRoute<Supervisor>.store(supervisor)
         
@@ -134,7 +129,6 @@ class NewSupervisorController: UIViewController {
         editingSupervisor!.lastName = lastName!
         editingSupervisor!.license = license!
         editingSupervisor!.gender = gender!
-        editingSupervisor!.avatar = avatar
         
         let route = ResourceRoute<Supervisor>.update(editingSupervisor!)
         
@@ -166,11 +160,11 @@ extension NewSupervisorController: UIPickerViewDelegate, UIPickerViewDataSource 
         toolbar.restyle(.normal)
         toolbar.addDoneButton(target: self, action: #selector(pickerDoneHandler(_:)))
         
-        genderTextField.text = genders[0]
         genderTextField.field.inputView = genderPicker
         genderTextField.field.inputAccessoryView = toolbar
-        
-        // set avatar image here
+
+        genderTextField.text = genders[0]
+        // set gender image here
     }
     
     func pickerDoneHandler(_ sender: UIBarButtonItem) {
@@ -192,7 +186,7 @@ extension NewSupervisorController: UIPickerViewDelegate, UIPickerViewDataSource 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         genderTextField.text = genders[row]
         
-        // set avatar image here
+        // set gender image here
     }
 }
 
