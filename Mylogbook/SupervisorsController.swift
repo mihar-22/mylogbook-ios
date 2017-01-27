@@ -2,7 +2,7 @@
 import UIKit
 import PopupDialog
 
-class SupervisorsController: UIViewController, ResourceViewControllable {
+class SupervisorsController: UIViewController, ResourceCollectionViewable {
     
     var collection = [Supervisor]()
     

@@ -1,9 +1,9 @@
 
 import  UIKit
 
-// MARK: Resource View Controllable
+// MARK: Resource Collection Viewable
 
-protocol ResourceViewControllable: class {
+protocol ResourceCollectionViewable: class {
     associatedtype Model: Resourceable
     
     var collection: [Model] { get set }
@@ -23,7 +23,7 @@ protocol ResourceViewControllable: class {
 
 // MARK: View Controller
 
-extension ResourceViewControllable where Self: UIViewController {
+extension ResourceCollectionViewable where Self: UIViewController {
     
     // MARK: View Lifecycles
     
@@ -62,7 +62,7 @@ extension ResourceViewControllable where Self: UIViewController {
 
 // MARK: Table View - Data Source + Delegate
 
-extension ResourceViewControllable where Self: UITableViewDataSource & UITableViewDelegate {
+extension ResourceCollectionViewable where Self: UITableViewDataSource & UITableViewDelegate {
     func setupTable() {
         collectionTable.dataSource = self
         

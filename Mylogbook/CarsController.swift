@@ -2,7 +2,7 @@
 import UIKit
 import PopupDialog
 
-class CarsController: UIViewController, ResourceViewControllable {
+class CarsController: UIViewController, ResourceCollectionViewable {
     
     var collection = [Car]()
     
