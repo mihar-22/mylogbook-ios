@@ -1,9 +1,9 @@
 
 import UIKit
 
-// MARK: Nibable
+// MARK: Nib View
 
-protocol Nibable: class {
+protocol NibView: class {
     var view: UIView! { get set }
     
     func initNib()
@@ -11,7 +11,7 @@ protocol Nibable: class {
     func loadNib() -> UIView
 }
 
-extension Nibable where Self: UIView {
+extension NibView where Self: UIView {
     func initNib() {
         view = loadNib()
 

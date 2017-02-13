@@ -1,23 +1,13 @@
 
 import UIKit
 
-// MARK: New Car Delegate
+// MARK: Car Controller
 
-protocol NewCarDelegate {
-    func carAdded(_ car: Car)
+class CarController: UIViewController {
     
-    func carUpdated(_ car: Car)
-}
-
-// MARK: New Car Controller
-
-class NewCarController: UIViewController {
+    var car: Car?
     
-    var delegate: NewCarDelegate?
-    
-    var editingCar: Car?
-    
-    var isEditingCar: Bool { return (editingCar != nil) }
+    var isEdit: Bool { return (car != nil) }
     
     let validator = Validator()
     
@@ -62,7 +52,7 @@ class NewCarController: UIViewController {
         
         setupValidator()
         
-        if isEditingCar { setupEditing() }
+        if isEdit { setupEditing() }
     }
     
     // MARK: Editing
@@ -70,10 +60,10 @@ class NewCarController: UIViewController {
     func setupEditing() {
         navItem.title = "Edit Car"
         
-        registrationTextField.text = editingCar!.registration
-        makeTextField.text = editingCar!.make
-        modelTextField.text = editingCar!.model
-        typeTextField.text = editingCar!.type!.capitalized
+        registrationTextField.text = car!.registration
+        makeTextField.text = car!.make
+        modelTextField.text = car!.model
+        typeTextField.text = car!.type!.capitalized
         // set type image here
         
         validator.revalidate()
@@ -88,8 +78,9 @@ class NewCarController: UIViewController {
     @IBAction func didTapSave(_ sender: UIBarButtonItem) {
         view.endEditing(true)
         
-        if !isEditingCar { saveCar() }
-        else { updateCar() }
+        CarStore.add(car, registration: registration!, make: make!, model: model!, type: type!)
+        
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK: Text Field
@@ -119,42 +110,11 @@ class NewCarController: UIViewController {
         
         validator.add(modelTextField, [.required, .alphaNumSpace, .maxLength(max: 50)])
     }
-    
-    // MARK: Networking
-    
-    func saveCar() {
-        let car = Car(registration: registration!, make: make!, model: model!, type: type!)
-        
-        let route = ResourceRoute<Car>.store(car)
-        
-        Session.shared.requestJSON(route) { response in
-            car.id = response.data?["id"] as? Int
-            
-            self.delegate?.carAdded(car)
-            
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
-    
-    func updateCar() {
-        editingCar!.registration = registration!
-        editingCar!.make = make!
-        editingCar!.model = model!
-        editingCar!.type = type!
-        
-        let route = ResourceRoute<Car>.update(editingCar!)
-        
-        Session.shared.requestJSON(route) { response in
-            self.delegate?.carUpdated(self.editingCar!)
-            
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
 }
 
 // MARK: Text Field Delegate
 
-extension NewCarController: TextFieldDelegate {
+extension CarController: TextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return textFieldShouldReturnHandler(textField)
     }
@@ -162,7 +122,7 @@ extension NewCarController: TextFieldDelegate {
 
 // MARK: UI Picker View - Delegate + Data Source
 
-extension NewCarController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension CarController: UIPickerViewDelegate, UIPickerViewDataSource {
     func setupTypePicker() {
         let typePicker = UIPickerView()
         typePicker.delegate = self

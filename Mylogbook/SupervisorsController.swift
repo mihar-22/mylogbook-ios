@@ -1,77 +1,120 @@
 
 import UIKit
+import CoreStore
 import PopupDialog
 
-class SupervisorsController: UIViewController, ResourceCollectionViewable {
+class SupervisorsController: UIViewController {
     
-    var collection = [Supervisor]()
+    var supervisors = Store.shared.stack.monitorList(From(Supervisor.self),
+                                                          Where("deletedAt = nil"),
+                                                          OrderBy(.ascending("firstName")))
     
     // MARK: Outlets
     
-    @IBOutlet weak var collectionTable: UITableView!
+    @IBOutlet weak var supervisorsTable: UITableView!
     
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
-        viewDidLoadHandler()
+        setupTable()
+        
+        supervisors.addObserver(self)
     }
     
+    deinit {
+        supervisors.removeObserver(self)
+    }
+
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let viewController = segue.destination as? NewSupervisorController {
-            viewController.delegate = self
-            
+        if let viewController = segue.destination as? SupervisorController {
             if segue.identifier == "editSupervisorSegue" {
                 if let selectedCell = sender as? SupervisorCell {
-                    let indexPath = collectionTable.indexPath(for: selectedCell)!
+                    let indexPath = supervisorsTable.indexPath(for: selectedCell)!
                     
-                    let supervisor = collection[indexPath.row]
+                    let supervisor = supervisors[indexPath.row]
                     
-                    viewController.editingSupervisor = supervisor
+                    viewController.supervisor = supervisor
                 }
             }
         }
     }
 }
 
-// MARK: Alertable
+// MARK: Alerting
 
-extension SupervisorsController: Alertable {
-    func showSupervisorDeletionPrompt(indexPath: IndexPath) {
+extension SupervisorsController: Alerting {
+    func showDeletionPrompt(index: Int) {
         let title = "Delete Supervisor"
         
         let message = "Are you sure you want to delete this supervisor permanently?"
         
-        let cancelButton = CancelButton(title: "CANCEL") { self.collectionTable.isEditing = false; }
+        let cancelButton = CancelButton(title: "CANCEL") { self.supervisorsTable.isEditing = false; }
         
-        let deleteButton = DestructiveButton(title: "DELETE") { self.deleteModel(indexPath: indexPath) }
+        let deleteButton = DestructiveButton(title: "DELETE") {
+            let supervisor = self.supervisors[index]
+            
+            SupervisorStore.delete(supervisor)
+        }
         
         showAlert(title: title, message: message, buttons: [cancelButton, deleteButton])
     }
 }
 
-// MARK: New Supervisor Delegate
+// MARK: Observers
 
-extension SupervisorsController: NewSupervisorDelegate {
-    func supervisorAdded(_ supervisor: Supervisor) {
-        addToTable(supervisor)
+extension SupervisorsController: ListObserver, ListObjectObserver {
+    func listMonitorWillChange(_ monitor: ListMonitor<Supervisor>) {
+        supervisorsTable.beginUpdates()
     }
     
-    func supervisorUpdated(_ supervisor: Supervisor) {
-        collectionTable.reloadData()
+    func listMonitorDidChange(_ monitor: ListMonitor<Supervisor>) {
+        supervisorsTable.endUpdates()
+    }
+    
+    func listMonitorDidRefetch(_ monitor: ListMonitor<Supervisor>) {
+        supervisorsTable.reloadData()
+    }
+    
+    func listMonitor(_ monitor: ListMonitor<Supervisor>, didInsertObject object: Supervisor, toIndexPath indexPath: IndexPath) {
+        supervisorsTable.insertRows(at: [indexPath], with: .automatic)
+    }
+    
+    func listMonitor(_ monitor: ListMonitor<Supervisor>, didUpdateObject object: Supervisor, atIndexPath indexPath: IndexPath) {
+        guard object.deletedAt == nil else {
+            self.supervisorsTable.deleteRows(at: [indexPath], with: .automatic)
+            
+            return
+        }
+        
+        let cell = supervisorsTable.cellForRow(at: indexPath) as! SupervisorCell
+        
+        configureCell(cell, index: indexPath.row)
+    }
+    
+    func listMonitor(_ monitor: ListMonitor<Supervisor>, didDeleteObject object: Supervisor, fromIndexPath indexPath: IndexPath) {
+        supervisorsTable.deleteRows(at: [indexPath], with: .automatic)
     }
 }
 
 // MARK: Table View - Data Source + Delegate
 
 extension SupervisorsController: UITableViewDataSource, UITableViewDelegate {
+    func setupTable() {
+        supervisorsTable.dataSource = self
+        
+        supervisorsTable.delegate = self
+        
+        supervisorsTable.tableFooterView = UIView()
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return collection.count
+        return supervisors.numberOfObjects()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -81,13 +124,13 @@ extension SupervisorsController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SupervisorCell", for: indexPath) as! SupervisorCell
         
-        configureCell(cell, indexPath: indexPath)
+        configureCell(cell, index: indexPath.row)
         
         return cell
     }
     
-    func configureCell(_ cell: SupervisorCell, indexPath: IndexPath) {
-        let supervisor = collection[indexPath.row]
+    func configureCell(_ cell: SupervisorCell, index: Int) {
+        let supervisor = supervisors[index]
         
         cell.nameLabel.text = supervisor.fullName
         cell.licenseLabel.text = supervisor.license!
@@ -96,7 +139,7 @@ extension SupervisorsController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (_, indexPath) in
-            self.showSupervisorDeletionPrompt(indexPath: indexPath)
+            self.showDeletionPrompt(index: indexPath.row)
         }
         
         return [delete]

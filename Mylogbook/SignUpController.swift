@@ -103,9 +103,9 @@ class SignUpController: UIViewController {
     }
 }
 
-// MARK: Alertable
+// MARK: Alerting
 
-extension SignUpController: Alertable {
+extension SignUpController: Alerting {
     func showEmailTakenAlert() {
         let title = "Email Taken"
         

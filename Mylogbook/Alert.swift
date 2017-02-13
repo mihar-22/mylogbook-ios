@@ -1,13 +1,13 @@
 
 import PopupDialog
 
-// MARK: Alertable
+// MARK: Alerting
 
-protocol Alertable {
+protocol Alerting {
     func showAlert(title: String, message: String, buttons: [PopupDialogButton], buttonAlignment: UILayoutConstraintAxis)
 }
 
-extension Alertable where Self: UIViewController {
+extension Alerting where Self: UIViewController {
     func showAlert(title: String, message: String, buttons: [PopupDialogButton], buttonAlignment: UILayoutConstraintAxis = .horizontal) {
         let popup = PopupDialog(title: title, message: message)
         

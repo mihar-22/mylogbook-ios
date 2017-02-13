@@ -1,23 +1,13 @@
 
 import UIKit
 
-// MARK: New Supervisor Delegate
+// MARK: Supervisor Controller
 
-protocol NewSupervisorDelegate {
-    func supervisorAdded(_ supervisor: Supervisor)
+class SupervisorController: UIViewController {
     
-    func supervisorUpdated(_ supervisor: Supervisor)
-}
-
-// MARK: New supervisor Controller
-
-class NewSupervisorController: UIViewController {
+    var supervisor: Supervisor?
     
-    var delegate: NewSupervisorDelegate?
-    
-    var editingSupervisor: Supervisor?
-    
-    var isEditingSupervisor: Bool { return (editingSupervisor != nil) }
+    var isEdit: Bool { return (supervisor != nil) }
     
     let validator = Validator()
 
@@ -50,7 +40,7 @@ class NewSupervisorController: UIViewController {
         
         setupValidator()
         
-        if isEditingSupervisor { setupEditing() }
+        if isEdit { setupEditing() }
     }
     
     // MARK: Editing
@@ -58,10 +48,10 @@ class NewSupervisorController: UIViewController {
     func setupEditing() {
         navItem.title = "Edit Supervisor"
         
-        firstNameTextField.text = editingSupervisor!.firstName
-        lastNameTextField.text = editingSupervisor!.lastName
-        licenseTextField.text = editingSupervisor!.license
-        genderTextField.text = editingSupervisor!.gender!.capitalized
+        firstNameTextField.text = supervisor!.firstName
+        lastNameTextField.text = supervisor!.lastName
+        licenseTextField.text = supervisor!.license
+        genderTextField.text = supervisor!.gender!.capitalized
         // set gender image here
         
         validator.revalidate()
@@ -76,8 +66,9 @@ class NewSupervisorController: UIViewController {
     @IBAction func didTapSave(_ sender: UIBarButtonItem) {
         view.endEditing(true)
         
-        if !isEditingSupervisor { saveSupervisor() }
-        else { updateSupervisor() }
+        SupervisorStore.add(supervisor, license: license!, firstName: firstName!, lastName: lastName!, gender: gender!)
+        
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK: Text Field
@@ -107,42 +98,11 @@ class NewSupervisorController: UIViewController {
         
         validator.add(licenseTextField, [.required, .alphaNum, .maxLength(max: 10)])
     }
-    
-    // MARK: Networking
-    
-    func saveSupervisor() {
-        let supervisor = Supervisor(firstName: firstName!, lastName: lastName!, license: license!, gender: gender!)
-        
-        let route = ResourceRoute<Supervisor>.store(supervisor)
-        
-        Session.shared.requestJSON(route) { response in
-            supervisor.id = response.data?["id"] as? Int
-            
-            self.delegate?.supervisorAdded(supervisor)
-            
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
-    
-    func updateSupervisor() {
-        editingSupervisor!.firstName = firstName!
-        editingSupervisor!.lastName = lastName!
-        editingSupervisor!.license = license!
-        editingSupervisor!.gender = gender!
-        
-        let route = ResourceRoute<Supervisor>.update(editingSupervisor!)
-        
-        Session.shared.requestJSON(route) { response in
-            self.delegate?.supervisorUpdated(self.editingSupervisor!)
-            
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
 }
 
 // MARK: Text Field Delegate
 
-extension NewSupervisorController: TextFieldDelegate {
+extension SupervisorController: TextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return textFieldShouldReturnHandler(textField)
     }
@@ -150,7 +110,7 @@ extension NewSupervisorController: TextFieldDelegate {
 
 // MARK: UI Picker View - Delegate + Data Source
 
-extension NewSupervisorController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension SupervisorController: UIPickerViewDelegate, UIPickerViewDataSource {
     func setupGenderPicker() {
         let genderPicker = UIPickerView()
         genderPicker.delegate = self

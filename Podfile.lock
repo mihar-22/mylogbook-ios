@@ -1,28 +1,31 @@
 PODS:
-  - Alamofire (4.2.0)
+  - Alamofire (4.3.0)
   - AlamofireObjectMapper (4.0.1):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 2.0)
+  - CoreStore (3.0.0)
   - JVFloatLabeledTextField (1.1.1)
   - KeychainAccess (3.0.1)
   - ObjectMapper (2.2.2)
-  - PopupDialog (0.5.0)
+  - PopupDialog (0.5.3)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AlamofireObjectMapper (~> 4.0)
+  - CoreStore
   - JVFloatLabeledTextField
   - KeychainAccess
   - PopupDialog (~> 0.5)
 
 SPEC CHECKSUMS:
-  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   AlamofireObjectMapper: 842d2eed43a4d0593ff0110d54ac86a170c4519c
+  CoreStore: 29b736b56e643dcb7d6544014eccc5b260bd0e07
   JVFloatLabeledTextField: 0e5524b097f102036214dd8279edc8ecf08b5e18
   KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
   ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
-  PopupDialog: 9890441b81105b9076757af2afe2b037be682f3e
+  PopupDialog: 533dd564f8781633375505b9fbd406f8f146ccc9
 
-PODFILE CHECKSUM: a2c805e0074443069fce5d419c8f574ae5002f24
+PODFILE CHECKSUM: ea74d5863d645a08cd12f3bfbbcf2f57ba0df107
 
 COCOAPODS: 1.1.1

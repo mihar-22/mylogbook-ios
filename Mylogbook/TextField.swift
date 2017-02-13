@@ -4,7 +4,7 @@ import UIKit
 // MARK: Text Field
 
 @IBDesignable
-class TextField: UIView, Nibable {
+class TextField: UIView, NibView {
 
     var view: UIView!
     

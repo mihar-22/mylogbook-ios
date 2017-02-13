@@ -1,17 +1,9 @@
 
 import Foundation
 
-// MARK: Validatable
-
-protocol Validatable {
-    var error: String { get }
-    
-    func validate(_ value: String) -> Bool
-}
-
 // MARK: Validation
 
-enum Validation: Validatable {
+enum Validation {
     case required
     case minLength(min: Int)
     case maxLength(max: Int)
@@ -21,6 +13,8 @@ enum Validation: Validatable {
     case alphaSpace
     case alphaNum
     case alphaNumSpace
+    
+    // MARK: Error
     
     var error: String {
         switch self {
@@ -45,6 +39,8 @@ enum Validation: Validatable {
         }
     }
     
+    // MARK: Validate
+    
     func validate(_ value: String) -> Bool {
         switch self {
         case .required:
@@ -67,6 +63,8 @@ enum Validation: Validatable {
             return regexTest(value, "^[A-Za-z0-9\\s]+$")
         }
     }
+    
+    // MARK: Regex Test
     
     private func regexTest(_ value: String, _ regex: String) -> Bool {
         let test = NSPredicate(format: "SELF MATCHES %@", regex)

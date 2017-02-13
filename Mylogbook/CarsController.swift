@@ -1,93 +1,137 @@
 
 import UIKit
+import CoreStore
 import PopupDialog
 
-class CarsController: UIViewController, ResourceCollectionViewable {
+class CarsController: UIViewController {
     
-    var collection = [Car]()
+    var cars = Store.shared.stack.monitorList(From(Car.self),
+                                                   Where("deletedAt = nil"),
+                                                   OrderBy(.ascending("make")))
     
     // MARK: Outlets
     
-    @IBOutlet weak var collectionTable: UITableView!
+    @IBOutlet weak var carsTable: UITableView!
     
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
-        viewDidLoadHandler()
+        setupTable()
+        
+        cars.addObserver(self)
+    }
+    
+    deinit {
+        cars.removeObserver(self)
     }
     
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let viewController = segue.destination as? NewCarController {
-            viewController.delegate = self
-            
+        if let viewController = segue.destination as? CarController {            
             if segue.identifier == "editCarSegue" {
                 if let selectedCell = sender as? CarCell {
-                    let indexPath = collectionTable.indexPath(for: selectedCell)!
+                    let indexPath = carsTable.indexPath(for: selectedCell)!
                     
-                    let car = collection[indexPath.row]
+                    let car = cars[indexPath.row]
                     
-                    viewController.editingCar = car
+                    
+                    viewController.car = car
                 }
             }
         }
     }
 }
 
-// MARK: Alertable
+// MARK: Alerting
 
-extension CarsController: Alertable {
-    func showCarDeletionPrompt(indexPath: IndexPath) {
+extension CarsController: Alerting {
+    func showDeletionPrompt(index: Int) {
         let title = "Delete Car"
         
         let message = "Are you sure you want to delete this car permanently?"
         
-        let cancelButton = CancelButton(title: "CANCEL") { self.collectionTable.isEditing = false; }
+        let cancelButton = CancelButton(title: "CANCEL") { self.carsTable.isEditing = false; }
         
-        let deleteButton = DestructiveButton(title: "DELETE") { self.deleteModel(indexPath: indexPath) }
+        let deleteButton = DestructiveButton(title: "DELETE") {
+            let car = self.cars[index]
+            
+            CarStore.delete(car)
+        }
             
         showAlert(title: title, message: message, buttons: [cancelButton, deleteButton])
     }
 }
 
-// MARK: New Car Delegate
+// MARK: Observers
 
-extension CarsController: NewCarDelegate {
-    func carAdded(_ car: Car) {
-        addToTable(car)
+extension CarsController: ListObserver, ListObjectObserver {
+    func listMonitorWillChange(_ monitor: ListMonitor<Car>) {
+        carsTable.beginUpdates()
     }
     
-    func carUpdated(_ car: Car) {
-        collectionTable.reloadData()
+    func listMonitorDidChange(_ monitor: ListMonitor<Car>) {
+        carsTable.endUpdates()
+    }
+    
+    func listMonitorDidRefetch(_ monitor: ListMonitor<Car>) {
+        carsTable.reloadData()
+    }
+    
+    func listMonitor(_ monitor: ListMonitor<Car>, didInsertObject object: Car, toIndexPath indexPath: IndexPath) {
+        carsTable.insertRows(at: [indexPath], with: .automatic)
+    }
+    
+    func listMonitor(_ monitor: ListMonitor<Car>, didUpdateObject object: Car, atIndexPath indexPath: IndexPath) {
+        guard object.deletedAt == nil else {
+            self.carsTable.deleteRows(at: [indexPath], with: .automatic)
+            
+            return
+        }
+        
+        let cell = carsTable.cellForRow(at: indexPath) as! CarCell
+        
+        configureCell(cell, index: indexPath.row)
+    }
+    
+    func listMonitor(_ monitor: ListMonitor<Car>, didDeleteObject object: Car, fromIndexPath indexPath: IndexPath) {
+        carsTable.deleteRows(at: [indexPath], with: .automatic)
     }
 }
 
 // MARK: Table View - Data Source + Delegate
 
 extension CarsController: UITableViewDataSource, UITableViewDelegate {
+    func setupTable() {
+        carsTable.dataSource = self
+        
+        carsTable.delegate = self
+        
+        carsTable.tableFooterView = UIView()
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return collection.count
+        return cars.numberOfObjects()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        collectionTable.deselectRow(at: indexPath, animated: true)
+        carsTable.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CarCell", for: indexPath) as! CarCell
         
-        configureCell(cell, indexPath: indexPath)
+        configureCell(cell, index: indexPath.row)
         
         return cell
     }
     
-    func configureCell(_ cell: CarCell, indexPath: IndexPath) {
-        let car = collection[indexPath.row]
+    func configureCell(_ cell: CarCell, index: Int) {
+        let car = cars[index]
         
         cell.nameLabel.text = car.name
         cell.registrationLabel.text = car.registration!
@@ -96,7 +140,7 @@ extension CarsController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (_, indexPath) in
-            self.showCarDeletionPrompt(indexPath: indexPath)
+            self.showDeletionPrompt(index: indexPath.row)
         }
         
         return [delete]

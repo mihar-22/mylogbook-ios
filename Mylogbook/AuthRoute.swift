@@ -10,9 +10,9 @@ enum AuthRoute {
     case forgot(email: String)
 }
 
-// MARK: Routable
+// MARK: Routing
 
-extension AuthRoute: Routable {
+extension AuthRoute: Routing {
     static let resource = "auth"
     
     var path: String {

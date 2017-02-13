@@ -1,9 +1,9 @@
 
 import Alamofire
 
-// MARK: Routable
+// MARK: Routing
 
-protocol Routable: URLConvertible, URLRequestConvertible {
+protocol Routing: URLConvertible, URLRequestConvertible {
     static var resource: String { get }
     var path: String { get }
     var method: HTTPMethod { get }
@@ -12,7 +12,7 @@ protocol Routable: URLConvertible, URLRequestConvertible {
 
 // MARK: URL Convertible
 
-extension Routable {
+extension Routing {
     func asURL() throws -> URL {
         let endPoint = "\(Env.MLB_API_BASE)/\(Self.resource)/\(self.path)"
         
@@ -22,7 +22,7 @@ extension Routable {
 
 // MARK: URL Request Convertible
 
-extension Routable {
+extension Routing {
     func asURLRequest() throws -> URLRequest {
         let url = try asURL()
         

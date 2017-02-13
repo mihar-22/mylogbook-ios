@@ -358,7 +358,7 @@
                                         <rect key="frame" x="0.0" y="28" width="351" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="leu-hi-DBM" id="6sY-jm-GQF">
-                                            <rect key="frame" x="0.0" y="0.0" width="351" height="73"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="351" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0nh-wf-7gn">
@@ -413,17 +413,17 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Cars" id="MiX-3f-M2Q"/>
                     <connections>
-                        <outlet property="collectionTable" destination="8Fs-E9-pEt" id="Ord-Vp-T5F"/>
+                        <outlet property="carsTable" destination="8Fs-E9-pEt" id="JbT-Lt-aXV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="haZ-HO-l1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="780" y="1327"/>
         </scene>
-        <!--New Car-->
+        <!--Car-->
         <scene sceneID="hMq-mb-RSI">
             <objects>
-                <viewController id="Fmh-zK-lGI" userLabel="New Car" customClass="NewCarController" customModule="Mylogbook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fmh-zK-lGI" userLabel="Car" customClass="CarController" customModule="Mylogbook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fcl-m3-5tZ"/>
                         <viewControllerLayoutGuide type="bottom" id="cTA-ac-Leg"/>
@@ -581,7 +581,7 @@
                                         <rect key="frame" x="0.0" y="28" width="351" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gdY-Jk-fY9" id="uaf-MY-ag0">
-                                            <rect key="frame" x="0.0" y="0.0" width="351" height="73"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="351" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zUh-1o-44U">
@@ -636,7 +636,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Supervisors" id="NB8-8n-qeY"/>
                     <connections>
-                        <outlet property="collectionTable" destination="9HK-4f-9xi" id="zeN-9Z-2Oz"/>
+                        <outlet property="supervisorsTable" destination="9HK-4f-9xi" id="2sc-Dv-PPu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQy-DQ-U7I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -796,10 +796,10 @@
             </objects>
             <point key="canvasLocation" x="1576.8" y="2791.7541229385311"/>
         </scene>
-        <!--New Supervisor-->
+        <!--Supervisor-->
         <scene sceneID="H3B-8C-iPs">
             <objects>
-                <viewController id="Q4b-pn-jV9" userLabel="New Supervisor" customClass="NewSupervisorController" customModule="Mylogbook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Q4b-pn-jV9" userLabel="Supervisor" customClass="SupervisorController" customModule="Mylogbook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WKh-P3-Vbk"/>
                         <viewControllerLayoutGuide type="bottom" id="weM-kz-Hsf"/>
@@ -942,8 +942,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Hb2-1e-Hpd"/>
-        <segue reference="hh4-YO-80O"/>
+        <segue reference="rqh-BI-nv3"/>
         <segue reference="PrZ-48-vgD"/>
+        <segue reference="hh4-YO-80O"/>
     </inferredMetricsTieBreakers>
 </document>

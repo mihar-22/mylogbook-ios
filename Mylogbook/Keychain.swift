@@ -8,17 +8,19 @@ typealias AccessKeychain = KeychainAccess.Keychain
 class Keychain {
     static let shared: Keychain = Keychain()
     
-    private var keychain: AccessKeychain
-    
-    private init() {
+    private var keychain: AccessKeychain = {
         let urlString = Env.MLB_API_BASE
         
         let url = URL(string: urlString)!
         
         let protocolType: ProtocolType = urlString.components(separatedBy: ":")[0] == "http" ? .http : .https
         
-        keychain = AccessKeychain(server: url, protocolType: protocolType)
-    }
+        return AccessKeychain(server: url, protocolType: protocolType)
+    }()
+    
+    // MARK: Initializers
+    
+    private init() {}
     
     // MARK: API Token
     

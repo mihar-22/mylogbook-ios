@@ -131,9 +131,9 @@ class LogInController: UIViewController {
     }
 }
 
-// MARK: Alertable
+// MARK: Alerting
 
-extension LogInController: Alertable {
+extension LogInController: Alerting {
     func showInvalidCredentialsAlert() {
         let title = "Log In Failed"
         

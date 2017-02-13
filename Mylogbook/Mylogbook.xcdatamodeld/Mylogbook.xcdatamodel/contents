@@ -1,4 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C67" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Car" representedClassName=".Car" syncable="YES">
+        <attribute name="deletedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="make" attributeType="String" maxValueString="50" syncable="YES"/>
+        <attribute name="model" attributeType="String" maxValueString="50" syncable="YES"/>
+        <attribute name="registration" attributeType="String" maxValueString="10" syncable="YES"/>
+        <attribute name="type" attributeType="String" maxValueString="50" syncable="YES"/>
+        <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="trips" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Trip" inverseName="car" inverseEntity="Trip" syncable="YES"/>
+    </entity>
+    <entity name="Supervisor" representedClassName=".Supervisor" syncable="YES">
+        <attribute name="deletedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="firstName" attributeType="String" maxValueString="50" syncable="YES"/>
+        <attribute name="gender" attributeType="String" maxValueString="6" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lastName" attributeType="String" maxValueString="50" syncable="YES"/>
+        <attribute name="license" attributeType="String" maxValueString="20" syncable="YES"/>
+        <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="trips" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Trip" inverseName="supervisor" inverseEntity="Trip" syncable="YES"/>
+    </entity>
+    <entity name="Trip" representedClassName=".Trip" syncable="YES">
+        <attribute name="clear" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="distance" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="endedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="freeway" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="gravel" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="heavy" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="innerCity" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="light" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="localStreet" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="mainRoad" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="moderate" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="odometer" attributeType="Integer 64" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="rain" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="ruralHighway" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="startedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="thunder" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="car" maxCount="1" deletionRule="Deny" destinationEntity="Car" inverseName="trips" inverseEntity="Car" syncable="YES"/>
+        <relationship name="supervisor" maxCount="1" deletionRule="Deny" destinationEntity="Supervisor" inverseName="trips" inverseEntity="Supervisor" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Car" positionX="-162" positionY="174" width="128" height="165"/>
+        <element name="Supervisor" positionX="-162" positionY="345" width="128" height="165"/>
+        <element name="Trip" positionX="43" positionY="63" width="128" height="330"/>
+    </elements>
 </model>

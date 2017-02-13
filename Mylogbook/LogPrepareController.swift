@@ -34,8 +34,6 @@ class LogPrepareController: UIViewController {
     override func viewDidLoad() {
         navigationController!.navigationBar.restyle(.transparent)
         
-        getCollections()
-        
         setupPickers()
     }
     
@@ -68,61 +66,31 @@ class LogPrepareController: UIViewController {
     
     // MARK: Cards
     
-    func fillCard(car: Car) {
+    func configureCard(car: Car) {
         carNameLabel.text = car.name
         carRegistrationLabel.text = car.registration
         // set type image here
     }
     
-    func fillCard(supervisor: Supervisor) {
+    func configureCard(supervisor: Supervisor) {
         supervisorNameLabel.text = supervisor.fullName
         supervisorLicenseLabel.text = supervisor.license
         // set gender image here
     }
-    
-    // MARK: Networking
-    
-    func getCollections() {
-        getCollection() { (collection: [Car]) in
-            self.cars.append(contentsOf: collection)
-            
-            self.fillCard(car: self.cars[0])
-            
-            self.carPicker.reloadAllComponents()
-        }
-        
-        getCollection() { (collection: [Supervisor]) in
-            self.supervisors.append(contentsOf: collection)
-            
-            self.fillCard(supervisor: self.supervisors[0])
-            
-            self.supervisorPicker.reloadAllComponents()
-        }
-    }
-    
-    func getCollection<Model: Resourceable>(completion: @escaping ([Model]) -> Void) {
-        let route = ResourceRoute<Model>.index
-        
-        Session.shared.requestCollection(route) { (response: ApiResponse<[Model]>) in
-            guard let collection = response.data else { return }
-            
-            completion(collection)
-        }
-    }
 }
 
-// MARK: UI Picker View - Data Source + Delegate
+// MARK: Picker View - Data Source + Delegate
 
 extension LogPrepareController: UIPickerViewDataSource, UIPickerViewDelegate {
     func setupPickers() {
-        setup(picker: carPicker, tag: 0)
+        setup(carPicker, tag: 0)
 
-        setup(picker: supervisorPicker, tag: 1)
+        setup(supervisorPicker, tag: 1)
         
         setupPickerToolbar()
     }
     
-    func setup(picker: UIPickerView, tag: Int) {
+    func setup(_ picker: UIPickerView, tag: Int) {
         let height: CGFloat = 180
         
         picker.backgroundColor = UIColor.white
@@ -187,6 +155,6 @@ extension LogPrepareController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        (pickerView.tag == carPicker.tag) ? fillCard(car: cars[row]) : fillCard(supervisor: supervisors[row])
+        (pickerView.tag == carPicker.tag) ? configureCard(car: cars[row]) : configureCard(supervisor: supervisors[row])
     }
 }

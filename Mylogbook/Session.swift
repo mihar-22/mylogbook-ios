@@ -21,33 +21,47 @@ struct ApiResponse<Data> {
 class Session {
     static let shared: Session = Session()
     
-    private let manager: SessionManager
+    private let queue = DispatchQueue(label: "com.mylogbook.response-queue",
+                                      qos: .utility,
+                                      attributes: [.concurrent])
     
-    private init() {
-        manager = SessionManager()
+    let manager: SessionManager = {
+        let manager = SessionManager()
         
         manager.adapter = ApiTokenAdapter()
+        
+        return manager
+    }()
+    
+    // MARK: Initializers
+    
+    private init() {}
+    
+    // MARK: Requests
+    
+    func requestJSON(_ route: Routing, completion: @escaping (ApiResponse<Data>) -> Void) {
+        let serializer = DataRequest.jsonResponseSerializer()
+        
+        manager.request(route).response(queue: queue, responseSerializer: serializer) { response in
+            guard let apiResponse = self.unpackJSONResponse(response) else { return }
+            
+            completion(apiResponse)
+        }
     }
     
-    func requestJSON(_ route: Routable, completion: @escaping (ApiResponse<Data>) -> Void) {
+    func requestCollection<Model: Mappable>(_ route: Routing,
+                                            completion: @escaping (ApiResponse<[Model]>) -> Void) {
         
-        manager.request(route).responseJSON { response in
-            guard let apiResponse = self.unpackJSONResponse(response) else { return }
+        manager.request(route)
+            .responseArray(queue: queue, keyPath: "data", context: nil) { (response: DataResponse<[Model]>) in
+            guard let apiResponse: ApiResponse<[Model]> = self.unpackArrayResponse(response) else { return }
             
             completion(apiResponse)
         }
         
     }
     
-    func requestCollection<Model: Mappable>(_ route: Routable, completion: @escaping (ApiResponse<[Model]>) -> Void) {
-        
-        manager.request(route).responseArray(keyPath: "data") { (response: DataResponse<[Model]>) in
-            guard let apiResponse: ApiResponse<[Model]> = self.unpackArrayResponse(response) else { return }
-
-            completion(apiResponse)
-        }
-        
-    }
+    // MARK: Unpackers
     
     private func unpackJSONResponse(_ response: DataResponse<Any>) -> ApiResponse<Data>? {
         guard let json = response.result.value as? [String: Any] else { return nil }

@@ -7,4 +7,5 @@ target 'Mylogbook' do
 	pod 'KeychainAccess'
 	pod 'PopupDialog', '~> 0.5'
 	pod 'AlamofireObjectMapper', '~> 4.0'
+	pod 'CoreStore'
 end
