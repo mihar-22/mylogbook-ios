@@ -5,9 +5,9 @@ import PopupDialog
 
 class SupervisorsController: UIViewController {
     
-    var supervisors = Store.shared.stack.monitorList(From(Supervisor.self),
-                                                          Where("deletedAt = nil"),
-                                                          OrderBy(.ascending("firstName")))
+    var supervisors = Store.shared.stack.monitorList(From<Supervisor>(),
+                                                     Where("deletedAt = nil"),
+                                                     OrderBy(.ascending("firstName")))
     
     // MARK: Outlets
     
@@ -45,7 +45,7 @@ class SupervisorsController: UIViewController {
 // MARK: Alerting
 
 extension SupervisorsController: Alerting {
-    func showDeletionPrompt(index: Int) {
+    func showDeletionPrompt(for index: Int) {
         let title = "Delete Supervisor"
         
         let message = "Are you sure you want to delete this supervisor permanently?"
@@ -90,7 +90,7 @@ extension SupervisorsController: ListObserver, ListObjectObserver {
         
         let cell = supervisorsTable.cellForRow(at: indexPath) as! SupervisorCell
         
-        configureCell(cell, index: indexPath.row)
+        configure(cell, with: object)
     }
     
     func listMonitor(_ monitor: ListMonitor<Supervisor>, didDeleteObject object: Supervisor, fromIndexPath indexPath: IndexPath) {
@@ -124,14 +124,12 @@ extension SupervisorsController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SupervisorCell", for: indexPath) as! SupervisorCell
         
-        configureCell(cell, index: indexPath.row)
+        configure(cell, with: supervisors[indexPath.row])
         
         return cell
     }
     
-    func configureCell(_ cell: SupervisorCell, index: Int) {
-        let supervisor = supervisors[index]
-        
+    func configure(_ cell: SupervisorCell, with supervisor: Supervisor) {
         cell.nameLabel.text = supervisor.fullName
         cell.licenseLabel.text = supervisor.license!
         // set gender image here
@@ -139,7 +137,7 @@ extension SupervisorsController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (_, indexPath) in
-            self.showDeletionPrompt(index: indexPath.row)
+            self.showDeletionPrompt(for: indexPath.row)
         }
         
         return [delete]

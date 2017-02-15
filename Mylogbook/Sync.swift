@@ -2,10 +2,24 @@
 import CoreStore
 import Dispatch
 import Foundation
+import SwiftyJSON
+
+// MARK: Syncable
+
+protocol Syncable {
+    var id: Int { get set }
+    
+    var updatedAt: Date? { get set }
+    var deletedAt: Date? { get set }
+}
 
 // MARK: Sync
 
-class Sync<Model: NSManagedObject> where Model: Resourceable, Model: Syncable, Model: Equatable {
+class Sync<Model: NSManagedObject> where Model: Resourceable,
+                                         Model: Syncable,
+                                         Model: Importable,
+                                         Model.UniqueIDType: Hashable,
+                                         Model.ImportSource == JSON {
     
     private var queue = DispatchQueue(label: "com.mylogbook.sync",
                                       qos: .background,
@@ -13,9 +27,7 @@ class Sync<Model: NSManagedObject> where Model: Resourceable, Model: Syncable, M
     
     private var lastSyncedAt: Date
     
-    private var localModels = [Int: Model]()
-    
-    private var networkModels = [Int: Model]()
+    private var models = [Model]()
     
     // MARK: Initializers
     
@@ -26,165 +38,89 @@ class Sync<Model: NSManagedObject> where Model: Resourceable, Model: Syncable, M
     // MARK: Sync
     
     func sync(completion: @escaping () -> Void) {
-        let group = DispatchGroup()
-        
-        // Local Models
-        
-        group.enter()
-        
         DispatchQueue.main.async {
-            let localModels = Store.shared.stack.fetchAll(From(Model.self))!
+            self.models = Store.shared.stack.fetchAll(From(Model.self))!
             
-            var _id = -1
+            self.queue.async {
+                let group = DispatchGroup()
+                
+                let route = ResourceRoute<Model>.sync(since: self.lastSyncedAt)
+                
+                group.enter()
+                
+                SyncStore<Model>.import(from: route) { _ in  group.leave() }
             
-            localModels.forEach {
-                if $0.id == 0 {
-                    self.localModels[_id] = $0
-                    
-                    _id = _id - 1
-                } else { self.localModels[$0.id] = $0 }
-            }
-            
-            group.leave()
-        }
-        
-        // Network Models
-        
-        group.enter()
-        
-        let route = ResourceRoute<Model>.sync(since: lastSyncedAt)
-        
-        Session.shared.requestCollection(route) { (response: ApiResponse<[Model]>) in
-            let networkModels = response.data
-            
-            networkModels?.forEach { self.networkModels[$0.id] = $0 }
-            
-            group.leave()
-        }
-        
-        // Sync Transactions
-        
-        group.notify(queue: queue) {
-            self.insertions() {
-                self.updates {
-                    self.deletions {
-                        completion()
-                    }
-                }
+                group.enter()
+                
+                self.push { group.leave() }
+                
+                group.notify(queue: self.queue) { completion() }
             }
         }
     }
     
-    // MARK: Insertions
+    // MARK: Push
     
-    private func insertions(completion: @escaping () -> Void) {
+    private func push(completion: @escaping () -> Void) {
         let group = DispatchGroup()
         
-        // MARK: Push
+        group.enter()
         
-        let pushInserts = localModels.filter({ $0.key < 0 })
-                                     .map({ $0.value })
+        pushInsertions { group.leave() }
         
-        if pushInserts.count > 0 {
-            for model in pushInserts {
-                let route = ResourceRoute<Model>.store(model)
-                
-                group.enter()
-                
-                Session.shared.requestJSON(route) { response in
-                    guard let id = response.data?["id"] as? Int else { return }
-                    
-                    SyncStore.set(model, id: id) { group.leave() }
-                }
-            }
+        group.enter()
+        
+        pushUpdates { group.leave() }
+        
+        group.notify(queue: queue) {
+            self.pushDeletions { completion() }
         }
+    }
+    
+    private func pushInsertions(completion: @escaping () -> Void) {
+        let group = DispatchGroup()
         
-        // MARK: Pull
-        
-        let pullInserts = networkModels.filter({ $0.value.createdAt! > lastSyncedAt })
-                                       .filter({ localModels[$0.key] == nil })
-                                       .map({ $0.value })
-        
-        if pullInserts.count > 0 {
+        for model in models.filter({ $0.id == 0 }) {
+            let route = ResourceRoute<Model>.store(model)
+            
             group.enter()
             
-            SyncStore.add(fromNetwork: pullInserts) { group.leave() }
+            Session.shared.requestJSON(route) { response in
+                guard let id = response.data?["id"].int else { return }
+                
+                SyncStore<Model>.set(model, id: id) { group.leave() }
+            }
         }
         
         group.notify(queue: queue) { completion() }
     }
     
-    // MARK: Updates
-    
-    private func updates(completion: @escaping () -> Void) {
+    private func pushUpdates(completion: @escaping() -> Void) {
         let group = DispatchGroup()
-        
-        func push(_ model: Model) {
+
+        for model in models.filter({ $0.updatedAt! > lastSyncedAt }) {
             let route = ResourceRoute<Model>.update(model)
-                
+            
             group.enter()
             
             Session.shared.requestJSON(route) { _ in group.leave() }
         }
         
-        func pull(_ localModel: Model, _ networkModel: Model) {
-            group.enter()
-            
-            SyncStore.update(localModel, networkModel) { group.leave() }
-        }
-        
-        for (id, localModel) in localModels {
-            if let networkModel = networkModels[id] {
-                
-                if localModel == networkModel {
-                    continue
-                } else if localModel.updatedAt! > networkModel.updatedAt! {
-                    push(localModel)
-                } else {
-                    pull(localModel, networkModel)
-                }
-                
-            } else if localModel.updatedAt! > lastSyncedAt {
-                push(localModel)
-            }
-        }
-        
         group.notify(queue: queue) { completion() }
     }
     
-    // MARK: Deletions
-    
-    private func deletions(completion: @escaping () -> Void) {
+    private func pushDeletions(completion: @escaping() -> Void) {
         let group = DispatchGroup()
         
-        // MARK: Push
+        let deletes = models.filter({ $0.deletedAt != nil })
+                            .filter({ $0.deletedAt! > lastSyncedAt })
         
-        let pushDeletes = localModels.filter({ $0.value.deletedAt != nil })
-                                     .filter({ $0.value.deletedAt! > lastSyncedAt })
-                                     .filter({ networkModels[$0.key]?.deletedAt == nil })
-                                     .map({ $0.value })
-        
-        if pushDeletes.count > 0 {
-            for model in pushDeletes {
-                let route = ResourceRoute<Model>.destroy(model)
-                
-                group.enter()
-                
-                Session.shared.requestJSON(route) { _ in group.leave() }
-            }
-        }
-        
-        // MARK: Pull
-        
-        let pullDeletes = networkModels.filter { $0.value.deletedAt != nil }
-                                       .filter({ $0.value.deletedAt! > lastSyncedAt })
-                                       .filter({ localModels[$0.key]?.deletedAt == nil })
-                                       .map({ localModels[$0.key]! })
-        
-        if pullDeletes.count > 0 {
+        for model in deletes {
+            let route = ResourceRoute<Model>.destroy(model)
+            
             group.enter()
             
-            SyncStore.delete(pullDeletes) { group.leave() }
+            Session.shared.requestJSON(route) { _ in group.leave() }
         }
         
         group.notify(queue: queue) { completion() }

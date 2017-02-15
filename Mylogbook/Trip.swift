@@ -1,111 +1,94 @@
 
 import CoreStore
-import ObjectMapper
+import SwiftyJSON
 
 // MARK: Trip
 
-class Trip: NSManagedObject, Resourceable, Syncable {
+class Trip: NSManagedObject {
+    var uniqueIDValue: Int {
+        get { return self.id }
+        
+        set(id) { self.id = id }
+    }    
+}
+
+// MARK: Importable
+
+extension Trip: Importable {
+    typealias ImportSource = JSON
+    
+    static let uniqueIDKeyPath = "id"
+    
+    func update(from source: JSON, in transaction: BaseDataTransaction) throws {
+        let carId = source["car_id"].int!
+        
+        car = transaction.fetchOne(From(Car.self),
+                                   Where("id = \(carId)"))
+        
+        let supervisorId = source["supervisor_id"].int!
+        
+        supervisor = transaction.fetchOne(From(Supervisor.self),
+                                          Where("id = \(supervisorId)"))
+        
+        startedAt = source["started_at"].string?.dateFromISO8601
+        endedAt = source["ended_at"].string?.dateFromISO8601
+        odometer = source["odometer"].int!
+        distance = source["distance"].double!
+        
+        let weather = source["weather"]
+        
+        clear = weather["clear"].bool!
+        rain = weather["rain"].bool!
+        thunder = weather["thunder"].bool!
+        
+        let traffic = source["traffic"]
+        
+        light = traffic["light"].bool!
+        moderate = traffic["moderate"].bool!
+        heavy = traffic["heavy"].bool!
+
+        let roads = source["roads"]
+        
+        localStreet = roads["local_street"].bool!
+        mainRoad = roads["main_road"].bool!
+        innerCity = roads["inner_city"].bool!
+        freeway = roads["freeway"].bool!
+        ruralHighway = roads["rural_highway"].bool!
+        gravel = roads["gravel"].bool!
+    }
+}
+
+// MARK: Resourceable
+
+extension Trip: Resourceable {
     static let resource = "trips"
     
-    var createdAt: Date? { get { return startedAt } set {} }
-    
-    var updatedAt: Date? = nil
-    
-    var deletedAt: Date? = nil
-    
-    // MARK: Car Id
-    
-    private var carIdProxy: Int?
-    
-    var carId: Int? {
-        get {
-            return (car != nil) ? car!.id : carIdProxy
-        }
-        
-        set(id) {
-            if (car != nil) { car!.id = id! }
-            else { carIdProxy = id }
-        }
-    }
-    
-    // MARK: Supervisor Id
-    
-    private var supervisorIdProxy: Int?
-    
-    var supervisorId: Int? {
-        get {
-            return (supervisor != nil) ? supervisor!.id : supervisorIdProxy
-        }
-        
-        set(id) {
-            if (supervisor != nil) { supervisor!.id = id! }
-            else { supervisorIdProxy = id }
-        }
-    }
-    
-    // MARK: Initializers
-    
-    required convenience init?(map: Map) {
-        let context = Store.shared.stack.internalContext()
-        
-        let entity = NSEntityDescription.entity(forEntityName: "Trip", in: context)
-        
-        self.init(entity: entity!, insertInto: context)
-    }
-    
-    // MARK: Mappable
-    
-    func mapping(map: Map) {
-        id                       <- map["id"]
-        startedAt                <- (map["started_at"], DateTransformer())
-        endedAt                  <- (map["ended_at"], DateTransformer())
-        odometer                 <- map["odometer"]
-        distance                 <- map["distance"]
-        
-        carId                    <- map["car_id"]
-        supervisorId             <- map["supervisor_id"]
-        
-        clear                    <- map["weather.clear"]
-        rain                     <- map["weather.rain"]
-        thunder                  <- map["weather.thunder"]
-        
-        light                    <- map["traffic.light"]
-        moderate                 <- map["traffic.moderate"]
-        heavy                    <- map["traffic.heavy"]
-        
-        localStreet              <- map["roads.local_street"]
-        mainRoad                 <- map["roads.main_road"]
-        innerCity                <- map["roads.inner_city"]
-        freeway                  <- map["roads.freeway"]
-        ruralHighway             <- map["roads.rural_highway"]
-        gravel                   <- map["roads.gravel"]
-    }
-    
-    // MARK: Fillable
-    
-    let fillables = [
-        "startedAt",
-        "endedAt",
-        "odometer",
-        "distance",
-        "clear",
-        "rain",
-        "thunder",
-        "light",
-        "moderate",
-        "heavy",
-        "localStreet",
-        "mainRoad",
-        "innerCity",
-        "freeway",
-        "ruralHighway",
-        "gravel"
-    ]
-
-    func relationships() -> [String : Int]? {
+    func toJSON() -> [String: Any] {
         return [
-            "car": carId!,
-            "supervisor": supervisorId!
+            "started_at": startedAt!.iso8601,
+            "ended_at": endedAt!.iso8601,
+            "odometer": odometer,
+            "distance": distance,
+            "car_id": car!.id,
+            "supervisor_id": supervisor!.id,
+            "weather": [
+                "clear": clear,
+                "rain": rain,
+                "thunder": thunder
+            ],
+            "traffic": [
+                "light": light,
+                "moderate": moderate,
+                "heavy": heavy
+            ],
+            "roads": [
+                "local_street": localStreet,
+                "main_road": mainRoad,
+                "inner_city": innerCity,
+                "freeway": freeway,
+                "rural_highway": ruralHighway,
+                "gravel": gravel
+            ]
         ]
     }
 }
@@ -113,7 +96,6 @@ class Trip: NSManagedObject, Resourceable, Syncable {
 // MARK: Core Data Properties
 
 extension Trip {
-    
     @NSManaged public var id: Int
     @NSManaged public var startedAt: Date?
     @NSManaged public var endedAt: Date?
@@ -137,5 +119,4 @@ extension Trip {
     @NSManaged public var freeway: Bool
     @NSManaged public var ruralHighway: Bool
     @NSManaged public var gravel: Bool
-    
 }

@@ -1,19 +1,14 @@
 
 import Alamofire
-import ObjectMapper
-import AlamofireObjectMapper
-
-typealias Message = String
-typealias Data = [String: Any]
-typealias Error = [String: String]
+import SwiftyJSON
 
 // MARK: API Response
 
 struct ApiResponse<Data> {
     let statusCode: Int
-    let message: Message?
-    let data: Data?
-    let errors: Error?
+    let message: String
+    let data: JSON?
+    let errors: [String: String]?
 }
 
 // MARK: Session
@@ -21,7 +16,7 @@ struct ApiResponse<Data> {
 class Session {
     static let shared: Session = Session()
     
-    private let queue = DispatchQueue(label: "com.mylogbook.response-queue",
+    private let queue = DispatchQueue(label: "com.mylogbook.response",
                                       qos: .utility,
                                       attributes: [.concurrent])
     
@@ -43,45 +38,40 @@ class Session {
         let serializer = DataRequest.jsonResponseSerializer()
         
         manager.request(route).response(queue: queue, responseSerializer: serializer) { response in
-            guard let apiResponse = self.unpackJSONResponse(response) else { return }
+            guard response.result.isSuccess else { return }
             
-            completion(apiResponse)
+            guard let value = response.result.value else { return }
+            
+            let json = JSON(value)
+            
+            let statusCode = response.response!.statusCode
+            
+            let message = json["message"].string
+            
+            let data = json["data"]
+            
+            let errors = json["errors"].dictionaryObject as? [String: String]
+            
+            let apiResponse = ApiResponse<Data>(statusCode: statusCode,
+                                                message: message!,
+                                                data: data,
+                                                errors: errors)
+            
+            self.queue.async { completion(apiResponse) }
         }
     }
     
-    func requestCollection<Model: Mappable>(_ route: Routing,
-                                            completion: @escaping (ApiResponse<[Model]>) -> Void) {
+    func requestCollection(_ route: Routing, completion: @escaping ([JSON]) -> Void) {
+        let serializer = DataRequest.jsonResponseSerializer()
         
-        manager.request(route)
-            .responseArray(queue: queue, keyPath: "data", context: nil) { (response: DataResponse<[Model]>) in
-            guard let apiResponse: ApiResponse<[Model]> = self.unpackArrayResponse(response) else { return }
+        manager.request(route).response(queue: queue, responseSerializer: serializer) { response in
+            guard response.result.isSuccess else { return }
             
-            completion(apiResponse)
+            guard let value = response.result.value else { return }
+            
+            let json = JSON(value)
+            
+            self.queue.async { completion(json["data"].arrayValue) }
         }
-        
-    }
-    
-    // MARK: Unpackers
-    
-    private func unpackJSONResponse(_ response: DataResponse<Any>) -> ApiResponse<Data>? {
-        guard let json = response.result.value as? [String: Any] else { return nil }
-        
-        guard let statusCode = response.response?.statusCode else { return nil }
-        
-        let message = json["message"] as? Message
-        
-        let data = json["data"] as? Data
-        
-        let errors = json["errors"] as? Error
-        
-        return ApiResponse<Data>(statusCode: statusCode, message: message, data: data, errors: errors)
-    }
-    
-    private func unpackArrayResponse<Model: Mappable>(_ response: DataResponse<[Model]>) -> ApiResponse<[Model]>? {
-        guard let statusCode = response.response?.statusCode else { return nil }
-        
-        let collection = response.result.value
-        
-        return ApiResponse<[Model]>(statusCode: statusCode, message: nil, data: collection, errors: nil)
     }
 }

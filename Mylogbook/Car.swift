@@ -1,60 +1,55 @@
 
-import CoreData
-import ObjectMapper
+import CoreStore
+import SwiftyJSON
 
 // MARK: Car
 
-class Car: NSManagedObject, Resourceable, SoftDeletable, Syncable {
-    static let resource = "cars"
-    
-    var createdAt: Date?
-    
+class Car: NSManagedObject, SoftDeletable, Syncable {
     var name: String { return "\(make!) \(model!)" }
     
-    // MARK: Fillable
-    
-    let fillables = ["make", "model", "type", "registration"]
-    
-    // MARK: Initializers
-    
-    required convenience init?(map: Map) {
-        let context = Store.shared.stack.internalContext()
+    var uniqueIDValue: Int {
+        get { return self.id }
         
-        let entity = NSEntityDescription.entity(forEntityName: "Car", in: context)
-        
-        self.init(entity: entity!, insertInto: context)
-    }
-    
-    // MARK: Mappable
-
-    func mapping(map: Map) {
-        id              <- map["id"]
-        make            <- map["make"]
-        model           <- map["model"]
-        registration    <- map["registration"]
-        type            <- map["type"]
-        createdAt       <- (map["created_at"], DateTransformer())
-        updatedAt       <- (map["updated_at"], DateTransformer())
-        deletedAt       <- (map["deleted_at"], DateTransformer())
+        set(id) { self.id = id }
     }
 }
 
-// MARK: Equatable
+// MARK: Importable
 
-extension Car {
-    static func == (lhs: Car, rhs: Car) -> Bool {
-        return lhs.id == rhs.id         &&
-               lhs.make == rhs.make     &&
-               lhs.model == rhs.model   &&
-               lhs.type == rhs.type     &&
-               lhs.registration == rhs.registration
+extension Car: Importable {
+    typealias ImportSource = JSON
+    
+    static let uniqueIDKeyPath = "id"
+    
+    func update(from source: JSON, in transaction: BaseDataTransaction) throws {
+        make = source["make"].string
+        model = source["model"].string
+        registration = source["registration"].string
+        type = source["type"].string
+        
+        updatedAt = source["updated_at"].string?.dateFromISO8601
+        deletedAt = source["deleted_at"].string?.dateFromISO8601
+    }
+}
+
+// MARK: Resourcable
+
+extension Car: Resourceable {
+    static let resource = "cars"
+
+    func toJSON() -> [String: Any] {
+       return [
+            "make": make!,
+            "model": model!,
+            "registration": registration!,
+            "type": type!
+        ]
     }
 }
 
 // MARK: Core Data Properties
 
 extension Car {
-    
     @NSManaged public var id: Int
     @NSManaged public var make: String?
     @NSManaged public var model: String?

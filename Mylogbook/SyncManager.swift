@@ -3,6 +3,7 @@ import Alamofire
 import CoreStore
 import Dispatch
 import Foundation
+import SwiftyJSON
 
 // MARK: Sync Manager
 
@@ -10,8 +11,6 @@ class SyncManager {
     private let queue = DispatchQueue(label: "com.mylogbook.sync-manager",
                                       qos: .background,
                                       attributes: [.concurrent])
-    
-    private lazy var group = DispatchGroup()
     
     private let network = NetworkReachabilityManager()!
     
@@ -46,55 +45,36 @@ class SyncManager {
     func start() {
         guard network.isReachable else { return }
         
-        if !isSyncPrepared { prepare() }
-        else { sync() }
+        queue.async {
+            if !self.isSyncPrepared { self.prepare() }
+            else { self.sync() }
+        }
     }
     
     // MARK: Prepare
     
     private func prepare() {
-        queue.async {
-            self.prepareCars()
-            
-            self.prepareSupervisors()
-            
-            self.prepareTrips()
-        }
-    }
-    
-    private func prepareCars() {
-        let route = ResourceRoute<Car>.index
+        let group = DispatchGroup()
+        
+        // Cars
+        let carRoute = ResourceRoute<Car>.index
         
         group.enter()
         
-        Session.shared.requestCollection(route) { (response: ApiResponse<[Car]>) in
-            guard let cars = response.data else { return }
-            
-            SyncStore.add(fromNetwork: cars) { _  in self.group.leave() }
-        }
-    }
-    
-    private func prepareSupervisors() {
-        let route = ResourceRoute<Supervisor>.index
+        SyncStore<Car>.import(from: carRoute) { _ in group.leave() }
+        
+        // Supervisors
+        let supervisorRoute = ResourceRoute<Supervisor>.index
         
         group.enter()
         
-        Session.shared.requestCollection(route) { (response: ApiResponse<[Supervisor]>) in
-            guard let supervisors = response.data else { return }
-            
-            SyncStore.add(fromNetwork: supervisors) { _ in self.group.leave() }
-        }
-    }
-    
-    private func prepareTrips() {
-        let route = ResourceRoute<Trip>.index
+        SyncStore<Supervisor>.import(from: supervisorRoute) { _ in group.leave() }
+        
+        // Trips
+        let tripRoute = ResourceRoute<Trip>.index
         
         group.notify(queue: queue) {
-            Session.shared.requestCollection(route) { (response: ApiResponse<[Trip]>) in
-                guard let trips = response.data else { return }
-                
-                SyncStore.add(fromNetwork: trips) { self.preparationComplete() }
-            }
+            SyncStore<Trip>.import(from: tripRoute) { _ in self.preparationComplete() }
         }
     }
     
@@ -107,7 +87,8 @@ class SyncManager {
     // MARK: Sync
     
     private func sync() {
-        guard network.isReachableOnEthernetOrWiFi || (timeSinceLastSync > 300) else { return }
+        guard network.isReachableOnEthernetOrWiFi ||
+              (timeSinceLastSync > (mins: 30) * (secsPerMin: 60)) else { return }
         
         let group = DispatchGroup()
         
@@ -119,8 +100,35 @@ class SyncManager {
         
         Sync<Supervisor>.init(since: lastSyncedAt).sync { group.leave() }
         
-        group.notify(queue: queue) {
-            Sync<Trip>.init(since: self.lastSyncedAt).sync { self.lastSyncedAt = Date() }
+        group.notify(queue: queue) { self.syncTrips() }
+    }
+    
+    private func syncTrips() {
+        let group = DispatchGroup()
+        
+        // Pull
+        let route = ResourceRoute<Trip>.sync(since: self.lastSyncedAt)
+        
+        group.enter()
+        
+        SyncStore<Trip>.import(from: route) { _ in  group.leave() }
+        
+        // Push
+        let trips = Store.shared.stack.beginUnsafe().fetchAll(From<Trip>(),
+                                                              Where("id = 0"))!
+        
+        for trip in trips {
+            let route = ResourceRoute<Trip>.store(trip)
+            
+            group.enter()
+            
+            Session.shared.requestJSON(route) { response in
+                guard let id = response.data?["id"].int else { return }
+                
+                SyncStore<Trip>.set(trip, id: id) { group.leave() }
+            }
         }
+        
+        group.notify(queue: self.queue) { self.lastSyncedAt = Date() }
     }
 }

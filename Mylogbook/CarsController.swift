@@ -5,9 +5,9 @@ import PopupDialog
 
 class CarsController: UIViewController {
     
-    var cars = Store.shared.stack.monitorList(From(Car.self),
-                                                   Where("deletedAt = nil"),
-                                                   OrderBy(.ascending("make")))
+    var cars = Store.shared.stack.monitorList(From<Car>(),
+                                              Where("deletedAt = nil"),
+                                              OrderBy(.ascending("make")))
     
     // MARK: Outlets
     
@@ -46,7 +46,7 @@ class CarsController: UIViewController {
 // MARK: Alerting
 
 extension CarsController: Alerting {
-    func showDeletionPrompt(index: Int) {
+    func showDeletionPrompt(for index: Int) {
         let title = "Delete Car"
         
         let message = "Are you sure you want to delete this car permanently?"
@@ -91,7 +91,7 @@ extension CarsController: ListObserver, ListObjectObserver {
         
         let cell = carsTable.cellForRow(at: indexPath) as! CarCell
         
-        configureCell(cell, index: indexPath.row)
+        configure(cell, with: object)
     }
     
     func listMonitor(_ monitor: ListMonitor<Car>, didDeleteObject object: Car, fromIndexPath indexPath: IndexPath) {
@@ -125,14 +125,12 @@ extension CarsController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CarCell", for: indexPath) as! CarCell
         
-        configureCell(cell, index: indexPath.row)
+        configure(cell, with: cars[indexPath.row])
         
         return cell
     }
     
-    func configureCell(_ cell: CarCell, index: Int) {
-        let car = cars[index]
-        
+    func configure(_ cell: CarCell, with car: Car) {
         cell.nameLabel.text = car.name
         cell.registrationLabel.text = car.registration!
         // set typeImage here
@@ -140,7 +138,7 @@ extension CarsController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (_, indexPath) in
-            self.showDeletionPrompt(index: indexPath.row)
+            self.showDeletionPrompt(for: indexPath.row)
         }
         
         return [delete]

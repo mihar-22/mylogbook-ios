@@ -79,7 +79,7 @@ class LogInController: UIViewController {
                 return
             }
             
-            self.storeUserDetails(response.data!)
+            self.storeUserDetails(response.data!.dictionaryObject!)
             
             self.navigateToDashboardScene()
         }

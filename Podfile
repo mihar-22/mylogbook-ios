@@ -6,6 +6,6 @@ target 'Mylogbook' do
 	pod 'Alamofire', '~> 4.0'
 	pod 'KeychainAccess'
 	pod 'PopupDialog', '~> 0.5'
-	pod 'AlamofireObjectMapper', '~> 4.0'
+	pod 'SwiftyJSON'
 	pod 'CoreStore'
 end

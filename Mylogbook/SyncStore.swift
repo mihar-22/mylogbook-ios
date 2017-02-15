@@ -1,68 +1,52 @@
 
 import CoreStore
+import SwiftyJSON
 
-// MARK: Fillable
+// MARK: Importable
 
-protocol Fillable {
-    var fillables: [String] { get }
-    
-    func relationships() -> [String: Int]?
+protocol Importable: ImportableUniqueObject {}
+
+extension Importable where Self: NSManagedObject, Self: Resourceable {
+    static func uniqueID(from source: JSON,
+                         in transaction: BaseDataTransaction)
+                         throws -> NSNumber? {
+        
+        return source["id"].number
+    }
 }
 
-extension Fillable {
-    func relationships() -> [String: Int]? { return nil }
-}
-
-// MARK: Syncable
-
-protocol Syncable: Fillable {
-    var id: Int { get set }
-    
-    var createdAt: Date? { get set }
-    var updatedAt: Date? { get set }
-    var deletedAt: Date? { get set }
+extension Importable where Self: NSManagedObject, Self: Resourceable, Self: Syncable {
+    static func shouldUpdate(from source: JSON, in transaction: BaseDataTransaction) -> Bool {
+        let id = source["id"].int!
+        
+        guard let model = transaction.fetchOne(From<Self>(), Where("id = \(id)")) else { return true }
+        
+        return model.updatedAt! < source["updated_at"].stringValue.dateFromISO8601! ||
+               (model.deletedAt == nil && source["deleted_at"].string != nil)
+    }
 }
 
 // MARK: Sync Store
 
-class SyncStore {
-    static func add<Model: NSManagedObject>(fromNetwork models: [Model],
-                    completion: @escaping () -> Void) where Model: Syncable {
+class SyncStore<Model: NSManagedObject> where Model: Importable,
+                                              Model: Resourceable,
+                                              Model.ImportSource == JSON,
+                                              Model.UniqueIDType: Hashable {
+ 
+    static func `import`(from route: Routing, completion: @escaping ([Model]) -> Void){
+        let route = ResourceRoute<Model>.index
         
-        Store.shared.stack.beginAsynchronous { transaction in
-            for newModel in models {
-                var model = transaction.create(Into(Model.self))
+        Session.shared.requestCollection(route) { collection in
+            Store.shared.stack.beginAsynchronous { transaction in
+                let imports = try! transaction.importUniqueObjects(Into<Model>(),
+                                                                   sourceArray: collection)
                 
-                model.id = newModel.id
-                
-                for key in model.fillables {
-                    let value = newModel.value(forKey: key)
-                    
-                    model.setValue(value, forKey: key)
-                }
-                
-                if let relationships = model.relationships() {
-                    for (key, id) in relationships {
-                        let relationship = Store.shared.stack.fetchOne(From(Model.self),
-                                                                       Where("id = \(id)"))
-                        
-                        model.setValue(relationship, forKey: key)
-                    }
-                }
-                
-                model.updatedAt = newModel.updatedAt
-                model.deletedAt = newModel.deletedAt
+                transaction.commit() { _ in completion(imports) }
             }
-            
-            transaction.commit() { _ in completion() }
         }
-        
     }
     
-    static func set<Model: NSManagedObject>(_ model: Model,
-                    id: Int,
-                    completion: @escaping () -> Void) where Model: Syncable {
-        
+    static func set(_ model: Model, id: Int, completion: @escaping () -> Void) {
         Store.shared.stack.beginAsynchronous { transaction in
             var model = transaction.edit(model)!
             
@@ -70,41 +54,5 @@ class SyncStore {
             
             transaction.commit() { _ in completion() }
         }
-        
-    }
-    
-    static func update<Model: NSManagedObject>(_ localModel: Model,
-                       _ networkModel: Model,
-                       completion: @escaping () -> Void) where Model: Syncable {
-        
-        Store.shared.stack.beginAsynchronous { transaction in
-            var model = transaction.edit(localModel)!
-            
-            for key in model.fillables() {
-                let value = networkModel.value(forKey: key)
-                
-                model.setValue(value, forKey: key)
-            }
-            
-            model.updatedAt = Date()
-            
-            transaction.commit() { _ in completion() }
-        }
-        
-    }
-    
-    static func delete<Model: NSManagedObject>(_ models: [Model],
-                       completion: @escaping () -> Void) where Model: Syncable {
-        
-        Store.shared.stack.beginAsynchronous { transaction in
-            for model in models {
-                var model = transaction.edit(model)!
-                
-                model.deletedAt = Date()
-            }
-            
-            transaction.commit() { _ in completion() }
-        }
-        
     }
 }

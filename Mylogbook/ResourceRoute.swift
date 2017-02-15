@@ -1,13 +1,15 @@
 
 import Alamofire
-import ObjectMapper
+import SwiftyJSON
 
 // MARK: Resourceable
 
-protocol Resourceable: Mappable {
+protocol Resourceable {
     static var resource: String { get }
     
     var id: Int { get set }
+    
+    func toJSON() -> [String: Any]
 }
 
 // MARK: Resource Route

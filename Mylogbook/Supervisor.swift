@@ -1,60 +1,55 @@
 
-import CoreData
-import ObjectMapper
+import CoreStore
+import SwiftyJSON
 
 // MARK: Supervisor
 
-class Supervisor: NSManagedObject, Resourceable, SoftDeletable, Syncable {
-    static let resource = "supervisors"
-
-    var createdAt: Date?
-
+class Supervisor: NSManagedObject, SoftDeletable, Syncable {
     var fullName: String { return "\(firstName!) \(lastName!)" }
     
-    // MARK: Fillable
-    
-    let fillables = ["firstName", "lastName", "license", "gender"]
-    
-    // MARK: Initializers
-    
-    required convenience init?(map: Map) {
-        let context = Store.shared.stack.internalContext()
+    var uniqueIDValue: Int {
+        get { return self.id }
         
-        let entity = NSEntityDescription.entity(forEntityName: "Supervisor", in: context)
-        
-        self.init(entity: entity!, insertInto: context)
-    }
-    
-    // MARK: Mappable
-    
-    func mapping(map: Map) {
-        id          <- map["id"]
-        firstName   <- map["first_name"]
-        lastName    <- map["last_name"]
-        license     <- map["license"]
-        gender      <- map["gender"]
-        createdAt   <- (map["created_at"], DateTransformer())
-        updatedAt   <- (map["updated_at"], DateTransformer())
-        deletedAt   <- (map["deleted_at"], DateTransformer())
+        set(id) { self.id = id }
     }
 }
 
-// MARK: Equatable
+// MARK: Importable
 
-extension Supervisor {
-    static func == (lhs: Supervisor, rhs: Supervisor) -> Bool {
-        return lhs.id == rhs.id                 &&
-               lhs.firstName == rhs.firstName   &&
-               lhs.lastName == rhs.lastName     &&
-               lhs.license == rhs.license       &&
-               lhs.gender == rhs.gender
+extension Supervisor: Importable {
+    typealias ImportSource = JSON
+    
+    static let uniqueIDKeyPath = "id"
+
+    func update(from source: JSON, in transaction: BaseDataTransaction) throws  {
+        firstName = source["first_name"].string
+        lastName = source["last_name"].string
+        license = source["license"].string
+        gender = source["gender"].string
+        
+        updatedAt = source["updated_at"].string?.dateFromISO8601
+        deletedAt = source["deleted_at"].string?.dateFromISO8601
+    }
+}
+
+// MARK: Resourcable
+
+extension Supervisor: Resourceable {
+    static let resource = "supervisors"
+    
+    func toJSON() -> [String: Any] {
+        return [
+            "first_name": firstName!,
+            "last_name": lastName!,
+            "license": license!,
+            "gender": gender!
+        ]
     }
 }
 
 // MARK: Core Data Properties
 
 extension Supervisor {
- 
     @NSManaged public var id: Int
     @NSManaged public var firstName: String?
     @NSManaged public var gender: String?
