@@ -9,7 +9,17 @@ class Trip: NSManagedObject {
         get { return self.id }
         
         set(id) { self.id = id }
-    }    
+    }
+    
+    // MARK: Initializers
+    
+    convenience init() {
+        let context = Store.shared.stack.internalContext()
+        
+        let entity = NSEntityDescription.entity(forEntityName: "Trip", in: context)
+        
+        self.init(entity: entity!, insertInto: context)
+    }
 }
 
 // MARK: Importable

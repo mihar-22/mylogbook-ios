@@ -1,11 +1,21 @@
 
+import CoreStore
+import PopupDialog
 import UIKit
 
 class LogPrepareController: UIViewController {
     
+    let trip = Trip()
+    
     var cars = [Car]()
     
     var supervisors = [Supervisor]()
+    
+    // MARK: Pickers
+    
+    enum PickerView {
+        case car, supervisor
+    }
     
     let carPicker = UIPickerView()
     
@@ -13,11 +23,35 @@ class LogPrepareController: UIViewController {
     
     let pickerToolbar = UIToolbar()
     
-    enum PickerView {
-        case car, supervisor
+    var currentPicker: PickerView = .car
+    
+    var selectedCar: Car {
+        return cars[carPicker.selectedRow(inComponent: 0)]
     }
     
-    var currentPicker: PickerView = .car
+    var selectedSupervisor: Supervisor {
+        return supervisors[supervisorPicker.selectedRow(inComponent: 0)]
+    }
+    
+    // MARK: Odometer
+    
+    var odometerAlert: OdometerAlert!
+    
+    var doneButton: DefaultButton!
+    
+    var odometerKey: String {
+        return "car-\(selectedCar.id)-odometer"
+    }
+    
+    var odometer: String? {
+        get {
+            return UserDefaults.standard.string(forKey: odometerKey)
+        }
+        
+        set(odometer) {
+            UserDefaults.standard.set(odometer, forKey: odometerKey)
+        }
+    }
     
     // MARK: Outlets
     
@@ -35,6 +69,38 @@ class LogPrepareController: UIViewController {
         navigationController!.navigationBar.restyle(.transparent)
         
         setupPickers()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        DispatchQueue.main.async { self.fetch() }
+    }
+    
+    // MARK: Fetch
+    
+    func fetch() {
+        fetchCars()
+        
+        fetchSupervisors()
+    }
+    
+    func fetchCars() {
+        cars = Store.shared.stack.fetchAll(From<Car>(),
+                                           Where("deletedAt == nil"),
+                                           OrderBy(.ascending("make")))!
+        
+        carPicker.reloadAllComponents()
+        
+        if cars.first != nil { configureCard(car: cars.first!) }
+    }
+    
+    func fetchSupervisors() {
+        supervisors = Store.shared.stack.fetchAll(From<Supervisor>(),
+                                                  Where("deletedAt == nil"),
+                                                  OrderBy(.ascending("firstName")))!
+        
+        supervisorPicker.reloadAllComponents()
+        
+        if supervisors.first != nil { configureCard(supervisor: supervisors.first!) }
     }
     
     // MARK: Actions
@@ -64,6 +130,10 @@ class LogPrepareController: UIViewController {
         }
     }
     
+    @IBAction func didTapStart(_ sender: UIBarButtonItem) {
+        showOdometerAlert()
+    }
+    
     // MARK: Cards
     
     func configureCard(car: Car) {
@@ -76,6 +146,75 @@ class LogPrepareController: UIViewController {
         supervisorNameLabel.text = supervisor.fullName
         supervisorLicenseLabel.text = supervisor.license
         // set gender image here
+    }
+    
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "startRecordingSegue" {
+            if let viewController = segue.destination as? LogRecordController {
+                let odometer = self.odometerAlert.odometer
+                
+                self.odometer = odometer
+                
+                self.trip.odometer = Int(odometer!)!
+                
+                self.trip.car = selectedCar
+                
+                self.trip.supervisor = selectedSupervisor
+                
+                viewController.trip = trip
+            }
+        }
+    }
+}
+
+// MARK: Alerting
+
+extension LogPrepareController: Alerting {
+    func setupOdometerAlert() {
+        odometerAlert = OdometerAlert(nibName: "OdometerAlert", bundle: nil)
+        
+        // Force view hierarchy to load
+        let _ = odometerAlert.view
+        
+        odometerAlert.validator.delegate = self
+    }
+    
+    func showOdometerAlert() {
+        setupOdometerAlert()
+        
+        let cancelButton = CancelButton(title: "CANCEL", action: nil)
+        
+        doneButton = DefaultButton(title: "DONE") {
+            self.performSegue(withIdentifier: "startRecordingSegue", sender: nil)
+        }
+        
+        odometerAlert.odometer = odometer
+        
+        odometerAlert.validator.revalidate()
+
+        self.showCustomAlert(viewController: odometerAlert, buttons: [cancelButton, doneButton])
+    }
+}
+
+// MARK: Validator Delegate
+
+extension LogPrepareController: ValidatorDelegate {
+    func validationSuccessful(_ textField: TextField) {
+        isDoneButton(enabled: true)
+    }
+    
+    func validationFailed(_ textField: TextField) {
+        isDoneButton(enabled: false)
+    }
+    
+    func isDoneButton(enabled isEnabled: Bool) {
+        doneButton.isEnabled = isEnabled
+        
+        let style: DefaultButtonStyle = (isEnabled) ? .normal : .disabled
+        
+        doneButton.restyle(style)
     }
 }
 

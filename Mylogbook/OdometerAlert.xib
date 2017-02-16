@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OdometerAlert" customModule="Mylogbook" customModuleProvider="target">
+            <connections>
+                <outlet property="odometerTextField" destination="m3B-WR-FBi" id="VKC-41-wk6"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Ngi-x1-LY4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="140"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sGV-BT-fOR">
+                    <rect key="frame" x="24.5" y="16" width="301.5" height="46"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Odometer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJh-C7-Xbn">
+                            <rect key="frame" x="0.0" y="0.0" width="301.5" height="21"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="0.40000000000000002" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Enter the current odometer reading for this car" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17B-st-yOP">
+                            <rect key="frame" x="0.0" y="29" width="301.5" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.59999999999999998" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3B-WR-FBi" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                    <rect key="frame" x="24" y="78" width="302" height="42"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Reading (km)"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="keyboardType">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="sGV-BT-fOR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="5U7-dM-vyw"/>
+                <constraint firstAttribute="bottom" secondItem="m3B-WR-FBi" secondAttribute="bottom" constant="20" id="8z8-Jj-Gyw"/>
+                <constraint firstItem="m3B-WR-FBi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="KBF-6A-Gd9"/>
+                <constraint firstItem="sGV-BT-fOR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Nhk-qZ-oEN"/>
+                <constraint firstItem="m3B-WR-FBi" firstAttribute="top" secondItem="sGV-BT-fOR" secondAttribute="bottom" constant="16" id="kKP-Ao-7Rb"/>
+                <constraint firstAttribute="trailing" secondItem="m3B-WR-FBi" secondAttribute="trailing" constant="24" id="tyq-Iy-asz"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="45" y="-172.5"/>
+        </view>
+    </objects>
+</document>

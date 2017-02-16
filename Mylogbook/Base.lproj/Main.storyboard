@@ -771,6 +771,9 @@
                     <navigationItem key="navigationItem" id="hTg-zu-DzA">
                         <barButtonItem key="rightBarButtonItem" title="Start" id="qks-hg-kdr">
                             <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="didTapStart:" destination="O2a-GE-oNn" id="Hxo-7j-emf"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -780,6 +783,7 @@
                         <outlet property="supervisorGenderImage" destination="ejw-2S-zIr" id="b8A-vM-dwU"/>
                         <outlet property="supervisorLicenseLabel" destination="cPV-9f-jE8" id="A2G-cZ-buU"/>
                         <outlet property="supervisorNameLabel" destination="IhK-Fb-2Qq" id="eKR-t6-8Cm"/>
+                        <segue destination="fie-Pj-7b1" kind="show" identifier="startRecordingSegue" id="Zts-mf-1Me"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MrE-SV-eG5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -795,6 +799,24 @@
                 </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1576.8" y="2791.7541229385311"/>
+        </scene>
+        <!--Log Record Controller-->
+        <scene sceneID="sfm-se-vf5">
+            <objects>
+                <viewController id="fie-Pj-7b1" customClass="LogRecordController" customModule="Mylogbook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y8P-Qs-h93"/>
+                        <viewControllerLayoutGuide type="bottom" id="0RF-Ih-nJZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rfT-ab-Hcg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gsj-c4-PVv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2361" y="2792"/>
         </scene>
         <!--Supervisor-->
         <scene sceneID="H3B-8C-iPs">

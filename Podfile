@@ -8,4 +8,5 @@ target 'Mylogbook' do
 	pod 'PopupDialog', '~> 0.5'
 	pod 'SwiftyJSON'
 	pod 'CoreStore'
+	pod 'IQKeyboardManagerSwift'
 end

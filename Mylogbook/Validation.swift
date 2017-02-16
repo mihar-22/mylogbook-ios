@@ -13,6 +13,7 @@ enum Validation {
     case alphaSpace
     case alphaNum
     case alphaNumSpace
+    case numeric
     
     // MARK: Error
     
@@ -36,6 +37,8 @@ enum Validation {
             return "Only letters (a-z) and numbers (0-9) are allowed"
         case .alphaNumSpace:
             return "Only letters (a-z), numbers (0-9) and spaces are allowed"
+        case .numeric:
+            return "Only numbers (0-9)"
         }
     }
     
@@ -61,6 +64,8 @@ enum Validation {
             return regexTest(value, "^[A-Za-z0-9]+$")
         case .alphaNumSpace:
             return regexTest(value, "^[A-Za-z0-9\\s]+$")
+        case .numeric:
+            return regexTest(value, "^[\\,0-9]+$")
         }
     }
     

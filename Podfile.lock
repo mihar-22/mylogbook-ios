@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.3.0)
   - CoreStore (3.0.3)
+  - IQKeyboardManagerSwift (4.0.8)
   - JVFloatLabeledTextField (1.1.1)
   - KeychainAccess (3.0.1)
   - PopupDialog (0.5.3)
@@ -9,6 +10,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - CoreStore
+  - IQKeyboardManagerSwift
   - JVFloatLabeledTextField
   - KeychainAccess
   - PopupDialog (~> 0.5)
@@ -17,11 +19,12 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   CoreStore: b57aaae17a796e24b58726ce2aaa7c883456cbf5
+  IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
   JVFloatLabeledTextField: 0e5524b097f102036214dd8279edc8ecf08b5e18
   KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
   PopupDialog: 533dd564f8781633375505b9fbd406f8f146ccc9
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 0a89b95533bdcf422cb0874fb54fc0dfe00f548c
+PODFILE CHECKSUM: ef6ba3f5b903bfd028c5fb074cff53283c990250
 
 COCOAPODS: 1.1.1
