@@ -432,6 +432,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E88-yV-CkC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUY-Ww-bau">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="JQk-7g-Y9r" userLabel="Form">
+                                                <rect key="frame" x="16" y="244" width="343" height="216"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPh-5N-REL" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Registration Number"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                                <integer key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
+                                                                <integer key="value" value="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qct-LY-QS2" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="58" width="343" height="42"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Make"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                                <integer key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qqj-BV-2GN" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="116" width="343" height="42"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Model"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                                <integer key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fE-zT-t59" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="174" width="343" height="42"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Type"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                                <integer key="value" value="9"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
+                                                                <integer key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sgo-rw-cLg">
+                                                <rect key="frame" x="87.5" y="104" width="200" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="Es9-T3-vCp"/>
+                                                    <constraint firstAttribute="height" constant="100" id="TrH-JY-ynm"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="sgo-rw-cLg" firstAttribute="centerX" secondItem="zUY-Ww-bau" secondAttribute="centerX" id="IyT-S2-GuH"/>
+                                            <constraint firstItem="JQk-7g-Y9r" firstAttribute="leading" secondItem="zUY-Ww-bau" secondAttribute="leadingMargin" constant="8" id="N0C-4h-jfq"/>
+                                            <constraint firstItem="sgo-rw-cLg" firstAttribute="top" secondItem="zUY-Ww-bau" secondAttribute="top" constant="104" id="OoE-eX-VlG"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="JQk-7g-Y9r" secondAttribute="trailing" constant="8" id="efg-mL-73Z"/>
+                                            <constraint firstAttribute="height" constant="667" id="vJf-Pt-j5E"/>
+                                            <constraint firstItem="JQk-7g-Y9r" firstAttribute="top" secondItem="sgo-rw-cLg" secondAttribute="bottom" constant="40" id="xvx-3t-qVO"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="zUY-Ww-bau" secondAttribute="trailing" id="7Up-vX-O9p"/>
+                                    <constraint firstItem="zUY-Ww-bau" firstAttribute="top" secondItem="E88-yV-CkC" secondAttribute="top" id="WOs-dZ-NFE"/>
+                                    <constraint firstAttribute="bottom" secondItem="zUY-Ww-bau" secondAttribute="bottom" id="i1o-GQ-vhw"/>
+                                    <constraint firstItem="zUY-Ww-bau" firstAttribute="leading" secondItem="E88-yV-CkC" secondAttribute="leading" id="nco-9e-Deo"/>
+                                </constraints>
+                            </scrollView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jsq-Ph-XEJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <constraints>
@@ -454,96 +543,32 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OIR-y2-i4E">
-                                <rect key="frame" x="88" y="104" width="200" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="AK7-zv-ogh"/>
-                                    <constraint firstAttribute="height" constant="100" id="bTe-e7-9CM"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="NYj-JX-eOM" userLabel="Form">
-                                <rect key="frame" x="16" y="244" width="343" height="216"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHn-XI-hH3" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Registration Number"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
-                                                <integer key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
-                                                <integer key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihu-52-2RT" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="58" width="343" height="42"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Make"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
-                                                <integer key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tv1-zo-yDy" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="116" width="343" height="42"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Model"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
-                                                <integer key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etH-xi-jHd" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="174" width="343" height="42"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Type"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
-                                                <integer key="value" value="9"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
-                                                <integer key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="E88-yV-CkC" firstAttribute="top" secondItem="X9R-sc-Xrq" secondAttribute="top" id="5uw-0p-I8Y"/>
                             <constraint firstAttribute="trailing" secondItem="jsq-Ph-XEJ" secondAttribute="trailing" id="7Pi-gG-DON"/>
-                            <constraint firstItem="OIR-y2-i4E" firstAttribute="top" secondItem="jsq-Ph-XEJ" secondAttribute="bottom" constant="40" id="HIs-Lq-I8j"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NYj-JX-eOM" secondAttribute="trailing" id="L5z-hC-o34"/>
+                            <constraint firstAttribute="trailing" secondItem="E88-yV-CkC" secondAttribute="trailing" id="BCt-lt-fTi"/>
+                            <constraint firstItem="E88-yV-CkC" firstAttribute="leading" secondItem="X9R-sc-Xrq" secondAttribute="leading" id="EbU-d6-IVN"/>
+                            <constraint firstItem="zUY-Ww-bau" firstAttribute="width" secondItem="X9R-sc-Xrq" secondAttribute="width" id="NOZ-gk-vDE"/>
                             <constraint firstItem="jsq-Ph-XEJ" firstAttribute="top" secondItem="X9R-sc-Xrq" secondAttribute="top" id="VxL-BN-I1S"/>
-                            <constraint firstItem="NYj-JX-eOM" firstAttribute="top" secondItem="OIR-y2-i4E" secondAttribute="bottom" constant="40" id="cSB-8k-mge"/>
                             <constraint firstItem="jsq-Ph-XEJ" firstAttribute="leading" secondItem="X9R-sc-Xrq" secondAttribute="leading" id="qq1-wC-dLu"/>
-                            <constraint firstItem="OIR-y2-i4E" firstAttribute="centerX" secondItem="X9R-sc-Xrq" secondAttribute="centerX" id="wbS-3f-f91"/>
-                            <constraint firstItem="NYj-JX-eOM" firstAttribute="leading" secondItem="X9R-sc-Xrq" secondAttribute="leadingMargin" id="zFN-87-hsf"/>
+                            <constraint firstItem="cTA-ac-Leg" firstAttribute="top" secondItem="E88-yV-CkC" secondAttribute="bottom" id="xT1-Bw-vFu"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="makeTextField" destination="ihu-52-2RT" id="sMO-Xk-ah7"/>
-                        <outlet property="modelTextField" destination="tv1-zo-yDy" id="cLC-br-4dM"/>
+                        <outlet property="makeTextField" destination="Qct-LY-QS2" id="AFH-PQ-Cyo"/>
+                        <outlet property="modelTextField" destination="Qqj-BV-2GN" id="QAo-cz-uKe"/>
                         <outlet property="navItem" destination="qba-Pi-Qh7" id="Pcm-UF-zXW"/>
-                        <outlet property="registrationTextField" destination="eHn-XI-hH3" id="0qV-RO-4fB"/>
+                        <outlet property="registrationTextField" destination="EPh-5N-REL" id="cIh-9E-26v"/>
                         <outlet property="saveButton" destination="zC2-E6-5Ca" id="hMT-Vk-5V7"/>
-                        <outlet property="typeImage" destination="OIR-y2-i4E" id="RhC-Tq-vDI"/>
-                        <outlet property="typeTextField" destination="etH-xi-jHd" id="znG-Up-dcz"/>
+                        <outlet property="typeImage" destination="sgo-rw-cLg" id="mNo-4r-E5O"/>
+                        <outlet property="typeTextField" destination="2fE-zT-t59" id="qQG-BD-AbG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pc6-GF-6z2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1577" y="1326"/>
+            <point key="canvasLocation" x="1576.8" y="1325.4872563718143"/>
         </scene>
         <!--Supervisors-->
         <scene sceneID="H5P-Zi-Tz4">
@@ -830,118 +855,143 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3mR-WL-VUa">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JwV-82-adZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7G-9W-oWc">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="o3z-it-JkO" userLabel="Form">
+                                                <rect key="frame" x="16" y="244" width="343" height="216"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeC-QH-4cG" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="License Number"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
+                                                                <integer key="value" value="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                                <integer key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12A-bj-enI" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="58" width="343" height="42"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="First Name"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                                <integer key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R77-2P-Iza" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="116" width="343" height="42"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Last Name"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                                <integer key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtI-ah-YOV" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="174" width="343" height="42"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Gender"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
+                                                                <integer key="value" value="9"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
+                                                                <integer key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Ze-cG-Wz4">
+                                                <rect key="frame" x="87" y="104" width="200" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="TiI-jk-qbj"/>
+                                                    <constraint firstAttribute="height" constant="100" id="ebn-Mf-gdK"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="o3z-it-JkO" firstAttribute="top" secondItem="8Ze-cG-Wz4" secondAttribute="bottom" constant="40" id="4Gw-jq-tnc"/>
+                                            <constraint firstItem="8Ze-cG-Wz4" firstAttribute="top" secondItem="u7G-9W-oWc" secondAttribute="top" constant="104" id="BO9-Vx-CtJ"/>
+                                            <constraint firstAttribute="height" constant="667" id="N5Y-qr-hCV"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="o3z-it-JkO" secondAttribute="trailing" constant="8" id="cH4-TG-FKu"/>
+                                            <constraint firstItem="8Ze-cG-Wz4" firstAttribute="centerX" secondItem="u7G-9W-oWc" secondAttribute="centerX" id="dtV-Bj-Jrd"/>
+                                            <constraint firstItem="o3z-it-JkO" firstAttribute="leading" secondItem="u7G-9W-oWc" secondAttribute="leadingMargin" constant="8" id="oT5-Wp-Mo2"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="u7G-9W-oWc" firstAttribute="top" secondItem="JwV-82-adZ" secondAttribute="top" id="AEp-ym-lLr"/>
+                                    <constraint firstItem="u7G-9W-oWc" firstAttribute="leading" secondItem="JwV-82-adZ" secondAttribute="leading" id="NLh-CG-fNu"/>
+                                    <constraint firstAttribute="trailing" secondItem="u7G-9W-oWc" secondAttribute="trailing" id="cqN-8h-m4Z"/>
+                                    <constraint firstAttribute="bottom" secondItem="u7G-9W-oWc" secondAttribute="bottom" id="ujH-Oc-aCB"/>
+                                </constraints>
+                            </scrollView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEH-YZ-iY8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="Lyw-kZ-wFu"/>
+                                    <constraint firstAttribute="height" constant="64" id="4WQ-yW-ZJb"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="New Supervisor" id="uCj-DI-hhs">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="vXN-6w-iEa">
+                                    <navigationItem title="New Supervisor" id="i7z-8r-K6Q">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="9tj-si-Rjs">
                                             <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <action selector="didTapClose:" destination="Q4b-pn-jV9" id="P2i-cY-D4L"/>
+                                                <action selector="didTapClose:" destination="Q4b-pn-jV9" id="WXL-ya-SgA"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="wwT-5Q-yag">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="F8g-4l-65J">
                                             <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <action selector="didTapSave:" destination="Q4b-pn-jV9" id="2Zd-dY-ZNP"/>
+                                                <action selector="didTapSave:" destination="Q4b-pn-jV9" id="Xac-5s-uR8"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HpQ-MD-TQN">
-                                <rect key="frame" x="88" y="104" width="200" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="INf-QB-7fu"/>
-                                    <constraint firstAttribute="width" constant="200" id="y9w-ML-2ke"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="AoM-Hs-6Ok" userLabel="Form">
-                                <rect key="frame" x="16" y="244" width="343" height="216"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdu-8p-LAl" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="License Number"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
-                                                <integer key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
-                                                <integer key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oop-d8-G60" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="58" width="343" height="42"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="First Name"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
-                                                <integer key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LMN-CX-Ssq" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="116" width="343" height="42"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Last Name"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
-                                                <integer key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4l-CC-GuE" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="174" width="343" height="42"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Gender"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
-                                                <integer key="value" value="9"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3mR-WL-VUa" firstAttribute="top" secondItem="Nto-So-5Fu" secondAttribute="top" id="7rl-41-zOI"/>
-                            <constraint firstItem="HpQ-MD-TQN" firstAttribute="top" secondItem="3mR-WL-VUa" secondAttribute="bottom" constant="40" id="8hB-vB-ILT"/>
-                            <constraint firstItem="AoM-Hs-6Ok" firstAttribute="top" secondItem="HpQ-MD-TQN" secondAttribute="bottom" constant="40" id="Ckk-bA-4RT"/>
-                            <constraint firstItem="AoM-Hs-6Ok" firstAttribute="leading" secondItem="Nto-So-5Fu" secondAttribute="leadingMargin" id="MoY-s0-UHF"/>
-                            <constraint firstItem="3mR-WL-VUa" firstAttribute="leading" secondItem="Nto-So-5Fu" secondAttribute="leading" id="Nhp-ZV-ssy"/>
-                            <constraint firstAttribute="trailing" secondItem="3mR-WL-VUa" secondAttribute="trailing" id="q2p-og-W2f"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="AoM-Hs-6Ok" secondAttribute="trailing" id="svB-bd-8bc"/>
-                            <constraint firstItem="HpQ-MD-TQN" firstAttribute="centerX" secondItem="Nto-So-5Fu" secondAttribute="centerX" id="y86-XL-Ib8"/>
+                            <constraint firstItem="JwV-82-adZ" firstAttribute="leading" secondItem="Nto-So-5Fu" secondAttribute="leading" id="48R-wc-WvY"/>
+                            <constraint firstAttribute="trailing" secondItem="JwV-82-adZ" secondAttribute="trailing" id="67D-xD-uhO"/>
+                            <constraint firstItem="JwV-82-adZ" firstAttribute="top" secondItem="Nto-So-5Fu" secondAttribute="top" id="7Ne-8o-bbb"/>
+                            <constraint firstItem="sEH-YZ-iY8" firstAttribute="top" secondItem="WKh-P3-Vbk" secondAttribute="bottom" constant="-20" id="9hW-pt-VK9"/>
+                            <constraint firstAttribute="trailing" secondItem="sEH-YZ-iY8" secondAttribute="trailing" id="cy3-98-Pty"/>
+                            <constraint firstItem="weM-kz-Hsf" firstAttribute="top" secondItem="JwV-82-adZ" secondAttribute="bottom" id="d5b-Q0-DRs"/>
+                            <constraint firstItem="sEH-YZ-iY8" firstAttribute="leading" secondItem="Nto-So-5Fu" secondAttribute="leading" id="kV0-D7-ewu"/>
+                            <constraint firstItem="u7G-9W-oWc" firstAttribute="width" secondItem="Nto-So-5Fu" secondAttribute="width" id="zhY-8d-aio"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="firstNameTextField" destination="oop-d8-G60" id="qhh-J1-RTg"/>
-                        <outlet property="genderImage" destination="HpQ-MD-TQN" id="xy9-lp-SGd"/>
-                        <outlet property="genderTextField" destination="y4l-CC-GuE" id="emK-ax-nmv"/>
-                        <outlet property="lastNameTextField" destination="LMN-CX-Ssq" id="GAw-vX-KoV"/>
-                        <outlet property="licenseTextField" destination="wdu-8p-LAl" id="SCr-5j-jeR"/>
-                        <outlet property="navItem" destination="uCj-DI-hhs" id="Xa0-1m-Q7S"/>
-                        <outlet property="saveButton" destination="wwT-5Q-yag" id="XL2-gr-od3"/>
+                        <outlet property="firstNameTextField" destination="12A-bj-enI" id="RLD-il-xSY"/>
+                        <outlet property="genderImage" destination="8Ze-cG-Wz4" id="DEh-us-Udn"/>
+                        <outlet property="genderTextField" destination="dtI-ah-YOV" id="k4w-ec-ltn"/>
+                        <outlet property="lastNameTextField" destination="R77-2P-Iza" id="YRT-Jx-jpJ"/>
+                        <outlet property="licenseTextField" destination="aeC-QH-4cG" id="w4q-Qh-yY5"/>
+                        <outlet property="navItem" destination="i7z-8r-K6Q" id="rsJ-Te-1bf"/>
+                        <outlet property="saveButton" destination="F8g-4l-65J" id="qv0-mU-DIf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRa-uX-OW7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1577" y="2052"/>
+            <point key="canvasLocation" x="1576.8" y="2051.4242878560722"/>
         </scene>
         <!--Log-->
         <scene sceneID="SzC-1j-z2y">
