@@ -48,6 +48,10 @@
 		C9CDFA891DEFDB2800CE0A2D /* Mylogbook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9CDFA871DEFDB2800CE0A2D /* Mylogbook.xcdatamodeld */; };
 		C9CDFA8B1DEFDB2800CE0A2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9CDFA8A1DEFDB2800CE0A2D /* Assets.xcassets */; };
 		C9CDFA8E1DEFDB2800CE0A2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CDFA8C1DEFDB2800CE0A2D /* LaunchScreen.storyboard */; };
+		C9D373D41E5BF8E600039366 /* LogDetailing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D373D31E5BF8E600039366 /* LogDetailing.swift */; };
+		C9D373D81E5C126500039366 /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D373D71E5C126500039366 /* WeatherController.swift */; };
+		C9D373DA1E5C128D00039366 /* TrafficController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D373D91E5C128D00039366 /* TrafficController.swift */; };
+		C9D373DC1E5C12E800039366 /* RoadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D373DB1E5C12E800039366 /* RoadController.swift */; };
 		C9EBBD571E2882E200B5E509 /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD561E2882E200B5E509 /* LogInController.swift */; };
 		C9EBBD5B1E28C45000B5E509 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD5A1E28C45000B5E509 /* DashboardController.swift */; };
 		C9EBBD5E1E2C5F2100B5E509 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD5D1E2C5F2100B5E509 /* CarCell.swift */; };
@@ -107,6 +111,10 @@
 		C9CDFA8A1DEFDB2800CE0A2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9CDFA8D1DEFDB2800CE0A2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9CDFA8F1DEFDB2800CE0A2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9D373D31E5BF8E600039366 /* LogDetailing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogDetailing.swift; sourceTree = "<group>"; };
+		C9D373D71E5C126500039366 /* WeatherController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherController.swift; sourceTree = "<group>"; };
+		C9D373D91E5C128D00039366 /* TrafficController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrafficController.swift; sourceTree = "<group>"; };
+		C9D373DB1E5C12E800039366 /* RoadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoadController.swift; sourceTree = "<group>"; };
 		C9EBBD561E2882E200B5E509 /* LogInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
 		C9EBBD5A1E28C45000B5E509 /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		C9EBBD5D1E2C5F2100B5E509 /* CarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
@@ -242,9 +250,9 @@
 		C98E77901E397B1900F34468 /* Log */ = {
 			isa = PBXGroup;
 			children = (
+				C9D373D21E5BF8DA00039366 /* Details */,
 				C98E77911E397B3100F34468 /* LogPrepareController.swift */,
 				C9C6F6791E55B75100231949 /* LogRecordController.swift */,
-				C9A0DFF01E5AB84500102DE0 /* LogDetailsController.swift */,
 			);
 			name = Log;
 			sourceTree = "<group>";
@@ -311,6 +319,18 @@
 				C9CDFA871DEFDB2800CE0A2D /* Mylogbook.xcdatamodeld */,
 			);
 			path = Mylogbook;
+			sourceTree = "<group>";
+		};
+		C9D373D21E5BF8DA00039366 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				C9A0DFF01E5AB84500102DE0 /* LogDetailsController.swift */,
+				C9D373D31E5BF8E600039366 /* LogDetailing.swift */,
+				C9D373D71E5C126500039366 /* WeatherController.swift */,
+				C9D373D91E5C128D00039366 /* TrafficController.swift */,
+				C9D373DB1E5C12E800039366 /* RoadController.swift */,
+			);
+			name = Details;
 			sourceTree = "<group>";
 		};
 		C9EBBD5F1E2C61AD00B5E509 /* Cars */ = {
@@ -492,6 +512,7 @@
 				C9A0DFF11E5AB84500102DE0 /* LogDetailsController.swift in Sources */,
 				C98E778F1E382C8500F34468 /* NibView.swift in Sources */,
 				C9C6F6761E54595300231949 /* Appearance.swift in Sources */,
+				C9D373D41E5BF8E600039366 /* LogDetailing.swift in Sources */,
 				C970BCF01E31A96300E1129A /* SupervisorCell.swift in Sources */,
 				C9C6F6721E54023300231949 /* OdometerAlert.swift in Sources */,
 				C99FC90F1E1B5AF7003BAEC2 /* SignUpController.swift in Sources */,
@@ -499,9 +520,11 @@
 				C9CDFA891DEFDB2800CE0A2D /* Mylogbook.xcdatamodeld in Sources */,
 				C9EBBD711E2DA20F00B5E509 /* CarController.swift in Sources */,
 				C9EBBD611E2C61B700B5E509 /* CarsController.swift in Sources */,
+				C9D373DA1E5C128D00039366 /* TrafficController.swift in Sources */,
 				C964FC331E236FD900D07FBF /* TextField.swift in Sources */,
 				C9B37B671E3D963800168846 /* Trip.swift in Sources */,
 				C99FC9141E1BB395003BAEC2 /* Validator.swift in Sources */,
+				C9D373DC1E5C12E800039366 /* RoadController.swift in Sources */,
 				C98E77961E398FE900F34468 /* Toolbar.swift in Sources */,
 				C99FC9181E1BB534003BAEC2 /* Validation.swift in Sources */,
 				C9EC4D2F1E3F1FAD00A80348 /* SupervisorStore.swift in Sources */,
@@ -522,6 +545,7 @@
 				C9CDFA811DEFDB2800CE0A2D /* AppDelegate.swift in Sources */,
 				C935B7361E0A6FFE00FD7FFF /* AuthRoute.swift in Sources */,
 				C9EC4D3F1E401DAF00A80348 /* SoftDeletingStore.swift in Sources */,
+				C9D373D81E5C126500039366 /* WeatherController.swift in Sources */,
 				C9EBBD651E2C65D000B5E509 /* Car.swift in Sources */,
 				C98E77921E397B3100F34468 /* LogPrepareController.swift in Sources */,
 				C94406051E42EB6D00D32AC3 /* Store.swift in Sources */,

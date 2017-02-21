@@ -70,8 +70,6 @@ class LogPrepareController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setupNavigation()
-        
         self.fetch()
     }
     
@@ -149,12 +147,6 @@ class LogPrepareController: UIViewController {
     }
     
     // MARK: Navigation
-    
-    func setupNavigation() {
-        navigationController!.hidesBarsOnTap = false
-        
-        navigationController!.navigationBar.restyle(.transparent)
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "startRecordingSegue" {

@@ -78,7 +78,7 @@ class LogRecordController: UIViewController {
     
     override func viewDidLoad() {
         setupNavigation()
-        
+
         shouldStartRecording()
     }
     
@@ -94,9 +94,7 @@ class LogRecordController: UIViewController {
         showCancelAlert()
     }
     
-    @IBAction func didTapPause(_ sender: UIBarButtonItem) {
-        navigationController!.setNavigationBarHidden(isPaused, animated: true)
-        
+    @IBAction func didTapPause(_ sender: UIBarButtonItem) {        
         let action: RecordAction =  isPaused ? .play : .pause
         
         recording(will: action)
@@ -209,16 +207,12 @@ class LogRecordController: UIViewController {
     
     // MARK: Navigation
     
-    func setupNavigation() {
-        navigationController!.hidesBarsOnTap = true
-        
-        navigationController!.setNavigationBarHidden(true, animated: true)
-        
+    func setupNavigation() {        
         navItem.setHidesBackButton(true, animated: false)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "startRecordingSegue" {
+        if segue.identifier == "stopRecordingSegue" {
             if let viewController = segue.destination as? LogDetailsController {
                 viewController.trip = trip
             }
