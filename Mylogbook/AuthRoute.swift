@@ -13,7 +13,9 @@ enum AuthRoute {
 // MARK: Routing
 
 extension AuthRoute: Routing {
-    static let resource = "auth"
+    var base: String {
+        return "\(Env.MLB_API_BASE)/auth"
+    }
     
     var path: String {
         switch self {
@@ -25,7 +27,7 @@ extension AuthRoute: Routing {
             return "logout"
         case .forgot:
             return "forgot"
-        }
+        }        
     }
     
     var method: HTTPMethod {

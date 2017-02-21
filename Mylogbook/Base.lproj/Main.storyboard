@@ -681,7 +681,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="w8u-Du-4vu">
-                                <rect key="frame" x="16" y="80" width="343" height="88"/>
+                                <rect key="frame" x="16" y="80" width="343" height="71.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record Your Trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIG-TA-3W6">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="38.5"/>
@@ -689,8 +689,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on the cards to select your car and supervisor and then press Start when you are ready" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCU-Xd-rP0">
-                                        <rect key="frame" x="0.0" y="54.5" width="343" height="33.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on the cards to select your car and supervisor" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCU-Xd-rP0">
+                                        <rect key="frame" x="0.0" y="54.5" width="343" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -704,7 +704,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tf8-59-qYn" customClass="Card" customModule="Mylogbook" customModuleProvider="target">
-                                <rect key="frame" x="16" y="208" width="343" height="74"/>
+                                <rect key="frame" x="16" y="191.5" width="343" height="74"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Igi-yB-7Rz">
                                         <rect key="frame" x="8" y="7" width="60" height="60"/>
@@ -742,7 +742,7 @@
                                 </connections>
                             </view>
                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAS-a3-A3z" customClass="Card" customModule="Mylogbook" customModuleProvider="target">
-                                <rect key="frame" x="16" y="306" width="343" height="74"/>
+                                <rect key="frame" x="16" y="289.5" width="343" height="74"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ejw-2S-zIr">
                                         <rect key="frame" x="8" y="7" width="60" height="60"/>
@@ -828,7 +828,7 @@
         <!--Log Record Controller-->
         <scene sceneID="sfm-se-vf5">
             <objects>
-                <viewController id="fie-Pj-7b1" customClass="LogRecordController" customModule="Mylogbook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="fie-Pj-7b1" customClass="LogRecordController" customModule="Mylogbook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y8P-Qs-h93"/>
                         <viewControllerLayoutGuide type="bottom" id="0RF-Ih-nJZ"/>
@@ -836,12 +836,96 @@
                     <view key="view" contentMode="scaleToFill" id="rfT-ab-Hcg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRa-fw-h3u">
+                                <rect key="frame" x="114" y="80" width="148" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sqf-sC-deN">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="done" systemItem="pause" id="gGV-bR-pjV">
+                                        <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="didTapPause:" destination="fie-Pj-7b1" id="vyM-Pa-G4d"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="xaR-6t-u5D">
+                                <rect key="frame" x="282" y="635" width="69" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQN-lN-3CA">
+                                        <rect key="frame" x="0.0" y="0.0" width="19.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIS-cY-bS9">
+                                        <rect key="frame" x="43.5" y="0.0" width="25.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Sqf-sC-deN" secondAttribute="bottom" id="4d9-cm-N7X"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xaR-6t-u5D" secondAttribute="trailing" constant="8" id="6pF-gT-GLZ"/>
+                            <constraint firstItem="oRa-fw-h3u" firstAttribute="centerX" secondItem="rfT-ab-Hcg" secondAttribute="centerX" id="KxI-kZ-K8V"/>
+                            <constraint firstItem="Sqf-sC-deN" firstAttribute="leading" secondItem="rfT-ab-Hcg" secondAttribute="leading" id="L76-5C-kAN"/>
+                            <constraint firstAttribute="trailing" secondItem="Sqf-sC-deN" secondAttribute="trailing" id="McG-jc-XgU"/>
+                            <constraint firstItem="oRa-fw-h3u" firstAttribute="top" secondItem="y8P-Qs-h93" secondAttribute="bottom" constant="16" id="l0l-Ye-Rck"/>
+                            <constraint firstItem="xaR-6t-u5D" firstAttribute="centerY" secondItem="Sqf-sC-deN" secondAttribute="centerY" id="yMS-Tq-rgv"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="OBK-4w-bh1">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="yj1-r5-ddu">
+                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="didTapCancel:" destination="fie-Pj-7b1" id="Xex-7l-AXR"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Stop" id="gJ8-tP-baC">
+                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="didTapStop:" destination="fie-Pj-7b1" id="4n2-Jg-Jcn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="distanceLabel" destination="jIS-cY-bS9" id="GQY-6a-duf"/>
+                        <outlet property="navItem" destination="OBK-4w-bh1" id="9sK-Gp-BGL"/>
+                        <outlet property="timeLabel" destination="FQN-lN-3CA" id="y5D-Sh-TuA"/>
+                        <outlet property="toolbar" destination="Sqf-sC-deN" id="ffk-tm-PNn"/>
+                        <segue destination="p7h-ZX-kmC" kind="show" identifier="stopRecordingSegue" id="KSc-ai-zbt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gsj-c4-PVv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2361" y="2792"/>
+        </scene>
+        <!--Log Details Controller-->
+        <scene sceneID="kPa-3m-avT">
+            <objects>
+                <viewController id="p7h-ZX-kmC" customClass="LogDetailsController" customModule="Mylogbook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U0d-Ih-fvn"/>
+                        <viewControllerLayoutGuide type="bottom" id="bIt-tJ-jkN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FgZ-aT-4o2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q7O-WZ-AzW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3137" y="2792"/>
         </scene>
         <!--Supervisor-->
         <scene sceneID="H3B-8C-iPs">

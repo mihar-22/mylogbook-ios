@@ -61,6 +61,18 @@ class Session {
         }
     }
     
+    func requestRawJSON(_ route: Routing, completion: @escaping (JSON) -> Void) {
+        let serializer = DataRequest.jsonResponseSerializer()
+        
+        manager.request(route).response(queue: queue, responseSerializer: serializer) { response in
+            guard response.result.isSuccess else { return }
+            
+            guard let json = response.result.value else { return }
+            
+            self.queue.async { completion(JSON(json)) }
+        }
+    }
+    
     func requestCollection(_ route: Routing, completion: @escaping ([JSON]) -> Void) {
         let serializer = DataRequest.jsonResponseSerializer()
         

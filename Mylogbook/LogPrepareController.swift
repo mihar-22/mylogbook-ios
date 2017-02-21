@@ -66,13 +66,13 @@ class LogPrepareController: UIViewController {
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
-        navigationController!.navigationBar.restyle(.transparent)
-        
         setupPickers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        DispatchQueue.main.async { self.fetch() }
+        setupNavigation()
+        
+        self.fetch()
     }
     
     // MARK: Fetch
@@ -149,6 +149,12 @@ class LogPrepareController: UIViewController {
     }
     
     // MARK: Navigation
+    
+    func setupNavigation() {
+        navigationController!.hidesBarsOnTap = false
+        
+        navigationController!.navigationBar.restyle(.transparent)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "startRecordingSegue" {

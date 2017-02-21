@@ -25,7 +25,9 @@ enum ResourceRoute<Model: Resourceable> {
 // MARK: Routing
 
 extension ResourceRoute: Routing {
-    static var resource: String { return Model.resource }
+    var base: String {
+        return "\(Env.MLB_API_BASE)/\(Model.resource)"
+    }
     
     var path: String {
         switch self {
@@ -37,7 +39,7 @@ extension ResourceRoute: Routing {
             return "\(model.id)"
         case .destroy(let model):
             return "\(model.id)"
-        }
+        }        
     }
     
     var method: HTTPMethod {
