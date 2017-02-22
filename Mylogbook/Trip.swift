@@ -40,8 +40,8 @@ extension Trip: Importable {
         supervisor = transaction.fetchOne(From(Supervisor.self),
                                           Where("id = \(supervisorId)"))
         
-        startedAt = source["started_at"].string?.dateFromISO8601
-        endedAt = source["ended_at"].string?.dateFromISO8601
+        startedAt = source["started_at"].stringValue.dateTime
+        endedAt = source["ended_at"].stringValue.dateTime
         odometer = source["odometer"].int!
         distance = source["distance"].double!
         
@@ -75,8 +75,8 @@ extension Trip: Resourceable {
     
     func toJSON() -> [String: Any] {
         return [
-            "started_at": startedAt!.iso8601,
-            "ended_at": endedAt!.iso8601,
+            "started_at": startedAt!.dateTime,
+            "ended_at": endedAt!.dateTime,
             "odometer": odometer,
             "distance": distance,
             "car_id": car!.id,

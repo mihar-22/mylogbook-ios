@@ -4,16 +4,32 @@ import Foundation
 // MARK: Date
 
 extension Date {
-    var iso8601: String {
-        return ISO8601DateFormatter().string(from: self)
+    var dateTime: String {
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        
+        return formatter.string(from: self)
     }
 }
 
 // MARK: String
 
 extension String {
-    var dateFromISO8601: Date? {
-        return ISO8601DateFormatter().date(from: self)
+    var dateTime: Date? {
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        
+        return formatter.date(from: self)
     }
 }
 

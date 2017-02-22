@@ -27,8 +27,8 @@ extension Supervisor: Importable {
         license = source["license"].string
         gender = source["gender"].string
         
-        updatedAt = source["updated_at"].string?.dateFromISO8601
-        deletedAt = source["deleted_at"].string?.dateFromISO8601
+        updatedAt = source["updated_at"].stringValue.dateTime
+        deletedAt = source["deleted_at"].stringValue.dateTime
     }
 }
 
