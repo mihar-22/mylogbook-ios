@@ -40,6 +40,12 @@ class LogDetailsController: UIViewController {
             
             controller.delegate = self
         }
+        
+        if segue.identifier == "logSummarySegue" {
+            if let controller = segue.destination as? LogSummaryController {
+                controller.trip = trip
+            }
+        }
     }
     
     // MARK: Validate

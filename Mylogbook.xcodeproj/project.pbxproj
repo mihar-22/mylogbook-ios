@@ -15,6 +15,8 @@
 		C935B7361E0A6FFE00FD7FFF /* AuthRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935B7351E0A6FFE00FD7FFF /* AuthRoute.swift */; };
 		C935B73C1E0B7A4600FD7FFF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935B73B1E0B7A4600FD7FFF /* Router.swift */; };
 		C94406051E42EB6D00D32AC3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94406041E42EB6D00D32AC3 /* Store.swift */; };
+		C945AA521E5C25AB00FAF9E9 /* LogSummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945AA511E5C25AB00FAF9E9 /* LogSummaryController.swift */; };
+		C945AA541E5C2A4400FAF9E9 /* TripStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945AA531E5C2A4400FAF9E9 /* TripStore.swift */; };
 		C95487CA1E4C209B00C48F54 /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95487C91E4C209B00C48F54 /* Foundation.swift */; };
 		C95487D01E4D859600C48F54 /* Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95487CF1E4D859600C48F54 /* Sync.swift */; };
 		C95B3B881E31CB4100533FB6 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B3B871E31CB4100533FB6 /* Alert.swift */; };
@@ -76,6 +78,8 @@
 		C935B7351E0A6FFE00FD7FFF /* AuthRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRoute.swift; sourceTree = "<group>"; };
 		C935B73B1E0B7A4600FD7FFF /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		C94406041E42EB6D00D32AC3 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		C945AA511E5C25AB00FAF9E9 /* LogSummaryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogSummaryController.swift; sourceTree = "<group>"; };
+		C945AA531E5C2A4400FAF9E9 /* TripStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripStore.swift; sourceTree = "<group>"; };
 		C95487C91E4C209B00C48F54 /* Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
 		C95487CF1E4D859600C48F54 /* Sync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sync.swift; sourceTree = "<group>"; };
 		C95B3B871E31CB4100533FB6 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -253,6 +257,7 @@
 				C9D373D21E5BF8DA00039366 /* Details */,
 				C98E77911E397B3100F34468 /* LogPrepareController.swift */,
 				C9C6F6791E55B75100231949 /* LogRecordController.swift */,
+				C945AA511E5C25AB00FAF9E9 /* LogSummaryController.swift */,
 			);
 			name = Log;
 			sourceTree = "<group>";
@@ -368,6 +373,7 @@
 				C94406041E42EB6D00D32AC3 /* Store.swift */,
 				C9EC4D2C1E3ECE1000A80348 /* CarStore.swift */,
 				C9EC4D2E1E3F1FAD00A80348 /* SupervisorStore.swift */,
+				C945AA531E5C2A4400FAF9E9 /* TripStore.swift */,
 				C9EC4D3E1E401DAF00A80348 /* SoftDeletingStore.swift */,
 				C979D6101E52A7E5009891C7 /* SyncStore.swift */,
 			);
@@ -507,6 +513,7 @@
 			files = (
 				C9EBBD5B1E28C45000B5E509 /* DashboardController.swift in Sources */,
 				C9C6F67A1E55B75100231949 /* LogRecordController.swift in Sources */,
+				C945AA521E5C25AB00FAF9E9 /* LogSummaryController.swift in Sources */,
 				C9A0DFF31E5ACDE300102DE0 /* WeatherRoute.swift in Sources */,
 				C9F1B98D1E094DCC002D4D61 /* Env.swift in Sources */,
 				C9A0DFF11E5AB84500102DE0 /* LogDetailsController.swift in Sources */,
@@ -550,6 +557,7 @@
 				C98E77921E397B3100F34468 /* LogPrepareController.swift in Sources */,
 				C94406051E42EB6D00D32AC3 /* Store.swift in Sources */,
 				C970BCE81E319D9E00E1129A /* SupervisorsController.swift in Sources */,
+				C945AA541E5C2A4400FAF9E9 /* TripStore.swift in Sources */,
 				C979D6111E52A7E5009891C7 /* SyncStore.swift in Sources */,
 				C908D3C71E24D5BF00A4E91C /* Keychain.swift in Sources */,
 				C9EBBD5E1E2C5F2100B5E509 /* CarCell.swift in Sources */,

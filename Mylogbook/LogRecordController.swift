@@ -309,10 +309,8 @@ extension LogRecordController: CLLocationManagerDelegate {
             
             trip.endedAt = Date()
             
-            trip.distance = distance
+            trip.distance = (distance / (mPerKm: 1000)).roundTo(places: 2)
         case .cancel:
-            stop()
-            
             navigationController!.popViewController(animated: true)
         }
     }
@@ -331,6 +329,7 @@ extension LogRecordController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager,
                          didChangeAuthorization status: CLAuthorizationStatus) {
+        
         locationManager(didChangeAuthorization: status)
     }
     

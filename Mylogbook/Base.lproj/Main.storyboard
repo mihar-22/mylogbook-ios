@@ -144,13 +144,11 @@
                                 <items>
                                     <navigationItem title="Sign Up" id="EqI-pc-N34">
                                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="d4S-b7-8El">
-                                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="didTapClose:" destination="So8-uU-Zcv" id="PPf-7z-ZdN"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Create" id="akV-cm-ddE">
-                                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="didTapCreate:" destination="So8-uU-Zcv" id="sxI-fP-SVa"/>
                                             </connections>
@@ -202,13 +200,11 @@
                                 <items>
                                     <navigationItem title="Log In" id="YgB-hu-HMa">
                                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="VUD-2A-4wI">
-                                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="didTapClose:" destination="4G5-9U-MMS" id="GY2-HM-C6i"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="45c-rP-Ceh">
-                                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="didTapDone:" destination="4G5-9U-MMS" id="cSG-rB-RwJ"/>
                                             </connections>
@@ -312,10 +308,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="vi0-mr-eLm" kind="relationship" relationship="viewControllers" id="zap-dp-9BC"/>
                         <segue destination="WJx-YF-NHt" kind="relationship" relationship="viewControllers" id="xOh-0W-7NU"/>
                         <segue destination="165-Sd-6HQ" kind="relationship" relationship="viewControllers" id="pOx-FM-noC"/>
                         <segue destination="zf2-IF-MT2" kind="relationship" relationship="viewControllers" id="cZU-nM-hfy"/>
+                        <segue destination="vi0-mr-eLm" kind="relationship" relationship="viewControllers" id="zap-dp-9BC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgE-3w-OrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -529,13 +525,11 @@
                                 <items>
                                     <navigationItem title="New Car" id="qba-Pi-Qh7">
                                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="5Rc-bz-62f">
-                                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="didTapClose:" destination="Fmh-zK-lGI" id="h8y-0H-iEC"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="zC2-E6-5Ca">
-                                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="didTapSave:" destination="Fmh-zK-lGI" id="jGe-WU-3RO"/>
                                             </connections>
@@ -590,7 +584,6 @@
                                 <items>
                                     <navigationItem title="Supervisors" id="vWi-d4-yLJ">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TrW-OO-KMd">
-                                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="Q4b-pn-jV9" kind="presentation" identifier="newSupervisorSegue" id="hh4-YO-80O"/>
                                             </connections>
@@ -776,8 +769,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Prepare Trip" id="hTg-zu-DzA">
-                        <barButtonItem key="rightBarButtonItem" title="Start" id="qks-hg-kdr">
-                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="rightBarButtonItem" title="Start" style="done" id="qks-hg-kdr">
                             <connections>
                                 <action selector="didTapStart:" destination="O2a-GE-oNn" id="Hxo-7j-emf"/>
                             </connections>
@@ -823,7 +815,6 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="done" systemItem="pause" id="gGV-bR-pjV">
-                                        <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="didTapPause:" destination="fie-Pj-7b1" id="vyM-Pa-G4d"/>
                                         </connections>
@@ -859,13 +850,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Recording" id="OBK-4w-bh1">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="yj1-r5-ddu">
-                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="didTapCancel:" destination="fie-Pj-7b1" id="Xex-7l-AXR"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Stop" id="gJ8-tP-baC">
-                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="rightBarButtonItem" title="Stop" style="done" id="gJ8-tP-baC">
                             <connections>
                                 <action selector="didTapStop:" destination="fie-Pj-7b1" id="4n2-Jg-Jcn"/>
                             </connections>
@@ -1037,14 +1026,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Trip Details" id="nQp-Cn-Qpd">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Lbu-ZH-Agc">
+                        <barButtonItem key="backBarButtonItem" title="Details" id="jQZ-Xb-tqX">
                             <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Lbu-ZH-Agc">
                             <connections>
                                 <action selector="didTapCancel:" destination="p7h-ZX-kmC" id="DVy-Zm-aUV"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" id="y3M-6E-1Cz">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" style="done" id="y3M-6E-1Cz">
                             <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="8it-f2-c2x" kind="show" identifier="logSummarySegue" id="sfI-yk-elh"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -1241,13 +1235,11 @@
                                 <items>
                                     <navigationItem title="New Supervisor" id="i7z-8r-K6Q">
                                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="9tj-si-Rjs">
-                                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="didTapClose:" destination="Q4b-pn-jV9" id="WXL-ya-SgA"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="F8g-4l-65J">
-                                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="didTapSave:" destination="Q4b-pn-jV9" id="Xac-5s-uR8"/>
                                             </connections>
@@ -1375,6 +1367,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ec-VV-Xln" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3926" y="2791"/>
+        </scene>
+        <!--Log Summary-->
+        <scene sceneID="4eT-np-Pez">
+            <objects>
+                <viewController id="8it-f2-c2x" userLabel="Log Summary" customClass="LogSummaryController" customModule="Mylogbook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uAc-rY-W00"/>
+                        <viewControllerLayoutGuide type="bottom" id="xB1-Fk-NMz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vlX-gC-fkt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Summary" id="5US-Rv-diQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="h0t-9L-CxI">
+                            <connections>
+                                <action selector="didTapSave:" destination="8it-f2-c2x" id="dXB-uW-o7F"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tEj-fF-nUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4662" y="2792"/>
         </scene>
         <!--Road Controller-->
         <scene sceneID="yro-rt-m56">
@@ -1504,8 +1523,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rqh-BI-nv3"/>
+        <segue reference="Hb2-1e-Hpd"/>
         <segue reference="PrZ-48-vgD"/>
         <segue reference="hh4-YO-80O"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

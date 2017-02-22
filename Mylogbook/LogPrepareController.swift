@@ -5,8 +5,6 @@ import UIKit
 
 class LogPrepareController: UIViewController {
     
-    let trip = Trip()
-    
     var cars = [Car]()
     
     var supervisors = [Supervisor]()
@@ -155,11 +153,13 @@ class LogPrepareController: UIViewController {
                 
                 self.odometer = odometer
                 
-                self.trip.odometer = Int(odometer!)!
+                let trip = Trip()
                 
-                self.trip.car = selectedCar
+                trip.odometer = Int(odometer!)!
                 
-                self.trip.supervisor = selectedSupervisor
+                trip.car = selectedCar
+                
+                trip.supervisor = selectedSupervisor
                 
                 viewController.trip = trip
             }

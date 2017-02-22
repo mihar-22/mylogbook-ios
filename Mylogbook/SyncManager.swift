@@ -114,8 +114,10 @@ class SyncManager {
         SyncStore<Trip>.import(from: route) { _ in  group.leave() }
         
         // Push
-        let trips = Store.shared.stack.beginUnsafe().fetchAll(From<Trip>(),
-                                                              Where("id = 0"))!
+        let transaction = Store.shared.stack.beginUnsafe()
+        
+        let trips = transaction.fetchAll(From<Trip>(),
+                                         Where("id = 0"))!
         
         for trip in trips {
             let route = ResourceRoute<Trip>.store(trip)
