@@ -1,10 +1,13 @@
 
+import CoreLocation
 import PopupDialog
 import UIKit
 
 class LogDetailsController: UIViewController {
     
     var trip: Trip!
+    
+    var locations: [CLLocation]!
     
     // MARK: Outlets
     
@@ -44,6 +47,8 @@ class LogDetailsController: UIViewController {
         if segue.identifier == "logSummarySegue" {
             if let controller = segue.destination as? LogSummaryController {
                 controller.trip = trip
+                
+                controller.locations = locations
             }
         }
     }

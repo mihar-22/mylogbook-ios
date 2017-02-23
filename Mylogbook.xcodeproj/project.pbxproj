@@ -65,6 +65,7 @@
 		C9EC4D391E40123400A80348 /* SyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC4D381E40123300A80348 /* SyncManager.swift */; };
 		C9EC4D3F1E401DAF00A80348 /* SoftDeletingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC4D3E1E401DAF00A80348 /* SoftDeletingStore.swift */; };
 		C9F1B98D1E094DCC002D4D61 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1B98C1E094DCC002D4D61 /* Env.swift */; };
+		C9FFDDB81E5DADC200AEFDC7 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFDDB71E5DADC200AEFDC7 /* UserSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +131,7 @@
 		C9EC4D381E40123300A80348 /* SyncManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncManager.swift; sourceTree = "<group>"; };
 		C9EC4D3E1E401DAF00A80348 /* SoftDeletingStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftDeletingStore.swift; sourceTree = "<group>"; };
 		C9F1B98C1E094DCC002D4D61 /* Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
+		C9FFDDB71E5DADC200AEFDC7 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				C935B73A1E0B7A2E00FD7FFF /* Networking */,
 				C908D3C61E24D5BF00A4E91C /* Keychain.swift */,
 				C9C6F6771E545A1B00231949 /* KeyboardManager.swift */,
+				C9FFDDB71E5DADC200AEFDC7 /* UserSettings.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				C9D373DC1E5C12E800039366 /* RoadController.swift in Sources */,
 				C98E77961E398FE900F34468 /* Toolbar.swift in Sources */,
 				C99FC9181E1BB534003BAEC2 /* Validation.swift in Sources */,
+				C9FFDDB81E5DADC200AEFDC7 /* UserSettings.swift in Sources */,
 				C9EC4D2F1E3F1FAD00A80348 /* SupervisorStore.swift in Sources */,
 				C9C6F6781E545A1B00231949 /* KeyboardManager.swift in Sources */,
 				C95487CA1E4C209B00C48F54 /* Foundation.swift in Sources */,

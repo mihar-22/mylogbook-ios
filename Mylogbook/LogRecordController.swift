@@ -45,26 +45,6 @@ class LogRecordController: UIViewController {
         return manager
     }()
     
-    // MARK: Formatters
-    
-    let timeFormatter: DateComponentsFormatter = {
-        let formatter = DateComponentsFormatter()
-        
-        formatter.unitsStyle = .abbreviated
-        
-        return formatter
-    }()
-    
-    let distanceFormatter: MKDistanceFormatter = {
-        let formatter = MKDistanceFormatter()
-        
-        formatter.units = .metric
-        
-        formatter.unitStyle = .abbreviated
-        
-        return formatter
-    }()
-    
     // MARK: Outlets
     
     @IBOutlet weak var navItem: UINavigationItem!
@@ -165,7 +145,7 @@ class LogRecordController: UIViewController {
     func eachTimerInterval(_ timer: Timer) {
         seconds += 1
         
-        timeLabel.text = timeFormatter.string(from: TimeInterval(seconds))!
+        timeLabel.text = TimeInterval(seconds).abbreviatedTime!
     }
     
     // MARK: Weather
@@ -215,6 +195,8 @@ class LogRecordController: UIViewController {
         if segue.identifier == "stopRecordingSegue" {
             if let viewController = segue.destination as? LogDetailsController {
                 viewController.trip = trip
+                
+                viewController.locations = locations
             }
         }
     }
@@ -396,7 +378,7 @@ extension LogRecordController: CLLocationManagerDelegate {
         if locations.count > 0 {
             distance += location.distance(from: self.locations.last!)
             
-            distanceLabel.text = distanceFormatter.string(fromDistance: distance)
+            distanceLabel.text = distance.abbreviatedDistance!
         }
     }
 }

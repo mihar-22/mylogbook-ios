@@ -13,26 +13,24 @@ class SyncManager {
                                       attributes: [.concurrent])
     
     private let network = NetworkReachabilityManager()!
-    
-    private var isSyncPrepared: Bool {
+
+    private var lastSyncedAt: Date {
         get {
-            return UserDefaults.standard.bool(forKey: "isSyncPrepared")
+            return UserSettings.shared.lastSyncedAt
         }
         
-        set(isSyncPrepared) {
-            UserDefaults.standard.set(isSyncPrepared, forKey: "isSyncPrepared")
-            
-            UserDefaults.standard.synchronize()
+        set(date) {
+            UserSettings.shared.lastSyncedAt = date
         }
     }
     
-    private var lastSyncedAt: Date {
+   private var isSyncPrepared: Bool {
         get {
-            return UserDefaults.standard.object(forKey: "lastSyncedAt") as! Date
+            return UserSettings.shared.isSyncPrepared
         }
         
-        set(lastSyncedAt) {
-            UserDefaults.standard.set(lastSyncedAt, forKey: "lastSyncedAt")
+        set(isPrepared) {
+            UserSettings.shared.isSyncPrepared = isPrepared
         }
     }
     
