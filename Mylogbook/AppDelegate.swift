@@ -13,11 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Appearance.apply()
         
-        setupRootController()
-        
         KeyboardManager.start()
         
-        SyncManager().start()
+        setupRootController()
         
         return true
     }
@@ -28,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         if isAuthenticated {
+            SyncManager().start()
+            
             window!.rootViewController = storyboard.instantiateInitialViewController()
         } else {
             window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "AuthSID")

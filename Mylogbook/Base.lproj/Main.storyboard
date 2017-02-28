@@ -1391,7 +1391,6 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" style="done" id="y3M-6E-1Cz">
-                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="8it-f2-c2x" kind="show" identifier="logSummarySegue" id="sfI-yk-elh"/>
                             </connections>
