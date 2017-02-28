@@ -11,6 +11,10 @@ class Trip: NSManagedObject {
         set(id) { self.id = id }
     }
     
+    var timeZone: TimeZone {
+        return TimeZone(identifier: timeZoneIdentifier!)!
+    }
+    
     // MARK: Initializers
     
     convenience init() {
@@ -65,6 +69,12 @@ extension Trip: Importable {
         freeway = roads["freeway"].bool!
         ruralHighway = roads["rural_highway"].bool!
         gravel = roads["gravel"].bool!
+        
+        let location = source["location"]
+        
+        latitude = location["latitude"].double!
+        longitude = location["longitude"].double!
+        timeZoneIdentifier = location["timezone"].string!
     }
 }
 
@@ -98,6 +108,11 @@ extension Trip: Resourceable {
                 "freeway": freeway,
                 "rural_highway": ruralHighway,
                 "gravel": gravel
+            ],
+            "location": [
+                "latitude": latitude,
+                "longitude": longitude,
+                "timezone": timeZoneIdentifier!
             ]
         ]
     }
@@ -129,4 +144,8 @@ extension Trip {
     @NSManaged public var freeway: Bool
     @NSManaged public var ruralHighway: Bool
     @NSManaged public var gravel: Bool
+    
+    @NSManaged public var latitude: Double
+    @NSManaged public var longitude: Double
+    @NSManaged public var timeZoneIdentifier: String?
 }

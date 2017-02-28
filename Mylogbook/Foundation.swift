@@ -26,6 +26,18 @@ extension Date {
         
         return formatter.string(from: self)
     }
+    
+    func secondsFromStartOfDay(in timeZone: TimeZone) -> Int {
+        let components = Calendar.current.dateComponents(in: timeZone, from: self)
+        
+        let hour = components.hour!
+        
+        let mins = components.minute!
+        
+        let secs = components.second!
+        
+        return (hour * (secsPerHour: 3600)) + (mins * (secsPerMin: 60)) + secs
+    }
 }
 
 // MARK: String
@@ -75,6 +87,16 @@ extension TimeInterval {
         let formatter = DateComponentsFormatter()
         
         formatter.unitsStyle = .abbreviated
+        
+        return formatter.string(from: self)
+    }
+    
+    func abbreviatedTime(in units: NSCalendar.Unit) -> String? {
+        let formatter = DateComponentsFormatter()
+        
+        formatter.unitsStyle = .abbreviated
+        
+        formatter.allowedUnits = units
         
         return formatter.string(from: self)
     }

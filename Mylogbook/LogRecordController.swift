@@ -65,6 +65,8 @@ class LogRecordController: UIViewController {
     // MARK: Actions
     
     @IBAction func didTapStop(_ sender: UIBarButtonItem) {
+        guard locations.count > 1 else { return }
+        
         recording(will: .stop)
         
         performSegue(withIdentifier: "stopRecordingSegue", sender: nil)
@@ -286,12 +288,20 @@ extension LogRecordController: CLLocationManagerDelegate {
             start()
             
             trip.startedAt = Date()
+            
+            trip.timeZoneIdentifier = TimeZone.current.identifier
         case.stop:
             stop()
             
             trip.endedAt = Date()
             
             trip.distance = (distance / (mPerKm: 1000)).roundTo(places: 2)
+            
+            let coordinate = locations.first!.coordinate
+            
+            trip.latitude = coordinate.latitude.roundTo(places: 8)
+            
+            trip.longitude = coordinate.longitude.roundTo(places: 8)
         case .cancel:
             navigationController!.popViewController(animated: true)
         }

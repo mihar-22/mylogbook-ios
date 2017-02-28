@@ -9,4 +9,7 @@ target 'Mylogbook' do
 	pod 'SwiftyJSON'
 	pod 'CoreStore'
 	pod 'IQKeyboardManagerSwift'
+	pod 'MBCircularProgressBar'
+	pod 'Charts'
+	pod 'Solar'
 end

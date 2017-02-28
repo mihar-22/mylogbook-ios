@@ -1,30 +1,41 @@
 PODS:
   - Alamofire (4.3.0)
+  - Charts (3.0.1):
+    - Charts/Core (= 3.0.1)
+  - Charts/Core (3.0.1)
   - CoreStore (3.0.3)
   - IQKeyboardManagerSwift (4.0.8)
   - JVFloatLabeledTextField (1.1.1)
   - KeychainAccess (3.0.1)
+  - MBCircularProgressBar (0.3.5)
   - PopupDialog (0.5.3)
+  - Solar (1.0.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - Charts
   - CoreStore
   - IQKeyboardManagerSwift
   - JVFloatLabeledTextField
   - KeychainAccess
+  - MBCircularProgressBar
   - PopupDialog (~> 0.5)
+  - Solar
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
   CoreStore: b57aaae17a796e24b58726ce2aaa7c883456cbf5
   IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
   JVFloatLabeledTextField: 0e5524b097f102036214dd8279edc8ecf08b5e18
   KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
+  MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
   PopupDialog: 533dd564f8781633375505b9fbd406f8f146ccc9
+  Solar: 8db49542f5bf0272a23a488f0769c58af7b6e28e
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: ef6ba3f5b903bfd028c5fb074cff53283c990250
+PODFILE CHECKSUM: b416395e37d6666e75cca84a803be68e37a6dbb4
 
 COCOAPODS: 1.1.1

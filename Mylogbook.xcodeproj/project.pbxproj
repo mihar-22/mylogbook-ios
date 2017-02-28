@@ -17,6 +17,8 @@
 		C94406051E42EB6D00D32AC3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94406041E42EB6D00D32AC3 /* Store.swift */; };
 		C945AA521E5C25AB00FAF9E9 /* LogSummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945AA511E5C25AB00FAF9E9 /* LogSummaryController.swift */; };
 		C945AA541E5C2A4400FAF9E9 /* TripStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945AA531E5C2A4400FAF9E9 /* TripStore.swift */; };
+		C94BA89F1E5FF612002E8F9E /* ChartSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BA89E1E5FF612002E8F9E /* ChartSegment.swift */; };
+		C94BA8A11E5FF68D002E8F9E /* ChartValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BA8A01E5FF68D002E8F9E /* ChartValueFormatter.swift */; };
 		C95487CA1E4C209B00C48F54 /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95487C91E4C209B00C48F54 /* Foundation.swift */; };
 		C95487D01E4D859600C48F54 /* Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95487CF1E4D859600C48F54 /* Sync.swift */; };
 		C95B3B881E31CB4100533FB6 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B3B871E31CB4100533FB6 /* Alert.swift */; };
@@ -28,6 +30,8 @@
 		C970BCEC1E31A83E00E1129A /* Supervisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCEB1E31A83E00E1129A /* Supervisor.swift */; };
 		C970BCF01E31A96300E1129A /* SupervisorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCEF1E31A96300E1129A /* SupervisorCell.swift */; };
 		C979D6111E52A7E5009891C7 /* SyncStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979D6101E52A7E5009891C7 /* SyncStore.swift */; };
+		C987DD121E64F5D00011F223 /* TripCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987DD111E64F5D00011F223 /* TripCalculator.swift */; };
+		C987DD141E651DD70011F223 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987DD131E651DD70011F223 /* Button.swift */; };
 		C98E778B1E37374900F34468 /* JVTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E778A1E37374900F34468 /* JVTextField.swift */; };
 		C98E778D1E3746F000F34468 /* TextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98E778C1E3746F000F34468 /* TextField.xib */; };
 		C98E778F1E382C8500F34468 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E778E1E382C8500F34468 /* NibView.swift */; };
@@ -81,6 +85,8 @@
 		C94406041E42EB6D00D32AC3 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		C945AA511E5C25AB00FAF9E9 /* LogSummaryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogSummaryController.swift; sourceTree = "<group>"; };
 		C945AA531E5C2A4400FAF9E9 /* TripStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripStore.swift; sourceTree = "<group>"; };
+		C94BA89E1E5FF612002E8F9E /* ChartSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSegment.swift; sourceTree = "<group>"; };
+		C94BA8A01E5FF68D002E8F9E /* ChartValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartValueFormatter.swift; sourceTree = "<group>"; };
 		C95487C91E4C209B00C48F54 /* Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
 		C95487CF1E4D859600C48F54 /* Sync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sync.swift; sourceTree = "<group>"; };
 		C95B3B871E31CB4100533FB6 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -92,6 +98,8 @@
 		C970BCEB1E31A83E00E1129A /* Supervisor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Supervisor.swift; sourceTree = "<group>"; };
 		C970BCEF1E31A96300E1129A /* SupervisorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupervisorCell.swift; sourceTree = "<group>"; };
 		C979D6101E52A7E5009891C7 /* SyncStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncStore.swift; sourceTree = "<group>"; };
+		C987DD111E64F5D00011F223 /* TripCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripCalculator.swift; sourceTree = "<group>"; };
+		C987DD131E651DD70011F223 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		C98E778A1E37374900F34468 /* JVTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JVTextField.swift; sourceTree = "<group>"; };
 		C98E778C1E3746F000F34468 /* TextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextField.xib; sourceTree = "<group>"; };
 		C98E778E1E382C8500F34468 /* NibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
@@ -180,11 +188,11 @@
 		C935B7371E0A7C9100FD7FFF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C94BA89D1E5FF601002E8F9E /* Dashboard */,
 				C9EBBD6F1E2D9A9E00B5E509 /* Auth */,
 				C9EBBD5F1E2C61AD00B5E509 /* Cars */,
 				C970BCE61E319D8D00E1129A /* Supervisors */,
 				C98E77901E397B1900F34468 /* Log */,
-				C9EBBD5A1E28C45000B5E509 /* DashboardController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -219,6 +227,17 @@
 			name = Sync;
 			sourceTree = "<group>";
 		};
+		C94BA89D1E5FF601002E8F9E /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				C9EBBD5A1E28C45000B5E509 /* DashboardController.swift */,
+				C94BA89E1E5FF612002E8F9E /* ChartSegment.swift */,
+				C94BA8A01E5FF68D002E8F9E /* ChartValueFormatter.swift */,
+				C987DD111E64F5D00011F223 /* TripCalculator.swift */,
+			);
+			name = Dashboard;
+			sourceTree = "<group>";
+		};
 		C964FC311E236FCE00D07FBF /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +248,7 @@
 				C98E77951E398FE900F34468 /* Toolbar.swift */,
 				C98E778E1E382C8500F34468 /* NibView.swift */,
 				C9C6F6751E54595300231949 /* Appearance.swift */,
+				C987DD131E651DD70011F223 /* Button.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -419,6 +439,7 @@
 					C9CDFA7C1DEFDB2800CE0A2D = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = F35GF67S6P;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -522,6 +543,7 @@
 				C9A0DFF11E5AB84500102DE0 /* LogDetailsController.swift in Sources */,
 				C98E778F1E382C8500F34468 /* NibView.swift in Sources */,
 				C9C6F6761E54595300231949 /* Appearance.swift in Sources */,
+				C987DD121E64F5D00011F223 /* TripCalculator.swift in Sources */,
 				C9D373D41E5BF8E600039366 /* LogDetailing.swift in Sources */,
 				C970BCF01E31A96300E1129A /* SupervisorCell.swift in Sources */,
 				C9C6F6721E54023300231949 /* OdometerAlert.swift in Sources */,
@@ -539,11 +561,13 @@
 				C99FC9181E1BB534003BAEC2 /* Validation.swift in Sources */,
 				C9FFDDB81E5DADC200AEFDC7 /* UserSettings.swift in Sources */,
 				C9EC4D2F1E3F1FAD00A80348 /* SupervisorStore.swift in Sources */,
+				C94BA89F1E5FF612002E8F9E /* ChartSegment.swift in Sources */,
 				C9C6F6781E545A1B00231949 /* KeyboardManager.swift in Sources */,
 				C95487CA1E4C209B00C48F54 /* Foundation.swift in Sources */,
 				C970BCEA1E319F3500E1129A /* SupervisorController.swift in Sources */,
 				C95B3B9E1E35FABD00533FB6 /* NavigationBar.swift in Sources */,
 				C98E778B1E37374900F34468 /* JVTextField.swift in Sources */,
+				C94BA8A11E5FF68D002E8F9E /* ChartValueFormatter.swift in Sources */,
 				C95487D01E4D859600C48F54 /* Sync.swift in Sources */,
 				C9EBBD571E2882E200B5E509 /* LogInController.swift in Sources */,
 				C95B3B8C1E33360900533FB6 /* ResourceRoute.swift in Sources */,
@@ -554,6 +578,7 @@
 				C95B3B881E31CB4100533FB6 /* Alert.swift in Sources */,
 				C92AA0311E15185A00A92067 /* Theme.swift in Sources */,
 				C9CDFA811DEFDB2800CE0A2D /* AppDelegate.swift in Sources */,
+				C987DD141E651DD70011F223 /* Button.swift in Sources */,
 				C935B7361E0A6FFE00FD7FFF /* AuthRoute.swift in Sources */,
 				C9EC4D3F1E401DAF00A80348 /* SoftDeletingStore.swift in Sources */,
 				C9D373D81E5C126500039366 /* WeatherController.swift in Sources */,
@@ -691,12 +716,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = F35GF67S6P;
 				INFOPLIST_FILE = Mylogbook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mihar.Mylogbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -707,6 +734,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = F35GF67S6P;
 				INFOPLIST_FILE = Mylogbook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;

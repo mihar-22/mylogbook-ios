@@ -25,7 +25,7 @@ enum DarkTheme {
         case .base(let alpha):
             return UIColor.black.withAlphaComponent(alpha.rawValue)
         case.brand:
-            return UIColor.blue
+            return UIColor(red: 34/255, green: 181/255, blue: 115/255, alpha: 1)
         case .error:
             return UIColor.red
         }
@@ -50,9 +50,9 @@ enum LightTheme {
         case .base(let alpha):
             return UIColor.white.withAlphaComponent(alpha.rawValue)
         case.brand:
-            return UIColor.blue
+            return UIColor(red: 34/255, green: 181/255, blue: 115/255, alpha: 1)
         case .error:
-            return UIColor.init(red: 255/255, green: 110/255, blue: 110/255, alpha: 1)
+            return UIColor(red: 255/255, green: 110/255, blue: 110/255, alpha: 1)
         }
     }
 }

@@ -31,6 +31,10 @@ class TripStore {
             trip.ruralHighway = newTrip.ruralHighway
             trip.gravel = newTrip.gravel
             
+            trip.latitude = newTrip.latitude
+            trip.longitude = newTrip.longitude
+            trip.timeZoneIdentifier = newTrip.timeZoneIdentifier
+            
             _ = transaction.commitAndWait()
         }
     }
