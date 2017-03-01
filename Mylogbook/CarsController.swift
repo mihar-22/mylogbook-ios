@@ -132,7 +132,7 @@ extension CarsController: UITableViewDataSource, UITableViewDelegate {
     
     func configure(_ cell: CarCell, with car: Car) {
         cell.nameLabel.text = car.name
-        cell.registrationLabel.text = car.registration!
+        cell.registrationLabel.text = car.registration
         // set typeImage here
     }
     

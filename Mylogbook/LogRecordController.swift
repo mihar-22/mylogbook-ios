@@ -295,8 +295,8 @@ extension LogRecordController: CLLocationManagerDelegate {
             
             trip.endedAt = Date()
             
-            trip.distance = (distance / (mPerKm: 1000)).roundTo(places: 2)
-            
+            trip.distance = distance.roundTo(places: 2)
+                        
             let coordinate = locations.first!.coordinate
             
             trip.latitude = coordinate.latitude.roundTo(places: 8)

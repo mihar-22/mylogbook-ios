@@ -21,7 +21,7 @@ extension Importable where Self: NSManagedObject, Self: Resourceable, Self: Sync
         
         guard let model = transaction.fetchOne(From<Self>(), Where("id = \(id)")) else { return true }
         
-        return model.updatedAt! < source["updated_at"].stringValue.dateTime! ||
+        return model.updatedAt < source["updated_at"].string!.dateTime! ||
                (model.deletedAt == nil && source["deleted_at"].string != nil)
     }
 }

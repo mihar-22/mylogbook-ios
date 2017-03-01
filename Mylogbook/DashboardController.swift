@@ -187,14 +187,13 @@ class DashboardController: UIViewController {
         
         let lastTrip = trips.last!
         
-        let totalTimeInterval = lastTrip.endedAt!.timeIntervalSince(lastTrip.startedAt!)
-        
-        lastRouteTimeLabel.text = totalTimeInterval.abbreviatedTime
-        
-        lastRouteDistanceLabel.text = lastTrip.distance.toMeters.abbreviatedDistance
+        lastRouteTimeLabel.text = lastTrip.totalTimeInterval.abbreviatedTime
+
+        lastRouteDistanceLabel.text = lastTrip.distance.abbreviatedDistance
         
         setupMapView()
     }
+    
 }
 
 // MARK: Map View Delegate
@@ -226,7 +225,7 @@ extension DashboardController: MKMapViewDelegate {
         
         startAnnotation.title = "Started Here"
         
-        startAnnotation.subtitle = trips.last!.startedAt!.shortTime
+        startAnnotation.subtitle = trips.last!.startedAt.shortTime
         
         startAnnotation.coordinate = locations!.first!.coordinate
         
@@ -234,7 +233,7 @@ extension DashboardController: MKMapViewDelegate {
         
         endAnnotation.title = "Ended Here"
         
-        endAnnotation.subtitle = trips.last!.endedAt!.shortTime
+        endAnnotation.subtitle = trips.last!.endedAt.shortTime
         
         endAnnotation.coordinate = locations!.last!.coordinate
         

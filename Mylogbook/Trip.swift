@@ -12,7 +12,11 @@ class Trip: NSManagedObject {
     }
     
     var timeZone: TimeZone {
-        return TimeZone(identifier: timeZoneIdentifier!)!
+        return TimeZone(identifier: timeZoneIdentifier)!
+    }
+    
+    var totalTimeInterval: TimeInterval {
+        return endedAt.timeIntervalSince(startedAt)
     }
     
     // MARK: Initializers
@@ -37,15 +41,15 @@ extension Trip: Importable {
         let carId = source["car_id"].int!
         
         car = transaction.fetchOne(From(Car.self),
-                                   Where("id = \(carId)"))
+                                   Where("id = \(carId)"))!
         
         let supervisorId = source["supervisor_id"].int!
         
         supervisor = transaction.fetchOne(From(Supervisor.self),
-                                          Where("id = \(supervisorId)"))
+                                          Where("id = \(supervisorId)"))!
         
-        startedAt = source["started_at"].stringValue.dateTime
-        endedAt = source["ended_at"].stringValue.dateTime
+        startedAt = source["started_at"].string!.dateTime!
+        endedAt = source["ended_at"].string!.dateTime!
         odometer = source["odometer"].int!
         distance = source["distance"].double!
         
@@ -85,12 +89,12 @@ extension Trip: Resourceable {
     
     func toJSON() -> [String: Any] {
         return [
-            "started_at": startedAt!.dateTime,
-            "ended_at": endedAt!.dateTime,
+            "started_at": startedAt.dateTime,
+            "ended_at": endedAt.dateTime,
             "odometer": odometer,
             "distance": distance,
-            "car_id": car!.id,
-            "supervisor_id": supervisor!.id,
+            "car_id": car.id,
+            "supervisor_id": supervisor.id,
             "weather": [
                 "clear": clear,
                 "rain": rain,
@@ -112,7 +116,7 @@ extension Trip: Resourceable {
             "location": [
                 "latitude": latitude,
                 "longitude": longitude,
-                "timezone": timeZoneIdentifier!
+                "timezone": timeZoneIdentifier
             ]
         ]
     }
@@ -122,13 +126,13 @@ extension Trip: Resourceable {
 
 extension Trip {
     @NSManaged public var id: Int
-    @NSManaged public var startedAt: Date?
-    @NSManaged public var endedAt: Date?
+    @NSManaged public var startedAt: Date
+    @NSManaged public var endedAt: Date
     @NSManaged public var odometer: Int
     @NSManaged public var distance: Double
     
-    @NSManaged public var car: Car?
-    @NSManaged public var supervisor: Supervisor?
+    @NSManaged public var car: Car
+    @NSManaged public var supervisor: Supervisor
     
     @NSManaged public var clear: Bool
     @NSManaged public var rain: Bool
@@ -147,5 +151,5 @@ extension Trip {
     
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double
-    @NSManaged public var timeZoneIdentifier: String?
+    @NSManaged public var timeZoneIdentifier: String
 }

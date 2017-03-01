@@ -23,9 +23,9 @@ struct TripCalculator {
     }
     
     private static func calculate(for trip: Trip) -> (Int, Int) {
-        let startedAt = trip.startedAt!.secondsFromStartOfDay(in: trip.timeZone)
+        let startedAt = trip.startedAt.secondsFromStartOfDay(in: trip.timeZone)
         
-        let endedAt = (startedAt + Int(trip.endedAt!.timeIntervalSince(trip.startedAt!)))
+        let endedAt = startedAt + Int(trip.totalTimeInterval)
         
         let (dayStartsAt, dayEndsAt) = getSunriseAndSunset(for: trip)
         
@@ -55,7 +55,7 @@ struct TripCalculator {
     }
     
     private static func getSunriseAndSunset(for trip: Trip) -> (Int, Int) {
-        let solar = Solar.init(forDate: trip.startedAt!,
+        let solar = Solar.init(forDate: trip.startedAt,
                                withTimeZone: trip.timeZone,
                                latitude: trip.latitude,
                                longitude: trip.longitude)!

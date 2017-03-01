@@ -9,7 +9,7 @@ import SwiftyJSON
 protocol Syncable {
     var id: Int { get set }
     
-    var updatedAt: Date? { get set }
+    var updatedAt: Date { get set }
     var deletedAt: Date? { get set }
 }
 
@@ -98,7 +98,7 @@ class Sync<Model: NSManagedObject> where Model: Resourceable,
     private func pushUpdates(completion: @escaping() -> Void) {
         let group = DispatchGroup()
 
-        for model in models.filter({ $0.updatedAt! > lastSyncedAt }) {
+        for model in models.filter({ $0.updatedAt > lastSyncedAt }) {
             let route = ResourceRoute<Model>.update(model)
             
             group.enter()

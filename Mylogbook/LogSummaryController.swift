@@ -71,13 +71,13 @@ class LogSummaryController: UIViewController {
     }
     
     func saveOdometer() {
-        let key = "car_\(trip.car!.id)_odometer"
+        let key = "car_\(trip.car.id)_odometer"
         
         let odometer = Int(UserDefaults.standard.string(forKey: key)!)!
         
-        let distance = Int(floor(trip.distance))
+        let distance = Int(trip.distance / (kmToMeters: 1000))
         
-        UserSettings.shared.set(odometer: "\(odometer + distance)", for: trip.car!)
+        UserSettings.shared.set(odometer: "\(odometer + distance)", for: trip.car)
     }
     
     // MARK: Cards
@@ -92,18 +92,18 @@ class LogSummaryController: UIViewController {
     }
     
     func setupCarCard() {
-        let car = trip.car!
+        let car = trip.car
         
         carNameLabel.text = car.name
-        carRegistrationLabel.text = car.registration!
+        carRegistrationLabel.text = car.registration
         // set type image here
     }
     
     func setupSupervisorCard() {
-        let supervisor = trip.supervisor!
+        let supervisor = trip.supervisor
         
         supervisorNameLabel.text = supervisor.fullName
-        supervisorLicenseLabel.text = supervisor.license!
+        supervisorLicenseLabel.text = supervisor.license
         // set gender image here
     }
     
@@ -162,9 +162,9 @@ class LogSummaryController: UIViewController {
     }
     
     func setupRouteCard() {
-        totalTimeLabel.text = trip.endedAt!.timeIntervalSince(trip.startedAt!).abbreviatedTime
+        totalTimeLabel.text = trip.totalTimeInterval.abbreviatedTime
         
-        totalDistanceLabel.text = trip.distance.toMeters.abbreviatedDistance
+        totalDistanceLabel.text = trip.distance.abbreviatedDistance
         
         setupMapView()
     }
@@ -213,7 +213,7 @@ extension LogSummaryController: MKMapViewDelegate {
         
         startAnnotation.title = "Started Here"
         
-        startAnnotation.subtitle = trip.startedAt!.shortTime
+        startAnnotation.subtitle = trip.startedAt.shortTime
         
         startAnnotation.coordinate = locations.first!.coordinate
         
@@ -221,7 +221,7 @@ extension LogSummaryController: MKMapViewDelegate {
         
         endAnnotation.title = "Ended Here"
 
-        endAnnotation.subtitle = trip.endedAt!.shortTime
+        endAnnotation.subtitle = trip.endedAt.shortTime
         
         endAnnotation.coordinate = locations.last!.coordinate
         

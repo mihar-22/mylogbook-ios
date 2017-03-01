@@ -5,7 +5,7 @@ import SwiftyJSON
 // MARK: Car
 
 class Car: NSManagedObject, SoftDeletable, Syncable {
-    var name: String { return "\(make!) \(model!)" }
+    var name: String { return "\(make) \(model)" }
     
     var uniqueIDValue: Int {
         get { return self.id }
@@ -22,13 +22,13 @@ extension Car: Importable {
     static let uniqueIDKeyPath = "id"
     
     func update(from source: JSON, in transaction: BaseDataTransaction) throws {
-        make = source["make"].string
-        model = source["model"].string
-        registration = source["registration"].string
-        type = source["type"].string
+        make = source["make"].string!
+        model = source["model"].string!
+        registration = source["registration"].string!
+        type = source["type"].string!
         
-        updatedAt = source["updated_at"].stringValue.dateTime
-        deletedAt = source["deleted_at"].stringValue.dateTime
+        updatedAt = source["updated_at"].string!.dateTime!
+        deletedAt = source["deleted_at"].string?.dateTime!
     }
 }
 
@@ -39,10 +39,10 @@ extension Car: Resourceable {
 
     func toJSON() -> [String: Any] {
        return [
-            "make": make!,
-            "model": model!,
-            "registration": registration!,
-            "type": type!
+            "make": make,
+            "model": model,
+            "registration": registration,
+            "type": type
         ]
     }
 }
@@ -51,11 +51,11 @@ extension Car: Resourceable {
 
 extension Car {
     @NSManaged public var id: Int
-    @NSManaged public var make: String?
-    @NSManaged public var model: String?
-    @NSManaged public var registration: String?
-    @NSManaged public var type: String?
+    @NSManaged public var make: String
+    @NSManaged public var model: String
+    @NSManaged public var registration: String
+    @NSManaged public var type: String
     @NSManaged public var trips: NSSet?
-    @NSManaged public var updatedAt: Date?
+    @NSManaged public var updatedAt: Date
     @NSManaged public var deletedAt: Date?
 }

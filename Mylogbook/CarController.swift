@@ -63,7 +63,7 @@ class CarController: UIViewController {
         registrationTextField.text = car!.registration
         makeTextField.text = car!.make
         modelTextField.text = car!.model
-        typeTextField.text = car!.type!.capitalized
+        typeTextField.text = car!.type.capitalized
         // set type image here
         
         validator.revalidate()

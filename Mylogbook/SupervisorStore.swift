@@ -5,10 +5,10 @@ import CoreStore
 
 class SupervisorStore: SoftDeletingStore {
     static func add(_ supervisor: Supervisor?,
-                    license: String?,
-                    firstName: String?,
-                    lastName: String?,
-                    gender: String?) {
+                    license: String,
+                    firstName: String,
+                    lastName: String,
+                    gender: String) {
         
         Store.shared.stack.beginSynchronous { transaction in
             let supervisor: Supervisor = (supervisor != nil) ? transaction.edit(supervisor)! :

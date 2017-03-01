@@ -5,7 +5,7 @@ import SwiftyJSON
 // MARK: Supervisor
 
 class Supervisor: NSManagedObject, SoftDeletable, Syncable {
-    var fullName: String { return "\(firstName!) \(lastName!)" }
+    var fullName: String { return "\(firstName) \(lastName)" }
     
     var uniqueIDValue: Int {
         get { return self.id }
@@ -22,13 +22,13 @@ extension Supervisor: Importable {
     static let uniqueIDKeyPath = "id"
 
     func update(from source: JSON, in transaction: BaseDataTransaction) throws  {
-        firstName = source["first_name"].string
-        lastName = source["last_name"].string
-        license = source["license"].string
-        gender = source["gender"].string
+        firstName = source["first_name"].string!
+        lastName = source["last_name"].string!
+        license = source["license"].string!
+        gender = source["gender"].string!
         
-        updatedAt = source["updated_at"].stringValue.dateTime
-        deletedAt = source["deleted_at"].stringValue.dateTime
+        updatedAt = source["updated_at"].string!.dateTime!
+        deletedAt = source["deleted_at"].string?.dateTime
     }
 }
 
@@ -39,10 +39,10 @@ extension Supervisor: Resourceable {
     
     func toJSON() -> [String: Any] {
         return [
-            "first_name": firstName!,
-            "last_name": lastName!,
-            "license": license!,
-            "gender": gender!
+            "first_name": firstName,
+            "last_name": lastName,
+            "license": license,
+            "gender": gender
         ]
     }
 }
@@ -51,11 +51,11 @@ extension Supervisor: Resourceable {
 
 extension Supervisor {
     @NSManaged public var id: Int
-    @NSManaged public var firstName: String?
-    @NSManaged public var gender: String?
-    @NSManaged public var lastName: String?
-    @NSManaged public var license: String?
+    @NSManaged public var firstName: String
+    @NSManaged public var gender: String
+    @NSManaged public var lastName: String
+    @NSManaged public var license: String
     @NSManaged public var trips: NSSet?
-    @NSManaged public var updatedAt: Date?
+    @NSManaged public var updatedAt: Date
     @NSManaged public var deletedAt: Date?
 }

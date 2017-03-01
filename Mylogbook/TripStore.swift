@@ -8,8 +8,8 @@ class TripStore {
         Store.shared.stack.beginSynchronous { transaction in
             let trip: Trip = transaction.create(Into<Trip>())
             
-            trip.car = transaction.edit(newTrip.car)
-            trip.supervisor = transaction.edit(newTrip.supervisor)
+            trip.car = transaction.edit(newTrip.car)!
+            trip.supervisor = transaction.edit(newTrip.supervisor)!
             
             trip.startedAt = newTrip.startedAt
             trip.endedAt = newTrip.endedAt

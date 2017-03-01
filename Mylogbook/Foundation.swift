@@ -68,11 +68,7 @@ extension Double {
         
         return formatter.string(for: self)
     }
-    
-    var toMeters: Double {
-        return self * (kmToMeters: 1000.0)
-    }
-    
+        
     func roundTo(places: Int) -> Double {
         let divisor = pow(10.0, Double(places))
         

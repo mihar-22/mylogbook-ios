@@ -51,7 +51,7 @@ class SupervisorController: UIViewController {
         firstNameTextField.text = supervisor!.firstName
         lastNameTextField.text = supervisor!.lastName
         licenseTextField.text = supervisor!.license
-        genderTextField.text = supervisor!.gender!.capitalized
+        genderTextField.text = supervisor!.gender.capitalized
         // set gender image here
         
         validator.revalidate()

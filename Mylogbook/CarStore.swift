@@ -5,10 +5,10 @@ import CoreStore
 
 class CarStore: SoftDeletingStore {
     static func add(_ car: Car?,
-                    registration: String?,
-                    make: String?,
-                    model: String?,
-                    type: String?) {
+                    registration: String,
+                    make: String,
+                    model: String,
+                    type: String) {
         
         Store.shared.stack.beginSynchronous { transaction in
             let car: Car = (car != nil) ? transaction.edit(car)! : transaction.create(Into<Car>())
