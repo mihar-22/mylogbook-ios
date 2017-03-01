@@ -18,6 +18,10 @@ class Appearance {
         
         appearance.titleFont = UIFont.boldSystemFont(ofSize: 17)
         appearance.messageFont = UIFont.systemFont(ofSize: 14)
+        
+        let defaultButtonAppearance = DefaultButton.appearance()
+        
+        defaultButtonAppearance.titleColor = DarkTheme.brand.uiColor
     }
     
     // MARK: Tab Bar

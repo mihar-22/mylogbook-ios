@@ -60,6 +60,10 @@ extension DefaultButton {
     }
     
     private func styleNormal() {
-        titleColor = UIColor(red: 0.25, green: 0.53, blue: 0.91, alpha: 1)
+        titleColor = DarkTheme.brand.uiColor
+    }
+    
+    override func styleDisabled() {
+        titleColor = UIColor.lightGray
     }
 }
