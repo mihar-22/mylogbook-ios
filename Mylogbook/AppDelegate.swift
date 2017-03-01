@@ -1,7 +1,9 @@
 
-import UIKit
+import Alamofire
 import CoreStore
+import Dispatch
 import IQKeyboardManagerSwift
+import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,22 +17,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         KeyboardManager.start()
         
-        setupRootController()
+        launch()
         
         return true
     }
     
-    private func setupRootController() {
-        let isAuthenticated = (Keychain.shared.apiToken != nil)
-        
+    private func launch() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if isAuthenticated {
-            SyncManager().start()
-            
-            window!.rootViewController = storyboard.instantiateInitialViewController()
-        } else {
+        let hasApiToken = (Keychain.shared.apiToken != nil)
+
+        guard hasApiToken else {
             window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "AuthSID")
+            
+            return
+        }
+        
+        window!.rootViewController = storyboard.instantiateInitialViewController()
+        
+        authenticate()
+    }
+    
+    private func authenticate() {
+        guard NetworkReachabilityManager(host: Env.MLB_API_BASE)!.isReachable else { return }
+        
+        let route = AuthRoute.check
+        
+        Session.shared.requestJSON(route) { response in
+            let isAuthenticated = (response.statusCode == 200)
+            
+            guard isAuthenticated else {
+                Keychain.shared.apiToken = nil
+                
+                return
+            }
+            
+            SyncManager().start()
         }
     }
 }
