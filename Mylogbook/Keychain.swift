@@ -1,4 +1,5 @@
 
+import CoreLocation
 import KeychainAccess
 
 typealias AccessKeychain = KeychainAccess.Keychain
@@ -78,6 +79,20 @@ class Keychain {
         }
     }
     
+    // MARK: Last Route
+    
+    private let lastRouteKey = "last_route"
+    
+    var lastRoute: [CLLocation]? {
+        get {
+            return get(key: lastRouteKey)
+        }
+        
+        set(locations) {
+            set(locations, for: lastRouteKey)
+        }
+    }
+    
     // MARK: Accessors
     
     private func get(key: String) -> String? {
@@ -86,11 +101,27 @@ class Keychain {
         return keychain["\(email)_\(key)"]
     }
     
+    private func get<T>(key: String) -> T? {
+        guard let email = Keychain.shared.email else { return nil }
+        
+        guard let data = try! keychain.getData("\(email)_\(key)") else { return nil }
+        
+        return NSKeyedUnarchiver.unarchiveObject(with: data) as? T
+    }
+    
     // MARK: Setters
     
     private func set(_ value: String?, for key: String) {
         guard let email = Keychain.shared.email else { return }
         
         keychain["\(email)_\(key)"] = value
+    }
+    
+    private func set<T>(_ object: T, for key: String) {
+        guard let email = Keychain.shared.email else { return }
+        
+        let data = NSKeyedArchiver.archivedData(withRootObject: object)
+        
+        try! keychain.set(data, key: "\(email)_\(key)")
     }
 }

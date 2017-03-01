@@ -10,7 +10,7 @@ class DashboardController: UIViewController {
     
     var trips: [Trip]!
     
-    var locations: [CLLocation]? { return UserSettings.shared.lastRoute }
+    var locations: [CLLocation]? { return Keychain.shared.lastRoute }
     
     // MARK: Outlets
     
@@ -183,8 +183,8 @@ class DashboardController: UIViewController {
     // MARK: Last Route
     
     func buildLastRoute() {
-        guard locations != nil && locations!.count > 0 else { return }
-
+        guard locations != nil && locations!.count > 0 && trips.count > 0 else { return }
+        
         let lastTrip = trips.last!
         
         let totalTimeInterval = lastTrip.endedAt!.timeIntervalSince(lastTrip.startedAt!)

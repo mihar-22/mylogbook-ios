@@ -1,5 +1,4 @@
 
-import CoreLocation
 import Foundation
 
 // MARK: User Settings
@@ -51,25 +50,5 @@ class UserSettings {
         let key = "car_\(car.id)_odometer"
         
         UserDefaults.standard.set(odometer, forKey: key)
-    }
-    
-    // MARK: Last Route
-    
-    private let lastRouteKey = "last_route"
-    
-    var lastRoute: [CLLocation]? {
-        get {
-            let data = UserDefaults.standard.data(forKey: lastRouteKey)
-            
-            guard data != nil else { return nil }
-            
-            return NSKeyedUnarchiver.unarchiveObject(with: data!) as? [CLLocation]
-        }
-        
-        set(locations) {
-            let data = NSKeyedArchiver.archivedData(withRootObject: locations!)
-            
-            UserDefaults.standard.set(data, forKey: lastRouteKey)
-        }
     }
 }

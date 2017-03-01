@@ -63,7 +63,7 @@ class LogSummaryController: UIViewController {
         
         saveOdometer()
         
-        UserSettings.shared.lastRoute = locations
+        Keychain.shared.lastRoute = locations
         
         tabBarController!.selectedIndex = 0
         
