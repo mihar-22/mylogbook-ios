@@ -703,14 +703,14 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Fs-E9-pEt">
-                                <rect key="frame" x="16" y="68" width="351" height="534"/>
+                                <rect key="frame" x="16" y="68" width="351" height="550"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarCell" id="leu-hi-DBM" customClass="CarCell" customModule="Mylogbook" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="351" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="leu-hi-DBM" id="6sY-jm-GQF">
-                                            <rect key="frame" x="0.0" y="0.0" width="351" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="351" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0nh-wf-7gn">
@@ -755,7 +755,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nYl-ED-Ae2" firstAttribute="top" secondItem="MLl-jK-rd1" secondAttribute="bottom" constant="-20" id="FEs-4l-dee"/>
-                            <constraint firstItem="iGM-vx-aes" firstAttribute="top" secondItem="8Fs-E9-pEt" secondAttribute="bottom" constant="16" id="JKm-tf-Kvo"/>
+                            <constraint firstItem="iGM-vx-aes" firstAttribute="top" secondItem="8Fs-E9-pEt" secondAttribute="bottom" id="JKm-tf-Kvo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8Fs-E9-pEt" secondAttribute="trailing" constant="-8" id="VAi-KZ-37r"/>
                             <constraint firstItem="8Fs-E9-pEt" firstAttribute="leading" secondItem="ZZr-cu-HtB" secondAttribute="leadingMargin" id="iy6-Dc-jk6"/>
                             <constraint firstItem="nYl-ED-Ae2" firstAttribute="leading" secondItem="ZZr-cu-HtB" secondAttribute="leading" id="ld6-wo-Xg3"/>
@@ -948,14 +948,14 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9HK-4f-9xi">
-                                <rect key="frame" x="16" y="68" width="351" height="534"/>
+                                <rect key="frame" x="16" y="68" width="351" height="550"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SupervisorCell" id="gdY-Jk-fY9" customClass="SupervisorCell" customModule="Mylogbook" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="351" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gdY-Jk-fY9" id="uaf-MY-ag0">
-                                            <rect key="frame" x="0.0" y="0.0" width="351" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="351" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zUh-1o-44U">
@@ -1003,7 +1003,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="9HK-4f-9xi" secondAttribute="trailing" constant="-8" id="58a-4H-rYY"/>
                             <constraint firstItem="C6q-aw-Iyc" firstAttribute="top" secondItem="jAM-aX-t2i" secondAttribute="bottom" constant="-20" id="Inu-eO-ktu"/>
                             <constraint firstAttribute="trailing" secondItem="C6q-aw-Iyc" secondAttribute="trailing" id="NpB-9g-qyt"/>
-                            <constraint firstItem="mbG-cv-ti5" firstAttribute="top" secondItem="9HK-4f-9xi" secondAttribute="bottom" constant="16" id="SK3-rp-vK0"/>
+                            <constraint firstItem="mbG-cv-ti5" firstAttribute="top" secondItem="9HK-4f-9xi" secondAttribute="bottom" id="SK3-rp-vK0"/>
                             <constraint firstItem="9HK-4f-9xi" firstAttribute="top" secondItem="C6q-aw-Iyc" secondAttribute="bottom" constant="4" id="Yx2-f5-3hJ"/>
                             <constraint firstItem="9HK-4f-9xi" firstAttribute="leading" secondItem="QOb-1f-4tf" secondAttribute="leadingMargin" id="yrE-at-BKy"/>
                         </constraints>
