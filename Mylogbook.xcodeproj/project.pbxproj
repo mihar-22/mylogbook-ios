@@ -188,8 +188,8 @@
 		C935B7371E0A7C9100FD7FFF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C94BA89D1E5FF601002E8F9E /* Dashboard */,
 				C9EBBD6F1E2D9A9E00B5E509 /* Auth */,
+				C94BA89D1E5FF601002E8F9E /* Dashboard */,
 				C9EBBD5F1E2C61AD00B5E509 /* Cars */,
 				C970BCE61E319D8D00E1129A /* Supervisors */,
 				C98E77901E397B1900F34468 /* Log */,

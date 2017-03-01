@@ -1,9 +1,12 @@
 
+import Alamofire
 import UIKit
 import PopupDialog
 
 class SignUpController: UIViewController {
     let validator = Validator()
+    
+    let network = NetworkReachabilityManager(host: Env.MLB_API_BASE)!
     
     var name: String? { return nameTextField.text }
     var email: String? { return emailTextField.text }
@@ -65,31 +68,31 @@ class SignUpController: UIViewController {
     // MARK: Networking
     
     func registerUser() {
+        guard network.isReachable else {
+            showOfflineAlertFor(operation: "create account")
+            
+            return
+        }
+        
         let route = AuthRoute.register(name: name!, email: email!, password: password!)
         
         Session.shared.requestJSON(route) { response in
             guard response.statusCode != 422 else {
-                if response.errors!["email"] != nil { self.showEmailTakenAlert() }
+                if response.errors!["email"] != nil {
+                    DispatchQueue.main.async { self.showEmailTakenAlert() }
+                }
                 
                 return
             }
             
-            self.showEmailConfirmationAlert()
+            DispatchQueue.main.async { self.showEmailConfirmationAlert() }
         }
-    }
-    
-    // MARK: Keychain
-    
-    func storeUserDetails() {
-        Keychain.shared.name = name!
-        Keychain.shared.email = email!
-        Keychain.shared.password = password!
     }
     
     // MARK: Navigation
     
     func navigateToLoginScene() {
-        storeUserDetails()
+        Keychain.shared.email = email!
 
         performSegue(withIdentifier: "logInSegue", sender: self)
     }
@@ -101,6 +104,14 @@ class SignUpController: UIViewController {
             UIApplication.shared.open(mailUrl, options: [:], completionHandler: nil)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "logInSegue" {
+            if let controller = segue.destination as? LogInController {
+                controller.signUpPassword = password!
+            }
+        }
+    }
 }
 
 // MARK: Alerting
@@ -109,7 +120,7 @@ extension SignUpController: Alerting {
     func showEmailTakenAlert() {
         let title = "Email Taken"
         
-        let message = "This email is already taken, try logging in or forgot password on the log in page."
+        let message = "This email is already taken. Try logging in or forgot password on the log in page."
         
         let cancelButton = CancelButton(title: "CANCEL", action: nil)
         
@@ -128,6 +139,16 @@ extension SignUpController: Alerting {
         let openMailButton = DefaultButton(title: "OPEN MAIL") { self.navigateToMailBox() }
         
         showAlert(title: title, message: message, buttons: [cancelButton, openMailButton])
+    }
+    
+    func showOfflineAlertFor(operation: String) {
+        let title = "Offline Mode"
+        
+        let message = "You are currently offline and the \(operation) request can not be completed without being online. Connect online and try again."
+        
+        let cancelButton = CancelButton(title: "TRY AGAIN", action: nil)
+        
+        showAlert(title: title, message: message, buttons: [cancelButton])
     }
 }
 

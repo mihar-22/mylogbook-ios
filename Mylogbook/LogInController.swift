@@ -1,12 +1,19 @@
 
-import UIKit
+import Alamofire
+import Dispatch
 import PopupDialog
+import SwiftyJSON
+import UIKit
 
 class LogInController: UIViewController {
     let validator = Validator()
   
+    let network = NetworkReachabilityManager(host: Env.MLB_API_BASE)!
+    
     var email: String? { return emailTextField.text }
     var password: String? { return passwordTextField.text }
+    
+    var signUpPassword: String?
 
     // MARK: Outlets
     
@@ -69,33 +76,49 @@ class LogInController: UIViewController {
     
     // MARK: Networking
     
-    func logInUser() {        
+    func logInUser() {
+        guard network.isReachable else {
+            showOfflineAlertFor(operation: "log in")
+            
+            return
+        }
+        
         let route = AuthRoute.login(email: email!, password: password!)
         
         Session.shared.requestJSON(route) { response in
             guard response.statusCode != 400 else {
-                self.showInvalidCredentialsAlert()
+                DispatchQueue.main.async { self.showInvalidCredentialsAlert() }
                 
                 return
             }
             
-            self.storeUserDetails(response.data!.dictionaryObject!)
-            
-            self.navigateToDashboardScene()
+            DispatchQueue.main.async {
+                self.storeUserDetails(response.data!)
+                
+                self.navigateToDashboardScene()
+            }
         }
     }
     
     func forgotPassword() {
+        guard network.isReachable else {
+            showOfflineAlertFor(operation: "forgot password")
+            
+            return
+        }
+        
         let route = AuthRoute.forgot(email: email!)
         
         Session.shared.requestJSON(route) { response in
             guard response.statusCode != 422 else {
-                if response.errors!["email"] != nil { self.showInvalidEmailAlert() }
+                if response.errors!["email"] != nil {
+                    DispatchQueue.main.async { self.showInvalidEmailAlert() }
+                }
                 
                 return
             }
             
-            self.showForgotPasswordLinkSentAlert()
+            DispatchQueue.main.async { self.showForgotPasswordLinkSentAlert() }
         }
     }
     
@@ -104,22 +127,24 @@ class LogInController: UIViewController {
     func attemptToPrefillForm() {
         emailTextField.text = Keychain.shared.email ?? ""
         
-        passwordTextField.text = Keychain.shared.password ?? ""
+        passwordTextField.text = signUpPassword ?? ""
         
         validator.revalidate()
     }
     
-    func storeUserDetails(_ data: [String: Any]) {
-        Keychain.shared.name = (data["name"] as! String)
+    func storeUserDetails(_ data: JSON) {
         Keychain.shared.email = email!
-        Keychain.shared.password = nil
-        Keychain.shared.apiToken = (data["api_token"] as! String)
+        Keychain.shared.name = data["name"].string!
+        Keychain.shared.apiToken = data["api_token"].string!
+        Keychain.shared.offlinePassword = password!
     }
     
     // MARK: Navigation
     
     func navigateToDashboardScene() {
         performSegue(withIdentifier: "userLoggedInSegue", sender: nil)
+        
+        SyncManager().start()
     }
     
     func navigateToMailBox() {
@@ -164,6 +189,16 @@ extension LogInController: Alerting {
         let openMailButton = DefaultButton(title: "OPEN MAIL") { self.navigateToMailBox() }
         
         showAlert(title: title, message: message, buttons: [cancelButton, openMailButton])
+    }
+    
+    func showOfflineAlertFor(operation: String) {
+        let title = "Offline Mode"
+        
+        let message = "You are currently offline and the \(operation) request can not be completed without being online. Connect online and try again."
+        
+        let cancelButton = CancelButton(title: "TRY AGAIN", action: nil)
+        
+        showAlert(title: title, message: message, buttons: [cancelButton])
     }
 }
 

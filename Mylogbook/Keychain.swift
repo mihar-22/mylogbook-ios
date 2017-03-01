@@ -22,69 +22,75 @@ class Keychain {
     
     private init() {}
     
-    // MARK: API Token
+    // MARK: Email
+    
+    private let emailKey = "email"
+    
+    var email: String? {
+        get {
+            return keychain[emailKey]
+        }
+        
+        set(email) {
+            keychain[emailKey] = email
+        }
+    }
+    
+    // MARK: Name
+    
+    private let nameKey = "name"
+    
+    var name: String? {
+        get {
+            return get(key: nameKey)
+        }
+        
+        set(name) {
+            set(name, for: nameKey)
+        }
+    }
+    
+    // MARK: Offline Password
+    
+    private let offlinePasswordKey = "offline_password"
+    
+    var offlinePassword: String? {
+        get {
+            return get(key: offlinePasswordKey)
+        }
+        
+        set(password) {
+            set(password, for: offlinePasswordKey)
+        }
+    }
+    
+    // MARK: Api Token
     
     private let apiTokenKey = "api_token"
     
     var apiToken: String? {
         get {
-            return get(withKey: apiTokenKey)
+            return get(key: apiTokenKey)
         }
         
         set(apiToken) {
-            set(value: apiToken, forKey: apiTokenKey)
+            set(apiToken, for: apiTokenKey)
         }
     }
-
-    // MARK: Name
-
-    private let nameKey = "name"
     
-    var name: String? {
-        get {
-            return get(withKey: nameKey)
-        }
+    // MARK: Accessors
+    
+    private func get(key: String) -> String? {
+        guard let email = Keychain.shared.email else { return nil }
         
-        set(name) {
-            set(value: name, forKey: nameKey)
-        }
+        return keychain["\(email)_\(key)"]
     }
-
-    // MARK: Email
-
-    private let emailKey = "email"
     
-    var email: String? {
-        get {
-            return get(withKey: emailKey)
-        }
+    // MARK: Setters
+    
+    private func set(_ value: String?, for key: String) {
+        guard let email = Keychain.shared.email else { return }
         
-        set(email) {
-            set(value: email, forKey: emailKey)
-        }
-    }
-
-    // MARK: Password
-    
-    private let passwordKey = "password"
-    
-    var password: String? {
-        get {
-            return get(withKey: passwordKey)
-        }
-        
-        set(password) {
-            set(value: password, forKey: passwordKey)
-        }
-    }
-    
-    // MARK: Mutators
-    
-    private func get(withKey key: String) -> String? {
-        return keychain[key]
-    }
-    
-    private func set(value: String?, forKey key: String) {
-        keychain[key] = value
+        keychain["\(email)_\(key)"] = value
     }
 }
