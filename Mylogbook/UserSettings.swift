@@ -16,11 +16,11 @@ class UserSettings {
     
     var isSyncPrepared: Bool {
         get {
-            return UserDefaults.standard.bool(forKey: isSyncPreparedKey)
+            return get(key: isSyncPreparedKey) as? Bool ?? false
         }
         
         set(isSyncPrepared) {
-            UserDefaults.standard.set(isSyncPrepared, forKey: isSyncPreparedKey)
+            set(isSyncPrepared, for: isSyncPreparedKey)
         }
     }
     
@@ -30,11 +30,11 @@ class UserSettings {
     
     var lastSyncedAt: Date {
         get {
-            return UserDefaults.standard.object(forKey: lastSyncedAtKey) as! Date
+            return get(key: lastSyncedAtKey) as! Date
         }
         
         set(lastSyncedAt) {
-            UserDefaults.standard.set(lastSyncedAt, forKey: lastSyncedAtKey)
+            set(lastSyncedAt, for: lastSyncedAtKey)
         }
     }
     
@@ -43,12 +43,28 @@ class UserSettings {
     func getOdometer(for car: Car) -> String? {
         let key = "car_\(car.id)_odometer"
         
-        return UserDefaults.standard.string(forKey: key)
+        return get(key: key) as? String
     }
     
     func set(odometer: String, for car: Car) {
         let key = "car_\(car.id)_odometer"
         
-        UserDefaults.standard.set(odometer, forKey: key)
+        set(odometer, for: key)
+    }
+    
+    // MARK: Getters
+    
+    private func get(key: String) -> Any? {
+        guard let id = Keychain.shared.id else { return nil }
+        
+        return UserDefaults.standard.value(forKey: "\(id)_\(key)")
+    }
+    
+    // MARK: Setters
+    
+    private func set(_ value: Any?, for key: String) {
+        guard let id = Keychain.shared.id else { return }
+        
+        UserDefaults.standard.set(value, forKey: "\(id)_\(key)")
     }
 }

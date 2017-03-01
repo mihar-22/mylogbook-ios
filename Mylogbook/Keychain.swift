@@ -7,7 +7,7 @@ typealias AccessKeychain = KeychainAccess.Keychain
 // MARK: Keychain
 
 class Keychain {
-    static let shared: Keychain = Keychain()
+    static let shared = Keychain()
     
     private var keychain: AccessKeychain = {
         let urlString = Env.MLB_API_BASE
@@ -22,6 +22,20 @@ class Keychain {
     // MARK: Initializers
     
     private init() {}
+    
+    // MARK: Id
+    
+    private let idKey = "id"
+    
+    var id: String? {
+        get {
+            return keychain[idKey]
+        }
+        
+        set(id) {
+            keychain[idKey] = id
+        }
+    }
     
     // MARK: Email
     
@@ -43,25 +57,11 @@ class Keychain {
     
     var name: String? {
         get {
-            return get(key: nameKey)
+            return keychain[nameKey]
         }
         
         set(name) {
-            set(name, for: nameKey)
-        }
-    }
-    
-    // MARK: Offline Password
-    
-    private let offlinePasswordKey = "offline_password"
-    
-    var offlinePassword: String? {
-        get {
-            return get(key: offlinePasswordKey)
-        }
-        
-        set(password) {
-            set(password, for: offlinePasswordKey)
+            keychain[nameKey] = name
         }
     }
     
@@ -71,11 +71,11 @@ class Keychain {
     
     var apiToken: String? {
         get {
-            return get(key: apiTokenKey)
+            return keychain[apiTokenKey]
         }
         
         set(apiToken) {
-            set(apiToken, for: apiTokenKey)
+            keychain[apiTokenKey] = apiToken
         }
     }
     
@@ -93,35 +93,21 @@ class Keychain {
         }
     }
     
-    // MARK: Accessors
-    
-    private func get(key: String) -> String? {
-        guard let email = Keychain.shared.email else { return nil }
-        
-        return keychain["\(email)_\(key)"]
-    }
+    // MARK: Archive Data
     
     private func get<T>(key: String) -> T? {
-        guard let email = Keychain.shared.email else { return nil }
+        guard let id = Keychain.shared.id else { return nil }
         
-        guard let data = try! keychain.getData("\(email)_\(key)") else { return nil }
+        guard let data = try! keychain.getData("\(id)_\(key)") else { return nil }
         
         return NSKeyedUnarchiver.unarchiveObject(with: data) as? T
     }
     
-    // MARK: Setters
-    
-    private func set(_ value: String?, for key: String) {
-        guard let email = Keychain.shared.email else { return }
-        
-        keychain["\(email)_\(key)"] = value
-    }
-    
     private func set<T>(_ object: T, for key: String) {
-        guard let email = Keychain.shared.email else { return }
+        guard let id = Keychain.shared.id else { return }
         
         let data = NSKeyedArchiver.archivedData(withRootObject: object)
         
-        try! keychain.set(data, key: "\(email)_\(key)")
+        try! keychain.set(data, key: "\(id)_\(key)")
     }
 }

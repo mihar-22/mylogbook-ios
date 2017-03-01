@@ -133,10 +133,10 @@ class LogInController: UIViewController {
     }
     
     func storeUserDetails(_ data: JSON) {
+        Keychain.shared.id = "\(data["id"].int!)"
         Keychain.shared.email = email!
         Keychain.shared.name = data["name"].string!
         Keychain.shared.apiToken = data["api_token"].string!
-        Keychain.shared.offlinePassword = password!
     }
     
     // MARK: Navigation

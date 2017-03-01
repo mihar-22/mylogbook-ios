@@ -7,9 +7,13 @@ class Store {
     static let shared = Store()
     
     let stack: DataStack = {
+        let id = Keychain.shared.id!
+        
         let stack = DataStack(modelName: "Mylogbook")
         
-        try! stack.addStorageAndWait()
+        let store = SQLiteStore(fileName: "Mylogbook\(id).sqlite")
+        
+        try! stack.addStorageAndWait(store)
         
         return stack
     }()

@@ -1,6 +1,5 @@
 
 import Alamofire
-import CoreStore
 import Dispatch
 import IQKeyboardManagerSwift
 import UIKit
@@ -27,13 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let hasApiToken = (Keychain.shared.apiToken != nil)
 
-        guard hasApiToken else {
-            window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "AuthSID")
-            
-            return
-        }
+        guard hasApiToken else { return }
         
-        window!.rootViewController = storyboard.instantiateInitialViewController()
+        window!.rootViewController = storyboard.instantiateViewController(withIdentifier: "TabBarSID")
         
         authenticate()
     }
