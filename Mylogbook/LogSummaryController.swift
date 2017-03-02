@@ -184,7 +184,7 @@ extension LogSummaryController: MKMapViewDelegate {
         
         let center = locations[(locations.count - 1) / 2].coordinate
         
-        let span = MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
+        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         
         let region = MKCoordinateRegion(center: center, span: span)
         
