@@ -1625,7 +1625,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="o3z-it-JkO" userLabel="Form">
-                                                <rect key="frame" x="16" y="244" width="343" height="216"/>
+                                                <rect key="frame" x="16" y="244" width="343" height="269"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeC-QH-4cG" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
@@ -1679,6 +1679,36 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="PwS-ga-bYu">
+                                                        <rect key="frame" x="0.0" y="232" width="343" height="37"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0q2-uh-nNJ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="31"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Certified" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xT5-GT-Ijd">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="294" height="31"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" cyan="1" magenta="1" yellow="1" black="1" alpha="0.38" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jGD-FW-Y5Y">
+                                                                        <rect key="frame" x="294" y="0.0" width="51" height="31"/>
+                                                                        <color key="tintColor" white="0.90000000000000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <connections>
+                                                                            <action selector="didChangeAccreditedValueFor:" destination="Q4b-pn-jV9" eventType="valueChanged" id="qSe-Rc-0EW"/>
+                                                                        </connections>
+                                                                    </switch>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJF-if-8d6">
+                                                                <rect key="frame" x="0.0" y="35" width="343" height="2"/>
+                                                                <color key="backgroundColor" cyan="1" magenta="1" yellow="1" black="1" alpha="0.12" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="2" id="2S4-YI-KBP"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Ze-cG-Wz4">
@@ -1741,6 +1771,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="accreditedSwitch" destination="jGD-FW-Y5Y" id="KRo-gi-OaT"/>
                         <outlet property="firstNameTextField" destination="12A-bj-enI" id="RLD-il-xSY"/>
                         <outlet property="genderImage" destination="8Ze-cG-Wz4" id="DEh-us-Udn"/>
                         <outlet property="genderTextField" destination="dtI-ah-YOV" id="k4w-ec-ltn"/>

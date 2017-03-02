@@ -26,6 +26,7 @@ extension Supervisor: Importable {
         lastName = source["last_name"].string!
         license = source["license"].string!
         gender = source["gender"].string!
+        isAccredited = source["is_accredited"].bool!
         
         updatedAt = source["updated_at"].string!.dateTime!
         deletedAt = source["deleted_at"].string?.dateTime
@@ -42,7 +43,8 @@ extension Supervisor: Resourceable {
             "first_name": firstName,
             "last_name": lastName,
             "license": license,
-            "gender": gender
+            "gender": gender,
+            "is_accredited": isAccredited ? 1 : 0
         ]
     }
 }
@@ -56,6 +58,7 @@ extension Supervisor {
     @NSManaged public var lastName: String
     @NSManaged public var license: String
     @NSManaged public var trips: NSSet?
+    @NSManaged public var isAccredited: Bool
     @NSManaged public var updatedAt: Date
     @NSManaged public var deletedAt: Date?
 }

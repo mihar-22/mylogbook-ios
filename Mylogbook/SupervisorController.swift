@@ -15,6 +15,7 @@ class SupervisorController: UIViewController {
     var lastName: String? { return lastNameTextField.text }
     var license: String? { return licenseTextField.text }
     var gender: String? { return genderTextField.text?.lowercased() }
+    var isAccredited: Bool { return accreditedSwitch.isOn }
     
     let genders = ["Male", "Female"]
     
@@ -28,6 +29,7 @@ class SupervisorController: UIViewController {
     @IBOutlet weak var lastNameTextField: TextField!
     @IBOutlet weak var licenseTextField: TextField!
     @IBOutlet weak var genderTextField: TextField!
+    @IBOutlet weak var accreditedSwitch: UISwitch!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -39,6 +41,8 @@ class SupervisorController: UIViewController {
         setupGenderPicker()
         
         setupValidator()
+        
+        accreditedSwitch.transform = CGAffineTransform.init(scaleX: 0.8, y: 0.8)
         
         if isEdit { setupEditing() }
     }
@@ -52,6 +56,7 @@ class SupervisorController: UIViewController {
         lastNameTextField.text = supervisor!.lastName
         licenseTextField.text = supervisor!.license
         genderTextField.text = supervisor!.gender.capitalized
+        accreditedSwitch.setOn(supervisor!.isAccredited, animated: true)
         // set gender image here
         
         validator.revalidate()
@@ -66,9 +71,17 @@ class SupervisorController: UIViewController {
     @IBAction func didTapSave(_ sender: UIBarButtonItem) {
         view.endEditing(true)
         
-        SupervisorStore.add(supervisor, license: license!, firstName: firstName!, lastName: lastName!, gender: gender!)
+        SupervisorStore.add(supervisor,
+                            license: license!,
+                            firstName: firstName!,
+                            lastName: lastName!,
+                            gender: gender!,
+                            isAccredited: isAccredited)
         
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func didChangeAccreditedValueFor(_ sender: UISwitch) {
     }
     
     // MARK: Text Field

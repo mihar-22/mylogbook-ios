@@ -8,7 +8,8 @@ class SupervisorStore: SoftDeletingStore {
                     license: String,
                     firstName: String,
                     lastName: String,
-                    gender: String) {
+                    gender: String,
+                    isAccredited: Bool) {
         
         Store.shared.stack.beginSynchronous { transaction in
             let supervisor: Supervisor = (supervisor != nil) ? transaction.edit(supervisor)! :
@@ -18,6 +19,7 @@ class SupervisorStore: SoftDeletingStore {
             supervisor.firstName = firstName
             supervisor.lastName = lastName
             supervisor.gender = gender
+            supervisor.isAccredited = isAccredited
             
             supervisor.updatedAt = Date()
             
