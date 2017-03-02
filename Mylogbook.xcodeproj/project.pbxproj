@@ -38,6 +38,7 @@
 		C98E77921E397B3100F34468 /* LogPrepareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E77911E397B3100F34468 /* LogPrepareController.swift */; };
 		C98E77941E397DD900F34468 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E77931E397DD900F34468 /* Card.swift */; };
 		C98E77961E398FE900F34468 /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E77951E398FE900F34468 /* Toolbar.swift */; };
+		C997A5061E67AF2C00CF4F47 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C997A5051E67AF2C00CF4F47 /* SettingsController.swift */; };
 		C99FC90F1E1B5AF7003BAEC2 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC90E1E1B5AF7003BAEC2 /* SignUpController.swift */; };
 		C99FC9141E1BB395003BAEC2 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC9131E1BB395003BAEC2 /* Validator.swift */; };
 		C99FC9181E1BB534003BAEC2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC9171E1BB534003BAEC2 /* Validation.swift */; };
@@ -106,6 +107,7 @@
 		C98E77911E397B3100F34468 /* LogPrepareController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogPrepareController.swift; sourceTree = "<group>"; };
 		C98E77931E397DD900F34468 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		C98E77951E398FE900F34468 /* Toolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
+		C997A5051E67AF2C00CF4F47 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		C99FC90E1E1B5AF7003BAEC2 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		C99FC9131E1BB395003BAEC2 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		C99FC9171E1BB534003BAEC2 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				C9EBBD5F1E2C61AD00B5E509 /* Cars */,
 				C970BCE61E319D8D00E1129A /* Supervisors */,
 				C98E77901E397B1900F34468 /* Log */,
+				C997A5051E67AF2C00CF4F47 /* SettingsController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				C9C6F6721E54023300231949 /* OdometerAlert.swift in Sources */,
 				C99FC90F1E1B5AF7003BAEC2 /* SignUpController.swift in Sources */,
 				C9EC4D391E40123400A80348 /* SyncManager.swift in Sources */,
+				C997A5061E67AF2C00CF4F47 /* SettingsController.swift in Sources */,
 				C9CDFA891DEFDB2800CE0A2D /* Mylogbook.xcdatamodeld in Sources */,
 				C9EBBD711E2DA20F00B5E509 /* CarController.swift in Sources */,
 				C9EBBD611E2C61B700B5E509 /* CarsController.swift in Sources */,
