@@ -46,6 +46,12 @@ class UserSettings {
         return get(key: key) as? String
     }
     
+    func incrementOdometerBy(_ amount: Int, for car: Car) {
+        let odometer = Int(getOdometer(for: car)!)!
+        
+        set(odometer: "\(odometer + amount)", for: car)
+    }
+    
     func set(odometer: String, for car: Car) {
         let key = "car_\(car.id)_odometer"
         
