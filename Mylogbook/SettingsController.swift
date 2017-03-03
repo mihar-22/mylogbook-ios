@@ -11,10 +11,14 @@ class SettingsController: UITableViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
+    @IBOutlet weak var stateLabel: UILabel!
+    
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
         setupProfile()
+        
+        stateLabel.text = UserSettings.shared.australiaState
     }
     
     // MARK: Profile
@@ -57,5 +61,11 @@ class SettingsController: UITableViewController {
         let controller = storyboard.instantiateInitialViewController()!
         
         present(controller, animated: true, completion: nil)
+    }
+    
+    // MARK: Table View
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

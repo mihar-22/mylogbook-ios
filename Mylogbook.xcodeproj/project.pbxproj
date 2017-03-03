@@ -39,6 +39,7 @@
 		C98E77941E397DD900F34468 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E77931E397DD900F34468 /* Card.swift */; };
 		C98E77961E398FE900F34468 /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E77951E398FE900F34468 /* Toolbar.swift */; };
 		C997A5061E67AF2C00CF4F47 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C997A5051E67AF2C00CF4F47 /* SettingsController.swift */; };
+		C997A5091E67F5A000CF4F47 /* AustraliaStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C997A5081E67F5A000CF4F47 /* AustraliaStateController.swift */; };
 		C99FC90F1E1B5AF7003BAEC2 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC90E1E1B5AF7003BAEC2 /* SignUpController.swift */; };
 		C99FC9141E1BB395003BAEC2 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC9131E1BB395003BAEC2 /* Validator.swift */; };
 		C99FC9181E1BB534003BAEC2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC9171E1BB534003BAEC2 /* Validation.swift */; };
@@ -108,6 +109,7 @@
 		C98E77931E397DD900F34468 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		C98E77951E398FE900F34468 /* Toolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
 		C997A5051E67AF2C00CF4F47 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		C997A5081E67F5A000CF4F47 /* AustraliaStateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AustraliaStateController.swift; sourceTree = "<group>"; };
 		C99FC90E1E1B5AF7003BAEC2 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		C99FC9131E1BB395003BAEC2 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		C99FC9171E1BB534003BAEC2 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
@@ -190,12 +192,12 @@
 		C935B7371E0A7C9100FD7FFF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C997A5071E67F59100CF4F47 /* Settings */,
 				C9EBBD6F1E2D9A9E00B5E509 /* Auth */,
 				C94BA89D1E5FF601002E8F9E /* Dashboard */,
 				C9EBBD5F1E2C61AD00B5E509 /* Cars */,
 				C970BCE61E319D8D00E1129A /* Supervisors */,
 				C98E77901E397B1900F34468 /* Log */,
-				C997A5051E67AF2C00CF4F47 /* SettingsController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -286,6 +288,15 @@
 				C945AA511E5C25AB00FAF9E9 /* LogSummaryController.swift */,
 			);
 			name = Log;
+			sourceTree = "<group>";
+		};
+		C997A5071E67F59100CF4F47 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C997A5051E67AF2C00CF4F47 /* SettingsController.swift */,
+				C997A5081E67F5A000CF4F47 /* AustraliaStateController.swift */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		C99FC9121E1B90A0003BAEC2 /* Validator */ = {
@@ -593,6 +604,7 @@
 				C945AA541E5C2A4400FAF9E9 /* TripStore.swift in Sources */,
 				C979D6111E52A7E5009891C7 /* SyncStore.swift in Sources */,
 				C908D3C71E24D5BF00A4E91C /* Keychain.swift in Sources */,
+				C997A5091E67F5A000CF4F47 /* AustraliaStateController.swift in Sources */,
 				C9EBBD5E1E2C5F2100B5E509 /* CarCell.swift in Sources */,
 				C98E77941E397DD900F34468 /* Card.swift in Sources */,
 				C9EC4D2D1E3ECE1000A80348 /* CarStore.swift in Sources */,

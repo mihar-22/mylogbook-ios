@@ -85,7 +85,7 @@ class Keychain {
     
     var lastRoute: [CLLocation]? {
         get {
-            return get(key: lastRouteKey)
+            return get(with: lastRouteKey)
         }
         
         set(locations) {
@@ -95,7 +95,7 @@ class Keychain {
     
     // MARK: Archive Data
     
-    private func get<T>(key: String) -> T? {
+    private func get<T>(with key: String) -> T? {
         guard let id = Keychain.shared.id else { return nil }
         
         guard let data = try! keychain.getData("\(id)_\(key)") else { return nil }

@@ -12,6 +12,8 @@ class DashboardController: UIViewController {
     
     var locations: [CLLocation]? { return Keychain.shared.lastRoute }
     
+    var shouldRefresh: Bool = true
+    
     // MARK: Outlets
     
     @IBOutlet weak var dayProgressBar: MBCircularProgressBarView!
@@ -40,12 +42,42 @@ class DashboardController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        prepareToRefreshUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        refreshUI()
+    }
+    
+    // MARK: Reset
+    
+    func resetProgressBars() {
+        dayTotalTime.alpha = 0
+        
+        nightTotalTime.alpha = 0
+        
+        dayProgressBar.value = 0
+        
+        nightProgressBar.value = 0
+    }
+    
+    // MARK: Refresh UI
+    
+    func prepareToRefreshUI() {
+        guard shouldRefresh else { return }
+
         resetProgressBars()
         
         mapView.isHidden = true
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    func refreshUI() {
+        guard shouldRefresh else {
+            shouldRefresh = true
+            
+            return
+        }
+
         trips = Store.shared.stack.fetchAll(From<Trip>(),
                                             OrderBy(.ascending("startedAt")))
         
@@ -62,18 +94,6 @@ class DashboardController: UIViewController {
             
             self.buildLastRoute()
         }
-    }
-    
-    // MARK: Reset
-    
-    func resetProgressBars() {
-        dayTotalTime.alpha = 0
-        
-        nightTotalTime.alpha = 0
-        
-        dayProgressBar.value = 0
-        
-        nightProgressBar.value = 0
     }
     
     // MARK: Progress Bars
@@ -139,6 +159,7 @@ class DashboardController: UIViewController {
         barChartView.pinchZoomEnabled = false
         barChartView.drawGridBackgroundEnabled = false
         barChartView.highlightPerTapEnabled = false
+        barChartView.highlightFullBarEnabled = false
         barChartView.doubleTapToZoomEnabled = false
         
         barChartView.legend.horizontalAlignment = .center
@@ -194,6 +215,11 @@ class DashboardController: UIViewController {
         setupMapView()
     }
     
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "openSettingsSegue" { shouldRefresh = false }
+    }
 }
 
 // MARK: Map View Delegate

@@ -43,11 +43,11 @@ enum ChartSegment {
         var color: UIColor {
             switch self {
             case .clear:
-                return UIColor(red: 149/255, green: 165/255, blue: 166/255, alpha: 1)
+                return UIColor(red: 168/255, green: 220/255, blue: 223/255, alpha: 1)
             case .rain:
-                return UIColor(red: 52/255, green: 152/255, blue: 219/255, alpha: 1)
+                return UIColor(red: 125/255, green: 175/255, blue: 222/255, alpha: 1)
             case .thunder:
-                return UIColor(red: 241/255, green: 196/255, blue: 15/255, alpha: 1)
+                return UIColor(red: 243/255, green: 203/255, blue: 87/255, alpha: 1)
             }
         }
         
@@ -73,11 +73,11 @@ enum ChartSegment {
         var color: UIColor {
             switch self {
             case .light:
-                return UIColor(red: 46/255, green: 204/255, blue: 113/255, alpha: 1)
+                return UIColor(red: 121/255, green: 196/255, blue: 121/255, alpha: 1)
             case .moderate:
-                return UIColor(red: 52/255, green: 152/255, blue: 219/255, alpha: 1)
+                return UIColor(red: 236/255, green: 190/255, blue: 95/255, alpha: 1)
             case .heavy:
-                return UIColor(red: 241/255, green: 196/255, blue: 15/255, alpha: 1)
+                return UIColor(red: 211/255, green: 106/255, blue: 106/255, alpha: 1)
             }
         }
         
@@ -106,17 +106,17 @@ enum ChartSegment {
         var color: UIColor {
             switch self {
             case .localStreet:
-                return UIColor(red: 46/255, green: 204/255, blue: 113/255, alpha: 1)
+                return UIColor(red: 245/255, green: 147/255, blue: 146/255, alpha: 1)
             case .mainRoad:
-                return UIColor(red: 52/255, green: 152/255, blue: 219/255, alpha: 1)
+                return UIColor(red: 178/255, green: 134/255, blue: 165/255, alpha: 1)
             case .innerCity:
-                return UIColor(red: 241/255, green: 196/255, blue: 15/255, alpha: 1)
+                return UIColor(red: 168/255, green: 220/255, blue: 223/255, alpha: 1)
             case .freeway:
-                return UIColor(red: 241/255, green: 196/255, blue: 15/255, alpha: 1)
+                return UIColor(red: 97/255, green: 194/255, blue: 155/255, alpha: 1)
             case .ruralHighway:
-                return UIColor(red: 241/255, green: 196/255, blue: 15/255, alpha: 1)
+                return UIColor(red: 121/255, green: 196/255, blue: 121/255, alpha: 1)
             case .gravel:
-                return UIColor(red: 241/255, green: 196/255, blue: 15/255, alpha: 1)
+                return UIColor(red: 206/255, green: 206/255, blue: 206/255, alpha: 1)
             }
         }
         

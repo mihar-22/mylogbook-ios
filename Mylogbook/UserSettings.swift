@@ -16,7 +16,7 @@ class UserSettings {
     
     var isSyncPrepared: Bool {
         get {
-            return get(key: isSyncPreparedKey) as? Bool ?? false
+            return get(with: isSyncPreparedKey) ?? false
         }
         
         set(isSyncPrepared) {
@@ -30,11 +30,25 @@ class UserSettings {
     
     var lastSyncedAt: Date {
         get {
-            return get(key: lastSyncedAtKey) as! Date
+            return get(with: lastSyncedAtKey)!
         }
         
         set(lastSyncedAt) {
             set(lastSyncedAt, for: lastSyncedAtKey)
+        }
+    }
+    
+    // MARK: Australia State
+    
+    private let australiaStateKey = "australia_state"
+    
+    var australiaState: String? {
+        get {
+            return get(with: australiaStateKey) ?? AustraliaState.victoria.rawValue
+        }
+        
+        set(state) {
+            set(state, for: australiaStateKey)
         }
     }
     
@@ -43,7 +57,7 @@ class UserSettings {
     func getOdometer(for car: Car) -> String? {
         let key = "car_\(car.id)_odometer"
         
-        return get(key: key) as? String
+        return get(with: key)
     }
     
     func incrementOdometerBy(_ amount: Int, for car: Car) {
@@ -60,10 +74,10 @@ class UserSettings {
     
     // MARK: Getters
     
-    private func get(key: String) -> Any? {
+    private func get<T>(with key: String) -> T? {
         guard let id = Keychain.shared.id else { return nil }
         
-        return UserDefaults.standard.value(forKey: "\(id)_\(key)")
+        return UserDefaults.standard.value(forKey: "\(id)_\(key)") as? T
     }
     
     // MARK: Setters
