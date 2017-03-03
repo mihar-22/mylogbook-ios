@@ -153,7 +153,9 @@ class DashboardController: UIViewController {
         barChartView.xAxis.labelTextColor = UIColor.white
         
         barChartView.rightAxis.enabled = false
+        
         barChartView.leftAxis.enabled = false
+        barChartView.leftAxis.axisMinimum = 0
 
         barChartView.chartDescription?.enabled = false
         barChartView.pinchZoomEnabled = false
