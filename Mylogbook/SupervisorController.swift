@@ -126,22 +126,14 @@ extension SupervisorController: TextFieldDelegate {
 extension SupervisorController: UIPickerViewDelegate, UIPickerViewDataSource {
     func setupGenderPicker() {
         let genderPicker = UIPickerView()
+
         genderPicker.delegate = self
         genderPicker.dataSource = self
         
-        let toolbar = UIToolbar()
-        toolbar.restyle(.normal)
-        toolbar.addDoneButton(target: self, action: #selector(pickerDoneHandler(_:)))
-        
         genderTextField.field.inputView = genderPicker
-        genderTextField.field.inputAccessoryView = toolbar
 
         genderTextField.text = genders[0]
         // set gender image here
-    }
-    
-    func pickerDoneHandler(_ sender: UIBarButtonItem) {
-        let _ = genderTextField.field.resignFirstResponder()
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

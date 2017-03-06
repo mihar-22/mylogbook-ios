@@ -4,6 +4,13 @@ import UIKit
 // MARK: Australia State
 
 enum AustraliaState: String {
+    case newSouthWhales = "New South Whales"
+    case queensland = "Queensland"
+    case southAustralia = "South Australia"
+    case tasmania = "Tasmania"
+    case victoria = "Victoria"
+    case westernAustralia = "Western Australia"
+    
     static let all = [
         newSouthWhales,
         queensland,
@@ -12,28 +19,23 @@ enum AustraliaState: String {
         victoria,
         westernAustralia
     ]
-    
-    case newSouthWhales = "New South Whales"
-    case queensland = "Queensland"
-    case southAustralia = "South Australia"
-    case tasmania = "Tasmania"
-    case victoria = "Victoria"
-    case westernAustralia = "Western Australia"
 }
 
-// Mark: Australia State Controller
+// Mark: States Controller
 
-class AustraliaStateController: UITableViewController {
+class StatesController: UITableViewController {
     
     var states: [AustraliaState] = AustraliaState.all
     
-    var currentState: String? {
+    var currentState: AustraliaState {
         get {
-            return UserSettings.shared.australiaState
+            return Settings.shared.residingState
         }
         
         set(state) {
-            UserSettings.shared.australiaState = state
+            Settings.shared.residingState = state
+            
+            Settings.shared.save()
         }
     }
     
@@ -54,9 +56,7 @@ class AustraliaStateController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let previousState = AustraliaState.init(rawValue: currentState!)!
-        
-        let previousRow = states.index(of: previousState)!
+        let previousRow = states.index(of: currentState)!
         
         let previousIndexPath = IndexPath(row: previousRow, section: 0)
         
@@ -68,7 +68,7 @@ class AustraliaStateController: UITableViewController {
         
         selectedCell.accessoryType = .checkmark
         
-        currentState = states[indexPath.row].rawValue
+        currentState = states[indexPath.row]
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -82,7 +82,7 @@ class AustraliaStateController: UITableViewController {
         
         cell!.textLabel!.text = states[indexPath.row].rawValue
         
-        if states[indexPath.row].rawValue == currentState { cell!.accessoryType = .checkmark }
+        if states[indexPath.row] == currentState { cell!.accessoryType = .checkmark }
         
         return cell!
     }

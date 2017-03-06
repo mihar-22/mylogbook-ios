@@ -13,12 +13,16 @@ class SettingsController: UITableViewController {
     
     @IBOutlet weak var stateLabel: UILabel!
     
+    @IBOutlet weak var manualEntriesCell: UITableViewCell!
+    
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
         setupProfile()
-        
-        stateLabel.text = UserSettings.shared.australiaState
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        stateLabel.text = Settings.shared.residingState.rawValue
     }
     
     // MARK: Profile
@@ -66,6 +70,11 @@ class SettingsController: UITableViewController {
     // MARK: Table View
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if tableView.cellForRow(at: indexPath) == manualEntriesCell {
+            performSegue(withIdentifier: "showManualEntriesSegue", sender: nil)
+        }
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

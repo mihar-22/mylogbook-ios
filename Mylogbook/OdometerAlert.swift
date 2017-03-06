@@ -5,24 +5,20 @@ class OdometerAlert: UIViewController {
     
     let validator = Validator()
     
-    let formatter = NumberFormatter()
+    let formatter = ValueFormatter()
     
-    var odometer: String? {
+    var odometerText: String? {
         get {
-            return odometerTextField.text?.replacingOccurrences(of: ",", with: "")
+            return odometerTextField.field.valueText
         }
         
         set(odometer) {
-            guard (odometer != nil) && !odometer!.isEmpty else { return }
-            
-            guard Validation.numeric.validate(odometer!) else { return }
-            
-            let raw = odometer!.replacingOccurrences(of: ",", with: "")
-            
-            let number = formatter.number(from: raw)!
-            
-            odometerTextField.text = formatter.string(from: number)
+            odometerTextField.field.valueText = odometer
         }
+    }
+    
+    var odometerValue: Int {
+        return odometerTextField.field.value
     }
     
     // MARK: Outlets
@@ -36,11 +32,7 @@ class OdometerAlert: UIViewController {
         
         setupValidator()
         
-        setupFormatter()
-        
-        odometerTextField.field.addTarget(self,
-                                          action: #selector(editingChangedHandler(_:)),
-                                          for: .editingChanged)
+        odometerTextField.field.setupValueFormatting()
     }
     
     // MARK: Validator
@@ -48,16 +40,4 @@ class OdometerAlert: UIViewController {
     func setupValidator() {
         validator.add(odometerTextField, [.required, .numeric])
     }
-    
-    // MARK: Formatter
-    
-    func setupFormatter() {
-        formatter.numberStyle = .decimal
-        
-        formatter.maximumFractionDigits = 0
-    }
-    
-    // MARK: Handlers
-    
-    func editingChangedHandler(_ sender: UITextField) { odometer = sender.text }
 }

@@ -16,21 +16,25 @@ class SyncManager {
 
     private var lastSyncedAt: Date {
         get {
-            return UserSettings.shared.lastSyncedAt
+            return Settings.shared.lastSyncedAt
         }
         
         set(date) {
-            UserSettings.shared.lastSyncedAt = date
+            Settings.shared.lastSyncedAt = date
+            
+            Settings.shared.save()
         }
     }
     
-   private var isSyncPrepared: Bool {
+    private var isSyncPrepared: Bool {
         get {
-            return UserSettings.shared.isSyncPrepared
+            return Settings.shared.isSyncPrepared
         }
         
         set(isPrepared) {
-            UserSettings.shared.isSyncPrepared = isPrepared
+            Settings.shared.isSyncPrepared = isPrepared
+            
+            Settings.shared.save()
         }
     }
     
@@ -42,7 +46,7 @@ class SyncManager {
     
     func start() {
         guard network.isReachable else { return }
-        
+
         queue.async {
             if !self.isSyncPrepared { self.prepare() }
             else { self.sync() }

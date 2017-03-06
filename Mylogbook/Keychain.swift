@@ -67,7 +67,7 @@ class Keychain {
     
     // MARK: Api Token
     
-    private let apiTokenKey = "api_token"
+    private let apiTokenKey = "apiToken"
     
     var apiToken: String? {
         get {
@@ -81,7 +81,7 @@ class Keychain {
     
     // MARK: Last Route
     
-    private let lastRouteKey = "last_route"
+    private let lastRouteKey = "lastRoute"
     
     var lastRoute: [CLLocation]? {
         get {

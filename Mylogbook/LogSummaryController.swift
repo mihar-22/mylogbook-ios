@@ -61,15 +61,23 @@ class LogSummaryController: UIViewController {
     @IBAction func didTapSave(_ sender: UIBarButtonItem) {
         TripStore.add(trip)
         
-        let distance = Int(trip.distance / (kmToMeters: 1000))
-        
-        UserSettings.shared.incrementOdometerBy(distance, for: trip.car)
-        
         Keychain.shared.lastRoute = locations
+        
+        saveOdometerSettings()
         
         tabBarController!.selectedIndex = 0
         
         navigationController!.popToRootViewController(animated: true)
+    }
+    
+    func saveOdometerSettings() {
+        let odometer =  Settings.shared.getOdometer(for: trip.car)
+        
+        let distance = Int(trip.distance / (kmToMeters: 1000))
+        
+        Settings.shared.set(odometer: (odometer + distance), for: trip.car)
+        
+        Settings.shared.save()        
     }
         
     // MARK: Cards

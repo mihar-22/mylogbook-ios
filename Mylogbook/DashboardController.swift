@@ -16,11 +16,15 @@ class DashboardController: UIViewController {
     
     // MARK: Outlets
     
+    @IBOutlet weak var timeHintLabel: UILabel!
+    
     @IBOutlet weak var dayProgressBar: MBCircularProgressBarView!
     @IBOutlet weak var dayTotalTime: UILabel!
+    @IBOutlet weak var dayHoursRequiredLabel: UILabel!
     
     @IBOutlet weak var nightProgressBar: MBCircularProgressBarView!
     @IBOutlet weak var nightTotalTime: UILabel!
+    @IBOutlet weak var nightHoursRequiredLabel: UILabel!
     
     @IBOutlet weak var chartSegmentedControl: UISegmentedControl!
     @IBOutlet weak var barChartView: BarChartView!

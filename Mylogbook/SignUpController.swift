@@ -17,6 +17,7 @@ class SignUpController: UIViewController {
     @IBOutlet weak var nameTextField: TextField!
     @IBOutlet weak var emailTextField: TextField!
     @IBOutlet weak var passwordTextField: TextField!
+    @IBOutlet weak var dateOfBirthTextField: TextField!
         
     @IBOutlet weak var createButton: UIBarButtonItem!
     
@@ -51,6 +52,15 @@ class SignUpController: UIViewController {
         
         passwordTextField.field.tag = 2
         passwordTextField.field.delegate = self
+     
+        dateOfBirthTextField.field.tag = 3
+        dateOfBirthTextField.field.delegate = self
+        
+        let datePicker = UIDatePicker()
+        
+        datePicker.datePickerMode = .date
+        
+        dateOfBirthTextField.field.inputView = datePicker
     }
     
     // MARK: Actions
