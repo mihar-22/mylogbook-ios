@@ -61,7 +61,7 @@ class LogSummaryController: UIViewController {
     @IBAction func didTapSave(_ sender: UIBarButtonItem) {
         TripStore.add(trip)
         
-        Keychain.shared.lastRoute = locations
+        Keychain.shared.setData(locations, for: .lastRoute)
         
         saveOdometerSettings()
         
@@ -162,9 +162,9 @@ class LogSummaryController: UIViewController {
     }
     
     func setupRouteCard() {
-        totalTimeLabel.text = trip.totalTimeInterval.abbreviatedTime
+        totalTimeLabel.text = trip.totalTime.time()
         
-        totalDistanceLabel.text = trip.distance.abbreviatedDistance
+        totalDistanceLabel.text = trip.distance.distance()
         
         setupMapView()
     }
@@ -213,7 +213,7 @@ extension LogSummaryController: MKMapViewDelegate {
         
         startAnnotation.title = "Started Here"
         
-        startAnnotation.subtitle = trip.startedAt.shortTime
+        startAnnotation.subtitle = trip.startedAt.string(date: .none, time: .short)
         
         startAnnotation.coordinate = locations.first!.coordinate
         
@@ -221,7 +221,7 @@ extension LogSummaryController: MKMapViewDelegate {
         
         endAnnotation.title = "Ended Here"
 
-        endAnnotation.subtitle = trip.endedAt.shortTime
+        endAnnotation.subtitle = trip.endedAt.string(date: .none, time: .short)
         
         endAnnotation.coordinate = locations.last!.coordinate
         

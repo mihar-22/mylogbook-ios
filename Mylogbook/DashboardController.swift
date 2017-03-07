@@ -10,7 +10,7 @@ class DashboardController: UIViewController {
     
     var trips: [Trip]!
     
-    var locations: [CLLocation]? { return Keychain.shared.lastRoute }
+    var locations: [CLLocation]? { return Keychain.shared.getData(with: .lastRoute) }
     
     var shouldRefresh: Bool = true
     
@@ -105,11 +105,9 @@ class DashboardController: UIViewController {
     func buildProgressBars() {
         let (totalDayTime, totalNightTime) = TripCalculator.calculateTotal(forAll: trips)
         
-        let units: NSCalendar.Unit = [.hour, .minute]
-        
-        dayTotalTime.text = TimeInterval(totalDayTime).abbreviatedTime(in: units)
+        dayTotalTime.text = TimeInterval(totalDayTime).time(in: [.hour, .minute])
 
-        nightTotalTime.text = TimeInterval(totalNightTime).abbreviatedTime(in: units)
+        nightTotalTime.text = TimeInterval(totalNightTime).time(in: [.hour, .minute])
 
         let totalDayTimeHours = CGFloat(totalDayTime / (secsInHour: 3600))
         
@@ -214,9 +212,9 @@ class DashboardController: UIViewController {
         
         let lastTrip = trips.last!
         
-        lastRouteTimeLabel.text = lastTrip.totalTimeInterval.abbreviatedTime
+        lastRouteTimeLabel.text = lastTrip.totalTime.time()
 
-        lastRouteDistanceLabel.text = lastTrip.distance.abbreviatedDistance
+        lastRouteDistanceLabel.text = lastTrip.distance.distance()
         
         setupMapView()
     }
@@ -257,7 +255,7 @@ extension DashboardController: MKMapViewDelegate {
         
         startAnnotation.title = "Started Here"
         
-        startAnnotation.subtitle = trips.last!.startedAt.shortTime
+        startAnnotation.subtitle = trips.last!.startedAt.string(date: .none, time: .short)
         
         startAnnotation.coordinate = locations!.first!.coordinate
         
@@ -265,7 +263,7 @@ extension DashboardController: MKMapViewDelegate {
         
         endAnnotation.title = "Ended Here"
         
-        endAnnotation.subtitle = trips.last!.endedAt.shortTime
+        endAnnotation.subtitle = trips.last!.endedAt.string(date: .none, time: .short)
         
         endAnnotation.coordinate = locations!.last!.coordinate
         

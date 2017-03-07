@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func launch() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let hasApiToken = (Keychain.shared.apiToken != nil)
+        let hasApiToken = (Keychain.shared.get(.apiToken) != nil)
 
         guard hasApiToken else { return }
         
@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let isAuthenticated = (response.statusCode == 200)
             
             guard isAuthenticated else {
-                Keychain.shared.apiToken = nil
+                Keychain.shared.clear(.apiToken)
                 
                 return
             }

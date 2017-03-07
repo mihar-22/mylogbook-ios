@@ -28,8 +28,8 @@ extension Supervisor: Importable {
         gender = source["gender"].string!
         isAccredited = source["is_accredited"].bool!
         
-        updatedAt = source["updated_at"].string!.dateTime!
-        deletedAt = source["deleted_at"].string?.dateTime
+        updatedAt = source["updated_at"].string!.date(format: .dateTime)
+        deletedAt = source["deleted_at"].string?.date(format: .dateTime)
     }
 }
 

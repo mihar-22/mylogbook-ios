@@ -8,7 +8,6 @@ import SwiftyJSON
 
 protocol Syncable {
     var id: Int { get set }
-    
     var updatedAt: Date { get set }
     var deletedAt: Date? { get set }
 }

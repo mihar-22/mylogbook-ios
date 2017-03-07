@@ -8,7 +8,7 @@ class ApiTokenAdapter: RequestAdapter {
         var urlRequest = urlRequest
         
         if (urlRequest.url?.absoluteString.hasPrefix(Env.MLB_API_BASE))! {
-            if let apiToken = Keychain.shared.apiToken {
+            if let apiToken = Keychain.shared.get(.apiToken) {
                 urlRequest.setValue("Bearer \(apiToken)", forHTTPHeaderField: "Authorization")
             }
         }

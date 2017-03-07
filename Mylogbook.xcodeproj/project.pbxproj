@@ -183,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				C94406061E49B05C00D32AC3 /* Sync */,
-				C9EC4D2B1E3ECE0300A80348 /* Stores */,
 				C9EBBD6E1E2C855600B5E509 /* Models */,
 				C935B73A1E0B7A2E00FD7FFF /* Networking */,
 				C908D3C61E24D5BF00A4E91C /* Keychain.swift */,
@@ -238,6 +237,7 @@
 		C94406061E49B05C00D32AC3 /* Sync */ = {
 			isa = PBXGroup;
 			children = (
+				C9EC4D2B1E3ECE0300A80348 /* Stores */,
 				C9EC4D381E40123300A80348 /* SyncManager.swift */,
 				C95487CF1E4D859600C48F54 /* Sync.swift */,
 			);

@@ -11,14 +11,15 @@ class SignUpController: UIViewController {
     var name: String? { return nameTextField.text }
     var email: String? { return emailTextField.text }
     var password: String? { return passwordTextField.text }
+    var birthday: String?
     
     // MARK: Outlets
     
     @IBOutlet weak var nameTextField: TextField!
     @IBOutlet weak var emailTextField: TextField!
     @IBOutlet weak var passwordTextField: TextField!
-    @IBOutlet weak var dateOfBirthTextField: TextField!
-        
+    @IBOutlet weak var birthdayTextField: TextField!
+    
     @IBOutlet weak var createButton: UIBarButtonItem!
     
     // MARK: View Lifecycle
@@ -39,6 +40,8 @@ class SignUpController: UIViewController {
         validator.add(emailTextField, [.required, .email])
         
         validator.add(passwordTextField, [.required, .minLength(min: 6)])
+        
+        validator.add(birthdayTextField, [.required])
     }
     
     // MARK: Text Field
@@ -53,18 +56,30 @@ class SignUpController: UIViewController {
         passwordTextField.field.tag = 2
         passwordTextField.field.delegate = self
      
-        dateOfBirthTextField.field.tag = 3
-        dateOfBirthTextField.field.delegate = self
+        birthdayTextField.field.tag = 3
+        birthdayTextField.field.delegate = self
         
-        let datePicker = UIDatePicker()
-        
-        datePicker.datePickerMode = .date
-        
-        dateOfBirthTextField.field.inputView = datePicker
+        setupBirthdayDatePicker()
     }
     
+    func setupBirthdayDatePicker() {
+        let picker = UIDatePicker()
+        
+        picker.datePickerMode = .date
+        
+        picker.timeZone = TimeZone(secondsFromGMT: 0)
+        
+        picker.minimumDate = Calendar.current.date(byAdding: .year, value: -80, to: Date())
+
+        picker.maximumDate = Calendar.current.date(byAdding: .year, value: -15, to: Date())
+        
+        picker.addTarget(self, action: #selector(didChangeBirthday(_:)), for: .valueChanged)
+        
+        birthdayTextField.field.inputView = picker
+    }
+
     // MARK: Actions
-    
+
     @IBAction func didTapCreate(_ sender: UIBarButtonItem) {
         view.endEditing(true)
         
@@ -74,7 +89,15 @@ class SignUpController: UIViewController {
     @IBAction func didTapClose(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
-    
+
+    func didChangeBirthday(_ sender: UIDatePicker) {
+        birthday = sender.date.string(format: .date)
+
+        birthdayTextField.text = sender.date.string(date: .long, time: .none)
+        
+        validator.revalidate()
+    }
+
     // MARK: Networking
     
     func registerUser() {
@@ -84,7 +107,10 @@ class SignUpController: UIViewController {
             return
         }
         
-        let route = AuthRoute.register(name: name!, email: email!, password: password!)
+        let route = AuthRoute.register(name: name!,
+                                       email: email!,
+                                       password: password!,
+                                       birthday: birthday!)
         
         Session.shared.requestJSON(route) { response in
             guard response.statusCode != 422 else {
@@ -95,15 +121,17 @@ class SignUpController: UIViewController {
                 return
             }
             
-            DispatchQueue.main.async { self.showEmailConfirmationAlert() }
+            DispatchQueue.main.async {
+                Keychain.shared.set(self.email!, for: .email)
+
+                self.showEmailConfirmationAlert()
+            }
         }
     }
     
     // MARK: Navigation
     
     func navigateToLoginScene() {
-        Keychain.shared.email = email!
-
         performSegue(withIdentifier: "logInSegue", sender: self)
     }
     

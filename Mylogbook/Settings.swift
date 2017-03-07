@@ -5,7 +5,7 @@ import Foundation
 
 class Settings: NSObject, NSCoding {
     static var key: String {
-        let id = Keychain.shared.id!
+        let id = Keychain.shared.get(.id)!
         
         return "user_\(id)_settings"
     }

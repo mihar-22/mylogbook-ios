@@ -4,7 +4,7 @@ import Alamofire
 // MARK: Auth Route
 
 enum AuthRoute {
-    case register(name: String, email: String, password: String)
+    case register(name: String, email: String, password: String, birthday: String)
     case check
     case login(email: String, password: String)
     case logout
@@ -44,8 +44,8 @@ extension AuthRoute: Routing {
     
     var parameters: Parameters? {
         switch self {
-        case let .register(name, email, password):
-            return ["name": name, "email": email, "password": password]
+        case let .register(name, email, password, birthday):
+            return ["name": name, "email": email, "password": password, "birthday": birthday]
         case let .login(email, password):
             return ["email": email, "password": password]
         case .logout, .check:

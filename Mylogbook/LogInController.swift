@@ -125,7 +125,7 @@ class LogInController: UIViewController {
     // MARK: Keychain
     
     func attemptToPrefillForm() {
-        emailTextField.text = Keychain.shared.email ?? ""
+        emailTextField.text = Keychain.shared.get(.email) ?? ""
         
         passwordTextField.text = signUpPassword ?? ""
         
@@ -133,10 +133,16 @@ class LogInController: UIViewController {
     }
     
     func storeUserDetails(_ data: JSON) {
-        Keychain.shared.id = "\(data["id"].int!)"
-        Keychain.shared.email = email!
-        Keychain.shared.name = data["name"].string!
-        Keychain.shared.apiToken = data["api_token"].string!
+        let id = "\(data["id"].int!)"
+        let name = data["name"].string!
+        let birthday = data["birthday"].string!
+        let apiToken = data["api_token"].string!
+        
+        Keychain.shared.set(id, for: .id)
+        Keychain.shared.set(email!, for: .email)
+        Keychain.shared.set(name, for: .name)
+        Keychain.shared.set(birthday, for: .birthday)
+        Keychain.shared.set(apiToken, for: .apiToken)
     }
     
     // MARK: Navigation

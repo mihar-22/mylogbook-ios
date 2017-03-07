@@ -25,7 +25,7 @@ struct TripCalculator {
     private static func calculate(for trip: Trip) -> (Int, Int) {
         let startedAt = trip.startedAt.secondsFromStartOfDay(in: trip.timeZone)
         
-        let endedAt = startedAt + Int(trip.totalTimeInterval)
+        let endedAt = startedAt + Int(trip.totalTime)
         
         let (dayStartsAt, dayEndsAt) = getSunriseAndSunset(for: trip)
         

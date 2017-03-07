@@ -7,7 +7,7 @@ class Store {
     static let shared = Store()
     
     let stack: DataStack = {
-        let id = Keychain.shared.id!
+        let id = Keychain.shared.get(.id)!
         
         let stack = DataStack(modelName: "Mylogbook")
         

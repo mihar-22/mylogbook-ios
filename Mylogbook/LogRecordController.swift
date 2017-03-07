@@ -147,7 +147,7 @@ class LogRecordController: UIViewController {
     func eachTimerInterval(_ timer: Timer) {
         seconds += 1
         
-        timeLabel.text = TimeInterval(seconds).abbreviatedTime!
+        timeLabel.text = TimeInterval(seconds).time()
     }
     
     // MARK: Weather
@@ -295,13 +295,13 @@ extension LogRecordController: CLLocationManagerDelegate {
             
             trip.endedAt = Date()
             
-            trip.distance = distance.roundTo(places: 2)
+            trip.distance = distance.round(places: 2)
                         
             let coordinate = locations.first!.coordinate
             
-            trip.latitude = coordinate.latitude.roundTo(places: 8)
+            trip.latitude = coordinate.latitude.round(places: 8)
             
-            trip.longitude = coordinate.longitude.roundTo(places: 8)
+            trip.longitude = coordinate.longitude.round(places: 8)
         case .cancel:
             navigationController!.popViewController(animated: true)
         }
@@ -388,7 +388,7 @@ extension LogRecordController: CLLocationManagerDelegate {
         if locations.count > 0 {
             distance += location.distance(from: self.locations.last!)
             
-            distanceLabel.text = distance.abbreviatedDistance!
+            distanceLabel.text = distance.distance()
         }
     }
 }

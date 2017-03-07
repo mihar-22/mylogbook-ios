@@ -15,7 +15,7 @@ class Trip: NSManagedObject {
         return TimeZone(identifier: timeZoneIdentifier)!
     }
     
-    var totalTimeInterval: TimeInterval {
+    var totalTime: TimeInterval {
         return endedAt.timeIntervalSince(startedAt)
     }
     
@@ -48,8 +48,8 @@ extension Trip: Importable {
         supervisor = transaction.fetchOne(From(Supervisor.self),
                                           Where("id = \(supervisorId)"))!
         
-        startedAt = source["started_at"].string!.dateTime!
-        endedAt = source["ended_at"].string!.dateTime!
+        startedAt = source["started_at"].string!.date(format: .dateTime)
+        endedAt = source["ended_at"].string!.date(format: .dateTime)
         odometer = source["odometer"].int!
         distance = source["distance"].double!
         
@@ -89,8 +89,8 @@ extension Trip: Resourceable {
     
     func toJSON() -> [String: Any] {
         return [
-            "started_at": startedAt.dateTime,
-            "ended_at": endedAt.dateTime,
+            "started_at": startedAt.string(format: .dateTime),
+            "ended_at": endedAt.string(format: .dateTime),
             "odometer": odometer,
             "distance": distance,
             "car_id": car.id,

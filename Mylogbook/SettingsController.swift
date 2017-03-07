@@ -28,9 +28,9 @@ class SettingsController: UITableViewController {
     // MARK: Profile
     
     func setupProfile() {
-        nameLabel.text = Keychain.shared.name!
+        nameLabel.text = Keychain.shared.get(.name)!
         
-        emailLabel.text = Keychain.shared.email!
+        emailLabel.text = Keychain.shared.get(.email)!
     }
     
     // MARK: Actions
@@ -40,7 +40,7 @@ class SettingsController: UITableViewController {
     }
     
     @IBAction func didTapLogOut(_ sender: UIButton) {
-        Keychain.shared.apiToken = nil
+        Keychain.shared.clear(.apiToken)
         
         logOut()
         

@@ -23,91 +23,49 @@ class Keychain {
     
     private init() {}
     
-    // MARK: Id
+    // MARK: Key
     
-    private let idKey = "id"
-    
-    var id: String? {
-        get {
-            return keychain[idKey]
-        }
-        
-        set(id) {
-            keychain[idKey] = id
-        }
+    enum Key: String {
+        case id = "id"
+        case email = "email"
+        case name = "name"
+        case birthday = "birthday"
+        case apiToken = "apiToken"
     }
     
-    // MARK: Email
-    
-    private let emailKey = "email"
-    
-    var email: String? {
-        get {
-            return keychain[emailKey]
-        }
-        
-        set(email) {
-            keychain[emailKey] = email
-        }
+    enum DataKey: String {
+        case lastRoute = "lastRoute"
     }
     
-    // MARK: Name
+    // MARK: Getters + Setters
     
-    private let nameKey = "name"
-    
-    var name: String? {
-        get {
-            return keychain[nameKey]
-        }
-        
-        set(name) {
-            keychain[nameKey] = name
-        }
+    func get(_ key: Key) -> String? {
+        return keychain[key.rawValue]
     }
     
-    // MARK: Api Token
-    
-    private let apiTokenKey = "apiToken"
-    
-    var apiToken: String? {
-        get {
-            return keychain[apiTokenKey]
-        }
-        
-        set(apiToken) {
-            keychain[apiTokenKey] = apiToken
-        }
+    func set(_ value: String, for key: Key) {
+        keychain[key.rawValue] = value
     }
     
-    // MARK: Last Route
-    
-    private let lastRouteKey = "lastRoute"
-    
-    var lastRoute: [CLLocation]? {
-        get {
-            return get(with: lastRouteKey)
-        }
+    func getData<T>(with key: DataKey) -> T? {
+        guard let id = Keychain.shared.get(.id) else { return nil }
         
-        set(locations) {
-            set(locations, for: lastRouteKey)
-        }
-    }
-    
-    // MARK: Archive Data
-    
-    private func get<T>(with key: String) -> T? {
-        guard let id = Keychain.shared.id else { return nil }
-        
-        guard let data = try! keychain.getData("\(id)_\(key)") else { return nil }
+        guard let data = try! keychain.getData("\(id)_\(key.rawValue)") else { return nil }
         
         return NSKeyedUnarchiver.unarchiveObject(with: data) as? T
     }
     
-    private func set<T>(_ object: T, for key: String) {
-        guard let id = Keychain.shared.id else { return }
+    func setData<T>(_ object: T, for key: DataKey) {
+        guard let id = Keychain.shared.get(.id) else { return }
         
         let data = NSKeyedArchiver.archivedData(withRootObject: object)
         
-        try! keychain.set(data, key: "\(id)_\(key)")
+        try! keychain.set(data, key: "\(id)_\(key.rawValue)")
+    }
+    
+    // MARK: Clear
+    
+    func clear(_ key: Key) {
+        keychain[key.rawValue] = nil
     }
 }
