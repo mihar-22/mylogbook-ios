@@ -116,7 +116,11 @@ struct TripCalculator {
             
             if isComplete != nil && isComplete! { totalDayBonus += 72_000 }
             
-            return (totalDayBonus + totalNightBonus + (settingsNightBonus * 2/3), (settingsNightBonus * 1/3))
+            return (totalDayBonus +
+                    totalNightBonus +
+                    settingsDayBonus +
+                    (settingsNightBonus * 2/3),
+                    (settingsNightBonus * 1/3))
         }
         
         return (totalDayBonus + settingsDayBonus, totalNightBonus + settingsNightBonus)
