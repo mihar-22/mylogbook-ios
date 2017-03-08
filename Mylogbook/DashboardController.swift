@@ -10,7 +10,7 @@ class DashboardController: UIViewController {
     
     var trips: [Trip]!
     
-    var locations: [CLLocation]? { return Keychain.shared.getData(with: .lastRoute) }
+    var locations: [CLLocation]? { return Keychain.shared.getData(.lastRoute) }
     
     var shouldRefresh: Bool = true
     

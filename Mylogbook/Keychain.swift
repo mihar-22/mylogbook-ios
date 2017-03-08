@@ -33,6 +33,10 @@ class Keychain {
         case apiToken = "apiToken"
     }
     
+    enum NameSpacedKey: String {
+        case permitReceivedAt = "permitReceivedAt"
+    }
+
     enum DataKey: String {
         case lastRoute = "lastRoute"
     }
@@ -47,8 +51,20 @@ class Keychain {
         keychain[key.rawValue] = value
     }
     
-    func getData<T>(with key: DataKey) -> T? {
-        guard let id = Keychain.shared.get(.id) else { return nil }
+    func get(_ key: NameSpacedKey) -> String? {
+        guard let id = get(.id) else { return nil }
+
+        return keychain["\(id)_\(key.rawValue)"]
+    }
+    
+    func set(_ value: String, for key: NameSpacedKey) {
+        guard let id = get(.id) else { return }
+        
+        keychain["\(id)_\(key.rawValue)"] = value
+    }
+    
+    func getData<T>(_ key: DataKey) -> T? {
+        guard let id = get(.id) else { return nil }
         
         guard let data = try! keychain.getData("\(id)_\(key.rawValue)") else { return nil }
         
@@ -56,7 +72,7 @@ class Keychain {
     }
     
     func setData<T>(_ object: T, for key: DataKey) {
-        guard let id = Keychain.shared.get(.id) else { return }
+        guard let id = get(.id) else { return }
         
         let data = NSKeyedArchiver.archivedData(withRootObject: object)
         

@@ -148,8 +148,12 @@ class LogInController: UIViewController {
     // MARK: Navigation
     
     func navigateToDashboardScene() {
-        performSegue(withIdentifier: "userLoggedInSegue", sender: nil)
-        
+        if Keychain.shared.get(.permitReceivedAt) != nil {
+            performSegue(withIdentifier: "userLoggedInSegue", sender: nil)
+        } else {
+            performSegue(withIdentifier: "onboardingSegue", sender: nil)
+        }
+
         SyncManager().start()
     }
     

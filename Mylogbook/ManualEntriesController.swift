@@ -3,20 +3,18 @@ import UIKit
 
 class ManualEntriesController: UITableViewController {
     
-    let formatter = ValueFormatter()
-    
-    let saferDriversIndexPath = IndexPath(row: 2, section: 1)
-    
-    var isResidingStateQueensland: Bool {
-        return Settings.shared.residingState == .queensland
-    }
-    
-    var isResidingStateNewSouthWhales: Bool {
-        return Settings.shared.residingState == .newSouthWhales
-    }
+    var assessmentDate: Date?
     
     var isBonusCreditsAvailable: Bool {
-        return isResidingStateNewSouthWhales || isResidingStateQueensland
+        return isResidingState(.newSouthWhales) || isResidingState(.queensland)
+    }
+    
+    var isTestsAvailable: Bool {
+        return isResidingState(.tasmania) || isResidingState(.westernAustralia)
+    }
+    
+    func isResidingState(_ state: AustraliaState) -> Bool {
+        return Settings.shared.residingState == state
     }
     
     // MARK: Outlets
@@ -29,6 +27,10 @@ class ManualEntriesController: UITableViewController {
     @IBOutlet weak var accreditedNightTextField: UITextField!
     @IBOutlet weak var saferDriversSwitch: UISwitch!
     
+    @IBOutlet weak var assessmentLabel: UILabel!
+    @IBOutlet weak var assessmentSwitch: UISwitch!
+    @IBOutlet weak var assessmentDateTextField: UITextField!
+    
     // MARK: View Lifecycles
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,13 +40,27 @@ class ManualEntriesController: UITableViewController {
     override func viewDidLoad() {
         setupTextFields()
         
-        saferDriversSwitch.transform = CGAffineTransform.init(scaleX: 0.8, y: 0.8)
+        setupTestSection()
+        
+        setupSwitches()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         saveSettings()
     }
-
+    
+    // MARK: Actions
+    
+    func didChangeAssessment(_ sender: UISwitch) {
+        assessmentDateTextField.isEnabled = sender.isOn
+    }
+    
+    func didChangeAssessmentDate(_ sender: UIDatePicker) {
+        assessmentDate = sender.date.string(format: .date).date(format: .date)
+        
+        assessmentDateTextField.text = sender.date.string(date: .long, time: .none)
+    }
+    
     // MARK: Settings
     
     func getSettings() {
@@ -68,9 +84,23 @@ class ManualEntriesController: UITableViewController {
             }
         }
         
-        if isResidingStateNewSouthWhales {
-            if let isOn = settings.isSaferDriversCompleted {
+        if isResidingState(.newSouthWhales) {
+            if let isOn = settings.isSaferDriversComplete {
                 saferDriversSwitch.setOn(isOn, animated: false)
+            }
+        }
+        
+        if isTestsAvailable {
+            if let isOn = settings.isAssessmentComplete {
+                assessmentSwitch.setOn(isOn, animated: false)
+                
+                assessmentDateTextField.isEnabled = isOn
+                
+                if isOn {
+                    let date = settings.assessmentCompletedAt?.string(date: .long, time: .none)
+                    
+                    assessmentDateTextField.text = date
+                }
             }
         }
     }
@@ -88,34 +118,111 @@ class ManualEntriesController: UITableViewController {
             settings.accreditedNightMinutes = accreditedNightTextField.value
         }
         
-        if isResidingStateNewSouthWhales {
-            settings.isSaferDriversCompleted = saferDriversSwitch.isOn
+        if isResidingState(.newSouthWhales) {
+            settings.isSaferDriversComplete = saferDriversSwitch.isOn
+        }
+        
+        if isTestsAvailable {
+            let isOn = assessmentSwitch.isOn
+            
+            settings.isAssessmentComplete = isOn
+            
+            settings.assessmentCompletedAt = isOn ? assessmentDate ?? Date() : nil
         }
         
         Settings.shared.save()
     }
     
+    // MARK: Switch
+    
+    func setupSwitches() {
+        setupSaferDriverSwitch()
+        
+        setupAssessmentSwitch()
+    }
+    
+    func setupSaferDriverSwitch() {
+        guard isResidingState(.newSouthWhales) else { return }
+        
+        let scale: CGFloat = 0.8
+        
+        saferDriversSwitch.transform = CGAffineTransform.init(scaleX: scale, y: scale)
+    }
+    
+    func setupAssessmentSwitch() {
+        guard isTestsAvailable else { return }
+
+        let scale: CGFloat = 0.8
+        
+        assessmentSwitch.transform = CGAffineTransform.init(scaleX: scale, y: scale)
+        
+        assessmentSwitch.addTarget(self, action: #selector(didChangeAssessment(_:)), for: .valueChanged)
+    }
+    
+    // MARK: Test Section
+    
+    func setupTestSection() {
+        guard isTestsAvailable else { return }
+        
+        if isResidingState(.tasmania) { assessmentLabel.text = "L2 Driving Assessment" }
+        
+        if isResidingState(.westernAustralia) { assessmentLabel.text = "Practical Driving Assessment" }
+    }
+    
     // MARK: Table View
+    
+    func isCellViewable(at indexPath: IndexPath) -> Bool {
+        return (indexPath == IndexPath(row: 2, section: 1) && !isResidingState(.newSouthWhales))
+    }
+    
+    func isSectionViewable(_ section: Int) -> Bool {
+        return (section == 1 && !isBonusCreditsAvailable) ||
+               (section == 2 && !isTestsAvailable )
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if isSectionViewable(section) { return 0.1 }
         
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        if !isBonusCreditsAvailable {
-            return 1
-        }
+        return super.tableView(tableView, heightForHeaderInSection: section)
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isSectionViewable(section) { return 0 }
         
-        return 2
+        return super.tableView(tableView, numberOfRowsInSection: section)
+    }
+        
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat{
+        if isSectionViewable(section) { return 0.1 }
+        
+        return super.tableView(tableView, heightForFooterInSection: section)
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            willDisplayHeaderView view: UIView,
+                            forSection section: Int) {
+
+        if isSectionViewable(section) { view.isHidden = true }
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            willDisplayFooterView view: UIView,
+                            forSection section: Int) {
+        
+        if  isSectionViewable(section) { view.isHidden = true }
     }
     
     override func tableView(_ tableView: UITableView,
                             willDisplay cell: UITableViewCell,
                             forRowAt indexPath: IndexPath) {
         
-        if indexPath == saferDriversIndexPath && !isResidingStateNewSouthWhales { cell.isHidden = true }
+        if isCellViewable(at: indexPath) { cell.isHidden = true }
     }
     
     override func tableView(_ tableView: UITableView,
                             heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        if indexPath == saferDriversIndexPath && !isResidingStateNewSouthWhales { return 0.0 }
+        if isCellViewable(at: indexPath) { return 0.0 }
         
         return super.tableView(tableView, heightForRowAt: indexPath)
     }
@@ -138,6 +245,24 @@ extension ManualEntriesController: UITextFieldDelegate {
             
             setup(accreditedNightTextField, tag: 3)
         }
+        
+        setupAssessmentDatePicker()
+    }
+    
+    func setupAssessmentDatePicker() {
+        let picker = UIDatePicker()
+        
+        picker.datePickerMode = .date
+        
+        picker.timeZone = TimeZone(secondsFromGMT: 0)
+        
+        picker.minimumDate = Calendar.current.date(byAdding: .year, value: -5, to: Date())
+        
+        picker.maximumDate = Date()
+        
+        picker.addTarget(self, action: #selector(didChangeAssessmentDate(_:)), for: .valueChanged)
+        
+        assessmentDateTextField.inputView = picker
     }
     
     func setup(_ textField: UITextField, tag: Int) {
@@ -149,12 +274,26 @@ extension ManualEntriesController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         let tag = textField.tag
         
-        if tag == 0 { adjustDayTextFieldValue() }
-        else if tag == 1 { adjustNightTextFieldValue() }
-        else { adjustAccreditedTextFieldValue(for: tag) }
+        guard !isTestsAvailable else {
+            let otherTextField = (tag == 0) ? nightTextField : dayTextField
+            
+            adjustValueWithTotalLimit(textField, otherTextField!)
+            
+            return
+        }
+        
+        if tag == 0 {
+            adjustDayValue()
+        } else if tag == 1 {
+            adjustNightValue()
+        } else {
+            let otherTextField = (tag == 2) ? accreditedNightTextField : accreditedDayTextField
+            
+            adjustValueWithTotalLimit(textField, otherTextField!)
+        }
     }
     
-    func adjustDayTextFieldValue() {
+    func adjustDayValue() {
         let minutes = dayTextField.value
        
         var maxMinutes = 0
@@ -172,10 +311,12 @@ extension ManualEntriesController: UITextFieldDelegate {
             break
         }
         
-        dayTextField.valueText = String(min(maxMinutes, minutes))
+        let value = min(maxMinutes, minutes)
+        
+        dayTextField.valueText = (value > 0) ? String(value) : nil
     }
     
-    func adjustNightTextFieldValue() {
+    func adjustNightValue() {
         let minutes = nightTextField.value
         
         var maxMinutes = 0
@@ -193,22 +334,29 @@ extension ManualEntriesController: UITextFieldDelegate {
             break
         }
         
-        nightTextField.valueText = String(min(maxMinutes, minutes))
+        let value = min(maxMinutes, minutes)
+        
+        nightTextField.valueText = (value > 0) ? String(value) : nil
     }
     
-    func adjustAccreditedTextFieldValue(for tag: Int) {
-        let isDayTextField = tag == accreditedDayTextField.tag
+    func adjustValueWithTotalLimit(_ textField: UITextField, _ otherTextField: UITextField) {
+        var totalMinutes = 0
         
-        let minutes = isDayTextField ? accreditedDayTextField.value : accreditedNightTextField.value
-        
-        let otherMinutes = isDayTextField ? accreditedNightTextField.value : accreditedDayTextField.value
-        
-        let totalMinutesLeft = 600 - otherMinutes
-        
-        if isDayTextField {
-            accreditedDayTextField.valueText = String(min(totalMinutesLeft, minutes))
-        } else {
-            accreditedNightTextField.valueText = String(min(totalMinutesLeft, minutes))
+        switch Settings.shared.residingState {
+        case .queensland, .newSouthWhales:
+            totalMinutes = 600
+        case .tasmania:
+            totalMinutes = 4800
+        case .westernAustralia:
+            totalMinutes = 3000
+        default:
+            break
         }
+        
+        let totalMinutesLeft = max(0, totalMinutes - otherTextField.value)
+        
+        let value = min(totalMinutesLeft, textField.value)
+        
+        textField.valueText = (value > 0) ? String(value) : nil
     }
 }

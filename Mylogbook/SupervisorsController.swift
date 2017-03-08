@@ -16,8 +16,6 @@ class SupervisorsController: UIViewController {
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
-        setupTable()
-        
         supervisors.addObserver(self)
     }
     
@@ -101,14 +99,6 @@ extension SupervisorsController: ListObserver, ListObjectObserver {
 // MARK: Table View - Data Source + Delegate
 
 extension SupervisorsController: UITableViewDataSource, UITableViewDelegate {
-    func setupTable() {
-        supervisorsTable.dataSource = self
-        
-        supervisorsTable.delegate = self
-        
-        supervisorsTable.tableFooterView = UIView()
-    }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

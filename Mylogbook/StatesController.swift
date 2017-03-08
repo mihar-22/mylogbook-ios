@@ -21,10 +21,9 @@ enum AustraliaState: String {
     ]
 }
 
-// Mark: States Controller
+// MARK: States Controller
 
-class StatesController: UITableViewController {
-    
+class StatesController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var states: [AustraliaState] = AustraliaState.all
     
     var currentState: AustraliaState {
@@ -34,28 +33,26 @@ class StatesController: UITableViewController {
         
         set(state) {
             Settings.shared.residingState = state
-            
-            Settings.shared.save()
         }
     }
     
     // MARK: View Lifecycles
     
-    override func viewDidLoad() {
-        tableView.tableFooterView = UIView()
+    override func viewWillDisappear(_ animated: Bool) {
+        Settings.shared.save()
     }
     
     // MARK: Table View
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return states.count
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let previousRow = states.index(of: currentState)!
         
         let previousIndexPath = IndexPath(row: previousRow, section: 0)
@@ -73,7 +70,7 @@ class StatesController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = "StateCell"
         
         var cell = tableView.dequeueReusableCell(withIdentifier: identifier)

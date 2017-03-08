@@ -110,7 +110,11 @@ class ManualEntries: NSObject, NSCoding {
 
     var accreditedNightMinutes: Int? = nil
     
-    var isSaferDriversCompleted: Bool? = nil
+    var isSaferDriversComplete: Bool? = nil
+    
+    var isAssessmentComplete: Bool? = nil
+    
+    var assessmentCompletedAt: Date? = nil
         
     // MARK: Encoding + Decoding
     
@@ -125,7 +129,11 @@ class ManualEntries: NSObject, NSCoding {
 
         accreditedNightMinutes = aDecoder.decodeObject(forKey: "accreditedNightMinutes") as? Int
 
-        isSaferDriversCompleted = aDecoder.decodeObject(forKey: "isSaferDriversCompleted") as? Bool
+        isSaferDriversComplete = aDecoder.decodeObject(forKey: "isSaferDriversComplete") as? Bool
+        
+        isAssessmentComplete = aDecoder.decodeObject(forKey: "isAssessmentComplete") as? Bool
+        
+        assessmentCompletedAt = aDecoder.decodeObject(forKey: "assessmentCompletedAt") as? Date
     }
     
     func encode(with aCoder: NSCoder) {
@@ -137,6 +145,10 @@ class ManualEntries: NSObject, NSCoding {
 
         aCoder.encode(accreditedNightMinutes, forKey: "accreditedNightMinutes")
 
-        aCoder.encode(isSaferDriversCompleted, forKey: "isSaferDriversCompleted")
+        aCoder.encode(isSaferDriversComplete, forKey: "isSaferDriversComplete")
+        
+        aCoder.encode(isAssessmentComplete, forKey: "isAssessmentComplete")
+        
+        aCoder.encode(assessmentCompletedAt, forKey: "assessmentCompletedAt")
     }
 }

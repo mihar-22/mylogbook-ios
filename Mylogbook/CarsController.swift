@@ -16,8 +16,6 @@ class CarsController: UIViewController {
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
-        setupTable()
-        
         cars.addObserver(self)
     }
     
@@ -34,7 +32,6 @@ class CarsController: UIViewController {
                     let indexPath = carsTable.indexPath(for: selectedCell)!
                     
                     let car = cars[indexPath.row]
-                    
                     
                     viewController.car = car
                 }
@@ -102,14 +99,6 @@ extension CarsController: ListObserver, ListObjectObserver {
 // MARK: Table View - Data Source + Delegate
 
 extension CarsController: UITableViewDataSource, UITableViewDelegate {
-    func setupTable() {
-        carsTable.dataSource = self
-        
-        carsTable.delegate = self
-        
-        carsTable.tableFooterView = UIView()
-    }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

@@ -11,6 +11,8 @@ class SettingsController: UITableViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
+    @IBOutlet weak var permitReceivedTextField: UITextField!
+    
     @IBOutlet weak var stateLabel: UILabel!
     
     @IBOutlet weak var manualEntriesCell: UITableViewCell!
@@ -19,6 +21,8 @@ class SettingsController: UITableViewController {
     
     override func viewDidLoad() {
         setupProfile()
+        
+        setupPermit()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,6 +37,30 @@ class SettingsController: UITableViewController {
         emailLabel.text = Keychain.shared.get(.email)!
     }
     
+    // MARK: Permit
+    
+    func setupPermit() {
+        let picker = UIDatePicker()
+        
+        picker.datePickerMode = .date
+        
+        picker.timeZone = TimeZone(secondsFromGMT: 0)
+        
+        picker.minimumDate = Calendar.current.date(byAdding: .year, value: -5, to: Date())
+        
+        picker.maximumDate = Date()
+        
+        picker.addTarget(self, action: #selector(didChangePermitReceivedDate(_:)), for: .valueChanged)
+        
+        permitReceivedTextField.inputView = picker
+        
+        if let receivedAt = Keychain.shared.get(.permitReceivedAt) {
+            permitReceivedTextField.text = receivedAt.date(format: .date).string(date: .long, time: .none)
+            
+            picker.date = receivedAt.date(format: .date)
+        }
+    }
+    
     // MARK: Actions
     
     @IBAction func didTapClose(_ sender: UIBarButtonItem) {
@@ -45,6 +73,12 @@ class SettingsController: UITableViewController {
         logOut()
         
         navigateToAuthScene()
+    }
+    
+    func didChangePermitReceivedDate(_ sender: UIDatePicker) {
+        Keychain.shared.set(sender.date.string(format: .date), for: .permitReceivedAt)
+        
+        permitReceivedTextField.text = sender.date.string(date: .long, time: .none)
     }
     
     // MARK: Network
