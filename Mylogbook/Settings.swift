@@ -22,16 +22,16 @@ class Settings: NSObject, NSCoding {
     
     var residingState: AustraliaState = .victoria
     
-    var manualEntriesForResidingState: ManualEntries {
-        return manualEntries[residingState]!
+    var currentEntries: Entries {
+        return entries[residingState]!
     }
     
     private var odometers = [Int: Int]()
     
-    private var manualEntries: [AustraliaState: ManualEntries] = {
-        var settings = [AustraliaState: ManualEntries]()
+    private var entries: [AustraliaState: Entries] = {
+        var settings = [AustraliaState: Entries]()
         
-        for state in AustraliaState.all { settings[state] = ManualEntries() }
+        for state in AustraliaState.all { settings[state] = Entries() }
         
         return settings
     }()
@@ -69,10 +69,10 @@ class Settings: NSObject, NSCoding {
 
         residingState = AustraliaState(rawValue: state)!
         
-        let manualEntries = aDecoder.decodeObject(forKey: "manualEntries")
+        let entries = aDecoder.decodeObject(forKey: "entries")
         
-        for (state, settings) in (manualEntries as! [String: ManualEntries]) {
-            self.manualEntries[AustraliaState(rawValue: state)!] = settings
+        for (state, settings) in (entries as! [String: Entries]) {
+            self.entries[AustraliaState(rawValue: state)!] = settings
         }
     }
     
@@ -85,13 +85,13 @@ class Settings: NSObject, NSCoding {
         
         aCoder.encode(residingState.rawValue, forKey: "residingState")
         
-        aCoder.encode(encodeManualEntries(), forKey: "manualEntries")
+        aCoder.encode(encodeEntries(), forKey: "entries")
     }
     
-    func encodeManualEntries() -> [String: ManualEntries] {
-        var encoding = [String: ManualEntries]()
+    func encodeEntries() -> [String: Entries] {
+        var encoding = [String: Entries]()
         
-        for (state, settings) in manualEntries {
+        for (state, settings) in entries {
             encoding[state.rawValue] = settings
         }
 
@@ -99,16 +99,16 @@ class Settings: NSObject, NSCoding {
     }
 }
 
-// MARK: Manual Entries
+// MARK: Entries
 
-class ManualEntries: NSObject, NSCoding {
-    var dayMinutes = 0
+class Entries: NSObject, NSCoding {
+    var day = 0
     
-    var nightMinutes = 0
+    var night = 0
     
-    var accreditedDayMinutes: Int? = nil
+    var dayBonus: Int? = nil
 
-    var accreditedNightMinutes: Int? = nil
+    var nightBonus: Int? = nil
     
     var isSaferDriversComplete: Bool? = nil
     
@@ -121,13 +121,13 @@ class ManualEntries: NSObject, NSCoding {
     override init() { super.init() }
     
     required init?(coder aDecoder: NSCoder) {
-        dayMinutes = aDecoder.decodeInteger(forKey: "dayMinutes")
+        day = aDecoder.decodeInteger(forKey: "day")
         
-        nightMinutes = aDecoder.decodeInteger(forKey: "nightMinutes")
+        night = aDecoder.decodeInteger(forKey: "night")
 
-        accreditedDayMinutes = aDecoder.decodeObject(forKey: "accreditedDayMinutes") as? Int
+        dayBonus = aDecoder.decodeObject(forKey: "dayBonus") as? Int
 
-        accreditedNightMinutes = aDecoder.decodeObject(forKey: "accreditedNightMinutes") as? Int
+        nightBonus = aDecoder.decodeObject(forKey: "nightBonus") as? Int
 
         isSaferDriversComplete = aDecoder.decodeObject(forKey: "isSaferDriversComplete") as? Bool
         
@@ -137,13 +137,13 @@ class ManualEntries: NSObject, NSCoding {
     }
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(dayMinutes, forKey: "dayMinutes")
+        aCoder.encode(day, forKey: "day")
         
-        aCoder.encode(nightMinutes, forKey: "nightMinutes")
+        aCoder.encode(night, forKey: "night")
 
-        aCoder.encode(accreditedDayMinutes, forKey: "accreditedDayMinutes")
+        aCoder.encode(dayBonus, forKey: "dayBonus")
 
-        aCoder.encode(accreditedNightMinutes, forKey: "accreditedNightMinutes")
+        aCoder.encode(nightBonus, forKey: "nightBonus")
 
         aCoder.encode(isSaferDriversComplete, forKey: "isSaferDriversComplete")
         

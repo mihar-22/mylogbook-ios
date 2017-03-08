@@ -14,7 +14,7 @@
 		C92AA0311E15185A00A92067 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92AA0301E15185A00A92067 /* Theme.swift */; };
 		C935B7361E0A6FFE00FD7FFF /* AuthRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935B7351E0A6FFE00FD7FFF /* AuthRoute.swift */; };
 		C935B73C1E0B7A4600FD7FFF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935B73B1E0B7A4600FD7FFF /* Router.swift */; };
-		C942357D1E6BAFD6003E9D4E /* ManualEntriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942357C1E6BAFD6003E9D4E /* ManualEntriesController.swift */; };
+		C942357D1E6BAFD6003E9D4E /* EntriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942357C1E6BAFD6003E9D4E /* EntriesController.swift */; };
 		C94235801E6BC719003E9D4E /* ValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942357F1E6BC719003E9D4E /* ValueFormatter.swift */; };
 		C94406051E42EB6D00D32AC3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94406041E42EB6D00D32AC3 /* Store.swift */; };
 		C945AA521E5C25AB00FAF9E9 /* LogSummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945AA511E5C25AB00FAF9E9 /* LogSummaryController.swift */; };
@@ -87,7 +87,7 @@
 		C92AA0301E15185A00A92067 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		C935B7351E0A6FFE00FD7FFF /* AuthRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRoute.swift; sourceTree = "<group>"; };
 		C935B73B1E0B7A4600FD7FFF /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		C942357C1E6BAFD6003E9D4E /* ManualEntriesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualEntriesController.swift; sourceTree = "<group>"; };
+		C942357C1E6BAFD6003E9D4E /* EntriesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntriesController.swift; sourceTree = "<group>"; };
 		C942357F1E6BC719003E9D4E /* ValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueFormatter.swift; sourceTree = "<group>"; };
 		C94406041E42EB6D00D32AC3 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		C945AA511E5C25AB00FAF9E9 /* LogSummaryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogSummaryController.swift; sourceTree = "<group>"; };
@@ -326,7 +326,7 @@
 			children = (
 				C95CFB951E6E4EC100CC0BD1 /* StatesController.swift */,
 				C997A5051E67AF2C00CF4F47 /* SettingsController.swift */,
-				C942357C1E6BAFD6003E9D4E /* ManualEntriesController.swift */,
+				C942357C1E6BAFD6003E9D4E /* EntriesController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -607,7 +607,7 @@
 				C99FC9141E1BB395003BAEC2 /* Validator.swift in Sources */,
 				C9D373DC1E5C12E800039366 /* RoadController.swift in Sources */,
 				C98E77961E398FE900F34468 /* Toolbar.swift in Sources */,
-				C942357D1E6BAFD6003E9D4E /* ManualEntriesController.swift in Sources */,
+				C942357D1E6BAFD6003E9D4E /* EntriesController.swift in Sources */,
 				C99FC9181E1BB534003BAEC2 /* Validation.swift in Sources */,
 				C9FFDDB81E5DADC200AEFDC7 /* Settings.swift in Sources */,
 				C9EC4D2F1E3F1FAD00A80348 /* SupervisorStore.swift in Sources */,

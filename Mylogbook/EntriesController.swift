@@ -1,20 +1,12 @@
 
 import UIKit
 
-class ManualEntriesController: UITableViewController {
+class EntriesController: UITableViewController {
     
     var assessmentDate: Date?
     
-    var isBonusCreditsAvailable: Bool {
-        return isResidingState(.newSouthWhales) || isResidingState(.queensland)
-    }
-    
-    var isTestsAvailable: Bool {
-        return isResidingState(.tasmania) || isResidingState(.westernAustralia)
-    }
-    
-    func isResidingState(_ state: AustraliaState) -> Bool {
-        return Settings.shared.residingState == state
+    var residingState: AustraliaState {
+        return Settings.shared.residingState
     }
     
     // MARK: Outlets
@@ -22,9 +14,8 @@ class ManualEntriesController: UITableViewController {
     @IBOutlet weak var dayTextField: UITextField!
     @IBOutlet weak var nightTextField: UITextField!
     
-    
-    @IBOutlet weak var accreditedDayTextField: UITextField!
-    @IBOutlet weak var accreditedNightTextField: UITextField!
+    @IBOutlet weak var dayBonusTextField: UITextField!
+    @IBOutlet weak var nightBonusTextField: UITextField!
     @IBOutlet weak var saferDriversSwitch: UISwitch!
     
     @IBOutlet weak var assessmentLabel: UILabel!
@@ -64,33 +55,35 @@ class ManualEntriesController: UITableViewController {
     // MARK: Settings
     
     func getSettings() {
-        let settings = Settings.shared.manualEntriesForResidingState
+        let settings = Settings.shared.currentEntries
         
-        if settings.dayMinutes > 0 {
-            dayTextField.valueText = String(settings.dayMinutes)
+        let minutesPerSecond = 60
+        
+        if settings.day > 0 {
+            dayTextField.valueText = String(settings.day / minutesPerSecond)
         }
         
-        if settings.nightMinutes > 0 {
-            nightTextField.valueText = String(settings.nightMinutes)
+        if settings.night > 0 {
+            nightTextField.valueText = String(settings.night / minutesPerSecond)
         }
         
-        if isBonusCreditsAvailable {
-            if let minutes = settings.accreditedDayMinutes, minutes > 0 {
-                accreditedDayTextField.valueText = String(minutes)
+        if residingState.isBonusCreditsAvailable {
+            if let minutes = settings.dayBonus, minutes > 0 {
+                dayBonusTextField.valueText = String(minutes / minutesPerSecond)
             }
             
-            if let minutes = settings.accreditedNightMinutes, minutes > 0 {
-                accreditedNightTextField.valueText = String(minutes)
+            if let minutes = settings.nightBonus, minutes > 0 {
+                nightBonusTextField.valueText = String(minutes / minutesPerSecond)
             }
         }
         
-        if isResidingState(.newSouthWhales) {
+        if residingState.is(.newSouthWhales) {
             if let isOn = settings.isSaferDriversComplete {
                 saferDriversSwitch.setOn(isOn, animated: false)
             }
         }
         
-        if isTestsAvailable {
+        if residingState.isTestsAvailable {
             if let isOn = settings.isAssessmentComplete {
                 assessmentSwitch.setOn(isOn, animated: false)
                 
@@ -106,23 +99,25 @@ class ManualEntriesController: UITableViewController {
     }
     
     func saveSettings() {
-        let settings = Settings.shared.manualEntriesForResidingState
+        let settings = Settings.shared.currentEntries
 
-         settings.dayMinutes = dayTextField.value
+        let secondsPerMinute = 60
         
-         settings.nightMinutes = nightTextField.value
+        settings.day = dayTextField.value * secondsPerMinute
+
+        settings.night = nightTextField.value * secondsPerMinute
         
-        if isBonusCreditsAvailable {
-            settings.accreditedDayMinutes = accreditedDayTextField.value
+        if residingState.isBonusCreditsAvailable {
+            settings.dayBonus = dayBonusTextField.value * secondsPerMinute
             
-            settings.accreditedNightMinutes = accreditedNightTextField.value
+            settings.nightBonus = nightBonusTextField.value * secondsPerMinute
         }
         
-        if isResidingState(.newSouthWhales) {
+        if residingState.is(.newSouthWhales) {
             settings.isSaferDriversComplete = saferDriversSwitch.isOn
         }
         
-        if isTestsAvailable {
+        if residingState.isTestsAvailable {
             let isOn = assessmentSwitch.isOn
             
             settings.isAssessmentComplete = isOn
@@ -142,7 +137,7 @@ class ManualEntriesController: UITableViewController {
     }
     
     func setupSaferDriverSwitch() {
-        guard isResidingState(.newSouthWhales) else { return }
+        guard residingState.is(.newSouthWhales) else { return }
         
         let scale: CGFloat = 0.8
         
@@ -150,7 +145,7 @@ class ManualEntriesController: UITableViewController {
     }
     
     func setupAssessmentSwitch() {
-        guard isTestsAvailable else { return }
+        guard residingState.isTestsAvailable else { return }
 
         let scale: CGFloat = 0.8
         
@@ -162,22 +157,22 @@ class ManualEntriesController: UITableViewController {
     // MARK: Test Section
     
     func setupTestSection() {
-        guard isTestsAvailable else { return }
+        guard residingState.isTestsAvailable else { return }
         
-        if isResidingState(.tasmania) { assessmentLabel.text = "L2 Driving Assessment" }
+        if residingState.is(.tasmania) { assessmentLabel.text = "L2 Driving Assessment" }
         
-        if isResidingState(.westernAustralia) { assessmentLabel.text = "Practical Driving Assessment" }
+        if residingState.is(.westernAustralia) { assessmentLabel.text = "Practical Driving Assessment" }
     }
     
     // MARK: Table View
     
     func isCellViewable(at indexPath: IndexPath) -> Bool {
-        return (indexPath == IndexPath(row: 2, section: 1) && !isResidingState(.newSouthWhales))
+        return (indexPath == IndexPath(row: 2, section: 1) && !residingState.is(.newSouthWhales))
     }
     
     func isSectionViewable(_ section: Int) -> Bool {
-        return (section == 1 && !isBonusCreditsAvailable) ||
-               (section == 2 && !isTestsAvailable )
+        return (section == 1 && !residingState.isBonusCreditsAvailable) ||
+               (section == 2 && !residingState.isTestsAvailable )
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -234,16 +229,16 @@ class ManualEntriesController: UITableViewController {
 
 // MARK: Text Field Delegate
 
-extension ManualEntriesController: UITextFieldDelegate {
+extension EntriesController: UITextFieldDelegate {
     func setupTextFields() {
         setup(dayTextField, tag: 0)
 
         setup(nightTextField, tag: 1)
         
-        if isBonusCreditsAvailable {
-            setup(accreditedDayTextField, tag: 2)
+        if residingState.isBonusCreditsAvailable {
+            setup(dayBonusTextField, tag: 2)
             
-            setup(accreditedNightTextField, tag: 3)
+            setup(nightBonusTextField, tag: 3)
         }
         
         setupAssessmentDatePicker()
@@ -274,7 +269,7 @@ extension ManualEntriesController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         let tag = textField.tag
         
-        guard !isTestsAvailable else {
+        guard !residingState.isTestsAvailable else {
             let otherTextField = (tag == 0) ? nightTextField : dayTextField
             
             adjustValueWithTotalLimit(textField, otherTextField!)
@@ -287,7 +282,7 @@ extension ManualEntriesController: UITextFieldDelegate {
         } else if tag == 1 {
             adjustNightValue()
         } else {
-            let otherTextField = (tag == 2) ? accreditedNightTextField : accreditedDayTextField
+            let otherTextField = (tag == 2) ? nightBonusTextField : dayBonusTextField
             
             adjustValueWithTotalLimit(textField, otherTextField!)
         }
@@ -298,7 +293,7 @@ extension ManualEntriesController: UITextFieldDelegate {
        
         var maxMinutes = 0
         
-        switch Settings.shared.residingState {
+        switch residingState {
         case .newSouthWhales:
             maxMinutes = 6000
         case .victoria:
@@ -321,7 +316,7 @@ extension ManualEntriesController: UITextFieldDelegate {
         
         var maxMinutes = 0
         
-        switch Settings.shared.residingState {
+        switch residingState {
         case .newSouthWhales:
             maxMinutes = 1200
         case .victoria:
@@ -342,7 +337,7 @@ extension ManualEntriesController: UITextFieldDelegate {
     func adjustValueWithTotalLimit(_ textField: UITextField, _ otherTextField: UITextField) {
         var totalMinutes = 0
         
-        switch Settings.shared.residingState {
+        switch residingState {
         case .queensland, .newSouthWhales:
             totalMinutes = 600
         case .tasmania:

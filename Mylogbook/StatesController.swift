@@ -19,6 +19,18 @@ enum AustraliaState: String {
         victoria,
         westernAustralia
     ]
+    
+    var isBonusCreditsAvailable: Bool {
+        return self == .newSouthWhales || self == .queensland
+    }
+    
+    var isTestsAvailable: Bool {
+        return self == .tasmania || self == .westernAustralia
+    }
+    
+    func `is`(_ state: AustraliaState) -> Bool {
+        return self == state
+    }
 }
 
 // MARK: States Controller

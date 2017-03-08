@@ -41,7 +41,7 @@ extension Date {
         
         let secs = components.second!
         
-        return (hour * (secsPerHour: 3600)) + (mins * (secsPerMin: 60)) + secs
+        return (hour * (secsPerHour: 3_600)) + (mins * (secsPerMin: 60)) + secs
     }
 }
 
