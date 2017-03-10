@@ -12,4 +12,5 @@ target 'Mylogbook' do
 	pod 'MBCircularProgressBar'
 	pod 'Charts'
 	pod 'Solar'
+	pod 'BEMCheckBox'
 end

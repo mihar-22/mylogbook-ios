@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.3.0)
+  - BEMCheckBox (1.4.0)
   - Charts (3.0.1):
     - Charts/Core (= 3.0.1)
   - Charts/Core (3.0.1)
@@ -14,6 +15,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - BEMCheckBox
   - Charts
   - CoreStore
   - IQKeyboardManagerSwift
@@ -26,6 +28,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  BEMCheckBox: e18e4a148905b290bd03d98b767651c104f4eda3
   Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
   CoreStore: b57aaae17a796e24b58726ce2aaa7c883456cbf5
   IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
@@ -36,6 +39,6 @@ SPEC CHECKSUMS:
   Solar: 8db49542f5bf0272a23a488f0769c58af7b6e28e
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: b416395e37d6666e75cca84a803be68e37a6dbb4
+PODFILE CHECKSUM: 127a57ac7e9208e9b92e34c22a14ac625822363d
 
 COCOAPODS: 1.1.1

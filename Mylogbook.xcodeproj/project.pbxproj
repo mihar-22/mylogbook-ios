@@ -43,6 +43,7 @@
 		C98E77941E397DD900F34468 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E77931E397DD900F34468 /* Card.swift */; };
 		C98E77961E398FE900F34468 /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E77951E398FE900F34468 /* Toolbar.swift */; };
 		C997A5061E67AF2C00CF4F47 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C997A5051E67AF2C00CF4F47 /* SettingsController.swift */; };
+		C99A13611E713605000A2FC6 /* ProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A13601E713605000A2FC6 /* ProgressCell.swift */; };
 		C99FC90F1E1B5AF7003BAEC2 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC90E1E1B5AF7003BAEC2 /* SignUpController.swift */; };
 		C99FC9141E1BB395003BAEC2 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC9131E1BB395003BAEC2 /* Validator.swift */; };
 		C99FC9181E1BB534003BAEC2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC9171E1BB534003BAEC2 /* Validation.swift */; };
@@ -116,6 +117,7 @@
 		C98E77931E397DD900F34468 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		C98E77951E398FE900F34468 /* Toolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
 		C997A5051E67AF2C00CF4F47 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		C99A13601E713605000A2FC6 /* ProgressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressCell.swift; sourceTree = "<group>"; };
 		C99FC90E1E1B5AF7003BAEC2 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		C99FC9131E1BB395003BAEC2 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		C99FC9171E1BB534003BAEC2 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				C94BA89E1E5FF612002E8F9E /* ChartSegment.swift */,
 				C94BA8A01E5FF68D002E8F9E /* ChartValueFormatter.swift */,
 				C987DD111E64F5D00011F223 /* TripCalculator.swift */,
+				C99A13601E713605000A2FC6 /* ProgressCell.swift */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -266,17 +269,9 @@
 			name = Onboarding;
 			sourceTree = "<group>";
 		};
-		C95CFB971E6E4FE800CC0BD1 /* Table */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Table;
-			sourceTree = "<group>";
-		};
 		C964FC311E236FCE00D07FBF /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				C95CFB971E6E4FE800CC0BD1 /* Table */,
 				C9C6F66D1E5401CF00231949 /* Alert */,
 				C98E77871E37323C00F34468 /* TextField */,
 				C95B3B9D1E35FABD00533FB6 /* NavigationBar.swift */,
@@ -607,6 +602,7 @@
 				C99FC9141E1BB395003BAEC2 /* Validator.swift in Sources */,
 				C9D373DC1E5C12E800039366 /* RoadController.swift in Sources */,
 				C98E77961E398FE900F34468 /* Toolbar.swift in Sources */,
+				C99A13611E713605000A2FC6 /* ProgressCell.swift in Sources */,
 				C942357D1E6BAFD6003E9D4E /* EntriesController.swift in Sources */,
 				C99FC9181E1BB534003BAEC2 /* Validation.swift in Sources */,
 				C9FFDDB81E5DADC200AEFDC7 /* Settings.swift in Sources */,

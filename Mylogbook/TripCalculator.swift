@@ -38,32 +38,32 @@ struct TripCalculator {
     }
     
     private static func calculateTime(for trip: Trip) -> (Int, Int) {
-        let (sunrise, sunset) = calculateSunriseAndSunset(for: trip)
-        
         let startedAt = trip.startedAt.secondsFromStartOfDay(in: trip.timeZone)
         
         let endedAt = startedAt + Int(trip.totalTime)
+
+        let (sunrise, sunset) = calculateSunriseAndSunset(for: trip)
         
-        let secondsPerDay = 86400
+        let secondsPerDay = 86_400
         
         let days = endedAt / secondsPerDay
         
         var totalDay = 0
         
         var totalNight = 0
-        
+
         for day in 0 ... days {
             let start = (day == 0) ? startedAt : (secondsPerDay * day)
             
             let end = (day == days) ? endedAt : (secondsPerDay * (day + 1))
             
-            let dayStart =  sunrise + (secondsPerDay * day)
+            let _sunrise = sunrise + (secondsPerDay * day)
             
-            let dayEnd =  sunset + (secondsPerDay * day)
+            let _sunset = sunset + (secondsPerDay * day)
             
-            totalDay += max(0, min(end, dayEnd) - max(start, dayStart))
+            totalDay += max(0, min(end, _sunset) - max(start, _sunrise))
             
-            totalNight += max(0, end - dayEnd) + max(0, min(end, dayStart) - start)
+            totalNight += max(0, end - max(start, _sunset)) + max(0, min(end, _sunrise) - start)
         }
         
         return (totalDay, totalNight)

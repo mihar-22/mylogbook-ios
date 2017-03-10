@@ -28,13 +28,17 @@ class Card: UIView {
     
     func _init() {
         let cornerRadius: CGFloat = 2
-        
         layer.cornerRadius = cornerRadius
-        
         layer.masksToBounds = false
         layer.shadowColor = DarkTheme.base(.primary).uiColor.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 1)
         layer.shadowOpacity = 0.3
         layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        _init()
     }
 }

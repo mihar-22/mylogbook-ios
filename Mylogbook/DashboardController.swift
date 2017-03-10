@@ -12,19 +12,45 @@ class DashboardController: UIViewController {
     
     var locations: [CLLocation]? { return Keychain.shared.getData(.lastRoute) }
     
-    var shouldRefresh: Bool = true
+    var isL1RequirementsMet: Bool {
+        let settings = Settings.shared.currentEntries
+        
+        let isAssessmentComplete = settings.isAssessmentComplete ?? false
+        
+        let isHoursLogged = (dayProgressBar.value + nightProgressBar.value) > 108_000
+        
+        let licenseReceivedAt = Keychain.shared.get(.permitReceivedAt)!.date(format: .date)
+        
+        let isTimeRequirementMet = Calendar.current.dateComponents([.month],
+                                                                   from: licenseReceivedAt,
+                                                                   to: Date()).month! >= 3
+        
+        return isAssessmentComplete && isHoursLogged && isTimeRequirementMet
+    }
+    
+    var isStage2RequirementsMet: Bool {
+        let settings = Settings.shared.currentEntries
+        
+        let isAssessmentComplete = settings.isAssessmentComplete ?? false
+        
+        let isHoursLogged = (dayProgressBar.value + nightProgressBar.value) > 90_000
+        
+        return isAssessmentComplete && isHoursLogged
+    }
     
     // MARK: Outlets
     
-    @IBOutlet weak var timeHintLabel: UILabel!
+    @IBOutlet weak var progressCardHeight: NSLayoutConstraint!
     
     @IBOutlet weak var dayProgressBar: MBCircularProgressBarView!
     @IBOutlet weak var dayTotalTime: UILabel!
     @IBOutlet weak var dayHoursRequiredLabel: UILabel!
+    @IBOutlet weak var dayRequiredTimeStackView: UIStackView!
     
     @IBOutlet weak var nightProgressBar: MBCircularProgressBarView!
     @IBOutlet weak var nightTotalTime: UILabel!
     @IBOutlet weak var nightHoursRequiredLabel: UILabel!
+    @IBOutlet weak var nightRequiredTimeStackView: UIStackView!
     
     @IBOutlet weak var chartSegmentedControl: UISegmentedControl!
     @IBOutlet weak var barChartView: BarChartView!
@@ -34,10 +60,13 @@ class DashboardController: UIViewController {
     @IBOutlet weak var lastRouteTimeLabel: UILabel!
     @IBOutlet weak var lastRouteDistanceLabel: UILabel!
     
+    @IBOutlet weak var tableView: UITableView!
     
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
+        configureTableView()
+        
         configureBarChart()
         
         chartSegmentedControl.addTarget(self,
@@ -46,16 +75,29 @@ class DashboardController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        prepareToRefreshUI()
+        resetTimeCard()
+        
+        mapView.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        refreshUI()
+        trips = Store.shared.stack.fetchAll(From<Trip>(),
+                                            OrderBy(.ascending("startedAt")))
+        
+        setupProgressBars()
+        
+        chartSegmentedControl.selectedSegmentIndex = 0
+        
+        rebuildBarChart()
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
+            self.mapView.isHidden = false
+        }
     }
     
     // MARK: Reset
     
-    func resetProgressBars() {
+    func resetTimeCard() {
         dayTotalTime.alpha = 0
         
         nightTotalTime.alpha = 0
@@ -65,63 +107,71 @@ class DashboardController: UIViewController {
         nightProgressBar.value = 0
     }
     
-    // MARK: Refresh UI
-    
-    func prepareToRefreshUI() {
-        guard shouldRefresh else { return }
-
-        resetProgressBars()
-        
-        mapView.isHidden = true
-    }
-    
-    func refreshUI() {
-        guard shouldRefresh else {
-            shouldRefresh = true
-            
-            return
-        }
-
-        trips = Store.shared.stack.fetchAll(From<Trip>(),
-                                            OrderBy(.ascending("startedAt")))
-        
-        buildProgressBars()
-        
-        chartSegmentedControl.selectedSegmentIndex = 0
-        
-        rebuildBarChart()
-        
-        let deadline = DispatchTime.now() + .seconds(1)
-        
-        DispatchQueue.main.asyncAfter(deadline: deadline) {
-            self.mapView.isHidden = false
-            
-            self.buildLastRoute()
-        }
-    }
-    
     // MARK: Progress Bars
     
-    func buildProgressBars() {
-        let (totalDayTime, totalNightTime) = TripCalculator.calculateTotal(forAll: trips)
+    func setupProgressBars() {
+        setProgressBarsMaxValues()
         
-        dayTotalTime.text = TimeInterval(totalDayTime).time(in: [.hour, .minute])
-
-        nightTotalTime.text = TimeInterval(totalNightTime).time(in: [.hour, .minute])
-
-        let totalDayTimeHours = CGFloat(totalDayTime / (secsInHour: 3600))
+        setProgressBarsValues()
         
-        let totalNightTimeHours = CGFloat(totalNightTime / (secsInHour: 3600))
+        setProgressBarsHintLabels()
+    }
+    
+    func setProgressBarsValues() {
+        let (totalDay, totalNight) = TripCalculator.calculateTotal(forAll: trips)
+        
+        dayTotalTime.text = TimeInterval(totalDay).time(in: [.hour, .minute])
+        
+        nightTotalTime.text = TimeInterval(totalNight).time(in: [.hour, .minute])
         
         UIView.animate(withDuration: 1.0) {
             self.dayTotalTime.alpha = 1
             
             self.nightTotalTime.alpha = 1
             
-            self.dayProgressBar.value = totalDayTimeHours < 110 ? totalDayTimeHours : 110
+            self.dayProgressBar.value = min(CGFloat(totalDay), self.dayProgressBar.maxValue)
             
-            self.nightProgressBar.value = totalNightTimeHours < 10 ? totalNightTimeHours : 10
+            self.nightProgressBar.value = min(CGFloat(totalNight), self.nightProgressBar.maxValue)
         }
+    }
+    
+    func setProgressBarsMaxValues() {
+        switch Settings.shared.residingState {
+        case .victoria:
+            dayProgressBar.maxValue = 396_000
+            nightProgressBar.maxValue = 36_000
+        case .newSouthWhales:
+            dayProgressBar.maxValue = 360_000
+            nightProgressBar.maxValue = 72_000
+        case .queensland:
+            dayProgressBar.maxValue = 324_000
+            nightProgressBar.maxValue = 36_000
+        case .southAustralia:
+            dayProgressBar.maxValue = 216_000
+            nightProgressBar.maxValue = 54_000
+        case .tasmania:
+            let max: CGFloat = isL1RequirementsMet ? 288_000 : 108_000
+            
+            dayProgressBar.maxValue = max
+            nightProgressBar.maxValue = max
+        case .westernAustralia:
+            let max: CGFloat = isStage2RequirementsMet ? 180_000 : 90_000
+
+            dayProgressBar.maxValue = max
+            nightProgressBar.maxValue = max
+        }
+    }
+    
+    func setProgressBarsHintLabels() {
+        let secondsPerHour = 3600
+                
+        let dayMax = Int(dayProgressBar.maxValue) / secondsPerHour
+        
+        let nightMax = Int(nightProgressBar.maxValue) / secondsPerHour
+        
+        dayHoursRequiredLabel.text = "\(dayMax)"
+        
+        nightHoursRequiredLabel.text = "\(nightMax)"
     }
     
     // MARK: Segmented Controller
@@ -164,6 +214,7 @@ class DashboardController: UIViewController {
         barChartView.drawGridBackgroundEnabled = false
         barChartView.highlightPerTapEnabled = false
         barChartView.highlightFullBarEnabled = false
+        barChartView.highlightPerDragEnabled = false
         barChartView.doubleTapToZoomEnabled = false
         
         barChartView.legend.horizontalAlignment = .center
@@ -218,11 +269,67 @@ class DashboardController: UIViewController {
         
         setupMapView()
     }
+}
+
+// MARK: Table View Data Source + Delegate
+
+extension DashboardController: UITableViewDataSource, UITableViewDelegate {
+    func configureTableView() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 61
+    }
     
-    // MARK: Navigation
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "openSettingsSegue" { shouldRefresh = false }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProgressCell", for: indexPath) as! ProgressCell
+        
+        cell.subtitleLabel.text = ""
+        
+        cell.checkBox.onAnimationType = .fill
+        cell.checkBox.offAnimationType = .flat
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   willDisplay cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
+
+        addDashedBottomBorder(to: cell)
+        
+        if indexPath.row == tableView.indexPathsForVisibleRows?.last?.row {
+            progressCardHeight.constant = 209.6 + tableView.contentSize.height
+        }
+    }
+    
+    func addDashedBottomBorder(to cell: UITableViewCell) {
+        let border: CAShapeLayer = CAShapeLayer()
+        
+        let color = DarkTheme.base(.divider).uiColor.cgColor
+        
+        let cellFrame = cell.frame.size
+        
+        let bounds = CGRect(x: 0, y: 0, width: cellFrame.width - 12, height: 0)
+        
+        let bezierRect = CGRect(x: 0, y: bounds.height, width: bounds.width, height: 0)
+        
+        border.bounds = bounds
+        border.position = CGPoint(x: cellFrame.width / 2, y: cellFrame.height)
+        border.fillColor = color
+        border.strokeColor = color
+        border.lineWidth = 2.0
+        border.lineJoin = kCALineJoinMiter
+        border.lineDashPattern = [3, 3]
+        border.path = UIBezierPath(roundedRect: bezierRect, cornerRadius: 0).cgPath
+        
+        cell.layer.addSublayer(border)
     }
 }
 
