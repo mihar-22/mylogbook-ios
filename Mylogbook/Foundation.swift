@@ -32,6 +32,14 @@ extension Date {
         return formatter.string(from: self)
     }
     
+    func days(since date: Date) -> Int {
+        return Calendar.current.dateComponents([.day], from: date, to: self).day ?? 0
+    }
+    
+    func months(since date: Date) -> Int {
+        return Calendar.current.dateComponents([.month], from: date, to: self).month ?? 0
+    }
+    
     func secondsFromStartOfDay(in timeZone: TimeZone) -> Int {
         let components = Calendar.current.dateComponents(in: timeZone, from: self)
         

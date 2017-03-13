@@ -10,7 +10,7 @@ class DashboardController: UIViewController {
     
     var locations: [CLLocation]? { return Keychain.shared.getData(.lastRoute) }
     
-    var statistics: Statistics { return Cache.shared.statistics }
+    var statistics: Statistics = { return Cache.shared.statistics }()
     
     // MARK: Outlets
     
@@ -113,20 +113,7 @@ class DashboardController: UIViewController {
             nightProgressBar.maxValue = night
         }
         
-        switch Cache.shared.residingState {
-        case .victoria:
-            setMaxValue(forDay: 396_000, forNight: 36_000)
-        case .newSouthWhales:
-            setMaxValue(forDay: 360_000, forNight: 72_000)
-        case .queensland:
-            setMaxValue(forDay: 324_000, forNight: 36_000)
-        case .southAustralia:
-            setMaxValue(forDay: 216_000, forNight: 54_000)
-        case .tasmania:
-            setMaxValue(forDay: 288_000, forNight: 288_000)
-        case .westernAustralia:
-            setMaxValue(forDay: 180_000, forNight: 180_000)
-        }
+
     }
     
     func setProgressBarsHintLabels() {

@@ -78,6 +78,7 @@
 		C9EC4D2F1E3F1FAD00A80348 /* SupervisorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC4D2E1E3F1FAD00A80348 /* SupervisorStore.swift */; };
 		C9EC4D391E40123400A80348 /* SyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC4D381E40123300A80348 /* SyncManager.swift */; };
 		C9EC4D3F1E401DAF00A80348 /* SoftDeletingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC4D3E1E401DAF00A80348 /* SoftDeletingStore.swift */; };
+		C9F193E01E769B1F00B6AE9C /* AustralianState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F193DF1E769B1F00B6AE9C /* AustralianState.swift */; };
 		C9F1B98D1E094DCC002D4D61 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1B98C1E094DCC002D4D61 /* Env.swift */; };
 		C9FFDDB81E5DADC200AEFDC7 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFDDB71E5DADC200AEFDC7 /* Cache.swift */; };
 /* End PBXBuildFile section */
@@ -158,6 +159,7 @@
 		C9EC4D2E1E3F1FAD00A80348 /* SupervisorStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupervisorStore.swift; sourceTree = "<group>"; };
 		C9EC4D381E40123300A80348 /* SyncManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncManager.swift; sourceTree = "<group>"; };
 		C9EC4D3E1E401DAF00A80348 /* SoftDeletingStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftDeletingStore.swift; sourceTree = "<group>"; };
+		C9F193DF1E769B1F00B6AE9C /* AustralianState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AustralianState.swift; sourceTree = "<group>"; };
 		C9F1B98C1E094DCC002D4D61 /* Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
 		C9FFDDB71E5DADC200AEFDC7 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -355,6 +357,7 @@
 		C997A5071E67F59100CF4F47 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				C9F193DF1E769B1F00B6AE9C /* AustralianState.swift */,
 				C95CFB951E6E4EC100CC0BD1 /* StatesController.swift */,
 				C997A5051E67AF2C00CF4F47 /* SettingsController.swift */,
 				C942357C1E6BAFD6003E9D4E /* EntriesController.swift */,
@@ -626,6 +629,7 @@
 				C987DD121E64F5D00011F223 /* TripCalculator.swift in Sources */,
 				C9D373D41E5BF8E600039366 /* LogDetailing.swift in Sources */,
 				C970BCF01E31A96300E1129A /* SupervisorCell.swift in Sources */,
+				C9F193E01E769B1F00B6AE9C /* AustralianState.swift in Sources */,
 				C9C6F6721E54023300231949 /* OdometerAlert.swift in Sources */,
 				C99FC90F1E1B5AF7003BAEC2 /* SignUpController.swift in Sources */,
 				C9EC4D391E40123400A80348 /* SyncManager.swift in Sources */,

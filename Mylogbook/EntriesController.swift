@@ -5,9 +5,9 @@ class EntriesController: UITableViewController {
     
     var assessmentDate: Date?
     
-    var residingState: AustralianState {
+    var residingState: AustralianState = {
         return Cache.shared.residingState
-    }
+    }()
     
     // MARK: Outlets
     

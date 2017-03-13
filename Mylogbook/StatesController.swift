@@ -1,38 +1,6 @@
 
 import UIKit
 
-// MARK: Australian State
-
-enum AustralianState: String {
-    case newSouthWhales = "New South Whales"
-    case queensland = "Queensland"
-    case southAustralia = "South Australia"
-    case tasmania = "Tasmania"
-    case victoria = "Victoria"
-    case westernAustralia = "Western Australia"
-    
-    static let all = [
-        newSouthWhales,
-        queensland,
-        southAustralia,
-        tasmania,
-        victoria,
-        westernAustralia
-    ]
-    
-    var isBonusCreditsAvailable: Bool {
-        return self == .newSouthWhales || self == .queensland
-    }
-    
-    var isTestsAvailable: Bool {
-        return self == .tasmania || self == .westernAustralia
-    }
-    
-    func `is`(_ state: AustralianState) -> Bool {
-        return self == state
-    }
-}
-
 // MARK: States Controller
 
 class StatesController: UIViewController, UITableViewDataSource, UITableViewDelegate {

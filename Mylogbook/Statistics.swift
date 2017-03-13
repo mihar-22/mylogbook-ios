@@ -34,6 +34,10 @@ class Statistics: NSObject, NSCoding {
     // MARK: Public Data
     
     var numberOfTrips = 0
+    
+    var totalLogged: Int {
+        return dayLogged + nightLogged
+    }
 
     var dayLogged: Int {
         let dayLogged = day + entries.day
