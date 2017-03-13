@@ -48,6 +48,22 @@ extension Date {
 // MARK: String
 
 extension String {
+    func camelCased(seperatedBy seperator: String = " ") -> String {
+        var string = ""
+        
+        let components = self.components(separatedBy: seperator)
+        
+        let count = components.count - 1
+        
+        string += components.first!.lowercased()
+        
+        guard count > 0 else { return string }
+        
+        components[1...count].forEach { string += $0.capitalized }
+        
+        return string
+    }
+    
     func date(format: Date.DateFormat) -> Date {
         let formatter = DateFormatter()
         
@@ -69,21 +85,11 @@ extension Double {
         
         formatter.unitStyle = style
         
+        formatter.units = .metric
+        
         return formatter.string(for: self)!
     }
     
-    func distance(in units: MKDistanceFormatterUnits,
-                style: MKDistanceFormatterUnitStyle = .abbreviated) -> String {
-        
-        let formatter = MKDistanceFormatter()
-        
-        formatter.units = units
-        
-        formatter.unitStyle = style
-        
-        return formatter.string(for: self)!
-    }
-        
     func round(places: Int) -> Double {
         let divisor = pow(10.0, Double(places))
         

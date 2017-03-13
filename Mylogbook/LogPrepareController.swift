@@ -36,10 +36,6 @@ class LogPrepareController: UIViewController {
     var odometerAlert: OdometerAlert!
     
     var doneButton: DefaultButton!
-    
-    var odometerKey: String {
-        return "car_\(selectedCar.id)_odometer"
-    }
         
     // MARK: Outlets
     
@@ -149,9 +145,9 @@ class LogPrepareController: UIViewController {
                 
                 trip.supervisor = selectedSupervisor
                 
-                Settings.shared.set(odometer: odometer, for: selectedCar)
+                Cache.shared.set(odometer: odometer, for: selectedCar)
 
-                Settings.shared.save()
+                Cache.shared.save()
                 
                 viewController.trip = trip
             }
@@ -180,7 +176,7 @@ extension LogPrepareController: Alerting {
             self.performSegue(withIdentifier: "startRecordingSegue", sender: nil)
         }
         
-        let odometer = Settings.shared.getOdometer(for: selectedCar)
+        let odometer = (Cache.shared.getOdometer(for: selectedCar) ?? 0)
         
         odometerAlert.odometerText = String(odometer)
         

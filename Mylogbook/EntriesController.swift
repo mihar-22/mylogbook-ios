@@ -5,8 +5,8 @@ class EntriesController: UITableViewController {
     
     var assessmentDate: Date?
     
-    var residingState: AustraliaState {
-        return Settings.shared.residingState
+    var residingState: AustralianState {
+        return Cache.shared.residingState
     }
     
     // MARK: Outlets
@@ -55,42 +55,42 @@ class EntriesController: UITableViewController {
     // MARK: Settings
     
     func getSettings() {
-        let settings = Settings.shared.currentEntries
+        let entries = Cache.shared.currentEntries
         
         let minutesPerSecond = 60
         
-        if settings.day > 0 {
-            dayTextField.valueText = String(settings.day / minutesPerSecond)
+        if entries.day > 0 {
+            dayTextField.valueText = String(entries.day / minutesPerSecond)
         }
         
-        if settings.night > 0 {
-            nightTextField.valueText = String(settings.night / minutesPerSecond)
+        if entries.night > 0 {
+            nightTextField.valueText = String(entries.night / minutesPerSecond)
         }
         
         if residingState.isBonusCreditsAvailable {
-            if let minutes = settings.dayBonus, minutes > 0 {
+            if let minutes = entries.dayBonus, minutes > 0 {
                 dayBonusTextField.valueText = String(minutes / minutesPerSecond)
             }
             
-            if let minutes = settings.nightBonus, minutes > 0 {
+            if let minutes = entries.nightBonus, minutes > 0 {
                 nightBonusTextField.valueText = String(minutes / minutesPerSecond)
             }
         }
         
         if residingState.is(.newSouthWhales) {
-            if let isOn = settings.isSaferDriversComplete {
+            if let isOn = entries.isSaferDriversComplete {
                 saferDriversSwitch.setOn(isOn, animated: false)
             }
         }
         
         if residingState.isTestsAvailable {
-            if let isOn = settings.isAssessmentComplete {
+            if let isOn = entries.isAssessmentComplete {
                 assessmentSwitch.setOn(isOn, animated: false)
                 
                 assessmentDateTextField.isEnabled = isOn
                 
                 if isOn {
-                    let date = settings.assessmentCompletedAt?.string(date: .long, time: .none)
+                    let date = entries.assessmentCompletedAt?.string(date: .long, time: .none)
                     
                     assessmentDateTextField.text = date
                 }
@@ -99,33 +99,33 @@ class EntriesController: UITableViewController {
     }
     
     func saveSettings() {
-        let settings = Settings.shared.currentEntries
+        let entries = Cache.shared.currentEntries
 
         let secondsPerMinute = 60
         
-        settings.day = dayTextField.value * secondsPerMinute
+        entries.day = dayTextField.value * secondsPerMinute
 
-        settings.night = nightTextField.value * secondsPerMinute
+        entries.night = nightTextField.value * secondsPerMinute
         
         if residingState.isBonusCreditsAvailable {
-            settings.dayBonus = dayBonusTextField.value * secondsPerMinute
+            entries.dayBonus = dayBonusTextField.value * secondsPerMinute
             
-            settings.nightBonus = nightBonusTextField.value * secondsPerMinute
+            entries.nightBonus = nightBonusTextField.value * secondsPerMinute
         }
         
         if residingState.is(.newSouthWhales) {
-            settings.isSaferDriversComplete = saferDriversSwitch.isOn
+            entries.isSaferDriversComplete = saferDriversSwitch.isOn
         }
         
         if residingState.isTestsAvailable {
             let isOn = assessmentSwitch.isOn
             
-            settings.isAssessmentComplete = isOn
+            entries.isAssessmentComplete = isOn
             
-            settings.assessmentCompletedAt = isOn ? assessmentDate ?? Date() : nil
+            entries.assessmentCompletedAt = isOn ? assessmentDate ?? Date() : nil
         }
         
-        Settings.shared.save()
+        Cache.shared.save()
     }
     
     // MARK: Switch

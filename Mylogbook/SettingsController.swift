@@ -26,7 +26,7 @@ class SettingsController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        stateLabel.text = Settings.shared.residingState.rawValue
+        stateLabel.text = Cache.shared.residingState.rawValue
     }
     
     // MARK: Profile

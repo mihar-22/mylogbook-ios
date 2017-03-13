@@ -38,4 +38,16 @@ class TripStore {
             _ = transaction.commitAndWait()
         }
     }
+    
+    static func accumulated(_ trips: [Trip]) {
+        Store.shared.stack.beginSynchronous { transaction in
+            for trip in trips {
+                let trip = transaction.edit(trip)!
+
+                trip.isAccumulated = true
+            }
+            
+            _ = transaction.commitAndWait()
+        }
+    }
 }

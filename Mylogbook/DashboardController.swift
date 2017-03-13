@@ -8,35 +8,9 @@ import UIKit
 
 class DashboardController: UIViewController {
     
-    var trips: [Trip]!
-    
     var locations: [CLLocation]? { return Keychain.shared.getData(.lastRoute) }
     
-    var isL1RequirementsMet: Bool {
-        let settings = Settings.shared.currentEntries
-        
-        let isAssessmentComplete = settings.isAssessmentComplete ?? false
-        
-        let isHoursLogged = (dayProgressBar.value + nightProgressBar.value) > 108_000
-        
-        let licenseReceivedAt = Keychain.shared.get(.permitReceivedAt)!.date(format: .date)
-        
-        let isTimeRequirementMet = Calendar.current.dateComponents([.month],
-                                                                   from: licenseReceivedAt,
-                                                                   to: Date()).month! >= 3
-        
-        return isAssessmentComplete && isHoursLogged && isTimeRequirementMet
-    }
-    
-    var isStage2RequirementsMet: Bool {
-        let settings = Settings.shared.currentEntries
-        
-        let isAssessmentComplete = settings.isAssessmentComplete ?? false
-        
-        let isHoursLogged = (dayProgressBar.value + nightProgressBar.value) > 90_000
-        
-        return isAssessmentComplete && isHoursLogged
-    }
+    var statistics: Statistics { return Cache.shared.statistics }
     
     // MARK: Outlets
     
@@ -69,22 +43,19 @@ class DashboardController: UIViewController {
         
         configureBarChart()
         
-        chartSegmentedControl.addTarget(self,
-                                        action: #selector(segmentedControlChanged(_:)),
-                                        for: .valueChanged)
+        configureSegmentedControl()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         resetTimeCard()
         
         mapView.isHidden = true
+        
+        statistics.calculate()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        trips = Store.shared.stack.fetchAll(From<Trip>(),
-                                            OrderBy(.ascending("startedAt")))
-        
-        setupProgressBars()
+        configureProgressBars()
         
         chartSegmentedControl.selectedSegmentIndex = 0
         
@@ -109,7 +80,7 @@ class DashboardController: UIViewController {
     
     // MARK: Progress Bars
     
-    func setupProgressBars() {
+    func configureProgressBars() {
         setProgressBarsMaxValues()
         
         setProgressBarsValues()
@@ -118,47 +89,43 @@ class DashboardController: UIViewController {
     }
     
     func setProgressBarsValues() {
-        let (totalDay, totalNight) = TripCalculator.calculateTotal(forAll: trips)
+        let (day, night) = (statistics.dayLogged, statistics.nightLogged)
         
-        dayTotalTime.text = TimeInterval(totalDay).time(in: [.hour, .minute])
+        dayTotalTime.text = TimeInterval(day).time(in: [.hour, .minute])
         
-        nightTotalTime.text = TimeInterval(totalNight).time(in: [.hour, .minute])
+        nightTotalTime.text = TimeInterval(night).time(in: [.hour, .minute])
         
         UIView.animate(withDuration: 1.0) {
             self.dayTotalTime.alpha = 1
             
             self.nightTotalTime.alpha = 1
             
-            self.dayProgressBar.value = min(CGFloat(totalDay), self.dayProgressBar.maxValue)
+            self.dayProgressBar.value = min(CGFloat(day), self.dayProgressBar.maxValue)
             
-            self.nightProgressBar.value = min(CGFloat(totalNight), self.nightProgressBar.maxValue)
+            self.nightProgressBar.value = min(CGFloat(night), self.nightProgressBar.maxValue)
         }
     }
     
     func setProgressBarsMaxValues() {
-        switch Settings.shared.residingState {
-        case .victoria:
-            dayProgressBar.maxValue = 396_000
-            nightProgressBar.maxValue = 36_000
-        case .newSouthWhales:
-            dayProgressBar.maxValue = 360_000
-            nightProgressBar.maxValue = 72_000
-        case .queensland:
-            dayProgressBar.maxValue = 324_000
-            nightProgressBar.maxValue = 36_000
-        case .southAustralia:
-            dayProgressBar.maxValue = 216_000
-            nightProgressBar.maxValue = 54_000
-        case .tasmania:
-            let max: CGFloat = isL1RequirementsMet ? 288_000 : 108_000
+        func setMaxValue(forDay day: CGFloat, forNight night: CGFloat) {
+            dayProgressBar.maxValue = day
             
-            dayProgressBar.maxValue = max
-            nightProgressBar.maxValue = max
+            nightProgressBar.maxValue = night
+        }
+        
+        switch Cache.shared.residingState {
+        case .victoria:
+            setMaxValue(forDay: 396_000, forNight: 36_000)
+        case .newSouthWhales:
+            setMaxValue(forDay: 360_000, forNight: 72_000)
+        case .queensland:
+            setMaxValue(forDay: 324_000, forNight: 36_000)
+        case .southAustralia:
+            setMaxValue(forDay: 216_000, forNight: 54_000)
+        case .tasmania:
+            setMaxValue(forDay: 288_000, forNight: 288_000)
         case .westernAustralia:
-            let max: CGFloat = isStage2RequirementsMet ? 180_000 : 90_000
-
-            dayProgressBar.maxValue = max
-            nightProgressBar.maxValue = max
+            setMaxValue(forDay: 180_000, forNight: 180_000)
         }
     }
     
@@ -175,6 +142,12 @@ class DashboardController: UIViewController {
     }
     
     // MARK: Segmented Controller
+    
+    func configureSegmentedControl() {
+        chartSegmentedControl.addTarget(self,
+                                        action: #selector(segmentedControlChanged(_:)),
+                                        for: .valueChanged)
+    }
     
     func segmentedControlChanged(_ control: UISegmentedControl) {
         rebuildBarChart()
@@ -227,16 +200,16 @@ class DashboardController: UIViewController {
     func rebuildBarChart() {
         buildBarChart(for: currentChartSegment())
         
-        totalTripsLabel.text = "\(trips.count)"
+        totalTripsLabel.text = "\(statistics.numberOfTrips)"
     }
     
     func buildBarChart(for segment: ChartSegment) {
-        guard segment.all().map({ $0.data(for: trips) > 0 }).contains(true) else { return }
+        guard segment.all().map({ $0.data > 0 }).contains(true) else { return }
 
         var sets = [BarChartDataSet]()
         
         for (index, item) in segment.all().enumerated() {
-            let entry = BarChartDataEntry(x: Double(index), y: item.data(for: trips))
+            let entry = BarChartDataEntry(x: Double(index), y: item.data)
             
             let set = BarChartDataSet(values: [entry], label: item.label)
             
@@ -256,17 +229,25 @@ class DashboardController: UIViewController {
         barChartView.animate(yAxisDuration: 1.0)
     }
     
+    // FIX LAST ROUTE
+    
     // MARK: Last Route
     
     func buildLastRoute() {
-        guard locations != nil && locations!.count > 0 && trips.count > 0 else { return }
-        
-        let lastTrip = trips.last!
-        
-        lastRouteTimeLabel.text = lastTrip.totalTime.time()
+        // guard locations != nil && locations!.count > 0 && trips.count > 0 else { return }
 
-        lastRouteDistanceLabel.text = lastTrip.distance.distance()
+        guard locations != nil && locations!.count > 0 else { return }
         
+        // let lastTrip = trips.last!
+        
+        // lastRouteTimeLabel.text = lastTrip.totalTime.time()
+
+        // lastRouteDistanceLabel.text = lastTrip.distance.distance()
+
+        lastRouteTimeLabel.text = "0s"
+        
+        lastRouteDistanceLabel.text = "0m"
+
         setupMapView()
     }
 }
@@ -288,14 +269,18 @@ extension DashboardController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProgressCell", for: indexPath) as! ProgressCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) as! TaskCell
         
+        configure(cell)
+        
+        return cell
+    }
+    
+    func configure(_ cell: TaskCell) {
         cell.subtitleLabel.text = ""
         
         cell.checkBox.onAnimationType = .fill
         cell.checkBox.offAnimationType = .flat
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView,
@@ -305,7 +290,7 @@ extension DashboardController: UITableViewDataSource, UITableViewDelegate {
         addDashedBottomBorder(to: cell)
         
         if indexPath.row == tableView.indexPathsForVisibleRows?.last?.row {
-            progressCardHeight.constant = 209.6 + tableView.contentSize.height
+            progressCardHeight.constant = 209.5 + tableView.contentSize.height
         }
     }
     
@@ -362,7 +347,7 @@ extension DashboardController: MKMapViewDelegate {
         
         startAnnotation.title = "Started Here"
         
-        startAnnotation.subtitle = trips.last!.startedAt.string(date: .none, time: .short)
+        // startAnnotation.subtitle = trips.last!.startedAt.string(date: .none, time: .short)
         
         startAnnotation.coordinate = locations!.first!.coordinate
         
@@ -370,7 +355,7 @@ extension DashboardController: MKMapViewDelegate {
         
         endAnnotation.title = "Ended Here"
         
-        endAnnotation.subtitle = trips.last!.endedAt.string(date: .none, time: .short)
+        // endAnnotation.subtitle = trips.last!.endedAt.string(date: .none, time: .short)
         
         endAnnotation.coordinate = locations!.last!.coordinate
         

@@ -2,7 +2,9 @@
 import UIKit
 import BEMCheckBox
 
-class ProgressCell: UITableViewCell {
+// MARK: Task Cell
+
+class TaskCell: UITableViewCell {
     
     // MARK: Outlets
     

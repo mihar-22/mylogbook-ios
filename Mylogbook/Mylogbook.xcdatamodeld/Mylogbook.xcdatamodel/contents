@@ -30,6 +30,7 @@
         <attribute name="heavy" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="innerCity" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isAccumulated" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="light" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="localStreet" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
@@ -48,6 +49,6 @@
     <elements>
         <element name="Car" positionX="-162" positionY="174" width="128" height="165"/>
         <element name="Supervisor" positionX="-162" positionY="345" width="128" height="180"/>
-        <element name="Trip" positionX="43" positionY="63" width="128" height="375"/>
+        <element name="Trip" positionX="43" positionY="63" width="128" height="390"/>
     </elements>
 </model>

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		B89AD3B71EF73BF77CCF6484 /* Pods_Mylogbook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5369675C6942A6E53CBCF1F0 /* Pods_Mylogbook.framework */; };
+		C908A9CE1E73926D0040AAB1 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908A9CD1E73926D0040AAB1 /* Task.swift */; };
+		C908A9D11E74CE510040AAB1 /* Entries.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908A9D01E74CE510040AAB1 /* Entries.swift */; };
+		C908A9D31E74CEC40040AAB1 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908A9D21E74CEC40040AAB1 /* Statistics.swift */; };
+		C908A9D71E74D2D80040AAB1 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908A9D61E74D2D80040AAB1 /* TaskCell.swift */; };
+		C908A9DE1E764B140040AAB1 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908A9DD1E764B140040AAB1 /* Tasks.swift */; };
 		C908D3C51E24D4B500A4E91C /* Adapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908D3C41E24D4B500A4E91C /* Adapters.swift */; };
 		C908D3C71E24D5BF00A4E91C /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908D3C61E24D5BF00A4E91C /* Keychain.swift */; };
 		C92AA02E1E1233D800A92067 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92AA02D1E1233D800A92067 /* Session.swift */; };
@@ -43,7 +48,6 @@
 		C98E77941E397DD900F34468 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E77931E397DD900F34468 /* Card.swift */; };
 		C98E77961E398FE900F34468 /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E77951E398FE900F34468 /* Toolbar.swift */; };
 		C997A5061E67AF2C00CF4F47 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C997A5051E67AF2C00CF4F47 /* SettingsController.swift */; };
-		C99A13611E713605000A2FC6 /* ProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A13601E713605000A2FC6 /* ProgressCell.swift */; };
 		C99FC90F1E1B5AF7003BAEC2 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC90E1E1B5AF7003BAEC2 /* SignUpController.swift */; };
 		C99FC9141E1BB395003BAEC2 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC9131E1BB395003BAEC2 /* Validator.swift */; };
 		C99FC9181E1BB534003BAEC2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC9171E1BB534003BAEC2 /* Validation.swift */; };
@@ -75,13 +79,18 @@
 		C9EC4D391E40123400A80348 /* SyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC4D381E40123300A80348 /* SyncManager.swift */; };
 		C9EC4D3F1E401DAF00A80348 /* SoftDeletingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC4D3E1E401DAF00A80348 /* SoftDeletingStore.swift */; };
 		C9F1B98D1E094DCC002D4D61 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1B98C1E094DCC002D4D61 /* Env.swift */; };
-		C9FFDDB81E5DADC200AEFDC7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFDDB71E5DADC200AEFDC7 /* Settings.swift */; };
+		C9FFDDB81E5DADC200AEFDC7 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFDDB71E5DADC200AEFDC7 /* Cache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3234582784334DC66A81283C /* Pods-Mylogbook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mylogbook.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mylogbook/Pods-Mylogbook.release.xcconfig"; sourceTree = "<group>"; };
 		3B6A91E9A10AA0CD1E0E3142 /* Pods-Mylogbook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mylogbook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mylogbook/Pods-Mylogbook.debug.xcconfig"; sourceTree = "<group>"; };
 		5369675C6942A6E53CBCF1F0 /* Pods_Mylogbook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mylogbook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C908A9CD1E73926D0040AAB1 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		C908A9D01E74CE510040AAB1 /* Entries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entries.swift; sourceTree = "<group>"; };
+		C908A9D21E74CEC40040AAB1 /* Statistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
+		C908A9D61E74D2D80040AAB1 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		C908A9DD1E764B140040AAB1 /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		C908D3C41E24D4B500A4E91C /* Adapters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adapters.swift; sourceTree = "<group>"; };
 		C908D3C61E24D5BF00A4E91C /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		C92AA02D1E1233D800A92067 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -117,7 +126,6 @@
 		C98E77931E397DD900F34468 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		C98E77951E398FE900F34468 /* Toolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
 		C997A5051E67AF2C00CF4F47 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
-		C99A13601E713605000A2FC6 /* ProgressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressCell.swift; sourceTree = "<group>"; };
 		C99FC90E1E1B5AF7003BAEC2 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		C99FC9131E1BB395003BAEC2 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		C99FC9171E1BB534003BAEC2 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
@@ -151,7 +159,7 @@
 		C9EC4D381E40123300A80348 /* SyncManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncManager.swift; sourceTree = "<group>"; };
 		C9EC4D3E1E401DAF00A80348 /* SoftDeletingStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftDeletingStore.swift; sourceTree = "<group>"; };
 		C9F1B98C1E094DCC002D4D61 /* Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
-		C9FFDDB71E5DADC200AEFDC7 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		C9FFDDB71E5DADC200AEFDC7 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,15 +191,45 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C908A9CF1E74CE410040AAB1 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				C9FFDDB71E5DADC200AEFDC7 /* Cache.swift */,
+				C908A9D01E74CE510040AAB1 /* Entries.swift */,
+			);
+			name = Cache;
+			sourceTree = "<group>";
+		};
+		C908A9D41E74D22D0040AAB1 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				C908A9D21E74CEC40040AAB1 /* Statistics.swift */,
+				C987DD111E64F5D00011F223 /* TripCalculator.swift */,
+			);
+			name = Statistics;
+			sourceTree = "<group>";
+		};
+		C908A9D51E74D2CF0040AAB1 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				C908A9D61E74D2D80040AAB1 /* TaskCell.swift */,
+				C908A9CD1E73926D0040AAB1 /* Task.swift */,
+				C908A9DD1E764B140040AAB1 /* Tasks.swift */,
+			);
+			name = Tasks;
+			sourceTree = "<group>";
+		};
 		C92AA0271E11FD5900A92067 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C908A9CF1E74CE410040AAB1 /* Cache */,
+				C908A9D41E74D22D0040AAB1 /* Statistics */,
 				C94406061E49B05C00D32AC3 /* Sync */,
+				C9EC4D2B1E3ECE0300A80348 /* Stores */,
 				C9EBBD6E1E2C855600B5E509 /* Models */,
 				C935B73A1E0B7A2E00FD7FFF /* Networking */,
 				C908D3C61E24D5BF00A4E91C /* Keychain.swift */,
 				C9C6F6771E545A1B00231949 /* KeyboardManager.swift */,
-				C9FFDDB71E5DADC200AEFDC7 /* Settings.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -242,7 +280,6 @@
 		C94406061E49B05C00D32AC3 /* Sync */ = {
 			isa = PBXGroup;
 			children = (
-				C9EC4D2B1E3ECE0300A80348 /* Stores */,
 				C9EC4D381E40123300A80348 /* SyncManager.swift */,
 				C95487CF1E4D859600C48F54 /* Sync.swift */,
 			);
@@ -252,11 +289,10 @@
 		C94BA89D1E5FF601002E8F9E /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				C908A9D51E74D2CF0040AAB1 /* Tasks */,
 				C9EBBD5A1E28C45000B5E509 /* DashboardController.swift */,
 				C94BA89E1E5FF612002E8F9E /* ChartSegment.swift */,
 				C94BA8A01E5FF68D002E8F9E /* ChartValueFormatter.swift */,
-				C987DD111E64F5D00011F223 /* TripCalculator.swift */,
-				C99A13601E713605000A2FC6 /* ProgressCell.swift */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -378,7 +414,6 @@
 				C964FC311E236FCE00D07FBF /* UI */,
 				C92AA0271E11FD5900A92067 /* Services */,
 				C935B7371E0A7C9100FD7FFF /* Controllers */,
-				C92AA0301E15185A00A92067 /* Theme.swift */,
 				C9CDFA801DEFDB2800CE0A2D /* AppDelegate.swift */,
 				C95487C91E4C209B00C48F54 /* Foundation.swift */,
 				C9F1B98C1E094DCC002D4D61 /* Env.swift */,
@@ -394,6 +429,7 @@
 		C9D373D21E5BF8DA00039366 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				C92AA0301E15185A00A92067 /* Theme.swift */,
 				C9A0DFF01E5AB84500102DE0 /* LogDetailsController.swift */,
 				C9D373D31E5BF8E600039366 /* LogDetailing.swift */,
 				C9D373D71E5C126500039366 /* WeatherController.swift */,
@@ -579,6 +615,7 @@
 			files = (
 				C9EBBD5B1E28C45000B5E509 /* DashboardController.swift in Sources */,
 				C9C6F67A1E55B75100231949 /* LogRecordController.swift in Sources */,
+				C908A9D11E74CE510040AAB1 /* Entries.swift in Sources */,
 				C945AA521E5C25AB00FAF9E9 /* LogSummaryController.swift in Sources */,
 				C9A0DFF31E5ACDE300102DE0 /* WeatherRoute.swift in Sources */,
 				C9F1B98D1E094DCC002D4D61 /* Env.swift in Sources */,
@@ -594,6 +631,7 @@
 				C9EC4D391E40123400A80348 /* SyncManager.swift in Sources */,
 				C997A5061E67AF2C00CF4F47 /* SettingsController.swift in Sources */,
 				C9CDFA891DEFDB2800CE0A2D /* Mylogbook.xcdatamodeld in Sources */,
+				C908A9D31E74CEC40040AAB1 /* Statistics.swift in Sources */,
 				C9EBBD711E2DA20F00B5E509 /* CarController.swift in Sources */,
 				C9EBBD611E2C61B700B5E509 /* CarsController.swift in Sources */,
 				C9D373DA1E5C128D00039366 /* TrafficController.swift in Sources */,
@@ -602,20 +640,21 @@
 				C99FC9141E1BB395003BAEC2 /* Validator.swift in Sources */,
 				C9D373DC1E5C12E800039366 /* RoadController.swift in Sources */,
 				C98E77961E398FE900F34468 /* Toolbar.swift in Sources */,
-				C99A13611E713605000A2FC6 /* ProgressCell.swift in Sources */,
 				C942357D1E6BAFD6003E9D4E /* EntriesController.swift in Sources */,
 				C99FC9181E1BB534003BAEC2 /* Validation.swift in Sources */,
-				C9FFDDB81E5DADC200AEFDC7 /* Settings.swift in Sources */,
+				C9FFDDB81E5DADC200AEFDC7 /* Cache.swift in Sources */,
 				C9EC4D2F1E3F1FAD00A80348 /* SupervisorStore.swift in Sources */,
 				C94BA89F1E5FF612002E8F9E /* ChartSegment.swift in Sources */,
 				C9C6F6781E545A1B00231949 /* KeyboardManager.swift in Sources */,
 				C95487CA1E4C209B00C48F54 /* Foundation.swift in Sources */,
 				C970BCEA1E319F3500E1129A /* SupervisorController.swift in Sources */,
+				C908A9DE1E764B140040AAB1 /* Tasks.swift in Sources */,
 				C95B3B9E1E35FABD00533FB6 /* NavigationBar.swift in Sources */,
 				C98E778B1E37374900F34468 /* JVTextField.swift in Sources */,
 				C94BA8A11E5FF68D002E8F9E /* ChartValueFormatter.swift in Sources */,
 				C95487D01E4D859600C48F54 /* Sync.swift in Sources */,
 				C9EBBD571E2882E200B5E509 /* LogInController.swift in Sources */,
+				C908A9D71E74D2D80040AAB1 /* TaskCell.swift in Sources */,
 				C95B3B8C1E33360900533FB6 /* ResourceRoute.swift in Sources */,
 				C95CFB961E6E4EC100CC0BD1 /* StatesController.swift in Sources */,
 				C970BCEC1E31A83E00E1129A /* Supervisor.swift in Sources */,
@@ -639,6 +678,7 @@
 				C908D3C71E24D5BF00A4E91C /* Keychain.swift in Sources */,
 				C9EBBD5E1E2C5F2100B5E509 /* CarCell.swift in Sources */,
 				C98E77941E397DD900F34468 /* Card.swift in Sources */,
+				C908A9CE1E73926D0040AAB1 /* Task.swift in Sources */,
 				C9EC4D2D1E3ECE1000A80348 /* CarStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

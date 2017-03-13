@@ -16,25 +16,25 @@ class SyncManager {
 
     private var lastSyncedAt: Date {
         get {
-            return Settings.shared.lastSyncedAt
+            return Cache.shared.lastSyncedAt
         }
         
         set(date) {
-            Settings.shared.lastSyncedAt = date
+            Cache.shared.lastSyncedAt = date
             
-            Settings.shared.save()
+            Cache.shared.save()
         }
     }
     
     private var isSyncPrepared: Bool {
         get {
-            return Settings.shared.isSyncPrepared
+            return Cache.shared.isSyncPrepared
         }
         
         set(isPrepared) {
-            Settings.shared.isSyncPrepared = isPrepared
+            Cache.shared.isSyncPrepared = isPrepared
             
-            Settings.shared.save()
+            Cache.shared.save()
         }
     }
     

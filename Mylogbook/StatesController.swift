@@ -1,9 +1,9 @@
 
 import UIKit
 
-// MARK: Australia State
+// MARK: Australian State
 
-enum AustraliaState: String {
+enum AustralianState: String {
     case newSouthWhales = "New South Whales"
     case queensland = "Queensland"
     case southAustralia = "South Australia"
@@ -28,7 +28,7 @@ enum AustraliaState: String {
         return self == .tasmania || self == .westernAustralia
     }
     
-    func `is`(_ state: AustraliaState) -> Bool {
+    func `is`(_ state: AustralianState) -> Bool {
         return self == state
     }
 }
@@ -36,22 +36,22 @@ enum AustraliaState: String {
 // MARK: States Controller
 
 class StatesController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var states: [AustraliaState] = AustraliaState.all
+    var states: [AustralianState] = AustralianState.all
     
-    var currentState: AustraliaState {
+    var currentState: AustralianState {
         get {
-            return Settings.shared.residingState
+            return Cache.shared.residingState
         }
         
         set(state) {
-            Settings.shared.residingState = state
+            Cache.shared.residingState = state
         }
     }
     
     // MARK: View Lifecycles
     
     override func viewWillDisappear(_ animated: Bool) {
-        Settings.shared.save()
+        Cache.shared.save()
     }
     
     // MARK: Table View

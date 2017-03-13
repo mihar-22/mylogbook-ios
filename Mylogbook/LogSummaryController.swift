@@ -63,21 +63,21 @@ class LogSummaryController: UIViewController {
         
         Keychain.shared.setData(locations, for: .lastRoute)
         
-        saveOdometerSettings()
+        cacheOdometer()
         
         tabBarController!.selectedIndex = 0
         
         navigationController!.popToRootViewController(animated: true)
     }
     
-    func saveOdometerSettings() {
-        let odometer =  Settings.shared.getOdometer(for: trip.car)
+    func cacheOdometer() {
+        let odometer =  (Cache.shared.getOdometer(for: trip.car) ?? 0)
         
         let distance = Int(trip.distance / (kmToMeters: 1000))
         
-        Settings.shared.set(odometer: (odometer + distance), for: trip.car)
+        Cache.shared.set(odometer: (odometer + distance), for: trip.car)
         
-        Settings.shared.save()        
+        Cache.shared.save()        
     }
         
     // MARK: Cards
