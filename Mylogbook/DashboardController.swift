@@ -1,4 +1,5 @@
 
+import BEMCheckBox
 import Charts
 import CoreStore
 import Dispatch
@@ -11,6 +12,8 @@ class DashboardController: UIViewController {
     var locations: [CLLocation]? { return Keychain.shared.getData(.lastRoute) }
     
     var statistics: Statistics = { return Cache.shared.statistics }()
+    
+    let tasks = Tasks()
     
     // MARK: Outlets
     
@@ -41,32 +44,30 @@ class DashboardController: UIViewController {
     override func viewDidLoad() {
         configureTableView()
         
-        configureBarChart()
+        BarChart.configure(barChartView)
         
         configureSegmentedControl()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        reset()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        reload()
+    }
+    
+    // MARK: Resets
+    
+    func reset() {
         resetTimeCard()
         
         mapView.isHidden = true
         
         statistics.calculate()
+
+        reloadTableViewData()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        configureProgressBars()
-        
-        chartSegmentedControl.selectedSegmentIndex = 0
-        
-        rebuildBarChart()
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
-            self.mapView.isHidden = false
-        }
-    }
-    
-    // MARK: Reset
     
     func resetTimeCard() {
         dayTotalTime.alpha = 0
@@ -76,6 +77,48 @@ class DashboardController: UIViewController {
         dayProgressBar.value = 0
         
         nightProgressBar.value = 0
+    }
+    
+    // MARK: Reload
+
+    func reload() {
+        configureProgressBars()
+        
+        reloadBarChart()
+        
+        reloadMap()
+    }
+    
+    func reloadTableViewData(animated: Bool = false) {
+        tasks.build()
+        
+        guard animated else {
+            tableView.reloadData()
+            
+            return
+        }
+        
+        UIView.transition(with: tableView,
+                          duration: 0.35,
+                          options: .transitionCrossDissolve,
+                          animations: { self.tableView.reloadData() },
+                          completion: nil)
+    }
+    
+    func reloadBarChart() {
+        chartSegmentedControl.selectedSegmentIndex = 0
+        
+        BarChart.build(barChartView, for: currentChartSegment())
+        
+        totalTripsLabel.text = "\(statistics.numberOfTrips)"
+    }
+    
+    func reloadMap() {
+        let deadline = DispatchTime.now() + .seconds(1)
+            
+        DispatchQueue.main.asyncAfter(deadline: deadline) {
+            self.mapView.isHidden = false
+        }
     }
     
     // MARK: Progress Bars
@@ -107,13 +150,11 @@ class DashboardController: UIViewController {
     }
     
     func setProgressBarsMaxValues() {
-        func setMaxValue(forDay day: CGFloat, forNight night: CGFloat) {
-            dayProgressBar.maxValue = day
-            
-            nightProgressBar.maxValue = night
-        }
+        let (day, night) = Cache.shared.residingState.loggedTimeRequired
         
-
+        dayProgressBar.maxValue = CGFloat(day)
+        
+        nightProgressBar.maxValue = CGFloat(night)
     }
     
     func setProgressBarsHintLabels() {
@@ -137,7 +178,7 @@ class DashboardController: UIViewController {
     }
     
     func segmentedControlChanged(_ control: UISegmentedControl) {
-        rebuildBarChart()
+        BarChart.build(barChartView, for: currentChartSegment())
     }
     
     func currentChartSegment() -> ChartSegment {
@@ -152,91 +193,6 @@ class DashboardController: UIViewController {
             return .weather
         }
     }
-    
-    // MARK: Bar Chart
-    
-    func configureBarChart() {
-        barChartView.noDataText = "No trips have been recorded."
-        
-        barChartView.xAxis.enabled = true
-        barChartView.xAxis.drawAxisLineEnabled = false
-        barChartView.xAxis.drawGridLinesEnabled = false
-        barChartView.xAxis.labelPosition = .bottom
-        barChartView.xAxis.labelTextColor = UIColor.white
-        
-        barChartView.rightAxis.enabled = false
-        
-        barChartView.leftAxis.enabled = false
-        barChartView.leftAxis.axisMinimum = 0
-
-        barChartView.chartDescription?.enabled = false
-        barChartView.pinchZoomEnabled = false
-        barChartView.drawGridBackgroundEnabled = false
-        barChartView.highlightPerTapEnabled = false
-        barChartView.highlightFullBarEnabled = false
-        barChartView.highlightPerDragEnabled = false
-        barChartView.doubleTapToZoomEnabled = false
-        
-        barChartView.legend.horizontalAlignment = .center
-        barChartView.legend.neededHeight = 10.0
-        barChartView.legend.formToTextSpace = 5.0
-        
-        barChartView.animate(yAxisDuration: 1.0)
-    }
-    
-    func rebuildBarChart() {
-        buildBarChart(for: currentChartSegment())
-        
-        totalTripsLabel.text = "\(statistics.numberOfTrips)"
-    }
-    
-    func buildBarChart(for segment: ChartSegment) {
-        guard segment.all().map({ $0.data > 0 }).contains(true) else { return }
-
-        var sets = [BarChartDataSet]()
-        
-        for (index, item) in segment.all().enumerated() {
-            let entry = BarChartDataEntry(x: Double(index), y: item.data)
-            
-            let set = BarChartDataSet(values: [entry], label: item.label)
-            
-            set.setColor(item.color)
-            
-            set.valueFont = UIFont.systemFont(ofSize: 12)
-            
-            sets.append(set)
-        }
-        
-        barChartView.data = BarChartData(dataSets: sets)
-        
-        barChartView.data?.setValueFormatter(ChartValueFormatter())
-        
-        barChartView.fitBars = true
-        
-        barChartView.animate(yAxisDuration: 1.0)
-    }
-    
-    // FIX LAST ROUTE
-    
-    // MARK: Last Route
-    
-    func buildLastRoute() {
-        // guard locations != nil && locations!.count > 0 && trips.count > 0 else { return }
-
-        guard locations != nil && locations!.count > 0 else { return }
-        
-        // let lastTrip = trips.last!
-        
-        // lastRouteTimeLabel.text = lastTrip.totalTime.time()
-
-        // lastRouteDistanceLabel.text = lastTrip.distance.distance()
-
-        lastRouteTimeLabel.text = "0s"
-        
-        lastRouteDistanceLabel.text = "0m"
-
-        setupMapView()
-    }
 }
 
 // MARK: Table View Data Source + Delegate
@@ -244,7 +200,7 @@ class DashboardController: UIViewController {
 extension DashboardController: UITableViewDataSource, UITableViewDelegate {
     func configureTableView() {
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 61
+        tableView.estimatedRowHeight = 59
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -252,62 +208,103 @@ extension DashboardController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) as! TaskCell
         
-        configure(cell)
+        configure(cell, for: indexPath.row)
         
         return cell
     }
     
-    func configure(_ cell: TaskCell) {
-        cell.subtitleLabel.text = ""
+    func configure(_ cell: TaskCell, for index: Int) {
+        let task = tasks[index]
         
+        cell.titleLabel.textColor = task.isActive ? UIColor.black : UIColor.lightGray
+        cell.titleLabel.attributedText = task.title
+        
+        cell.subtitleLabel.text = task.subtitle
+        
+        cell.checkBox.on = (task.isActive && task.isComplete)
+        cell.checkBox.isEnabled = task.isActive
         cell.checkBox.onAnimationType = .fill
         cell.checkBox.offAnimationType = .flat
+        cell.checkBox.tag = index
+        cell.checkBox.delegate = self
+
+        cell.editButton.isHidden = true
+
+        if task is LogTask {
+            cell.checkBox.isEnabled = false
+        }
+        
+        if task is HoldTask {
+            cell.checkBox.isEnabled = false
+        }
+        
+        if task is AssessmentTask && task.subtitle != nil {
+            cell.editButton.isHidden = false
+        }
     }
     
     func tableView(_ tableView: UITableView,
                    willDisplay cell: UITableViewCell,
                    forRowAt indexPath: IndexPath) {
-
-        addDashedBottomBorder(to: cell)
         
         if indexPath.row == tableView.indexPathsForVisibleRows?.last?.row {
-            progressCardHeight.constant = 209.5 + tableView.contentSize.height
+            progressCardHeight.constant = (base: 209.5) + tableView.contentSize.height
         }
     }
     
-    func addDashedBottomBorder(to cell: UITableViewCell) {
-        let border: CAShapeLayer = CAShapeLayer()
-        
-        let color = DarkTheme.base(.divider).uiColor.cgColor
-        
-        let cellFrame = cell.frame.size
-        
-        let bounds = CGRect(x: 0, y: 0, width: cellFrame.width - 12, height: 0)
-        
-        let bezierRect = CGRect(x: 0, y: bounds.height, width: bounds.width, height: 0)
-        
-        border.bounds = bounds
-        border.position = CGPoint(x: cellFrame.width / 2, y: cellFrame.height)
-        border.fillColor = color
-        border.strokeColor = color
-        border.lineWidth = 2.0
-        border.lineJoin = kCALineJoinMiter
-        border.lineDashPattern = [3, 3]
-        border.path = UIBezierPath(roundedRect: bezierRect, cornerRadius: 0).cgPath
-        
-        cell.layer.addSublayer(border)
-    }
 }
+
+// MARK: BEM Check Box Delegate
+
+extension DashboardController: BEMCheckBoxDelegate {
+    func didTap(_ checkBox: BEMCheckBox) {
+        let index = checkBox.tag
+        
+        let task = tasks[index]
+        
+        if let handler = task.checkBoxHandler {
+            handler(checkBox.on)
+            
+            reloadTableViewData(animated: true)
+            
+            statistics.calculate()
+            
+            configureProgressBars()
+            
+            Cache.shared.save()
+        }
+    }    
+}
+
+// FIX!
 
 // MARK: Map View Delegate
 
 extension DashboardController: MKMapViewDelegate {
+    func buildLastRoute() {
+        // guard locations != nil && locations!.count > 0 && trips.count > 0 else { return }
+        
+        guard locations != nil && locations!.count > 0 else { return }
+        
+        // let lastTrip = trips.last!
+        
+        // lastRouteTimeLabel.text = lastTrip.totalTime.time()
+        
+        // lastRouteDistanceLabel.text = lastTrip.distance.distance()
+        
+        lastRouteTimeLabel.text = "0s"
+        
+        lastRouteDistanceLabel.text = "0m"
+        
+        setupMapView()
+    }
+    
     func setupMapView() {
         mapView.delegate = self
         

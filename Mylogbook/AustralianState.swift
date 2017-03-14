@@ -1,4 +1,6 @@
 
+import Foundation
+
 // MARK: Australian State
 
 enum AustralianState: String {
@@ -18,8 +20,6 @@ enum AustralianState: String {
         westernAustralia
     ]
     
-    // MARK: Checks
-    
     var isBonusCreditsAvailable: Bool {
         return self == .newSouthWhales || self == .queensland
     }
@@ -31,10 +31,22 @@ enum AustralianState: String {
     func `is`(_ state: AustralianState) -> Bool {
         return self == state
     }
+}
+
+// MARK: Requirements
+
+extension AustralianState {
+    var totalLoggedTimeRequired: Int {
+        let (day, night) = loggedTimeRequired
+        
+        guard self != .tasmania && self != .westernAustralia else {
+            return day
+        }
+        
+        return (day + night)
+    }
     
-    // MARK: Requirements
-    
-    var loggedTimeRequired: (Int, Int) {
+    var loggedTimeRequired: (day: Int, night: Int) {
         switch self {
         case .victoria:
             return (396_000, 36_000)
@@ -52,20 +64,64 @@ enum AustralianState: String {
     }
     
     var monthsRequired: Int {
+        let birthday = Keychain.shared.get(.birthday)!.date(format: .date)
+        
+        let age = Date().years(since: birthday)
+        
         switch self {
         case .victoria:
-            return 0
+            if age < 21 {
+                return 12
+            } else if age >= 21 && age <= 25 {
+                return 6
+            } else {
+                return 3
+            }
         case .newSouthWhales:
-            return 0
+            return 12
         case .queensland:
-            return 0
+            return 12
         case .southAustralia:
-            return 0
+            if age < 25 {
+                return 12
+            } else {
+                return 6
+            }
         case .tasmania:
-            return 0
+            return 12
         case .westernAustralia:
+            return 6
+        }
+    }
+}
+
+// MARK: Bonus
+
+extension AustralianState {
+    var totalBonusAvailable: Int {
+        switch self {
+        case .queensland, .newSouthWhales:
+            return 72_000
+        default:
             return 0
         }
+    }
+        
+    var bonusMultiplier: Int {
+        switch self {
+        case .queensland, .newSouthWhales:
+            return 3
+        default:
+            return 0
+        }
+    }
+    
+    static var timeRequiredForSaferDrivers: Int {
+        return 180_000
+    }
+    
+    static var saferDriversBonus: Int {        
+        return 72_000
     }
 }
 

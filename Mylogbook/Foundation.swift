@@ -40,6 +40,10 @@ extension Date {
         return Calendar.current.dateComponents([.month], from: date, to: self).month ?? 0
     }
     
+    func years(since date: Date) -> Int {
+        return Calendar.current.dateComponents([.year], from: date, to: self).year ?? 0
+    }
+    
     func secondsFromStartOfDay(in timeZone: TimeZone) -> Int {
         let components = Calendar.current.dateComponents(in: timeZone, from: self)
         

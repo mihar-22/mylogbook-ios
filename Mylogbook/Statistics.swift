@@ -19,6 +19,10 @@ class Statistics: NSObject, NSCoding {
         return Cache.shared.currentEntries
     }
     
+    private var residingState: AustralianState {
+        return Cache.shared.residingState
+    }
+    
     private var isStateNewSouthWhales: Bool {
         return Cache.shared.residingState.is(.newSouthWhales)
     }
@@ -31,7 +35,7 @@ class Statistics: NSObject, NSCoding {
     
     override init() { super.init() }
     
-    // MARK: Public Data
+    // MARK: Data
     
     var numberOfTrips = 0
     
@@ -42,13 +46,26 @@ class Statistics: NSObject, NSCoding {
     var dayLogged: Int {
         let dayLogged = day + entries.day
         
-        return isBonusCreditsAvailable ? (dayLogged + calculateDayBonus()) : dayLogged
+        let total = isBonusCreditsAvailable ? (dayLogged + calculateDayBonus()) : dayLogged
+        
+        guard !residingState.is(.newSouthWhales) else {
+            let isComplete = ((total + nightLogged) >= AustralianState.timeRequiredForSaferDrivers) &&
+                             (entries.isSaferDriversComplete ?? false)
+            
+            return isComplete ? (total + AustralianState.saferDriversBonus) : total
+        }
+        
+        return total
     }
     
     var nightLogged: Int {
         let nightLogged = night + entries.night
         
         return isBonusCreditsAvailable ? (nightLogged + calculateNightBonus()) : nightLogged
+    }
+    
+    var totalBonusEarned: Int {
+        return calculateDayBonus() + calculateNightBonus()
     }
     
     func occurrences(of key: String) -> Int? {
@@ -112,7 +129,8 @@ class Statistics: NSObject, NSCoding {
         guard bonusRemaining > 0 && trip.supervisor.isAccredited else { return }
 
         func calculateBonus(for value: Int) -> Int {
-            let bonus = min(value * 2, bonusRemaining)
+            // 1/3 of bonus is included in calculating base time for trip hence bonus - 1
+            let bonus = min(value * (residingState.bonusMultiplier - 1), bonusRemaining)
             
             bonusRemaining -= bonus
             
@@ -143,14 +161,12 @@ class Statistics: NSObject, NSCoding {
     }
     
     private func calculateDayBonus() -> Int {
-        let dayBonusEntry = (entries.dayBonus ?? 0) * 3
+        let dayBonusEntry = (entries.dayBonus ?? 0) * residingState.bonusMultiplier
         
-        let nightBonusEntry = (entries.nightBonus ?? 0) * 3
+        let nightBonusEntry = (entries.nightBonus ?? 0) * residingState.bonusMultiplier
         
         guard !isStateNewSouthWhales else {
-            let total = dayBonus + dayBonusEntry + (nightBonusEntry * 2/3)
-            
-            return (entries.isSaferDriversComplete ?? false) ? (total + 72_000) : total
+            return dayBonus + dayBonusEntry + (nightBonusEntry * 2/3)
         }
         
         return dayBonus + dayBonusEntry
@@ -158,20 +174,16 @@ class Statistics: NSObject, NSCoding {
     
     private func calculateNightBonus() -> Int {
         guard !isStateNewSouthWhales else { return 0 }
-        
-        return nightBonus + ((entries.nightBonus ?? 0) * 3)
+
+        return nightBonus + ((entries.nightBonus ?? 0) * residingState.bonusMultiplier)
     }
     
     private func calculateBonusRemaining() -> Int {
-        var dayBonus = calculateDayBonus()
+        let dayBonus = calculateDayBonus()
         
         let nightBonus = calculateNightBonus()
         
-        if isStateNewSouthWhales && (entries.isSaferDriversComplete ?? false) {
-            dayBonus -= 72_000
-        }
-        
-        return max(0, (72_000 - dayBonus - nightBonus))
+        return max(0, (residingState.totalBonusAvailable - dayBonus - nightBonus))
     }
     
     // MARK: Encoding + Decoding

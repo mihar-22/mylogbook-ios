@@ -3,120 +3,124 @@ import UIKit
 
 // MARK: Task
 
-protocol Task: class {
+protocol Task {
     var title: NSMutableAttributedString { get }
     var subtitle: String? { get }
+    
+    var checkBoxHandler: ((Bool) -> Void)? { get set }
+    var editCompletionHandler: ((Date) -> Void)? { get set }
+
     var isComplete: Bool { get }
-    var isCheckBoxEnabled: Bool { get }
-    var completionHandler: ((Bool) -> Void)? { get set }
+    var isActive: Bool { get }
+    var dependencies: [Task] { get }
 }
 
 extension Task {
+    var isActive: Bool {
+        guard dependencies.count > 0 else { return true }
+        
+        return dependencies.filter({ !$0.isComplete }).count == 0
+    }
+    
     var baseAttributes: [String: Any] {
-        return [NSFontAttributeName: UIFont.systemFont(ofSize: 13, weight: UIFontWeightRegular)]
+        return [NSFontAttributeName: UIFont.systemFont(ofSize: 14, weight: UIFontWeightRegular)]
     }
     
     var numericAttributes: [String: Any] {
-        return [NSFontAttributeName: UIFont.systemFont(ofSize: 16, weight: UIFontWeightMedium)]
+        return [NSFontAttributeName: UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)]
     }
 }
 
 // MARK: Basic Task
 
-class BasicTask: Task {
+struct BasicTask: Task {
     var title: NSMutableAttributedString {
-        return NSMutableAttributedString(string: titleText)
+        return NSMutableAttributedString(string: titleText, attributes: baseAttributes)
     }
 
     var subtitle: String? = nil
     
     var isComplete: Bool
     
-    var isCheckBoxEnabled = true
+    var checkBoxHandler: ((Bool) -> Void)? = nil
     
-    var completionHandler: ((Bool) -> Void)? = nil
+    var editCompletionHandler: ((Date) -> Void)? = nil
+    
+    var dependencies: [Task]
     
     var titleText: String
     
-    init(title: String, isComplete: Bool) {
+    init(title: String, isComplete: Bool, dependencies: [Task]) {
         self.titleText = title
         
         self.isComplete = isComplete
+        
+        self.dependencies = dependencies
     }
 }
 
 // MARK: Log Task
 
-class LogTask: Task  {
+struct LogTask: Task  {
     var title: NSMutableAttributedString {
-        let time = max(self.time, self.completionTime)
+        let time = min(self.time, self.completionTime)
         
-        let s1 = NSMutableAttributedString(string: "\(time)", attributes: numericAttributes)
+        let s1Text = isBonus ? "Earned " : "Total of "
         
-        let s2 = NSMutableAttributedString(string: " out of ", attributes: baseAttributes)
+        let s1 = NSMutableAttributedString(string: s1Text, attributes: baseAttributes)
+
+        let s2 = NSMutableAttributedString(string: "\(time) / \(completionTime)", attributes: numericAttributes)
         
-        let s3 = NSMutableAttributedString(string: "\(self.completionTime)", attributes: numericAttributes)
+        let s3Text = isBonus ? " hours of bonus credits" : " hours logged"
         
-        let s4 = NSMutableAttributedString(string: " hours logged", attributes: baseAttributes)
+        let s3 = NSMutableAttributedString(string: s3Text, attributes: baseAttributes)
         
         s1.append(s2)
-        
+
         s1.append(s3)
-        
-        s1.append(s4)
-        
+
         return s1
     }
     
     var subtitle: String? = nil
 
-    var isComplete: Bool {
-        return time >= completionTime
-    }
+    var isBonus: Bool = false
     
-    var isCheckBoxEnabled = false
+    var isComplete: Bool { return time >= completionTime }
     
-    var completionHandler: ((Bool) -> Void)? = nil
+    var checkBoxHandler: ((Bool) -> Void)? = nil
+
+    var editCompletionHandler: ((Date) -> Void)? = nil
+    
+    var dependencies: [Task]
 
     var time: Int
     
     var completionTime: Int
     
-    init(time: Int, completionTime: Int) {
-        self.time = time
+    init(time: Int, completionTime: Int, dependencies: [Task]) {
+        self.time = time / (secondsPerHour: 3600)
         
-        self.completionTime = completionTime
+        self.completionTime = completionTime / (secondsPerHour: 3600)
+        
+        self.dependencies = dependencies
     }
 }
 
 // MARK: Hold Task
 
-class HoldTask: Task  {
+struct HoldTask: Task  {
     var title: NSMutableAttributedString {
-        let days = self.days > 0 ? "\(self.days)" : ""
-        
-        let months = max(self.months, self.monthsRequired)
+        let months = min(self.months, self.monthsRequired)
         
         let s1 = NSMutableAttributedString(string: "License held for ", attributes: baseAttributes)
         
-        let s2 = NSMutableAttributedString(string: "\(months)", attributes: numericAttributes)
+        let s2 = NSMutableAttributedString(string: "\(months) / \(monthsRequired)", attributes: numericAttributes)
         
-        let s3 = NSMutableAttributedString(string: " months and ", attributes: baseAttributes)
-        
-        let s4 = NSMutableAttributedString(string: "\(days)", attributes: numericAttributes)
-        
-        let s5 = NSMutableAttributedString(string: " days out of ", attributes: baseAttributes)
-        
-        let s6 = NSMutableAttributedString(string: "\(monthsRequired)", attributes: numericAttributes)
-        
-        let s7 = NSMutableAttributedString(string: " months", attributes: baseAttributes)
+        let s3 = NSMutableAttributedString(string: " months", attributes: baseAttributes)
         
         s1.append(s2)
         s1.append(s3)
-        s1.append(s4)
-        s1.append(s5)
-        s1.append(s6)
-        s1.append(s7)
         
         return s1
     }
@@ -127,13 +131,11 @@ class HoldTask: Task  {
         return months >= monthsRequired
     }
     
-    var isCheckBoxEnabled = false
+    var checkBoxHandler: ((Bool) -> Void)? = nil
     
-    var completionHandler: ((Bool) -> Void)? = nil
+    var editCompletionHandler: ((Date) -> Void)? = nil
     
-    var days: Int {
-        return Date().days(since: startedAt)
-    }
+    var dependencies: [Task]
     
     var months: Int {
         return Date().months(since: startedAt)
@@ -143,18 +145,20 @@ class HoldTask: Task  {
     
     var monthsRequired: Int
     
-    init(startedAt: Date, monthsRequired: Int) {
+    init(startedAt: Date, monthsRequired: Int, dependencies: [Task]) {
         self.startedAt = startedAt
         
         self.monthsRequired = monthsRequired
+        
+        self.dependencies = dependencies
     }
 }
 
 // MARK: Assessment Task
 
-class AssessmentTask: Task {
+struct AssessmentTask: Task {
     var title: NSMutableAttributedString {
-        return NSMutableAttributedString(string: titleText)
+        return NSMutableAttributedString(string: titleText, attributes: baseAttributes)
     }
 
     var subtitle: String? {
@@ -167,20 +171,24 @@ class AssessmentTask: Task {
     
     var isComplete: Bool
     
-    var isCheckBoxEnabled = true
+    var checkBoxHandler: ((Bool) -> Void)? = nil
     
-    var completionHandler: ((Bool) -> Void)? = nil
+    var editCompletionHandler: ((Date) -> Void)? = nil
+    
+    var dependencies: [Task]
     
     var titleText: String
 
     var completedAt: Date?
     
-    init(title: String, isComplete: Bool, completedAt: Date?) {
+    init(title: String, isComplete: Bool, completedAt: Date?, dependencies: [Task]) {
         self.titleText = title
         
         self.isComplete = isComplete
         
         self.completedAt = completedAt
+        
+        self.dependencies = dependencies
     }
 }
 
