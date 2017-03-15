@@ -837,6 +837,7 @@
                         <outlet property="nightTotalTime" destination="VFK-mY-ROd" id="ZUD-O6-0Jy"/>
                         <outlet property="progressCardHeight" destination="foB-RP-sce" id="8fp-EN-y12"/>
                         <outlet property="tableView" destination="LNg-In-MDT" id="5v7-H5-1gx"/>
+                        <outlet property="tableViewTopSpace" destination="rvB-OV-jPI" id="cqU-v0-6IV"/>
                         <outlet property="totalTripsLabel" destination="KES-VC-Qdl" id="I4J-xk-I6Q"/>
                     </connections>
                 </viewController>

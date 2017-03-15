@@ -6,6 +6,7 @@ import UIKit
 protocol Task {
     var title: NSMutableAttributedString { get }
     var subtitle: String? { get }
+    var learnMoreURL: URL? { get set }
     
     var checkBoxHandler: ((Bool) -> Void)? { get set }
     var editCompletionHandler: ((Date) -> Void)? { get set }
@@ -39,6 +40,8 @@ struct BasicTask: Task {
     }
 
     var subtitle: String? = nil
+
+    var learnMoreURL: URL? = nil
     
     var isComplete: Bool
     
@@ -71,7 +74,7 @@ struct LogTask: Task  {
 
         let s2 = NSMutableAttributedString(string: "\(time) / \(completionTime)", attributes: numericAttributes)
         
-        let s3Text = isBonus ? " hours of bonus credits" : " hours logged"
+        let s3Text = isBonus ? " bonus hours" : " hours logged"
         
         let s3 = NSMutableAttributedString(string: s3Text, attributes: baseAttributes)
         
@@ -84,6 +87,8 @@ struct LogTask: Task  {
     
     var subtitle: String? = nil
 
+    var learnMoreURL: URL? = nil
+    
     var isBonus: Bool = false
     
     var isComplete: Bool { return time >= completionTime }
@@ -127,6 +132,8 @@ struct HoldTask: Task  {
 
     var subtitle: String? = nil
     
+    var learnMoreURL: URL? = nil
+    
     var isComplete: Bool {
         return months >= monthsRequired
     }
@@ -166,8 +173,10 @@ struct AssessmentTask: Task {
         
         let completedAt = (self.completedAt ?? Date())
         
-        return completedAt.string(format: .date)
+        return completedAt.string(date: .long, time: .none)
     }
+    
+    var learnMoreURL: URL? = nil
     
     var isComplete: Bool
     

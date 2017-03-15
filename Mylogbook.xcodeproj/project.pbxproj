@@ -358,8 +358,8 @@
 		C997A5071E67F59100CF4F47 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				C9F193DF1E769B1F00B6AE9C /* AustralianState.swift */,
 				C95CFB951E6E4EC100CC0BD1 /* StatesController.swift */,
+				C9F193DF1E769B1F00B6AE9C /* AustralianState.swift */,
 				C997A5051E67AF2C00CF4F47 /* SettingsController.swift */,
 				C942357C1E6BAFD6003E9D4E /* EntriesController.swift */,
 			);

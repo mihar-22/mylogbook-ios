@@ -134,6 +134,8 @@ extension EntriesController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        guard textField.value > 0 else { return }
+
         let tag = textField.tag
         
         guard !residingState.is(.tasmania) && !residingState.is(.westernAustralia) else {
@@ -185,6 +187,6 @@ extension EntriesController: UITextFieldDelegate {
         
         let value = min(totalMinutesLeft, textField.value)
         
-        textField.valueText = (value > 0) ? String(value) : nil
+        textField.valueText = String(value)
     }
 }

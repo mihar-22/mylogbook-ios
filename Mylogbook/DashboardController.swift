@@ -1,10 +1,13 @@
 
+import Alamofire
 import BEMCheckBox
 import Charts
 import CoreStore
 import Dispatch
+import Foundation
 import MapKit
 import MBCircularProgressBar
+import PopupDialog
 import UIKit
 
 class DashboardController: UIViewController {
@@ -13,7 +16,15 @@ class DashboardController: UIViewController {
     
     var statistics: Statistics = { return Cache.shared.statistics }()
     
+    var residingState: AustralianState { return Cache.shared.residingState }
+    
+    let datePicker = UIDatePicker()
+    
+    let datePickerToolbar = UIToolbar()
+    
     let tasks = Tasks()
+    
+    var editingTask: Task? = nil
     
     // MARK: Outlets
     
@@ -38,6 +49,7 @@ class DashboardController: UIViewController {
     @IBOutlet weak var lastRouteDistanceLabel: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewTopSpace: NSLayoutConstraint!
     
     // MARK: View Lifecycles
     
@@ -47,6 +59,9 @@ class DashboardController: UIViewController {
         BarChart.configure(barChartView)
         
         configureSegmentedControl()
+        
+        configureDatePicker()
+        configureDatePickerToolbar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -121,7 +136,43 @@ class DashboardController: UIViewController {
         }
     }
     
-    // MARK: Progress Bars
+    // MARK: Actions
+    
+    func didTapEditButton(_ sender: UIButton) {
+        let index = sender.tag
+        
+        editingTask = tasks[index]
+        
+        datePicker.isHidden = false
+        datePickerToolbar.isHidden = false
+    }
+    
+    func didTapDoneOnToolbar(_ sender: UIButton) {
+        datePicker.isHidden = true
+        datePickerToolbar.isHidden = true
+        
+        if let handler = editingTask?.editCompletionHandler {
+            handler(datePicker.date)
+            
+            reloadTableViewData(animated: true)
+            
+            Cache.shared.save()
+        }
+    }
+}
+
+// MARK: Progress Card
+
+extension DashboardController {
+    func setProgressCardHeight() {
+        let tableTopSpace = tableViewTopSpace.constant
+        
+        let tableHeight = tableView.contentSize.height
+        
+        progressCardHeight.constant = (base: 193.5) + tableTopSpace + tableHeight
+        
+        UIView.animate(withDuration: 0.35) { self.view.layoutIfNeeded() }
+    }
     
     func configureProgressBars() {
         setProgressBarsMaxValues()
@@ -150,7 +201,7 @@ class DashboardController: UIViewController {
     }
     
     func setProgressBarsMaxValues() {
-        let (day, night) = Cache.shared.residingState.loggedTimeRequired
+        let (day, night) = residingState.loggedTimeRequired
         
         dayProgressBar.maxValue = CGFloat(day)
         
@@ -158,8 +209,14 @@ class DashboardController: UIViewController {
     }
     
     func setProgressBarsHintLabels() {
+        guard !residingState.is(.tasmania) && !residingState.is(.westernAustralia) else {
+            hideRequiredTime(true)
+            
+            return
+        }
+        
         let secondsPerHour = 3600
-                
+        
         let dayMax = Int(dayProgressBar.maxValue) / secondsPerHour
         
         let nightMax = Int(nightProgressBar.maxValue) / secondsPerHour
@@ -167,10 +224,24 @@ class DashboardController: UIViewController {
         dayHoursRequiredLabel.text = "\(dayMax)"
         
         nightHoursRequiredLabel.text = "\(nightMax)"
+        
+        hideRequiredTime(false)
     }
     
-    // MARK: Segmented Controller
-    
+    func hideRequiredTime(_ isHidden: Bool) {
+        dayRequiredTimeStackView.isHidden = isHidden
+        
+        nightRequiredTimeStackView.isHidden = isHidden
+        
+        tableViewTopSpace.constant = isHidden ? -4 : 12
+        
+        setProgressCardHeight()
+    }
+}
+
+// MARK: Segmented Controller
+
+extension DashboardController {
     func configureSegmentedControl() {
         chartSegmentedControl.addTarget(self,
                                         action: #selector(segmentedControlChanged(_:)),
@@ -235,6 +306,8 @@ extension DashboardController: UITableViewDataSource, UITableViewDelegate {
         cell.checkBox.delegate = self
 
         cell.editButton.isHidden = true
+        
+        cell.accessoryType = (task.learnMoreURL != nil) ? .detailButton : .none
 
         if task is LogTask {
             cell.checkBox.isEnabled = false
@@ -246,6 +319,8 @@ extension DashboardController: UITableViewDataSource, UITableViewDelegate {
         
         if task is AssessmentTask && task.subtitle != nil {
             cell.editButton.isHidden = false
+            cell.editButton.tag = index
+            cell.editButton.addTarget(self, action: #selector(didTapEditButton(_:)), for: .touchUpInside)
         }
     }
     
@@ -254,10 +329,35 @@ extension DashboardController: UITableViewDataSource, UITableViewDelegate {
                    forRowAt indexPath: IndexPath) {
         
         if indexPath.row == tableView.indexPathsForVisibleRows?.last?.row {
-            progressCardHeight.constant = (base: 209.5) + tableView.contentSize.height
+            setProgressCardHeight()
         }
     }
     
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        guard NetworkReachabilityManager()!.isReachable else {
+            showOfflineAlert()
+            
+            return
+        }
+        
+        let task = tasks[indexPath.row]
+        
+        UIApplication.shared.open(task.learnMoreURL!)
+    }
+}
+
+// MARK: Alerting
+
+extension DashboardController: Alerting {
+    func showOfflineAlert() {
+        let title = "Offline Mode"
+        
+        let message = "You are currently offline and the learn more option requires you to be online. Connect online and try again."
+        
+        let cancelButton = CancelButton(title: "OKAY", action: nil)
+        
+        showAlert(title: title, message: message, buttons: [cancelButton])
+    }
 }
 
 // MARK: BEM Check Box Delegate
@@ -280,6 +380,37 @@ extension DashboardController: BEMCheckBoxDelegate {
             Cache.shared.save()
         }
     }    
+}
+
+// MARK: Date Picker
+
+extension DashboardController {
+    func configureDatePicker() {
+        datePicker.backgroundColor = UIColor.white
+        datePicker.isHidden = true
+        datePicker.datePickerMode = .date
+        datePicker.timeZone = TimeZone(secondsFromGMT: 0)
+        datePicker.minimumDate = Calendar.current.date(byAdding: .year, value: -5, to: Date())
+        datePicker.maximumDate = Date()
+        datePicker.frame = CGRect(x: 0,
+                                  y: view.bounds.height - tabBarController!.tabBar.frame.height - 180,
+                                  width: view.bounds.width,
+                                  height: 180)
+        
+        view.addSubview(datePicker)
+    }
+    
+    func configureDatePickerToolbar() {
+        datePickerToolbar.restyle(.normal)
+        datePickerToolbar.addDoneButton(target: self, action: #selector(didTapDoneOnToolbar(_:)))
+        datePickerToolbar.isHidden = true
+        datePickerToolbar.frame = CGRect(x: 0,
+                                     y: datePicker.frame.minY - datePickerToolbar.frame.height,
+                                     width: view.bounds.width,
+                                     height: datePickerToolbar.frame.height)
+        
+        view.addSubview(datePickerToolbar)
+    }
 }
 
 // FIX!
