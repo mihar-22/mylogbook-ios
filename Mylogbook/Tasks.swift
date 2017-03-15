@@ -349,7 +349,9 @@ class Tasks {
         assessment.checkBoxHandler = { isChecked in
             Cache.shared.currentEntries.isAssessmentComplete = isChecked
             
-            Cache.shared.currentEntries.assessmentCompletedAt = Date()
+            if Cache.shared.currentEntries.assessmentCompletedAt == nil {
+                Cache.shared.currentEntries.assessmentCompletedAt = Date()
+            }
         }
         
         assessment.editCompletionHandler = { date in
