@@ -20,6 +20,23 @@ enum AustralianState: String {
         westernAustralia
     ]
     
+    var abbreviated: String {
+        switch self {
+        case .victoria:
+            return "vic"
+        case .newSouthWhales:
+            return "nsw"
+        case .queensland:
+            return "qld"
+        case .southAustralia:
+            return "sa"
+        case .tasmania:
+            return "tas"
+        case .westernAustralia:
+            return "wa"
+        }
+    }
+    
     var isBonusCreditsAvailable: Bool {
         return self == .newSouthWhales || self == .queensland
     }

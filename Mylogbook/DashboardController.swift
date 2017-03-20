@@ -138,6 +138,21 @@ class DashboardController: UIViewController {
     
     // MARK: Actions
     
+    @IBAction func didTapPublish(_ sender: UIBarButtonItem) {
+        let composer = LogbookComposer()
+        
+        let html = composer.renderHTML()
+        
+        let webView = UIWebView(frame: CGRect(x: 0,
+                                              y: 64,
+                                              width: view.bounds.width,
+                                              height: view.bounds.height - 49))
+        
+        view.addSubview(webView)
+        
+        webView.loadHTMLString(html, baseURL: nil)
+    }
+    
     func didTapEditButton(_ sender: UIButton) {
         let index = sender.tag
         

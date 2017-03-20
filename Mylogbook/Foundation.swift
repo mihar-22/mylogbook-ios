@@ -87,6 +87,16 @@ extension String {
         
         return formatter.date(from: self)!
     }
+    
+    func truncate(length: Int, trailing: String = "...") -> String {
+        guard self.characters.count <= length else {
+            let upperbound = self.index(self.startIndex, offsetBy: length)
+            
+            return self.substring(to: upperbound) + trailing
+        }
+        
+        return self
+    }
 }
 
 // MARK: Double

@@ -38,6 +38,8 @@
 		C970BCEA1E319F3500E1129A /* SupervisorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCE91E319F3500E1129A /* SupervisorController.swift */; };
 		C970BCEC1E31A83E00E1129A /* Supervisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCEB1E31A83E00E1129A /* Supervisor.swift */; };
 		C970BCF01E31A96300E1129A /* SupervisorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCEF1E31A96300E1129A /* SupervisorCell.swift */; };
+		C978BF311E7F713F00C422D7 /* LogbookComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978BF301E7F713F00C422D7 /* LogbookComposer.swift */; };
+		C978BF351E7FC27100C422D7 /* tables in Resources */ = {isa = PBXBuildFile; fileRef = C978BF341E7FC27100C422D7 /* tables */; };
 		C979D6111E52A7E5009891C7 /* SyncStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979D6101E52A7E5009891C7 /* SyncStore.swift */; };
 		C987DD121E64F5D00011F223 /* TripCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987DD111E64F5D00011F223 /* TripCalculator.swift */; };
 		C987DD141E651DD70011F223 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987DD131E651DD70011F223 /* Button.swift */; };
@@ -118,6 +120,8 @@
 		C970BCE91E319F3500E1129A /* SupervisorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupervisorController.swift; sourceTree = "<group>"; };
 		C970BCEB1E31A83E00E1129A /* Supervisor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Supervisor.swift; sourceTree = "<group>"; };
 		C970BCEF1E31A96300E1129A /* SupervisorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupervisorCell.swift; sourceTree = "<group>"; };
+		C978BF301E7F713F00C422D7 /* LogbookComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogbookComposer.swift; sourceTree = "<group>"; };
+		C978BF341E7FC27100C422D7 /* tables */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tables; sourceTree = "<group>"; };
 		C979D6101E52A7E5009891C7 /* SyncStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncStore.swift; sourceTree = "<group>"; };
 		C987DD111E64F5D00011F223 /* TripCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripCalculator.swift; sourceTree = "<group>"; };
 		C987DD131E651DD70011F223 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -293,6 +297,7 @@
 		C94BA89D1E5FF601002E8F9E /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				C978BF2D1E7F705F00C422D7 /* Publish */,
 				C9F193E31E77F49600B6AE9C /* Chart */,
 				C908A9D51E74D2CF0040AAB1 /* Tasks */,
 				C9EBBD5A1E28C45000B5E509 /* DashboardController.swift */,
@@ -331,6 +336,22 @@
 				C970BCEF1E31A96300E1129A /* SupervisorCell.swift */,
 			);
 			name = Supervisors;
+			sourceTree = "<group>";
+		};
+		C978BF2C1E7F6FFD00C422D7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C978BF341E7FC27100C422D7 /* tables */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C978BF2D1E7F705F00C422D7 /* Publish */ = {
+			isa = PBXGroup;
+			children = (
+				C978BF301E7F713F00C422D7 /* LogbookComposer.swift */,
+			);
+			name = Publish;
 			sourceTree = "<group>";
 		};
 		C98E77871E37323C00F34468 /* TextField */ = {
@@ -418,6 +439,7 @@
 				C964FC311E236FCE00D07FBF /* UI */,
 				C92AA0271E11FD5900A92067 /* Services */,
 				C935B7371E0A7C9100FD7FFF /* Controllers */,
+				C978BF2C1E7F6FFD00C422D7 /* Resources */,
 				C9CDFA801DEFDB2800CE0A2D /* AppDelegate.swift */,
 				C95487C91E4C209B00C48F54 /* Foundation.swift */,
 				C9F1B98C1E094DCC002D4D61 /* Env.swift */,
@@ -565,6 +587,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9CDFA8E1DEFDB2800CE0A2D /* LaunchScreen.storyboard in Resources */,
+				C978BF351E7FC27100C422D7 /* tables in Resources */,
 				C9CDFA8B1DEFDB2800CE0A2D /* Assets.xcassets in Resources */,
 				C9C6F6701E54020900231949 /* OdometerAlert.xib in Resources */,
 				C9CDFA861DEFDB2800CE0A2D /* Main.storyboard in Resources */,
@@ -682,6 +705,7 @@
 				C9CDFA811DEFDB2800CE0A2D /* AppDelegate.swift in Sources */,
 				C94235801E6BC719003E9D4E /* ValueFormatter.swift in Sources */,
 				C987DD141E651DD70011F223 /* Button.swift in Sources */,
+				C978BF311E7F713F00C422D7 /* LogbookComposer.swift in Sources */,
 				C935B7361E0A6FFE00FD7FFF /* AuthRoute.swift in Sources */,
 				C9EC4D3F1E401DAF00A80348 /* SoftDeletingStore.swift in Sources */,
 				C9D373D81E5C126500039366 /* WeatherController.swift in Sources */,
