@@ -12,10 +12,20 @@ protocol LogDetailDelegate {
 protocol LogDetailing: class {
     var delegate: LogDetailDelegate? { get set }
     
+    func buildCell(identifier: String) -> UITableViewCell
+    
     func didSelect(rowAt indexPath: IndexPath) -> Bool
 }
 
 extension LogDetailing where Self: UITableViewController {
+    func buildCell(identifier: String) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: identifier)
+        
+        if (cell == nil) { cell = UITableViewCell(style: .default, reuseIdentifier: identifier) }
+        
+        return cell!
+    }
+    
     func didSelect(rowAt indexPath: IndexPath) -> Bool {
         let cell = tableView.cellForRow(at: indexPath)!
         
@@ -43,6 +53,22 @@ class WeatherController: UITableViewController, LogDetailing {
         
         delegate?.didChange(condition, isSelected: isSelected)
     }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return conditions.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = buildCell(identifier: "WeatherCell")
+        
+        cell.textLabel!.text = conditions[indexPath.row].rawValue
+        
+        return cell
+    }
 }
 
 // MARK: Traffic Controller
@@ -59,6 +85,22 @@ class TrafficController: UITableViewController, LogDetailing {
         
         delegate?.didChange(condition, isSelected: isSelected)
     }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return conditions.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = buildCell(identifier: "TrafficCell")
+        
+        cell.textLabel!.text = conditions[indexPath.row].rawValue
+        
+        return cell
+    }
 }
 
 // MARK: Road Controller
@@ -74,5 +116,21 @@ class RoadController: UITableViewController, LogDetailing {
         let isSelected = didSelect(rowAt: indexPath)
         
         delegate?.didChange(condition, isSelected: isSelected)
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return conditions.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = buildCell(identifier: "RoadCell")
+        
+        cell.textLabel!.text = conditions[indexPath.row].rawValue
+        
+        return cell
     }
 }

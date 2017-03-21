@@ -50,7 +50,7 @@ class DashboardController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewTopSpace: NSLayoutConstraint!
-    
+
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
@@ -180,11 +180,13 @@ class DashboardController: UIViewController {
 
 extension DashboardController {
     func setProgressCardHeight() {
+        tableViewTopSpace.constant = nightRequiredTimeStackView.isHidden ? -16 : 12
+        
         let tableTopSpace = tableViewTopSpace.constant
         
         let tableHeight = tableView.contentSize.height
         
-        progressCardHeight.constant = (base: 193.5) + tableTopSpace + tableHeight
+        progressCardHeight.constant = (base: 199.2) + tableTopSpace + tableHeight
         
         UIView.animate(withDuration: 0.35) { self.view.layoutIfNeeded() }
     }

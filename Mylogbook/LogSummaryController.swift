@@ -25,6 +25,12 @@ class LogSummaryController: UIViewController {
     @IBOutlet weak var weatherRainLabel: UILabel!
     @IBOutlet weak var weatherThunderImage: UIImageView!
     @IBOutlet weak var weatherThunderLabel: UILabel!
+    @IBOutlet weak var weatherFogLabel: UILabel!
+    @IBOutlet weak var weatherFogImage: UIImageView!
+    @IBOutlet weak var weatherHailLabel: UILabel!
+    @IBOutlet weak var weatherHailImage: UIImageView!
+    @IBOutlet weak var weatherSnowLabel: UILabel!
+    @IBOutlet weak var weatherSnowImage: UIImageView!
     
     @IBOutlet weak var trafficLightImage: UIImageView!
     @IBOutlet weak var trafficLightLabel: UILabel!
@@ -119,6 +125,18 @@ class LogSummaryController: UIViewController {
         configureImageSet(label: weatherThunderLabel,
                           image: weatherThunderImage,
                           didOccur: trip.didOccur(.weather(.thunder)))
+        
+        configureImageSet(label: weatherFogLabel,
+                          image: weatherFogImage,
+                          didOccur: trip.didOccur(.weather(.fog)))
+        
+        configureImageSet(label: weatherHailLabel,
+                          image: weatherHailImage,
+                          didOccur: trip.didOccur(.weather(.hail)))
+        
+        configureImageSet(label: weatherSnowLabel,
+                          image: weatherSnowImage,
+                          didOccur: trip.didOccur(.weather(.snow)))
     }
     
     func setupTrafficCard() {
