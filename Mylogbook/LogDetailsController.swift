@@ -25,10 +25,6 @@ class LogDetailsController: UIViewController {
         if segue.identifier == "embedWeatherTableSegue" {
             let controller = segue.destination as! WeatherController
             
-            controller.data["clear"] = trip.clear
-            controller.data["rain"] = trip.rain
-            controller.data["thunder"] = trip.thunder
-            
             controller.delegate = self
         }
         
@@ -56,17 +52,9 @@ class LogDetailsController: UIViewController {
     // MARK: Validate
     
     func validate() {
-        let json = trip.toJSON()
-        
-        let weather = json["weather"] as! [String: Bool]
-        
-        let traffic = json["traffic"] as! [String: Bool]
-        
-        let roads = json["roads"] as! [String: Bool]
-        
-        let isValid = weather.values.contains(true) &&
-                      traffic.values.contains(true) &&
-                      roads.values.contains(true)
+        let isValid = !trip.weather.isEmpty &&
+                      !trip.traffic.isEmpty &&
+                      !trip.roads.characters.isEmpty
 
         nextButton.isEnabled = isValid
     }
@@ -75,8 +63,8 @@ class LogDetailsController: UIViewController {
 // MARK: Log Detail Delegate
 
 extension LogDetailsController: LogDetailDelegate {
-    func didChange(key: String, didOccur: Bool) {
-        trip.setValue(didOccur, forKey: key)
+    func didChange(_ condition: TripCondition, isSelected: Bool) {
+        trip.set(isSelected, for: condition)
         
         validate()
     }

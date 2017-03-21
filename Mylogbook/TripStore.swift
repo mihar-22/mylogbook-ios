@@ -15,24 +15,15 @@ class TripStore {
             trip.endedAt = newTrip.endedAt
             trip.odometer = newTrip.odometer
             trip.distance = newTrip.distance
-
-            trip.clear = newTrip.clear
-            trip.rain = newTrip.rain
-            trip.thunder = newTrip.thunder
             
-            trip.light = newTrip.light
-            trip.moderate = newTrip.moderate
-            trip.heavy = newTrip.heavy
+            trip.weather = newTrip.weather
+            trip.traffic = newTrip.traffic
+            trip.roads = newTrip.roads
             
-            trip.localStreet = newTrip.localStreet
-            trip.mainRoad = newTrip.mainRoad
-            trip.innerCity = newTrip.innerCity
-            trip.freeway = newTrip.freeway
-            trip.ruralHighway = newTrip.ruralHighway
-            trip.gravel = newTrip.gravel
-            
-            trip.latitude = newTrip.latitude
-            trip.longitude = newTrip.longitude
+            trip.startLatitude = newTrip.startLatitude
+            trip.startLongitude = newTrip.startLongitude
+            trip.endLatitude = newTrip.endLatitude
+            trip.endLongitude = newTrip.endLongitude
             trip.timeZoneIdentifier = newTrip.timeZoneIdentifier
             
             _ = transaction.commitAndWait()

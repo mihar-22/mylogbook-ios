@@ -93,19 +93,15 @@ class Statistics: NSObject, NSCoding {
     }
     
     private func calculateOccurrences(for trips: [Trip]) {
-        func increment(for key: String) {
+        for condition in TripCondition.all {
+            let key = condition.rawValue
+            
             let currentValue = occurrences[key] ?? 0
-         
-            let count = trips.filter({ $0.value(forKey: key) as! Bool }).count
+            
+            let count = trips.filter({ $0.didOccur(condition) }).count
             
             occurrences[key] = (currentValue + count)
         }
-        
-        for key in ChartSegment.Weather.all { increment(for: key.rawValue.camelCased()) }
-        
-        for key in ChartSegment.Traffic.all { increment(for: key.rawValue.camelCased()) }
-        
-        for key in ChartSegment.Road.all { increment(for: key.rawValue.camelCased()) }
     }
     
     private func calculateTime(for trips: [Trip]) {

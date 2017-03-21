@@ -34,11 +34,11 @@ class BarChart {
     }
         
     static func build(_ view: BarChartView, for segment: ChartSegment) {
-        guard segment.all().map({ $0.data > 0 }).contains(true) else { return }
+        guard segment.all.map({ $0.data > 0 }).contains(true) else { return }
         
         var sets = [BarChartDataSet]()
         
-        for (index, item) in segment.all().enumerated() {
+        for (index, item) in segment.all.enumerated() {
             let entry = BarChartDataEntry(x: Double(index), y: item.data)
             
             let set = BarChartDataSet(values: [entry], label: item.label)

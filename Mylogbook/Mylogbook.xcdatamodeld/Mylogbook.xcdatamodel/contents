@@ -22,33 +22,26 @@
         <relationship name="trips" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Trip" inverseName="supervisor" inverseEntity="Trip" syncable="YES"/>
     </entity>
     <entity name="Trip" representedClassName=".Trip" syncable="YES">
-        <attribute name="clear" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="distance" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="endedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="freeway" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="gravel" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="heavy" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="endLatitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="endLongitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="innerCity" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isAccumulated" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="light" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="localStreet" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="mainRoad" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="moderate" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="odometer" attributeType="Integer 64" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="rain" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="ruralHighway" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="roads" attributeType="String" minValueString="0" maxValueString="100" syncable="YES"/>
         <attribute name="startedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="thunder" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="startLatitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="startLongitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="timeZoneIdentifier" attributeType="String" maxValueString="100" syncable="YES"/>
+        <attribute name="traffic" attributeType="String" minValueString="0" maxValueString="50" syncable="YES"/>
+        <attribute name="weather" attributeType="String" minValueString="0" maxValueString="50" syncable="YES"/>
         <relationship name="car" maxCount="1" deletionRule="Deny" destinationEntity="Car" inverseName="trips" inverseEntity="Car" syncable="YES"/>
         <relationship name="supervisor" maxCount="1" deletionRule="Deny" destinationEntity="Supervisor" inverseName="trips" inverseEntity="Supervisor" syncable="YES"/>
     </entity>
     <elements>
         <element name="Car" positionX="-162" positionY="174" width="128" height="165"/>
         <element name="Supervisor" positionX="-162" positionY="345" width="128" height="180"/>
-        <element name="Trip" positionX="43" positionY="63" width="128" height="390"/>
+        <element name="Trip" positionX="43" positionY="63" width="128" height="285"/>
     </elements>
 </model>

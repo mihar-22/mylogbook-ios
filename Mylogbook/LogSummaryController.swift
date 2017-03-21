@@ -41,8 +41,8 @@ class LogSummaryController: UIViewController {
     @IBOutlet weak var roadFreewayLabel: UILabel!
     @IBOutlet weak var roadInnerCityImage: UIImageView!
     @IBOutlet weak var roadInnerCityLabel: UILabel!
-    @IBOutlet weak var roadRuralHighwayImage: UIImageView!
-    @IBOutlet weak var roadRuralHighwayLabel: UILabel!
+    @IBOutlet weak var roadRuralRoadImage: UIImageView!
+    @IBOutlet weak var roadRuralRoadLabel: UILabel!
     @IBOutlet weak var roadGravelImage: UIImageView!
     @IBOutlet weak var roadGravelLabel: UILabel!
     
@@ -110,55 +110,55 @@ class LogSummaryController: UIViewController {
     func setupWeatherCard() {
         configureImageSet(label: weatherClearLabel,
                           image: weatherClearImage,
-                          didOccur: trip.clear)
+                          didOccur: trip.didOccur(.weather(.clear)))
         
         configureImageSet(label: weatherRainLabel,
                           image: weatherRainImage,
-                          didOccur: trip.rain)
+                          didOccur: trip.didOccur(.weather(.rain)))
         
         configureImageSet(label: weatherThunderLabel,
                           image: weatherThunderImage,
-                          didOccur: trip.thunder)
+                          didOccur: trip.didOccur(.weather(.thunder)))
     }
     
     func setupTrafficCard() {
         configureImageSet(label: trafficLightLabel,
                           image: trafficLightImage,
-                          didOccur: trip.light)
+                          didOccur: trip.didOccur(.traffic(.light)))
         
         configureImageSet(label: trafficModerateLabel,
                           image: trafficModerateImage,
-                          didOccur: trip.moderate)
+                          didOccur: trip.didOccur(.traffic(.moderate)))
         
         configureImageSet(label: trafficHeavyLabel,
                           image: trafficHeavyImage,
-                          didOccur: trip.heavy)
+                          didOccur: trip.didOccur(.traffic(.heavy)))
     }
     
     func setupRoadsCard() {
         configureImageSet(label: roadLocalStreetLabel,
                           image: roadLocalStreetImage,
-                          didOccur: trip.localStreet)
+                          didOccur: trip.didOccur(.road(.localStreet)))
         
         configureImageSet(label: roadMainRoadLabel,
                           image: roadMainRoadImage,
-                          didOccur: trip.mainRoad)
+                          didOccur: trip.didOccur(.road(.mainRoad)))
         
         configureImageSet(label: roadFreewayLabel,
                           image: roadFreewayImage,
-                          didOccur: trip.freeway)
+                          didOccur: trip.didOccur(.road(.freeway)))
         
         configureImageSet(label: roadInnerCityLabel,
                           image: roadInnerCityImage,
-                          didOccur: trip.innerCity)
+                          didOccur: trip.didOccur(.road(.innerCity)))
         
-        configureImageSet(label: roadRuralHighwayLabel,
-                          image: roadRuralHighwayImage,
-                          didOccur: trip.ruralHighway)
+        configureImageSet(label: roadRuralRoadLabel,
+                          image: roadRuralRoadImage,
+                          didOccur: trip.didOccur(.road(.ruralRoad)))
         
         configureImageSet(label: roadGravelLabel,
                           image: roadGravelImage,
-                          didOccur: trip.gravel)
+                          didOccur: trip.didOccur(.road(.gravel)))
     }
     
     func setupRouteCard() {

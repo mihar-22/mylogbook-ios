@@ -50,8 +50,8 @@ struct TripCalculator {
     private static func calculateDayTime(for trip: Trip) -> (sunrise: Int, sunset: Int) {
         let solar = Solar.init(forDate: trip.startedAt,
                                withTimeZone: trip.timeZone,
-                               latitude: trip.latitude,
-                               longitude: trip.longitude)!
+                               latitude: trip.startLatitude,
+                               longitude: trip.startLongitude)!
         
         let sunrise = solar.nauticalSunrise!.secondsFromStartOfDay(in: trip.timeZone)
         

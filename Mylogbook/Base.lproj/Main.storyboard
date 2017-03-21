@@ -2661,17 +2661,17 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rCq-pB-5qq">
-                                                                        <rect key="frame" x="126" y="0.0" width="80.5" height="67.5"/>
+                                                                        <rect key="frame" x="135.5" y="0.0" width="61.5" height="67.5"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eze-Du-ocH">
-                                                                                <rect key="frame" x="17.5" y="0.0" width="45" height="45"/>
+                                                                                <rect key="frame" x="8" y="0.0" width="45" height="45"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="45" id="H81-GJ-TXP"/>
                                                                                     <constraint firstAttribute="width" constant="45" id="tA7-Of-tE1"/>
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Road" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfR-pK-nCc">
-                                                                                <rect key="frame" x="10.5" y="53" width="59.5" height="14.5"/>
+                                                                                <rect key="frame" x="1" y="53" width="59.5" height="14.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <nil key="highlightedColor"/>
@@ -2720,17 +2720,17 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IkP-gN-IZu">
-                                                                        <rect key="frame" x="126" y="0.0" width="80.5" height="67.5"/>
+                                                                        <rect key="frame" x="135.5" y="0.0" width="61.5" height="67.5"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OEA-Zq-dtx">
-                                                                                <rect key="frame" x="17.5" y="0.0" width="45" height="45"/>
+                                                                                <rect key="frame" x="8" y="0.0" width="45" height="45"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="45" id="8Li-Um-GRp"/>
                                                                                     <constraint firstAttribute="height" constant="45" id="kS6-lR-YqL"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rural Highway" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5o-us-bHA">
-                                                                                <rect key="frame" x="0.0" y="53" width="80.5" height="14.5"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rural Road" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5o-us-bHA">
+                                                                                <rect key="frame" x="0.0" y="53" width="61.5" height="14.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <nil key="highlightedColor"/>
@@ -2914,8 +2914,8 @@
                         <outlet property="roadLocalStreetLabel" destination="QUi-7d-bft" id="8Xb-j5-kBG"/>
                         <outlet property="roadMainRoadImage" destination="eze-Du-ocH" id="Aq5-sg-9KH"/>
                         <outlet property="roadMainRoadLabel" destination="bfR-pK-nCc" id="lNa-Qf-jz6"/>
-                        <outlet property="roadRuralHighwayImage" destination="OEA-Zq-dtx" id="TM5-OK-LKL"/>
-                        <outlet property="roadRuralHighwayLabel" destination="h5o-us-bHA" id="PdL-vS-uaV"/>
+                        <outlet property="roadRuralRoadImage" destination="OEA-Zq-dtx" id="qEN-Eh-LfK"/>
+                        <outlet property="roadRuralRoadLabel" destination="h5o-us-bHA" id="uVx-SJ-5Iy"/>
                         <outlet property="supervisorGenderImage" destination="vuM-M6-wcb" id="hKi-m9-K0i"/>
                         <outlet property="supervisorLicenseLabel" destination="jX3-uJ-lLb" id="8h0-Uv-RKX"/>
                         <outlet property="supervisorNameLabel" destination="jiI-k4-f5t" id="3Kp-CB-dTO"/>
@@ -3025,7 +3025,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="359" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Rural Highway" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xII-F4-yfB">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Rural Road" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xII-F4-yfB">
                                                     <rect key="frame" x="15" y="0.0" width="329" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>

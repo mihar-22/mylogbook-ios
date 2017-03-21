@@ -9,8 +9,6 @@ class LogRecordController: UIViewController {
     
     var trip: Trip!
     
-    var hasWeatherBeenRecorded = false
-    
     // MARK: Location
     
     var seconds = 0
@@ -150,43 +148,6 @@ class LogRecordController: UIViewController {
         timeLabel.text = TimeInterval(seconds).time()
     }
     
-    // MARK: Weather
-    
-    func recordWeather(with location: CLLocation) {
-        guard NetworkReachabilityManager()!.isReachable else { return }
-
-        let route = WeatherRoute.geographic(location)
-        
-        Session.shared.requestRawJSON(route) { response in
-            guard let weather = response["weather"].array else { return }
-            
-            let ids = weather.map { $0["id"].intValue }
-            
-            for id in ids {
-                switch id {
-                case 200 ... 202:
-                    self.trip.thunder = true
-                    
-                    self.trip.rain = true
-                case 210 ... 221:
-                    self.trip.thunder = true
-                case 230 ... 232:
-                    self.trip.thunder = true
-                    
-                    self.trip.rain = true
-                case 300 ... 321:
-                    self.trip.rain = true
-                case 500 ... 531:
-                    self.trip.rain = true
-                case 800 ... 804:
-                    self.trip.clear = true
-                default:
-                  break
-                }
-            }
-        }
-    }
-    
     // MARK: Navigation
     
     func setupNavigation() {        
@@ -297,11 +258,17 @@ extension LogRecordController: CLLocationManagerDelegate {
             
             trip.distance = distance.round(places: 2)
                         
-            let coordinate = locations.first!.coordinate
+            let startCoordinate = locations.first!.coordinate
             
-            trip.latitude = coordinate.latitude.round(places: 8)
+            trip.startLatitude = startCoordinate.latitude.round(places: 8)
             
-            trip.longitude = coordinate.longitude.round(places: 8)
+            trip.startLongitude = startCoordinate.longitude.round(places: 8)
+            
+            let endCoordinate = locations.last!.coordinate
+            
+            trip.endLatitude = endCoordinate.latitude.round(places: 8)
+            
+            trip.endLongitude = endCoordinate.longitude.round(places: 8)
         case .cancel:
             navigationController!.popViewController(animated: true)
         }
@@ -375,12 +342,6 @@ extension LogRecordController: CLLocationManagerDelegate {
             updateDistance(with: location)
             
             self.locations.append(location)
-        }
-        
-        if !hasWeatherBeenRecorded && self.locations.count > 0 {
-            recordWeather(with: locations.first!)
-            
-            hasWeatherBeenRecorded = true
         }
     }
     

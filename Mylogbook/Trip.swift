@@ -30,6 +30,56 @@ class Trip: NSManagedObject {
     }
 }
 
+// MARK: Conditions
+
+extension Trip {
+    func didOccur(_ condition: TripCondition) -> Bool {
+        switch condition {
+        case .weather(let type):
+            return weather.characters.contains(type.code)
+        case .traffic(let type):
+            return traffic.characters.contains(type.code)
+        case .road(let type):
+            return roads.characters.contains(type.code)
+        }
+    }
+    
+    func set(_ didOccur: Bool, for condition: TripCondition) {
+        func change(_ code: Character, on string: inout String) {
+            let isContained = string.characters.contains(code)
+            
+            guard (didOccur && !isContained) || (!didOccur && isContained) else {
+                return
+            }
+            
+            guard didOccur else {
+                guard string.characters.count > 1 else {
+                    string = ""
+                    
+                    return
+                }
+                
+                let target = (string.characters.first == code) ? "\(code)," : ",\(code)"
+                
+                string = string.replacingOccurrences(of: target, with: "")
+                
+                return
+            }
+            
+            string += string.isEmpty ? "\(code)" : ",\(code)"
+        }
+        
+        switch condition {
+        case .weather(let type):
+            change(type.code, on: &weather)
+        case .traffic(let type):
+            change(type.code, on: &traffic)
+        case .road(let type):
+            change(type.code, on: &roads)
+        }
+    }
+}
+
 // MARK: Importable
 
 extension Trip: Importable {
@@ -53,32 +103,15 @@ extension Trip: Importable {
         odometer = source["odometer"].int!
         distance = source["distance"].double!
         
-        let weather = source["weather"]
+        weather = source["weather"].string!
+        traffic = source["traffic"].string!
+        roads = source["roads"].string!
         
-        clear = weather["clear"].bool!
-        rain = weather["rain"].bool!
-        thunder = weather["thunder"].bool!
-        
-        let traffic = source["traffic"]
-        
-        light = traffic["light"].bool!
-        moderate = traffic["moderate"].bool!
-        heavy = traffic["heavy"].bool!
-
-        let roads = source["roads"]
-        
-        localStreet = roads["local_street"].bool!
-        mainRoad = roads["main_road"].bool!
-        innerCity = roads["inner_city"].bool!
-        freeway = roads["freeway"].bool!
-        ruralHighway = roads["rural_highway"].bool!
-        gravel = roads["gravel"].bool!
-        
-        let location = source["location"]
-        
-        latitude = location["latitude"].double!
-        longitude = location["longitude"].double!
-        timeZoneIdentifier = location["timezone"].string!
+        startLatitude = source["start_latitude"].double!
+        startLongitude = source["start_longitude"].double!
+        endLatitude = source["end_latitude"].double!
+        endLongitude = source["end_longitude"].double!
+        timeZoneIdentifier = source["timezone"].string!
     }
 }
 
@@ -95,29 +128,14 @@ extension Trip: Resourceable {
             "distance": distance,
             "car_id": car.id,
             "supervisor_id": supervisor.id,
-            "weather": [
-                "clear": clear,
-                "rain": rain,
-                "thunder": thunder
-            ],
-            "traffic": [
-                "light": light,
-                "moderate": moderate,
-                "heavy": heavy
-            ],
-            "roads": [
-                "local_street": localStreet,
-                "main_road": mainRoad,
-                "inner_city": innerCity,
-                "freeway": freeway,
-                "rural_highway": ruralHighway,
-                "gravel": gravel
-            ],
-            "location": [
-                "latitude": latitude,
-                "longitude": longitude,
-                "timezone": timeZoneIdentifier
-            ]
+            "weather": weather,
+            "traffic": traffic,
+            "roads": roads,
+            "start_latitude": startLatitude,
+            "start_longitude": startLongitude,
+            "end_latitude": endLatitude,
+            "end_longitude": endLongitude,
+            "timezone": timeZoneIdentifier
         ]
     }
 }
@@ -130,28 +148,18 @@ extension Trip {
     @NSManaged public var endedAt: Date
     @NSManaged public var odometer: Int
     @NSManaged public var distance: Double
+    @NSManaged public var weather: String
+    @NSManaged public var traffic: String
+    @NSManaged public var roads: String
+    
+    @NSManaged public var startLatitude: Double
+    @NSManaged public var startLongitude: Double
+    @NSManaged public var endLatitude: Double
+    @NSManaged public var endLongitude: Double
+    @NSManaged public var timeZoneIdentifier: String
     
     @NSManaged public var car: Car
     @NSManaged public var supervisor: Supervisor
-    
-    @NSManaged public var clear: Bool
-    @NSManaged public var rain: Bool
-    @NSManaged public var thunder: Bool
-
-    @NSManaged public var light: Bool
-    @NSManaged public var moderate: Bool
-    @NSManaged public var heavy: Bool
-
-    @NSManaged public var localStreet: Bool
-    @NSManaged public var mainRoad: Bool
-    @NSManaged public var innerCity: Bool
-    @NSManaged public var freeway: Bool
-    @NSManaged public var ruralHighway: Bool
-    @NSManaged public var gravel: Bool
-    
-    @NSManaged public var latitude: Double
-    @NSManaged public var longitude: Double
-    @NSManaged public var timeZoneIdentifier: String
     
     @NSManaged public var isAccumulated: Bool
 }
