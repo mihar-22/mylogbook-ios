@@ -371,6 +371,7 @@
 				C9D373D21E5BF8DA00039366 /* Details */,
 				C98E77911E397B3100F34468 /* LogPrepareController.swift */,
 				C9C6F6791E55B75100231949 /* LogRecordController.swift */,
+				C9A0DFF01E5AB84500102DE0 /* LogDetailsController.swift */,
 				C945AA511E5C25AB00FAF9E9 /* LogSummaryController.swift */,
 			);
 			name = Log;
@@ -456,7 +457,6 @@
 			isa = PBXGroup;
 			children = (
 				C92AA0301E15185A00A92067 /* Theme.swift */,
-				C9A0DFF01E5AB84500102DE0 /* LogDetailsController.swift */,
 				C9D373D31E5BF8E600039366 /* LogDetailing.swift */,
 				C9D373D71E5C126500039366 /* WeatherController.swift */,
 				C9D373D91E5C128D00039366 /* TrafficController.swift */,
