@@ -1589,30 +1589,21 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9c-Aq-lE4">
-                                                    <rect key="frame" x="84" y="18" width="45" height="21"/>
+                                                    <rect key="frame" x="84" y="27.5" width="45" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="License" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zcg-jh-zsZ">
-                                                    <rect key="frame" x="85" y="43" width="44" height="15"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="A9c-Aq-lE4" firstAttribute="top" secondItem="uaf-MY-ag0" secondAttribute="topMargin" constant="10" id="2S3-JK-5UP"/>
-                                                <constraint firstItem="Zcg-jh-zsZ" firstAttribute="leading" secondItem="zUh-1o-44U" secondAttribute="trailing" constant="17" id="BL2-uT-Hbp"/>
                                                 <constraint firstItem="A9c-Aq-lE4" firstAttribute="leading" secondItem="zUh-1o-44U" secondAttribute="trailing" constant="16" id="E1w-Nc-qkG"/>
                                                 <constraint firstItem="zUh-1o-44U" firstAttribute="leading" secondItem="uaf-MY-ag0" secondAttribute="leadingMargin" id="STG-Iq-ryp"/>
+                                                <constraint firstItem="A9c-Aq-lE4" firstAttribute="centerY" secondItem="zUh-1o-44U" secondAttribute="centerY" id="Tcl-xQ-gry"/>
                                                 <constraint firstItem="zUh-1o-44U" firstAttribute="top" secondItem="uaf-MY-ag0" secondAttribute="topMargin" id="ayR-wF-iUa"/>
-                                                <constraint firstItem="Zcg-jh-zsZ" firstAttribute="top" secondItem="A9c-Aq-lE4" secondAttribute="bottom" constant="4" id="kOR-EP-NG7"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="avatarImage" destination="zUh-1o-44U" id="JPD-Q2-bSZ"/>
-                                            <outlet property="licenseLabel" destination="Zcg-jh-zsZ" id="lg7-lD-l73"/>
                                             <outlet property="nameLabel" destination="A9c-Aq-lE4" id="BW7-jf-sMY"/>
                                             <segue destination="Q4b-pn-jV9" kind="presentation" identifier="editSupervisorSegue" id="0tk-44-fN9"/>
                                         </connections>
@@ -1704,14 +1695,8 @@
                                             <constraint firstAttribute="width" constant="60" id="N85-67-koD"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="License" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPV-9f-jE8">
-                                        <rect key="frame" x="85" y="43" width="44" height="15"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhK-Fb-2Qq">
-                                        <rect key="frame" x="84" y="18" width="45" height="21"/>
+                                        <rect key="frame" x="84" y="26.5" width="45" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1722,11 +1707,9 @@
                                 <constraints>
                                     <constraint firstItem="ejw-2S-zIr" firstAttribute="centerY" secondItem="TAS-a3-A3z" secondAttribute="centerY" id="A74-sQ-YTJ"/>
                                     <constraint firstItem="ejw-2S-zIr" firstAttribute="leading" secondItem="TAS-a3-A3z" secondAttribute="leading" constant="8" id="MUI-kY-37l"/>
-                                    <constraint firstItem="cPV-9f-jE8" firstAttribute="top" secondItem="IhK-Fb-2Qq" secondAttribute="bottom" constant="4" id="jwS-Iu-W7U"/>
-                                    <constraint firstItem="cPV-9f-jE8" firstAttribute="leading" secondItem="ejw-2S-zIr" secondAttribute="trailing" constant="17" id="lAb-Q7-vac"/>
+                                    <constraint firstItem="IhK-Fb-2Qq" firstAttribute="centerY" secondItem="ejw-2S-zIr" secondAttribute="centerY" id="Y2J-92-BAz"/>
                                     <constraint firstAttribute="height" constant="74" id="rRJ-hP-z99"/>
                                     <constraint firstItem="IhK-Fb-2Qq" firstAttribute="leading" secondItem="ejw-2S-zIr" secondAttribute="trailing" constant="16" id="sOE-83-0tJ"/>
-                                    <constraint firstItem="IhK-Fb-2Qq" firstAttribute="top" secondItem="TAS-a3-A3z" secondAttribute="top" constant="18" id="zer-g8-Paf"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Ypr-1a-NZA" appends="YES" id="CXz-JJ-QWj"/>
@@ -1763,7 +1746,6 @@
                         <outlet property="carRegistrationLabel" destination="z1U-bH-Bnp" id="XP5-Xp-AxF"/>
                         <outlet property="carTypeImage" destination="Igi-yB-7Rz" id="jLy-fU-LQy"/>
                         <outlet property="supervisorGenderImage" destination="ejw-2S-zIr" id="b8A-vM-dwU"/>
-                        <outlet property="supervisorLicenseLabel" destination="cPV-9f-jE8" id="A2G-cZ-buU"/>
                         <outlet property="supervisorNameLabel" destination="IhK-Fb-2Qq" id="eKR-t6-8Cm"/>
                         <segue destination="fie-Pj-7b1" kind="show" identifier="startRecordingSegue" id="Zts-mf-1Me"/>
                     </connections>
@@ -2090,23 +2072,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="o3z-it-JkO" userLabel="Form">
-                                                <rect key="frame" x="16" y="244" width="343" height="269"/>
+                                                <rect key="frame" x="16" y="244" width="343" height="211"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeC-QH-4cG" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="License Number"/>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
-                                                                <integer key="value" value="3"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
-                                                                <integer key="value" value="4"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12A-bj-enI" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="58" width="343" height="42"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="First Name"/>
@@ -2119,7 +2088,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R77-2P-Iza" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="116" width="343" height="42"/>
+                                                        <rect key="frame" x="0.0" y="58" width="343" height="42"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Last Name"/>
@@ -2132,7 +2101,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtI-ah-YOV" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="174" width="343" height="42"/>
+                                                        <rect key="frame" x="0.0" y="116" width="343" height="42"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Gender"/>
@@ -2145,7 +2114,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="PwS-ga-bYu">
-                                                        <rect key="frame" x="0.0" y="232" width="343" height="37"/>
+                                                        <rect key="frame" x="0.0" y="174" width="343" height="37"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0q2-uh-nNJ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="31"/>
@@ -2241,7 +2210,6 @@
                         <outlet property="genderImage" destination="8Ze-cG-Wz4" id="DEh-us-Udn"/>
                         <outlet property="genderTextField" destination="dtI-ah-YOV" id="k4w-ec-ltn"/>
                         <outlet property="lastNameTextField" destination="R77-2P-Iza" id="YRT-Jx-jpJ"/>
-                        <outlet property="licenseTextField" destination="aeC-QH-4cG" id="w4q-Qh-yY5"/>
                         <outlet property="navItem" destination="i7z-8r-K6Q" id="rsJ-Te-1bf"/>
                         <outlet property="saveButton" destination="F8g-4l-65J" id="qv0-mU-DIf"/>
                     </connections>
@@ -2370,14 +2338,8 @@
                                                             <constraint firstAttribute="height" constant="45" id="gSL-yE-30X"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="License" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jX3-uJ-lLb">
-                                                        <rect key="frame" x="70" y="40.5" width="43.5" height="14.5"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiI-k4-f5t">
-                                                        <rect key="frame" x="69" y="16" width="45" height="20.5"/>
+                                                        <rect key="frame" x="69" y="24.5" width="45" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -2386,13 +2348,11 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstItem="jX3-uJ-lLb" firstAttribute="top" secondItem="jiI-k4-f5t" secondAttribute="bottom" constant="4" id="15i-wZ-KGB"/>
-                                                    <constraint firstItem="jiI-k4-f5t" firstAttribute="top" secondItem="WQQ-db-Akn" secondAttribute="top" constant="16" id="Aea-XJ-AQu"/>
                                                     <constraint firstItem="jiI-k4-f5t" firstAttribute="leading" secondItem="vuM-M6-wcb" secondAttribute="trailing" constant="16" id="EcD-QP-BDm"/>
                                                     <constraint firstItem="vuM-M6-wcb" firstAttribute="leading" secondItem="WQQ-db-Akn" secondAttribute="leading" constant="8" id="M4h-gy-dss"/>
                                                     <constraint firstAttribute="height" constant="68" id="NeB-eV-7h8"/>
-                                                    <constraint firstItem="jX3-uJ-lLb" firstAttribute="leading" secondItem="vuM-M6-wcb" secondAttribute="trailing" constant="17" id="hF5-XR-sgg"/>
                                                     <constraint firstItem="vuM-M6-wcb" firstAttribute="centerY" secondItem="WQQ-db-Akn" secondAttribute="centerY" id="v9u-vI-ABr"/>
+                                                    <constraint firstItem="jiI-k4-f5t" firstAttribute="centerY" secondItem="vuM-M6-wcb" secondAttribute="centerY" id="wIh-9h-NEx"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Fn-fc-Gdv" customClass="Card" customModule="Mylogbook" customModuleProvider="target">
@@ -2907,7 +2867,6 @@
                         <outlet property="roadRuralRoadImage" destination="OEA-Zq-dtx" id="qEN-Eh-LfK"/>
                         <outlet property="roadRuralRoadLabel" destination="h5o-us-bHA" id="uVx-SJ-5Iy"/>
                         <outlet property="supervisorGenderImage" destination="vuM-M6-wcb" id="hKi-m9-K0i"/>
-                        <outlet property="supervisorLicenseLabel" destination="jX3-uJ-lLb" id="8h0-Uv-RKX"/>
                         <outlet property="supervisorNameLabel" destination="jiI-k4-f5t" id="3Kp-CB-dTO"/>
                         <outlet property="totalDistanceLabel" destination="25m-x5-IYa" id="VO5-fg-7fN"/>
                         <outlet property="totalTimeLabel" destination="8Rf-ve-4O4" id="5Rb-UI-l3I"/>

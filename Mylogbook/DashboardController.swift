@@ -186,7 +186,9 @@ extension DashboardController {
         
         let tableHeight = tableView.contentSize.height
         
-        progressCardHeight.constant = (base: 199.2) + tableTopSpace + tableHeight
+        let base: CGFloat = nightRequiredTimeStackView.isHidden ? 199 : 199.5
+        
+        progressCardHeight.constant = base + tableTopSpace + tableHeight
         
         UIView.animate(withDuration: 0.35) { self.view.layoutIfNeeded() }
     }

@@ -13,7 +13,6 @@ class SupervisorController: UIViewController {
 
     var firstName: String? { return firstNameTextField.text }
     var lastName: String? { return lastNameTextField.text }
-    var license: String? { return licenseTextField.text }
     var gender: String? { return genderTextField.text?.lowercased() }
     var isAccredited: Bool { return accreditedSwitch.isOn }
     
@@ -27,7 +26,6 @@ class SupervisorController: UIViewController {
     
     @IBOutlet weak var firstNameTextField: TextField!
     @IBOutlet weak var lastNameTextField: TextField!
-    @IBOutlet weak var licenseTextField: TextField!
     @IBOutlet weak var genderTextField: TextField!
     @IBOutlet weak var accreditedSwitch: UISwitch!
     
@@ -54,7 +52,6 @@ class SupervisorController: UIViewController {
         
         firstNameTextField.text = supervisor!.firstName
         lastNameTextField.text = supervisor!.lastName
-        licenseTextField.text = supervisor!.license
         genderTextField.text = supervisor!.gender.capitalized
         accreditedSwitch.setOn(supervisor!.isAccredited, animated: true)
         // set gender image here
@@ -72,7 +69,6 @@ class SupervisorController: UIViewController {
         view.endEditing(true)
         
         SupervisorStore.add(supervisor,
-                            license: license!,
                             firstName: firstName!,
                             lastName: lastName!,
                             gender: gender!,
@@ -87,9 +83,6 @@ class SupervisorController: UIViewController {
     // MARK: Text Field
     
     func setupTextFields() {
-        licenseTextField.field.tag = 0
-        licenseTextField.field.delegate = self
-        
         firstNameTextField.field.tag = 1
         firstNameTextField.field.delegate = self
         
@@ -108,8 +101,6 @@ class SupervisorController: UIViewController {
         validator.add(firstNameTextField, [.required, .alpha, .maxLength(max: 50)])
         
         validator.add(lastNameTextField, [.required, .alpha, .maxLength(max: 50)])
-        
-        validator.add(licenseTextField, [.required, .alphaNum, .maxLength(max: 10)])
     }
 }
 

@@ -109,7 +109,6 @@ class LogSummaryController: UIViewController {
         let supervisor = trip.supervisor
         
         supervisorNameLabel.text = supervisor.fullName
-        supervisorLicenseLabel.text = supervisor.license
         // set gender image here
     }
     

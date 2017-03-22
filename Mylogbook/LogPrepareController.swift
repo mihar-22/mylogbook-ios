@@ -44,7 +44,6 @@ class LogPrepareController: UIViewController {
     @IBOutlet weak var carTypeImage: UIImageView!
     
     @IBOutlet weak var supervisorNameLabel: UILabel!
-    @IBOutlet weak var supervisorLicenseLabel: UILabel!
     @IBOutlet weak var supervisorGenderImage: UIImageView!
     
     // MARK: View Lifecycles
@@ -126,7 +125,6 @@ class LogPrepareController: UIViewController {
     
     func configureCard(supervisor: Supervisor) {
         supervisorNameLabel.text = supervisor.fullName
-        supervisorLicenseLabel.text = supervisor.license
         // set gender image here
     }
     
