@@ -22,7 +22,7 @@ extension Date {
         return formatter.string(from: self)
     }
     
-    func string(date: DateFormatter.Style, time: DateFormatter.Style) -> String {
+    func local(date: DateFormatter.Style, time: DateFormatter.Style) -> String {
         let formatter = DateFormatter()
         
         formatter.dateStyle = date

@@ -40,7 +40,7 @@ class OnboardPermitController: UIViewController {
     func didChangeDate(_ sender: UIDatePicker) {
         receivedDate = sender.date.utc(format: .date)
         
-        receivedDateTextField.text = sender.date.string(date: .long, time: .none)
+        receivedDateTextField.text = sender.date.local(date: .long, time: .none)
     }
     
     // MARK: Navigation

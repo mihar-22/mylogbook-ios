@@ -230,7 +230,7 @@ extension LogSummaryController: MKMapViewDelegate {
         
         startAnnotation.title = "Started Here"
         
-        startAnnotation.subtitle = trip.startedAt.string(date: .none, time: .short)
+        startAnnotation.subtitle = trip.startedAt.local(date: .none, time: .short)
         
         startAnnotation.coordinate = locations.first!.coordinate
         
@@ -238,7 +238,7 @@ extension LogSummaryController: MKMapViewDelegate {
         
         endAnnotation.title = "Ended Here"
 
-        endAnnotation.subtitle = trip.endedAt.string(date: .none, time: .short)
+        endAnnotation.subtitle = trip.endedAt.local(date: .none, time: .short)
         
         endAnnotation.coordinate = locations.last!.coordinate
         

@@ -173,7 +173,7 @@ struct AssessmentTask: Task {
         
         let completedAt = (self.completedAt ?? Date())
         
-        return completedAt.string(date: .long, time: .none)
+        return completedAt.local(date: .long, time: .none)
     }
     
     var learnMoreURL: URL? = nil

@@ -93,10 +93,10 @@ extension LogbookComposer {
     
     func insertTime(for trip: Trip, into row: inout String) {
         row = row.replacingOccurrences(of: "#TIME_START#",
-                                       with: trip.startedAt.string(date: .none, time: .short))
+                                       with: trip.startedAt.local(date: .none, time: .short))
         
         row = row.replacingOccurrences(of: "#TIME_END#",
-                                       with: trip.endedAt.string(date: .none, time: .short))
+                                       with: trip.endedAt.local(date: .none, time: .short))
     }
     
     func insertOdometer(for trip: Trip, into row: inout String) {
