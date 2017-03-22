@@ -29,11 +29,11 @@ enum ChartSegment {
     var all: [ChartSettable] {
         switch self {
         case .weather:
-            return TripCondition.Weather.all
+            return Weather.all
         case .traffic:
-            return TripCondition.Traffic.all
+            return Traffic.all
         case .road:
-            return TripCondition.Road.all
+            return Road.all
         }
     }
 }

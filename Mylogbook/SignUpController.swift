@@ -91,7 +91,7 @@ class SignUpController: UIViewController {
     }
 
     func didChangeBirthday(_ sender: UIDatePicker) {
-        birthday = sender.date.string(format: .date)
+        birthday = sender.date.utc(format: .date)
 
         birthdayTextField.text = sender.date.string(date: .long, time: .none)
         

@@ -27,6 +27,8 @@
 		C94BA89F1E5FF612002E8F9E /* ChartSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BA89E1E5FF612002E8F9E /* ChartSegment.swift */; };
 		C94BA8A11E5FF68D002E8F9E /* ChartValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BA8A01E5FF68D002E8F9E /* ChartValueFormatter.swift */; };
 		C951AEE91E80D8CE00E6DD00 /* TripCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C951AEE81E80D8CE00E6DD00 /* TripCondition.swift */; };
+		C951AEEB1E8205EA00E6DD00 /* tables in Resources */ = {isa = PBXBuildFile; fileRef = C951AEEA1E8205EA00E6DD00 /* tables */; };
+		C951AEF21E82140300E6DD00 /* VictoriaComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C951AEF11E82140300E6DD00 /* VictoriaComposer.swift */; };
 		C95487CA1E4C209B00C48F54 /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95487C91E4C209B00C48F54 /* Foundation.swift */; };
 		C95487D01E4D859600C48F54 /* Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95487CF1E4D859600C48F54 /* Sync.swift */; };
 		C95B3B881E31CB4100533FB6 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B3B871E31CB4100533FB6 /* Alert.swift */; };
@@ -40,7 +42,6 @@
 		C970BCEC1E31A83E00E1129A /* Supervisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCEB1E31A83E00E1129A /* Supervisor.swift */; };
 		C970BCF01E31A96300E1129A /* SupervisorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCEF1E31A96300E1129A /* SupervisorCell.swift */; };
 		C978BF311E7F713F00C422D7 /* LogbookComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978BF301E7F713F00C422D7 /* LogbookComposer.swift */; };
-		C978BF351E7FC27100C422D7 /* tables in Resources */ = {isa = PBXBuildFile; fileRef = C978BF341E7FC27100C422D7 /* tables */; };
 		C979D6111E52A7E5009891C7 /* SyncStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979D6101E52A7E5009891C7 /* SyncStore.swift */; };
 		C987DD121E64F5D00011F223 /* TripCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987DD111E64F5D00011F223 /* TripCalculator.swift */; };
 		C987DD141E651DD70011F223 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987DD131E651DD70011F223 /* Button.swift */; };
@@ -107,6 +108,8 @@
 		C94BA89E1E5FF612002E8F9E /* ChartSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSegment.swift; sourceTree = "<group>"; };
 		C94BA8A01E5FF68D002E8F9E /* ChartValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartValueFormatter.swift; sourceTree = "<group>"; };
 		C951AEE81E80D8CE00E6DD00 /* TripCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripCondition.swift; sourceTree = "<group>"; };
+		C951AEEA1E8205EA00E6DD00 /* tables */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tables; sourceTree = "<group>"; };
+		C951AEF11E82140300E6DD00 /* VictoriaComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VictoriaComposer.swift; sourceTree = "<group>"; };
 		C95487C91E4C209B00C48F54 /* Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
 		C95487CF1E4D859600C48F54 /* Sync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sync.swift; sourceTree = "<group>"; };
 		C95B3B871E31CB4100533FB6 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -120,7 +123,6 @@
 		C970BCEB1E31A83E00E1129A /* Supervisor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Supervisor.swift; sourceTree = "<group>"; };
 		C970BCEF1E31A96300E1129A /* SupervisorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupervisorCell.swift; sourceTree = "<group>"; };
 		C978BF301E7F713F00C422D7 /* LogbookComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogbookComposer.swift; sourceTree = "<group>"; };
-		C978BF341E7FC27100C422D7 /* tables */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tables; sourceTree = "<group>"; };
 		C979D6101E52A7E5009891C7 /* SyncStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncStore.swift; sourceTree = "<group>"; };
 		C987DD111E64F5D00011F223 /* TripCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripCalculator.swift; sourceTree = "<group>"; };
 		C987DD131E651DD70011F223 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -310,6 +312,14 @@
 			name = Trip;
 			sourceTree = "<group>";
 		};
+		C951AEEE1E8210AB00E6DD00 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				C951AEF11E82140300E6DD00 /* VictoriaComposer.swift */,
+			);
+			name = States;
+			sourceTree = "<group>";
+		};
 		C95CFB901E6E38E000CC0BD1 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,7 +356,7 @@
 		C978BF2C1E7F6FFD00C422D7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C978BF341E7FC27100C422D7 /* tables */,
+				C951AEEA1E8205EA00E6DD00 /* tables */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -354,6 +364,7 @@
 		C978BF2D1E7F705F00C422D7 /* Publish */ = {
 			isa = PBXGroup;
 			children = (
+				C951AEEE1E8210AB00E6DD00 /* States */,
 				C978BF301E7F713F00C422D7 /* LogbookComposer.swift */,
 			);
 			name = Publish;
@@ -589,7 +600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9CDFA8E1DEFDB2800CE0A2D /* LaunchScreen.storyboard in Resources */,
-				C978BF351E7FC27100C422D7 /* tables in Resources */,
+				C951AEEB1E8205EA00E6DD00 /* tables in Resources */,
 				C9CDFA8B1DEFDB2800CE0A2D /* Assets.xcassets in Resources */,
 				C9C6F6701E54020900231949 /* OdometerAlert.xib in Resources */,
 				C9CDFA861DEFDB2800CE0A2D /* Main.storyboard in Resources */,
@@ -706,6 +717,7 @@
 				C9CDFA811DEFDB2800CE0A2D /* AppDelegate.swift in Sources */,
 				C94235801E6BC719003E9D4E /* ValueFormatter.swift in Sources */,
 				C987DD141E651DD70011F223 /* Button.swift in Sources */,
+				C951AEF21E82140300E6DD00 /* VictoriaComposer.swift in Sources */,
 				C978BF311E7F713F00C422D7 /* LogbookComposer.swift in Sources */,
 				C935B7361E0A6FFE00FD7FFF /* AuthRoute.swift in Sources */,
 				C9EC4D3F1E401DAF00A80348 /* SoftDeletingStore.swift in Sources */,

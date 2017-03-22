@@ -55,9 +55,9 @@ class SettingsController: UITableViewController {
         permitReceivedTextField.inputView = picker
         
         if let receivedAt = Keychain.shared.get(.permitReceivedAt) {
-            permitReceivedTextField.text = receivedAt.date(format: .date).string(date: .long, time: .none)
+            permitReceivedTextField.text = receivedAt.utc(format: .date).string(date: .long, time: .none)
             
-            picker.date = receivedAt.date(format: .date)
+            picker.date = receivedAt.utc(format: .date)
         }
     }
     
@@ -76,7 +76,7 @@ class SettingsController: UITableViewController {
     }
     
     func didChangePermitReceivedDate(_ sender: UIDatePicker) {
-        Keychain.shared.set(sender.date.string(format: .date), for: .permitReceivedAt)
+        Keychain.shared.set(sender.date.utc(format: .date), for: .permitReceivedAt)
         
         permitReceivedTextField.text = sender.date.string(date: .long, time: .none)
     }

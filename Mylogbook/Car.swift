@@ -27,8 +27,8 @@ extension Car: Importable {
         registration = source["registration"].string!
         type = source["type"].string!
         
-        updatedAt = source["updated_at"].string!.date(format: .dateTime)
-        deletedAt = source["deleted_at"].string?.date(format: .dateTime)
+        updatedAt = source["updated_at"].string!.utc(format: .dateTime)
+        deletedAt = source["deleted_at"].string?.utc(format: .dateTime)
     }
 }
 

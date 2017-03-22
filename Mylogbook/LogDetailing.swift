@@ -42,7 +42,7 @@ extension LogDetailing where Self: UITableViewController {
 // MARK: Weather Controller
 
 class WeatherController: UITableViewController, LogDetailing {
-    let conditions = TripCondition.Weather.all
+    let conditions = Weather.all
     
     var delegate: LogDetailDelegate?
     
@@ -74,7 +74,7 @@ class WeatherController: UITableViewController, LogDetailing {
 // MARK: Traffic Controller
 
 class TrafficController: UITableViewController, LogDetailing {
-    let conditions = TripCondition.Traffic.all
+    let conditions = Traffic.all
     
     var delegate: LogDetailDelegate?
     
@@ -106,7 +106,7 @@ class TrafficController: UITableViewController, LogDetailing {
 // MARK: Road Controller
 
 class RoadController: UITableViewController, LogDetailing {
-    let conditions = TripCondition.Road.all
+    let conditions = Road.all
     
     var delegate: LogDetailDelegate?
     

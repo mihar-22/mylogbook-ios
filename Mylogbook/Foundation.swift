@@ -5,12 +5,12 @@ import MapKit
 // MARK: Date
 
 extension Date {
-    enum DateFormat: String {
+    enum Format: String {
         case date = "yyyy-MM-dd"
         case dateTime = "yyyy-MM-dd HH:mm:ss"
     }
     
-    func string(format: DateFormat) -> String {
+    func utc(format: Format) -> String {
         let formatter = DateFormatter()
         
         formatter.dateFormat = format.rawValue
@@ -60,23 +60,7 @@ extension Date {
 // MARK: String
 
 extension String {
-    func camelCased(seperatedBy seperator: String = " ") -> String {
-        var string = ""
-        
-        let components = self.components(separatedBy: seperator)
-        
-        let count = components.count - 1
-        
-        string += components.first!.lowercased()
-        
-        guard count > 0 else { return string }
-        
-        components[1...count].forEach { string += $0.capitalized }
-        
-        return string
-    }
-    
-    func date(format: Date.DateFormat) -> Date {
+    func utc(format: Date.Format) -> Date {
         let formatter = DateFormatter()
         
         formatter.dateFormat = format.rawValue
@@ -96,6 +80,58 @@ extension String {
         }
         
         return self
+    }
+}
+
+// MARK: String Code Helpers
+
+extension String {
+    func contains(_ character: Character) -> Bool {
+        return self.characters.contains(character)
+    }
+    
+    func contains(_ condition: TripConditionable) -> Bool {
+        return self.characters.contains(condition.code)
+    }
+    
+    func contains(_ conditions: [TripConditionable]) -> Bool {
+        for condition in conditions {
+            if !self.characters.contains(condition.code) {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    func containsAny(_ conditions: [TripConditionable]) -> Bool {
+        for condition in conditions {
+            if self.characters.contains(condition.code) {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    mutating func add(_ code: Character) {
+        self += self.isEmpty ? "\(code)" : ",\(code)"
+    }
+    
+    mutating func remove(_ code: Character) {
+        guard self.characters.contains(code) else {
+            return
+        }
+        
+        guard self.characters.count > 1 else {
+            self = ""
+            
+            return
+        }
+        
+        let target = (self.characters.first == code) ? "\(code)," : ",\(code)"
+        
+        self = self.replacingOccurrences(of: target, with: "")
     }
 }
 

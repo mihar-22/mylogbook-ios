@@ -54,7 +54,7 @@ class LogDetailsController: UIViewController {
     func validate() {
         let isValid = !trip.weather.isEmpty &&
                       !trip.traffic.isEmpty &&
-                      !trip.roads.characters.isEmpty
+                      !trip.roads.isEmpty
 
         nextButton.isEnabled = isValid
     }

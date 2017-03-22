@@ -36,46 +36,32 @@ extension Trip {
     func didOccur(_ condition: TripCondition) -> Bool {
         switch condition {
         case .weather(let type):
-            return weather.characters.contains(type.code)
+            return weather.contains(type.code)
         case .traffic(let type):
-            return traffic.characters.contains(type.code)
+            return traffic.contains(type.code)
         case .road(let type):
-            return roads.characters.contains(type.code)
+            return roads.contains(type.code)
         }
     }
     
     func set(_ didOccur: Bool, for condition: TripCondition) {
-        func change(_ code: Character, on string: inout String) {
-            let isContained = string.characters.contains(code)
-            
-            guard (didOccur && !isContained) || (!didOccur && isContained) else {
+        func update(_ code: Character, on string: inout String) {
+            if !didOccur {
+                string.remove(code)
+             
                 return
             }
             
-            guard didOccur else {
-                guard string.characters.count > 1 else {
-                    string = ""
-                    
-                    return
-                }
-                
-                let target = (string.characters.first == code) ? "\(code)," : ",\(code)"
-                
-                string = string.replacingOccurrences(of: target, with: "")
-                
-                return
-            }
-            
-            string += string.isEmpty ? "\(code)" : ",\(code)"
+            string.add(code)
         }
-        
+
         switch condition {
         case .weather(let type):
-            change(type.code, on: &weather)
+            update(type.code, on: &weather)
         case .traffic(let type):
-            change(type.code, on: &traffic)
+            update(type.code, on: &traffic)
         case .road(let type):
-            change(type.code, on: &roads)
+            update(type.code, on: &roads)
         }
     }
 }
@@ -98,8 +84,8 @@ extension Trip: Importable {
         supervisor = transaction.fetchOne(From(Supervisor.self),
                                           Where("id = \(supervisorId)"))!
         
-        startedAt = source["started_at"].string!.date(format: .dateTime)
-        endedAt = source["ended_at"].string!.date(format: .dateTime)
+        startedAt = source["started_at"].string!.utc(format: .dateTime)
+        endedAt = source["ended_at"].string!.utc(format: .dateTime)
         odometer = source["odometer"].int!
         distance = source["distance"].double!
         
@@ -122,8 +108,8 @@ extension Trip: Resourceable {
     
     func toJSON() -> [String: Any] {
         return [
-            "started_at": startedAt.string(format: .dateTime),
-            "ended_at": endedAt.string(format: .dateTime),
+            "started_at": startedAt.utc(format: .dateTime),
+            "ended_at": endedAt.utc(format: .dateTime),
             "odometer": odometer,
             "distance": distance,
             "car_id": car.id,

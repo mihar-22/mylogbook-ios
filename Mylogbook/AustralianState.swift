@@ -81,7 +81,7 @@ extension AustralianState {
     }
     
     var monthsRequired: Int {
-        let birthday = Keychain.shared.get(.birthday)!.date(format: .date)
+        let birthday = Keychain.shared.get(.birthday)!.utc(format: .date)
         
         let age = Date().years(since: birthday)
         

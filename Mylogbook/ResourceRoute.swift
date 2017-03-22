@@ -34,7 +34,7 @@ extension ResourceRoute: Routing {
         case .index, .store:
             return ""
         case .sync(let since):
-            return since.string(format: .dateTime)
+            return since.utc(format: .dateTime)
         case .update(let model):
             return "\(model.id)"
         case .destroy(let model):

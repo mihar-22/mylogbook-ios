@@ -139,7 +139,7 @@ class DashboardController: UIViewController {
     // MARK: Actions
     
     @IBAction func didTapPublish(_ sender: UIBarButtonItem) {
-        let composer = LogbookComposer()
+        let composer = VictoriaComposer()
         
         let html = composer.renderHTML()
         

@@ -209,7 +209,7 @@ class Tasks {
         tasks.append(l1LogTask)
         
         // 2.
-        var l1HoldTask = HoldTask(startedAt: Keychain.shared.get(.permitReceivedAt)!.date(format: .date),
+        var l1HoldTask = HoldTask(startedAt: Keychain.shared.get(.permitReceivedAt)!.utc(format: .date),
                                   monthsRequired: AustralianState.monthsRequired(for: .L1),
                                   dependencies: [])
         
@@ -311,7 +311,7 @@ class Tasks {
     }
     
     private func createHoldTask() -> Task {
-        return HoldTask(startedAt: Keychain.shared.get(.permitReceivedAt)!.date(format: .date),
+        return HoldTask(startedAt: Keychain.shared.get(.permitReceivedAt)!.utc(format: .date),
                         monthsRequired: residingState.monthsRequired,
                         dependencies: [])
     }

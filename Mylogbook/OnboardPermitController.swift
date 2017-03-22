@@ -38,7 +38,7 @@ class OnboardPermitController: UIViewController {
     // MARK: Actions
     
     func didChangeDate(_ sender: UIDatePicker) {
-        receivedDate = sender.date.string(format: .date)
+        receivedDate = sender.date.utc(format: .date)
         
         receivedDateTextField.text = sender.date.string(date: .long, time: .none)
     }
@@ -46,7 +46,7 @@ class OnboardPermitController: UIViewController {
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let receivedAt = receivedDate ?? Date().string(format: .date)
+        let receivedAt = receivedDate ?? Date().utc(format: .date)
         
         Keychain.shared.set(receivedAt, for: .permitReceivedAt)
     }
