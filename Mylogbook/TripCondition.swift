@@ -16,15 +16,17 @@ extension TripConditionable where Self: RawRepresentable, Self.RawValue == Strin
 // MARK: Trip Conditions
 
 enum TripCondition {
-    case weather(Weather), traffic(Traffic), road(Road)
+    case weather(Weather), traffic(Traffic), road(Road), light(Light)
     
     var rawValue: String {
-        switch self{
+        switch self {
         case .weather(let type):
             return type.rawValue
         case .traffic(let type):
             return type.rawValue
         case .road(let type):
+            return type.rawValue
+        case .light(let type):
             return type.rawValue
         }
     }
@@ -35,6 +37,7 @@ enum TripCondition {
         for type in Weather.all { all.append(.weather(type)) }
         for type in Traffic.all { all.append(.traffic(type)) }
         for type in Road.all { all.append(.road(type)) }
+        for type in Light.all { all.append(.light(type)) }
         
         return all
     }
@@ -95,6 +98,43 @@ enum Traffic: String, TripConditionable, ChartSettable {
             return UIColor(red: 236/255, green: 190/255, blue: 95/255, alpha: 1)
         case .heavy:
             return UIColor(red: 211/255, green: 106/255, blue: 106/255, alpha: 1)
+        }
+    }
+}
+
+// MARK: Light
+
+enum Light: String, TripConditionable, ChartSettable {
+    case dawn = "Dawn"
+    case day = "Day"
+    case dusk = "Dusk"
+    case night = "Night"
+    
+    static let all = [dawn, day, dusk, night]
+    
+    var code: Character {
+        switch self {
+        case .day:
+            return "D"
+        case .dawn:
+            return "W"
+        case .dusk:
+            return "K"
+        case .night:
+            return "N"
+        }
+    }
+    
+    var color: UIColor {
+        switch self {
+        case .day:
+            return UIColor(red: 243/255, green: 203/255, blue: 87/255, alpha: 1)
+        case .dawn:
+            return UIColor(red: 168/255, green: 220/255, blue: 223/255, alpha: 1)
+        case .dusk:
+            return UIColor(red: 125/255, green: 175/255, blue: 222/255, alpha: 1)
+        case .night:
+            return UIColor(red: 81/255, green: 103/255, blue: 160/255, alpha: 1)
         }
     }
 }

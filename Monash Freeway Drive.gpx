@@ -1,0 +1,4270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.0">
+  <time>2017-03-23T04:03:49.199Z</time>
+  <bounds minlat="-38.003410000" minlon="144.952310000" maxlat="-37.807976500" maxlon="145.253800000"/>
+  <wpt lat="-37.999515900" lon="145.245138300">
+    <name>WPT001</name>
+    <cmt>WPT001</cmt>
+    <desc>WPT001</desc>
+  </wpt>
+  <wpt lat="-38.000450000" lon="145.244830000">
+    <name>WPT002</name>
+    <cmt>WPT002</cmt>
+    <desc>WPT002</desc>
+  </wpt>
+  <wpt lat="-38.000453300" lon="145.244834400">
+    <name>WPT003</name>
+    <cmt>WPT003</cmt>
+    <desc>WPT003</desc>
+  </wpt>
+  <wpt lat="-38.000500000" lon="145.245190000">
+    <name>WPT004</name>
+    <cmt>WPT004</cmt>
+    <desc>WPT004</desc>
+  </wpt>
+  <wpt lat="-38.000570000" lon="145.245760000">
+    <name>WPT005</name>
+    <cmt>WPT005</cmt>
+    <desc>WPT005</desc>
+  </wpt>
+  <wpt lat="-38.000600000" lon="145.246090000">
+    <name>WPT006</name>
+    <cmt>WPT006</cmt>
+    <desc>WPT006</desc>
+  </wpt>
+  <wpt lat="-38.000603900" lon="145.246090600">
+    <name>WPT007</name>
+    <cmt>WPT007</cmt>
+    <desc>WPT007</desc>
+  </wpt>
+  <wpt lat="-38.000810000" lon="145.246020000">
+    <name>WPT008</name>
+    <cmt>WPT008</cmt>
+    <desc>WPT008</desc>
+  </wpt>
+  <wpt lat="-38.001520000" lon="145.245780000">
+    <name>WPT009</name>
+    <cmt>WPT009</cmt>
+    <desc>WPT009</desc>
+  </wpt>
+  <wpt lat="-38.001560000" lon="145.245760000">
+    <name>WPT010</name>
+    <cmt>WPT010</cmt>
+    <desc>WPT010</desc>
+  </wpt>
+  <wpt lat="-38.001960000" lon="145.245630000">
+    <name>WPT011</name>
+    <cmt>WPT011</cmt>
+    <desc>WPT011</desc>
+  </wpt>
+  <wpt lat="-38.002430000" lon="145.245470000">
+    <name>WPT012</name>
+    <cmt>WPT012</cmt>
+    <desc>WPT012</desc>
+  </wpt>
+  <wpt lat="-38.002433100" lon="145.245466100">
+    <name>WPT013</name>
+    <cmt>WPT013</cmt>
+    <desc>WPT013</desc>
+  </wpt>
+  <wpt lat="-38.002510000" lon="145.245470000">
+    <name>WPT014</name>
+    <cmt>WPT014</cmt>
+    <desc>WPT014</desc>
+  </wpt>
+  <wpt lat="-38.002550000" lon="145.245490000">
+    <name>WPT015</name>
+    <cmt>WPT015</cmt>
+    <desc>WPT015</desc>
+  </wpt>
+  <wpt lat="-38.002610000" lon="145.245510000">
+    <name>WPT016</name>
+    <cmt>WPT016</cmt>
+    <desc>WPT016</desc>
+  </wpt>
+  <wpt lat="-38.002640000" lon="145.245520000">
+    <name>WPT017</name>
+    <cmt>WPT017</cmt>
+    <desc>WPT017</desc>
+  </wpt>
+  <wpt lat="-38.002690000" lon="145.245550000">
+    <name>WPT018</name>
+    <cmt>WPT018</cmt>
+    <desc>WPT018</desc>
+  </wpt>
+  <wpt lat="-38.002780000" lon="145.245630000">
+    <name>WPT019</name>
+    <cmt>WPT019</cmt>
+    <desc>WPT019</desc>
+  </wpt>
+  <wpt lat="-38.002810000" lon="145.245990000">
+    <name>WPT020</name>
+    <cmt>WPT020</cmt>
+    <desc>WPT020</desc>
+  </wpt>
+  <wpt lat="-38.002860000" lon="145.246350000">
+    <name>WPT021</name>
+    <cmt>WPT021</cmt>
+    <desc>WPT021</desc>
+  </wpt>
+  <wpt lat="-38.002870000" lon="145.246390000">
+    <name>WPT022</name>
+    <cmt>WPT022</cmt>
+    <desc>WPT022</desc>
+  </wpt>
+  <wpt lat="-38.002870000" lon="145.246440000">
+    <name>WPT023</name>
+    <cmt>WPT023</cmt>
+    <desc>WPT023</desc>
+  </wpt>
+  <wpt lat="-38.002890000" lon="145.246600000">
+    <name>WPT024</name>
+    <cmt>WPT024</cmt>
+    <desc>WPT024</desc>
+  </wpt>
+  <wpt lat="-38.002940000" lon="145.247060000">
+    <name>WPT025</name>
+    <cmt>WPT025</cmt>
+    <desc>WPT025</desc>
+  </wpt>
+  <wpt lat="-38.002950000" lon="145.247140000">
+    <name>WPT026</name>
+    <cmt>WPT026</cmt>
+    <desc>WPT026</desc>
+  </wpt>
+  <wpt lat="-38.002960000" lon="145.247200000">
+    <name>WPT027</name>
+    <cmt>WPT027</cmt>
+    <desc>WPT027</desc>
+  </wpt>
+  <wpt lat="-38.002980000" lon="145.247480000">
+    <name>WPT028</name>
+    <cmt>WPT028</cmt>
+    <desc>WPT028</desc>
+  </wpt>
+  <wpt lat="-38.003020000" lon="145.247680000">
+    <name>WPT029</name>
+    <cmt>WPT029</cmt>
+    <desc>WPT029</desc>
+  </wpt>
+  <wpt lat="-38.003120000" lon="145.248620000">
+    <name>WPT030</name>
+    <cmt>WPT030</cmt>
+    <desc>WPT030</desc>
+  </wpt>
+  <wpt lat="-38.003190000" lon="145.249220000">
+    <name>WPT031</name>
+    <cmt>WPT031</cmt>
+    <desc>WPT031</desc>
+  </wpt>
+  <wpt lat="-38.003330000" lon="145.250260000">
+    <name>WPT032</name>
+    <cmt>WPT032</cmt>
+    <desc>WPT032</desc>
+  </wpt>
+  <wpt lat="-38.003410000" lon="145.250830000">
+    <name>WPT033</name>
+    <cmt>WPT033</cmt>
+    <desc>WPT033</desc>
+  </wpt>
+  <wpt lat="-38.003405300" lon="145.250827900">
+    <name>WPT034</name>
+    <cmt>WPT034</cmt>
+    <desc>WPT034</desc>
+  </wpt>
+  <wpt lat="-38.003390000" lon="145.251040000">
+    <name>WPT035</name>
+    <cmt>WPT035</cmt>
+    <desc>WPT035</desc>
+  </wpt>
+  <wpt lat="-38.003380000" lon="145.251100000">
+    <name>WPT036</name>
+    <cmt>WPT036</cmt>
+    <desc>WPT036</desc>
+  </wpt>
+  <wpt lat="-38.003360000" lon="145.251170000">
+    <name>WPT037</name>
+    <cmt>WPT037</cmt>
+    <desc>WPT037</desc>
+  </wpt>
+  <wpt lat="-38.003330000" lon="145.251270000">
+    <name>WPT038</name>
+    <cmt>WPT038</cmt>
+    <desc>WPT038</desc>
+  </wpt>
+  <wpt lat="-38.003290000" lon="145.251400000">
+    <name>WPT039</name>
+    <cmt>WPT039</cmt>
+    <desc>WPT039</desc>
+  </wpt>
+  <wpt lat="-38.003270000" lon="145.251430000">
+    <name>WPT040</name>
+    <cmt>WPT040</cmt>
+    <desc>WPT040</desc>
+  </wpt>
+  <wpt lat="-38.003250000" lon="145.251470000">
+    <name>WPT041</name>
+    <cmt>WPT041</cmt>
+    <desc>WPT041</desc>
+  </wpt>
+  <wpt lat="-38.003190000" lon="145.251550000">
+    <name>WPT042</name>
+    <cmt>WPT042</cmt>
+    <desc>WPT042</desc>
+  </wpt>
+  <wpt lat="-38.003160000" lon="145.251590000">
+    <name>WPT043</name>
+    <cmt>WPT043</cmt>
+    <desc>WPT043</desc>
+  </wpt>
+  <wpt lat="-38.003120000" lon="145.251630000">
+    <name>WPT044</name>
+    <cmt>WPT044</cmt>
+    <desc>WPT044</desc>
+  </wpt>
+  <wpt lat="-38.002910000" lon="145.251650000">
+    <name>WPT045</name>
+    <cmt>WPT045</cmt>
+    <desc>WPT045</desc>
+  </wpt>
+  <wpt lat="-38.001850000" lon="145.251850000">
+    <name>WPT046</name>
+    <cmt>WPT046</cmt>
+    <desc>WPT046</desc>
+  </wpt>
+  <wpt lat="-38.001540000" lon="145.251910000">
+    <name>WPT047</name>
+    <cmt>WPT047</cmt>
+    <desc>WPT047</desc>
+  </wpt>
+  <wpt lat="-38.001010000" lon="145.251980000">
+    <name>WPT048</name>
+    <cmt>WPT048</cmt>
+    <desc>WPT048</desc>
+  </wpt>
+  <wpt lat="-38.000590000" lon="145.252050000">
+    <name>WPT049</name>
+    <cmt>WPT049</cmt>
+    <desc>WPT049</desc>
+  </wpt>
+  <wpt lat="-38.000260000" lon="145.252100000">
+    <name>WPT050</name>
+    <cmt>WPT050</cmt>
+    <desc>WPT050</desc>
+  </wpt>
+  <wpt lat="-38.000160000" lon="145.252130000">
+    <name>WPT051</name>
+    <cmt>WPT051</cmt>
+    <desc>WPT051</desc>
+  </wpt>
+  <wpt lat="-38.000020000" lon="145.252180000">
+    <name>WPT052</name>
+    <cmt>WPT052</cmt>
+    <desc>WPT052</desc>
+  </wpt>
+  <wpt lat="-38.000024000" lon="145.252181800">
+    <name>WPT053</name>
+    <cmt>WPT053</cmt>
+    <desc>WPT053</desc>
+  </wpt>
+  <wpt lat="-37.999250000" lon="145.252260000">
+    <name>WPT054</name>
+    <cmt>WPT054</cmt>
+    <desc>WPT054</desc>
+  </wpt>
+  <wpt lat="-37.998660000" lon="145.252350000">
+    <name>WPT055</name>
+    <cmt>WPT055</cmt>
+    <desc>WPT055</desc>
+  </wpt>
+  <wpt lat="-37.998370000" lon="145.252400000">
+    <name>WPT056</name>
+    <cmt>WPT056</cmt>
+    <desc>WPT056</desc>
+  </wpt>
+  <wpt lat="-37.997490000" lon="145.252600000">
+    <name>WPT057</name>
+    <cmt>WPT057</cmt>
+    <desc>WPT057</desc>
+  </wpt>
+  <wpt lat="-37.997380000" lon="145.252640000">
+    <name>WPT058</name>
+    <cmt>WPT058</cmt>
+    <desc>WPT058</desc>
+  </wpt>
+  <wpt lat="-37.996620000" lon="145.252840000">
+    <name>WPT059</name>
+    <cmt>WPT059</cmt>
+    <desc>WPT059</desc>
+  </wpt>
+  <wpt lat="-37.996210000" lon="145.252980000">
+    <name>WPT060</name>
+    <cmt>WPT060</cmt>
+    <desc>WPT060</desc>
+  </wpt>
+  <wpt lat="-37.996120000" lon="145.253010000">
+    <name>WPT061</name>
+    <cmt>WPT061</cmt>
+    <desc>WPT061</desc>
+  </wpt>
+  <wpt lat="-37.995850000" lon="145.253100000">
+    <name>WPT062</name>
+    <cmt>WPT062</cmt>
+    <desc>WPT062</desc>
+  </wpt>
+  <wpt lat="-37.995250000" lon="145.253290000">
+    <name>WPT063</name>
+    <cmt>WPT063</cmt>
+    <desc>WPT063</desc>
+  </wpt>
+  <wpt lat="-37.994620000" lon="145.253520000">
+    <name>WPT064</name>
+    <cmt>WPT064</cmt>
+    <desc>WPT064</desc>
+  </wpt>
+  <wpt lat="-37.994410000" lon="145.253580000">
+    <name>WPT065</name>
+    <cmt>WPT065</cmt>
+    <desc>WPT065</desc>
+  </wpt>
+  <wpt lat="-37.994170000" lon="145.253640000">
+    <name>WPT066</name>
+    <cmt>WPT066</cmt>
+    <desc>WPT066</desc>
+  </wpt>
+  <wpt lat="-37.994010000" lon="145.253690000">
+    <name>WPT067</name>
+    <cmt>WPT067</cmt>
+    <desc>WPT067</desc>
+  </wpt>
+  <wpt lat="-37.993780000" lon="145.253730000">
+    <name>WPT068</name>
+    <cmt>WPT068</cmt>
+    <desc>WPT068</desc>
+  </wpt>
+  <wpt lat="-37.993540000" lon="145.253770000">
+    <name>WPT069</name>
+    <cmt>WPT069</cmt>
+    <desc>WPT069</desc>
+  </wpt>
+  <wpt lat="-37.993220000" lon="145.253800000">
+    <name>WPT070</name>
+    <cmt>WPT070</cmt>
+    <desc>WPT070</desc>
+  </wpt>
+  <wpt lat="-37.993110000" lon="145.253800000">
+    <name>WPT071</name>
+    <cmt>WPT071</cmt>
+    <desc>WPT071</desc>
+  </wpt>
+  <wpt lat="-37.993000000" lon="145.253800000">
+    <name>WPT072</name>
+    <cmt>WPT072</cmt>
+    <desc>WPT072</desc>
+  </wpt>
+  <wpt lat="-37.992730000" lon="145.253790000">
+    <name>WPT073</name>
+    <cmt>WPT073</cmt>
+    <desc>WPT073</desc>
+  </wpt>
+  <wpt lat="-37.992360000" lon="145.253750000">
+    <name>WPT074</name>
+    <cmt>WPT074</cmt>
+    <desc>WPT074</desc>
+  </wpt>
+  <wpt lat="-37.992160000" lon="145.253720000">
+    <name>WPT075</name>
+    <cmt>WPT075</cmt>
+    <desc>WPT075</desc>
+  </wpt>
+  <wpt lat="-37.992150000" lon="145.253720000">
+    <name>WPT076</name>
+    <cmt>WPT076</cmt>
+    <desc>WPT076</desc>
+  </wpt>
+  <wpt lat="-37.991960000" lon="145.253670000">
+    <name>WPT077</name>
+    <cmt>WPT077</cmt>
+    <desc>WPT077</desc>
+  </wpt>
+  <wpt lat="-37.991810000" lon="145.253630000">
+    <name>WPT078</name>
+    <cmt>WPT078</cmt>
+    <desc>WPT078</desc>
+  </wpt>
+  <wpt lat="-37.991580000" lon="145.253570000">
+    <name>WPT079</name>
+    <cmt>WPT079</cmt>
+    <desc>WPT079</desc>
+  </wpt>
+  <wpt lat="-37.991390000" lon="145.253500000">
+    <name>WPT080</name>
+    <cmt>WPT080</cmt>
+    <desc>WPT080</desc>
+  </wpt>
+  <wpt lat="-37.991130000" lon="145.253390000">
+    <name>WPT081</name>
+    <cmt>WPT081</cmt>
+    <desc>WPT081</desc>
+  </wpt>
+  <wpt lat="-37.990910000" lon="145.253300000">
+    <name>WPT082</name>
+    <cmt>WPT082</cmt>
+    <desc>WPT082</desc>
+  </wpt>
+  <wpt lat="-37.990670000" lon="145.253170000">
+    <name>WPT083</name>
+    <cmt>WPT083</cmt>
+    <desc>WPT083</desc>
+  </wpt>
+  <wpt lat="-37.990560000" lon="145.253110000">
+    <name>WPT084</name>
+    <cmt>WPT084</cmt>
+    <desc>WPT084</desc>
+  </wpt>
+  <wpt lat="-37.990440000" lon="145.253030000">
+    <name>WPT085</name>
+    <cmt>WPT085</cmt>
+    <desc>WPT085</desc>
+  </wpt>
+  <wpt lat="-37.990090000" lon="145.252780000">
+    <name>WPT086</name>
+    <cmt>WPT086</cmt>
+    <desc>WPT086</desc>
+  </wpt>
+  <wpt lat="-37.989950000" lon="145.252680000">
+    <name>WPT087</name>
+    <cmt>WPT087</cmt>
+    <desc>WPT087</desc>
+  </wpt>
+  <wpt lat="-37.989840000" lon="145.252590000">
+    <name>WPT088</name>
+    <cmt>WPT088</cmt>
+    <desc>WPT088</desc>
+  </wpt>
+  <wpt lat="-37.989740000" lon="145.252500000">
+    <name>WPT089</name>
+    <cmt>WPT089</cmt>
+    <desc>WPT089</desc>
+  </wpt>
+  <wpt lat="-37.989490000" lon="145.252290000">
+    <name>WPT090</name>
+    <cmt>WPT090</cmt>
+    <desc>WPT090</desc>
+  </wpt>
+  <wpt lat="-37.989050000" lon="145.251880000">
+    <name>WPT091</name>
+    <cmt>WPT091</cmt>
+    <desc>WPT091</desc>
+  </wpt>
+  <wpt lat="-37.988770000" lon="145.251630000">
+    <name>WPT092</name>
+    <cmt>WPT092</cmt>
+    <desc>WPT092</desc>
+  </wpt>
+  <wpt lat="-37.988460000" lon="145.251350000">
+    <name>WPT093</name>
+    <cmt>WPT093</cmt>
+    <desc>WPT093</desc>
+  </wpt>
+  <wpt lat="-37.988080000" lon="145.251010000">
+    <name>WPT094</name>
+    <cmt>WPT094</cmt>
+    <desc>WPT094</desc>
+  </wpt>
+  <wpt lat="-37.987790000" lon="145.250740000">
+    <name>WPT095</name>
+    <cmt>WPT095</cmt>
+    <desc>WPT095</desc>
+  </wpt>
+  <wpt lat="-37.987580000" lon="145.250560000">
+    <name>WPT096</name>
+    <cmt>WPT096</cmt>
+    <desc>WPT096</desc>
+  </wpt>
+  <wpt lat="-37.987500000" lon="145.250500000">
+    <name>WPT097</name>
+    <cmt>WPT097</cmt>
+    <desc>WPT097</desc>
+  </wpt>
+  <wpt lat="-37.987430000" lon="145.250430000">
+    <name>WPT098</name>
+    <cmt>WPT098</cmt>
+    <desc>WPT098</desc>
+  </wpt>
+  <wpt lat="-37.987410000" lon="145.250410000">
+    <name>WPT099</name>
+    <cmt>WPT099</cmt>
+    <desc>WPT099</desc>
+  </wpt>
+  <wpt lat="-37.987070000" lon="145.250090000">
+    <name>WPT100</name>
+    <cmt>WPT100</cmt>
+    <desc>WPT100</desc>
+  </wpt>
+  <wpt lat="-37.986890000" lon="145.249940000">
+    <name>WPT101</name>
+    <cmt>WPT101</cmt>
+    <desc>WPT101</desc>
+  </wpt>
+  <wpt lat="-37.986790000" lon="145.249850000">
+    <name>WPT102</name>
+    <cmt>WPT102</cmt>
+    <desc>WPT102</desc>
+  </wpt>
+  <wpt lat="-37.986220000" lon="145.249270000">
+    <name>WPT103</name>
+    <cmt>WPT103</cmt>
+    <desc>WPT103</desc>
+  </wpt>
+  <wpt lat="-37.985960000" lon="145.249000000">
+    <name>WPT104</name>
+    <cmt>WPT104</cmt>
+    <desc>WPT104</desc>
+  </wpt>
+  <wpt lat="-37.985930000" lon="145.248970000">
+    <name>WPT105</name>
+    <cmt>WPT105</cmt>
+    <desc>WPT105</desc>
+  </wpt>
+  <wpt lat="-37.985900000" lon="145.248950000">
+    <name>WPT106</name>
+    <cmt>WPT106</cmt>
+    <desc>WPT106</desc>
+  </wpt>
+  <wpt lat="-37.985880000" lon="145.248940000">
+    <name>WPT107</name>
+    <cmt>WPT107</cmt>
+    <desc>WPT107</desc>
+  </wpt>
+  <wpt lat="-37.985860000" lon="145.248930000">
+    <name>WPT108</name>
+    <cmt>WPT108</cmt>
+    <desc>WPT108</desc>
+  </wpt>
+  <wpt lat="-37.985830000" lon="145.248920000">
+    <name>WPT109</name>
+    <cmt>WPT109</cmt>
+    <desc>WPT109</desc>
+  </wpt>
+  <wpt lat="-37.985770000" lon="145.248930000">
+    <name>WPT110</name>
+    <cmt>WPT110</cmt>
+    <desc>WPT110</desc>
+  </wpt>
+  <wpt lat="-37.985771900" lon="145.248925400">
+    <name>WPT111</name>
+    <cmt>WPT111</cmt>
+    <desc>WPT111</desc>
+  </wpt>
+  <wpt lat="-37.985180000" lon="145.248220000">
+    <name>WPT112</name>
+    <cmt>WPT112</cmt>
+    <desc>WPT112</desc>
+  </wpt>
+  <wpt lat="-37.984970000" lon="145.248030000">
+    <name>WPT113</name>
+    <cmt>WPT113</cmt>
+    <desc>WPT113</desc>
+  </wpt>
+  <wpt lat="-37.984680000" lon="145.247700000">
+    <name>WPT114</name>
+    <cmt>WPT114</cmt>
+    <desc>WPT114</desc>
+  </wpt>
+  <wpt lat="-37.984020000" lon="145.247000000">
+    <name>WPT115</name>
+    <cmt>WPT115</cmt>
+    <desc>WPT115</desc>
+  </wpt>
+  <wpt lat="-37.983840000" lon="145.246800000">
+    <name>WPT116</name>
+    <cmt>WPT116</cmt>
+    <desc>WPT116</desc>
+  </wpt>
+  <wpt lat="-37.983060000" lon="145.245950000">
+    <name>WPT117</name>
+    <cmt>WPT117</cmt>
+    <desc>WPT117</desc>
+  </wpt>
+  <wpt lat="-37.982870000" lon="145.245720000">
+    <name>WPT118</name>
+    <cmt>WPT118</cmt>
+    <desc>WPT118</desc>
+  </wpt>
+  <wpt lat="-37.982090000" lon="145.244930000">
+    <name>WPT119</name>
+    <cmt>WPT119</cmt>
+    <desc>WPT119</desc>
+  </wpt>
+  <wpt lat="-37.981450000" lon="145.244240000">
+    <name>WPT120</name>
+    <cmt>WPT120</cmt>
+    <desc>WPT120</desc>
+  </wpt>
+  <wpt lat="-37.980640000" lon="145.243370000">
+    <name>WPT121</name>
+    <cmt>WPT121</cmt>
+    <desc>WPT121</desc>
+  </wpt>
+  <wpt lat="-37.979420000" lon="145.242090000">
+    <name>WPT122</name>
+    <cmt>WPT122</cmt>
+    <desc>WPT122</desc>
+  </wpt>
+  <wpt lat="-37.979010000" lon="145.241650000">
+    <name>WPT123</name>
+    <cmt>WPT123</cmt>
+    <desc>WPT123</desc>
+  </wpt>
+  <wpt lat="-37.978810000" lon="145.241440000">
+    <name>WPT124</name>
+    <cmt>WPT124</cmt>
+    <desc>WPT124</desc>
+  </wpt>
+  <wpt lat="-37.978550000" lon="145.241170000">
+    <name>WPT125</name>
+    <cmt>WPT125</cmt>
+    <desc>WPT125</desc>
+  </wpt>
+  <wpt lat="-37.978030000" lon="145.240610000">
+    <name>WPT126</name>
+    <cmt>WPT126</cmt>
+    <desc>WPT126</desc>
+  </wpt>
+  <wpt lat="-37.977370000" lon="145.239920000">
+    <name>WPT127</name>
+    <cmt>WPT127</cmt>
+    <desc>WPT127</desc>
+  </wpt>
+  <wpt lat="-37.976840000" lon="145.239420000">
+    <name>WPT128</name>
+    <cmt>WPT128</cmt>
+    <desc>WPT128</desc>
+  </wpt>
+  <wpt lat="-37.976290000" lon="145.238970000">
+    <name>WPT129</name>
+    <cmt>WPT129</cmt>
+    <desc>WPT129</desc>
+  </wpt>
+  <wpt lat="-37.975570000" lon="145.238480000">
+    <name>WPT130</name>
+    <cmt>WPT130</cmt>
+    <desc>WPT130</desc>
+  </wpt>
+  <wpt lat="-37.974870000" lon="145.238090000">
+    <name>WPT131</name>
+    <cmt>WPT131</cmt>
+    <desc>WPT131</desc>
+  </wpt>
+  <wpt lat="-37.973890000" lon="145.237570000">
+    <name>WPT132</name>
+    <cmt>WPT132</cmt>
+    <desc>WPT132</desc>
+  </wpt>
+  <wpt lat="-37.973520000" lon="145.237440000">
+    <name>WPT133</name>
+    <cmt>WPT133</cmt>
+    <desc>WPT133</desc>
+  </wpt>
+  <wpt lat="-37.972990000" lon="145.237260000">
+    <name>WPT134</name>
+    <cmt>WPT134</cmt>
+    <desc>WPT134</desc>
+  </wpt>
+  <wpt lat="-37.971740000" lon="145.236990000">
+    <name>WPT135</name>
+    <cmt>WPT135</cmt>
+    <desc>WPT135</desc>
+  </wpt>
+  <wpt lat="-37.971160000" lon="145.236850000">
+    <name>WPT136</name>
+    <cmt>WPT136</cmt>
+    <desc>WPT136</desc>
+  </wpt>
+  <wpt lat="-37.970120000" lon="145.236530000">
+    <name>WPT137</name>
+    <cmt>WPT137</cmt>
+    <desc>WPT137</desc>
+  </wpt>
+  <wpt lat="-37.969600000" lon="145.236310000">
+    <name>WPT138</name>
+    <cmt>WPT138</cmt>
+    <desc>WPT138</desc>
+  </wpt>
+  <wpt lat="-37.969210000" lon="145.236110000">
+    <name>WPT139</name>
+    <cmt>WPT139</cmt>
+    <desc>WPT139</desc>
+  </wpt>
+  <wpt lat="-37.969020000" lon="145.235960000">
+    <name>WPT140</name>
+    <cmt>WPT140</cmt>
+    <desc>WPT140</desc>
+  </wpt>
+  <wpt lat="-37.968810000" lon="145.235870000">
+    <name>WPT141</name>
+    <cmt>WPT141</cmt>
+    <desc>WPT141</desc>
+  </wpt>
+  <wpt lat="-37.968600000" lon="145.235750000">
+    <name>WPT142</name>
+    <cmt>WPT142</cmt>
+    <desc>WPT142</desc>
+  </wpt>
+  <wpt lat="-37.967830000" lon="145.235280000">
+    <name>WPT143</name>
+    <cmt>WPT143</cmt>
+    <desc>WPT143</desc>
+  </wpt>
+  <wpt lat="-37.967230000" lon="145.234830000">
+    <name>WPT144</name>
+    <cmt>WPT144</cmt>
+    <desc>WPT144</desc>
+  </wpt>
+  <wpt lat="-37.966870000" lon="145.234530000">
+    <name>WPT145</name>
+    <cmt>WPT145</cmt>
+    <desc>WPT145</desc>
+  </wpt>
+  <wpt lat="-37.966850000" lon="145.234520000">
+    <name>WPT146</name>
+    <cmt>WPT146</cmt>
+    <desc>WPT146</desc>
+  </wpt>
+  <wpt lat="-37.966750000" lon="145.234430000">
+    <name>WPT147</name>
+    <cmt>WPT147</cmt>
+    <desc>WPT147</desc>
+  </wpt>
+  <wpt lat="-37.966030000" lon="145.233710000">
+    <name>WPT148</name>
+    <cmt>WPT148</cmt>
+    <desc>WPT148</desc>
+  </wpt>
+  <wpt lat="-37.965860000" lon="145.233510000">
+    <name>WPT149</name>
+    <cmt>WPT149</cmt>
+    <desc>WPT149</desc>
+  </wpt>
+  <wpt lat="-37.965480000" lon="145.233090000">
+    <name>WPT150</name>
+    <cmt>WPT150</cmt>
+    <desc>WPT150</desc>
+  </wpt>
+  <wpt lat="-37.964700000" lon="145.231980000">
+    <name>WPT151</name>
+    <cmt>WPT151</cmt>
+    <desc>WPT151</desc>
+  </wpt>
+  <wpt lat="-37.963450000" lon="145.230150000">
+    <name>WPT152</name>
+    <cmt>WPT152</cmt>
+    <desc>WPT152</desc>
+  </wpt>
+  <wpt lat="-37.963360000" lon="145.230010000">
+    <name>WPT153</name>
+    <cmt>WPT153</cmt>
+    <desc>WPT153</desc>
+  </wpt>
+  <wpt lat="-37.963070000" lon="145.229600000">
+    <name>WPT154</name>
+    <cmt>WPT154</cmt>
+    <desc>WPT154</desc>
+  </wpt>
+  <wpt lat="-37.962400000" lon="145.228660000">
+    <name>WPT155</name>
+    <cmt>WPT155</cmt>
+    <desc>WPT155</desc>
+  </wpt>
+  <wpt lat="-37.961680000" lon="145.227670000">
+    <name>WPT156</name>
+    <cmt>WPT156</cmt>
+    <desc>WPT156</desc>
+  </wpt>
+  <wpt lat="-37.961020000" lon="145.226770000">
+    <name>WPT157</name>
+    <cmt>WPT157</cmt>
+    <desc>WPT157</desc>
+  </wpt>
+  <wpt lat="-37.960900000" lon="145.226590000">
+    <name>WPT158</name>
+    <cmt>WPT158</cmt>
+    <desc>WPT158</desc>
+  </wpt>
+  <wpt lat="-37.960260000" lon="145.225720000">
+    <name>WPT159</name>
+    <cmt>WPT159</cmt>
+    <desc>WPT159</desc>
+  </wpt>
+  <wpt lat="-37.959820000" lon="145.225070000">
+    <name>WPT160</name>
+    <cmt>WPT160</cmt>
+    <desc>WPT160</desc>
+  </wpt>
+  <wpt lat="-37.958360000" lon="145.222980000">
+    <name>WPT161</name>
+    <cmt>WPT161</cmt>
+    <desc>WPT161</desc>
+  </wpt>
+  <wpt lat="-37.957990000" lon="145.222440000">
+    <name>WPT162</name>
+    <cmt>WPT162</cmt>
+    <desc>WPT162</desc>
+  </wpt>
+  <wpt lat="-37.957570000" lon="145.221810000">
+    <name>WPT163</name>
+    <cmt>WPT163</cmt>
+    <desc>WPT163</desc>
+  </wpt>
+  <wpt lat="-37.955960000" lon="145.219610000">
+    <name>WPT164</name>
+    <cmt>WPT164</cmt>
+    <desc>WPT164</desc>
+  </wpt>
+  <wpt lat="-37.955340000" lon="145.218730000">
+    <name>WPT165</name>
+    <cmt>WPT165</cmt>
+    <desc>WPT165</desc>
+  </wpt>
+  <wpt lat="-37.954920000" lon="145.218070000">
+    <name>WPT166</name>
+    <cmt>WPT166</cmt>
+    <desc>WPT166</desc>
+  </wpt>
+  <wpt lat="-37.954840000" lon="145.217960000">
+    <name>WPT167</name>
+    <cmt>WPT167</cmt>
+    <desc>WPT167</desc>
+  </wpt>
+  <wpt lat="-37.953630000" lon="145.216210000">
+    <name>WPT168</name>
+    <cmt>WPT168</cmt>
+    <desc>WPT168</desc>
+  </wpt>
+  <wpt lat="-37.953180000" lon="145.215560000">
+    <name>WPT169</name>
+    <cmt>WPT169</cmt>
+    <desc>WPT169</desc>
+  </wpt>
+  <wpt lat="-37.952730000" lon="145.214920000">
+    <name>WPT170</name>
+    <cmt>WPT170</cmt>
+    <desc>WPT170</desc>
+  </wpt>
+  <wpt lat="-37.951140000" lon="145.212670000">
+    <name>WPT171</name>
+    <cmt>WPT171</cmt>
+    <desc>WPT171</desc>
+  </wpt>
+  <wpt lat="-37.950510000" lon="145.211780000">
+    <name>WPT172</name>
+    <cmt>WPT172</cmt>
+    <desc>WPT172</desc>
+  </wpt>
+  <wpt lat="-37.949720000" lon="145.210660000">
+    <name>WPT173</name>
+    <cmt>WPT173</cmt>
+    <desc>WPT173</desc>
+  </wpt>
+  <wpt lat="-37.948860000" lon="145.209460000">
+    <name>WPT174</name>
+    <cmt>WPT174</cmt>
+    <desc>WPT174</desc>
+  </wpt>
+  <wpt lat="-37.948820000" lon="145.209390000">
+    <name>WPT175</name>
+    <cmt>WPT175</cmt>
+    <desc>WPT175</desc>
+  </wpt>
+  <wpt lat="-37.948490000" lon="145.208930000">
+    <name>WPT176</name>
+    <cmt>WPT176</cmt>
+    <desc>WPT176</desc>
+  </wpt>
+  <wpt lat="-37.948450000" lon="145.208880000">
+    <name>WPT177</name>
+    <cmt>WPT177</cmt>
+    <desc>WPT177</desc>
+  </wpt>
+  <wpt lat="-37.948420000" lon="145.208830000">
+    <name>WPT178</name>
+    <cmt>WPT178</cmt>
+    <desc>WPT178</desc>
+  </wpt>
+  <wpt lat="-37.947930000" lon="145.208170000">
+    <name>WPT179</name>
+    <cmt>WPT179</cmt>
+    <desc>WPT179</desc>
+  </wpt>
+  <wpt lat="-37.947730000" lon="145.207890000">
+    <name>WPT180</name>
+    <cmt>WPT180</cmt>
+    <desc>WPT180</desc>
+  </wpt>
+  <wpt lat="-37.947400000" lon="145.207420000">
+    <name>WPT181</name>
+    <cmt>WPT181</cmt>
+    <desc>WPT181</desc>
+  </wpt>
+  <wpt lat="-37.947050000" lon="145.206950000">
+    <name>WPT182</name>
+    <cmt>WPT182</cmt>
+    <desc>WPT182</desc>
+  </wpt>
+  <wpt lat="-37.946600000" lon="145.206350000">
+    <name>WPT183</name>
+    <cmt>WPT183</cmt>
+    <desc>WPT183</desc>
+  </wpt>
+  <wpt lat="-37.946420000" lon="145.206110000">
+    <name>WPT184</name>
+    <cmt>WPT184</cmt>
+    <desc>WPT184</desc>
+  </wpt>
+  <wpt lat="-37.946340000" lon="145.206010000">
+    <name>WPT185</name>
+    <cmt>WPT185</cmt>
+    <desc>WPT185</desc>
+  </wpt>
+  <wpt lat="-37.946290000" lon="145.205940000">
+    <name>WPT186</name>
+    <cmt>WPT186</cmt>
+    <desc>WPT186</desc>
+  </wpt>
+  <wpt lat="-37.945850000" lon="145.205370000">
+    <name>WPT187</name>
+    <cmt>WPT187</cmt>
+    <desc>WPT187</desc>
+  </wpt>
+  <wpt lat="-37.945820000" lon="145.205320000">
+    <name>WPT188</name>
+    <cmt>WPT188</cmt>
+    <desc>WPT188</desc>
+  </wpt>
+  <wpt lat="-37.945600000" lon="145.205040000">
+    <name>WPT189</name>
+    <cmt>WPT189</cmt>
+    <desc>WPT189</desc>
+  </wpt>
+  <wpt lat="-37.945490000" lon="145.204900000">
+    <name>WPT190</name>
+    <cmt>WPT190</cmt>
+    <desc>WPT190</desc>
+  </wpt>
+  <wpt lat="-37.945190000" lon="145.204500000">
+    <name>WPT191</name>
+    <cmt>WPT191</cmt>
+    <desc>WPT191</desc>
+  </wpt>
+  <wpt lat="-37.944980000" lon="145.204220000">
+    <name>WPT192</name>
+    <cmt>WPT192</cmt>
+    <desc>WPT192</desc>
+  </wpt>
+  <wpt lat="-37.944770000" lon="145.203960000">
+    <name>WPT193</name>
+    <cmt>WPT193</cmt>
+    <desc>WPT193</desc>
+  </wpt>
+  <wpt lat="-37.944720000" lon="145.203890000">
+    <name>WPT194</name>
+    <cmt>WPT194</cmt>
+    <desc>WPT194</desc>
+  </wpt>
+  <wpt lat="-37.944660000" lon="145.203820000">
+    <name>WPT195</name>
+    <cmt>WPT195</cmt>
+    <desc>WPT195</desc>
+  </wpt>
+  <wpt lat="-37.943740000" lon="145.202660000">
+    <name>WPT196</name>
+    <cmt>WPT196</cmt>
+    <desc>WPT196</desc>
+  </wpt>
+  <wpt lat="-37.940920000" lon="145.199150000">
+    <name>WPT197</name>
+    <cmt>WPT197</cmt>
+    <desc>WPT197</desc>
+  </wpt>
+  <wpt lat="-37.940810000" lon="145.199010000">
+    <name>WPT198</name>
+    <cmt>WPT198</cmt>
+    <desc>WPT198</desc>
+  </wpt>
+  <wpt lat="-37.940560000" lon="145.198680000">
+    <name>WPT199</name>
+    <cmt>WPT199</cmt>
+    <desc>WPT199</desc>
+  </wpt>
+  <wpt lat="-37.939680000" lon="145.197580000">
+    <name>WPT200</name>
+    <cmt>WPT200</cmt>
+    <desc>WPT200</desc>
+  </wpt>
+  <wpt lat="-37.939410000" lon="145.197250000">
+    <name>WPT201</name>
+    <cmt>WPT201</cmt>
+    <desc>WPT201</desc>
+  </wpt>
+  <wpt lat="-37.937920000" lon="145.195380000">
+    <name>WPT202</name>
+    <cmt>WPT202</cmt>
+    <desc>WPT202</desc>
+  </wpt>
+  <wpt lat="-37.937810000" lon="145.195240000">
+    <name>WPT203</name>
+    <cmt>WPT203</cmt>
+    <desc>WPT203</desc>
+  </wpt>
+  <wpt lat="-37.937710000" lon="145.195090000">
+    <name>WPT204</name>
+    <cmt>WPT204</cmt>
+    <desc>WPT204</desc>
+  </wpt>
+  <wpt lat="-37.936010000" lon="145.192930000">
+    <name>WPT205</name>
+    <cmt>WPT205</cmt>
+    <desc>WPT205</desc>
+  </wpt>
+  <wpt lat="-37.935930000" lon="145.192840000">
+    <name>WPT206</name>
+    <cmt>WPT206</cmt>
+    <desc>WPT206</desc>
+  </wpt>
+  <wpt lat="-37.935860000" lon="145.192750000">
+    <name>WPT207</name>
+    <cmt>WPT207</cmt>
+    <desc>WPT207</desc>
+  </wpt>
+  <wpt lat="-37.935550000" lon="145.192360000">
+    <name>WPT208</name>
+    <cmt>WPT208</cmt>
+    <desc>WPT208</desc>
+  </wpt>
+  <wpt lat="-37.934360000" lon="145.190910000">
+    <name>WPT209</name>
+    <cmt>WPT209</cmt>
+    <desc>WPT209</desc>
+  </wpt>
+  <wpt lat="-37.933860000" lon="145.190280000">
+    <name>WPT210</name>
+    <cmt>WPT210</cmt>
+    <desc>WPT210</desc>
+  </wpt>
+  <wpt lat="-37.932690000" lon="145.188800000">
+    <name>WPT211</name>
+    <cmt>WPT211</cmt>
+    <desc>WPT211</desc>
+  </wpt>
+  <wpt lat="-37.930490000" lon="145.186060000">
+    <name>WPT212</name>
+    <cmt>WPT212</cmt>
+    <desc>WPT212</desc>
+  </wpt>
+  <wpt lat="-37.929350000" lon="145.184640000">
+    <name>WPT213</name>
+    <cmt>WPT213</cmt>
+    <desc>WPT213</desc>
+  </wpt>
+  <wpt lat="-37.928650000" lon="145.183770000">
+    <name>WPT214</name>
+    <cmt>WPT214</cmt>
+    <desc>WPT214</desc>
+  </wpt>
+  <wpt lat="-37.928080000" lon="145.183050000">
+    <name>WPT215</name>
+    <cmt>WPT215</cmt>
+    <desc>WPT215</desc>
+  </wpt>
+  <wpt lat="-37.925530000" lon="145.179880000">
+    <name>WPT216</name>
+    <cmt>WPT216</cmt>
+    <desc>WPT216</desc>
+  </wpt>
+  <wpt lat="-37.925250000" lon="145.179520000">
+    <name>WPT217</name>
+    <cmt>WPT217</cmt>
+    <desc>WPT217</desc>
+  </wpt>
+  <wpt lat="-37.924560000" lon="145.178670000">
+    <name>WPT218</name>
+    <cmt>WPT218</cmt>
+    <desc>WPT218</desc>
+  </wpt>
+  <wpt lat="-37.924170000" lon="145.178190000">
+    <name>WPT219</name>
+    <cmt>WPT219</cmt>
+    <desc>WPT219</desc>
+  </wpt>
+  <wpt lat="-37.923940000" lon="145.177900000">
+    <name>WPT220</name>
+    <cmt>WPT220</cmt>
+    <desc>WPT220</desc>
+  </wpt>
+  <wpt lat="-37.923390000" lon="145.177210000">
+    <name>WPT221</name>
+    <cmt>WPT221</cmt>
+    <desc>WPT221</desc>
+  </wpt>
+  <wpt lat="-37.922150000" lon="145.175650000">
+    <name>WPT222</name>
+    <cmt>WPT222</cmt>
+    <desc>WPT222</desc>
+  </wpt>
+  <wpt lat="-37.921990000" lon="145.175460000">
+    <name>WPT223</name>
+    <cmt>WPT223</cmt>
+    <desc>WPT223</desc>
+  </wpt>
+  <wpt lat="-37.921360000" lon="145.174700000">
+    <name>WPT224</name>
+    <cmt>WPT224</cmt>
+    <desc>WPT224</desc>
+  </wpt>
+  <wpt lat="-37.920560000" lon="145.173760000">
+    <name>WPT225</name>
+    <cmt>WPT225</cmt>
+    <desc>WPT225</desc>
+  </wpt>
+  <wpt lat="-37.919830000" lon="145.172940000">
+    <name>WPT226</name>
+    <cmt>WPT226</cmt>
+    <desc>WPT226</desc>
+  </wpt>
+  <wpt lat="-37.919430000" lon="145.172460000">
+    <name>WPT227</name>
+    <cmt>WPT227</cmt>
+    <desc>WPT227</desc>
+  </wpt>
+  <wpt lat="-37.918280000" lon="145.171260000">
+    <name>WPT228</name>
+    <cmt>WPT228</cmt>
+    <desc>WPT228</desc>
+  </wpt>
+  <wpt lat="-37.917920000" lon="145.170880000">
+    <name>WPT229</name>
+    <cmt>WPT229</cmt>
+    <desc>WPT229</desc>
+  </wpt>
+  <wpt lat="-37.917330000" lon="145.170290000">
+    <name>WPT230</name>
+    <cmt>WPT230</cmt>
+    <desc>WPT230</desc>
+  </wpt>
+  <wpt lat="-37.915950000" lon="145.168880000">
+    <name>WPT231</name>
+    <cmt>WPT231</cmt>
+    <desc>WPT231</desc>
+  </wpt>
+  <wpt lat="-37.915620000" lon="145.168550000">
+    <name>WPT232</name>
+    <cmt>WPT232</cmt>
+    <desc>WPT232</desc>
+  </wpt>
+  <wpt lat="-37.915340000" lon="145.168270000">
+    <name>WPT233</name>
+    <cmt>WPT233</cmt>
+    <desc>WPT233</desc>
+  </wpt>
+  <wpt lat="-37.915010000" lon="145.167960000">
+    <name>WPT234</name>
+    <cmt>WPT234</cmt>
+    <desc>WPT234</desc>
+  </wpt>
+  <wpt lat="-37.914320000" lon="145.167250000">
+    <name>WPT235</name>
+    <cmt>WPT235</cmt>
+    <desc>WPT235</desc>
+  </wpt>
+  <wpt lat="-37.914110000" lon="145.167050000">
+    <name>WPT236</name>
+    <cmt>WPT236</cmt>
+    <desc>WPT236</desc>
+  </wpt>
+  <wpt lat="-37.913640000" lon="145.166550000">
+    <name>WPT237</name>
+    <cmt>WPT237</cmt>
+    <desc>WPT237</desc>
+  </wpt>
+  <wpt lat="-37.913310000" lon="145.166180000">
+    <name>WPT238</name>
+    <cmt>WPT238</cmt>
+    <desc>WPT238</desc>
+  </wpt>
+  <wpt lat="-37.912750000" lon="145.165570000">
+    <name>WPT239</name>
+    <cmt>WPT239</cmt>
+    <desc>WPT239</desc>
+  </wpt>
+  <wpt lat="-37.912640000" lon="145.165450000">
+    <name>WPT240</name>
+    <cmt>WPT240</cmt>
+    <desc>WPT240</desc>
+  </wpt>
+  <wpt lat="-37.912430000" lon="145.165200000">
+    <name>WPT241</name>
+    <cmt>WPT241</cmt>
+    <desc>WPT241</desc>
+  </wpt>
+  <wpt lat="-37.911520000" lon="145.164100000">
+    <name>WPT242</name>
+    <cmt>WPT242</cmt>
+    <desc>WPT242</desc>
+  </wpt>
+  <wpt lat="-37.911470000" lon="145.164040000">
+    <name>WPT243</name>
+    <cmt>WPT243</cmt>
+    <desc>WPT243</desc>
+  </wpt>
+  <wpt lat="-37.910300000" lon="145.162480000">
+    <name>WPT244</name>
+    <cmt>WPT244</cmt>
+    <desc>WPT244</desc>
+  </wpt>
+  <wpt lat="-37.908940000" lon="145.160520000">
+    <name>WPT245</name>
+    <cmt>WPT245</cmt>
+    <desc>WPT245</desc>
+  </wpt>
+  <wpt lat="-37.908410000" lon="145.159790000">
+    <name>WPT246</name>
+    <cmt>WPT246</cmt>
+    <desc>WPT246</desc>
+  </wpt>
+  <wpt lat="-37.908140000" lon="145.159420000">
+    <name>WPT247</name>
+    <cmt>WPT247</cmt>
+    <desc>WPT247</desc>
+  </wpt>
+  <wpt lat="-37.907580000" lon="145.158620000">
+    <name>WPT248</name>
+    <cmt>WPT248</cmt>
+    <desc>WPT248</desc>
+  </wpt>
+  <wpt lat="-37.906990000" lon="145.157800000">
+    <name>WPT249</name>
+    <cmt>WPT249</cmt>
+    <desc>WPT249</desc>
+  </wpt>
+  <wpt lat="-37.906390000" lon="145.156940000">
+    <name>WPT250</name>
+    <cmt>WPT250</cmt>
+    <desc>WPT250</desc>
+  </wpt>
+  <wpt lat="-37.905380000" lon="145.155530000">
+    <name>WPT251</name>
+    <cmt>WPT251</cmt>
+    <desc>WPT251</desc>
+  </wpt>
+  <wpt lat="-37.904960000" lon="145.155010000">
+    <name>WPT252</name>
+    <cmt>WPT252</cmt>
+    <desc>WPT252</desc>
+  </wpt>
+  <wpt lat="-37.904420000" lon="145.154350000">
+    <name>WPT253</name>
+    <cmt>WPT253</cmt>
+    <desc>WPT253</desc>
+  </wpt>
+  <wpt lat="-37.904140000" lon="145.154040000">
+    <name>WPT254</name>
+    <cmt>WPT254</cmt>
+    <desc>WPT254</desc>
+  </wpt>
+  <wpt lat="-37.903690000" lon="145.153560000">
+    <name>WPT255</name>
+    <cmt>WPT255</cmt>
+    <desc>WPT255</desc>
+  </wpt>
+  <wpt lat="-37.903210000" lon="145.153100000">
+    <name>WPT256</name>
+    <cmt>WPT256</cmt>
+    <desc>WPT256</desc>
+  </wpt>
+  <wpt lat="-37.902960000" lon="145.152870000">
+    <name>WPT257</name>
+    <cmt>WPT257</cmt>
+    <desc>WPT257</desc>
+  </wpt>
+  <wpt lat="-37.902870000" lon="145.152790000">
+    <name>WPT258</name>
+    <cmt>WPT258</cmt>
+    <desc>WPT258</desc>
+  </wpt>
+  <wpt lat="-37.902770000" lon="145.152700000">
+    <name>WPT259</name>
+    <cmt>WPT259</cmt>
+    <desc>WPT259</desc>
+  </wpt>
+  <wpt lat="-37.902670000" lon="145.152620000">
+    <name>WPT260</name>
+    <cmt>WPT260</cmt>
+    <desc>WPT260</desc>
+  </wpt>
+  <wpt lat="-37.902490000" lon="145.152470000">
+    <name>WPT261</name>
+    <cmt>WPT261</cmt>
+    <desc>WPT261</desc>
+  </wpt>
+  <wpt lat="-37.902280000" lon="145.152290000">
+    <name>WPT262</name>
+    <cmt>WPT262</cmt>
+    <desc>WPT262</desc>
+  </wpt>
+  <wpt lat="-37.901320000" lon="145.151470000">
+    <name>WPT263</name>
+    <cmt>WPT263</cmt>
+    <desc>WPT263</desc>
+  </wpt>
+  <wpt lat="-37.901040000" lon="145.151230000">
+    <name>WPT264</name>
+    <cmt>WPT264</cmt>
+    <desc>WPT264</desc>
+  </wpt>
+  <wpt lat="-37.900790000" lon="145.151020000">
+    <name>WPT265</name>
+    <cmt>WPT265</cmt>
+    <desc>WPT265</desc>
+  </wpt>
+  <wpt lat="-37.900200000" lon="145.150530000">
+    <name>WPT266</name>
+    <cmt>WPT266</cmt>
+    <desc>WPT266</desc>
+  </wpt>
+  <wpt lat="-37.899610000" lon="145.150030000">
+    <name>WPT267</name>
+    <cmt>WPT267</cmt>
+    <desc>WPT267</desc>
+  </wpt>
+  <wpt lat="-37.899130000" lon="145.149630000">
+    <name>WPT268</name>
+    <cmt>WPT268</cmt>
+    <desc>WPT268</desc>
+  </wpt>
+  <wpt lat="-37.898560000" lon="145.149150000">
+    <name>WPT269</name>
+    <cmt>WPT269</cmt>
+    <desc>WPT269</desc>
+  </wpt>
+  <wpt lat="-37.898290000" lon="145.148920000">
+    <name>WPT270</name>
+    <cmt>WPT270</cmt>
+    <desc>WPT270</desc>
+  </wpt>
+  <wpt lat="-37.897780000" lon="145.148480000">
+    <name>WPT271</name>
+    <cmt>WPT271</cmt>
+    <desc>WPT271</desc>
+  </wpt>
+  <wpt lat="-37.897540000" lon="145.148270000">
+    <name>WPT272</name>
+    <cmt>WPT272</cmt>
+    <desc>WPT272</desc>
+  </wpt>
+  <wpt lat="-37.897330000" lon="145.148060000">
+    <name>WPT273</name>
+    <cmt>WPT273</cmt>
+    <desc>WPT273</desc>
+  </wpt>
+  <wpt lat="-37.897180000" lon="145.147890000">
+    <name>WPT274</name>
+    <cmt>WPT274</cmt>
+    <desc>WPT274</desc>
+  </wpt>
+  <wpt lat="-37.897110000" lon="145.147820000">
+    <name>WPT275</name>
+    <cmt>WPT275</cmt>
+    <desc>WPT275</desc>
+  </wpt>
+  <wpt lat="-37.896820000" lon="145.147500000">
+    <name>WPT276</name>
+    <cmt>WPT276</cmt>
+    <desc>WPT276</desc>
+  </wpt>
+  <wpt lat="-37.896610000" lon="145.147250000">
+    <name>WPT277</name>
+    <cmt>WPT277</cmt>
+    <desc>WPT277</desc>
+  </wpt>
+  <wpt lat="-37.896230000" lon="145.146740000">
+    <name>WPT278</name>
+    <cmt>WPT278</cmt>
+    <desc>WPT278</desc>
+  </wpt>
+  <wpt lat="-37.895970000" lon="145.146350000">
+    <name>WPT279</name>
+    <cmt>WPT279</cmt>
+    <desc>WPT279</desc>
+  </wpt>
+  <wpt lat="-37.895840000" lon="145.146140000">
+    <name>WPT280</name>
+    <cmt>WPT280</cmt>
+    <desc>WPT280</desc>
+  </wpt>
+  <wpt lat="-37.895640000" lon="145.145800000">
+    <name>WPT281</name>
+    <cmt>WPT281</cmt>
+    <desc>WPT281</desc>
+  </wpt>
+  <wpt lat="-37.895530000" lon="145.145600000">
+    <name>WPT282</name>
+    <cmt>WPT282</cmt>
+    <desc>WPT282</desc>
+  </wpt>
+  <wpt lat="-37.895410000" lon="145.145360000">
+    <name>WPT283</name>
+    <cmt>WPT283</cmt>
+    <desc>WPT283</desc>
+  </wpt>
+  <wpt lat="-37.895330000" lon="145.145210000">
+    <name>WPT284</name>
+    <cmt>WPT284</cmt>
+    <desc>WPT284</desc>
+  </wpt>
+  <wpt lat="-37.895240000" lon="145.145000000">
+    <name>WPT285</name>
+    <cmt>WPT285</cmt>
+    <desc>WPT285</desc>
+  </wpt>
+  <wpt lat="-37.895020000" lon="145.144510000">
+    <name>WPT286</name>
+    <cmt>WPT286</cmt>
+    <desc>WPT286</desc>
+  </wpt>
+  <wpt lat="-37.894850000" lon="145.144100000">
+    <name>WPT287</name>
+    <cmt>WPT287</cmt>
+    <desc>WPT287</desc>
+  </wpt>
+  <wpt lat="-37.894730000" lon="145.143720000">
+    <name>WPT288</name>
+    <cmt>WPT288</cmt>
+    <desc>WPT288</desc>
+  </wpt>
+  <wpt lat="-37.894590000" lon="145.143280000">
+    <name>WPT289</name>
+    <cmt>WPT289</cmt>
+    <desc>WPT289</desc>
+  </wpt>
+  <wpt lat="-37.894500000" lon="145.142930000">
+    <name>WPT290</name>
+    <cmt>WPT290</cmt>
+    <desc>WPT290</desc>
+  </wpt>
+  <wpt lat="-37.894410000" lon="145.142570000">
+    <name>WPT291</name>
+    <cmt>WPT291</cmt>
+    <desc>WPT291</desc>
+  </wpt>
+  <wpt lat="-37.894340000" lon="145.142260000">
+    <name>WPT292</name>
+    <cmt>WPT292</cmt>
+    <desc>WPT292</desc>
+  </wpt>
+  <wpt lat="-37.894220000" lon="145.141630000">
+    <name>WPT293</name>
+    <cmt>WPT293</cmt>
+    <desc>WPT293</desc>
+  </wpt>
+  <wpt lat="-37.894160000" lon="145.141210000">
+    <name>WPT294</name>
+    <cmt>WPT294</cmt>
+    <desc>WPT294</desc>
+  </wpt>
+  <wpt lat="-37.894120000" lon="145.140930000">
+    <name>WPT295</name>
+    <cmt>WPT295</cmt>
+    <desc>WPT295</desc>
+  </wpt>
+  <wpt lat="-37.894040000" lon="145.140200000">
+    <name>WPT296</name>
+    <cmt>WPT296</cmt>
+    <desc>WPT296</desc>
+  </wpt>
+  <wpt lat="-37.893860000" lon="145.138460000">
+    <name>WPT297</name>
+    <cmt>WPT297</cmt>
+    <desc>WPT297</desc>
+  </wpt>
+  <wpt lat="-37.893780000" lon="145.137850000">
+    <name>WPT298</name>
+    <cmt>WPT298</cmt>
+    <desc>WPT298</desc>
+  </wpt>
+  <wpt lat="-37.893720000" lon="145.137120000">
+    <name>WPT299</name>
+    <cmt>WPT299</cmt>
+    <desc>WPT299</desc>
+  </wpt>
+  <wpt lat="-37.893590000" lon="145.136000000">
+    <name>WPT300</name>
+    <cmt>WPT300</cmt>
+    <desc>WPT300</desc>
+  </wpt>
+  <wpt lat="-37.893560000" lon="145.135770000">
+    <name>WPT301</name>
+    <cmt>WPT301</cmt>
+    <desc>WPT301</desc>
+  </wpt>
+  <wpt lat="-37.893470000" lon="145.134900000">
+    <name>WPT302</name>
+    <cmt>WPT302</cmt>
+    <desc>WPT302</desc>
+  </wpt>
+  <wpt lat="-37.893010000" lon="145.130800000">
+    <name>WPT303</name>
+    <cmt>WPT303</cmt>
+    <desc>WPT303</desc>
+  </wpt>
+  <wpt lat="-37.892980000" lon="145.130480000">
+    <name>WPT304</name>
+    <cmt>WPT304</cmt>
+    <desc>WPT304</desc>
+  </wpt>
+  <wpt lat="-37.892910000" lon="145.130030000">
+    <name>WPT305</name>
+    <cmt>WPT305</cmt>
+    <desc>WPT305</desc>
+  </wpt>
+  <wpt lat="-37.892640000" lon="145.127510000">
+    <name>WPT306</name>
+    <cmt>WPT306</cmt>
+    <desc>WPT306</desc>
+  </wpt>
+  <wpt lat="-37.892520000" lon="145.126530000">
+    <name>WPT307</name>
+    <cmt>WPT307</cmt>
+    <desc>WPT307</desc>
+  </wpt>
+  <wpt lat="-37.892480000" lon="145.126100000">
+    <name>WPT308</name>
+    <cmt>WPT308</cmt>
+    <desc>WPT308</desc>
+  </wpt>
+  <wpt lat="-37.892430000" lon="145.125670000">
+    <name>WPT309</name>
+    <cmt>WPT309</cmt>
+    <desc>WPT309</desc>
+  </wpt>
+  <wpt lat="-37.892310000" lon="145.124660000">
+    <name>WPT310</name>
+    <cmt>WPT310</cmt>
+    <desc>WPT310</desc>
+  </wpt>
+  <wpt lat="-37.892210000" lon="145.123810000">
+    <name>WPT311</name>
+    <cmt>WPT311</cmt>
+    <desc>WPT311</desc>
+  </wpt>
+  <wpt lat="-37.892100000" lon="145.122740000">
+    <name>WPT312</name>
+    <cmt>WPT312</cmt>
+    <desc>WPT312</desc>
+  </wpt>
+  <wpt lat="-37.891990000" lon="145.121870000">
+    <name>WPT313</name>
+    <cmt>WPT313</cmt>
+    <desc>WPT313</desc>
+  </wpt>
+  <wpt lat="-37.891900000" lon="145.121330000">
+    <name>WPT314</name>
+    <cmt>WPT314</cmt>
+    <desc>WPT314</desc>
+  </wpt>
+  <wpt lat="-37.891830000" lon="145.121000000">
+    <name>WPT315</name>
+    <cmt>WPT315</cmt>
+    <desc>WPT315</desc>
+  </wpt>
+  <wpt lat="-37.891720000" lon="145.120490000">
+    <name>WPT316</name>
+    <cmt>WPT316</cmt>
+    <desc>WPT316</desc>
+  </wpt>
+  <wpt lat="-37.891580000" lon="145.119980000">
+    <name>WPT317</name>
+    <cmt>WPT317</cmt>
+    <desc>WPT317</desc>
+  </wpt>
+  <wpt lat="-37.891480000" lon="145.119620000">
+    <name>WPT318</name>
+    <cmt>WPT318</cmt>
+    <desc>WPT318</desc>
+  </wpt>
+  <wpt lat="-37.891450000" lon="145.119530000">
+    <name>WPT319</name>
+    <cmt>WPT319</cmt>
+    <desc>WPT319</desc>
+  </wpt>
+  <wpt lat="-37.891350000" lon="145.119180000">
+    <name>WPT320</name>
+    <cmt>WPT320</cmt>
+    <desc>WPT320</desc>
+  </wpt>
+  <wpt lat="-37.891270000" lon="145.118940000">
+    <name>WPT321</name>
+    <cmt>WPT321</cmt>
+    <desc>WPT321</desc>
+  </wpt>
+  <wpt lat="-37.891270000" lon="145.118930000">
+    <name>WPT322</name>
+    <cmt>WPT322</cmt>
+    <desc>WPT322</desc>
+  </wpt>
+  <wpt lat="-37.891070000" lon="145.118370000">
+    <name>WPT323</name>
+    <cmt>WPT323</cmt>
+    <desc>WPT323</desc>
+  </wpt>
+  <wpt lat="-37.890770000" lon="145.117620000">
+    <name>WPT324</name>
+    <cmt>WPT324</cmt>
+    <desc>WPT324</desc>
+  </wpt>
+  <wpt lat="-37.890600000" lon="145.117250000">
+    <name>WPT325</name>
+    <cmt>WPT325</cmt>
+    <desc>WPT325</desc>
+  </wpt>
+  <wpt lat="-37.890390000" lon="145.116820000">
+    <name>WPT326</name>
+    <cmt>WPT326</cmt>
+    <desc>WPT326</desc>
+  </wpt>
+  <wpt lat="-37.890080000" lon="145.116220000">
+    <name>WPT327</name>
+    <cmt>WPT327</cmt>
+    <desc>WPT327</desc>
+  </wpt>
+  <wpt lat="-37.889690000" lon="145.115530000">
+    <name>WPT328</name>
+    <cmt>WPT328</cmt>
+    <desc>WPT328</desc>
+  </wpt>
+  <wpt lat="-37.889660000" lon="145.115480000">
+    <name>WPT329</name>
+    <cmt>WPT329</cmt>
+    <desc>WPT329</desc>
+  </wpt>
+  <wpt lat="-37.889600000" lon="145.115400000">
+    <name>WPT330</name>
+    <cmt>WPT330</cmt>
+    <desc>WPT330</desc>
+  </wpt>
+  <wpt lat="-37.889240000" lon="145.114800000">
+    <name>WPT331</name>
+    <cmt>WPT331</cmt>
+    <desc>WPT331</desc>
+  </wpt>
+  <wpt lat="-37.888790000" lon="145.114040000">
+    <name>WPT332</name>
+    <cmt>WPT332</cmt>
+    <desc>WPT332</desc>
+  </wpt>
+  <wpt lat="-37.888570000" lon="145.113650000">
+    <name>WPT333</name>
+    <cmt>WPT333</cmt>
+    <desc>WPT333</desc>
+  </wpt>
+  <wpt lat="-37.888250000" lon="145.113000000">
+    <name>WPT334</name>
+    <cmt>WPT334</cmt>
+    <desc>WPT334</desc>
+  </wpt>
+  <wpt lat="-37.887950000" lon="145.112350000">
+    <name>WPT335</name>
+    <cmt>WPT335</cmt>
+    <desc>WPT335</desc>
+  </wpt>
+  <wpt lat="-37.887820000" lon="145.112050000">
+    <name>WPT336</name>
+    <cmt>WPT336</cmt>
+    <desc>WPT336</desc>
+  </wpt>
+  <wpt lat="-37.887680000" lon="145.111660000">
+    <name>WPT337</name>
+    <cmt>WPT337</cmt>
+    <desc>WPT337</desc>
+  </wpt>
+  <wpt lat="-37.887500000" lon="145.111190000">
+    <name>WPT338</name>
+    <cmt>WPT338</cmt>
+    <desc>WPT338</desc>
+  </wpt>
+  <wpt lat="-37.887390000" lon="145.110880000">
+    <name>WPT339</name>
+    <cmt>WPT339</cmt>
+    <desc>WPT339</desc>
+  </wpt>
+  <wpt lat="-37.887250000" lon="145.110430000">
+    <name>WPT340</name>
+    <cmt>WPT340</cmt>
+    <desc>WPT340</desc>
+  </wpt>
+  <wpt lat="-37.887120000" lon="145.109990000">
+    <name>WPT341</name>
+    <cmt>WPT341</cmt>
+    <desc>WPT341</desc>
+  </wpt>
+  <wpt lat="-37.886960000" lon="145.109300000">
+    <name>WPT342</name>
+    <cmt>WPT342</cmt>
+    <desc>WPT342</desc>
+  </wpt>
+  <wpt lat="-37.886800000" lon="145.108590000">
+    <name>WPT343</name>
+    <cmt>WPT343</cmt>
+    <desc>WPT343</desc>
+  </wpt>
+  <wpt lat="-37.886710000" lon="145.108070000">
+    <name>WPT344</name>
+    <cmt>WPT344</cmt>
+    <desc>WPT344</desc>
+  </wpt>
+  <wpt lat="-37.886590000" lon="145.107310000">
+    <name>WPT345</name>
+    <cmt>WPT345</cmt>
+    <desc>WPT345</desc>
+  </wpt>
+  <wpt lat="-37.886440000" lon="145.106240000">
+    <name>WPT346</name>
+    <cmt>WPT346</cmt>
+    <desc>WPT346</desc>
+  </wpt>
+  <wpt lat="-37.886320000" lon="145.105390000">
+    <name>WPT347</name>
+    <cmt>WPT347</cmt>
+    <desc>WPT347</desc>
+  </wpt>
+  <wpt lat="-37.886180000" lon="145.104390000">
+    <name>WPT348</name>
+    <cmt>WPT348</cmt>
+    <desc>WPT348</desc>
+  </wpt>
+  <wpt lat="-37.886000000" lon="145.103160000">
+    <name>WPT349</name>
+    <cmt>WPT349</cmt>
+    <desc>WPT349</desc>
+  </wpt>
+  <wpt lat="-37.885760000" lon="145.101550000">
+    <name>WPT350</name>
+    <cmt>WPT350</cmt>
+    <desc>WPT350</desc>
+  </wpt>
+  <wpt lat="-37.885410000" lon="145.099390000">
+    <name>WPT351</name>
+    <cmt>WPT351</cmt>
+    <desc>WPT351</desc>
+  </wpt>
+  <wpt lat="-37.885340000" lon="145.098920000">
+    <name>WPT352</name>
+    <cmt>WPT352</cmt>
+    <desc>WPT352</desc>
+  </wpt>
+  <wpt lat="-37.885270000" lon="145.098480000">
+    <name>WPT353</name>
+    <cmt>WPT353</cmt>
+    <desc>WPT353</desc>
+  </wpt>
+  <wpt lat="-37.885120000" lon="145.097570000">
+    <name>WPT354</name>
+    <cmt>WPT354</cmt>
+    <desc>WPT354</desc>
+  </wpt>
+  <wpt lat="-37.885020000" lon="145.096960000">
+    <name>WPT355</name>
+    <cmt>WPT355</cmt>
+    <desc>WPT355</desc>
+  </wpt>
+  <wpt lat="-37.884880000" lon="145.096100000">
+    <name>WPT356</name>
+    <cmt>WPT356</cmt>
+    <desc>WPT356</desc>
+  </wpt>
+  <wpt lat="-37.884750000" lon="145.095380000">
+    <name>WPT357</name>
+    <cmt>WPT357</cmt>
+    <desc>WPT357</desc>
+  </wpt>
+  <wpt lat="-37.884600000" lon="145.094770000">
+    <name>WPT358</name>
+    <cmt>WPT358</cmt>
+    <desc>WPT358</desc>
+  </wpt>
+  <wpt lat="-37.884520000" lon="145.094440000">
+    <name>WPT359</name>
+    <cmt>WPT359</cmt>
+    <desc>WPT359</desc>
+  </wpt>
+  <wpt lat="-37.884360000" lon="145.093890000">
+    <name>WPT360</name>
+    <cmt>WPT360</cmt>
+    <desc>WPT360</desc>
+  </wpt>
+  <wpt lat="-37.884190000" lon="145.093370000">
+    <name>WPT361</name>
+    <cmt>WPT361</cmt>
+    <desc>WPT361</desc>
+  </wpt>
+  <wpt lat="-37.884110000" lon="145.093100000">
+    <name>WPT362</name>
+    <cmt>WPT362</cmt>
+    <desc>WPT362</desc>
+  </wpt>
+  <wpt lat="-37.883800000" lon="145.092280000">
+    <name>WPT363</name>
+    <cmt>WPT363</cmt>
+    <desc>WPT363</desc>
+  </wpt>
+  <wpt lat="-37.883440000" lon="145.091420000">
+    <name>WPT364</name>
+    <cmt>WPT364</cmt>
+    <desc>WPT364</desc>
+  </wpt>
+  <wpt lat="-37.883120000" lon="145.090730000">
+    <name>WPT365</name>
+    <cmt>WPT365</cmt>
+    <desc>WPT365</desc>
+  </wpt>
+  <wpt lat="-37.882950000" lon="145.090430000">
+    <name>WPT366</name>
+    <cmt>WPT366</cmt>
+    <desc>WPT366</desc>
+  </wpt>
+  <wpt lat="-37.882890000" lon="145.090330000">
+    <name>WPT367</name>
+    <cmt>WPT367</cmt>
+    <desc>WPT367</desc>
+  </wpt>
+  <wpt lat="-37.882810000" lon="145.090150000">
+    <name>WPT368</name>
+    <cmt>WPT368</cmt>
+    <desc>WPT368</desc>
+  </wpt>
+  <wpt lat="-37.882760000" lon="145.090070000">
+    <name>WPT369</name>
+    <cmt>WPT369</cmt>
+    <desc>WPT369</desc>
+  </wpt>
+  <wpt lat="-37.882700000" lon="145.089950000">
+    <name>WPT370</name>
+    <cmt>WPT370</cmt>
+    <desc>WPT370</desc>
+  </wpt>
+  <wpt lat="-37.882190000" lon="145.089110000">
+    <name>WPT371</name>
+    <cmt>WPT371</cmt>
+    <desc>WPT371</desc>
+  </wpt>
+  <wpt lat="-37.881840000" lon="145.088590000">
+    <name>WPT372</name>
+    <cmt>WPT372</cmt>
+    <desc>WPT372</desc>
+  </wpt>
+  <wpt lat="-37.880790000" lon="145.086950000">
+    <name>WPT373</name>
+    <cmt>WPT373</cmt>
+    <desc>WPT373</desc>
+  </wpt>
+  <wpt lat="-37.879980000" lon="145.085590000">
+    <name>WPT374</name>
+    <cmt>WPT374</cmt>
+    <desc>WPT374</desc>
+  </wpt>
+  <wpt lat="-37.879370000" lon="145.084590000">
+    <name>WPT375</name>
+    <cmt>WPT375</cmt>
+    <desc>WPT375</desc>
+  </wpt>
+  <wpt lat="-37.878930000" lon="145.083790000">
+    <name>WPT376</name>
+    <cmt>WPT376</cmt>
+    <desc>WPT376</desc>
+  </wpt>
+  <wpt lat="-37.878510000" lon="145.082990000">
+    <name>WPT377</name>
+    <cmt>WPT377</cmt>
+    <desc>WPT377</desc>
+  </wpt>
+  <wpt lat="-37.877980000" lon="145.081930000">
+    <name>WPT378</name>
+    <cmt>WPT378</cmt>
+    <desc>WPT378</desc>
+  </wpt>
+  <wpt lat="-37.877870000" lon="145.081700000">
+    <name>WPT379</name>
+    <cmt>WPT379</cmt>
+    <desc>WPT379</desc>
+  </wpt>
+  <wpt lat="-37.877790000" lon="145.081530000">
+    <name>WPT380</name>
+    <cmt>WPT380</cmt>
+    <desc>WPT380</desc>
+  </wpt>
+  <wpt lat="-37.877730000" lon="145.081410000">
+    <name>WPT381</name>
+    <cmt>WPT381</cmt>
+    <desc>WPT381</desc>
+  </wpt>
+  <wpt lat="-37.877430000" lon="145.080740000">
+    <name>WPT382</name>
+    <cmt>WPT382</cmt>
+    <desc>WPT382</desc>
+  </wpt>
+  <wpt lat="-37.877290000" lon="145.080400000">
+    <name>WPT383</name>
+    <cmt>WPT383</cmt>
+    <desc>WPT383</desc>
+  </wpt>
+  <wpt lat="-37.877200000" lon="145.080140000">
+    <name>WPT384</name>
+    <cmt>WPT384</cmt>
+    <desc>WPT384</desc>
+  </wpt>
+  <wpt lat="-37.877090000" lon="145.079780000">
+    <name>WPT385</name>
+    <cmt>WPT385</cmt>
+    <desc>WPT385</desc>
+  </wpt>
+  <wpt lat="-37.877000000" lon="145.079420000">
+    <name>WPT386</name>
+    <cmt>WPT386</cmt>
+    <desc>WPT386</desc>
+  </wpt>
+  <wpt lat="-37.876990000" lon="145.079350000">
+    <name>WPT387</name>
+    <cmt>WPT387</cmt>
+    <desc>WPT387</desc>
+  </wpt>
+  <wpt lat="-37.876940000" lon="145.079100000">
+    <name>WPT388</name>
+    <cmt>WPT388</cmt>
+    <desc>WPT388</desc>
+  </wpt>
+  <wpt lat="-37.876900000" lon="145.078870000">
+    <name>WPT389</name>
+    <cmt>WPT389</cmt>
+    <desc>WPT389</desc>
+  </wpt>
+  <wpt lat="-37.876860000" lon="145.078590000">
+    <name>WPT390</name>
+    <cmt>WPT390</cmt>
+    <desc>WPT390</desc>
+  </wpt>
+  <wpt lat="-37.876850000" lon="145.078420000">
+    <name>WPT391</name>
+    <cmt>WPT391</cmt>
+    <desc>WPT391</desc>
+  </wpt>
+  <wpt lat="-37.876830000" lon="145.078000000">
+    <name>WPT392</name>
+    <cmt>WPT392</cmt>
+    <desc>WPT392</desc>
+  </wpt>
+  <wpt lat="-37.876820000" lon="145.077710000">
+    <name>WPT393</name>
+    <cmt>WPT393</cmt>
+    <desc>WPT393</desc>
+  </wpt>
+  <wpt lat="-37.876830000" lon="145.077410000">
+    <name>WPT394</name>
+    <cmt>WPT394</cmt>
+    <desc>WPT394</desc>
+  </wpt>
+  <wpt lat="-37.876860000" lon="145.076850000">
+    <name>WPT395</name>
+    <cmt>WPT395</cmt>
+    <desc>WPT395</desc>
+  </wpt>
+  <wpt lat="-37.876900000" lon="145.076360000">
+    <name>WPT396</name>
+    <cmt>WPT396</cmt>
+    <desc>WPT396</desc>
+  </wpt>
+  <wpt lat="-37.877180000" lon="145.073030000">
+    <name>WPT397</name>
+    <cmt>WPT397</cmt>
+    <desc>WPT397</desc>
+  </wpt>
+  <wpt lat="-37.877210000" lon="145.072610000">
+    <name>WPT398</name>
+    <cmt>WPT398</cmt>
+    <desc>WPT398</desc>
+  </wpt>
+  <wpt lat="-37.877230000" lon="145.072250000">
+    <name>WPT399</name>
+    <cmt>WPT399</cmt>
+    <desc>WPT399</desc>
+  </wpt>
+  <wpt lat="-37.877230000" lon="145.072000000">
+    <name>WPT400</name>
+    <cmt>WPT400</cmt>
+    <desc>WPT400</desc>
+  </wpt>
+  <wpt lat="-37.877220000" lon="145.071750000">
+    <name>WPT401</name>
+    <cmt>WPT401</cmt>
+    <desc>WPT401</desc>
+  </wpt>
+  <wpt lat="-37.877200000" lon="145.071470000">
+    <name>WPT402</name>
+    <cmt>WPT402</cmt>
+    <desc>WPT402</desc>
+  </wpt>
+  <wpt lat="-37.877200000" lon="145.071420000">
+    <name>WPT403</name>
+    <cmt>WPT403</cmt>
+    <desc>WPT403</desc>
+  </wpt>
+  <wpt lat="-37.877120000" lon="145.070890000">
+    <name>WPT404</name>
+    <cmt>WPT404</cmt>
+    <desc>WPT404</desc>
+  </wpt>
+  <wpt lat="-37.877090000" lon="145.070720000">
+    <name>WPT405</name>
+    <cmt>WPT405</cmt>
+    <desc>WPT405</desc>
+  </wpt>
+  <wpt lat="-37.876940000" lon="145.070060000">
+    <name>WPT406</name>
+    <cmt>WPT406</cmt>
+    <desc>WPT406</desc>
+  </wpt>
+  <wpt lat="-37.876860000" lon="145.069820000">
+    <name>WPT407</name>
+    <cmt>WPT407</cmt>
+    <desc>WPT407</desc>
+  </wpt>
+  <wpt lat="-37.876740000" lon="145.069490000">
+    <name>WPT408</name>
+    <cmt>WPT408</cmt>
+    <desc>WPT408</desc>
+  </wpt>
+  <wpt lat="-37.876590000" lon="145.069150000">
+    <name>WPT409</name>
+    <cmt>WPT409</cmt>
+    <desc>WPT409</desc>
+  </wpt>
+  <wpt lat="-37.876450000" lon="145.068840000">
+    <name>WPT410</name>
+    <cmt>WPT410</cmt>
+    <desc>WPT410</desc>
+  </wpt>
+  <wpt lat="-37.876280000" lon="145.068520000">
+    <name>WPT411</name>
+    <cmt>WPT411</cmt>
+    <desc>WPT411</desc>
+  </wpt>
+  <wpt lat="-37.876130000" lon="145.068250000">
+    <name>WPT412</name>
+    <cmt>WPT412</cmt>
+    <desc>WPT412</desc>
+  </wpt>
+  <wpt lat="-37.875960000" lon="145.068010000">
+    <name>WPT413</name>
+    <cmt>WPT413</cmt>
+    <desc>WPT413</desc>
+  </wpt>
+  <wpt lat="-37.875700000" lon="145.067640000">
+    <name>WPT414</name>
+    <cmt>WPT414</cmt>
+    <desc>WPT414</desc>
+  </wpt>
+  <wpt lat="-37.875480000" lon="145.067360000">
+    <name>WPT415</name>
+    <cmt>WPT415</cmt>
+    <desc>WPT415</desc>
+  </wpt>
+  <wpt lat="-37.875290000" lon="145.067160000">
+    <name>WPT416</name>
+    <cmt>WPT416</cmt>
+    <desc>WPT416</desc>
+  </wpt>
+  <wpt lat="-37.875030000" lon="145.066890000">
+    <name>WPT417</name>
+    <cmt>WPT417</cmt>
+    <desc>WPT417</desc>
+  </wpt>
+  <wpt lat="-37.874850000" lon="145.066730000">
+    <name>WPT418</name>
+    <cmt>WPT418</cmt>
+    <desc>WPT418</desc>
+  </wpt>
+  <wpt lat="-37.874550000" lon="145.066480000">
+    <name>WPT419</name>
+    <cmt>WPT419</cmt>
+    <desc>WPT419</desc>
+  </wpt>
+  <wpt lat="-37.874390000" lon="145.066360000">
+    <name>WPT420</name>
+    <cmt>WPT420</cmt>
+    <desc>WPT420</desc>
+  </wpt>
+  <wpt lat="-37.874170000" lon="145.066210000">
+    <name>WPT421</name>
+    <cmt>WPT421</cmt>
+    <desc>WPT421</desc>
+  </wpt>
+  <wpt lat="-37.873930000" lon="145.066060000">
+    <name>WPT422</name>
+    <cmt>WPT422</cmt>
+    <desc>WPT422</desc>
+  </wpt>
+  <wpt lat="-37.873730000" lon="145.065940000">
+    <name>WPT423</name>
+    <cmt>WPT423</cmt>
+    <desc>WPT423</desc>
+  </wpt>
+  <wpt lat="-37.873440000" lon="145.065810000">
+    <name>WPT424</name>
+    <cmt>WPT424</cmt>
+    <desc>WPT424</desc>
+  </wpt>
+  <wpt lat="-37.872110000" lon="145.065230000">
+    <name>WPT425</name>
+    <cmt>WPT425</cmt>
+    <desc>WPT425</desc>
+  </wpt>
+  <wpt lat="-37.871470000" lon="145.064950000">
+    <name>WPT426</name>
+    <cmt>WPT426</cmt>
+    <desc>WPT426</desc>
+  </wpt>
+  <wpt lat="-37.870670000" lon="145.064600000">
+    <name>WPT427</name>
+    <cmt>WPT427</cmt>
+    <desc>WPT427</desc>
+  </wpt>
+  <wpt lat="-37.870330000" lon="145.064410000">
+    <name>WPT428</name>
+    <cmt>WPT428</cmt>
+    <desc>WPT428</desc>
+  </wpt>
+  <wpt lat="-37.869680000" lon="145.063990000">
+    <name>WPT429</name>
+    <cmt>WPT429</cmt>
+    <desc>WPT429</desc>
+  </wpt>
+  <wpt lat="-37.869130000" lon="145.063560000">
+    <name>WPT430</name>
+    <cmt>WPT430</cmt>
+    <desc>WPT430</desc>
+  </wpt>
+  <wpt lat="-37.868590000" lon="145.063070000">
+    <name>WPT431</name>
+    <cmt>WPT431</cmt>
+    <desc>WPT431</desc>
+  </wpt>
+  <wpt lat="-37.868330000" lon="145.062830000">
+    <name>WPT432</name>
+    <cmt>WPT432</cmt>
+    <desc>WPT432</desc>
+  </wpt>
+  <wpt lat="-37.867500000" lon="145.062060000">
+    <name>WPT433</name>
+    <cmt>WPT433</cmt>
+    <desc>WPT433</desc>
+  </wpt>
+  <wpt lat="-37.867130000" lon="145.061750000">
+    <name>WPT434</name>
+    <cmt>WPT434</cmt>
+    <desc>WPT434</desc>
+  </wpt>
+  <wpt lat="-37.866800000" lon="145.061510000">
+    <name>WPT435</name>
+    <cmt>WPT435</cmt>
+    <desc>WPT435</desc>
+  </wpt>
+  <wpt lat="-37.866650000" lon="145.061410000">
+    <name>WPT436</name>
+    <cmt>WPT436</cmt>
+    <desc>WPT436</desc>
+  </wpt>
+  <wpt lat="-37.866480000" lon="145.061310000">
+    <name>WPT437</name>
+    <cmt>WPT437</cmt>
+    <desc>WPT437</desc>
+  </wpt>
+  <wpt lat="-37.866210000" lon="145.061160000">
+    <name>WPT438</name>
+    <cmt>WPT438</cmt>
+    <desc>WPT438</desc>
+  </wpt>
+  <wpt lat="-37.865990000" lon="145.061060000">
+    <name>WPT439</name>
+    <cmt>WPT439</cmt>
+    <desc>WPT439</desc>
+  </wpt>
+  <wpt lat="-37.865670000" lon="145.060920000">
+    <name>WPT440</name>
+    <cmt>WPT440</cmt>
+    <desc>WPT440</desc>
+  </wpt>
+  <wpt lat="-37.865240000" lon="145.060780000">
+    <name>WPT441</name>
+    <cmt>WPT441</cmt>
+    <desc>WPT441</desc>
+  </wpt>
+  <wpt lat="-37.865130000" lon="145.060750000">
+    <name>WPT442</name>
+    <cmt>WPT442</cmt>
+    <desc>WPT442</desc>
+  </wpt>
+  <wpt lat="-37.863680000" lon="145.060330000">
+    <name>WPT443</name>
+    <cmt>WPT443</cmt>
+    <desc>WPT443</desc>
+  </wpt>
+  <wpt lat="-37.862030000" lon="145.059850000">
+    <name>WPT444</name>
+    <cmt>WPT444</cmt>
+    <desc>WPT444</desc>
+  </wpt>
+  <wpt lat="-37.861120000" lon="145.059590000">
+    <name>WPT445</name>
+    <cmt>WPT445</cmt>
+    <desc>WPT445</desc>
+  </wpt>
+  <wpt lat="-37.860080000" lon="145.059280000">
+    <name>WPT446</name>
+    <cmt>WPT446</cmt>
+    <desc>WPT446</desc>
+  </wpt>
+  <wpt lat="-37.860000000" lon="145.059260000">
+    <name>WPT447</name>
+    <cmt>WPT447</cmt>
+    <desc>WPT447</desc>
+  </wpt>
+  <wpt lat="-37.859420000" lon="145.059090000">
+    <name>WPT448</name>
+    <cmt>WPT448</cmt>
+    <desc>WPT448</desc>
+  </wpt>
+  <wpt lat="-37.858820000" lon="145.058910000">
+    <name>WPT449</name>
+    <cmt>WPT449</cmt>
+    <desc>WPT449</desc>
+  </wpt>
+  <wpt lat="-37.858630000" lon="145.058860000">
+    <name>WPT450</name>
+    <cmt>WPT450</cmt>
+    <desc>WPT450</desc>
+  </wpt>
+  <wpt lat="-37.858390000" lon="145.058790000">
+    <name>WPT451</name>
+    <cmt>WPT451</cmt>
+    <desc>WPT451</desc>
+  </wpt>
+  <wpt lat="-37.857790000" lon="145.058620000">
+    <name>WPT452</name>
+    <cmt>WPT452</cmt>
+    <desc>WPT452</desc>
+  </wpt>
+  <wpt lat="-37.857420000" lon="145.058540000">
+    <name>WPT453</name>
+    <cmt>WPT453</cmt>
+    <desc>WPT453</desc>
+  </wpt>
+  <wpt lat="-37.856810000" lon="145.058330000">
+    <name>WPT454</name>
+    <cmt>WPT454</cmt>
+    <desc>WPT454</desc>
+  </wpt>
+  <wpt lat="-37.856610000" lon="145.058260000">
+    <name>WPT455</name>
+    <cmt>WPT455</cmt>
+    <desc>WPT455</desc>
+  </wpt>
+  <wpt lat="-37.856260000" lon="145.058120000">
+    <name>WPT456</name>
+    <cmt>WPT456</cmt>
+    <desc>WPT456</desc>
+  </wpt>
+  <wpt lat="-37.856190000" lon="145.058090000">
+    <name>WPT457</name>
+    <cmt>WPT457</cmt>
+    <desc>WPT457</desc>
+  </wpt>
+  <wpt lat="-37.855850000" lon="145.057920000">
+    <name>WPT458</name>
+    <cmt>WPT458</cmt>
+    <desc>WPT458</desc>
+  </wpt>
+  <wpt lat="-37.855550000" lon="145.057740000">
+    <name>WPT459</name>
+    <cmt>WPT459</cmt>
+    <desc>WPT459</desc>
+  </wpt>
+  <wpt lat="-37.855370000" lon="145.057610000">
+    <name>WPT460</name>
+    <cmt>WPT460</cmt>
+    <desc>WPT460</desc>
+  </wpt>
+  <wpt lat="-37.854850000" lon="145.057230000">
+    <name>WPT461</name>
+    <cmt>WPT461</cmt>
+    <desc>WPT461</desc>
+  </wpt>
+  <wpt lat="-37.854470000" lon="145.056910000">
+    <name>WPT462</name>
+    <cmt>WPT462</cmt>
+    <desc>WPT462</desc>
+  </wpt>
+  <wpt lat="-37.854350000" lon="145.056780000">
+    <name>WPT463</name>
+    <cmt>WPT463</cmt>
+    <desc>WPT463</desc>
+  </wpt>
+  <wpt lat="-37.854130000" lon="145.056540000">
+    <name>WPT464</name>
+    <cmt>WPT464</cmt>
+    <desc>WPT464</desc>
+  </wpt>
+  <wpt lat="-37.853840000" lon="145.056200000">
+    <name>WPT465</name>
+    <cmt>WPT465</cmt>
+    <desc>WPT465</desc>
+  </wpt>
+  <wpt lat="-37.853600000" lon="145.055930000">
+    <name>WPT466</name>
+    <cmt>WPT466</cmt>
+    <desc>WPT466</desc>
+  </wpt>
+  <wpt lat="-37.853450000" lon="145.055740000">
+    <name>WPT467</name>
+    <cmt>WPT467</cmt>
+    <desc>WPT467</desc>
+  </wpt>
+  <wpt lat="-37.853380000" lon="145.055640000">
+    <name>WPT468</name>
+    <cmt>WPT468</cmt>
+    <desc>WPT468</desc>
+  </wpt>
+  <wpt lat="-37.853120000" lon="145.055180000">
+    <name>WPT469</name>
+    <cmt>WPT469</cmt>
+    <desc>WPT469</desc>
+  </wpt>
+  <wpt lat="-37.852950000" lon="145.054860000">
+    <name>WPT470</name>
+    <cmt>WPT470</cmt>
+    <desc>WPT470</desc>
+  </wpt>
+  <wpt lat="-37.852730000" lon="145.054350000">
+    <name>WPT471</name>
+    <cmt>WPT471</cmt>
+    <desc>WPT471</desc>
+  </wpt>
+  <wpt lat="-37.852590000" lon="145.053990000">
+    <name>WPT472</name>
+    <cmt>WPT472</cmt>
+    <desc>WPT472</desc>
+  </wpt>
+  <wpt lat="-37.852480000" lon="145.053610000">
+    <name>WPT473</name>
+    <cmt>WPT473</cmt>
+    <desc>WPT473</desc>
+  </wpt>
+  <wpt lat="-37.852190000" lon="145.052840000">
+    <name>WPT474</name>
+    <cmt>WPT474</cmt>
+    <desc>WPT474</desc>
+  </wpt>
+  <wpt lat="-37.852140000" lon="145.052680000">
+    <name>WPT475</name>
+    <cmt>WPT475</cmt>
+    <desc>WPT475</desc>
+  </wpt>
+  <wpt lat="-37.852070000" lon="145.052430000">
+    <name>WPT476</name>
+    <cmt>WPT476</cmt>
+    <desc>WPT476</desc>
+  </wpt>
+  <wpt lat="-37.852030000" lon="145.052320000">
+    <name>WPT477</name>
+    <cmt>WPT477</cmt>
+    <desc>WPT477</desc>
+  </wpt>
+  <wpt lat="-37.851840000" lon="145.051790000">
+    <name>WPT478</name>
+    <cmt>WPT478</cmt>
+    <desc>WPT478</desc>
+  </wpt>
+  <wpt lat="-37.851650000" lon="145.051380000">
+    <name>WPT479</name>
+    <cmt>WPT479</cmt>
+    <desc>WPT479</desc>
+  </wpt>
+  <wpt lat="-37.851390000" lon="145.050890000">
+    <name>WPT480</name>
+    <cmt>WPT480</cmt>
+    <desc>WPT480</desc>
+  </wpt>
+  <wpt lat="-37.850910000" lon="145.050150000">
+    <name>WPT481</name>
+    <cmt>WPT481</cmt>
+    <desc>WPT481</desc>
+  </wpt>
+  <wpt lat="-37.850270000" lon="145.049160000">
+    <name>WPT482</name>
+    <cmt>WPT482</cmt>
+    <desc>WPT482</desc>
+  </wpt>
+  <wpt lat="-37.850000000" lon="145.048700000">
+    <name>WPT483</name>
+    <cmt>WPT483</cmt>
+    <desc>WPT483</desc>
+  </wpt>
+  <wpt lat="-37.849750000" lon="145.048270000">
+    <name>WPT484</name>
+    <cmt>WPT484</cmt>
+    <desc>WPT484</desc>
+  </wpt>
+  <wpt lat="-37.849520000" lon="145.047800000">
+    <name>WPT485</name>
+    <cmt>WPT485</cmt>
+    <desc>WPT485</desc>
+  </wpt>
+  <wpt lat="-37.849370000" lon="145.047490000">
+    <name>WPT486</name>
+    <cmt>WPT486</cmt>
+    <desc>WPT486</desc>
+  </wpt>
+  <wpt lat="-37.849160000" lon="145.046880000">
+    <name>WPT487</name>
+    <cmt>WPT487</cmt>
+    <desc>WPT487</desc>
+  </wpt>
+  <wpt lat="-37.849020000" lon="145.046350000">
+    <name>WPT488</name>
+    <cmt>WPT488</cmt>
+    <desc>WPT488</desc>
+  </wpt>
+  <wpt lat="-37.848940000" lon="145.045990000">
+    <name>WPT489</name>
+    <cmt>WPT489</cmt>
+    <desc>WPT489</desc>
+  </wpt>
+  <wpt lat="-37.848930000" lon="145.045960000">
+    <name>WPT490</name>
+    <cmt>WPT490</cmt>
+    <desc>WPT490</desc>
+  </wpt>
+  <wpt lat="-37.848830000" lon="145.045510000">
+    <name>WPT491</name>
+    <cmt>WPT491</cmt>
+    <desc>WPT491</desc>
+  </wpt>
+  <wpt lat="-37.848750000" lon="145.045130000">
+    <name>WPT492</name>
+    <cmt>WPT492</cmt>
+    <desc>WPT492</desc>
+  </wpt>
+  <wpt lat="-37.848570000" lon="145.044260000">
+    <name>WPT493</name>
+    <cmt>WPT493</cmt>
+    <desc>WPT493</desc>
+  </wpt>
+  <wpt lat="-37.848500000" lon="145.043920000">
+    <name>WPT494</name>
+    <cmt>WPT494</cmt>
+    <desc>WPT494</desc>
+  </wpt>
+  <wpt lat="-37.848440000" lon="145.043680000">
+    <name>WPT495</name>
+    <cmt>WPT495</cmt>
+    <desc>WPT495</desc>
+  </wpt>
+  <wpt lat="-37.848280000" lon="145.043180000">
+    <name>WPT496</name>
+    <cmt>WPT496</cmt>
+    <desc>WPT496</desc>
+  </wpt>
+  <wpt lat="-37.848220000" lon="145.042940000">
+    <name>WPT497</name>
+    <cmt>WPT497</cmt>
+    <desc>WPT497</desc>
+  </wpt>
+  <wpt lat="-37.848030000" lon="145.042510000">
+    <name>WPT498</name>
+    <cmt>WPT498</cmt>
+    <desc>WPT498</desc>
+  </wpt>
+  <wpt lat="-37.847850000" lon="145.042160000">
+    <name>WPT499</name>
+    <cmt>WPT499</cmt>
+    <desc>WPT499</desc>
+  </wpt>
+  <wpt lat="-37.847760000" lon="145.042050000">
+    <name>WPT500</name>
+    <cmt>WPT500</cmt>
+    <desc>WPT500</desc>
+  </wpt>
+  <wpt lat="-37.847490000" lon="145.041640000">
+    <name>WPT501</name>
+    <cmt>WPT501</cmt>
+    <desc>WPT501</desc>
+  </wpt>
+  <wpt lat="-37.847360000" lon="145.041430000">
+    <name>WPT502</name>
+    <cmt>WPT502</cmt>
+    <desc>WPT502</desc>
+  </wpt>
+  <wpt lat="-37.847220000" lon="145.041250000">
+    <name>WPT503</name>
+    <cmt>WPT503</cmt>
+    <desc>WPT503</desc>
+  </wpt>
+  <wpt lat="-37.847080000" lon="145.041080000">
+    <name>WPT504</name>
+    <cmt>WPT504</cmt>
+    <desc>WPT504</desc>
+  </wpt>
+  <wpt lat="-37.846900000" lon="145.040880000">
+    <name>WPT505</name>
+    <cmt>WPT505</cmt>
+    <desc>WPT505</desc>
+  </wpt>
+  <wpt lat="-37.846710000" lon="145.040690000">
+    <name>WPT506</name>
+    <cmt>WPT506</cmt>
+    <desc>WPT506</desc>
+  </wpt>
+  <wpt lat="-37.846550000" lon="145.040550000">
+    <name>WPT507</name>
+    <cmt>WPT507</cmt>
+    <desc>WPT507</desc>
+  </wpt>
+  <wpt lat="-37.846180000" lon="145.040240000">
+    <name>WPT508</name>
+    <cmt>WPT508</cmt>
+    <desc>WPT508</desc>
+  </wpt>
+  <wpt lat="-37.845920000" lon="145.040050000">
+    <name>WPT509</name>
+    <cmt>WPT509</cmt>
+    <desc>WPT509</desc>
+  </wpt>
+  <wpt lat="-37.845650000" lon="145.039900000">
+    <name>WPT510</name>
+    <cmt>WPT510</cmt>
+    <desc>WPT510</desc>
+  </wpt>
+  <wpt lat="-37.845450000" lon="145.039800000">
+    <name>WPT511</name>
+    <cmt>WPT511</cmt>
+    <desc>WPT511</desc>
+  </wpt>
+  <wpt lat="-37.845220000" lon="145.039690000">
+    <name>WPT512</name>
+    <cmt>WPT512</cmt>
+    <desc>WPT512</desc>
+  </wpt>
+  <wpt lat="-37.844840000" lon="145.039570000">
+    <name>WPT513</name>
+    <cmt>WPT513</cmt>
+    <desc>WPT513</desc>
+  </wpt>
+  <wpt lat="-37.844660000" lon="145.039520000">
+    <name>WPT514</name>
+    <cmt>WPT514</cmt>
+    <desc>WPT514</desc>
+  </wpt>
+  <wpt lat="-37.844480000" lon="145.039480000">
+    <name>WPT515</name>
+    <cmt>WPT515</cmt>
+    <desc>WPT515</desc>
+  </wpt>
+  <wpt lat="-37.844320000" lon="145.039450000">
+    <name>WPT516</name>
+    <cmt>WPT516</cmt>
+    <desc>WPT516</desc>
+  </wpt>
+  <wpt lat="-37.843970000" lon="145.039410000">
+    <name>WPT517</name>
+    <cmt>WPT517</cmt>
+    <desc>WPT517</desc>
+  </wpt>
+  <wpt lat="-37.843770000" lon="145.039400000">
+    <name>WPT518</name>
+    <cmt>WPT518</cmt>
+    <desc>WPT518</desc>
+  </wpt>
+  <wpt lat="-37.843400000" lon="145.039410000">
+    <name>WPT519</name>
+    <cmt>WPT519</cmt>
+    <desc>WPT519</desc>
+  </wpt>
+  <wpt lat="-37.842170000" lon="145.039470000">
+    <name>WPT520</name>
+    <cmt>WPT520</cmt>
+    <desc>WPT520</desc>
+  </wpt>
+  <wpt lat="-37.841710000" lon="145.039490000">
+    <name>WPT521</name>
+    <cmt>WPT521</cmt>
+    <desc>WPT521</desc>
+  </wpt>
+  <wpt lat="-37.841070000" lon="145.039390000">
+    <name>WPT522</name>
+    <cmt>WPT522</cmt>
+    <desc>WPT522</desc>
+  </wpt>
+  <wpt lat="-37.840860000" lon="145.039360000">
+    <name>WPT523</name>
+    <cmt>WPT523</cmt>
+    <desc>WPT523</desc>
+  </wpt>
+  <wpt lat="-37.840630000" lon="145.039300000">
+    <name>WPT524</name>
+    <cmt>WPT524</cmt>
+    <desc>WPT524</desc>
+  </wpt>
+  <wpt lat="-37.840360000" lon="145.039200000">
+    <name>WPT525</name>
+    <cmt>WPT525</cmt>
+    <desc>WPT525</desc>
+  </wpt>
+  <wpt lat="-37.840160000" lon="145.039100000">
+    <name>WPT526</name>
+    <cmt>WPT526</cmt>
+    <desc>WPT526</desc>
+  </wpt>
+  <wpt lat="-37.839930000" lon="145.038980000">
+    <name>WPT527</name>
+    <cmt>WPT527</cmt>
+    <desc>WPT527</desc>
+  </wpt>
+  <wpt lat="-37.839760000" lon="145.038870000">
+    <name>WPT528</name>
+    <cmt>WPT528</cmt>
+    <desc>WPT528</desc>
+  </wpt>
+  <wpt lat="-37.839570000" lon="145.038730000">
+    <name>WPT529</name>
+    <cmt>WPT529</cmt>
+    <desc>WPT529</desc>
+  </wpt>
+  <wpt lat="-37.839410000" lon="145.038600000">
+    <name>WPT530</name>
+    <cmt>WPT530</cmt>
+    <desc>WPT530</desc>
+  </wpt>
+  <wpt lat="-37.839180000" lon="145.038410000">
+    <name>WPT531</name>
+    <cmt>WPT531</cmt>
+    <desc>WPT531</desc>
+  </wpt>
+  <wpt lat="-37.839010000" lon="145.038260000">
+    <name>WPT532</name>
+    <cmt>WPT532</cmt>
+    <desc>WPT532</desc>
+  </wpt>
+  <wpt lat="-37.838820000" lon="145.038070000">
+    <name>WPT533</name>
+    <cmt>WPT533</cmt>
+    <desc>WPT533</desc>
+  </wpt>
+  <wpt lat="-37.838660000" lon="145.037870000">
+    <name>WPT534</name>
+    <cmt>WPT534</cmt>
+    <desc>WPT534</desc>
+  </wpt>
+  <wpt lat="-37.838440000" lon="145.037590000">
+    <name>WPT535</name>
+    <cmt>WPT535</cmt>
+    <desc>WPT535</desc>
+  </wpt>
+  <wpt lat="-37.838360000" lon="145.037470000">
+    <name>WPT536</name>
+    <cmt>WPT536</cmt>
+    <desc>WPT536</desc>
+  </wpt>
+  <wpt lat="-37.838240000" lon="145.037280000">
+    <name>WPT537</name>
+    <cmt>WPT537</cmt>
+    <desc>WPT537</desc>
+  </wpt>
+  <wpt lat="-37.838080000" lon="145.036990000">
+    <name>WPT538</name>
+    <cmt>WPT538</cmt>
+    <desc>WPT538</desc>
+  </wpt>
+  <wpt lat="-37.837850000" lon="145.036490000">
+    <name>WPT539</name>
+    <cmt>WPT539</cmt>
+    <desc>WPT539</desc>
+  </wpt>
+  <wpt lat="-37.837770000" lon="145.036280000">
+    <name>WPT540</name>
+    <cmt>WPT540</cmt>
+    <desc>WPT540</desc>
+  </wpt>
+  <wpt lat="-37.837670000" lon="145.036000000">
+    <name>WPT541</name>
+    <cmt>WPT541</cmt>
+    <desc>WPT541</desc>
+  </wpt>
+  <wpt lat="-37.837600000" lon="145.035760000">
+    <name>WPT542</name>
+    <cmt>WPT542</cmt>
+    <desc>WPT542</desc>
+  </wpt>
+  <wpt lat="-37.837550000" lon="145.035580000">
+    <name>WPT543</name>
+    <cmt>WPT543</cmt>
+    <desc>WPT543</desc>
+  </wpt>
+  <wpt lat="-37.837480000" lon="145.035330000">
+    <name>WPT544</name>
+    <cmt>WPT544</cmt>
+    <desc>WPT544</desc>
+  </wpt>
+  <wpt lat="-37.837430000" lon="145.035090000">
+    <name>WPT545</name>
+    <cmt>WPT545</cmt>
+    <desc>WPT545</desc>
+  </wpt>
+  <wpt lat="-37.837400000" lon="145.034960000">
+    <name>WPT546</name>
+    <cmt>WPT546</cmt>
+    <desc>WPT546</desc>
+  </wpt>
+  <wpt lat="-37.837380000" lon="145.034820000">
+    <name>WPT547</name>
+    <cmt>WPT547</cmt>
+    <desc>WPT547</desc>
+  </wpt>
+  <wpt lat="-37.837360000" lon="145.034640000">
+    <name>WPT548</name>
+    <cmt>WPT548</cmt>
+    <desc>WPT548</desc>
+  </wpt>
+  <wpt lat="-37.837360000" lon="145.034600000">
+    <name>WPT549</name>
+    <cmt>WPT549</cmt>
+    <desc>WPT549</desc>
+  </wpt>
+  <wpt lat="-37.837330000" lon="145.034300000">
+    <name>WPT550</name>
+    <cmt>WPT550</cmt>
+    <desc>WPT550</desc>
+  </wpt>
+  <wpt lat="-37.837310000" lon="145.033980000">
+    <name>WPT551</name>
+    <cmt>WPT551</cmt>
+    <desc>WPT551</desc>
+  </wpt>
+  <wpt lat="-37.837310000" lon="145.033700000">
+    <name>WPT552</name>
+    <cmt>WPT552</cmt>
+    <desc>WPT552</desc>
+  </wpt>
+  <wpt lat="-37.837320000" lon="145.033380000">
+    <name>WPT553</name>
+    <cmt>WPT553</cmt>
+    <desc>WPT553</desc>
+  </wpt>
+  <wpt lat="-37.837360000" lon="145.032920000">
+    <name>WPT554</name>
+    <cmt>WPT554</cmt>
+    <desc>WPT554</desc>
+  </wpt>
+  <wpt lat="-37.837380000" lon="145.032770000">
+    <name>WPT555</name>
+    <cmt>WPT555</cmt>
+    <desc>WPT555</desc>
+  </wpt>
+  <wpt lat="-37.837390000" lon="145.032650000">
+    <name>WPT556</name>
+    <cmt>WPT556</cmt>
+    <desc>WPT556</desc>
+  </wpt>
+  <wpt lat="-37.837420000" lon="145.032500000">
+    <name>WPT557</name>
+    <cmt>WPT557</cmt>
+    <desc>WPT557</desc>
+  </wpt>
+  <wpt lat="-37.837730000" lon="145.031060000">
+    <name>WPT558</name>
+    <cmt>WPT558</cmt>
+    <desc>WPT558</desc>
+  </wpt>
+  <wpt lat="-37.837790000" lon="145.030750000">
+    <name>WPT559</name>
+    <cmt>WPT559</cmt>
+    <desc>WPT559</desc>
+  </wpt>
+  <wpt lat="-37.837820000" lon="145.030500000">
+    <name>WPT560</name>
+    <cmt>WPT560</cmt>
+    <desc>WPT560</desc>
+  </wpt>
+  <wpt lat="-37.837850000" lon="145.030170000">
+    <name>WPT561</name>
+    <cmt>WPT561</cmt>
+    <desc>WPT561</desc>
+  </wpt>
+  <wpt lat="-37.837860000" lon="145.029720000">
+    <name>WPT562</name>
+    <cmt>WPT562</cmt>
+    <desc>WPT562</desc>
+  </wpt>
+  <wpt lat="-37.837850000" lon="145.029550000">
+    <name>WPT563</name>
+    <cmt>WPT563</cmt>
+    <desc>WPT563</desc>
+  </wpt>
+  <wpt lat="-37.837830000" lon="145.029290000">
+    <name>WPT564</name>
+    <cmt>WPT564</cmt>
+    <desc>WPT564</desc>
+  </wpt>
+  <wpt lat="-37.837790000" lon="145.029000000">
+    <name>WPT565</name>
+    <cmt>WPT565</cmt>
+    <desc>WPT565</desc>
+  </wpt>
+  <wpt lat="-37.837730000" lon="145.028680000">
+    <name>WPT566</name>
+    <cmt>WPT566</cmt>
+    <desc>WPT566</desc>
+  </wpt>
+  <wpt lat="-37.837680000" lon="145.028510000">
+    <name>WPT567</name>
+    <cmt>WPT567</cmt>
+    <desc>WPT567</desc>
+  </wpt>
+  <wpt lat="-37.837620000" lon="145.028280000">
+    <name>WPT568</name>
+    <cmt>WPT568</cmt>
+    <desc>WPT568</desc>
+  </wpt>
+  <wpt lat="-37.837480000" lon="145.027940000">
+    <name>WPT569</name>
+    <cmt>WPT569</cmt>
+    <desc>WPT569</desc>
+  </wpt>
+  <wpt lat="-37.837300000" lon="145.027560000">
+    <name>WPT570</name>
+    <cmt>WPT570</cmt>
+    <desc>WPT570</desc>
+  </wpt>
+  <wpt lat="-37.837000000" lon="145.027070000">
+    <name>WPT571</name>
+    <cmt>WPT571</cmt>
+    <desc>WPT571</desc>
+  </wpt>
+  <wpt lat="-37.836550000" lon="145.026570000">
+    <name>WPT572</name>
+    <cmt>WPT572</cmt>
+    <desc>WPT572</desc>
+  </wpt>
+  <wpt lat="-37.836150000" lon="145.026170000">
+    <name>WPT573</name>
+    <cmt>WPT573</cmt>
+    <desc>WPT573</desc>
+  </wpt>
+  <wpt lat="-37.835690000" lon="145.025770000">
+    <name>WPT574</name>
+    <cmt>WPT574</cmt>
+    <desc>WPT574</desc>
+  </wpt>
+  <wpt lat="-37.834920000" lon="145.025090000">
+    <name>WPT575</name>
+    <cmt>WPT575</cmt>
+    <desc>WPT575</desc>
+  </wpt>
+  <wpt lat="-37.834470000" lon="145.024720000">
+    <name>WPT576</name>
+    <cmt>WPT576</cmt>
+    <desc>WPT576</desc>
+  </wpt>
+  <wpt lat="-37.834130000" lon="145.024430000">
+    <name>WPT577</name>
+    <cmt>WPT577</cmt>
+    <desc>WPT577</desc>
+  </wpt>
+  <wpt lat="-37.834080000" lon="145.024380000">
+    <name>WPT578</name>
+    <cmt>WPT578</cmt>
+    <desc>WPT578</desc>
+  </wpt>
+  <wpt lat="-37.834010000" lon="145.024320000">
+    <name>WPT579</name>
+    <cmt>WPT579</cmt>
+    <desc>WPT579</desc>
+  </wpt>
+  <wpt lat="-37.833920000" lon="145.024250000">
+    <name>WPT580</name>
+    <cmt>WPT580</cmt>
+    <desc>WPT580</desc>
+  </wpt>
+  <wpt lat="-37.833680000" lon="145.024000000">
+    <name>WPT581</name>
+    <cmt>WPT581</cmt>
+    <desc>WPT581</desc>
+  </wpt>
+  <wpt lat="-37.833510000" lon="145.023850000">
+    <name>WPT582</name>
+    <cmt>WPT582</cmt>
+    <desc>WPT582</desc>
+  </wpt>
+  <wpt lat="-37.832980000" lon="145.023380000">
+    <name>WPT583</name>
+    <cmt>WPT583</cmt>
+    <desc>WPT583</desc>
+  </wpt>
+  <wpt lat="-37.832620000" lon="145.023060000">
+    <name>WPT584</name>
+    <cmt>WPT584</cmt>
+    <desc>WPT584</desc>
+  </wpt>
+  <wpt lat="-37.832260000" lon="145.022670000">
+    <name>WPT585</name>
+    <cmt>WPT585</cmt>
+    <desc>WPT585</desc>
+  </wpt>
+  <wpt lat="-37.831940000" lon="145.022220000">
+    <name>WPT586</name>
+    <cmt>WPT586</cmt>
+    <desc>WPT586</desc>
+  </wpt>
+  <wpt lat="-37.831750000" lon="145.021880000">
+    <name>WPT587</name>
+    <cmt>WPT587</cmt>
+    <desc>WPT587</desc>
+  </wpt>
+  <wpt lat="-37.831610000" lon="145.021560000">
+    <name>WPT588</name>
+    <cmt>WPT588</cmt>
+    <desc>WPT588</desc>
+  </wpt>
+  <wpt lat="-37.831530000" lon="145.021350000">
+    <name>WPT589</name>
+    <cmt>WPT589</cmt>
+    <desc>WPT589</desc>
+  </wpt>
+  <wpt lat="-37.831460000" lon="145.021130000">
+    <name>WPT590</name>
+    <cmt>WPT590</cmt>
+    <desc>WPT590</desc>
+  </wpt>
+  <wpt lat="-37.831380000" lon="145.020900000">
+    <name>WPT591</name>
+    <cmt>WPT591</cmt>
+    <desc>WPT591</desc>
+  </wpt>
+  <wpt lat="-37.831290000" lon="145.020490000">
+    <name>WPT592</name>
+    <cmt>WPT592</cmt>
+    <desc>WPT592</desc>
+  </wpt>
+  <wpt lat="-37.831200000" lon="145.020070000">
+    <name>WPT593</name>
+    <cmt>WPT593</cmt>
+    <desc>WPT593</desc>
+  </wpt>
+  <wpt lat="-37.830920000" lon="145.018590000">
+    <name>WPT594</name>
+    <cmt>WPT594</cmt>
+    <desc>WPT594</desc>
+  </wpt>
+  <wpt lat="-37.830810000" lon="145.018020000">
+    <name>WPT595</name>
+    <cmt>WPT595</cmt>
+    <desc>WPT595</desc>
+  </wpt>
+  <wpt lat="-37.830260000" lon="145.015320000">
+    <name>WPT596</name>
+    <cmt>WPT596</cmt>
+    <desc>WPT596</desc>
+  </wpt>
+  <wpt lat="-37.830180000" lon="145.014920000">
+    <name>WPT597</name>
+    <cmt>WPT597</cmt>
+    <desc>WPT597</desc>
+  </wpt>
+  <wpt lat="-37.830150000" lon="145.014760000">
+    <name>WPT598</name>
+    <cmt>WPT598</cmt>
+    <desc>WPT598</desc>
+  </wpt>
+  <wpt lat="-37.830090000" lon="145.014410000">
+    <name>WPT599</name>
+    <cmt>WPT599</cmt>
+    <desc>WPT599</desc>
+  </wpt>
+  <wpt lat="-37.830080000" lon="145.014290000">
+    <name>WPT600</name>
+    <cmt>WPT600</cmt>
+    <desc>WPT600</desc>
+  </wpt>
+  <wpt lat="-37.830060000" lon="145.014090000">
+    <name>WPT601</name>
+    <cmt>WPT601</cmt>
+    <desc>WPT601</desc>
+  </wpt>
+  <wpt lat="-37.830040000" lon="145.013660000">
+    <name>WPT602</name>
+    <cmt>WPT602</cmt>
+    <desc>WPT602</desc>
+  </wpt>
+  <wpt lat="-37.830040000" lon="145.013520000">
+    <name>WPT603</name>
+    <cmt>WPT603</cmt>
+    <desc>WPT603</desc>
+  </wpt>
+  <wpt lat="-37.830050000" lon="145.013320000">
+    <name>WPT604</name>
+    <cmt>WPT604</cmt>
+    <desc>WPT604</desc>
+  </wpt>
+  <wpt lat="-37.830070000" lon="145.013050000">
+    <name>WPT605</name>
+    <cmt>WPT605</cmt>
+    <desc>WPT605</desc>
+  </wpt>
+  <wpt lat="-37.830120000" lon="145.012740000">
+    <name>WPT606</name>
+    <cmt>WPT606</cmt>
+    <desc>WPT606</desc>
+  </wpt>
+  <wpt lat="-37.830260000" lon="145.012130000">
+    <name>WPT607</name>
+    <cmt>WPT607</cmt>
+    <desc>WPT607</desc>
+  </wpt>
+  <wpt lat="-37.830370000" lon="145.011790000">
+    <name>WPT608</name>
+    <cmt>WPT608</cmt>
+    <desc>WPT608</desc>
+  </wpt>
+  <wpt lat="-37.830890000" lon="145.010460000">
+    <name>WPT609</name>
+    <cmt>WPT609</cmt>
+    <desc>WPT609</desc>
+  </wpt>
+  <wpt lat="-37.830930000" lon="145.010300000">
+    <name>WPT610</name>
+    <cmt>WPT610</cmt>
+    <desc>WPT610</desc>
+  </wpt>
+  <wpt lat="-37.831080000" lon="145.009610000">
+    <name>WPT611</name>
+    <cmt>WPT611</cmt>
+    <desc>WPT611</desc>
+  </wpt>
+  <wpt lat="-37.831120000" lon="145.009280000">
+    <name>WPT612</name>
+    <cmt>WPT612</cmt>
+    <desc>WPT612</desc>
+  </wpt>
+  <wpt lat="-37.831140000" lon="145.009110000">
+    <name>WPT613</name>
+    <cmt>WPT613</cmt>
+    <desc>WPT613</desc>
+  </wpt>
+  <wpt lat="-37.831140000" lon="145.009000000">
+    <name>WPT614</name>
+    <cmt>WPT614</cmt>
+    <desc>WPT614</desc>
+  </wpt>
+  <wpt lat="-37.831140000" lon="145.008680000">
+    <name>WPT615</name>
+    <cmt>WPT615</cmt>
+    <desc>WPT615</desc>
+  </wpt>
+  <wpt lat="-37.831140000" lon="145.008400000">
+    <name>WPT616</name>
+    <cmt>WPT616</cmt>
+    <desc>WPT616</desc>
+  </wpt>
+  <wpt lat="-37.831120000" lon="145.008260000">
+    <name>WPT617</name>
+    <cmt>WPT617</cmt>
+    <desc>WPT617</desc>
+  </wpt>
+  <wpt lat="-37.831100000" lon="145.008010000">
+    <name>WPT618</name>
+    <cmt>WPT618</cmt>
+    <desc>WPT618</desc>
+  </wpt>
+  <wpt lat="-37.831050000" lon="145.007660000">
+    <name>WPT619</name>
+    <cmt>WPT619</cmt>
+    <desc>WPT619</desc>
+  </wpt>
+  <wpt lat="-37.830960000" lon="145.006990000">
+    <name>WPT620</name>
+    <cmt>WPT620</cmt>
+    <desc>WPT620</desc>
+  </wpt>
+  <wpt lat="-37.830890000" lon="145.006560000">
+    <name>WPT621</name>
+    <cmt>WPT621</cmt>
+    <desc>WPT621</desc>
+  </wpt>
+  <wpt lat="-37.830850000" lon="145.006250000">
+    <name>WPT622</name>
+    <cmt>WPT622</cmt>
+    <desc>WPT622</desc>
+  </wpt>
+  <wpt lat="-37.830820000" lon="145.005990000">
+    <name>WPT623</name>
+    <cmt>WPT623</cmt>
+    <desc>WPT623</desc>
+  </wpt>
+  <wpt lat="-37.830810000" lon="145.005580000">
+    <name>WPT624</name>
+    <cmt>WPT624</cmt>
+    <desc>WPT624</desc>
+  </wpt>
+  <wpt lat="-37.830810000" lon="145.005300000">
+    <name>WPT625</name>
+    <cmt>WPT625</cmt>
+    <desc>WPT625</desc>
+  </wpt>
+  <wpt lat="-37.830840000" lon="145.005020000">
+    <name>WPT626</name>
+    <cmt>WPT626</cmt>
+    <desc>WPT626</desc>
+  </wpt>
+  <wpt lat="-37.830850000" lon="145.004900000">
+    <name>WPT627</name>
+    <cmt>WPT627</cmt>
+    <desc>WPT627</desc>
+  </wpt>
+  <wpt lat="-37.830870000" lon="145.004800000">
+    <name>WPT628</name>
+    <cmt>WPT628</cmt>
+    <desc>WPT628</desc>
+  </wpt>
+  <wpt lat="-37.830910000" lon="145.004620000">
+    <name>WPT629</name>
+    <cmt>WPT629</cmt>
+    <desc>WPT629</desc>
+  </wpt>
+  <wpt lat="-37.831000000" lon="145.004280000">
+    <name>WPT630</name>
+    <cmt>WPT630</cmt>
+    <desc>WPT630</desc>
+  </wpt>
+  <wpt lat="-37.831090000" lon="145.004000000">
+    <name>WPT631</name>
+    <cmt>WPT631</cmt>
+    <desc>WPT631</desc>
+  </wpt>
+  <wpt lat="-37.831150000" lon="145.003860000">
+    <name>WPT632</name>
+    <cmt>WPT632</cmt>
+    <desc>WPT632</desc>
+  </wpt>
+  <wpt lat="-37.831220000" lon="145.003670000">
+    <name>WPT633</name>
+    <cmt>WPT633</cmt>
+    <desc>WPT633</desc>
+  </wpt>
+  <wpt lat="-37.831230000" lon="145.003650000">
+    <name>WPT634</name>
+    <cmt>WPT634</cmt>
+    <desc>WPT634</desc>
+  </wpt>
+  <wpt lat="-37.831470000" lon="145.003220000">
+    <name>WPT635</name>
+    <cmt>WPT635</cmt>
+    <desc>WPT635</desc>
+  </wpt>
+  <wpt lat="-37.832090000" lon="145.002290000">
+    <name>WPT636</name>
+    <cmt>WPT636</cmt>
+    <desc>WPT636</desc>
+  </wpt>
+  <wpt lat="-37.832370000" lon="145.001880000">
+    <name>WPT637</name>
+    <cmt>WPT637</cmt>
+    <desc>WPT637</desc>
+  </wpt>
+  <wpt lat="-37.832460000" lon="145.001720000">
+    <name>WPT638</name>
+    <cmt>WPT638</cmt>
+    <desc>WPT638</desc>
+  </wpt>
+  <wpt lat="-37.832600000" lon="145.001480000">
+    <name>WPT639</name>
+    <cmt>WPT639</cmt>
+    <desc>WPT639</desc>
+  </wpt>
+  <wpt lat="-37.832730000" lon="145.001220000">
+    <name>WPT640</name>
+    <cmt>WPT640</cmt>
+    <desc>WPT640</desc>
+  </wpt>
+  <wpt lat="-37.832850000" lon="145.000990000">
+    <name>WPT641</name>
+    <cmt>WPT641</cmt>
+    <desc>WPT641</desc>
+  </wpt>
+  <wpt lat="-37.832950000" lon="145.000760000">
+    <name>WPT642</name>
+    <cmt>WPT642</cmt>
+    <desc>WPT642</desc>
+  </wpt>
+  <wpt lat="-37.833170000" lon="145.000240000">
+    <name>WPT643</name>
+    <cmt>WPT643</cmt>
+    <desc>WPT643</desc>
+  </wpt>
+  <wpt lat="-37.833240000" lon="145.000030000">
+    <name>WPT644</name>
+    <cmt>WPT644</cmt>
+    <desc>WPT644</desc>
+  </wpt>
+  <wpt lat="-37.833260000" lon="144.999970000">
+    <name>WPT645</name>
+    <cmt>WPT645</cmt>
+    <desc>WPT645</desc>
+  </wpt>
+  <wpt lat="-37.833280000" lon="144.999910000">
+    <name>WPT646</name>
+    <cmt>WPT646</cmt>
+    <desc>WPT646</desc>
+  </wpt>
+  <wpt lat="-37.833490000" lon="144.999280000">
+    <name>WPT647</name>
+    <cmt>WPT647</cmt>
+    <desc>WPT647</desc>
+  </wpt>
+  <wpt lat="-37.833720000" lon="144.998500000">
+    <name>WPT648</name>
+    <cmt>WPT648</cmt>
+    <desc>WPT648</desc>
+  </wpt>
+  <wpt lat="-37.833790000" lon="144.998250000">
+    <name>WPT649</name>
+    <cmt>WPT649</cmt>
+    <desc>WPT649</desc>
+  </wpt>
+  <wpt lat="-37.833840000" lon="144.998020000">
+    <name>WPT650</name>
+    <cmt>WPT650</cmt>
+    <desc>WPT650</desc>
+  </wpt>
+  <wpt lat="-37.833900000" lon="144.997670000">
+    <name>WPT651</name>
+    <cmt>WPT651</cmt>
+    <desc>WPT651</desc>
+  </wpt>
+  <wpt lat="-37.833920000" lon="144.997500000">
+    <name>WPT652</name>
+    <cmt>WPT652</cmt>
+    <desc>WPT652</desc>
+  </wpt>
+  <wpt lat="-37.833930000" lon="144.997270000">
+    <name>WPT653</name>
+    <cmt>WPT653</cmt>
+    <desc>WPT653</desc>
+  </wpt>
+  <wpt lat="-37.833920000" lon="144.996900000">
+    <name>WPT654</name>
+    <cmt>WPT654</cmt>
+    <desc>WPT654</desc>
+  </wpt>
+  <wpt lat="-37.833910000" lon="144.996620000">
+    <name>WPT655</name>
+    <cmt>WPT655</cmt>
+    <desc>WPT655</desc>
+  </wpt>
+  <wpt lat="-37.833830000" lon="144.996130000">
+    <name>WPT656</name>
+    <cmt>WPT656</cmt>
+    <desc>WPT656</desc>
+  </wpt>
+  <wpt lat="-37.833700000" lon="144.995590000">
+    <name>WPT657</name>
+    <cmt>WPT657</cmt>
+    <desc>WPT657</desc>
+  </wpt>
+  <wpt lat="-37.833430000" lon="144.994740000">
+    <name>WPT658</name>
+    <cmt>WPT658</cmt>
+    <desc>WPT658</desc>
+  </wpt>
+  <wpt lat="-37.833300000" lon="144.994310000">
+    <name>WPT659</name>
+    <cmt>WPT659</cmt>
+    <desc>WPT659</desc>
+  </wpt>
+  <wpt lat="-37.833180000" lon="144.993890000">
+    <name>WPT660</name>
+    <cmt>WPT660</cmt>
+    <desc>WPT660</desc>
+  </wpt>
+  <wpt lat="-37.833080000" lon="144.993430000">
+    <name>WPT661</name>
+    <cmt>WPT661</cmt>
+    <desc>WPT661</desc>
+  </wpt>
+  <wpt lat="-37.833050000" lon="144.993290000">
+    <name>WPT662</name>
+    <cmt>WPT662</cmt>
+    <desc>WPT662</desc>
+  </wpt>
+  <wpt lat="-37.832930000" lon="144.992730000">
+    <name>WPT663</name>
+    <cmt>WPT663</cmt>
+    <desc>WPT663</desc>
+  </wpt>
+  <wpt lat="-37.832760000" lon="144.992210000">
+    <name>WPT664</name>
+    <cmt>WPT664</cmt>
+    <desc>WPT664</desc>
+  </wpt>
+  <wpt lat="-37.832580000" lon="144.991810000">
+    <name>WPT665</name>
+    <cmt>WPT665</cmt>
+    <desc>WPT665</desc>
+  </wpt>
+  <wpt lat="-37.832390000" lon="144.991450000">
+    <name>WPT666</name>
+    <cmt>WPT666</cmt>
+    <desc>WPT666</desc>
+  </wpt>
+  <wpt lat="-37.832180000" lon="144.991150000">
+    <name>WPT667</name>
+    <cmt>WPT667</cmt>
+    <desc>WPT667</desc>
+  </wpt>
+  <wpt lat="-37.832100000" lon="144.991040000">
+    <name>WPT668</name>
+    <cmt>WPT668</cmt>
+    <desc>WPT668</desc>
+  </wpt>
+  <wpt lat="-37.832050000" lon="144.990980000">
+    <name>WPT669</name>
+    <cmt>WPT669</cmt>
+    <desc>WPT669</desc>
+  </wpt>
+  <wpt lat="-37.831800000" lon="144.990690000">
+    <name>WPT670</name>
+    <cmt>WPT670</cmt>
+    <desc>WPT670</desc>
+  </wpt>
+  <wpt lat="-37.831560000" lon="144.990410000">
+    <name>WPT671</name>
+    <cmt>WPT671</cmt>
+    <desc>WPT671</desc>
+  </wpt>
+  <wpt lat="-37.829970000" lon="144.988810000">
+    <name>WPT672</name>
+    <cmt>WPT672</cmt>
+    <desc>WPT672</desc>
+  </wpt>
+  <wpt lat="-37.829630000" lon="144.988500000">
+    <name>WPT673</name>
+    <cmt>WPT673</cmt>
+    <desc>WPT673</desc>
+  </wpt>
+  <wpt lat="-37.829300000" lon="144.988200000">
+    <name>WPT674</name>
+    <cmt>WPT674</cmt>
+    <desc>WPT674</desc>
+  </wpt>
+  <wpt lat="-37.828960000" lon="144.987920000">
+    <name>WPT675</name>
+    <cmt>WPT675</cmt>
+    <desc>WPT675</desc>
+  </wpt>
+  <wpt lat="-37.828620000" lon="144.987660000">
+    <name>WPT676</name>
+    <cmt>WPT676</cmt>
+    <desc>WPT676</desc>
+  </wpt>
+  <wpt lat="-37.828120000" lon="144.987270000">
+    <name>WPT677</name>
+    <cmt>WPT677</cmt>
+    <desc>WPT677</desc>
+  </wpt>
+  <wpt lat="-37.827920000" lon="144.987120000">
+    <name>WPT678</name>
+    <cmt>WPT678</cmt>
+    <desc>WPT678</desc>
+  </wpt>
+  <wpt lat="-37.827610000" lon="144.986820000">
+    <name>WPT679</name>
+    <cmt>WPT679</cmt>
+    <desc>WPT679</desc>
+  </wpt>
+  <wpt lat="-37.827460000" lon="144.986660000">
+    <name>WPT680</name>
+    <cmt>WPT680</cmt>
+    <desc>WPT680</desc>
+  </wpt>
+  <wpt lat="-37.827370000" lon="144.986550000">
+    <name>WPT681</name>
+    <cmt>WPT681</cmt>
+    <desc>WPT681</desc>
+  </wpt>
+  <wpt lat="-37.827190000" lon="144.986310000">
+    <name>WPT682</name>
+    <cmt>WPT682</cmt>
+    <desc>WPT682</desc>
+  </wpt>
+  <wpt lat="-37.827060000" lon="144.986140000">
+    <name>WPT683</name>
+    <cmt>WPT683</cmt>
+    <desc>WPT683</desc>
+  </wpt>
+  <wpt lat="-37.826990000" lon="144.986040000">
+    <name>WPT684</name>
+    <cmt>WPT684</cmt>
+    <desc>WPT684</desc>
+  </wpt>
+  <wpt lat="-37.826880000" lon="144.985840000">
+    <name>WPT685</name>
+    <cmt>WPT685</cmt>
+    <desc>WPT685</desc>
+  </wpt>
+  <wpt lat="-37.826760000" lon="144.985570000">
+    <name>WPT686</name>
+    <cmt>WPT686</cmt>
+    <desc>WPT686</desc>
+  </wpt>
+  <wpt lat="-37.826650000" lon="144.985300000">
+    <name>WPT687</name>
+    <cmt>WPT687</cmt>
+    <desc>WPT687</desc>
+  </wpt>
+  <wpt lat="-37.826520000" lon="144.984870000">
+    <name>WPT688</name>
+    <cmt>WPT688</cmt>
+    <desc>WPT688</desc>
+  </wpt>
+  <wpt lat="-37.826400000" lon="144.984330000">
+    <name>WPT689</name>
+    <cmt>WPT689</cmt>
+    <desc>WPT689</desc>
+  </wpt>
+  <wpt lat="-37.826190000" lon="144.983260000">
+    <name>WPT690</name>
+    <cmt>WPT690</cmt>
+    <desc>WPT690</desc>
+  </wpt>
+  <wpt lat="-37.826160000" lon="144.983100000">
+    <name>WPT691</name>
+    <cmt>WPT691</cmt>
+    <desc>WPT691</desc>
+  </wpt>
+  <wpt lat="-37.826100000" lon="144.982570000">
+    <name>WPT692</name>
+    <cmt>WPT692</cmt>
+    <desc>WPT692</desc>
+  </wpt>
+  <wpt lat="-37.825980000" lon="144.981670000">
+    <name>WPT693</name>
+    <cmt>WPT693</cmt>
+    <desc>WPT693</desc>
+  </wpt>
+  <wpt lat="-37.825940000" lon="144.981440000">
+    <name>WPT694</name>
+    <cmt>WPT694</cmt>
+    <desc>WPT694</desc>
+  </wpt>
+  <wpt lat="-37.825910000" lon="144.981210000">
+    <name>WPT695</name>
+    <cmt>WPT695</cmt>
+    <desc>WPT695</desc>
+  </wpt>
+  <wpt lat="-37.825820000" lon="144.980670000">
+    <name>WPT696</name>
+    <cmt>WPT696</cmt>
+    <desc>WPT696</desc>
+  </wpt>
+  <wpt lat="-37.825780000" lon="144.980470000">
+    <name>WPT697</name>
+    <cmt>WPT697</cmt>
+    <desc>WPT697</desc>
+  </wpt>
+  <wpt lat="-37.825610000" lon="144.979500000">
+    <name>WPT698</name>
+    <cmt>WPT698</cmt>
+    <desc>WPT698</desc>
+  </wpt>
+  <wpt lat="-37.825600000" lon="144.979450000">
+    <name>WPT699</name>
+    <cmt>WPT699</cmt>
+    <desc>WPT699</desc>
+  </wpt>
+  <wpt lat="-37.825540000" lon="144.979160000">
+    <name>WPT700</name>
+    <cmt>WPT700</cmt>
+    <desc>WPT700</desc>
+  </wpt>
+  <wpt lat="-37.825490000" lon="144.978860000">
+    <name>WPT701</name>
+    <cmt>WPT701</cmt>
+    <desc>WPT701</desc>
+  </wpt>
+  <wpt lat="-37.825450000" lon="144.978610000">
+    <name>WPT702</name>
+    <cmt>WPT702</cmt>
+    <desc>WPT702</desc>
+  </wpt>
+  <wpt lat="-37.825410000" lon="144.978250000">
+    <name>WPT703</name>
+    <cmt>WPT703</cmt>
+    <desc>WPT703</desc>
+  </wpt>
+  <wpt lat="-37.825400000" lon="144.978140000">
+    <name>WPT704</name>
+    <cmt>WPT704</cmt>
+    <desc>WPT704</desc>
+  </wpt>
+  <wpt lat="-37.825380000" lon="144.978050000">
+    <name>WPT705</name>
+    <cmt>WPT705</cmt>
+    <desc>WPT705</desc>
+  </wpt>
+  <wpt lat="-37.825350000" lon="144.977700000">
+    <name>WPT706</name>
+    <cmt>WPT706</cmt>
+    <desc>WPT706</desc>
+  </wpt>
+  <wpt lat="-37.825350000" lon="144.977670000">
+    <name>WPT707</name>
+    <cmt>WPT707</cmt>
+    <desc>WPT707</desc>
+  </wpt>
+  <wpt lat="-37.825280000" lon="144.977150000">
+    <name>WPT708</name>
+    <cmt>WPT708</cmt>
+    <desc>WPT708</desc>
+  </wpt>
+  <wpt lat="-37.825230000" lon="144.976620000">
+    <name>WPT709</name>
+    <cmt>WPT709</cmt>
+    <desc>WPT709</desc>
+  </wpt>
+  <wpt lat="-37.825180000" lon="144.976300000">
+    <name>WPT710</name>
+    <cmt>WPT710</cmt>
+    <desc>WPT710</desc>
+  </wpt>
+  <wpt lat="-37.825180000" lon="144.976280000">
+    <name>WPT711</name>
+    <cmt>WPT711</cmt>
+    <desc>WPT711</desc>
+  </wpt>
+  <wpt lat="-37.825140000" lon="144.975920000">
+    <name>WPT712</name>
+    <cmt>WPT712</cmt>
+    <desc>WPT712</desc>
+  </wpt>
+  <wpt lat="-37.825130000" lon="144.975780000">
+    <name>WPT713</name>
+    <cmt>WPT713</cmt>
+    <desc>WPT713</desc>
+  </wpt>
+  <wpt lat="-37.825130000" lon="144.975720000">
+    <name>WPT714</name>
+    <cmt>WPT714</cmt>
+    <desc>WPT714</desc>
+  </wpt>
+  <wpt lat="-37.825120000" lon="144.975460000">
+    <name>WPT715</name>
+    <cmt>WPT715</cmt>
+    <desc>WPT715</desc>
+  </wpt>
+  <wpt lat="-37.825060000" lon="144.974800000">
+    <name>WPT716</name>
+    <cmt>WPT716</cmt>
+    <desc>WPT716</desc>
+  </wpt>
+  <wpt lat="-37.824990000" lon="144.974170000">
+    <name>WPT717</name>
+    <cmt>WPT717</cmt>
+    <desc>WPT717</desc>
+  </wpt>
+  <wpt lat="-37.824960000" lon="144.973910000">
+    <name>WPT718</name>
+    <cmt>WPT718</cmt>
+    <desc>WPT718</desc>
+  </wpt>
+  <wpt lat="-37.824920000" lon="144.973570000">
+    <name>WPT719</name>
+    <cmt>WPT719</cmt>
+    <desc>WPT719</desc>
+  </wpt>
+  <wpt lat="-37.824870000" lon="144.972980000">
+    <name>WPT720</name>
+    <cmt>WPT720</cmt>
+    <desc>WPT720</desc>
+  </wpt>
+  <wpt lat="-37.824850000" lon="144.972280000">
+    <name>WPT721</name>
+    <cmt>WPT721</cmt>
+    <desc>WPT721</desc>
+  </wpt>
+  <wpt lat="-37.824850000" lon="144.972240000">
+    <name>WPT722</name>
+    <cmt>WPT722</cmt>
+    <desc>WPT722</desc>
+  </wpt>
+  <wpt lat="-37.824860000" lon="144.972150000">
+    <name>WPT723</name>
+    <cmt>WPT723</cmt>
+    <desc>WPT723</desc>
+  </wpt>
+  <wpt lat="-37.824860000" lon="144.972050000">
+    <name>WPT724</name>
+    <cmt>WPT724</cmt>
+    <desc>WPT724</desc>
+  </wpt>
+  <wpt lat="-37.824870000" lon="144.971740000">
+    <name>WPT725</name>
+    <cmt>WPT725</cmt>
+    <desc>WPT725</desc>
+  </wpt>
+  <wpt lat="-37.824930000" lon="144.971330000">
+    <name>WPT726</name>
+    <cmt>WPT726</cmt>
+    <desc>WPT726</desc>
+  </wpt>
+  <wpt lat="-37.825060000" lon="144.970940000">
+    <name>WPT727</name>
+    <cmt>WPT727</cmt>
+    <desc>WPT727</desc>
+  </wpt>
+  <wpt lat="-37.825060000" lon="144.970930000">
+    <name>WPT728</name>
+    <cmt>WPT728</cmt>
+    <desc>WPT728</desc>
+  </wpt>
+  <wpt lat="-37.825090000" lon="144.970830000">
+    <name>WPT729</name>
+    <cmt>WPT729</cmt>
+    <desc>WPT729</desc>
+  </wpt>
+  <wpt lat="-37.825130000" lon="144.970740000">
+    <name>WPT730</name>
+    <cmt>WPT730</cmt>
+    <desc>WPT730</desc>
+  </wpt>
+  <wpt lat="-37.825150000" lon="144.970670000">
+    <name>WPT731</name>
+    <cmt>WPT731</cmt>
+    <desc>WPT731</desc>
+  </wpt>
+  <wpt lat="-37.825330000" lon="144.970130000">
+    <name>WPT732</name>
+    <cmt>WPT732</cmt>
+    <desc>WPT732</desc>
+  </wpt>
+  <wpt lat="-37.825510000" lon="144.969600000">
+    <name>WPT733</name>
+    <cmt>WPT733</cmt>
+    <desc>WPT733</desc>
+  </wpt>
+  <wpt lat="-37.825610000" lon="144.969290000">
+    <name>WPT734</name>
+    <cmt>WPT734</cmt>
+    <desc>WPT734</desc>
+  </wpt>
+  <wpt lat="-37.825710000" lon="144.968980000">
+    <name>WPT735</name>
+    <cmt>WPT735</cmt>
+    <desc>WPT735</desc>
+  </wpt>
+  <wpt lat="-37.826080000" lon="144.967790000">
+    <name>WPT736</name>
+    <cmt>WPT736</cmt>
+    <desc>WPT736</desc>
+  </wpt>
+  <wpt lat="-37.826080300" lon="144.967793900">
+    <name>WPT737</name>
+    <cmt>WPT737</cmt>
+    <desc>WPT737</desc>
+  </wpt>
+  <wpt lat="-37.826230000" lon="144.967580000">
+    <name>WPT738</name>
+    <cmt>WPT738</cmt>
+    <desc>WPT738</desc>
+  </wpt>
+  <wpt lat="-37.826300000" lon="144.967430000">
+    <name>WPT739</name>
+    <cmt>WPT739</cmt>
+    <desc>WPT739</desc>
+  </wpt>
+  <wpt lat="-37.826670000" lon="144.966250000">
+    <name>WPT740</name>
+    <cmt>WPT740</cmt>
+    <desc>WPT740</desc>
+  </wpt>
+  <wpt lat="-37.826770000" lon="144.965920000">
+    <name>WPT741</name>
+    <cmt>WPT741</cmt>
+    <desc>WPT741</desc>
+  </wpt>
+  <wpt lat="-37.826810000" lon="144.965810000">
+    <name>WPT742</name>
+    <cmt>WPT742</cmt>
+    <desc>WPT742</desc>
+  </wpt>
+  <wpt lat="-37.826830000" lon="144.965730000">
+    <name>WPT743</name>
+    <cmt>WPT743</cmt>
+    <desc>WPT743</desc>
+  </wpt>
+  <wpt lat="-37.827060000" lon="144.965040000">
+    <name>WPT744</name>
+    <cmt>WPT744</cmt>
+    <desc>WPT744</desc>
+  </wpt>
+  <wpt lat="-37.827260000" lon="144.964380000">
+    <name>WPT745</name>
+    <cmt>WPT745</cmt>
+    <desc>WPT745</desc>
+  </wpt>
+  <wpt lat="-37.827270000" lon="144.964320000">
+    <name>WPT746</name>
+    <cmt>WPT746</cmt>
+    <desc>WPT746</desc>
+  </wpt>
+  <wpt lat="-37.827380000" lon="144.963920000">
+    <name>WPT747</name>
+    <cmt>WPT747</cmt>
+    <desc>WPT747</desc>
+  </wpt>
+  <wpt lat="-37.827410000" lon="144.963780000">
+    <name>WPT748</name>
+    <cmt>WPT748</cmt>
+    <desc>WPT748</desc>
+  </wpt>
+  <wpt lat="-37.827530000" lon="144.963130000">
+    <name>WPT749</name>
+    <cmt>WPT749</cmt>
+    <desc>WPT749</desc>
+  </wpt>
+  <wpt lat="-37.827530000" lon="144.963020000">
+    <name>WPT750</name>
+    <cmt>WPT750</cmt>
+    <desc>WPT750</desc>
+  </wpt>
+  <wpt lat="-37.827550000" lon="144.962920000">
+    <name>WPT751</name>
+    <cmt>WPT751</cmt>
+    <desc>WPT751</desc>
+  </wpt>
+  <wpt lat="-37.827570000" lon="144.962830000">
+    <name>WPT752</name>
+    <cmt>WPT752</cmt>
+    <desc>WPT752</desc>
+  </wpt>
+  <wpt lat="-37.827590000" lon="144.962760000">
+    <name>WPT753</name>
+    <cmt>WPT753</cmt>
+    <desc>WPT753</desc>
+  </wpt>
+  <wpt lat="-37.827587100" lon="144.962764600">
+    <name>WPT754</name>
+    <cmt>WPT754</cmt>
+    <desc>WPT754</desc>
+  </wpt>
+  <wpt lat="-37.827610000" lon="144.962680000">
+    <name>WPT755</name>
+    <cmt>WPT755</cmt>
+    <desc>WPT755</desc>
+  </wpt>
+  <wpt lat="-37.827650000" lon="144.962520000">
+    <name>WPT756</name>
+    <cmt>WPT756</cmt>
+    <desc>WPT756</desc>
+  </wpt>
+  <wpt lat="-37.827730000" lon="144.962310000">
+    <name>WPT757</name>
+    <cmt>WPT757</cmt>
+    <desc>WPT757</desc>
+  </wpt>
+  <wpt lat="-37.827727000" lon="144.962305600">
+    <name>WPT758</name>
+    <cmt>WPT758</cmt>
+    <desc>WPT758</desc>
+  </wpt>
+  <wpt lat="-37.827790000" lon="144.962050000">
+    <name>WPT759</name>
+    <cmt>WPT759</cmt>
+    <desc>WPT759</desc>
+  </wpt>
+  <wpt lat="-37.827470000" lon="144.961740000">
+    <name>WPT760</name>
+    <cmt>WPT760</cmt>
+    <desc>WPT760</desc>
+  </wpt>
+  <wpt lat="-37.827300000" lon="144.961590000">
+    <name>WPT761</name>
+    <cmt>WPT761</cmt>
+    <desc>WPT761</desc>
+  </wpt>
+  <wpt lat="-37.827140000" lon="144.961430000">
+    <name>WPT762</name>
+    <cmt>WPT762</cmt>
+    <desc>WPT762</desc>
+  </wpt>
+  <wpt lat="-37.826890000" lon="144.961190000">
+    <name>WPT763</name>
+    <cmt>WPT763</cmt>
+    <desc>WPT763</desc>
+  </wpt>
+  <wpt lat="-37.826310000" lon="144.960610000">
+    <name>WPT764</name>
+    <cmt>WPT764</cmt>
+    <desc>WPT764</desc>
+  </wpt>
+  <wpt lat="-37.826260000" lon="144.960560000">
+    <name>WPT765</name>
+    <cmt>WPT765</cmt>
+    <desc>WPT765</desc>
+  </wpt>
+  <wpt lat="-37.825860000" lon="144.960170000">
+    <name>WPT766</name>
+    <cmt>WPT766</cmt>
+    <desc>WPT766</desc>
+  </wpt>
+  <wpt lat="-37.825680000" lon="144.960000000">
+    <name>WPT767</name>
+    <cmt>WPT767</cmt>
+    <desc>WPT767</desc>
+  </wpt>
+  <wpt lat="-37.825420000" lon="144.959710000">
+    <name>WPT768</name>
+    <cmt>WPT768</cmt>
+    <desc>WPT768</desc>
+  </wpt>
+  <wpt lat="-37.825370000" lon="144.959660000">
+    <name>WPT769</name>
+    <cmt>WPT769</cmt>
+    <desc>WPT769</desc>
+  </wpt>
+  <wpt lat="-37.824940000" lon="144.959230000">
+    <name>WPT770</name>
+    <cmt>WPT770</cmt>
+    <desc>WPT770</desc>
+  </wpt>
+  <wpt lat="-37.824640000" lon="144.958910000">
+    <name>WPT771</name>
+    <cmt>WPT771</cmt>
+    <desc>WPT771</desc>
+  </wpt>
+  <wpt lat="-37.824580000" lon="144.958860000">
+    <name>WPT772</name>
+    <cmt>WPT772</cmt>
+    <desc>WPT772</desc>
+  </wpt>
+  <wpt lat="-37.824530000" lon="144.958810000">
+    <name>WPT773</name>
+    <cmt>WPT773</cmt>
+    <desc>WPT773</desc>
+  </wpt>
+  <wpt lat="-37.824480000" lon="144.958770000">
+    <name>WPT774</name>
+    <cmt>WPT774</cmt>
+    <desc>WPT774</desc>
+  </wpt>
+  <wpt lat="-37.824340000" lon="144.958650000">
+    <name>WPT775</name>
+    <cmt>WPT775</cmt>
+    <desc>WPT775</desc>
+  </wpt>
+  <wpt lat="-37.824320000" lon="144.958630000">
+    <name>WPT776</name>
+    <cmt>WPT776</cmt>
+    <desc>WPT776</desc>
+  </wpt>
+  <wpt lat="-37.824150000" lon="144.958510000">
+    <name>WPT777</name>
+    <cmt>WPT777</cmt>
+    <desc>WPT777</desc>
+  </wpt>
+  <wpt lat="-37.824120000" lon="144.958490000">
+    <name>WPT778</name>
+    <cmt>WPT778</cmt>
+    <desc>WPT778</desc>
+  </wpt>
+  <wpt lat="-37.824020000" lon="144.958440000">
+    <name>WPT779</name>
+    <cmt>WPT779</cmt>
+    <desc>WPT779</desc>
+  </wpt>
+  <wpt lat="-37.823890000" lon="144.958350000">
+    <name>WPT780</name>
+    <cmt>WPT780</cmt>
+    <desc>WPT780</desc>
+  </wpt>
+  <wpt lat="-37.823690000" lon="144.958270000">
+    <name>WPT781</name>
+    <cmt>WPT781</cmt>
+    <desc>WPT781</desc>
+  </wpt>
+  <wpt lat="-37.823480000" lon="144.958210000">
+    <name>WPT782</name>
+    <cmt>WPT782</cmt>
+    <desc>WPT782</desc>
+  </wpt>
+  <wpt lat="-37.823140000" lon="144.958140000">
+    <name>WPT783</name>
+    <cmt>WPT783</cmt>
+    <desc>WPT783</desc>
+  </wpt>
+  <wpt lat="-37.823000000" lon="144.958120000">
+    <name>WPT784</name>
+    <cmt>WPT784</cmt>
+    <desc>WPT784</desc>
+  </wpt>
+  <wpt lat="-37.822830000" lon="144.958110000">
+    <name>WPT785</name>
+    <cmt>WPT785</cmt>
+    <desc>WPT785</desc>
+  </wpt>
+  <wpt lat="-37.822760000" lon="144.958100000">
+    <name>WPT786</name>
+    <cmt>WPT786</cmt>
+    <desc>WPT786</desc>
+  </wpt>
+  <wpt lat="-37.822730000" lon="144.958090000">
+    <name>WPT787</name>
+    <cmt>WPT787</cmt>
+    <desc>WPT787</desc>
+  </wpt>
+  <wpt lat="-37.822060000" lon="144.958020000">
+    <name>WPT788</name>
+    <cmt>WPT788</cmt>
+    <desc>WPT788</desc>
+  </wpt>
+  <wpt lat="-37.821540000" lon="144.957960000">
+    <name>WPT789</name>
+    <cmt>WPT789</cmt>
+    <desc>WPT789</desc>
+  </wpt>
+  <wpt lat="-37.821320000" lon="144.957900000">
+    <name>WPT790</name>
+    <cmt>WPT790</cmt>
+    <desc>WPT790</desc>
+  </wpt>
+  <wpt lat="-37.821220000" lon="144.957870000">
+    <name>WPT791</name>
+    <cmt>WPT791</cmt>
+    <desc>WPT791</desc>
+  </wpt>
+  <wpt lat="-37.821140000" lon="144.957840000">
+    <name>WPT792</name>
+    <cmt>WPT792</cmt>
+    <desc>WPT792</desc>
+  </wpt>
+  <wpt lat="-37.821080000" lon="144.957820000">
+    <name>WPT793</name>
+    <cmt>WPT793</cmt>
+    <desc>WPT793</desc>
+  </wpt>
+  <wpt lat="-37.821030000" lon="144.957800000">
+    <name>WPT794</name>
+    <cmt>WPT794</cmt>
+    <desc>WPT794</desc>
+  </wpt>
+  <wpt lat="-37.820960000" lon="144.957780000">
+    <name>WPT795</name>
+    <cmt>WPT795</cmt>
+    <desc>WPT795</desc>
+  </wpt>
+  <wpt lat="-37.820940000" lon="144.957770000">
+    <name>WPT796</name>
+    <cmt>WPT796</cmt>
+    <desc>WPT796</desc>
+  </wpt>
+  <wpt lat="-37.820920000" lon="144.957760000">
+    <name>WPT797</name>
+    <cmt>WPT797</cmt>
+    <desc>WPT797</desc>
+  </wpt>
+  <wpt lat="-37.820800000" lon="144.957700000">
+    <name>WPT798</name>
+    <cmt>WPT798</cmt>
+    <desc>WPT798</desc>
+  </wpt>
+  <wpt lat="-37.820630000" lon="144.957620000">
+    <name>WPT799</name>
+    <cmt>WPT799</cmt>
+    <desc>WPT799</desc>
+  </wpt>
+  <wpt lat="-37.820430000" lon="144.957530000">
+    <name>WPT800</name>
+    <cmt>WPT800</cmt>
+    <desc>WPT800</desc>
+  </wpt>
+  <wpt lat="-37.820427900" lon="144.957530300">
+    <name>WPT801</name>
+    <cmt>WPT801</cmt>
+    <desc>WPT801</desc>
+  </wpt>
+  <wpt lat="-37.820280000" lon="144.957460000">
+    <name>WPT802</name>
+    <cmt>WPT802</cmt>
+    <desc>WPT802</desc>
+  </wpt>
+  <wpt lat="-37.819960000" lon="144.957300000">
+    <name>WPT803</name>
+    <cmt>WPT803</cmt>
+    <desc>WPT803</desc>
+  </wpt>
+  <wpt lat="-37.819760000" lon="144.957200000">
+    <name>WPT804</name>
+    <cmt>WPT804</cmt>
+    <desc>WPT804</desc>
+  </wpt>
+  <wpt lat="-37.819410000" lon="144.957050000">
+    <name>WPT805</name>
+    <cmt>WPT805</cmt>
+    <desc>WPT805</desc>
+  </wpt>
+  <wpt lat="-37.818950000" lon="144.956840000">
+    <name>WPT806</name>
+    <cmt>WPT806</cmt>
+    <desc>WPT806</desc>
+  </wpt>
+  <wpt lat="-37.818410000" lon="144.956590000">
+    <name>WPT807</name>
+    <cmt>WPT807</cmt>
+    <desc>WPT807</desc>
+  </wpt>
+  <wpt lat="-37.818330000" lon="144.956560000">
+    <name>WPT808</name>
+    <cmt>WPT808</cmt>
+    <desc>WPT808</desc>
+  </wpt>
+  <wpt lat="-37.817860000" lon="144.956340000">
+    <name>WPT809</name>
+    <cmt>WPT809</cmt>
+    <desc>WPT809</desc>
+  </wpt>
+  <wpt lat="-37.817380000" lon="144.956120000">
+    <name>WPT810</name>
+    <cmt>WPT810</cmt>
+    <desc>WPT810</desc>
+  </wpt>
+  <wpt lat="-37.816930000" lon="144.955920000">
+    <name>WPT811</name>
+    <cmt>WPT811</cmt>
+    <desc>WPT811</desc>
+  </wpt>
+  <wpt lat="-37.816390000" lon="144.955670000">
+    <name>WPT812</name>
+    <cmt>WPT812</cmt>
+    <desc>WPT812</desc>
+  </wpt>
+  <wpt lat="-37.815420000" lon="144.955220000">
+    <name>WPT813</name>
+    <cmt>WPT813</cmt>
+    <desc>WPT813</desc>
+  </wpt>
+  <wpt lat="-37.814900000" lon="144.954990000">
+    <name>WPT814</name>
+    <cmt>WPT814</cmt>
+    <desc>WPT814</desc>
+  </wpt>
+  <wpt lat="-37.814480000" lon="144.954790000">
+    <name>WPT815</name>
+    <cmt>WPT815</cmt>
+    <desc>WPT815</desc>
+  </wpt>
+  <wpt lat="-37.814410000" lon="144.954760000">
+    <name>WPT816</name>
+    <cmt>WPT816</cmt>
+    <desc>WPT816</desc>
+  </wpt>
+  <wpt lat="-37.814170000" lon="144.954650000">
+    <name>WPT817</name>
+    <cmt>WPT817</cmt>
+    <desc>WPT817</desc>
+  </wpt>
+  <wpt lat="-37.814040000" lon="144.954590000">
+    <name>WPT818</name>
+    <cmt>WPT818</cmt>
+    <desc>WPT818</desc>
+  </wpt>
+  <wpt lat="-37.813460000" lon="144.954320000">
+    <name>WPT819</name>
+    <cmt>WPT819</cmt>
+    <desc>WPT819</desc>
+  </wpt>
+  <wpt lat="-37.813000000" lon="144.954110000">
+    <name>WPT820</name>
+    <cmt>WPT820</cmt>
+    <desc>WPT820</desc>
+  </wpt>
+  <wpt lat="-37.812480000" lon="144.953860000">
+    <name>WPT821</name>
+    <cmt>WPT821</cmt>
+    <desc>WPT821</desc>
+  </wpt>
+  <wpt lat="-37.812150000" lon="144.953710000">
+    <name>WPT822</name>
+    <cmt>WPT822</cmt>
+    <desc>WPT822</desc>
+  </wpt>
+  <wpt lat="-37.811410000" lon="144.953370000">
+    <name>WPT823</name>
+    <cmt>WPT823</cmt>
+    <desc>WPT823</desc>
+  </wpt>
+  <wpt lat="-37.810400000" lon="144.952890000">
+    <name>WPT824</name>
+    <cmt>WPT824</cmt>
+    <desc>WPT824</desc>
+  </wpt>
+  <wpt lat="-37.810320000" lon="144.952850000">
+    <name>WPT825</name>
+    <cmt>WPT825</cmt>
+    <desc>WPT825</desc>
+  </wpt>
+  <wpt lat="-37.810040000" lon="144.952720000">
+    <name>WPT826</name>
+    <cmt>WPT826</cmt>
+    <desc>WPT826</desc>
+  </wpt>
+  <wpt lat="-37.809750000" lon="144.952590000">
+    <name>WPT827</name>
+    <cmt>WPT827</cmt>
+    <desc>WPT827</desc>
+  </wpt>
+  <wpt lat="-37.809260000" lon="144.952310000">
+    <name>WPT828</name>
+    <cmt>WPT828</cmt>
+    <desc>WPT828</desc>
+  </wpt>
+  <wpt lat="-37.809259800" lon="144.952314100">
+    <name>WPT829</name>
+    <cmt>WPT829</cmt>
+    <desc>WPT829</desc>
+  </wpt>
+  <wpt lat="-37.809220000" lon="144.952440000">
+    <name>WPT830</name>
+    <cmt>WPT830</cmt>
+    <desc>WPT830</desc>
+  </wpt>
+  <wpt lat="-37.809200000" lon="144.952520000">
+    <name>WPT831</name>
+    <cmt>WPT831</cmt>
+    <desc>WPT831</desc>
+  </wpt>
+  <wpt lat="-37.809070000" lon="144.952980000">
+    <name>WPT832</name>
+    <cmt>WPT832</cmt>
+    <desc>WPT832</desc>
+  </wpt>
+  <wpt lat="-37.808820000" lon="144.953820000">
+    <name>WPT833</name>
+    <cmt>WPT833</cmt>
+    <desc>WPT833</desc>
+  </wpt>
+  <wpt lat="-37.808800000" lon="144.953840000">
+    <name>WPT834</name>
+    <cmt>WPT834</cmt>
+    <desc>WPT834</desc>
+  </wpt>
+  <wpt lat="-37.808780000" lon="144.953860000">
+    <name>WPT835</name>
+    <cmt>WPT835</cmt>
+    <desc>WPT835</desc>
+  </wpt>
+  <wpt lat="-37.808770000" lon="144.953880000">
+    <name>WPT836</name>
+    <cmt>WPT836</cmt>
+    <desc>WPT836</desc>
+  </wpt>
+  <wpt lat="-37.808720000" lon="144.954060000">
+    <name>WPT837</name>
+    <cmt>WPT837</cmt>
+    <desc>WPT837</desc>
+  </wpt>
+  <wpt lat="-37.808530000" lon="144.954680000">
+    <name>WPT838</name>
+    <cmt>WPT838</cmt>
+    <desc>WPT838</desc>
+  </wpt>
+  <wpt lat="-37.808490000" lon="144.954830000">
+    <name>WPT839</name>
+    <cmt>WPT839</cmt>
+    <desc>WPT839</desc>
+  </wpt>
+  <wpt lat="-37.808450000" lon="144.955000000">
+    <name>WPT840</name>
+    <cmt>WPT840</cmt>
+    <desc>WPT840</desc>
+  </wpt>
+  <wpt lat="-37.808450000" lon="144.955020000">
+    <name>WPT841</name>
+    <cmt>WPT841</cmt>
+    <desc>WPT841</desc>
+  </wpt>
+  <wpt lat="-37.808350000" lon="144.955360000">
+    <name>WPT842</name>
+    <cmt>WPT842</cmt>
+    <desc>WPT842</desc>
+  </wpt>
+  <wpt lat="-37.808353400" lon="144.955357800">
+    <name>WPT843</name>
+    <cmt>WPT843</cmt>
+    <desc>WPT843</desc>
+  </wpt>
+  <wpt lat="-37.808350000" lon="144.955370000">
+    <name>WPT844</name>
+    <cmt>WPT844</cmt>
+    <desc>WPT844</desc>
+  </wpt>
+  <wpt lat="-37.808340000" lon="144.955370000">
+    <name>WPT845</name>
+    <cmt>WPT845</cmt>
+    <desc>WPT845</desc>
+  </wpt>
+  <wpt lat="-37.808340000" lon="144.955380000">
+    <name>WPT846</name>
+    <cmt>WPT846</cmt>
+    <desc>WPT846</desc>
+  </wpt>
+  <wpt lat="-37.808340000" lon="144.955390000">
+    <name>WPT847</name>
+    <cmt>WPT847</cmt>
+    <desc>WPT847</desc>
+  </wpt>
+  <wpt lat="-37.808330000" lon="144.955390000">
+    <name>WPT848</name>
+    <cmt>WPT848</cmt>
+    <desc>WPT848</desc>
+  </wpt>
+  <wpt lat="-37.808330000" lon="144.955400000">
+    <name>WPT849</name>
+    <cmt>WPT849</cmt>
+    <desc>WPT849</desc>
+  </wpt>
+  <wpt lat="-37.808330000" lon="144.955410000">
+    <name>WPT850</name>
+    <cmt>WPT850</cmt>
+    <desc>WPT850</desc>
+  </wpt>
+  <wpt lat="-37.808250000" lon="144.955460000">
+    <name>WPT851</name>
+    <cmt>WPT851</cmt>
+    <desc>WPT851</desc>
+  </wpt>
+  <wpt lat="-37.807980000" lon="144.955500000">
+    <name>WPT852</name>
+    <cmt>WPT852</cmt>
+    <desc>WPT852</desc>
+  </wpt>
+  <wpt lat="-37.807976500" lon="144.955502100">
+    <name>WPT853</name>
+    <cmt>WPT853</cmt>
+    <desc>WPT853</desc>
+  </wpt>
+</gpx>

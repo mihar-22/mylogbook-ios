@@ -41,6 +41,8 @@ extension Trip {
             return traffic.contains(type.code)
         case .road(let type):
             return roads.contains(type.code)
+        case .light(let type):
+            return light.contains(type.code)
         }
     }
     
@@ -62,6 +64,8 @@ extension Trip {
             update(type.code, on: &traffic)
         case .road(let type):
             update(type.code, on: &roads)
+        case .light(let type):
+            update(type.code, on: &light)
         }
     }
 }
@@ -92,6 +96,7 @@ extension Trip: Importable {
         weather = source["weather"].string!
         traffic = source["traffic"].string!
         roads = source["roads"].string!
+        light = source["light"].string!
         
         startLatitude = source["start_latitude"].double!
         startLongitude = source["start_longitude"].double!
@@ -117,6 +122,7 @@ extension Trip: Resourceable {
             "weather": weather,
             "traffic": traffic,
             "roads": roads,
+            "light": light,
             "start_latitude": startLatitude,
             "start_longitude": startLongitude,
             "end_latitude": endLatitude,
@@ -134,10 +140,12 @@ extension Trip {
     @NSManaged public var endedAt: Date
     @NSManaged public var odometer: Int
     @NSManaged public var distance: Double
+    
     @NSManaged public var weather: String
     @NSManaged public var traffic: String
     @NSManaged public var roads: String
-    
+    @NSManaged public var light: String
+
     @NSManaged public var startLatitude: Double
     @NSManaged public var startLongitude: Double
     @NSManaged public var endLatitude: Double

@@ -276,9 +276,11 @@ extension DashboardController {
         case 0:
             return .weather
         case 1:
-            return .traffic
+            return .light
         case 2:
-            return  .road
+            return .traffic
+        case 3:
+            return .road
         default:
             return .weather
         }

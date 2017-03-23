@@ -19,6 +19,7 @@ class TripStore {
             trip.weather = newTrip.weather
             trip.traffic = newTrip.traffic
             trip.roads = newTrip.roads
+            trip.light = newTrip.light
             
             trip.startLatitude = newTrip.startLatitude
             trip.startLongitude = newTrip.startLongitude

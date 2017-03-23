@@ -163,6 +163,31 @@ class LogRecordController: UIViewController {
             }
         }
     }
+    
+    // MARK: Recordings
+    
+    func recordCoordinates() {
+        let startCoordinate = locations.first!.coordinate
+        
+        trip.startLatitude = startCoordinate.latitude.round(places: 8)
+        
+        trip.startLongitude = startCoordinate.longitude.round(places: 8)
+        
+        let endCoordinate = locations.last!.coordinate
+        
+        trip.endLatitude = endCoordinate.latitude.round(places: 8)
+        
+        trip.endLongitude = endCoordinate.longitude.round(places: 8)
+    }
+    
+    func recordLightConditions() {
+        let light = TripCalculator.calculateLightConditions(for: trip)
+        
+        if light.dawn { trip.light.add(Light.dawn.code) }
+        if light.day { trip.light.add(Light.day.code) }
+        if light.dusk { trip.light.add(Light.dusk.code) }
+        if light.night { trip.light.add(Light.night.code) }
+    }
 }
 
 // MARK: Alerting
@@ -257,18 +282,10 @@ extension LogRecordController: CLLocationManagerDelegate {
             trip.endedAt = Date()
             
             trip.distance = distance.round(places: 2)
-                        
-            let startCoordinate = locations.first!.coordinate
             
-            trip.startLatitude = startCoordinate.latitude.round(places: 8)
+            recordCoordinates()
             
-            trip.startLongitude = startCoordinate.longitude.round(places: 8)
-            
-            let endCoordinate = locations.last!.coordinate
-            
-            trip.endLatitude = endCoordinate.latitude.round(places: 8)
-            
-            trip.endLongitude = endCoordinate.longitude.round(places: 8)
+            recordLightConditions()
         case .cancel:
             navigationController!.popViewController(animated: true)
         }

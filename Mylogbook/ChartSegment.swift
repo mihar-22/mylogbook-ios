@@ -24,7 +24,7 @@ extension ChartSettable where Self: RawRepresentable, Self.RawValue == String {
 // MARK: Chart Segment
 
 enum ChartSegment {
-    case weather, traffic, road
+    case weather, traffic, road, light
     
     var all: [ChartSettable] {
         switch self {
@@ -34,6 +34,8 @@ enum ChartSegment {
             return Traffic.all
         case .road:
             return Road.all
+        case .light:
+            return Light.all
         }
     }
 }

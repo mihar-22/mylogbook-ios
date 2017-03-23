@@ -96,7 +96,6 @@
     private func insertLight(for trip: Trip, into row: inout String) {
         let light = ""
         
-        
         row = row.replacingOccurrences(of: "#LIGHT#", with: light)
     }
  }
