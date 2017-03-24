@@ -24,6 +24,7 @@
         <attribute name="distance" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="endedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="endLatitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="endLocation" optional="YES" attributeType="String" maxValueString="50" syncable="YES"/>
         <attribute name="endLongitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isAccumulated" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
@@ -32,6 +33,7 @@
         <attribute name="roads" attributeType="String" minValueString="0" maxValueString="100" syncable="YES"/>
         <attribute name="startedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="startLatitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="startLocation" optional="YES" attributeType="String" maxValueString="50" syncable="YES"/>
         <attribute name="startLongitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="timeZoneIdentifier" attributeType="String" maxValueString="100" syncable="YES"/>
         <attribute name="traffic" attributeType="String" minValueString="0" maxValueString="50" syncable="YES"/>
@@ -42,6 +44,6 @@
     <elements>
         <element name="Car" positionX="-162" positionY="174" width="128" height="165"/>
         <element name="Supervisor" positionX="-162" positionY="345" width="128" height="165"/>
-        <element name="Trip" positionX="43" positionY="63" width="128" height="300"/>
+        <element name="Trip" positionX="43" positionY="63" width="128" height="330"/>
     </elements>
 </model>

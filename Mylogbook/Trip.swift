@@ -78,12 +78,14 @@ extension Trip: Importable {
     static let uniqueIDKeyPath = "id"
     
     func update(from source: JSON, in transaction: BaseDataTransaction) throws {
-        let carId = source["car_id"].int!
+        let resources = source["resources"]
+        
+        let carId = resources["car_id"].int!
         
         car = transaction.fetchOne(From(Car.self),
                                    Where("id = \(carId)"))!
         
-        let supervisorId = source["supervisor_id"].int!
+        let supervisorId = resources["supervisor_id"].int!
         
         supervisor = transaction.fetchOne(From(Supervisor.self),
                                           Where("id = \(supervisorId)"))!
@@ -93,16 +95,25 @@ extension Trip: Importable {
         odometer = source["odometer"].int!
         distance = source["distance"].double!
         
-        weather = source["weather"].string!
-        traffic = source["traffic"].string!
-        roads = source["roads"].string!
-        light = source["light"].string!
+        let conditions = source["conditions"]
         
-        startLatitude = source["start_latitude"].double!
-        startLongitude = source["start_longitude"].double!
-        endLatitude = source["end_latitude"].double!
-        endLongitude = source["end_longitude"].double!
-        timeZoneIdentifier = source["timezone"].string!
+        weather = conditions["weather"].string!
+        traffic = conditions["traffic"].string!
+        roads = conditions["roads"].string!
+        light = conditions["light"].string!
+        
+        let coordinates = source["coordinates"]
+        
+        startLatitude = coordinates["start_latitude"].double!
+        startLongitude = coordinates["start_longitude"].double!
+        endLatitude = coordinates["end_latitude"].double!
+        endLongitude = coordinates["end_longitude"].double!
+        
+        let location = source["location"]
+        
+        startLocation = location["start"].string
+        endLocation = location["end"].string
+        timeZoneIdentifier = location["timezone"].string!
     }
 }
 
@@ -112,23 +123,32 @@ extension Trip: Resourceable {
     static let resource = "trips"
     
     func toJSON() -> [String: Any] {
-        return [
+        var json: [String: Any] = [
             "started_at": startedAt.utc(format: .dateTime),
             "ended_at": endedAt.utc(format: .dateTime),
             "odometer": odometer,
             "distance": distance,
+            
             "car_id": car.id,
             "supervisor_id": supervisor.id,
+            
             "weather": weather,
             "traffic": traffic,
             "roads": roads,
             "light": light,
+            
             "start_latitude": startLatitude,
             "start_longitude": startLongitude,
             "end_latitude": endLatitude,
             "end_longitude": endLongitude,
+            
             "timezone": timeZoneIdentifier
         ]
+        
+        if startLocation != nil { json["start_location"] = startLocation }
+        if endLocation != nil { json["end_location"] = endLocation }
+        
+        return json
     }
 }
 
@@ -150,6 +170,9 @@ extension Trip {
     @NSManaged public var startLongitude: Double
     @NSManaged public var endLatitude: Double
     @NSManaged public var endLongitude: Double
+    
+    @NSManaged public var startLocation: String?
+    @NSManaged public var endLocation: String?
     @NSManaged public var timeZoneIdentifier: String
     
     @NSManaged public var car: Car

@@ -25,6 +25,9 @@ class TripStore {
             trip.startLongitude = newTrip.startLongitude
             trip.endLatitude = newTrip.endLatitude
             trip.endLongitude = newTrip.endLongitude
+            
+            trip.startLocation = newTrip.startLocation
+            trip.endLocation = newTrip.endLocation
             trip.timeZoneIdentifier = newTrip.timeZoneIdentifier
             
             _ = transaction.commitAndWait()

@@ -180,6 +180,22 @@ class LogRecordController: UIViewController {
         trip.endLongitude = endCoordinate.longitude.round(places: 8)
     }
     
+    func recordLocations() {
+        guard NetworkReachabilityManager()!.isReachable else { return }
+        
+        CLGeocoder().reverseGeocodeLocation(locations.first!) { (placemarks, error) in
+            guard error == nil else { return }
+            
+            self.trip.startLocation = placemarks?.first?.locality
+        }
+        
+        CLGeocoder().reverseGeocodeLocation(locations.last!) { (placemarks, error) in
+            guard error == nil else { return }
+            
+            self.trip.endLocation = placemarks?.first?.locality
+        }
+    }
+    
     func recordLightConditions() {
         let light = TripCalculator.calculateLightConditions(for: trip)
         
@@ -284,6 +300,8 @@ extension LogRecordController: CLLocationManagerDelegate {
             trip.distance = distance.round(places: 2)
             
             recordCoordinates()
+            
+            recordLocations()
             
             recordLightConditions()
         case .cancel:
