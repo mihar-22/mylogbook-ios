@@ -28,7 +28,7 @@
 		C94BA8A11E5FF68D002E8F9E /* ChartValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BA8A01E5FF68D002E8F9E /* ChartValueFormatter.swift */; };
 		C951AEE91E80D8CE00E6DD00 /* TripCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C951AEE81E80D8CE00E6DD00 /* TripCondition.swift */; };
 		C951AEEB1E8205EA00E6DD00 /* tables in Resources */ = {isa = PBXBuildFile; fileRef = C951AEEA1E8205EA00E6DD00 /* tables */; };
-		C951AEF21E82140300E6DD00 /* VictoriaComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C951AEF11E82140300E6DD00 /* VictoriaComposer.swift */; };
+		C951AEF21E82140300E6DD00 /* VicComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C951AEF11E82140300E6DD00 /* VicComposer.swift */; };
 		C95487CA1E4C209B00C48F54 /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95487C91E4C209B00C48F54 /* Foundation.swift */; };
 		C95487D01E4D859600C48F54 /* Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95487CF1E4D859600C48F54 /* Sync.swift */; };
 		C95B3B881E31CB4100533FB6 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B3B871E31CB4100533FB6 /* Alert.swift */; };
@@ -55,6 +55,7 @@
 		C99FC90F1E1B5AF7003BAEC2 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC90E1E1B5AF7003BAEC2 /* SignUpController.swift */; };
 		C99FC9141E1BB395003BAEC2 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC9131E1BB395003BAEC2 /* Validator.swift */; };
 		C99FC9181E1BB534003BAEC2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC9171E1BB534003BAEC2 /* Validation.swift */; };
+		C9A006831E849E1700548775 /* NswComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A006821E849E1700548775 /* NswComposer.swift */; };
 		C9A0DFF11E5AB84500102DE0 /* LogDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0DFF01E5AB84500102DE0 /* LogDetailsController.swift */; };
 		C9A0DFF31E5ACDE300102DE0 /* WeatherRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0DFF21E5ACDE300102DE0 /* WeatherRoute.swift */; };
 		C9B37B671E3D963800168846 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B37B661E3D963800168846 /* Trip.swift */; };
@@ -109,7 +110,7 @@
 		C94BA8A01E5FF68D002E8F9E /* ChartValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartValueFormatter.swift; sourceTree = "<group>"; };
 		C951AEE81E80D8CE00E6DD00 /* TripCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripCondition.swift; sourceTree = "<group>"; };
 		C951AEEA1E8205EA00E6DD00 /* tables */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tables; sourceTree = "<group>"; };
-		C951AEF11E82140300E6DD00 /* VictoriaComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VictoriaComposer.swift; sourceTree = "<group>"; };
+		C951AEF11E82140300E6DD00 /* VicComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VicComposer.swift; sourceTree = "<group>"; };
 		C95487C91E4C209B00C48F54 /* Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
 		C95487CF1E4D859600C48F54 /* Sync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sync.swift; sourceTree = "<group>"; };
 		C95B3B871E31CB4100533FB6 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -136,6 +137,7 @@
 		C99FC90E1E1B5AF7003BAEC2 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		C99FC9131E1BB395003BAEC2 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		C99FC9171E1BB534003BAEC2 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		C9A006821E849E1700548775 /* NswComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NswComposer.swift; sourceTree = "<group>"; };
 		C9A0DFF01E5AB84500102DE0 /* LogDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogDetailsController.swift; sourceTree = "<group>"; };
 		C9A0DFF21E5ACDE300102DE0 /* WeatherRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherRoute.swift; sourceTree = "<group>"; };
 		C9B37B661E3D963800168846 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
@@ -312,12 +314,13 @@
 			name = Trip;
 			sourceTree = "<group>";
 		};
-		C951AEEE1E8210AB00E6DD00 /* States */ = {
+		C951AEEE1E8210AB00E6DD00 /* Composers */ = {
 			isa = PBXGroup;
 			children = (
-				C951AEF11E82140300E6DD00 /* VictoriaComposer.swift */,
+				C951AEF11E82140300E6DD00 /* VicComposer.swift */,
+				C9A006821E849E1700548775 /* NswComposer.swift */,
 			);
-			name = States;
+			name = Composers;
 			sourceTree = "<group>";
 		};
 		C95CFB901E6E38E000CC0BD1 /* Onboarding */ = {
@@ -364,7 +367,7 @@
 		C978BF2D1E7F705F00C422D7 /* Publish */ = {
 			isa = PBXGroup;
 			children = (
-				C951AEEE1E8210AB00E6DD00 /* States */,
+				C951AEEE1E8210AB00E6DD00 /* Composers */,
 				C978BF301E7F713F00C422D7 /* LogbookComposer.swift */,
 			);
 			name = Publish;
@@ -669,6 +672,7 @@
 				C945AA521E5C25AB00FAF9E9 /* LogSummaryController.swift in Sources */,
 				C9A0DFF31E5ACDE300102DE0 /* WeatherRoute.swift in Sources */,
 				C9F1B98D1E094DCC002D4D61 /* Env.swift in Sources */,
+				C9A006831E849E1700548775 /* NswComposer.swift in Sources */,
 				C9A0DFF11E5AB84500102DE0 /* LogDetailsController.swift in Sources */,
 				C98E778F1E382C8500F34468 /* NibView.swift in Sources */,
 				C9C6F6761E54595300231949 /* Appearance.swift in Sources */,
@@ -717,7 +721,7 @@
 				C9CDFA811DEFDB2800CE0A2D /* AppDelegate.swift in Sources */,
 				C94235801E6BC719003E9D4E /* ValueFormatter.swift in Sources */,
 				C987DD141E651DD70011F223 /* Button.swift in Sources */,
-				C951AEF21E82140300E6DD00 /* VictoriaComposer.swift in Sources */,
+				C951AEF21E82140300E6DD00 /* VicComposer.swift in Sources */,
 				C978BF311E7F713F00C422D7 /* LogbookComposer.swift in Sources */,
 				C935B7361E0A6FFE00FD7FFF /* AuthRoute.swift in Sources */,
 				C9EC4D3F1E401DAF00A80348 /* SoftDeletingStore.swift in Sources */,

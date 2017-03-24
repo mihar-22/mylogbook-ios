@@ -3,7 +3,7 @@
  
  // MARK: Victoria Composer
  
- class VictoriaComposer: LogbookComposer {
+ class VicComposer: LogbookComposer {
     
     var styleTemplate: String = ""
     
@@ -94,7 +94,13 @@
     }
 
     private func insertLight(for trip: Trip, into row: inout String) {
-        let light = ""
+        var light = ""
+        
+        if trip.light.contains(Light.day) { light.add("D") }
+        
+        if trip.light.contains(Light.dawn) || trip.light.contains(Light.dusk) { light.add("K") }
+        
+        if trip.light.contains(Light.night) { light.add("N") }
         
         row = row.replacingOccurrences(of: "#LIGHT#", with: light)
     }

@@ -1,5 +1,6 @@
 
 import CoreStore
+import CoreLocation
 import Foundation
 
 // MARK: LogbookComposer
