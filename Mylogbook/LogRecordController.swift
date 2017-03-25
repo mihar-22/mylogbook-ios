@@ -186,13 +186,17 @@ class LogRecordController: UIViewController {
         CLGeocoder().reverseGeocodeLocation(locations.first!) { (placemarks, error) in
             guard error == nil else { return }
             
-            self.trip.startLocation = placemarks?.first?.locality
+            guard let placemarks = placemarks, placemarks.count > 0 else { return }
+            
+            self.trip.startLocation = placemarks.first!.locality ?? ""
         }
         
         CLGeocoder().reverseGeocodeLocation(locations.last!) { (placemarks, error) in
             guard error == nil else { return }
             
-            self.trip.endLocation = placemarks?.first?.locality
+            guard let placemarks = placemarks, placemarks.count > 0 else { return }
+            
+            self.trip.endLocation = placemarks.first!.locality ?? ""
         }
     }
     

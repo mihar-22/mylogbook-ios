@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C67" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Car" representedClassName=".Car" syncable="YES">
         <attribute name="deletedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -24,7 +24,7 @@
         <attribute name="distance" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="endedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="endLatitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="endLocation" optional="YES" attributeType="String" maxValueString="50" syncable="YES"/>
+        <attribute name="endLocation" attributeType="String" minValueString="1" maxValueString="50" syncable="YES"/>
         <attribute name="endLongitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isAccumulated" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
@@ -33,7 +33,7 @@
         <attribute name="roads" attributeType="String" minValueString="0" maxValueString="100" syncable="YES"/>
         <attribute name="startedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="startLatitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="startLocation" optional="YES" attributeType="String" maxValueString="50" syncable="YES"/>
+        <attribute name="startLocation" attributeType="String" minValueString="1" maxValueString="50" syncable="YES"/>
         <attribute name="startLongitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="timeZoneIdentifier" attributeType="String" maxValueString="100" syncable="YES"/>
         <attribute name="traffic" attributeType="String" minValueString="0" maxValueString="50" syncable="YES"/>

@@ -111,8 +111,8 @@ extension Trip: Importable {
         
         let location = source["location"]
         
-        startLocation = location["start"].string
-        endLocation = location["end"].string
+        startLocation = location["start"].string!
+        endLocation = location["end"].string!
         timeZoneIdentifier = location["timezone"].string!
     }
 }
@@ -123,7 +123,7 @@ extension Trip: Resourceable {
     static let resource = "trips"
     
     func toJSON() -> [String: Any] {
-        var json: [String: Any] = [
+        return [
             "started_at": startedAt.utc(format: .dateTime),
             "ended_at": endedAt.utc(format: .dateTime),
             "odometer": odometer,
@@ -142,13 +142,10 @@ extension Trip: Resourceable {
             "end_latitude": endLatitude,
             "end_longitude": endLongitude,
             
+            "startLocation": startLocation,
+            "endLocation": endLocation,
             "timezone": timeZoneIdentifier
         ]
-        
-        if startLocation != nil { json["start_location"] = startLocation }
-        if endLocation != nil { json["end_location"] = endLocation }
-        
-        return json
     }
 }
 
@@ -171,8 +168,8 @@ extension Trip {
     @NSManaged public var endLatitude: Double
     @NSManaged public var endLongitude: Double
     
-    @NSManaged public var startLocation: String?
-    @NSManaged public var endLocation: String?
+    @NSManaged public var startLocation: String
+    @NSManaged public var endLocation: String
     @NSManaged public var timeZoneIdentifier: String
     
     @NSManaged public var car: Car
