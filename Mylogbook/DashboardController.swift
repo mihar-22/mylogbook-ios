@@ -186,7 +186,7 @@ extension DashboardController {
         
         let tableHeight = tableView.contentSize.height
         
-        let base: CGFloat = nightRequiredTimeStackView.isHidden ? 199 : 199.5
+        let base: CGFloat = nightRequiredTimeStackView.isHidden ? 198.5 : 199.5
         
         progressCardHeight.constant = base + tableTopSpace + tableHeight
         
@@ -501,7 +501,7 @@ extension DashboardController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
         
-        renderer.strokeColor = DarkTheme.brand.uiColor
+        renderer.strokeColor = Palette.tint.uiColor
         renderer.lineWidth = 5.0
         
         return renderer
@@ -510,7 +510,7 @@ extension DashboardController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
         
-        pin.pinTintColor = DarkTheme.brand.uiColor
+        pin.pinTintColor = Palette.tint.uiColor
         
         pin.canShowCallout = true
         

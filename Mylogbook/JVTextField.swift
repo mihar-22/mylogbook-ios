@@ -48,16 +48,18 @@ class JVTextField: JVFloatLabeledTextField {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        _init()
+        setup()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        _init()
+        setup()
     }
     
-    private func _init() {
+    // MARK: Setup
+    
+    private func setup() {
         addInputLine()
         
         restyle(.normal)
@@ -86,9 +88,9 @@ class JVTextField: JVFloatLabeledTextField {
     // MARK: Styling
 
     private func addInputLine() {
-        inputLine.backgroundColor = DarkTheme.base(.divider).uiColor.cgColor
+        inputLine.backgroundColor = Palette.seperator.uiColor.cgColor
         
-        inputLine.frame = CGRect(x: 0, y: bounds.height - 1.0, width: bounds.width, height: 2)
+        inputLine.frame = CGRect(x: 0, y: bounds.height, width: bounds.width, height: 1)
         
         layer.addSublayer(inputLine)
     }
@@ -116,41 +118,41 @@ class JVTextField: JVFloatLabeledTextField {
     
     private func styleNormal() {
         // Floating Label
-        floatingLabelTextColor = DarkTheme.base(.hint).uiColor
-        floatingLabelActiveTextColor = DarkTheme.brand.uiColor
+        floatingLabelTextColor = Palette.secondaryLight.uiColor
+        floatingLabelActiveTextColor = Palette.tint.uiColor
         
         // Border
         borderStyle = .none
         
         // Placeholder
-        placeholderColor = DarkTheme.base(.hint).uiColor
+        placeholderColor = Palette.secondaryLight.uiColor
         
         // Input
-        textColor = DarkTheme.base(.primary).uiColor
+        textColor = Palette.primary.uiColor
         
         // Tint
-        tintColor = DarkTheme.brand.uiColor
+        tintColor = Palette.tint.uiColor
         
         // Input Line
-        inputLine.backgroundColor = DarkTheme.base(.divider).uiColor.cgColor
+        inputLine.backgroundColor = Palette.seperator.uiColor.cgColor
     }
     
     private func styleFocused() {
         styleNormal()
         
         // Input Line
-        inputLine.backgroundColor = DarkTheme.brand.uiColor.cgColor
+        inputLine.backgroundColor = Palette.tint.uiColor.cgColor
     }
     
     private func styleError() {
         // Floating Label
-        floatingLabelTextColor = DarkTheme.error.uiColor
-        floatingLabelActiveTextColor = DarkTheme.error.uiColor
+        floatingLabelTextColor = Palette.secondaryLight.uiColor
+        floatingLabelActiveTextColor = Palette.error.uiColor
         
         // Tint
-        tintColor = DarkTheme.error.uiColor
+        tintColor = Palette.error.uiColor
         
         // Input Line
-        inputLine.backgroundColor = DarkTheme.error.uiColor.cgColor
+        inputLine.backgroundColor = Palette.error.uiColor.cgColor
     }
 }

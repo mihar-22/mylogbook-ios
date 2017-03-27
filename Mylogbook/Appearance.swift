@@ -21,12 +21,12 @@ class Appearance {
         
         let defaultButtonAppearance = DefaultButton.appearance()
         
-        defaultButtonAppearance.titleColor = DarkTheme.brand.uiColor
+        defaultButtonAppearance.titleColor = Palette.tint.uiColor
     }
     
     // MARK: Tab Bar
     
     private static func tabBar() {
-        UITabBar.appearance().tintColor = DarkTheme.brand.uiColor
+        UITabBar.appearance().tintColor = Palette.tint.uiColor
     }
 }

@@ -16,7 +16,7 @@
 		C908D3C51E24D4B500A4E91C /* Adapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908D3C41E24D4B500A4E91C /* Adapters.swift */; };
 		C908D3C71E24D5BF00A4E91C /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908D3C61E24D5BF00A4E91C /* Keychain.swift */; };
 		C92AA02E1E1233D800A92067 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92AA02D1E1233D800A92067 /* Session.swift */; };
-		C92AA0311E15185A00A92067 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92AA0301E15185A00A92067 /* Theme.swift */; };
+		C92AA0311E15185A00A92067 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92AA0301E15185A00A92067 /* Palette.swift */; };
 		C935B7361E0A6FFE00FD7FFF /* AuthRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935B7351E0A6FFE00FD7FFF /* AuthRoute.swift */; };
 		C935B73C1E0B7A4600FD7FFF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935B73B1E0B7A4600FD7FFF /* Router.swift */; };
 		C942357D1E6BAFD6003E9D4E /* EntriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942357C1E6BAFD6003E9D4E /* EntriesController.swift */; };
@@ -94,7 +94,7 @@
 		C908D3C41E24D4B500A4E91C /* Adapters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adapters.swift; sourceTree = "<group>"; };
 		C908D3C61E24D5BF00A4E91C /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		C92AA02D1E1233D800A92067 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		C92AA0301E15185A00A92067 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		C92AA0301E15185A00A92067 /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		C935B7351E0A6FFE00FD7FFF /* AuthRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRoute.swift; sourceTree = "<group>"; };
 		C935B73B1E0B7A4600FD7FFF /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		C942357C1E6BAFD6003E9D4E /* EntriesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntriesController.swift; sourceTree = "<group>"; };
@@ -225,6 +225,7 @@
 				C908A9CF1E74CE410040AAB1 /* Cache */,
 				C908A9D41E74D22D0040AAB1 /* Statistics */,
 				C94406061E49B05C00D32AC3 /* Sync */,
+				C99FC9121E1B90A0003BAEC2 /* Validator */,
 				C9EC4D2B1E3ECE0300A80348 /* Stores */,
 				C9EBBD6E1E2C855600B5E509 /* Models */,
 				C935B73A1E0B7A2E00FD7FFF /* Networking */,
@@ -369,7 +370,6 @@
 		C98E77871E37323C00F34468 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
-				C99FC9121E1B90A0003BAEC2 /* Validator */,
 				C98E778A1E37374900F34468 /* JVTextField.swift */,
 				C964FC321E236FD900D07FBF /* TextField.swift */,
 				C98E778C1E3746F000F34468 /* TextField.xib */,
@@ -441,7 +441,7 @@
 				C978BF2C1E7F6FFD00C422D7 /* Resources */,
 				C9CDFA801DEFDB2800CE0A2D /* AppDelegate.swift */,
 				C95487C91E4C209B00C48F54 /* Foundation.swift */,
-				C92AA0301E15185A00A92067 /* Theme.swift */,
+				C92AA0301E15185A00A92067 /* Palette.swift */,
 				C9F1B98C1E094DCC002D4D61 /* Env.swift */,
 				C9CDFA841DEFDB2800CE0A2D /* Main.storyboard */,
 				C9CDFA8A1DEFDB2800CE0A2D /* Assets.xcassets */,
@@ -685,7 +685,7 @@
 				C92AA02E1E1233D800A92067 /* Session.swift in Sources */,
 				C935B73C1E0B7A4600FD7FFF /* Router.swift in Sources */,
 				C95B3B881E31CB4100533FB6 /* Alert.swift in Sources */,
-				C92AA0311E15185A00A92067 /* Theme.swift in Sources */,
+				C92AA0311E15185A00A92067 /* Palette.swift in Sources */,
 				C9CDFA811DEFDB2800CE0A2D /* AppDelegate.swift in Sources */,
 				C94235801E6BC719003E9D4E /* ValueFormatter.swift in Sources */,
 				C987DD141E651DD70011F223 /* Button.swift in Sources */,

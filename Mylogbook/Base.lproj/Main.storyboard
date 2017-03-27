@@ -95,10 +95,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="AyN-XI-Wr3" userLabel="Form">
-                                <rect key="frame" x="24" y="80" width="327" height="216"/>
+                                <rect key="frame" x="24" y="80" width="327" height="212"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tcz-Zz-4qi" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="327" height="42"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="41"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Full Name"/>
@@ -111,7 +111,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybf-OR-cgb" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="58" width="327" height="42"/>
+                                        <rect key="frame" x="0.0" y="57" width="327" height="41"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email"/>
@@ -124,7 +124,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQO-Yx-k6k" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="116" width="327" height="42"/>
+                                        <rect key="frame" x="0.0" y="114" width="327" height="41"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
@@ -135,7 +135,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9RL-KQ-5J3" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="174" width="327" height="42"/>
+                                        <rect key="frame" x="0.0" y="171" width="327" height="41"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Date of Birth"/>
@@ -224,10 +224,10 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ofU-Ix-3Gi" userLabel="Form">
-                                <rect key="frame" x="16" y="80" width="343" height="100"/>
+                                <rect key="frame" x="16" y="80" width="343" height="98"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJq-0J-9Qp" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="41"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email"/>
@@ -240,7 +240,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSP-hn-eOT" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="58" width="343" height="42"/>
+                                        <rect key="frame" x="0.0" y="57" width="343" height="41"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
@@ -253,7 +253,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZi-3p-Poh">
-                                <rect key="frame" x="245" y="188" width="114" height="28"/>
+                                <rect key="frame" x="245" y="186" width="114" height="28"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                 <state key="normal" title="Forgot Password?"/>
                                 <state key="disabled">
@@ -308,7 +308,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="fKK-Ze-EgC">
-                                <rect key="frame" x="32" y="88" width="311" height="171"/>
+                                <rect key="frame" x="32" y="88" width="311" height="170"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learner Permit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNL-tg-QyM">
                                         <rect key="frame" x="71.5" y="0.0" width="168" height="31.5"/>
@@ -323,7 +323,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHi-et-Hfw" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="129" width="311" height="42"/>
+                                        <rect key="frame" x="0.0" y="129" width="311" height="41"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Received Date"/>
@@ -867,7 +867,7 @@
                                         <rect key="frame" x="0.0" y="35" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fqo-G7-208" id="BgL-jj-apa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVP-Al-pWh">
@@ -895,7 +895,7 @@
                                         <rect key="frame" x="0.0" y="75" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g6l-dO-QAA" id="Ieh-IR-w7X">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHs-V4-zYe">
@@ -927,7 +927,7 @@
                                         <rect key="frame" x="0.0" y="151" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Av6-KD-uaq" id="ABI-G6-aeD">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="License Received" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSC-O3-ZNa">
@@ -963,7 +963,7 @@
                                         <rect key="frame" x="0.0" y="227" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L6I-Gh-NPJ" id="JpD-aw-XQO">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="39"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbJ-EK-TOj">
@@ -994,7 +994,7 @@
                                         <rect key="frame" x="0.0" y="267" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c3x-Jp-Kjd" id="pa5-dX-6JW">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="39"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NjG-I9-fO8">
@@ -1018,7 +1018,7 @@
                                         <rect key="frame" x="0.0" y="343" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sb9-48-uTK" id="H81-hz-aar">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRq-zf-cGi">
@@ -1140,10 +1140,10 @@
                             <tableViewSection headerTitle="Bonus" footerTitle="The total number of minutes you have completed while being supervised by an accredited instructor prior to using Mylogbook." id="dlt-PC-ogA">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="I17-ak-VLL">
-                                        <rect key="frame" x="0.0" y="228" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="227" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I17-ak-VLL" id="yI2-2h-TVb">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNJ-si-XQy">
@@ -1170,10 +1170,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="k5b-TJ-f4p">
-                                        <rect key="frame" x="0.0" y="268" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="267" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k5b-TJ-f4p" id="KDa-E4-j9d">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Night" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpG-1O-MnK">
@@ -1239,11 +1239,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1hM-Mo-aKW" id="v4k-XH-wfz">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RLe-Ra-o24">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -1310,7 +1310,7 @@
                                         <rect key="frame" x="0.0" y="28" width="351" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="leu-hi-DBM" id="6sY-jm-GQF">
-                                            <rect key="frame" x="0.0" y="0.0" width="351" height="73"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="351" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0nh-wf-7gn">
@@ -1401,10 +1401,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="JQk-7g-Y9r" userLabel="Form">
-                                                <rect key="frame" x="16" y="244" width="343" height="158"/>
+                                                <rect key="frame" x="16" y="244" width="343" height="155"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qct-LY-QS2" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="41"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Name"/>
@@ -1417,7 +1417,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPh-5N-REL" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="58" width="343" height="42"/>
+                                                        <rect key="frame" x="0.0" y="57" width="343" height="41"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Registration Number"/>
@@ -1430,7 +1430,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fE-zT-t59" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="116" width="343" height="42"/>
+                                                        <rect key="frame" x="0.0" y="114" width="343" height="41"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Type"/>
@@ -1556,7 +1556,7 @@
                                         <rect key="frame" x="0.0" y="28" width="351" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gdY-Jk-fY9" id="uaf-MY-ag0">
-                                            <rect key="frame" x="0.0" y="0.0" width="351" height="73"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="351" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zUh-1o-44U">
@@ -1632,10 +1632,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="552"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cgO-0h-hdV" userLabel="Form">
-                                                <rect key="frame" x="16" y="116" width="343" height="158"/>
+                                                <rect key="frame" x="16" y="116" width="343" height="155"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbK-Qm-VQ3" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="41"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Car"/>
@@ -1645,7 +1645,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DtY-b2-W5o" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="58" width="343" height="42"/>
+                                                        <rect key="frame" x="0.0" y="57" width="343" height="41"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Odometer"/>
@@ -1658,7 +1658,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYU-ly-vPu" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="116" width="343" height="42"/>
+                                                        <rect key="frame" x="0.0" y="114" width="343" height="41"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Supervisor"/>
@@ -1829,10 +1829,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="o3z-it-JkO" userLabel="Form">
-                                                <rect key="frame" x="16" y="244" width="343" height="153"/>
+                                                <rect key="frame" x="16" y="244" width="343" height="151"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12A-bj-enI" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="41"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Full Name"/>
@@ -1845,7 +1845,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtI-ah-YOV" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="58" width="343" height="42"/>
+                                                        <rect key="frame" x="0.0" y="57" width="343" height="41"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Gender"/>
@@ -1858,7 +1858,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="PwS-ga-bYu">
-                                                        <rect key="frame" x="0.0" y="116" width="343" height="37"/>
+                                                        <rect key="frame" x="0.0" y="114" width="343" height="37"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0q2-uh-nNJ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="31"/>
@@ -2710,11 +2710,11 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1el-FT-mbO" id="4iz-tZ-9yW">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="39"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="39.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZEx-k6-bih">
-                                                    <rect key="frame" x="15" y="0.0" width="313" height="39"/>
+                                                    <rect key="frame" x="15" y="0.0" width="313" height="39.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>

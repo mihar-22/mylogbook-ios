@@ -33,7 +33,7 @@ extension UIToolbar {
     private func styleNormal() {
         barStyle = .default
         
-        tintColor = DarkTheme.brand.uiColor
+        tintColor = Palette.tint.uiColor
         
         isTranslucent = true
         

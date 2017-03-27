@@ -9,6 +9,6 @@ class KeyboardManager {
         
         IQKeyboardManager.sharedManager().shouldShowTextFieldPlaceholder = false
         
-        IQKeyboardManager.sharedManager().toolbarTintColor = DarkTheme.brand.uiColor
+        IQKeyboardManager.sharedManager().toolbarTintColor = Palette.tint.uiColor
     }
 }

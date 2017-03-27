@@ -24,7 +24,7 @@ extension UIButton {
     }
     
     private func styleNormal() {
-        tintColor = DarkTheme.brand.uiColor
+        tintColor = Palette.tint.uiColor
     }
     
     func styleDisabled() {
