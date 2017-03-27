@@ -1321,30 +1321,21 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKx-wI-Ft8">
-                                                    <rect key="frame" x="84" y="18" width="45" height="21"/>
+                                                    <rect key="frame" x="84" y="26.5" width="45" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jup-NI-ZuE">
-                                                    <rect key="frame" x="85" y="43" width="67" height="15"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="jup-NI-ZuE" firstAttribute="leading" secondItem="0nh-wf-7gn" secondAttribute="trailing" constant="17" id="IDr-p4-eOA"/>
+                                                <constraint firstItem="WKx-wI-Ft8" firstAttribute="centerY" secondItem="6sY-jm-GQF" secondAttribute="centerY" id="AKM-w6-3Kk"/>
                                                 <constraint firstItem="WKx-wI-Ft8" firstAttribute="leading" secondItem="0nh-wf-7gn" secondAttribute="trailing" constant="16" id="JT6-QO-Wph"/>
                                                 <constraint firstItem="0nh-wf-7gn" firstAttribute="top" secondItem="6sY-jm-GQF" secondAttribute="topMargin" id="Rdn-4M-5L8"/>
-                                                <constraint firstItem="jup-NI-ZuE" firstAttribute="top" secondItem="WKx-wI-Ft8" secondAttribute="bottom" constant="4" id="m5n-II-qUd"/>
-                                                <constraint firstItem="WKx-wI-Ft8" firstAttribute="top" secondItem="6sY-jm-GQF" secondAttribute="topMargin" constant="10" id="vJT-Jn-iFy"/>
                                                 <constraint firstItem="0nh-wf-7gn" firstAttribute="leading" secondItem="6sY-jm-GQF" secondAttribute="leadingMargin" id="vqg-Lx-0Up"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="WKx-wI-Ft8" id="VlO-bb-u36"/>
-                                            <outlet property="registrationLabel" destination="jup-NI-ZuE" id="dmG-dM-Ohw"/>
                                             <outlet property="typeImage" destination="0nh-wf-7gn" id="1ul-tN-flf"/>
                                             <segue destination="Fmh-zK-lGI" kind="presentation" identifier="editCarSegue" id="PrZ-48-vgD"/>
                                         </connections>
@@ -1410,10 +1401,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="JQk-7g-Y9r" userLabel="Form">
-                                                <rect key="frame" x="16" y="244" width="343" height="182"/>
+                                                <rect key="frame" x="16" y="244" width="343" height="158"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPh-5N-REL" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Registration Number"/>
@@ -1426,7 +1417,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qct-LY-QS2" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="66" width="343" height="50"/>
+                                                        <rect key="frame" x="0.0" y="58" width="343" height="42"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Name"/>
@@ -1439,7 +1430,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fE-zT-t59" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="132" width="343" height="50"/>
+                                                        <rect key="frame" x="0.0" y="116" width="343" height="42"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Type"/>
@@ -1641,7 +1632,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="552"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cgO-0h-hdV" userLabel="Form">
-                                                <rect key="frame" x="16" y="136" width="343" height="158"/>
+                                                <rect key="frame" x="16" y="116" width="343" height="158"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbK-Qm-VQ3" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
@@ -1679,20 +1670,20 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="zms-2b-99c">
-                                                <rect key="frame" x="67.5" y="24" width="240" height="80"/>
+                                                <rect key="frame" x="87.5" y="24" width="200" height="60"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yrg-Ir-rFD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="80" id="N5H-se-Tro"/>
-                                                            <constraint firstAttribute="width" constant="80" id="ppc-fB-Qcc"/>
+                                                            <constraint firstAttribute="height" constant="60" id="N5H-se-Tro"/>
+                                                            <constraint firstAttribute="width" constant="60" id="ppc-fB-Qcc"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tgG-Gu-JX2">
-                                                        <rect key="frame" x="160" y="0.0" width="80" height="80"/>
+                                                        <rect key="frame" x="140" y="0.0" width="60" height="60"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="80" id="8oe-f9-6EU"/>
-                                                            <constraint firstAttribute="width" constant="80" id="Ikz-j1-Qcd"/>
+                                                            <constraint firstAttribute="height" constant="60" id="8oe-f9-6EU"/>
+                                                            <constraint firstAttribute="width" constant="60" id="Ikz-j1-Qcd"/>
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
@@ -1838,10 +1829,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="o3z-it-JkO" userLabel="Form">
-                                                <rect key="frame" x="16" y="244" width="343" height="169"/>
+                                                <rect key="frame" x="16" y="244" width="343" height="153"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12A-bj-enI" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Full Name"/>
@@ -1854,7 +1845,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtI-ah-YOV" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="66" width="343" height="50"/>
+                                                        <rect key="frame" x="0.0" y="58" width="343" height="42"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Gender"/>
@@ -1867,7 +1858,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="PwS-ga-bYu">
-                                                        <rect key="frame" x="0.0" y="132" width="343" height="37"/>
+                                                        <rect key="frame" x="0.0" y="116" width="343" height="37"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0q2-uh-nNJ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="31"/>

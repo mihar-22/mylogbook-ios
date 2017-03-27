@@ -8,7 +8,5 @@ class CarCell: UITableViewCell {
     
     @IBOutlet weak var typeImage: UIImageView!
     
-    @IBOutlet weak var nameLabel: UILabel!
-    
-    @IBOutlet weak var registrationLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!    
 }
