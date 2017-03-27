@@ -1410,10 +1410,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="JQk-7g-Y9r" userLabel="Form">
-                                                <rect key="frame" x="16" y="244" width="343" height="216"/>
+                                                <rect key="frame" x="16" y="244" width="343" height="182"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPh-5N-REL" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="42"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Registration Number"/>
@@ -1426,23 +1426,10 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qct-LY-QS2" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="58" width="343" height="42"/>
+                                                        <rect key="frame" x="0.0" y="66" width="343" height="50"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Make"/>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
-                                                                <integer key="value" value="4"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="capitalization">
-                                                                <integer key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qqj-BV-2GN" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="116" width="343" height="42"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Model"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Name"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="returnKeyType">
                                                                 <integer key="value" value="4"/>
                                                             </userDefinedRuntimeAttribute>
@@ -1452,7 +1439,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fE-zT-t59" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="174" width="343" height="42"/>
+                                                        <rect key="frame" x="0.0" y="132" width="343" height="50"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Type"/>
@@ -1526,8 +1513,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="makeTextField" destination="Qct-LY-QS2" id="AFH-PQ-Cyo"/>
-                        <outlet property="modelTextField" destination="Qqj-BV-2GN" id="QAo-cz-uKe"/>
+                        <outlet property="nameTextField" destination="Qct-LY-QS2" id="uK8-g6-cP7"/>
                         <outlet property="navItem" destination="qba-Pi-Qh7" id="Pcm-UF-zXW"/>
                         <outlet property="registrationTextField" destination="EPh-5N-REL" id="cIh-9E-26v"/>
                         <outlet property="saveButton" destination="zC2-E6-5Ca" id="hMT-Vk-5V7"/>

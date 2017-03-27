@@ -7,7 +7,7 @@ class SupervisorsController: UIViewController {
     
     var supervisors = Store.shared.stack.monitorList(From<Supervisor>(),
                                                      Where("deletedAt = nil"),
-                                                     OrderBy(.ascending("firstName")))
+                                                     OrderBy(.ascending("name")))
     
     // MARK: Outlets
     

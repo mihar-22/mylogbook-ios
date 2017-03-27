@@ -5,8 +5,6 @@ import SwiftyJSON
 // MARK: Car
 
 class Car: NSManagedObject, SoftDeletable, Syncable {
-    var name: String { return "\(make) \(model)" }
-    
     var uniqueIDValue: Int {
         get { return self.id }
         
@@ -22,8 +20,7 @@ extension Car: Importable {
     static let uniqueIDKeyPath = "id"
     
     func update(from source: JSON, in transaction: BaseDataTransaction) throws {
-        make = source["make"].string!
-        model = source["model"].string!
+        name = source["name"].string!
         registration = source["registration"].string!
         type = source["type"].string!
         
@@ -39,8 +36,7 @@ extension Car: Resourceable {
 
     func toJSON() -> [String: Any] {
        return [
-            "make": make,
-            "model": model,
+            "name": name,
             "registration": registration,
             "type": type
         ]
@@ -51,8 +47,7 @@ extension Car: Resourceable {
 
 extension Car {
     @NSManaged public var id: Int
-    @NSManaged public var make: String
-    @NSManaged public var model: String
+    @NSManaged public var name: String
     @NSManaged public var registration: String
     @NSManaged public var type: String
     @NSManaged public var trips: NSSet?

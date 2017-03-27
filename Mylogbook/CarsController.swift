@@ -7,7 +7,7 @@ class CarsController: UIViewController {
     
     var cars = Store.shared.stack.monitorList(From<Car>(),
                                               Where("deletedAt = nil"),
-                                              OrderBy(.ascending("make")))
+                                              OrderBy(.ascending("name")))
     
     // MARK: Outlets
     
@@ -122,7 +122,7 @@ extension CarsController: UITableViewDataSource, UITableViewDelegate {
     func configure(_ cell: CarCell, with car: Car) {
         cell.nameLabel.text = car.name
         cell.registrationLabel.text = car.registration
-        // set typeImage here
+        // set type image here
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

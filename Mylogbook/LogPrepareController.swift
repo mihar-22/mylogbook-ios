@@ -47,11 +47,11 @@ class LogPrepareController: UIViewController {
     func fetch() {
         cars = Store.shared.stack.fetchAll(From<Car>(),
                                            Where("deletedAt == nil"),
-                                           OrderBy(.ascending("make")))!
+                                           OrderBy(.ascending("name")))!
         
         supervisors = Store.shared.stack.fetchAll(From<Supervisor>(),
                                                   Where("deletedAt == nil"),
-                                                  OrderBy(.ascending("firstName")))!
+                                                  OrderBy(.ascending("name")))!
     }
     
     // MARK: Updates

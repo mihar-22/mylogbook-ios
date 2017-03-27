@@ -12,8 +12,7 @@ class CarController: UIViewController {
     let validator = Validator()
     
     var registration: String? { return registrationTextField.text }
-    var make: String? { return makeTextField.text }
-    var model: String? { return modelTextField.text }
+    var name: String? { return nameTextField.text }
     var type: String? { return typeTextField.text?.lowercased() }
     
     let carTypes = [
@@ -37,8 +36,7 @@ class CarController: UIViewController {
     @IBOutlet weak var typeImage: UIImageView!
     
     @IBOutlet weak var registrationTextField: TextField!
-    @IBOutlet weak var makeTextField: TextField!
-    @IBOutlet weak var modelTextField: TextField!
+    @IBOutlet weak var nameTextField: TextField!
     @IBOutlet weak var typeTextField: TextField!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -61,8 +59,7 @@ class CarController: UIViewController {
         navItem.title = "Edit Car"
         
         registrationTextField.text = car!.registration
-        makeTextField.text = car!.make
-        modelTextField.text = car!.model
+        nameTextField.text = car!.name
         typeTextField.text = car!.type.capitalized
         // set type image here
         
@@ -78,7 +75,7 @@ class CarController: UIViewController {
     @IBAction func didTapSave(_ sender: UIBarButtonItem) {
         view.endEditing(true)
         
-        CarStore.add(car, registration: registration!, make: make!, model: model!, type: type!)
+        CarStore.add(car, registration: registration!, name: name!, type: type!)
         
         dismiss(animated: true, completion: nil)
     }
@@ -89,11 +86,8 @@ class CarController: UIViewController {
         registrationTextField.field.tag = 0
         registrationTextField.field.delegate = self
 
-        makeTextField.field.tag = 1
-        makeTextField.field.delegate = self
-        
-        modelTextField.field.tag = 2
-        modelTextField.field.delegate = self
+        nameTextField.field.tag = 1
+        nameTextField.field.delegate = self
         
         typeTextField.field.tag = 3
         typeTextField.field.delegate = self
@@ -106,9 +100,7 @@ class CarController: UIViewController {
         
         validator.add(registrationTextField, [.required, .alphaNum, .maxLength(6)])
         
-        validator.add(makeTextField, [.required, .alphaSpace, .maxLength(50)])
-        
-        validator.add(modelTextField, [.required, .alphaNumSpace, .maxLength(50)])
+        validator.add(nameTextField, [.required, .maxLength(50)])
     }
 }
 
