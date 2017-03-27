@@ -1,6 +1,7 @@
 
 import CoreLocation
 import MapKit
+import PopupDialog
 import UIKit
 
 class LogSummaryController: UIViewController {
@@ -16,8 +17,7 @@ class LogSummaryController: UIViewController {
     @IBOutlet weak var carTypeImage: UIImageView!
     
     @IBOutlet weak var supervisorNameLabel: UILabel!
-    @IBOutlet weak var supervisorLicenseLabel: UILabel!
-    @IBOutlet weak var supervisorGenderImage: UIImageView!
+    @IBOutlet weak var supervisorAvatar: UIImageView!
     
     @IBOutlet weak var weatherClearImage: UIImageView!
     @IBOutlet weak var weatherClearLabel: UILabel!
@@ -76,6 +76,10 @@ class LogSummaryController: UIViewController {
         navigationController!.popToRootViewController(animated: true)
     }
     
+    @IBAction func didTapCancel(_ sender: UIBarButtonItem) {
+        showCancelAlert()
+    }
+    
     func cacheOdometer() {
         let odometer =  (Cache.shared.getOdometer(for: trip.car) ?? 0)
         
@@ -109,7 +113,7 @@ class LogSummaryController: UIViewController {
         let supervisor = trip.supervisor
         
         supervisorNameLabel.text = supervisor.fullName
-        // set gender image here
+        // set avatar here
     }
     
     func setupWeatherCard() {
@@ -196,6 +200,24 @@ class LogSummaryController: UIViewController {
             image.alpha = 0.3
             label.alpha = 0.3
         }
+    }
+}
+
+// MARK: Alerting
+
+extension LogSummaryController: Alerting {
+    func showCancelAlert() {
+        let title = "Cancel Recording"
+        
+        let message = "Are you sure? Progress will be lost."
+        
+        let noButton = CancelButton(title: "NO", action: nil)
+        
+        let yesButton = DefaultButton(title: "YES") {
+            self.navigationController!.popToRootViewController(animated: true)
+        }
+        
+        showAlert(title: title, message: message, buttons: [noButton, yesButton])
     }
 }
 

@@ -56,11 +56,8 @@
 		C99FC9141E1BB395003BAEC2 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC9131E1BB395003BAEC2 /* Validator.swift */; };
 		C99FC9181E1BB534003BAEC2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC9171E1BB534003BAEC2 /* Validation.swift */; };
 		C9A006831E849E1700548775 /* NswComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A006821E849E1700548775 /* NswComposer.swift */; };
-		C9A0DFF11E5AB84500102DE0 /* LogDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0DFF01E5AB84500102DE0 /* LogDetailsController.swift */; };
 		C9A0DFF31E5ACDE300102DE0 /* WeatherRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0DFF21E5ACDE300102DE0 /* WeatherRoute.swift */; };
 		C9B37B671E3D963800168846 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B37B661E3D963800168846 /* Trip.swift */; };
-		C9C6F6701E54020900231949 /* OdometerAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C6F66F1E54020900231949 /* OdometerAlert.xib */; };
-		C9C6F6721E54023300231949 /* OdometerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6F6711E54023300231949 /* OdometerAlert.swift */; };
 		C9C6F6761E54595300231949 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6F6751E54595300231949 /* Appearance.swift */; };
 		C9C6F6781E545A1B00231949 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6F6771E545A1B00231949 /* KeyboardManager.swift */; };
 		C9C6F67A1E55B75100231949 /* LogRecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6F6791E55B75100231949 /* LogRecordController.swift */; };
@@ -69,7 +66,6 @@
 		C9CDFA891DEFDB2800CE0A2D /* Mylogbook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9CDFA871DEFDB2800CE0A2D /* Mylogbook.xcdatamodeld */; };
 		C9CDFA8B1DEFDB2800CE0A2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9CDFA8A1DEFDB2800CE0A2D /* Assets.xcassets */; };
 		C9CDFA8E1DEFDB2800CE0A2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CDFA8C1DEFDB2800CE0A2D /* LaunchScreen.storyboard */; };
-		C9D373D41E5BF8E600039366 /* LogDetailing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D373D31E5BF8E600039366 /* LogDetailing.swift */; };
 		C9EBBD571E2882E200B5E509 /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD561E2882E200B5E509 /* LogInController.swift */; };
 		C9EBBD5B1E28C45000B5E509 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD5A1E28C45000B5E509 /* DashboardController.swift */; };
 		C9EBBD5E1E2C5F2100B5E509 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD5D1E2C5F2100B5E509 /* CarCell.swift */; };
@@ -138,11 +134,8 @@
 		C99FC9131E1BB395003BAEC2 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		C99FC9171E1BB534003BAEC2 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		C9A006821E849E1700548775 /* NswComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NswComposer.swift; sourceTree = "<group>"; };
-		C9A0DFF01E5AB84500102DE0 /* LogDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogDetailsController.swift; sourceTree = "<group>"; };
 		C9A0DFF21E5ACDE300102DE0 /* WeatherRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherRoute.swift; sourceTree = "<group>"; };
 		C9B37B661E3D963800168846 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
-		C9C6F66F1E54020900231949 /* OdometerAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OdometerAlert.xib; sourceTree = "<group>"; };
-		C9C6F6711E54023300231949 /* OdometerAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OdometerAlert.swift; sourceTree = "<group>"; };
 		C9C6F6751E54595300231949 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		C9C6F6771E545A1B00231949 /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		C9C6F6791E55B75100231949 /* LogRecordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogRecordController.swift; sourceTree = "<group>"; };
@@ -153,7 +146,6 @@
 		C9CDFA8A1DEFDB2800CE0A2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9CDFA8D1DEFDB2800CE0A2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9CDFA8F1DEFDB2800CE0A2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C9D373D31E5BF8E600039366 /* LogDetailing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogDetailing.swift; sourceTree = "<group>"; };
 		C9EBBD561E2882E200B5E509 /* LogInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
 		C9EBBD5A1E28C45000B5E509 /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		C9EBBD5D1E2C5F2100B5E509 /* CarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
@@ -338,6 +330,7 @@
 				C98E77871E37323C00F34468 /* TextField */,
 				C95B3B9D1E35FABD00533FB6 /* NavigationBar.swift */,
 				C98E77931E397DD900F34468 /* Card.swift */,
+				C95B3B871E31CB4100533FB6 /* Alert.swift */,
 				C98E77951E398FE900F34468 /* Toolbar.swift */,
 				C98E778E1E382C8500F34468 /* NibView.swift */,
 				C9C6F6751E54595300231949 /* Appearance.swift */,
@@ -387,7 +380,6 @@
 		C98E77901E397B1900F34468 /* Log */ = {
 			isa = PBXGroup;
 			children = (
-				C9D373D21E5BF8DA00039366 /* Details */,
 				C98E77911E397B3100F34468 /* LogPrepareController.swift */,
 				C9C6F6791E55B75100231949 /* LogRecordController.swift */,
 				C945AA511E5C25AB00FAF9E9 /* LogSummaryController.swift */,
@@ -417,19 +409,8 @@
 		C9C6F66D1E5401CF00231949 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
-				C9C6F66E1E5401DC00231949 /* OdometerAlert */,
-				C95B3B871E31CB4100533FB6 /* Alert.swift */,
 			);
 			name = Alert;
-			sourceTree = "<group>";
-		};
-		C9C6F66E1E5401DC00231949 /* OdometerAlert */ = {
-			isa = PBXGroup;
-			children = (
-				C9C6F66F1E54020900231949 /* OdometerAlert.xib */,
-				C9C6F6711E54023300231949 /* OdometerAlert.swift */,
-			);
-			name = OdometerAlert;
 			sourceTree = "<group>";
 		};
 		C9CDFA741DEFDB2800CE0A2D = {
@@ -469,15 +450,6 @@
 				C9CDFA871DEFDB2800CE0A2D /* Mylogbook.xcdatamodeld */,
 			);
 			path = Mylogbook;
-			sourceTree = "<group>";
-		};
-		C9D373D21E5BF8DA00039366 /* Details */ = {
-			isa = PBXGroup;
-			children = (
-				C9D373D31E5BF8E600039366 /* LogDetailing.swift */,
-				C9A0DFF01E5AB84500102DE0 /* LogDetailsController.swift */,
-			);
-			name = Details;
 			sourceTree = "<group>";
 		};
 		C9EBBD5F1E2C61AD00B5E509 /* Cars */ = {
@@ -605,7 +577,6 @@
 				C9CDFA8E1DEFDB2800CE0A2D /* LaunchScreen.storyboard in Resources */,
 				C951AEEB1E8205EA00E6DD00 /* tables in Resources */,
 				C9CDFA8B1DEFDB2800CE0A2D /* Assets.xcassets in Resources */,
-				C9C6F6701E54020900231949 /* OdometerAlert.xib in Resources */,
 				C9CDFA861DEFDB2800CE0A2D /* Main.storyboard in Resources */,
 				C98E778D1E3746F000F34468 /* TextField.xib in Resources */,
 			);
@@ -673,15 +644,12 @@
 				C9A0DFF31E5ACDE300102DE0 /* WeatherRoute.swift in Sources */,
 				C9F1B98D1E094DCC002D4D61 /* Env.swift in Sources */,
 				C9A006831E849E1700548775 /* NswComposer.swift in Sources */,
-				C9A0DFF11E5AB84500102DE0 /* LogDetailsController.swift in Sources */,
 				C98E778F1E382C8500F34468 /* NibView.swift in Sources */,
 				C9C6F6761E54595300231949 /* Appearance.swift in Sources */,
 				C95CFB921E6E419400CC0BD1 /* OnboardPermitController.swift in Sources */,
 				C987DD121E64F5D00011F223 /* TripCalculator.swift in Sources */,
-				C9D373D41E5BF8E600039366 /* LogDetailing.swift in Sources */,
 				C970BCF01E31A96300E1129A /* SupervisorCell.swift in Sources */,
 				C9F193E01E769B1F00B6AE9C /* AustralianState.swift in Sources */,
-				C9C6F6721E54023300231949 /* OdometerAlert.swift in Sources */,
 				C99FC90F1E1B5AF7003BAEC2 /* SignUpController.swift in Sources */,
 				C9EC4D391E40123400A80348 /* SyncManager.swift in Sources */,
 				C997A5061E67AF2C00CF4F47 /* SettingsController.swift in Sources */,

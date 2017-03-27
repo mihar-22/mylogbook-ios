@@ -156,7 +156,7 @@ class LogRecordController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "stopRecordingSegue" {
-            if let viewController = segue.destination as? LogDetailsController {
+            if let viewController = segue.destination as? LogSummaryController {
                 viewController.trip = trip
                 
                 viewController.locations = locations

@@ -5,127 +5,85 @@ import UIKit
 
 class LogPrepareController: UIViewController {
     
+    let validator = Validator()
+    
     var cars = [Car]()
     
     var supervisors = [Supervisor]()
     
-    // MARK: Pickers
+    var selectedCar = 0
     
-    enum PickerView {
-        case car, supervisor
-    }
+    var selectedSupervisor = 0
     
-    let carPicker = UIPickerView()
-    
-    let supervisorPicker = UIPickerView()
-    
-    let pickerToolbar = UIToolbar()
-    
-    var currentPicker: PickerView = .car
-    
-    var selectedCar: Car {
-        return cars[carPicker.selectedRow(inComponent: 0)]
-    }
-    
-    var selectedSupervisor: Supervisor {
-        return supervisors[supervisorPicker.selectedRow(inComponent: 0)]
-    }
-    
-    // MARK: Odometer
-    
-    var odometerAlert: OdometerAlert!
-    
-    var doneButton: DefaultButton!
-        
     // MARK: Outlets
     
-    @IBOutlet weak var carNameLabel: UILabel!
-    @IBOutlet weak var carRegistrationLabel: UILabel!
     @IBOutlet weak var carTypeImage: UIImageView!
+    @IBOutlet weak var supervisorAvatar: UIImageView!
     
-    @IBOutlet weak var supervisorNameLabel: UILabel!
-    @IBOutlet weak var supervisorGenderImage: UIImageView!
+    @IBOutlet weak var carTextField: TextField!
+    @IBOutlet weak var supervisorTextField: TextField!
+    @IBOutlet weak var odometerTextField: TextField!
+    
+    @IBOutlet weak var startButton: UIBarButtonItem!
     
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
-        setupPickers()
+        fetch()
+        
+        setupValidator()
+        
+        setupTextFields()
+        
+        setupTypePickers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.fetch()
+        if isViewLoaded { fetch() }
     }
     
     // MARK: Fetch
     
     func fetch() {
-        fetchCars()
-        
-        fetchSupervisors()
-    }
-    
-    func fetchCars() {
         cars = Store.shared.stack.fetchAll(From<Car>(),
                                            Where("deletedAt == nil"),
                                            OrderBy(.ascending("make")))!
         
-        carPicker.reloadAllComponents()
-        
-        if cars.first != nil { configureCard(car: cars.first!) }
-    }
-    
-    func fetchSupervisors() {
         supervisors = Store.shared.stack.fetchAll(From<Supervisor>(),
                                                   Where("deletedAt == nil"),
                                                   OrderBy(.ascending("firstName")))!
+    }
+    
+    // MARK: Updates
+    
+    func updateCarViews() {
+        let car = cars[selectedCar]
         
-        supervisorPicker.reloadAllComponents()
+        carTextField.text = car.name
+
+        // set car type image
         
-        if supervisors.first != nil { configureCard(supervisor: supervisors.first!) }
-    }
-    
-    // MARK: Actions
-    
-    @IBAction func didTapCarCard(_ sender: UILongPressGestureRecognizer) {
-        longPressHandler(sender)
-    }
-    
-    @IBAction func didTapSupervisorCard(_ sender: UILongPressGestureRecognizer) {
-        longPressHandler(sender)
-    }
-    
-    func longPressHandler(_ sender: UILongPressGestureRecognizer) {
-        let view = sender.view!
+        let odometer = "\(Cache.shared.getOdometer(for: car) ??  0)"
         
-        currentPicker = (view.tag == 0) ? .car : .supervisor
+        odometerTextField.field.valueText = odometer
         
-        switch sender.state {
-        case .began:
-            view.backgroundColor = UIColor.lightGray
-        case .ended:
-            view.backgroundColor = UIColor.white
-            
-            showPicker()
-        default:
-            break
-        }
+        validator.revalidate()
     }
     
-    @IBAction func didTapStart(_ sender: UIBarButtonItem) {
-        showOdometerAlert()
+    func updateSupervisorViews() {
+        let supervisor = supervisors[selectedSupervisor]
+        
+        supervisorTextField.text = supervisor.fullName
+        
+        // set supervisor avatar image
     }
     
-    // MARK: Cards
+    // MARK: Validator
     
-    func configureCard(car: Car) {
-        carNameLabel.text = car.name
-        carRegistrationLabel.text = car.registration
-        // set type image here
-    }
-    
-    func configureCard(supervisor: Supervisor) {
-        supervisorNameLabel.text = supervisor.fullName
-        // set gender image here
+    func setupValidator() {
+        validator.setActionButton(startButton)
+        
+        validator.add(odometerTextField, [.required, .numeric])
     }
     
     // MARK: Navigation
@@ -133,17 +91,21 @@ class LogPrepareController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "startRecordingSegue" {
             if let viewController = segue.destination as? LogRecordController {
-                let odometer = self.odometerAlert.odometerValue
-                                
+                let odometer = odometerTextField.field.value
+                
+                let car = cars[selectedCar]
+                
+                let supervisor = supervisors[selectedSupervisor]
+                
                 let trip = Trip()
                 
                 trip.odometer = odometer
+
+                trip.car = car
                 
-                trip.car = selectedCar
+                trip.supervisor = supervisor
                 
-                trip.supervisor = selectedSupervisor
-                
-                Cache.shared.set(odometer: odometer, for: selectedCar)
+                Cache.shared.set(odometer: odometer, for: car)
 
                 Cache.shared.save()
                 
@@ -153,118 +115,57 @@ class LogPrepareController: UIViewController {
     }
 }
 
-// MARK: Alerting
+// MARK: Text Field Delegate
 
-extension LogPrepareController: Alerting {
-    func setupOdometerAlert() {
-        odometerAlert = OdometerAlert(nibName: "OdometerAlert", bundle: nil)
+extension LogPrepareController: TextFieldDelegate {
+    func setupTextFields() {
+        carTextField.tag = 0
+        carTextField.field.delegate = self
         
-        // Force view hierarchy to load
-        let _ = odometerAlert.view
+        supervisorTextField.tag = 1
+        supervisorTextField.field.delegate = self
         
-        odometerAlert.validator.delegate = self
+        odometerTextField.tag = 2
+        odometerTextField.field.delegate = self
+        odometerTextField.field.setupValueFormatting()
     }
     
-    func showOdometerAlert() {
-        setupOdometerAlert()
-        
-        let cancelButton = CancelButton(title: "CANCEL", action: nil)
-        
-        doneButton = DefaultButton(title: "DONE") {
-            self.performSegue(withIdentifier: "startRecordingSegue", sender: nil)
-        }
-        
-        let odometer = (Cache.shared.getOdometer(for: selectedCar) ?? 0)
-        
-        odometerAlert.odometerText = String(odometer)
-        
-        odometerAlert.validator.revalidate()
-
-        self.showCustomAlert(viewController: odometerAlert, buttons: [cancelButton, doneButton])
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textFieldShouldReturnHandler(textField)
     }
 }
 
-// MARK: Validator Delegate
+// MARK: UI Picker View - Delegate + Data Source
 
-extension LogPrepareController: ValidatorDelegate {
-    func validationSuccessful(_ textField: TextField) {
-        isDoneButton(enabled: true)
+extension LogPrepareController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func setupTypePickers() {
+        setupCarPicker()
+        
+        setupSupervisorPicker()
     }
     
-    func validationFailed(_ textField: TextField) {
-        isDoneButton(enabled: false)
+    func setupCarPicker() {
+        let typePicker = UIPickerView()
+        
+        typePicker.tag = carTextField.tag
+        typePicker.delegate = self
+        typePicker.dataSource = self
+        
+        carTextField.field.inputView = typePicker
+        
+        updateCarViews()
     }
     
-    func isDoneButton(enabled isEnabled: Bool) {
-        doneButton.isEnabled = isEnabled
-        
-        let style: DefaultButtonStyle = (isEnabled) ? .normal : .disabled
-        
-        doneButton.restyle(style)
-    }
-}
+    func setupSupervisorPicker() {
+        let typePicker = UIPickerView()
 
-// MARK: Picker View - Data Source + Delegate
-
-extension LogPrepareController: UIPickerViewDataSource, UIPickerViewDelegate {
-    func setupPickers() {
-        setup(carPicker, tag: 0)
-
-        setup(supervisorPicker, tag: 1)
+        typePicker.tag = supervisorTextField.tag
+        typePicker.delegate = self
+        typePicker.dataSource = self
         
-        setupPickerToolbar()
-    }
-    
-    func setup(_ picker: UIPickerView, tag: Int) {
-        let height: CGFloat = 180
+        supervisorTextField.field.inputView = typePicker
         
-        picker.backgroundColor = UIColor.white
-        picker.dataSource = self
-        picker.delegate = self
-        picker.tag = tag
-        picker.isHidden = true
-        picker.frame = CGRect(x: 0,
-                              y: view.bounds.height - tabBarController!.tabBar.frame.height - height,
-                              width: view.bounds.width,
-                              height: height)
-        
-        view.addSubview(picker)
-    }
-    
-    func setupPickerToolbar() {
-        let picker = carPicker
-        
-        pickerToolbar.restyle(.normal)
-        pickerToolbar.addDoneButton(target: self, action: #selector(pickerDoneHandler(_:)))
-        pickerToolbar.isHidden = true
-        pickerToolbar.frame = CGRect(x: 0,
-                               y: picker.frame.minY - pickerToolbar.frame.height,
-                               width: view.bounds.width,
-                               height: pickerToolbar.frame.height)
-        
-        view.addSubview(pickerToolbar)
-    }
-    
-    func pickerDoneHandler(_ sender: UIBarButtonItem) {
-        hidePickers()
-    }
-    
-    func showPicker() {
-        let isCarPickerHidden = (currentPicker == .car) ? false : true
-        
-        carPicker.isHidden = isCarPickerHidden
-        
-        supervisorPicker.isHidden = !isCarPickerHidden
-        
-        pickerToolbar.isHidden = false
-    }
-    
-    func hidePickers() {
-        carPicker.isHidden = true
-        
-        supervisorPicker.isHidden = true
-        
-        pickerToolbar.isHidden = true
+        updateSupervisorViews()
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -272,14 +173,23 @@ extension LogPrepareController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return (pickerView.tag == carPicker.tag) ? cars.count : supervisors.count
+        return (pickerView.tag == carTextField.tag) ? cars.count : supervisors.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return (pickerView.tag == carPicker.tag) ? cars[row].name : supervisors[row].fullName
+        return (pickerView.tag == carTextField.tag) ? cars[row].name : supervisors[row].fullName
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        (pickerView.tag == carPicker.tag) ? configureCard(car: cars[row]) : configureCard(supervisor: supervisors[row])
+        if pickerView.tag == carTextField.tag {
+            selectedCar = row
+            
+            updateCarViews()
+        }
+        else if pickerView.tag == supervisorTextField.tag {
+            selectedSupervisor = row
+            
+            updateSupervisorViews()
+        }
     }
 }

@@ -22,7 +22,7 @@ class SupervisorController: UIViewController {
     
     @IBOutlet weak var navItem: UINavigationItem!
     
-    @IBOutlet weak var genderImage: UIImageView!
+    @IBOutlet weak var avatar: UIImageView!
     
     @IBOutlet weak var firstNameTextField: TextField!
     @IBOutlet weak var lastNameTextField: TextField!
@@ -54,7 +54,7 @@ class SupervisorController: UIViewController {
         lastNameTextField.text = supervisor!.lastName
         genderTextField.text = supervisor!.gender.capitalized
         accreditedSwitch.setOn(supervisor!.isAccredited, animated: true)
-        // set gender image here
+        // set avatar image here
         
         validator.revalidate()
     }
