@@ -35,11 +35,11 @@ class SignUpController: UIViewController {
     func setupValidator() {
         validator.setActionButton(createButton)
 
-        validator.add(nameTextField, [.required, .alphaSpace, .maxLength(max: 50)])
+        validator.add(nameTextField, [.required, .maxLength(100)])
         
         validator.add(emailTextField, [.required, .email])
         
-        validator.add(passwordTextField, [.required, .minLength(min: 6)])
+        validator.add(passwordTextField, [.required, .minLength(6)])
         
         validator.add(birthdayTextField, [.required])
     }

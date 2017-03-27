@@ -104,11 +104,11 @@ class CarController: UIViewController {
     func setupValidator() {
         validator.setActionButton(saveButton)
         
-        validator.add(registrationTextField, [.required, .alphaNum, .maxLength(max: 6)])
+        validator.add(registrationTextField, [.required, .alphaNum, .maxLength(6)])
         
-        validator.add(makeTextField, [.required, .alphaSpace, .maxLength(max: 50)])
+        validator.add(makeTextField, [.required, .alphaSpace, .maxLength(50)])
         
-        validator.add(modelTextField, [.required, .alphaNumSpace, .maxLength(max: 50)])
+        validator.add(modelTextField, [.required, .alphaNumSpace, .maxLength(50)])
     }
 }
 

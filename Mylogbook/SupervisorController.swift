@@ -98,9 +98,9 @@ class SupervisorController: UIViewController {
     func setupValidator() {
         validator.setActionButton(saveButton)
         
-        validator.add(firstNameTextField, [.required, .alpha, .maxLength(max: 50)])
+        validator.add(firstNameTextField, [.required, .alpha, .maxLength(50)])
         
-        validator.add(lastNameTextField, [.required, .alpha, .maxLength(max: 50)])
+        validator.add(lastNameTextField, [.required, .alpha, .maxLength(50)])
     }
 }
 

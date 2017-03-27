@@ -5,8 +5,8 @@ import Foundation
 
 enum Validation {
     case required
-    case minLength(min: Int)
-    case maxLength(max: Int)
+    case minLength(Int)
+    case maxLength(Int)
     case regex(pattern: String, message: String)
     case email
     case alpha

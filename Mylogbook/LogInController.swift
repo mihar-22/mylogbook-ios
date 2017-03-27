@@ -43,7 +43,7 @@ class LogInController: UIViewController {
 
         validator.add(emailTextField, [.required, .email])
         
-        validator.add(passwordTextField, [.required, .minLength(min: 6)])
+        validator.add(passwordTextField, [.required, .minLength(6)])
     }
     
     // MARK: Text Field
