@@ -83,13 +83,13 @@ class CarController: UIViewController {
     // MARK: Text Field
     
     func setupTextFields() {
-        registrationTextField.field.tag = 0
-        registrationTextField.field.delegate = self
-
-        nameTextField.field.tag = 1
+        nameTextField.field.tag = 0
         nameTextField.field.delegate = self
+
+        registrationTextField.field.tag = 1
+        registrationTextField.field.delegate = self
         
-        typeTextField.field.tag = 3
+        typeTextField.field.tag = 2
         typeTextField.field.delegate = self
     }
     

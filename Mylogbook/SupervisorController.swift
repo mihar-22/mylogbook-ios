@@ -79,10 +79,10 @@ class SupervisorController: UIViewController {
     // MARK: Text Field
     
     func setupTextFields() {
-        nameTextField.field.tag = 1
+        nameTextField.field.tag = 0
         nameTextField.field.delegate = self
         
-        genderTextField.field.tag = 3
+        genderTextField.field.tag = 1
         genderTextField.field.delegate = self
     }
     
