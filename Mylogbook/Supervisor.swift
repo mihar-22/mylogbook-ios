@@ -5,12 +5,14 @@ import SwiftyJSON
 // MARK: Supervisor
 
 class Supervisor: NSManagedObject, SoftDeletable, Syncable {
-    var fullName: String { return "\(firstName) \(lastName)" }
-    
     var uniqueIDValue: Int {
         get { return self.id }
         
         set(id) { self.id = id }
+    }
+    
+    var genderLong: String {
+        return (gender == "M") ? "Male" : "Female"
     }
 }
 
@@ -22,8 +24,7 @@ extension Supervisor: Importable {
     static let uniqueIDKeyPath = "id"
 
     func update(from source: JSON, in transaction: BaseDataTransaction) throws  {
-        firstName = source["first_name"].string!
-        lastName = source["last_name"].string!
+        name = source["name"].string!
         gender = source["gender"].string!
         isAccredited = source["is_accredited"].bool!
         
@@ -39,8 +40,7 @@ extension Supervisor: Resourceable {
     
     func toJSON() -> [String: Any] {
         return [
-            "first_name": firstName,
-            "last_name": lastName,
+            "name": name,
             "gender": gender,
             "is_accredited": isAccredited ? 1 : 0
         ]
@@ -51,9 +51,8 @@ extension Supervisor: Resourceable {
 
 extension Supervisor {
     @NSManaged public var id: Int
-    @NSManaged public var firstName: String
+    @NSManaged public var name: String
     @NSManaged public var gender: String
-    @NSManaged public var lastName: String
     @NSManaged public var trips: NSSet?
     @NSManaged public var isAccredited: Bool
     @NSManaged public var updatedAt: Date

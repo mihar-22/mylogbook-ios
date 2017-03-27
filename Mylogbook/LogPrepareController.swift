@@ -73,7 +73,7 @@ class LogPrepareController: UIViewController {
     func updateSupervisorViews() {
         let supervisor = supervisors[selectedSupervisor]
         
-        supervisorTextField.text = supervisor.fullName
+        supervisorTextField.text = supervisor.name
         
         // set supervisor avatar image
     }
@@ -177,7 +177,7 @@ extension LogPrepareController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return (pickerView.tag == carTextField.tag) ? cars[row].name : supervisors[row].fullName
+        return (pickerView.tag == carTextField.tag) ? cars[row].name : supervisors[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

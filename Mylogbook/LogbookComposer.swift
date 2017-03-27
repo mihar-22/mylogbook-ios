@@ -121,7 +121,7 @@ extension LogbookComposer {
     }
     
     func insertSupervisor(for trip: Trip, into row: inout String) {
-        let name = trip.supervisor.fullName.truncate(length: 20)
+        let name = trip.supervisor.name.truncate(length: 20)
         
         row = row.replacingOccurrences(of: "#SUPERVISOR#", with: name)
     }

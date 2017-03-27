@@ -5,8 +5,7 @@ import CoreStore
 
 class SupervisorStore: SoftDeletingStore {
     static func add(_ supervisor: Supervisor?,
-                    firstName: String,
-                    lastName: String,
+                    name: String,
                     gender: String,
                     isAccredited: Bool) {
         
@@ -14,8 +13,7 @@ class SupervisorStore: SoftDeletingStore {
             let supervisor: Supervisor = (supervisor != nil) ? transaction.edit(supervisor)! :
                                                                transaction.create(Into<Supervisor>())
             
-            supervisor.firstName = firstName
-            supervisor.lastName = lastName
+            supervisor.name = name
             supervisor.gender = gender
             supervisor.isAccredited = isAccredited
             

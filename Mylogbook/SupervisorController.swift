@@ -11,9 +11,8 @@ class SupervisorController: UIViewController {
     
     let validator = Validator()
 
-    var firstName: String? { return firstNameTextField.text }
-    var lastName: String? { return lastNameTextField.text }
-    var gender: String? { return genderTextField.text?.lowercased() }
+    var name: String? { return nameTextField.text }
+    var gender: Character? { return genderTextField.text?.characters.first }
     var isAccredited: Bool { return accreditedSwitch.isOn }
     
     let genders = ["Male", "Female"]
@@ -24,8 +23,7 @@ class SupervisorController: UIViewController {
     
     @IBOutlet weak var avatar: UIImageView!
     
-    @IBOutlet weak var firstNameTextField: TextField!
-    @IBOutlet weak var lastNameTextField: TextField!
+    @IBOutlet weak var nameTextField: TextField!
     @IBOutlet weak var genderTextField: TextField!
     @IBOutlet weak var accreditedSwitch: UISwitch!
     
@@ -50,9 +48,8 @@ class SupervisorController: UIViewController {
     func setupEditing() {
         navItem.title = "Edit Supervisor"
         
-        firstNameTextField.text = supervisor!.firstName
-        lastNameTextField.text = supervisor!.lastName
-        genderTextField.text = supervisor!.gender.capitalized
+        nameTextField.text = supervisor!.name
+        genderTextField.text = supervisor!.genderLong
         accreditedSwitch.setOn(supervisor!.isAccredited, animated: true)
         // set avatar image here
         
@@ -69,9 +66,8 @@ class SupervisorController: UIViewController {
         view.endEditing(true)
         
         SupervisorStore.add(supervisor,
-                            firstName: firstName!,
-                            lastName: lastName!,
-                            gender: gender!,
+                            name: name!,
+                            gender: "\(gender!)",
                             isAccredited: isAccredited)
         
         dismiss(animated: true, completion: nil)
@@ -83,11 +79,8 @@ class SupervisorController: UIViewController {
     // MARK: Text Field
     
     func setupTextFields() {
-        firstNameTextField.field.tag = 1
-        firstNameTextField.field.delegate = self
-        
-        lastNameTextField.field.tag = 2
-        lastNameTextField.field.delegate = self
+        nameTextField.field.tag = 1
+        nameTextField.field.delegate = self
         
         genderTextField.field.tag = 3
         genderTextField.field.delegate = self
@@ -98,9 +91,7 @@ class SupervisorController: UIViewController {
     func setupValidator() {
         validator.setActionButton(saveButton)
         
-        validator.add(firstNameTextField, [.required, .alpha, .maxLength(50)])
-        
-        validator.add(lastNameTextField, [.required, .alpha, .maxLength(50)])
+        validator.add(nameTextField, [.required, .maxLength(100)])
     }
 }
 

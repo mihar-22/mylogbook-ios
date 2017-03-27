@@ -12,11 +12,10 @@
     </entity>
     <entity name="Supervisor" representedClassName=".Supervisor" syncable="YES">
         <attribute name="deletedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="firstName" attributeType="String" maxValueString="50" syncable="YES"/>
-        <attribute name="gender" attributeType="String" maxValueString="6" syncable="YES"/>
+        <attribute name="gender" attributeType="String" maxValueString="1" syncable="YES"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isAccredited" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="lastName" attributeType="String" maxValueString="50" syncable="YES"/>
+        <attribute name="name" attributeType="String" maxValueString="100" syncable="YES"/>
         <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="trips" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Trip" inverseName="supervisor" inverseEntity="Trip" syncable="YES"/>
     </entity>
@@ -43,7 +42,7 @@
     </entity>
     <elements>
         <element name="Car" positionX="-162" positionY="174" width="128" height="165"/>
-        <element name="Supervisor" positionX="-162" positionY="345" width="128" height="165"/>
+        <element name="Supervisor" positionX="-162" positionY="345" width="128" height="150"/>
         <element name="Trip" positionX="43" positionY="63" width="128" height="330"/>
     </elements>
 </model>

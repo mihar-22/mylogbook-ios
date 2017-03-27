@@ -120,7 +120,7 @@ extension SupervisorsController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func configure(_ cell: SupervisorCell, with supervisor: Supervisor) {
-        cell.nameLabel.text = supervisor.fullName
+        cell.nameLabel.text = supervisor.name
         // set gender image here
     }
     

@@ -112,7 +112,7 @@ class LogSummaryController: UIViewController {
     func setupSupervisorCard() {
         let supervisor = trip.supervisor
         
-        supervisorNameLabel.text = supervisor.fullName
+        supervisorNameLabel.text = supervisor.name
         // set avatar here
     }
     
