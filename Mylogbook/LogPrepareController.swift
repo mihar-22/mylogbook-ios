@@ -33,9 +33,9 @@ class LogPrepareController: UIViewController {
         
         setupValidator()
         
-        setupTextFields()
-        
         setupTypePickers()
+        
+        odometerTextField.setupValueFormatting()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,7 +65,7 @@ class LogPrepareController: UIViewController {
         
         let odometer = "\(Cache.shared.getOdometer(for: car) ??  0)"
         
-        odometerTextField.field.valueText = odometer
+        odometerTextField.valueText = odometer
         
         validator.revalidate()
     }
@@ -91,7 +91,7 @@ class LogPrepareController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "startRecordingSegue" {
             if let viewController = segue.destination as? LogRecordController {
-                let odometer = odometerTextField.field.value
+                let odometer = odometerTextField.value
                 
                 let car = cars[selectedCar]
                 
@@ -115,26 +115,6 @@ class LogPrepareController: UIViewController {
     }
 }
 
-// MARK: Text Field Delegate
-
-extension LogPrepareController: TextFieldDelegate {
-    func setupTextFields() {
-        carTextField.tag = 0
-        carTextField.field.delegate = self
-        
-        supervisorTextField.tag = 1
-        supervisorTextField.field.delegate = self
-        
-        odometerTextField.tag = 2
-        odometerTextField.field.delegate = self
-        odometerTextField.field.setupValueFormatting()
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return textFieldShouldReturnHandler(textField)
-    }
-}
-
 // MARK: UI Picker View - Delegate + Data Source
 
 extension LogPrepareController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -151,7 +131,7 @@ extension LogPrepareController: UIPickerViewDelegate, UIPickerViewDataSource {
         typePicker.delegate = self
         typePicker.dataSource = self
         
-        carTextField.field.inputView = typePicker
+        carTextField.inputView = typePicker
         
         updateCarViews()
     }
@@ -163,7 +143,7 @@ extension LogPrepareController: UIPickerViewDelegate, UIPickerViewDataSource {
         typePicker.delegate = self
         typePicker.dataSource = self
         
-        supervisorTextField.field.inputView = typePicker
+        supervisorTextField.inputView = typePicker
         
         updateSupervisorViews()
     }

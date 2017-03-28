@@ -32,7 +32,7 @@ class OnboardPermitController: UIViewController {
         
         picker.addTarget(self, action: #selector(didChangeDate(_:)), for: .valueChanged)
         
-        receivedDateTextField.field.inputView = picker
+        receivedDateTextField.inputView = picker
     }
     
     // MARK: Actions

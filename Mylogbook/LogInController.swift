@@ -28,9 +28,7 @@ class LogInController: UIViewController {
     
     override func viewDidLoad() {
         setupValidator()
-        
-        setupTextFields()
-        
+                
         attemptToPrefillForm()
     }
     
@@ -44,16 +42,6 @@ class LogInController: UIViewController {
         validator.add(emailTextField, [.required, .email])
         
         validator.add(passwordTextField, [.required, .minLength(6)])
-    }
-    
-    // MARK: Text Field
-    
-    func setupTextFields() {
-        emailTextField.field.tag = 0
-        emailTextField.field.delegate = self
-        
-        passwordTextField.field.tag = 1
-        passwordTextField.field.delegate = self
     }
     
     // MARK: Actions
@@ -212,22 +200,14 @@ extension LogInController: Alerting {
     }
 }
 
-// MARK: Text Field Delegate
-
-extension LogInController: TextFieldDelegate {    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return textFieldShouldReturnHandler(textField)
-    }
-}
-
 // MARK: Validator Delegate
 
 extension LogInController: ValidatorDelegate {
     func validationSuccessful(_ textField: TextField) {
-        if textField.field.tag == emailTextField.field.tag { forgotPasswordButton.isEnabled = true }
+        if textField.tag == emailTextField.tag { forgotPasswordButton.isEnabled = true }
     }
     
     func validationFailed(_ textField: TextField) {
-        if textField.field.tag == emailTextField.field.tag { forgotPasswordButton.isEnabled = false }
+        if textField.tag == emailTextField.tag { forgotPasswordButton.isEnabled = false }
     }
 }

@@ -32,8 +32,6 @@ class SupervisorController: UIViewController {
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
-        setupTextFields()
-        
         setupGenderPicker()
         
         setupValidator()
@@ -76,30 +74,12 @@ class SupervisorController: UIViewController {
     @IBAction func didChangeAccreditedValueFor(_ sender: UISwitch) {
     }
     
-    // MARK: Text Field
-    
-    func setupTextFields() {
-        nameTextField.field.tag = 0
-        nameTextField.field.delegate = self
-        
-        genderTextField.field.tag = 1
-        genderTextField.field.delegate = self
-    }
-    
     // MARK: Validator
     
     func setupValidator() {
         validator.setActionButton(saveButton)
         
         validator.add(nameTextField, [.required, .maxLength(100)])
-    }
-}
-
-// MARK: Text Field Delegate
-
-extension SupervisorController: TextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return textFieldShouldReturnHandler(textField)
     }
 }
 
@@ -112,7 +92,7 @@ extension SupervisorController: UIPickerViewDelegate, UIPickerViewDataSource {
         genderPicker.delegate = self
         genderPicker.dataSource = self
         
-        genderTextField.field.inputView = genderPicker
+        genderTextField.inputView = genderPicker
 
         genderTextField.text = genders[0]
         // set gender image here

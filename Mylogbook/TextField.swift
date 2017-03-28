@@ -1,143 +1,209 @@
 
 import UIKit
+import JVFloatLabeledTextField
+
+// MARK: Text Field Style
+
+enum TextFieldStyle {
+    case normal, focused ,error
+}
 
 // MARK: Text Field
 
-@IBDesignable
-class TextField: UIView, NibView {
-
-    var view: UIView!
+class TextField: JVFloatLabeledTextField {
     
-    var viewBottomConstraint: NSLayoutConstraint!
+    private let inputLine = CALayer()
     
-    var text: String? {
-        get {
-            return field.text
-        }
-        
-        set(text) {
-            field.text = text
-        }
-    }
+    private let errorLabel = UILabel()
+    
+    private let errorLabelYPadding: CGFloat = 6
+    
+    private let baseHeight: CGFloat = 40
+    
+    private var heightConstraint: NSLayoutConstraint!
+    
+    private var isDirty = false
     
     var error: String? {
         get {
             return errorLabel.text
         }
-
-        set(error) {
-            errorLabel.text = error
+        
+        set(message) {
+            errorLabel.text = message
             
-            update()
+            updateHeight()
+            
+            updateStyle()
         }
     }
     
-    // MARK: IB Inspectables
-    
-    @IBInspectable var placeholder: String? {
-        get {
-            return field.placeholder
-        }
-        
-        set(placeholder) {
-            field.placeholder = placeholder
-        }
+    var isValid: Bool {
+        return error == nil
     }
     
-    @IBInspectable var capitalization: Int {
-        get {
-            return field.autocapitalizationType.rawValue
-        }
-        
-        set(capitalization) {
-            field.autocapitalizationType = UITextAutocapitalizationType(rawValue: capitalization)!
-        }
-    }
-    
-    @IBInspectable var keyboardType: Int {
-        get {
-            return field.keyboardType.rawValue
-        }
-        
-        set(keyboardType) {
-            field.keyboardType = UIKeyboardType(rawValue: keyboardType)!
-        }
-    }
-    
-    @IBInspectable var returnKeyType: Int {
-        get {
-            return field.returnKeyType.rawValue
-        }
-        
-        set(returnKeyType) {
-            field.returnKeyType = UIReturnKeyType(rawValue: returnKeyType)!
-        }
-    }
-
-    @IBInspectable var secureTextEntry: Bool {
-        get {
-            return field.isSecureTextEntry
-        }
-        
-        set(isSecureTextEntry) {
-            field.isSecureTextEntry = isSecureTextEntry
-        }
-    }
-    
-    // MARK: Outlets
-    
-    @IBOutlet weak var field: JVTextField!
-    
-    @IBOutlet weak var errorLabel: UILabel!
-
     // MARK: Initializers
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        _init()
+        setup()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        _init()
+        setup()
     }
     
-    private func _init() {
-        initNib()
+    // MARK: Setup
+    
+    private func setup() {        
+        borderStyle = .none
         
-        viewBottomConstraint = view.bottomAnchor.constraint(equalTo: field.bottomAnchor,
-                                                            constant: field.inputLine.frame.height)
+        setupConstraints()
         
-        viewBottomConstraint.isActive = true
+        addInputLine()
         
-        errorLabel.text = nil
+        addErrorLabel()
+        
+        restyle(.normal)
+        
+        delegate = self
+        
+        addTarget(self, action: #selector(editingChangedHandler), for: .editingChanged)
+    }
+    
+    private func setupConstraints() {
+        heightConstraint = heightAnchor.constraint(equalToConstant: baseHeight)
+        heightConstraint.isActive = true
+        
+        layoutIfNeeded()
+    }
+    
+    private func addInputLine() {
+        inputLine.backgroundColor = Palette.separator.uiColor.cgColor
+        
+        inputLine.frame = CGRect(x: 0, y: bounds.height - 1, width: bounds.width, height: 1)
+        
+        layer.addSublayer(inputLine)
+    }
+    
+    private func addErrorLabel() {
+        errorLabel.textColor = Palette.error.uiColor
+        errorLabel.font = UIFont.systemFont(ofSize: 14)
+        errorLabel.frame = CGRect(x: 0,
+                                  y: bounds.height + errorLabelYPadding,
+                                  width: bounds.width,
+                                  height: 14)
+        
+        addSubview(errorLabel)
+    }
+    
+    @objc private func editingChangedHandler() {
+        if !isDirty { isDirty = true }
     }
     
     // MARK: Layout
+        
+    private func updateHeight() {
+        if !isValid { errorLabel.sizeToFit() }
+        
+        let height = isValid ? baseHeight : (baseHeight + errorLabelYPadding + errorLabel.frame.size.height)
+        
+        self.heightConstraint.constant = height
+        
+        layoutIfNeeded()
+    }
     
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: view.frame.width, height: 65)
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        let rect = super.editingRect(forBounds: bounds)
+        
+        guard !isValid else { return rect }
+        
+        return rect.offsetBy(dx: 0, dy: -11)
+    }
+    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        let rect = super.textRect(forBounds: bounds)
+        
+        guard !isValid else { return rect }
+        
+        return rect.offsetBy(dx: 0, dy: -11)
+    }
+    
+    // MARK: Responders
+    
+    override func becomeFirstResponder() -> Bool {
+        if isValid || (!isDirty && isValid) { styleFocused() }
+        
+        return super.becomeFirstResponder()
+    }
+    
+    override func resignFirstResponder() -> Bool {
+        if isValid || (!isDirty && isValid) { styleNormal() }
+        
+        return super.resignFirstResponder()
     }
     
     // MARK: Styling
     
-    private func update() {
-        if error == nil {
-            field.isValid = true
-            
-            errorLabel.isHidden = true
-            
-            viewBottomConstraint.isActive = true
+    private func updateStyle() {
+        if (!isValid) {
+            restyle(.error)
+        } else if isFirstResponder {
+            restyle(.focused)
         } else {
-            field.isValid = false
-            
-            errorLabel.isHidden = false
-            
-            viewBottomConstraint.isActive = false
-            
-            UIView.animate(withDuration: 0.4) { self.view.layoutIfNeeded() }
+            restyle(.normal)
         }
+    }
+    
+    func restyle(_ style: TextFieldStyle) {
+        switch style {
+        case .normal:
+            styleNormal()
+        case .focused:
+            styleFocused()
+        case .error:
+            styleError()
+        }
+    }
+    
+    private func styleNormal() {
+        floatingLabelTextColor = Palette.placeholder.uiColor
+        floatingLabelActiveTextColor = Palette.tint.uiColor
+        
+        tintColor = Palette.tint.uiColor
+        
+        inputLine.backgroundColor = Palette.separator.uiColor.cgColor
+    }
+    
+    private func styleFocused() {
+        styleNormal()
+        
+        inputLine.backgroundColor = Palette.tint.uiColor.cgColor
+    }
+    
+    private func styleError() {
+        floatingLabelTextColor = Palette.placeholder.uiColor
+        floatingLabelActiveTextColor = Palette.error.uiColor
+        
+        tintColor = Palette.error.uiColor
+        
+        inputLine.backgroundColor = Palette.error.uiColor.cgColor
+    }
+}
+
+// MARK: Text Field Delegate
+
+extension TextField: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let nextTextField = superview?.viewWithTag(tag + 1) as? TextField {
+            _ = nextTextField.becomeFirstResponder()
+        } else {
+            _ = resignFirstResponder()
+        }
+        
+        return false
     }
 }

@@ -24,7 +24,7 @@ class TaskCell: UITableViewCell {
         
         let name = "Dashed Bottom Border"
         
-        let color = Palette.seperator.uiColor.cgColor
+        let color = Palette.separator.uiColor.cgColor
         
         let bounds = CGRect(x: 0, y: 0, width: frame.width - 12, height: 0)
         

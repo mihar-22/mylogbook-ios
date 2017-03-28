@@ -44,8 +44,6 @@ class CarController: UIViewController {
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
-        setupTextFields()
-        
         setupTypePicker()
         
         setupValidator()
@@ -80,19 +78,6 @@ class CarController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    // MARK: Text Field
-    
-    func setupTextFields() {
-        nameTextField.field.tag = 0
-        nameTextField.field.delegate = self
-
-        registrationTextField.field.tag = 1
-        registrationTextField.field.delegate = self
-        
-        typeTextField.field.tag = 2
-        typeTextField.field.delegate = self
-    }
-    
     // MARK: Validator
     
     func setupValidator() {
@@ -101,14 +86,6 @@ class CarController: UIViewController {
         validator.add(registrationTextField, [.required, .alphaNum, .maxLength(6)])
         
         validator.add(nameTextField, [.required, .maxLength(50)])
-    }
-}
-
-// MARK: Text Field Delegate
-
-extension CarController: TextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return textFieldShouldReturnHandler(textField)
     }
 }
 
@@ -122,7 +99,7 @@ extension CarController: UIPickerViewDelegate, UIPickerViewDataSource {
         typePicker.dataSource = self
         
         typeTextField.text = carTypes[0]
-        typeTextField.field.inputView = typePicker
+        typeTextField.inputView = typePicker
         
         // set type image here
     }

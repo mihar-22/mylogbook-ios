@@ -5,7 +5,7 @@ import UIKit
 
 enum Palette {
     case primary, secondary, secondaryLight
-    case seperator, tint, error
+    case placeholder, separator, tint, error
     
     var uiColor: UIColor {
         switch self {
@@ -13,10 +13,12 @@ enum Palette {
             return UIColor.black
         case .secondary:
             return UIColor.gray
+        case .placeholder:
+            return UIColor(red: 193/255, green: 193/255, blue: 194/255, alpha: 1)
         case .secondaryLight:
             return UIColor.lightGray
-        case .seperator:
-            return UIColor(red: 200/255, green: 199/255, blue: 204/255, alpha: 0.8)
+        case .separator:
+            return UIColor(red: 205/255, green: 205/255, blue: 209/255, alpha: 1)
         case .tint:
             return UIColor(red: 34/255, green: 181/255, blue: 115/255, alpha: 1)
         case .error:

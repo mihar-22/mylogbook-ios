@@ -16,22 +16,12 @@ class Validator {
     
     private var actionButton: UIBarButtonItem?
     
-    private var textField = [JVTextField: TextField]()
-    
-    private var validity = [JVTextField: Bool]()
-    
-    private var validations = [JVTextField: [Validation]]()
+    private var validations = [TextField: [Validation]]()
     
     func add(_ textField: TextField, _ validations: [Validation]) {
-        let field = textField.field!
+        self.validations[textField] = validations
         
-        self.textField[field] = textField
-        
-        self.validity[field] = false
-        
-        self.validations[field] = validations
-        
-        field.addTarget(self, action: #selector(editingChangedHandler(_:)), for: .editingChanged)
+        textField.addTarget(self, action: #selector(editingChangedHandler(_:)), for: .editingChanged)
     }
     
     func setActionButton(_ button: UIBarButtonItem) {
@@ -42,7 +32,7 @@ class Validator {
     
     // MARK: Validation
 
-    private func validate(_ field: JVTextField) -> Validation? {
+    private func validate(_ field: TextField) -> Validation? {
         let value = field.text ?? ""
         
         for validation in validations[field]! { if !validation.validate(value) { return validation } }
@@ -51,12 +41,10 @@ class Validator {
     }
     
     func revalidate() {
-        for (field, textField) in textField {
-            let isValid = (validate(field) == nil)
+        for textField in validations.keys {
+            textField.error = validate(textField)?.error
             
-            validity[field] = isValid
-            
-            if isValid {
+            if textField.isValid {
                 delegate?.validationSuccessful(textField)
             } else {
                 delegate?.validationFailed(textField)
@@ -67,23 +55,19 @@ class Validator {
     }
         
     private func isAllFieldsValid() -> Bool {
-        return !(validity.values.contains(false))
+        return !(validations.map({ $0.key.isValid }).contains(false))
     }
     
     private func validHandler(_ textField: TextField) {
         textField.error = nil
-
-        validity[textField.field] = true
         
         if isAllFieldsValid() { actionButton?.isEnabled = true }
         
         delegate?.validationSuccessful(textField)
     }
     
-    private func invalidHandler(_ textField: TextField, _ error: String?) {
+    private func invalidHandler(_ textField: TextField, _ error: String) {
         textField.error = error
-        
-        validity[textField.field] = false
         
         actionButton?.isEnabled = false
         
@@ -92,15 +76,13 @@ class Validator {
     
     // MARK: Target Handlers
 
-    @objc func editingChangedHandler(_ field: JVTextField) {
-        let textField = self.textField[field]!
-        
+    @objc func editingChangedHandler(_ field: TextField) {
         if let failedValidation = validate(field) {
-            invalidHandler(textField, failedValidation.error)
+            invalidHandler(field, failedValidation.error)
             
             return
         }
         
-        validHandler(textField)
+        validHandler(field)
     }
 }

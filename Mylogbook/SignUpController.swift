@@ -26,8 +26,8 @@ class SignUpController: UIViewController {
     
     override func viewDidLoad() {
         setupValidator()
-        
-        setupTextFields()
+                
+        setupBirthdayDatePicker()
     }
     
     // MARK: Validator
@@ -44,24 +44,6 @@ class SignUpController: UIViewController {
         validator.add(birthdayTextField, [.required])
     }
     
-    // MARK: Text Field
-    
-    func setupTextFields() {
-        nameTextField.field.tag = 0
-        nameTextField.field.delegate = self
-        
-        emailTextField.field.tag = 1
-        emailTextField.field.delegate = self
-        
-        passwordTextField.field.tag = 2
-        passwordTextField.field.delegate = self
-     
-        birthdayTextField.field.tag = 3
-        birthdayTextField.field.delegate = self
-        
-        setupBirthdayDatePicker()
-    }
-    
     func setupBirthdayDatePicker() {
         let picker = UIDatePicker()
         
@@ -75,7 +57,7 @@ class SignUpController: UIViewController {
         
         picker.addTarget(self, action: #selector(didChangeBirthday(_:)), for: .valueChanged)
         
-        birthdayTextField.field.inputView = picker
+        birthdayTextField.inputView = picker
     }
 
     // MARK: Actions
@@ -187,13 +169,5 @@ extension SignUpController: Alerting {
         let cancelButton = CancelButton(title: "TRY AGAIN", action: nil)
         
         showAlert(title: title, message: message, buttons: [cancelButton])
-    }
-}
-
-// MARK: Text Field Delegate
-
-extension SignUpController: TextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return textFieldShouldReturnHandler(textField)
     }
 }

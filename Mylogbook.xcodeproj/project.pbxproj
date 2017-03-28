@@ -36,7 +36,6 @@
 		C95B3B9E1E35FABD00533FB6 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B3B9D1E35FABD00533FB6 /* NavigationBar.swift */; };
 		C95CFB921E6E419400CC0BD1 /* OnboardPermitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95CFB911E6E419400CC0BD1 /* OnboardPermitController.swift */; };
 		C95CFB961E6E4EC100CC0BD1 /* StatesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95CFB951E6E4EC100CC0BD1 /* StatesController.swift */; };
-		C964FC331E236FD900D07FBF /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C964FC321E236FD900D07FBF /* TextField.swift */; };
 		C970BCE81E319D9E00E1129A /* SupervisorsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCE71E319D9E00E1129A /* SupervisorsController.swift */; };
 		C970BCEA1E319F3500E1129A /* SupervisorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCE91E319F3500E1129A /* SupervisorController.swift */; };
 		C970BCEC1E31A83E00E1129A /* Supervisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCEB1E31A83E00E1129A /* Supervisor.swift */; };
@@ -45,8 +44,7 @@
 		C979D6111E52A7E5009891C7 /* SyncStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979D6101E52A7E5009891C7 /* SyncStore.swift */; };
 		C987DD121E64F5D00011F223 /* TripCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987DD111E64F5D00011F223 /* TripCalculator.swift */; };
 		C987DD141E651DD70011F223 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987DD131E651DD70011F223 /* Button.swift */; };
-		C98E778B1E37374900F34468 /* JVTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E778A1E37374900F34468 /* JVTextField.swift */; };
-		C98E778D1E3746F000F34468 /* TextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98E778C1E3746F000F34468 /* TextField.xib */; };
+		C98E778B1E37374900F34468 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E778A1E37374900F34468 /* TextField.swift */; };
 		C98E778F1E382C8500F34468 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E778E1E382C8500F34468 /* NibView.swift */; };
 		C98E77921E397B3100F34468 /* LogPrepareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E77911E397B3100F34468 /* LogPrepareController.swift */; };
 		C98E77941E397DD900F34468 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E77931E397DD900F34468 /* Card.swift */; };
@@ -114,7 +112,6 @@
 		C95B3B9D1E35FABD00533FB6 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		C95CFB911E6E419400CC0BD1 /* OnboardPermitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardPermitController.swift; sourceTree = "<group>"; };
 		C95CFB951E6E4EC100CC0BD1 /* StatesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatesController.swift; sourceTree = "<group>"; };
-		C964FC321E236FD900D07FBF /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		C970BCE71E319D9E00E1129A /* SupervisorsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupervisorsController.swift; sourceTree = "<group>"; };
 		C970BCE91E319F3500E1129A /* SupervisorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupervisorController.swift; sourceTree = "<group>"; };
 		C970BCEB1E31A83E00E1129A /* Supervisor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Supervisor.swift; sourceTree = "<group>"; };
@@ -123,8 +120,7 @@
 		C979D6101E52A7E5009891C7 /* SyncStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncStore.swift; sourceTree = "<group>"; };
 		C987DD111E64F5D00011F223 /* TripCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripCalculator.swift; sourceTree = "<group>"; };
 		C987DD131E651DD70011F223 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		C98E778A1E37374900F34468 /* JVTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JVTextField.swift; sourceTree = "<group>"; };
-		C98E778C1E3746F000F34468 /* TextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextField.xib; sourceTree = "<group>"; };
+		C98E778A1E37374900F34468 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		C98E778E1E382C8500F34468 /* NibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		C98E77911E397B3100F34468 /* LogPrepareController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogPrepareController.swift; sourceTree = "<group>"; };
 		C98E77931E397DD900F34468 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -327,8 +323,7 @@
 		C964FC311E236FCE00D07FBF /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				C9C6F66D1E5401CF00231949 /* Alert */,
-				C98E77871E37323C00F34468 /* TextField */,
+				C98E778A1E37374900F34468 /* TextField.swift */,
 				C95B3B9D1E35FABD00533FB6 /* NavigationBar.swift */,
 				C98E77931E397DD900F34468 /* Card.swift */,
 				C95B3B871E31CB4100533FB6 /* Alert.swift */,
@@ -367,16 +362,6 @@
 			name = Publish;
 			sourceTree = "<group>";
 		};
-		C98E77871E37323C00F34468 /* TextField */ = {
-			isa = PBXGroup;
-			children = (
-				C98E778A1E37374900F34468 /* JVTextField.swift */,
-				C964FC321E236FD900D07FBF /* TextField.swift */,
-				C98E778C1E3746F000F34468 /* TextField.xib */,
-			);
-			name = TextField;
-			sourceTree = "<group>";
-		};
 		C98E77901E397B1900F34468 /* Log */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,13 +389,6 @@
 				C99FC9171E1BB534003BAEC2 /* Validation.swift */,
 			);
 			name = Validator;
-			sourceTree = "<group>";
-		};
-		C9C6F66D1E5401CF00231949 /* Alert */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Alert;
 			sourceTree = "<group>";
 		};
 		C9CDFA741DEFDB2800CE0A2D = {
@@ -578,7 +556,6 @@
 				C951AEEB1E8205EA00E6DD00 /* tables in Resources */,
 				C9CDFA8B1DEFDB2800CE0A2D /* Assets.xcassets in Resources */,
 				C9CDFA861DEFDB2800CE0A2D /* Main.storyboard in Resources */,
-				C98E778D1E3746F000F34468 /* TextField.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,7 +635,6 @@
 				C908A9D31E74CEC40040AAB1 /* Statistics.swift in Sources */,
 				C9EBBD711E2DA20F00B5E509 /* CarController.swift in Sources */,
 				C9EBBD611E2C61B700B5E509 /* CarsController.swift in Sources */,
-				C964FC331E236FD900D07FBF /* TextField.swift in Sources */,
 				C9B37B671E3D963800168846 /* Trip.swift in Sources */,
 				C99FC9141E1BB395003BAEC2 /* Validator.swift in Sources */,
 				C98E77961E398FE900F34468 /* Toolbar.swift in Sources */,
@@ -673,7 +649,7 @@
 				C908A9DE1E764B140040AAB1 /* Tasks.swift in Sources */,
 				C95B3B9E1E35FABD00533FB6 /* NavigationBar.swift in Sources */,
 				C951AEE91E80D8CE00E6DD00 /* TripCondition.swift in Sources */,
-				C98E778B1E37374900F34468 /* JVTextField.swift in Sources */,
+				C98E778B1E37374900F34468 /* TextField.swift in Sources */,
 				C94BA8A11E5FF68D002E8F9E /* ChartValueFormatter.swift in Sources */,
 				C95487D01E4D859600C48F54 /* Sync.swift in Sources */,
 				C9EBBD571E2882E200B5E509 /* LogInController.swift in Sources */,
