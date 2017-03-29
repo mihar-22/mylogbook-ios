@@ -47,9 +47,9 @@ class SupervisorController: UIViewController {
         navItem.title = "Edit Supervisor"
         
         nameTextField.text = supervisor!.name
-        genderTextField.text = supervisor!.genderLong
+        genderTextField.text = (supervisor!.gender == "M" ? genders[0] : genders[1])
         accreditedSwitch.setOn(supervisor!.isAccredited, animated: true)
-        // set avatar image here
+        avatar.image = supervisor!.image(ofSize: .display)
         
         validator.revalidate()
     }
@@ -72,6 +72,7 @@ class SupervisorController: UIViewController {
     }
     
     @IBAction func didChangeAccreditedValueFor(_ sender: UISwitch) {
+        setDisplayImage()
     }
     
     // MARK: Validator
@@ -95,7 +96,8 @@ extension SupervisorController: UIPickerViewDelegate, UIPickerViewDataSource {
         genderTextField.inputView = genderPicker
 
         genderTextField.text = genders[0]
-        // set gender image here
+        
+        setDisplayImage()
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -113,7 +115,19 @@ extension SupervisorController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         genderTextField.text = genders[row]
         
-        // set gender image here
+        setDisplayImage()
+    }
+    
+    func setDisplayImage() {
+        let gender = (self.gender == "M") ? "male" : "female"
+        
+        var name = "supervisor-\(gender)"
+        
+        if isAccredited { name += "-certified" }
+        
+        name += "-display"
+        
+        avatar.image = UIImage(named: name)
     }
 }
 

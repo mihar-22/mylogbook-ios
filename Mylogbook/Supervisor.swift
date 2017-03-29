@@ -10,9 +10,26 @@ class Supervisor: NSManagedObject, SoftDeletable, Syncable {
         
         set(id) { self.id = id }
     }
+}
+
+// MARK: Image
+
+extension Supervisor {
+    enum ImageSize: String {
+        case regular = ""
+        case display = "-display"
+    }
     
-    var genderLong: String {
-        return (gender == "M") ? "Male" : "Female"
+    func image(ofSize size: ImageSize) -> UIImage {
+        let gender = (self.gender == "M") ? "male" : "female"
+        
+        var name = "supervisor-\(gender)"
+        
+        if isAccredited { name += "-certified" }
+        
+        name += size.rawValue
+        
+        return UIImage(named: name)!
     }
 }
 

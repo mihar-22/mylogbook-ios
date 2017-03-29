@@ -39,7 +39,7 @@ class BarChart {
         var sets = [BarChartDataSet]()
         
         for (index, item) in segment.all.enumerated() {
-            let entry = BarChartDataEntry(x: Double(index), y: item.data)
+            let entry = BarChartDataEntry(x: Double(index), y: item.data > 0 ? item.data : 0.2)
             
             let set = BarChartDataSet(values: [entry], label: item.label)
             

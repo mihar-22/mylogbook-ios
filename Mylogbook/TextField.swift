@@ -77,14 +77,12 @@ class TextField: JVFloatLabeledTextField {
     private func setupConstraints() {
         heightConstraint = heightAnchor.constraint(equalToConstant: baseHeight)
         heightConstraint.isActive = true
-        
-        layoutIfNeeded()
     }
     
     private func addInputLine() {
         inputLine.backgroundColor = Palette.separator.uiColor.cgColor
         
-        inputLine.frame = CGRect(x: 0, y: bounds.height - 1, width: bounds.width, height: 1)
+        inputLine.frame = CGRect(x: 0, y: baseHeight - 1, width: bounds.width, height: 1)
         
         layer.addSublayer(inputLine)
     }
@@ -93,7 +91,7 @@ class TextField: JVFloatLabeledTextField {
         errorLabel.textColor = Palette.error.uiColor
         errorLabel.font = UIFont.systemFont(ofSize: 14)
         errorLabel.frame = CGRect(x: 0,
-                                  y: bounds.height + errorLabelYPadding,
+                                  y: baseHeight + errorLabelYPadding,
                                   width: bounds.width,
                                   height: 14)
         

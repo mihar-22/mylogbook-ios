@@ -121,7 +121,7 @@ extension CarsController: UITableViewDataSource, UITableViewDelegate {
     
     func configure(_ cell: CarCell, with car: Car) {
         cell.nameLabel.text = car.name
-        // set type image here
+        cell.typeImage.image = car.image(ofSize: .regular)
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

@@ -19,7 +19,7 @@ class CarController: UIViewController {
         "Sedan",
         "SUV",
         "Sports",
-        "4WD",
+        "Off Road",
         "Coupe",
         "Convertible",
         "Wagon",
@@ -59,7 +59,7 @@ class CarController: UIViewController {
         registrationTextField.text = car!.registration
         nameTextField.text = car!.name
         typeTextField.text = car!.type.capitalized
-        // set type image here
+        typeImage.image = car!.image(ofSize: .display)
         
         validator.revalidate()
     }
@@ -101,7 +101,7 @@ extension CarController: UIPickerViewDelegate, UIPickerViewDataSource {
         typeTextField.text = carTypes[0]
         typeTextField.inputView = typePicker
         
-        // set type image here
+        setDisplayImage()
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -119,7 +119,15 @@ extension CarController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         typeTextField.text = carTypes[row]
         
-        // set type image here
+        setDisplayImage()
+    }
+   
+    func setDisplayImage() {
+        let type = self.type!.replacingOccurrences(of: " ", with: "-")
+        
+        let name = "car-\(type)-display"
+        
+        typeImage.image = UIImage(named: name)
     }
 }
 

@@ -17,9 +17,6 @@ class LogPrepareController: UIViewController {
     
     // MARK: Outlets
     
-    @IBOutlet weak var carTypeImage: UIImageView!
-    @IBOutlet weak var supervisorAvatar: UIImageView!
-    
     @IBOutlet weak var carTextField: TextField!
     @IBOutlet weak var supervisorTextField: TextField!
     @IBOutlet weak var odometerTextField: TextField!
@@ -60,8 +57,6 @@ class LogPrepareController: UIViewController {
         let car = cars[selectedCar]
         
         carTextField.text = car.name
-
-        // set car type image
         
         let odometer = "\(Cache.shared.getOdometer(for: car) ??  0)"
         
@@ -75,7 +70,7 @@ class LogPrepareController: UIViewController {
         
         supervisorTextField.text = supervisor.name
         
-        // set supervisor avatar image
+        validator.revalidate()
     }
     
     // MARK: Validator
@@ -83,6 +78,8 @@ class LogPrepareController: UIViewController {
     func setupValidator() {
         validator.setActionButton(startButton)
         
+        validator.add(carTextField, [.required])
+        validator.add(supervisorTextField, [.required])
         validator.add(odometerTextField, [.required, .numeric])
     }
     

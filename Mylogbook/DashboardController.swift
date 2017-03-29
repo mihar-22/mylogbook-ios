@@ -54,6 +54,8 @@ class DashboardController: UIViewController {
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
+        tabBarController!.renderOriginalImages()
+        
         configureTableView()
         
         BarChart.configure(barChartView)
@@ -186,9 +188,7 @@ extension DashboardController {
         
         let tableHeight = tableView.contentSize.height
         
-        let base: CGFloat = nightRequiredTimeStackView.isHidden ? 198.5 : 199.5
-        
-        progressCardHeight.constant = base + tableTopSpace + tableHeight
+        progressCardHeight.constant = (base: 200) + tableTopSpace + tableHeight
         
         UIView.animate(withDuration: 0.35) { self.view.layoutIfNeeded() }
     }
@@ -316,27 +316,23 @@ extension DashboardController: UITableViewDataSource, UITableViewDelegate {
         
         cell.titleLabel.textColor = task.isActive ? UIColor.black : UIColor.lightGray
         cell.titleLabel.attributedText = task.title
-        
         cell.subtitleLabel.text = task.subtitle
-        
         cell.checkBox.on = (task.isActive && task.isComplete)
         cell.checkBox.isEnabled = task.isActive
         cell.checkBox.onAnimationType = .fill
         cell.checkBox.offAnimationType = .flat
         cell.checkBox.tag = index
         cell.checkBox.delegate = self
-
         cell.editButton.isHidden = true
+        cell.accessoryView = nil
+        cell.hasBorder = true
+        cell.setNeedsDisplay()
         
-        cell.accessoryType = (task.learnMoreURL != nil) ? .detailButton : .none
-
-        if task is LogTask {
-            cell.checkBox.isEnabled = false
-        }
+        if (task.learnMoreURL != nil) { addAccessoryView(for: cell, at: index) }
         
-        if task is HoldTask {
-            cell.checkBox.isEnabled = false
-        }
+        if task is LogTask { cell.checkBox.isEnabled = false }
+        
+        if task is HoldTask { cell.checkBox.isEnabled = false }
         
         if task is AssessmentTask && task.subtitle != nil {
             cell.editButton.isHidden = false
@@ -345,12 +341,37 @@ extension DashboardController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    func addAccessoryView(for cell: TaskCell, at index: Int) {
+        let image = UIImage(named: "info")!
+        
+        let button = UIButton()
+        
+        button.tag = index
+        button.setBackgroundImage(image, for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
+        button.addTarget(self, action: #selector(didTapAccessoryView(_:)), for: .touchUpInside)
+        
+        cell.accessoryView = button
+    }
+    
+    func didTapAccessoryView(_ sender: UIButton) {
+        tableView(tableView, accessoryButtonTappedForRowWith: IndexPath(row: sender.tag, section: 0))
+    }
+    
     func tableView(_ tableView: UITableView,
                    willDisplay cell: UITableViewCell,
                    forRowAt indexPath: IndexPath) {
         
         if indexPath.row == tableView.indexPathsForVisibleRows?.last?.row {
             setProgressCardHeight()
+        }
+        
+        if indexPath.row == (tasks.count - 1) {
+            let cell = cell as! TaskCell
+            
+            cell.hasBorder = false
+            
+            cell.setNeedsDisplay()
         }
     }
     

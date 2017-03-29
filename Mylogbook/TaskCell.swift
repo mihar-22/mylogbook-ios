@@ -6,6 +6,10 @@ import BEMCheckBox
 
 class TaskCell: UITableViewCell {
     
+    private var border = CAShapeLayer()
+    
+    var hasBorder = true
+    
     // MARK: Outlets
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -13,24 +17,19 @@ class TaskCell: UITableViewCell {
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var editButton: UIButton!
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
         
-        addDashedBottomBorder()
+        addBorder()
     }
     
-    func addDashedBottomBorder() {
-        let border: CAShapeLayer = CAShapeLayer()
-        
-        let name = "Dashed Bottom Border"
+    private func addBorder() {
+        guard hasBorder else { return }
         
         let color = Palette.separator.uiColor.cgColor
-        
         let bounds = CGRect(x: 0, y: 0, width: frame.width - 12, height: 0)
-        
         let bezierRect = CGRect(x: 0, y: bounds.height, width: bounds.width, height: 0)
         
-        border.name = name
         border.bounds = bounds
         border.position = CGPoint(x: frame.width / 2, y: frame.height)
         border.fillColor = color
@@ -39,8 +38,7 @@ class TaskCell: UITableViewCell {
         border.lineJoin = kCALineJoinMiter
         border.lineDashPattern = [3, 3]
         border.path = UIBezierPath(roundedRect: bezierRect, cornerRadius: 0).cgPath
-        
-        if layer.sublayers?.last?.name == name { layer.sublayers?.removeLast() }
+        border.removeFromSuperlayer()
         
         layer.addSublayer(border)
     }

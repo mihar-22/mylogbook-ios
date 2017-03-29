@@ -12,6 +12,21 @@ class Car: NSManagedObject, SoftDeletable, Syncable {
     }
 }
 
+// MARK: Image
+
+extension Car {
+    enum ImageSize: String {
+        case regular = ""
+        case display = "-display"
+    }
+    
+    func image(ofSize size: ImageSize) -> UIImage {
+        let type = self.type.replacingOccurrences(of: " ", with: "-")
+        
+        return UIImage(named: "car-\(type)\(size.rawValue)")!
+    }
+}
+
 // MARK: Importable
 
 extension Car: Importable {

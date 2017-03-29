@@ -12,46 +12,6 @@ class LogSummaryController: UIViewController {
     
     // MARK: Outlets
     
-    @IBOutlet weak var carNameLabel: UILabel!
-    @IBOutlet weak var carRegistrationLabel: UILabel!
-    @IBOutlet weak var carTypeImage: UIImageView!
-    
-    @IBOutlet weak var supervisorNameLabel: UILabel!
-    @IBOutlet weak var supervisorAvatar: UIImageView!
-    
-    @IBOutlet weak var weatherClearImage: UIImageView!
-    @IBOutlet weak var weatherClearLabel: UILabel!
-    @IBOutlet weak var weatherRainImage: UIImageView!
-    @IBOutlet weak var weatherRainLabel: UILabel!
-    @IBOutlet weak var weatherThunderImage: UIImageView!
-    @IBOutlet weak var weatherThunderLabel: UILabel!
-    @IBOutlet weak var weatherFogLabel: UILabel!
-    @IBOutlet weak var weatherFogImage: UIImageView!
-    @IBOutlet weak var weatherHailLabel: UILabel!
-    @IBOutlet weak var weatherHailImage: UIImageView!
-    @IBOutlet weak var weatherSnowLabel: UILabel!
-    @IBOutlet weak var weatherSnowImage: UIImageView!
-    
-    @IBOutlet weak var trafficLightImage: UIImageView!
-    @IBOutlet weak var trafficLightLabel: UILabel!
-    @IBOutlet weak var trafficModerateImage: UIImageView!
-    @IBOutlet weak var trafficModerateLabel: UILabel!
-    @IBOutlet weak var trafficHeavyImage: UIImageView!
-    @IBOutlet weak var trafficHeavyLabel: UILabel!
-    
-    @IBOutlet weak var roadLocalStreetImage: UIImageView!
-    @IBOutlet weak var roadLocalStreetLabel: UILabel!
-    @IBOutlet weak var roadMainRoadImage: UIImageView!
-    @IBOutlet weak var roadMainRoadLabel: UILabel!
-    @IBOutlet weak var roadFreewayImage: UIImageView!
-    @IBOutlet weak var roadFreewayLabel: UILabel!
-    @IBOutlet weak var roadInnerCityImage: UIImageView!
-    @IBOutlet weak var roadInnerCityLabel: UILabel!
-    @IBOutlet weak var roadRuralRoadImage: UIImageView!
-    @IBOutlet weak var roadRuralRoadLabel: UILabel!
-    @IBOutlet weak var roadGravelImage: UIImageView!
-    @IBOutlet weak var roadGravelLabel: UILabel!
-    
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var totalTimeLabel: UILabel!
     @IBOutlet weak var totalDistanceLabel: UILabel!
@@ -59,7 +19,7 @@ class LogSummaryController: UIViewController {
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
-        setupCards()
+        setupRouteCard()
     }
     
     // MARK: Actions
@@ -89,98 +49,6 @@ class LogSummaryController: UIViewController {
         
         Cache.shared.save()        
     }
-        
-    // MARK: Cards
-    
-    func setupCards() {
-        setupCarCard()
-        setupSupervisorCard()
-        setupWeatherCard()
-        setupTrafficCard()
-        setupRoadsCard()
-        setupRouteCard()
-    }
-    
-    func setupCarCard() {
-        let car = trip.car
-        
-        carNameLabel.text = car.name
-        carRegistrationLabel.text = car.registration
-        // set type image here
-    }
-    
-    func setupSupervisorCard() {
-        let supervisor = trip.supervisor
-        
-        supervisorNameLabel.text = supervisor.name
-        // set avatar here
-    }
-    
-    func setupWeatherCard() {
-        configureImageSet(label: weatherClearLabel,
-                          image: weatherClearImage,
-                          didOccur: trip.didOccur(.weather(.clear)))
-        
-        configureImageSet(label: weatherRainLabel,
-                          image: weatherRainImage,
-                          didOccur: trip.didOccur(.weather(.rain)))
-        
-        configureImageSet(label: weatherThunderLabel,
-                          image: weatherThunderImage,
-                          didOccur: trip.didOccur(.weather(.thunder)))
-        
-        configureImageSet(label: weatherFogLabel,
-                          image: weatherFogImage,
-                          didOccur: trip.didOccur(.weather(.fog)))
-        
-        configureImageSet(label: weatherHailLabel,
-                          image: weatherHailImage,
-                          didOccur: trip.didOccur(.weather(.hail)))
-        
-        configureImageSet(label: weatherSnowLabel,
-                          image: weatherSnowImage,
-                          didOccur: trip.didOccur(.weather(.snow)))
-    }
-    
-    func setupTrafficCard() {
-        configureImageSet(label: trafficLightLabel,
-                          image: trafficLightImage,
-                          didOccur: trip.didOccur(.traffic(.light)))
-        
-        configureImageSet(label: trafficModerateLabel,
-                          image: trafficModerateImage,
-                          didOccur: trip.didOccur(.traffic(.moderate)))
-        
-        configureImageSet(label: trafficHeavyLabel,
-                          image: trafficHeavyImage,
-                          didOccur: trip.didOccur(.traffic(.heavy)))
-    }
-    
-    func setupRoadsCard() {
-        configureImageSet(label: roadLocalStreetLabel,
-                          image: roadLocalStreetImage,
-                          didOccur: trip.didOccur(.road(.localStreet)))
-        
-        configureImageSet(label: roadMainRoadLabel,
-                          image: roadMainRoadImage,
-                          didOccur: trip.didOccur(.road(.mainRoad)))
-        
-        configureImageSet(label: roadFreewayLabel,
-                          image: roadFreewayImage,
-                          didOccur: trip.didOccur(.road(.freeway)))
-        
-        configureImageSet(label: roadInnerCityLabel,
-                          image: roadInnerCityImage,
-                          didOccur: trip.didOccur(.road(.innerCity)))
-        
-        configureImageSet(label: roadRuralRoadLabel,
-                          image: roadRuralRoadImage,
-                          didOccur: trip.didOccur(.road(.ruralRoad)))
-        
-        configureImageSet(label: roadGravelLabel,
-                          image: roadGravelImage,
-                          didOccur: trip.didOccur(.road(.gravel)))
-    }
     
     func setupRouteCard() {
         totalTimeLabel.text = trip.totalTime.time()
@@ -188,18 +56,6 @@ class LogSummaryController: UIViewController {
         totalDistanceLabel.text = trip.distance.distance()
         
         setupMapView()
-    }
-    
-    func configureImageSet(label: UILabel, image: UIImageView, didOccur: Bool) {
-        if didOccur {
-            // change to checked image
-            image.alpha = 1
-            label.alpha = 1
-        } else {
-            // change to plain image
-            image.alpha = 0.3
-            label.alpha = 0.3
-        }
     }
 }
 

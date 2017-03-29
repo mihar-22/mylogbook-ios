@@ -121,7 +121,7 @@ extension SupervisorsController: UITableViewDataSource, UITableViewDelegate {
     
     func configure(_ cell: SupervisorCell, with supervisor: Supervisor) {
         cell.nameLabel.text = supervisor.name
-        // set gender image here
+        cell.avatar.image = supervisor.image(ofSize: .regular)
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
