@@ -6,7 +6,13 @@ import CoreStore
 class Store {
     static let shared = Store()
     
-    let stack: DataStack = {
+    var stack: DataStack!
+    
+    // MARK: Initalizers
+    
+    private init() { setup() }
+    
+    func setup() {
         let id = Keychain.shared.get(.id)!
         
         let stack = DataStack(modelName: "Mylogbook")
@@ -15,11 +21,7 @@ class Store {
         
         try! stack.addStorageAndWait(store)
         
-        return stack
-    }()
-    
-    // MARK: Initalizers
-    
-    private init() {}
+        self.stack = stack
+    }
 }
 

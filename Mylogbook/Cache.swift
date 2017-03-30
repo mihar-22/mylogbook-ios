@@ -10,7 +10,7 @@ class Cache: NSObject, NSCoding {
         return "user_\(id)_cache"
     }
     
-    static let shared: Cache = {
+    static var shared: Cache = {
         guard let data = UserDefaults.standard.data(forKey: key) else { return Cache() }
         
         return NSKeyedUnarchiver.unarchiveObject(with: data) as! Cache
@@ -36,6 +36,20 @@ class Cache: NSObject, NSCoding {
         return settings
     }()
     
+    // MARK: Initializers
+    
+    override init() { super.init() }
+
+    static func setup() {
+        guard let data = UserDefaults.standard.data(forKey: key) else {
+            shared = Cache()
+            
+            return
+        }
+        
+        shared = NSKeyedUnarchiver.unarchiveObject(with: data) as! Cache
+    }
+    
     // MARK: Getters and Setters
     
     func getOdometer(for car: Car) -> Int? {
@@ -55,8 +69,6 @@ class Cache: NSObject, NSCoding {
     }
     
     // MARK: Encoding + Decoding
-    
-    override init() { super.init() }
     
     required init?(coder aDecoder: NSCoder) {
         isSyncPrepared = aDecoder.decodeBool(forKey: "isSyncPrepared")

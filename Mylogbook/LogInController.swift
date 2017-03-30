@@ -83,7 +83,13 @@ class LogInController: UIViewController {
             DispatchQueue.main.async {
                 self.storeUserDetails(response.data!)
                 
+                Store.shared.setup()
+                
+                Cache.setup()
+                
                 self.navigateToDashboardScene()
+                
+                SyncManager().start()
             }
         }
     }
@@ -141,8 +147,6 @@ class LogInController: UIViewController {
         } else {
             performSegue(withIdentifier: "onboardingSegue", sender: nil)
         }
-
-        SyncManager().start()
     }
     
     func navigateToMailBox() {
