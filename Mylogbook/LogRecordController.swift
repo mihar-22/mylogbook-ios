@@ -53,12 +53,43 @@ class LogRecordController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     
+    @IBOutlet weak var carImage: UIImageView!
+    
+    @IBOutlet weak var carImageBottom: NSLayoutConstraint!
+    @IBOutlet weak var smokeImageTrailing: NSLayoutConstraint!
+    @IBOutlet weak var smokeImageCenterY: NSLayoutConstraint!
+    
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
         setupNavigation()
 
         shouldStartRecording()
+        
+        setupIllustration()
+    }
+    
+    // MARK: Illustration
+    
+    func setupIllustration() {
+        let car = trip.car
+        
+        carImage.image = car.image(ofSize: .display)
+        
+        if car.type == "micro" {
+            smokeImageTrailing.constant = -22
+        }
+        
+        if car.type == "van" {
+            carImageBottom.constant = -40
+            smokeImageCenterY.constant = 16
+        }
+        
+        if car.type == "off road" {
+            carImageBottom.constant = -40
+            smokeImageTrailing.constant = 2
+            smokeImageCenterY.constant = 16
+        }
     }
     
     // MARK: Actions
