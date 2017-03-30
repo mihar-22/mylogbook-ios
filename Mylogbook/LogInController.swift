@@ -113,9 +113,9 @@ class LogInController: UIViewController {
     // MARK: Keychain
     
     func attemptToPrefillForm() {
-        emailTextField.text = Keychain.shared.get(.email) ?? ""
+        emailTextField.text = Keychain.shared.get(.email)
         
-        passwordTextField.text = signUpPassword ?? ""
+        passwordTextField.text = signUpPassword
         
         validator.revalidate()
     }

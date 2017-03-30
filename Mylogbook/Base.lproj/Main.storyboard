@@ -95,10 +95,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="AyN-XI-Wr3" userLabel="Form">
-                                <rect key="frame" x="24" y="80" width="327" height="156"/>
+                                <rect key="frame" x="16" y="96" width="343" height="224"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qJH-3F-5p8" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="327" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="38"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
@@ -110,7 +110,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2VN-xl-c0Q" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="45" width="327" height="21"/>
+                                        <rect key="frame" x="0.0" y="62" width="343" height="38"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
@@ -122,7 +122,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IY1-AM-01x" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="90" width="327" height="21"/>
+                                        <rect key="frame" x="0.0" y="124" width="343" height="38"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
@@ -134,7 +134,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqW-JE-dpu" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="135" width="327" height="21"/>
+                                        <rect key="frame" x="0.0" y="186" width="343" height="38"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -170,11 +170,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cL9-Sq-PyU" firstAttribute="top" secondItem="t0V-wH-coL" secondAttribute="bottom" constant="-20" id="Dcl-Sl-Kkm"/>
-                            <constraint firstItem="AyN-XI-Wr3" firstAttribute="leading" secondItem="4fu-14-hK5" secondAttribute="leadingMargin" constant="8" id="P6U-ag-FP1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="AyN-XI-Wr3" secondAttribute="trailing" constant="8" id="lIU-nL-CNb"/>
+                            <constraint firstItem="AyN-XI-Wr3" firstAttribute="leading" secondItem="4fu-14-hK5" secondAttribute="leadingMargin" id="P6U-ag-FP1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AyN-XI-Wr3" secondAttribute="trailing" id="lIU-nL-CNb"/>
                             <constraint firstItem="cL9-Sq-PyU" firstAttribute="leading" secondItem="4fu-14-hK5" secondAttribute="leading" id="oPv-Yd-zyz"/>
                             <constraint firstAttribute="trailing" secondItem="cL9-Sq-PyU" secondAttribute="trailing" id="vC9-MS-VcI"/>
-                            <constraint firstItem="AyN-XI-Wr3" firstAttribute="top" secondItem="cL9-Sq-PyU" secondAttribute="bottom" constant="16" id="ys5-5e-cVG"/>
+                            <constraint firstItem="AyN-XI-Wr3" firstAttribute="top" secondItem="cL9-Sq-PyU" secondAttribute="bottom" constant="32" id="ys5-5e-cVG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="6Iq-r5-H4H"/>
@@ -224,10 +224,10 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ofU-Ix-3Gi" userLabel="Form">
-                                <rect key="frame" x="16" y="80" width="343" height="66"/>
+                                <rect key="frame" x="16" y="96" width="343" height="100"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cdK-5c-ipx" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="38"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
@@ -239,7 +239,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aRl-ac-Shy" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="45" width="343" height="21"/>
+                                        <rect key="frame" x="0.0" y="62" width="343" height="38"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
@@ -253,7 +253,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZi-3p-Poh">
-                                <rect key="frame" x="245" y="154" width="114" height="28"/>
+                                <rect key="frame" x="245" y="212" width="114" height="28"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                 <state key="normal" title="Forgot Password?"/>
                                 <state key="disabled">
@@ -266,11 +266,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ofU-Ix-3Gi" firstAttribute="top" secondItem="Wp3-2O-zhb" secondAttribute="bottom" constant="16" id="EdB-b5-l93"/>
+                            <constraint firstItem="ofU-Ix-3Gi" firstAttribute="top" secondItem="Wp3-2O-zhb" secondAttribute="bottom" constant="32" id="EdB-b5-l93"/>
                             <constraint firstItem="BZi-3p-Poh" firstAttribute="trailing" secondItem="Vsy-bY-z2n" secondAttribute="trailingMargin" id="G61-nR-1h5"/>
                             <constraint firstItem="ofU-Ix-3Gi" firstAttribute="leading" secondItem="Vsy-bY-z2n" secondAttribute="leadingMargin" id="RNK-7Z-YwE"/>
                             <constraint firstAttribute="trailing" secondItem="Wp3-2O-zhb" secondAttribute="trailing" id="dKy-AP-7fG"/>
-                            <constraint firstItem="BZi-3p-Poh" firstAttribute="top" secondItem="ofU-Ix-3Gi" secondAttribute="bottom" constant="8" id="fAh-V7-Foh"/>
+                            <constraint firstItem="BZi-3p-Poh" firstAttribute="top" secondItem="ofU-Ix-3Gi" secondAttribute="bottom" constant="16" id="fAh-V7-Foh"/>
                             <constraint firstItem="Wp3-2O-zhb" firstAttribute="top" secondItem="Vsy-bY-z2n" secondAttribute="top" id="hB1-6K-kWA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ofU-Ix-3Gi" secondAttribute="trailing" id="xS7-ft-7dr"/>
                             <constraint firstItem="Wp3-2O-zhb" firstAttribute="leading" secondItem="Vsy-bY-z2n" secondAttribute="leading" id="xSI-BX-Kvo"/>
@@ -302,28 +302,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" If you can't remember, skip this step and you can set it in your settings at a later time." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EC7-XY-REL">
-                                <rect key="frame" x="32" y="609" width="311" height="34"/>
+                                <rect key="frame" x="32" y="609.5" width="311" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="fKK-Ze-EgC">
-                                <rect key="frame" x="32" y="88" width="311" height="151"/>
+                                <rect key="frame" x="32" y="88" width="311" height="167"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learner Permit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNL-tg-QyM">
-                                        <rect key="frame" x="72" y="0.0" width="168" height="32"/>
+                                        <rect key="frame" x="71.5" y="0.0" width="168" height="31.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The date you received your learner permit helps determine when you're ready to book your P's." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wq-ji-qoe">
-                                        <rect key="frame" x="0.0" y="64" width="311" height="34"/>
+                                        <rect key="frame" x="0.0" y="63.5" width="311" height="33.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Received Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="znF-qI-7Vg" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="130" width="311" height="21"/>
+                                        <rect key="frame" x="0.0" y="129" width="311" height="38"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -340,7 +340,7 @@
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="light-bulb" translatesAutoresizingMaskIntoConstraints="NO" id="RLD-be-X55">
-                                <rect key="frame" x="175" y="569" width="24" height="24"/>
+                                <rect key="frame" x="175" y="569.5" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="EHI-Fh-0Q0"/>
                                     <constraint firstAttribute="height" constant="24" id="zna-4r-cj2"/>
@@ -401,25 +401,25 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="500"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLS-EW-tpW">
-                                                                <rect key="frame" x="12" y="8" width="68" height="21"/>
+                                                                <rect key="frame" x="12" y="8" width="68" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day / Night" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Spg-1S-nww">
-                                                                <rect key="frame" x="271" y="8" width="64" height="15"/>
+                                                                <rect key="frame" x="271.5" y="8" width="63.5" height="14.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BXZ-l4-cFQ">
-                                                                <rect key="frame" x="8" y="38" width="327" height="138"/>
+                                                                <rect key="frame" x="8" y="36.5" width="327" height="138"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRB-1r-Lbz" customClass="MBCircularProgressBarView">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="164" height="138"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="138"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tB8-Wp-zy0">
-                                                                                <rect key="frame" x="71" y="123" width="21" height="21"/>
+                                                                                <rect key="frame" x="71" y="123.5" width="20.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -470,10 +470,10 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KP5-rL-4kM" customClass="MBCircularProgressBarView">
-                                                                        <rect key="frame" x="164" y="0.0" width="163" height="138"/>
+                                                                        <rect key="frame" x="163.5" y="0.0" width="163.5" height="138"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFK-mY-ROd">
-                                                                                <rect key="frame" x="71" y="123" width="21" height="21"/>
+                                                                                <rect key="frame" x="71.5" y="123.5" width="20.5" height="20.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -532,16 +532,16 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="xLc-lC-bvR">
-                                                                <rect key="frame" x="36" y="192" width="107" height="15"/>
+                                                                <rect key="frame" x="36" y="190.5" width="106.5" height="14.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="110" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xC2-fB-pzd">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="15"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="14.5"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hours required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNc-Dl-H2L">
-                                                                        <rect key="frame" x="24" y="0.0" width="83" height="15"/>
+                                                                        <rect key="frame" x="24" y="0.0" width="82.5" height="14.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
@@ -549,16 +549,16 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Aqh-Sn-8Jh">
-                                                                <rect key="frame" x="203" y="188" width="101" height="15"/>
+                                                                <rect key="frame" x="203" y="186.5" width="100.5" height="14.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lU3-pi-OTQ">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="14" height="15"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="14" height="14.5"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hours required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zjg-hC-PcE">
-                                                                        <rect key="frame" x="18" y="0.0" width="83" height="15"/>
+                                                                        <rect key="frame" x="18" y="0.0" width="82.5" height="14.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
@@ -566,7 +566,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="59" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LNg-In-MDT">
-                                                                <rect key="frame" x="16" y="214" width="311" height="286"/>
+                                                                <rect key="frame" x="16" y="213" width="311" height="287"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <view key="tableFooterView" contentMode="scaleToFill" id="sM9-Pa-Aeq" userLabel="Footer">
                                                                     <rect key="frame" x="0.0" y="87" width="311" height="0.0"/>
@@ -684,16 +684,16 @@
                                                                 </segments>
                                                             </segmentedControl>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Hpf-er-pJj">
-                                                                <rect key="frame" x="254" y="41" width="77" height="15"/>
+                                                                <rect key="frame" x="254.5" y="41.5" width="76.5" height="14.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Trips: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCS-vK-rgR">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="67" height="15"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="14.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KES-VC-Qdl">
-                                                                        <rect key="frame" x="69" y="0.0" width="8" height="15"/>
+                                                                        <rect key="frame" x="68.5" y="0.0" width="8" height="14.5"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
@@ -725,13 +725,13 @@
                                                         <rect key="frame" x="0.0" y="810" width="343" height="286"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Route" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5b-aR-kZl">
-                                                                <rect key="frame" x="12" y="8" width="82" height="21"/>
+                                                                <rect key="frame" x="12" y="8" width="82" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fkf-Yp-8r9">
-                                                                <rect key="frame" x="16" y="41" width="311" height="233"/>
+                                                                <rect key="frame" x="16" y="40.5" width="311" height="232.5"/>
                                                                 <subviews>
                                                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jx5-Jg-bkR">
                                                                         <rect key="frame" x="0.0" y="0.0" width="311" height="180"/>
@@ -740,19 +740,19 @@
                                                                         </constraints>
                                                                     </mapView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ecD-fg-0mR">
-                                                                        <rect key="frame" x="0.0" y="196" width="311" height="37"/>
+                                                                        <rect key="frame" x="0.0" y="196" width="311" height="36.5"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="u0g-Kt-uiY">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="156" height="37"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="155.5" height="36.5"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5c-Do-JUH">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="156" height="18"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="155.5" height="18"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Total Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MD0-Iq-sdT">
-                                                                                        <rect key="frame" x="0.0" y="22" width="156" height="15"/>
+                                                                                        <rect key="frame" x="0.0" y="22" width="155.5" height="14.5"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                                         <nil key="highlightedColor"/>
@@ -760,16 +760,16 @@
                                                                                 </subviews>
                                                                             </stackView>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Yba-pL-fpI">
-                                                                                <rect key="frame" x="156" y="0.0" width="155" height="37"/>
+                                                                                <rect key="frame" x="155.5" y="0.0" width="155.5" height="36.5"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="js9-Bn-tob">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="155" height="18"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="155.5" height="18"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Total Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7n-0N-54m">
-                                                                                        <rect key="frame" x="0.0" y="22" width="155" height="15"/>
+                                                                                        <rect key="frame" x="0.0" y="22" width="155.5" height="14.5"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                                         <nil key="highlightedColor"/>
@@ -1412,10 +1412,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="JQk-7g-Y9r" userLabel="Form">
-                                                <rect key="frame" x="16" y="222" width="343" height="111"/>
+                                                <rect key="frame" x="16" y="222" width="343" height="162"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hnu-x0-76l" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
@@ -1427,7 +1427,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Registration Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nkN-GH-lpA" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="45" width="343" height="21"/>
+                                                        <rect key="frame" x="0.0" y="62" width="343" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no"/>
@@ -1439,7 +1439,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cap-W4-VcD" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="90" width="343" height="21"/>
+                                                        <rect key="frame" x="0.0" y="124" width="343" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1639,10 +1639,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="552"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="cgO-0h-hdV" userLabel="Form">
-                                                <rect key="frame" x="16" y="32" width="343" height="111"/>
+                                                <rect key="frame" x="16" y="32" width="343" height="162"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Car" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WZj-ua-Zuh" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1653,7 +1653,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Odometer" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YdN-gs-1tC" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="45" width="343" height="21"/>
+                                                        <rect key="frame" x="0.0" y="62" width="343" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
@@ -1665,7 +1665,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Supervisor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XcL-g1-2iE" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="90" width="343" height="21"/>
+                                                        <rect key="frame" x="0.0" y="124" width="343" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1814,10 +1814,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="o3z-it-JkO" userLabel="Form">
-                                                <rect key="frame" x="16" y="264" width="343" height="125"/>
+                                                <rect key="frame" x="16" y="264" width="343" height="159"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bql-ZU-yNw" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
@@ -1829,7 +1829,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uwf-pZ-HMW" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="45" width="343" height="21"/>
+                                                        <rect key="frame" x="0.0" y="62" width="343" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1840,7 +1840,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="PwS-ga-bYu">
-                                                        <rect key="frame" x="0.0" y="90" width="343" height="35"/>
+                                                        <rect key="frame" x="0.0" y="124" width="343" height="35"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0q2-uh-nNJ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -1990,10 +1990,10 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="120"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5FB-1A-302" customClass="Card" customModule="Mylogbook" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="160" height="120"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="159.5" height="120"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BzI-jR-ezY">
-                                                                        <rect key="frame" x="45" y="13" width="70" height="95"/>
+                                                                        <rect key="frame" x="45" y="13.5" width="70" height="94.5"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="supervisor-male-display" translatesAutoresizingMaskIntoConstraints="NO" id="jXs-kk-1B7">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
@@ -2003,7 +2003,7 @@
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IE1-tm-6mO">
-                                                                                <rect key="frame" x="19" y="80" width="33" height="15"/>
+                                                                                <rect key="frame" x="18.5" y="80" width="33" height="14.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <nil key="highlightedColor"/>
@@ -2019,10 +2019,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rLd-Xl-iaL" customClass="Card" customModule="Mylogbook" customModuleProvider="target">
-                                                                <rect key="frame" x="184" y="0.0" width="159" height="120"/>
+                                                                <rect key="frame" x="183.5" y="0.0" width="159.5" height="120"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HhK-pq-DzT">
-                                                                        <rect key="frame" x="20" y="22" width="120" height="85"/>
+                                                                        <rect key="frame" x="20.5" y="22.5" width="120" height="84.5"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car-sedan-display" translatesAutoresizingMaskIntoConstraints="NO" id="ru1-xC-hcn">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="60"/>
@@ -2032,7 +2032,7 @@
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEO-im-Bs0">
-                                                                                <rect key="frame" x="0.0" y="70" width="120" height="15"/>
+                                                                                <rect key="frame" x="0.0" y="70" width="120" height="14.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <nil key="highlightedColor"/>
@@ -2056,35 +2056,35 @@
                                                         <rect key="frame" x="0.0" y="136" width="343" height="209"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BmE-hv-yxq">
-                                                                <rect key="frame" x="14" y="14" width="65" height="21"/>
+                                                                <rect key="frame" x="14" y="14" width="64.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ewC-gh-wpg">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ewC-gh-wpg">
                                                                 <rect key="frame" x="0.0" y="47" width="343" height="150"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="E08-k4-FOu">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="E08-k4-FOu">
                                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="67"/>
                                                                         <subviews>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UKa-oI-Rj9" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="114" height="67"/>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKa-oI-Rj9" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Clear"/>
                                                                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="weather-clear"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" horizontalHuggingPriority="249" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ID-hX-Egx" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
-                                                                                <rect key="frame" x="114" y="0.0" width="115" height="67"/>
+                                                                            <view contentMode="scaleToFill" horizontalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="9ID-hX-Egx" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                                <rect key="frame" x="114.5" y="0.0" width="114" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Rain"/>
                                                                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="weather-rain"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EUk-0b-8P0" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
-                                                                                <rect key="frame" x="229" y="0.0" width="114" height="67"/>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUk-0b-8P0" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Thunder"/>
@@ -2093,27 +2093,27 @@
                                                                             </view>
                                                                         </subviews>
                                                                     </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OTh-L0-hQV">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OTh-L0-hQV">
                                                                         <rect key="frame" x="0.0" y="83" width="343" height="67"/>
                                                                         <subviews>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X8Z-GE-zkc" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="114" height="67"/>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8Z-GE-zkc" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Fog"/>
                                                                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="weather-fog"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iiN-jX-WQb" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
-                                                                                <rect key="frame" x="114" y="0.0" width="115" height="67"/>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iiN-jX-WQb" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                                <rect key="frame" x="114.5" y="0.0" width="114" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Hail"/>
                                                                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="weather-hail"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ima-Qc-jAj" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
-                                                                                <rect key="frame" x="229" y="0.0" width="114" height="67"/>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ima-Qc-jAj" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Snow"/>
@@ -2139,32 +2139,32 @@
                                                         <rect key="frame" x="0.0" y="361" width="343" height="126"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traffic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1x-LV-Tiw">
-                                                                <rect key="frame" x="14" y="14" width="49" height="21"/>
+                                                                <rect key="frame" x="14" y="14" width="49" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xFb-HF-PyZ">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xFb-HF-PyZ">
                                                                 <rect key="frame" x="0.0" y="47" width="343" height="67"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2x8-yN-bLo" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="114" height="67"/>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2x8-yN-bLo" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="114.5" height="67"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="Light"/>
                                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="traffic-light"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
-                                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pts-d7-1BJ" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
-                                                                        <rect key="frame" x="114" y="0.0" width="115" height="67"/>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pts-d7-1BJ" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                        <rect key="frame" x="114.5" y="0.0" width="114" height="67"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="Moderate"/>
                                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="traffic-medium"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
-                                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NWq-8h-KhD" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
-                                                                        <rect key="frame" x="229" y="0.0" width="114" height="67"/>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NWq-8h-KhD" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                        <rect key="frame" x="228.5" y="0.0" width="114.5" height="67"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="Heavy"/>
@@ -2188,35 +2188,35 @@
                                                         <rect key="frame" x="0.0" y="503" width="343" height="209"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roads" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BD4-Qa-vdd">
-                                                                <rect key="frame" x="14" y="14" width="48" height="21"/>
+                                                                <rect key="frame" x="14" y="14" width="48" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Kuq-mW-urj">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Kuq-mW-urj">
                                                                 <rect key="frame" x="0.0" y="47" width="343" height="150"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ANC-pN-Cgr">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ANC-pN-Cgr">
                                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="67"/>
                                                                         <subviews>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FKF-gF-Gfb" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="114" height="67"/>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FKF-gF-Gfb" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Local Street"/>
                                                                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="road-local-street"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b5q-Qi-LWZ" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
-                                                                                <rect key="frame" x="114" y="0.0" width="115" height="67"/>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5q-Qi-LWZ" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                                <rect key="frame" x="114.5" y="0.0" width="114" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Main Road"/>
                                                                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="road-main-road"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cN9-rI-307" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
-                                                                                <rect key="frame" x="229" y="0.0" width="114" height="67"/>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cN9-rI-307" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Freeway"/>
@@ -2225,27 +2225,27 @@
                                                                             </view>
                                                                         </subviews>
                                                                     </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="32J-hQ-VMf">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="32J-hQ-VMf">
                                                                         <rect key="frame" x="0.0" y="83" width="343" height="67"/>
                                                                         <subviews>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RsR-uD-rXn" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="114" height="67"/>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RsR-uD-rXn" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Inner City"/>
                                                                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="road-inner-city"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="473-Hn-KdN" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
-                                                                                <rect key="frame" x="114" y="0.0" width="115" height="67"/>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="473-Hn-KdN" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                                <rect key="frame" x="114.5" y="0.0" width="114" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Rural Road"/>
                                                                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="road-rural-road"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NVK-kh-jTa" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
-                                                                                <rect key="frame" x="229" y="0.0" width="114" height="67"/>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVK-kh-jTa" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="Gravel"/>
@@ -2271,13 +2271,13 @@
                                                         <rect key="frame" x="0.0" y="728" width="343" height="326"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Route" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLn-FI-iDA">
-                                                                <rect key="frame" x="14" y="14" width="45" height="21"/>
+                                                                <rect key="frame" x="14" y="14" width="45" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="73i-qE-0Wo">
-                                                                <rect key="frame" x="16" y="47" width="311" height="268"/>
+                                                                <rect key="frame" x="16" y="46.5" width="311" height="267.5"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="tad-9T-WkG">
                                                                         <rect key="frame" x="0.0" y="0.0" width="311" height="19"/>
@@ -2289,13 +2289,13 @@
                                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
                                                                             </textField>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v95-l9-phF">
-                                                                                <rect key="frame" x="150" y="0.0" width="12" height="19"/>
+                                                                                <rect key="frame" x="150" y="0.0" width="11.5" height="19"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="End Suburb" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HCt-iV-8U6">
-                                                                                <rect key="frame" x="166" y="0.0" width="145" height="19"/>
+                                                                                <rect key="frame" x="165.5" y="0.0" width="145.5" height="19"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
@@ -2312,19 +2312,19 @@
                                                                         </constraints>
                                                                     </mapView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ysD-jj-AS7">
-                                                                        <rect key="frame" x="0.0" y="231" width="311" height="37"/>
+                                                                        <rect key="frame" x="0.0" y="231" width="311" height="36.5"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="iU8-Uv-1rD">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="156" height="37"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="155.5" height="36.5"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Rf-ve-4O4">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="156" height="18"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="155.5" height="18"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Total Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kw-qG-Ab4">
-                                                                                        <rect key="frame" x="0.0" y="22" width="156" height="15"/>
+                                                                                        <rect key="frame" x="0.0" y="22" width="155.5" height="14.5"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                                         <nil key="highlightedColor"/>
@@ -2332,16 +2332,16 @@
                                                                                 </subviews>
                                                                             </stackView>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="QoD-rH-JjP">
-                                                                                <rect key="frame" x="156" y="0.0" width="155" height="37"/>
+                                                                                <rect key="frame" x="155.5" y="0.0" width="155.5" height="36.5"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25m-x5-IYa">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="155" height="18"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="155.5" height="18"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Total Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZY-Zy-wLf">
-                                                                                        <rect key="frame" x="0.0" y="22" width="155" height="15"/>
+                                                                                        <rect key="frame" x="0.0" y="22" width="155.5" height="14.5"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                                         <nil key="highlightedColor"/>

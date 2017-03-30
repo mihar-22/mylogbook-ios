@@ -22,6 +22,8 @@ class TextField: JVFloatLabeledTextField {
     
     private var heightConstraint: NSLayoutConstraint!
     
+    private let editingRectErrorOffset: CGFloat = -11
+
     private var isDirty = false
     
     var error: String? {
@@ -32,14 +34,16 @@ class TextField: JVFloatLabeledTextField {
         set(message) {
             errorLabel.text = message
             
-            updateHeight()
-            
-            updateStyle()
+            update()
         }
     }
     
     var isValid: Bool {
         return error == nil
+    }
+    
+    private var shouldShowError: Bool {
+        return !isValid && isDirty
     }
     
     // MARK: Initializers
@@ -71,7 +75,7 @@ class TextField: JVFloatLabeledTextField {
         
         delegate = self
         
-        addTarget(self, action: #selector(editingChangedHandler), for: .editingChanged)
+        addTarget(self, action: #selector(editingDidEnd), for: .editingDidEnd)
     }
     
     private func setupConstraints() {
@@ -98,44 +102,68 @@ class TextField: JVFloatLabeledTextField {
         addSubview(errorLabel)
     }
     
-    @objc private func editingChangedHandler() {
+    @objc private func editingDidEnd() {
         if !isDirty { isDirty = true }
+        
+        update()
     }
     
-    // MARK: Layout
-        
+    // MARK: Update
+    
+    private func update() {
+        updateStyle()
+
+        updateHeight()
+    }
+    
+    private func updateStyle() {
+        if shouldShowError {
+            restyle(.error)
+        } else if isFirstResponder {
+            restyle(.focused)
+        } else {
+            restyle(.normal)
+        }
+    }
+    
     private func updateHeight() {
         if !isValid { errorLabel.sizeToFit() }
         
-        let height = isValid ? baseHeight : (baseHeight + errorLabelYPadding + errorLabel.frame.size.height)
+        var height = baseHeight
+        
+        if shouldShowError {
+            height += (errorLabelYPadding + errorLabel.frame.size.height)
+        }
         
         self.heightConstraint.constant = height
         
         layoutIfNeeded()
     }
     
+    // MARK: Layout
+    
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
         let rect = super.editingRect(forBounds: bounds)
         
-        guard !isValid else { return rect }
+        guard shouldShowError else { return rect }
         
-        return rect.offsetBy(dx: 0, dy: -11)
+        return rect.offsetBy(dx: 0, dy: editingRectErrorOffset)
     }
     
     override func textRect(forBounds bounds: CGRect) -> CGRect {
         let rect = super.textRect(forBounds: bounds)
         
-        guard !isValid else { return rect }
+        guard shouldShowError else { return rect }
         
-        return rect.offsetBy(dx: 0, dy: -11)
+        return rect.offsetBy(dx: 0, dy: editingRectErrorOffset)
     }
     
     override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
         let rect = super.clearButtonRect(forBounds: bounds)
         
-        guard !isValid else { return rect }
+        guard shouldShowError else { return rect }
         
-        return rect.offsetBy(dx: 0, dy: -11)
+        return rect.offsetBy(dx: 0, dy: editingRectErrorOffset)
     }
     
     // MARK: Responders
@@ -153,16 +181,6 @@ class TextField: JVFloatLabeledTextField {
     }
     
     // MARK: Styling
-    
-    private func updateStyle() {
-        if (!isValid) {
-            restyle(.error)
-        } else if isFirstResponder {
-            restyle(.focused)
-        } else {
-            restyle(.normal)
-        }
-    }
     
     func restyle(_ style: TextFieldStyle) {
         switch style {

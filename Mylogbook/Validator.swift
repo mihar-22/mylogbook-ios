@@ -21,6 +21,8 @@ class Validator {
     func add(_ textField: TextField, _ validations: [Validation]) {
         self.validations[textField] = validations
         
+        textField.error = validate(textField)?.error
+        
         textField.addTarget(self, action: #selector(editingChangedHandler(_:)), for: .editingChanged)
     }
     
