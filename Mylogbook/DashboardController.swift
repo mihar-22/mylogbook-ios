@@ -72,6 +72,8 @@ class DashboardController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         reload()
+        
+        showMap()
     }
     
     // MARK: Resets
@@ -79,11 +81,9 @@ class DashboardController: UIViewController {
     func reset() {
         resetTimeCard()
         
-        mapView.isHidden = true
-        
         statistics.calculate()
-
-        reloadTableViewData()
+        
+        mapView.isHidden = true
     }
     
     func resetTimeCard() {
@@ -99,14 +99,14 @@ class DashboardController: UIViewController {
     // MARK: Reload
 
     func reload() {
+        reloadTasks()
+        
         configureProgressBars()
         
         reloadBarChart()
-        
-        reloadMap()
     }
     
-    func reloadTableViewData(animated: Bool = false) {
+    func reloadTasks(animated: Bool = false) {
         tasks.build()
         
         guard animated else {
@@ -128,14 +128,6 @@ class DashboardController: UIViewController {
         BarChart.build(barChartView, for: currentChartSegment())
         
         totalTripsLabel.text = "\(statistics.numberOfTrips)"
-    }
-    
-    func reloadMap() {
-        let deadline = DispatchTime.now() + .seconds(1)
-            
-        DispatchQueue.main.asyncAfter(deadline: deadline) {
-            self.mapView.isHidden = false
-        }
     }
     
     // MARK: Actions
@@ -171,7 +163,7 @@ class DashboardController: UIViewController {
         if let handler = editingTask?.editCompletionHandler {
             handler(datePicker.date)
             
-            reloadTableViewData(animated: true)
+            reloadTasks(animated: true)
             
             Cache.shared.save()
         }
@@ -413,7 +405,7 @@ extension DashboardController: BEMCheckBoxDelegate {
         if let handler = task.checkBoxHandler {
             handler(checkBox.on)
             
-            reloadTableViewData(animated: true)
+            reloadTasks(animated: true)
             
             statistics.calculate()
             
@@ -460,6 +452,14 @@ extension DashboardController {
 // MARK: Map View Delegate
 
 extension DashboardController: MKMapViewDelegate {
+    func showMap() {
+        let deadline = DispatchTime.now() + .seconds(1)
+        
+        DispatchQueue.main.asyncAfter(deadline: deadline) {
+            self.mapView.isHidden = false
+        }
+    }
+
     func buildLastRoute() {
         // guard locations != nil && locations!.count > 0 && trips.count > 0 else { return }
         
