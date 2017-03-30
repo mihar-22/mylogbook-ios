@@ -79,6 +79,11 @@ extension CarsController: ListObserver, ListObjectObserver {
         carsTable.insertRows(at: [indexPath], with: .automatic)
     }
     
+    func listMonitor(_ monitor: ListMonitor<Car>, didMoveObject object: Car, fromIndexPath: IndexPath, toIndexPath: IndexPath) {
+        carsTable.deleteRows(at: [fromIndexPath], with: .automatic)
+        carsTable.insertRows(at: [toIndexPath], with: .automatic)
+    }
+    
     func listMonitor(_ monitor: ListMonitor<Car>, didUpdateObject object: Car, atIndexPath indexPath: IndexPath) {
         guard object.deletedAt == nil else {
             self.carsTable.deleteRows(at: [indexPath], with: .automatic)
@@ -86,9 +91,9 @@ extension CarsController: ListObserver, ListObjectObserver {
             return
         }
         
-        let cell = carsTable.cellForRow(at: indexPath) as! CarCell
-        
-        configure(cell, with: object)
+        if let cell = carsTable.cellForRow(at: indexPath) as? CarCell {
+            configure(cell, with: object)
+        }
     }
     
     func listMonitor(_ monitor: ListMonitor<Car>, didDeleteObject object: Car, fromIndexPath indexPath: IndexPath) {

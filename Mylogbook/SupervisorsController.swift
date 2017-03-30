@@ -79,6 +79,11 @@ extension SupervisorsController: ListObserver, ListObjectObserver {
         supervisorsTable.insertRows(at: [indexPath], with: .automatic)
     }
     
+    func listMonitor(_ monitor: ListMonitor<Supervisor>, didMoveObject object: Supervisor, fromIndexPath: IndexPath, toIndexPath: IndexPath) {
+        supervisorsTable.deleteRows(at: [fromIndexPath], with: .automatic)
+        supervisorsTable.insertRows(at: [toIndexPath], with: .automatic)
+    }
+    
     func listMonitor(_ monitor: ListMonitor<Supervisor>, didUpdateObject object: Supervisor, atIndexPath indexPath: IndexPath) {
         guard object.deletedAt == nil else {
             self.supervisorsTable.deleteRows(at: [indexPath], with: .automatic)
@@ -86,9 +91,9 @@ extension SupervisorsController: ListObserver, ListObjectObserver {
             return
         }
         
-        let cell = supervisorsTable.cellForRow(at: indexPath) as! SupervisorCell
-        
-        configure(cell, with: object)
+        if let cell = supervisorsTable.cellForRow(at: indexPath) as? SupervisorCell {
+            configure(cell, with: object)
+        }
     }
     
     func listMonitor(_ monitor: ListMonitor<Supervisor>, didDeleteObject object: Supervisor, fromIndexPath indexPath: IndexPath) {
