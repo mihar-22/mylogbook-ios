@@ -16,20 +16,31 @@ class LogSummaryController: UIViewController {
     @IBOutlet weak var totalTimeLabel: UILabel!
     @IBOutlet weak var totalDistanceLabel: UILabel!
     
+    @IBOutlet weak var carTypeImage: UIImageView!
+    @IBOutlet weak var carNameLabel: UILabel!
+    
+    @IBOutlet weak var supervisorAvatar: UIImageView!
+    @IBOutlet weak var supervisorNameLabel: UILabel!
+    
+    @IBOutlet weak var startLocationTextField: UITextField!
+    @IBOutlet weak var endLocationTextField: UITextField!
+    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
+        setupResourceCards()
+        
         setupRouteCard()
+        
+        setupTripItems(in: view)
     }
     
     // MARK: Actions
     
     @IBAction func didTapSave(_ sender: UIBarButtonItem) {
-        TripStore.add(trip)
-        
-        Keychain.shared.setData(locations, for: .lastRoute)
-        
-        cacheOdometer()
+        save()
         
         tabBarController!.selectedIndex = 0
         
@@ -38,6 +49,35 @@ class LogSummaryController: UIViewController {
     
     @IBAction func didTapCancel(_ sender: UIBarButtonItem) {
         showCancelAlert()
+    }
+    
+    func didChangeTextField(_ sender: UITextField) {
+        let maxLength = 50
+        
+        if let text = sender.text, text.characters.count >= maxLength {
+            let index = text.index(text.startIndex, offsetBy: maxLength)
+            
+            sender.text = text.substring(to: index)
+        }
+        
+        validate()
+    }
+    
+    // MARK: Save
+    
+    func save() {
+        saveLocations()
+        
+        TripStore.add(trip)
+        
+        Keychain.shared.setData(locations, for: .lastRoute)
+        
+        cacheOdometer()
+    }
+    
+    func saveLocations() {
+        trip.startLocation = startLocationTextField.text!
+        trip.endLocation = endLocationTextField.text!
     }
     
     func cacheOdometer() {
@@ -50,12 +90,42 @@ class LogSummaryController: UIViewController {
         Cache.shared.save()        
     }
     
-    func setupRouteCard() {
-        totalTimeLabel.text = trip.totalTime.time()
+    // MARK: Cards
+    
+    func setupResourceCards() {
+        carNameLabel.text = trip.car.name
+        carTypeImage.image = trip.car.image(ofSize: .display)
         
+        supervisorNameLabel.text = trip.supervisor.name
+        supervisorAvatar.image = trip.supervisor.image(ofSize: .display)
+    }
+    
+    func setupRouteCard() {
+        startLocationTextField.text = trip.startLocation
+        endLocationTextField.text = trip.endLocation
+        
+        startLocationTextField.addTarget(self, action: #selector(didChangeTextField(_:)), for: .editingChanged)
+        endLocationTextField.addTarget(self, action: #selector(didChangeTextField(_:)), for: .editingChanged)
+        
+        totalTimeLabel.text = trip.totalTime.time()
         totalDistanceLabel.text = trip.distance.distance()
         
         setupMapView()
+    }
+    
+    // MARK: Validation
+    
+    func validate() {
+        let isTripConditionsValid = !trip.weather.isEmpty   &&
+                                    !trip.roads.isEmpty     &&
+                                    !trip.traffic.isEmpty
+        
+        let isLocationsValid = startLocationTextField.text != nil        &&
+                               !startLocationTextField.text!.isEmpty     &&
+                               endLocationTextField.text != nil          &&
+                               !endLocationTextField.text!.isEmpty
+        
+        saveButton.isEnabled = isTripConditionsValid && isLocationsValid
     }
 }
 
@@ -74,6 +144,36 @@ extension LogSummaryController: Alerting {
         }
         
         showAlert(title: title, message: message, buttons: [noButton, yesButton])
+    }
+}
+
+// MARK: Trip Item delegate
+
+extension LogSummaryController: TripItemDelegate {
+    func setupTripItems(in view: UIView) {
+        for subview in view.subviews {
+            if let tripItem = subview as? TripItem {
+                tripItem.delegate = self
+            }
+            
+            setupTripItems(in: subview)
+        }
+    }
+    
+    func didChangeTripItem(_ value: Bool, title: String) {
+        if let condition = Weather(rawValue: title) {
+            trip.set(value, for: .weather(condition))
+        }
+
+        if let condition = Traffic(rawValue: title) {
+            trip.set(value, for: .traffic(condition))
+        }
+
+        if let condition = Road(rawValue: title) {
+            trip.set(value, for: .road(condition))
+        }
+        
+        validate()
     }
 }
 

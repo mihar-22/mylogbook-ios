@@ -1,6 +1,7 @@
 
 import Alamofire
 import CoreLocation
+import Dispatch
 import MapKit
 import PopupDialog
 import UIKit
@@ -67,7 +68,15 @@ class LogRecordController: UIViewController {
         
         recording(will: .stop)
         
-        performSegue(withIdentifier: "stopRecordingSegue", sender: nil)
+        trip.endedAt = Date()
+        
+        trip.distance = distance.round(places: 2)
+        
+        recordCoordinates()
+        
+        recordLightConditions()
+        
+        recordLocations() { self.performSegue(withIdentifier: "stopRecordingSegue", sender: nil) }
     }
     
     @IBAction func didTapCancel(_ sender: UIBarButtonItem) {
@@ -164,7 +173,13 @@ class LogRecordController: UIViewController {
         }
     }
     
-    // MARK: Recordings
+    // MARK: Trip Data Recordings
+    
+    func recordStartParameters() {
+        trip.startedAt = Date()
+        
+        trip.timeZoneIdentifier = TimeZone.current.identifier
+    }
     
     func recordCoordinates() {
         let startCoordinate = locations.first!.coordinate
@@ -180,26 +195,6 @@ class LogRecordController: UIViewController {
         trip.endLongitude = endCoordinate.longitude.round(places: 8)
     }
     
-    func recordLocations() {
-        guard NetworkReachabilityManager()!.isReachable else { return }
-        
-        CLGeocoder().reverseGeocodeLocation(locations.first!) { (placemarks, error) in
-            guard error == nil else { return }
-            
-            guard let placemarks = placemarks, placemarks.count > 0 else { return }
-            
-            self.trip.startLocation = placemarks.first!.locality ?? ""
-        }
-        
-        CLGeocoder().reverseGeocodeLocation(locations.last!) { (placemarks, error) in
-            guard error == nil else { return }
-            
-            guard let placemarks = placemarks, placemarks.count > 0 else { return }
-            
-            self.trip.endLocation = placemarks.first!.locality ?? ""
-        }
-    }
-    
     func recordLightConditions() {
         let light = TripCalculator.calculateLightConditions(for: trip)
         
@@ -207,6 +202,48 @@ class LogRecordController: UIViewController {
         if light.day { trip.light.add(Light.day.code) }
         if light.dusk { trip.light.add(Light.dusk.code) }
         if light.night { trip.light.add(Light.night.code) }
+    }
+    
+    func recordLocations(completion: @escaping () -> Void) {
+        guard NetworkReachabilityManager()!.isReachable else {
+            completion()
+            
+            return
+        }
+        
+        let group = DispatchGroup()
+        
+        group.enter()
+        
+        reverseGeocode(locations.first!) { locality in
+            self.trip.startLocation = locality ?? ""
+            
+            group.leave()
+        }
+        
+        group.enter()
+        
+        reverseGeocode(locations.last!) { locality in
+            self.trip.endLocation = locality ?? ""
+            
+            group.leave()
+        }
+        
+        group.notify(queue: DispatchQueue.main) { completion() }
+    }
+    
+    // MARK: Geocoding
+    
+    func reverseGeocode(_ location: CLLocation, completion: @escaping (String?) -> Void) {
+        CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
+            guard error == nil, let placemarks = placemarks, placemarks.count > 0 else {
+                completion(nil)
+                
+                return
+            }
+            
+            completion(placemarks.first!.locality)
+        }
     }
 }
 
@@ -290,24 +327,10 @@ extension LogRecordController: CLLocationManagerDelegate {
             stop()
         case .start:
             setRecordingDefaults()
-            
             start()
-            
-            trip.startedAt = Date()
-            
-            trip.timeZoneIdentifier = TimeZone.current.identifier
+            recordStartParameters()
         case.stop:
             stop()
-            
-            trip.endedAt = Date()
-            
-            trip.distance = distance.round(places: 2)
-            
-            recordCoordinates()
-            
-            recordLocations()
-            
-            recordLightConditions()
         case .cancel:
             navigationController!.popViewController(animated: true)
         }

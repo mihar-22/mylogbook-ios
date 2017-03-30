@@ -18,7 +18,7 @@ class TextField: JVFloatLabeledTextField {
     
     private let errorLabelYPadding: CGFloat = 6
     
-    private let baseHeight: CGFloat = 40
+    private let baseHeight: CGFloat = 38
     
     private var heightConstraint: NSLayoutConstraint!
     
@@ -124,6 +124,14 @@ class TextField: JVFloatLabeledTextField {
     
     override func textRect(forBounds bounds: CGRect) -> CGRect {
         let rect = super.textRect(forBounds: bounds)
+        
+        guard !isValid else { return rect }
+        
+        return rect.offsetBy(dx: 0, dy: -11)
+    }
+    
+    override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
+        let rect = super.clearButtonRect(forBounds: bounds)
         
         guard !isValid else { return rect }
         

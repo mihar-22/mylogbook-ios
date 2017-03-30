@@ -20,51 +20,52 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="217" height="114"/>
+            <rect key="frame" x="0.0" y="0.0" width="65" height="93"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="46E-XV-9Fn">
-                    <rect key="frame" x="0.0" y="0.0" width="217" height="67"/>
+                    <rect key="frame" x="9" y="13" width="47" height="67"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FoC-AA-njV">
-                            <rect key="frame" x="86" y="0.0" width="45" height="45"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FoC-AA-njV">
+                            <rect key="frame" x="3.5" y="0.0" width="40" height="40"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="45" id="Rde-Y9-Z4f"/>
-                                <constraint firstAttribute="height" constant="45" id="mjB-tA-2q7"/>
+                                <constraint firstAttribute="width" constant="40" id="Rde-Y9-Z4f"/>
+                                <constraint firstAttribute="height" constant="40" id="mjB-tA-2q7"/>
                             </constraints>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="tPC-ab-LRR">
-                            <rect key="frame" x="85" y="51" width="47" height="16"/>
+                            <rect key="frame" x="0.0" y="46" width="47" height="21"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIq-rr-xww">
-                                    <rect key="frame" x="0.0" y="0.0" width="25" height="16"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="25" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="msJ-h3-Tlr">
-                                    <rect key="frame" x="31" y="0.0" width="16" height="16"/>
+                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="msJ-h3-Tlr">
+                                    <rect key="frame" x="31" y="0.0" width="16" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="16" id="abG-nB-Xiq"/>
-                                        <constraint firstAttribute="height" constant="16" id="kCD-LM-2Pd"/>
                                     </constraints>
                                 </imageView>
                             </subviews>
                         </stackView>
                     </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="67" id="xF5-lt-R6m"/>
+                    </constraints>
                 </stackView>
             </subviews>
             <gestureRecognizers/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="46E-XV-9Fn" secondAttribute="trailing" id="2hX-JN-V2R"/>
-                <constraint firstAttribute="leading" secondItem="46E-XV-9Fn" secondAttribute="leading" id="UZn-aU-hNw"/>
-                <constraint firstAttribute="top" secondItem="46E-XV-9Fn" secondAttribute="top" id="zyO-IP-oGb"/>
+                <constraint firstItem="46E-XV-9Fn" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ouh-GR-gSk"/>
+                <constraint firstItem="46E-XV-9Fn" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hAo-7v-ybg"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outletCollection property="gestureRecognizers" destination="UPb-Ye-En3" appends="YES" id="bwG-YS-cPp"/>
             </connections>
-            <point key="canvasLocation" x="366.5" y="6"/>
+            <point key="canvasLocation" x="471.5" y="-28.5"/>
         </view>
         <tapGestureRecognizer id="UPb-Ye-En3">
             <connections>

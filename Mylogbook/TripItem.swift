@@ -7,12 +7,20 @@ enum TripItemStyle {
     case normal, selected
 }
 
+// MARK: Trip Item Delegate
+
+protocol TripItemDelegate {
+    func didChangeTripItem(_ value: Bool, title: String)
+}
+
 // MARK: Trip Item
 
 @IBDesignable
 class TripItem: UIView, NibView {
     
     var isSelected = false
+    
+    var delegate: TripItemDelegate?
     
     // MARK: Inspectables
     
@@ -76,6 +84,8 @@ class TripItem: UIView, NibView {
         let state: TripItemStyle = isSelected ? .selected : .normal
         
         restyle(state)
+        
+        delegate?.didChangeTripItem(isSelected, title: title)
     }
     
     // Styling

@@ -142,8 +142,8 @@ extension Trip: Resourceable {
             "end_latitude": endLatitude,
             "end_longitude": endLongitude,
             
-            "startLocation": startLocation,
-            "endLocation": endLocation,
+            "start_location": startLocation,
+            "end_location": endLocation,
             "timezone": timeZoneIdentifier
         ]
     }

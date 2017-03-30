@@ -104,8 +104,7 @@ struct TripCalculator {
     // MARK: Calculate Day Time
     
     static func calculateDayTime(for trip: Trip) -> (sunrise: Int, sunset: Int) {
-        let solar = Solar.init(forDate: trip.startedAt,
-                               withTimeZone: trip.timeZone,
+        let solar = Solar.init(for: trip.startedAt,
                                latitude: trip.startLatitude,
                                longitude: trip.startLongitude)!
         
@@ -118,8 +117,7 @@ struct TripCalculator {
     // MARK: Calculate Twilight
     
     static func calculateTwilight(for trip: Trip) -> Twilight {
-        let solar = Solar.init(forDate: trip.startedAt,
-                               withTimeZone: trip.timeZone,
+        let solar = Solar.init(for: trip.startedAt,
                                latitude: trip.startLatitude,
                                longitude: trip.startLongitude)!
         
