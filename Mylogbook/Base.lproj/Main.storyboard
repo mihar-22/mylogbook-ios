@@ -41,7 +41,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="So8-uU-Zcv" kind="presentation" id="1h6-d6-RPJ"/>
+                                            <segue destination="EvX-Hf-37q" kind="presentation" id="1h6-d6-RPJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRr-VH-p9Q">
@@ -57,7 +57,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="4G5-9U-MMS" kind="presentation" id="rqh-BI-nv3"/>
+                                            <segue destination="oIS-UV-eQL" kind="presentation" id="rqh-BI-nv3"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -146,50 +146,38 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cL9-Sq-PyU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="G2L-J7-5HG"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="mylogbook" id="EqI-pc-N34">
-                                        <barButtonItem key="leftBarButtonItem" title="Close" id="d4S-b7-8El">
-                                            <connections>
-                                                <action selector="didTapClose:" destination="So8-uU-Zcv" id="PPf-7z-ZdN"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Create" id="akV-cm-ddE">
-                                            <connections>
-                                                <action selector="didTapCreate:" destination="So8-uU-Zcv" id="sxI-fP-SVa"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cL9-Sq-PyU" firstAttribute="top" secondItem="t0V-wH-coL" secondAttribute="bottom" constant="-20" id="Dcl-Sl-Kkm"/>
                             <constraint firstItem="AyN-XI-Wr3" firstAttribute="leading" secondItem="4fu-14-hK5" secondAttribute="leadingMargin" id="P6U-ag-FP1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AyN-XI-Wr3" secondAttribute="trailing" id="lIU-nL-CNb"/>
-                            <constraint firstItem="cL9-Sq-PyU" firstAttribute="leading" secondItem="4fu-14-hK5" secondAttribute="leading" id="oPv-Yd-zyz"/>
-                            <constraint firstAttribute="trailing" secondItem="cL9-Sq-PyU" secondAttribute="trailing" id="vC9-MS-VcI"/>
-                            <constraint firstItem="AyN-XI-Wr3" firstAttribute="top" secondItem="cL9-Sq-PyU" secondAttribute="bottom" constant="32" id="ys5-5e-cVG"/>
+                            <constraint firstItem="AyN-XI-Wr3" firstAttribute="top" secondItem="t0V-wH-coL" secondAttribute="bottom" constant="32" id="wK1-UB-EzJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Sign Up" id="6Iq-r5-H4H"/>
+                    <navigationItem key="navigationItem" title="mylogbook" id="6Iq-r5-H4H">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="d4S-b7-8El">
+                            <connections>
+                                <action selector="didTapClose:" destination="So8-uU-Zcv" id="PPf-7z-ZdN"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Create" id="akV-cm-ddE">
+                            <connections>
+                                <action selector="didTapCreate:" destination="So8-uU-Zcv" id="sxI-fP-SVa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="birthdayTextField" destination="iqW-JE-dpu" id="o7c-J7-ilh"/>
                         <outlet property="createButton" destination="akV-cm-ddE" id="DTp-HK-V2y"/>
                         <outlet property="emailTextField" destination="2VN-xl-c0Q" id="GgZ-9O-u6C"/>
                         <outlet property="nameTextField" destination="qJH-3F-5p8" id="ywL-8S-NJt"/>
                         <outlet property="passwordTextField" destination="IY1-AM-01x" id="nVm-hP-Bfb"/>
-                        <segue destination="4G5-9U-MMS" kind="presentation" identifier="logInSegue" id="Hb2-1e-Hpd"/>
+                        <segue destination="oIS-UV-eQL" kind="presentation" identifier="logInSegue" id="Hb2-1e-Hpd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQF-Ul-ePl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175" y="-2011"/>
+            <point key="canvasLocation" x="764" y="-2011.8440779610196"/>
         </scene>
         <!--Log In-->
         <scene sceneID="bmn-my-YqZ">
@@ -203,26 +191,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wp3-2O-zhb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="NZr-GQ-CP1"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="mylogbook" id="YgB-hu-HMa">
-                                        <barButtonItem key="leftBarButtonItem" title="Close" id="VUD-2A-4wI">
-                                            <connections>
-                                                <action selector="didTapClose:" destination="4G5-9U-MMS" id="GY2-HM-C6i"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Log In" id="45c-rP-Ceh">
-                                            <connections>
-                                                <action selector="didTapDone:" destination="4G5-9U-MMS" id="cSG-rB-RwJ"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ofU-Ix-3Gi" userLabel="Form">
                                 <rect key="frame" x="16" y="96" width="343" height="100"/>
                                 <subviews>
@@ -266,28 +234,37 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ofU-Ix-3Gi" firstAttribute="top" secondItem="Wp3-2O-zhb" secondAttribute="bottom" constant="32" id="EdB-b5-l93"/>
                             <constraint firstItem="BZi-3p-Poh" firstAttribute="trailing" secondItem="Vsy-bY-z2n" secondAttribute="trailingMargin" id="G61-nR-1h5"/>
                             <constraint firstItem="ofU-Ix-3Gi" firstAttribute="leading" secondItem="Vsy-bY-z2n" secondAttribute="leadingMargin" id="RNK-7Z-YwE"/>
-                            <constraint firstAttribute="trailing" secondItem="Wp3-2O-zhb" secondAttribute="trailing" id="dKy-AP-7fG"/>
                             <constraint firstItem="BZi-3p-Poh" firstAttribute="top" secondItem="ofU-Ix-3Gi" secondAttribute="bottom" constant="16" id="fAh-V7-Foh"/>
-                            <constraint firstItem="Wp3-2O-zhb" firstAttribute="top" secondItem="Vsy-bY-z2n" secondAttribute="top" id="hB1-6K-kWA"/>
+                            <constraint firstItem="ofU-Ix-3Gi" firstAttribute="top" secondItem="TCA-dD-ycf" secondAttribute="bottom" constant="32" id="oew-PW-r0n"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ofU-Ix-3Gi" secondAttribute="trailing" id="xS7-ft-7dr"/>
-                            <constraint firstItem="Wp3-2O-zhb" firstAttribute="leading" secondItem="Vsy-bY-z2n" secondAttribute="leading" id="xSI-BX-Kvo"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="mylogbook" id="UKo-Tl-b3f">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="VUD-2A-4wI">
+                            <connections>
+                                <action selector="didTapClose:" destination="4G5-9U-MMS" id="GY2-HM-C6i"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Log In" id="45c-rP-Ceh">
+                            <connections>
+                                <action selector="didTapDone:" destination="4G5-9U-MMS" id="cSG-rB-RwJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="doneButton" destination="45c-rP-Ceh" id="cth-jA-hkn"/>
                         <outlet property="emailTextField" destination="cdK-5c-ipx" id="Lc0-aG-hqK"/>
                         <outlet property="forgotPasswordButton" destination="BZi-3p-Poh" id="RwS-ca-I6y"/>
                         <outlet property="passwordTextField" destination="aRl-ac-Shy" id="FFZ-Ot-gTP"/>
-                        <segue destination="cbD-r4-BsG" kind="show" identifier="onboardingSegue" id="Yjg-rp-pr2"/>
                         <segue destination="JZh-Vk-QfD" kind="presentation" identifier="userLoggedInSegue" id="5j3-Nw-acl"/>
+                        <segue destination="RfL-Mo-SPx" kind="show" identifier="onboardingSegue" id="f0s-2i-wMH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kj4-vG-9P5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175" y="-1275"/>
+            <point key="canvasLocation" x="764" y="-1275.1124437781111"/>
         </scene>
         <!--Onboarding Learner Permit-->
         <scene sceneID="kO8-81-lch">
@@ -374,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xCF-qr-qWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1422" y="-1275"/>
+            <point key="canvasLocation" x="1577" y="-1275"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="AJ7-cf-Sfa">
@@ -1825,7 +1802,7 @@
                         <outlet property="carImage" destination="vZU-3c-rM1" id="BY1-Rx-hNf"/>
                         <outlet property="carImageBottom" destination="NWa-ns-IeJ" id="hAa-NN-VpI"/>
                         <outlet property="distanceLabel" destination="jIS-cY-bS9" id="GQY-6a-duf"/>
-                        <outlet property="navItem" destination="OBK-4w-bh1" id="9sK-Gp-BGL"/>
+                        <outlet property="pauseButton" destination="gGV-bR-pjV" id="qPe-bb-pm2"/>
                         <outlet property="smokeImageCenterY" destination="vxx-Ih-fYd" id="mTf-1b-Jio"/>
                         <outlet property="smokeImageTrailing" destination="p7U-z7-2Gj" id="bCG-GH-2pn"/>
                         <outlet property="timeLabel" destination="FQN-lN-3CA" id="y5D-Sh-TuA"/>
@@ -2505,24 +2482,6 @@
             </objects>
             <point key="canvasLocation" x="2361" y="462"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="RB4-j1-sg7">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cbD-r4-BsG" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hks-Tg-soJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="RfL-Mo-SPx" kind="relationship" relationship="rootViewController" id="Utr-TZ-txn"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ok7-Dy-WSE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="641" y="-1275"/>
-        </scene>
         <!--Onboarding States-->
         <scene sceneID="0S2-qc-Cv0">
             <objects>
@@ -2619,7 +2578,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dcM-KK-zYd">
-                        <barButtonItem key="rightBarButtonItem" title="Next" style="done" id="Zef-PW-Sx8">
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="Zef-PW-Sx8">
                             <connections>
                                 <segue destination="JZh-Vk-QfD" kind="presentation" identifier="onboardingCompletedSegue" id="LSE-2j-qYm"/>
                             </connections>
@@ -2628,7 +2587,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fz6-or-2yV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2170" y="-1275"/>
+            <point key="canvasLocation" x="2361" y="-1275"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UTR-as-MPh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EvX-Hf-37q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1hs-as-UU8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="So8-uU-Zcv" kind="relationship" relationship="rootViewController" id="f0a-w1-aC2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aIx-7V-VaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-175.19999999999999" y="-2011.8440779610196"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gcx-h1-lha">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oIS-UV-eQL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HSz-vJ-3my">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4G5-9U-MMS" kind="relationship" relationship="rootViewController" id="KXH-uB-413"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hmh-gO-gE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-175.19999999999999" y="-1275.1124437781111"/>
         </scene>
     </scenes>
     <resources>
@@ -2665,8 +2660,8 @@
         <image name="weather-thunder" width="45" height="45"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hb2-1e-Hpd"/>
-        <segue reference="5j3-Nw-acl"/>
+        <segue reference="rqh-BI-nv3"/>
+        <segue reference="LSE-2j-qYm"/>
         <segue reference="hh4-YO-80O"/>
         <segue reference="oWf-Eg-yX6"/>
     </inferredMetricsTieBreakers>

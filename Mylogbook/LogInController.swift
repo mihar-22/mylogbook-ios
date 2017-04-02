@@ -5,7 +5,7 @@ import PopupDialog
 import SwiftyJSON
 import UIKit
 
-class LogInController: UIViewController {
+class LogInController: UIViewController, ActivityView {
     let validator = Validator()
   
     let network = NetworkReachabilityManager(host: Env.MLB_API_BASE)!
@@ -62,6 +62,22 @@ class LogInController: UIViewController {
         forgotPassword()
     }
     
+    // MARK: Form
+    
+    func disableForm() {
+        emailTextField.isEnabled = false
+        passwordTextField.isEnabled = false
+        doneButton.isEnabled = false
+        forgotPasswordButton.isEnabled = false
+    }
+    
+    func enableForm() {
+        emailTextField.isEnabled = true
+        passwordTextField.isEnabled = true
+        
+        validator.revalidate()
+    }
+    
     // MARK: Networking
     
     func logInUser() {
@@ -71,9 +87,19 @@ class LogInController: UIViewController {
             return
         }
         
+        disableForm()
+
+        showActivityIndicator()
+        
         let route = AuthRoute.login(email: email!, password: password!)
         
         Session.shared.requestJSON(route) { response in
+            DispatchQueue.main.async {
+                self.hideActivityIndicator(replaceWith: self.doneButton)
+
+                self.enableForm()
+            }
+            
             guard response.statusCode != 400 else {
                 DispatchQueue.main.async { self.showInvalidCredentialsAlert() }
                 
@@ -101,9 +127,19 @@ class LogInController: UIViewController {
             return
         }
         
+        disableForm()
+        
+        showActivityIndicator(for: forgotPasswordButton)
+        
         let route = AuthRoute.forgot(email: email!)
         
         Session.shared.requestJSON(route) { response in
+            DispatchQueue.main.async {
+                self.hideActivityIndicator(for: self.forgotPasswordButton)
+
+                self.enableForm()
+            }
+
             guard response.statusCode != 422 else {
                 if response.errors!["email"] != nil {
                     DispatchQueue.main.async { self.showInvalidEmailAlert() }
@@ -112,7 +148,9 @@ class LogInController: UIViewController {
                 return
             }
             
-            DispatchQueue.main.async { self.showForgotPasswordLinkSentAlert() }
+            DispatchQueue.main.async {
+                self.showForgotPasswordLinkSentAlert()
+            }
         }
     }
     

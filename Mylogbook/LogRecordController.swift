@@ -6,7 +6,7 @@ import MapKit
 import PopupDialog
 import UIKit
 
-class LogRecordController: UIViewController {
+class LogRecordController: UIViewController, ActivityView {
     
     var trip: Trip!
     
@@ -46,9 +46,8 @@ class LogRecordController: UIViewController {
     
     // MARK: Outlets
     
-    @IBOutlet weak var navItem: UINavigationItem!
-    
     @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet weak var pauseButton: UIBarButtonItem!
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
@@ -62,8 +61,6 @@ class LogRecordController: UIViewController {
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
-        setupNavigation()
-
         shouldStartRecording()
         
         setupIllustration()
@@ -96,6 +93,10 @@ class LogRecordController: UIViewController {
     
     @IBAction func didTapStop(_ sender: UIBarButtonItem) {
         guard locations.count > 1 else { return }
+        
+        pauseButton.isEnabled = false
+        
+        showActivityIndicator()
         
         recording(will: .stop)
         
@@ -189,10 +190,6 @@ class LogRecordController: UIViewController {
     }
     
     // MARK: Navigation
-    
-    func setupNavigation() {        
-        navItem.setHidesBackButton(true, animated: false)
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "stopRecordingSegue" {

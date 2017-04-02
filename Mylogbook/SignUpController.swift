@@ -3,7 +3,7 @@ import Alamofire
 import UIKit
 import PopupDialog
 
-class SignUpController: UIViewController {
+class SignUpController: UIViewController, ActivityView {
     let validator = Validator()
     
     let network = NetworkReachabilityManager(host: Env.MLB_API_BASE)!
@@ -80,6 +80,22 @@ class SignUpController: UIViewController {
         validator.revalidate()
     }
 
+    // MARK: Form
+    
+    func disableForm() {
+        nameTextField.isEnabled = false
+        emailTextField.isEnabled = false
+        passwordTextField.isEnabled = false
+        birthdayTextField.isEnabled = false
+    }
+    
+    func enableForm() {
+        nameTextField.isEnabled = true
+        emailTextField.isEnabled = true
+        passwordTextField.isEnabled = true
+        birthdayTextField.isEnabled = true
+    }
+    
     // MARK: Networking
     
     func registerUser() {
@@ -89,12 +105,22 @@ class SignUpController: UIViewController {
             return
         }
         
+        disableForm()
+        
+        showActivityIndicator()
+        
         let route = AuthRoute.register(name: name!,
                                        email: email!,
                                        password: password!,
                                        birthday: birthday!)
         
         Session.shared.requestJSON(route) { response in
+            DispatchQueue.main.async {
+                self.hideActivityIndicator(replaceWith: self.createButton)
+                
+                self.enableForm()
+            }
+            
             guard response.statusCode != 422 else {
                 if response.errors!["email"] != nil {
                     DispatchQueue.main.async { self.showEmailTakenAlert() }
