@@ -17,6 +17,8 @@ class SettingsController: UITableViewController {
     
     @IBOutlet weak var manualEntriesCell: UITableViewCell!
     
+    @IBOutlet weak var lastSyncedAtLabel: UILabel!
+    
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
@@ -27,6 +29,8 @@ class SettingsController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         stateLabel.text = Cache.shared.residingState.rawValue
+        
+        configureLastSyncedAt()
     }
     
     // MARK: Profile
@@ -35,6 +39,18 @@ class SettingsController: UITableViewController {
         nameLabel.text = Keychain.shared.get(.name)!
         
         emailLabel.text = Keychain.shared.get(.email)!
+    }
+    
+    // MARK: Last Synced At
+    
+    func configureLastSyncedAt() {
+        let date = Cache.shared.lastSyncedAt
+        
+        let dateStyle: DateFormatter.Style = date.isDateToday ? .none : .long
+        
+        let lastSyncedAt = date.local(date: dateStyle, time: .short)
+        
+        lastSyncedAtLabel.text = "Last synchronized: \(lastSyncedAt)"
     }
     
     // MARK: Permit

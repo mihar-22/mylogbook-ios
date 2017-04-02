@@ -10,6 +10,10 @@ extension Date {
         case dateTime = "yyyy-MM-dd HH:mm:ss"
     }
     
+    var isDateToday: Bool {
+        return Calendar.current.isDateInToday(self)
+    }
+    
     func utc(format: Format) -> String {
         let formatter = DateFormatter()
         
