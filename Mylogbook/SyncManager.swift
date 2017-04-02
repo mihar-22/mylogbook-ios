@@ -47,6 +47,8 @@ class SyncManager {
     func start() {
         guard network.isReachable else { return }
 
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
         queue.async {
             if !self.isSyncPrepared { self.prepare() }
             else { self.sync() }
@@ -76,14 +78,12 @@ class SyncManager {
         let tripRoute = ResourceRoute<Trip>.index
         
         group.notify(queue: queue) {
-            SyncStore<Trip>.import(from: tripRoute) { _ in self.preparationComplete() }
+            SyncStore<Trip>.import(from: tripRoute) { _ in
+                self.isSyncPrepared = true
+                
+                self.syncComplete()
+            }
         }
-    }
-    
-    private func preparationComplete() {
-        self.isSyncPrepared = true
-        
-        self.lastSyncedAt = Date()
     }
     
     // MARK: Sync
@@ -133,6 +133,12 @@ class SyncManager {
             }
         }
         
-        group.notify(queue: self.queue) { self.lastSyncedAt = Date() }
+        group.notify(queue: self.queue) { self.syncComplete() }
+    }
+    
+    private func syncComplete() {
+        self.lastSyncedAt = Date()
+        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 }
