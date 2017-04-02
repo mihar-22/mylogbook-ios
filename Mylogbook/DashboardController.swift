@@ -74,6 +74,8 @@ class DashboardController: UIViewController {
         
         configureDatePicker()
         configureDatePickerToolbar()
+        
+        observeNotifications()
     }
     
     override func viewDidLayoutSubviews() {
@@ -84,12 +86,6 @@ class DashboardController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         reset()
-        
-        publishButton.isEnabled = !isEmptyDataSet
-        
-        scrollContentView.isHidden = isEmptyDataSet
-        
-        scrollView.reloadEmptyDataSet()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -108,6 +104,12 @@ class DashboardController: UIViewController {
         statistics.calculate()
         
         mapView.isHidden = true
+        
+        publishButton.isEnabled = !isEmptyDataSet
+        
+        scrollContentView.isHidden = isEmptyDataSet
+        
+        scrollView.reloadEmptyDataSet()
     }
     
     func resetTimeCard() {
@@ -191,6 +193,23 @@ class DashboardController: UIViewController {
             
             Cache.shared.save()
         }
+    }
+    
+    // MARK: Notifications
+    
+    func observeNotifications() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(syncPreparationCompleted),
+                                               name: Notification.syncPreparationComplete.name,
+                                               object: nil)
+    }
+    
+    func syncPreparationCompleted() {
+        reset()
+        
+        reload()
+        
+        showMap()
     }
 }
 

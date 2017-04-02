@@ -62,6 +62,7 @@
 		C9A006831E849E1700548775 /* NswComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A006821E849E1700548775 /* NswComposer.swift */; };
 		C9A0DFF31E5ACDE300102DE0 /* WeatherRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0DFF21E5ACDE300102DE0 /* WeatherRoute.swift */; };
 		C9B37B671E3D963800168846 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B37B661E3D963800168846 /* Trip.swift */; };
+		C9B552B91E90D0440042598E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B552B81E90D0440042598E /* Notification.swift */; };
 		C9C6F6761E54595300231949 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6F6751E54595300231949 /* Appearance.swift */; };
 		C9C6F6781E545A1B00231949 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6F6771E545A1B00231949 /* KeyboardManager.swift */; };
 		C9C6F67A1E55B75100231949 /* LogRecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6F6791E55B75100231949 /* LogRecordController.swift */; };
@@ -143,6 +144,7 @@
 		C9A006821E849E1700548775 /* NswComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NswComposer.swift; sourceTree = "<group>"; };
 		C9A0DFF21E5ACDE300102DE0 /* WeatherRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherRoute.swift; sourceTree = "<group>"; };
 		C9B37B661E3D963800168846 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		C9B552B81E90D0440042598E /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		C9C6F6751E54595300231949 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		C9C6F6771E545A1B00231949 /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		C9C6F6791E55B75100231949 /* LogRecordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogRecordController.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				C935B73A1E0B7A2E00FD7FFF /* Networking */,
 				C908D3C61E24D5BF00A4E91C /* Keychain.swift */,
 				C9C6F6771E545A1B00231949 /* KeyboardManager.swift */,
+				C9B552B81E90D0440042598E /* Notification.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 				C9EBBD711E2DA20F00B5E509 /* CarController.swift in Sources */,
 				C9EBBD611E2C61B700B5E509 /* CarsController.swift in Sources */,
 				C9B37B671E3D963800168846 /* Trip.swift in Sources */,
+				C9B552B91E90D0440042598E /* Notification.swift in Sources */,
 				C99FC9141E1BB395003BAEC2 /* Validator.swift in Sources */,
 				C98E77961E398FE900F34468 /* Toolbar.swift in Sources */,
 				C942357D1E6BAFD6003E9D4E /* EntriesController.swift in Sources */,

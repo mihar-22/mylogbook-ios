@@ -81,6 +81,10 @@ class SyncManager {
             SyncStore<Trip>.import(from: tripRoute) { _ in
                 self.isSyncPrepared = true
                 
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: Notification.syncPreparationComplete.name, object: nil)
+                }
+                
                 self.syncComplete()
             }
         }
