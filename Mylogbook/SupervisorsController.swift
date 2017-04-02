@@ -1,6 +1,7 @@
 
 import UIKit
 import CoreStore
+import DZNEmptyDataSet
 import PopupDialog
 
 class SupervisorsController: UIViewController {
@@ -17,6 +18,8 @@ class SupervisorsController: UIViewController {
     
     override func viewDidLoad() {
         supervisors.addObserver(self)
+        
+        setupEmptyDataSet()
     }
     
     deinit {
@@ -57,6 +60,39 @@ extension SupervisorsController: Alerting {
         }
         
         showAlert(title: title, message: message, buttons: [cancelButton, deleteButton])
+    }
+}
+
+// MARK: Empty Data Set
+
+extension SupervisorsController: EmptyView, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func setupEmptyDataSet() {
+        supervisorsTable.emptyDataSetSource = self
+        supervisorsTable.emptyDataSetDelegate = self
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "empty-supervisors")
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return emptyView(title: "No Supervisors")
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return emptyView(description: "Supervisors overseeing your trips will be here")
+    }
+    
+    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControlState) -> NSAttributedString! {
+        return emptyViewButton(title: "Add your first supervisor")
+    }
+    
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+        performSegue(withIdentifier: "newSupervisorSegue", sender: nil)
+    }
+    
+    func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+        return emptyView(offset: 0)
     }
 }
 

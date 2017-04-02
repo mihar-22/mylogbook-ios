@@ -1,6 +1,7 @@
 
 import UIKit
 import CoreStore
+import DZNEmptyDataSet
 import PopupDialog
 
 class CarsController: UIViewController {
@@ -17,6 +18,8 @@ class CarsController: UIViewController {
     
     override func viewDidLoad() {
         cars.addObserver(self)
+        
+        setupEmptyDataSet()
     }
     
     deinit {
@@ -57,6 +60,39 @@ extension CarsController: Alerting {
         }
             
         showAlert(title: title, message: message, buttons: [cancelButton, deleteButton])
+    }
+}
+
+// MARK: Empty Data Set
+
+extension CarsController: EmptyView, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func setupEmptyDataSet() {
+        carsTable.emptyDataSetSource = self
+        carsTable.emptyDataSetDelegate = self
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "empty-cars")
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return emptyView(title: "No Cars")
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return emptyView(description: "Cars you will be driving on trips will be here")
+    }
+    
+    func buttonTitle(forEmptyDataSet scrollView: UIScrollView!, for state: UIControlState) -> NSAttributedString! {
+        return emptyViewButton(title: "Add your first car")
+    }
+    
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap button: UIButton!) {
+        performSegue(withIdentifier: "newCarSegue", sender: nil)
+    }
+    
+    func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+        return emptyView(offset: 0)
     }
 }
 

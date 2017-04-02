@@ -4,6 +4,7 @@ import BEMCheckBox
 import Charts
 import CoreStore
 import Dispatch
+import DZNEmptyDataSet
 import Foundation
 import MapKit
 import MBCircularProgressBar
@@ -25,6 +26,10 @@ class DashboardController: UIViewController {
     let tasks = Tasks()
     
     var editingTask: Task? = nil
+    
+    var isEmptyDataSet: Bool {
+        return statistics.numberOfTrips == 0
+    }
     
     // MARK: Outlets
     
@@ -51,6 +56,11 @@ class DashboardController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewTopSpace: NSLayoutConstraint!
 
+    @IBOutlet weak var publishButton: UIBarButtonItem!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollContentView: UIView!
+    
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
@@ -66,11 +76,25 @@ class DashboardController: UIViewController {
         configureDatePickerToolbar()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if scrollView.emptyDataSetSource == nil { setupEmptyDataSet() }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         reset()
+        
+        publishButton.isEnabled = !isEmptyDataSet
+        
+        scrollContentView.isHidden = isEmptyDataSet
+        
+        scrollView.reloadEmptyDataSet()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        guard !isEmptyDataSet else { return }
+        
         reload()
         
         showMap()
@@ -167,6 +191,36 @@ class DashboardController: UIViewController {
             
             Cache.shared.save()
         }
+    }
+}
+
+// MARK: Empty Data Set
+
+extension DashboardController: EmptyView, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func setupEmptyDataSet() {
+        scrollView.emptyDataSetSource = self
+        scrollView.emptyDataSetDelegate = self
+        scrollView.reloadEmptyDataSet()
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "empty-dashboard")
+    }
+    
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+        return isEmptyDataSet
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return emptyView(title: "No Recordings")
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return emptyView(description: "Data about your progress and trips will be here")
+    }
+    
+    func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+        return emptyView(offset: -10)
     }
 }
 

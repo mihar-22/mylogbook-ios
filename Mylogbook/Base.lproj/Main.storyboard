@@ -853,6 +853,9 @@
                         <outlet property="nightRequiredTimeStackView" destination="Aqh-Sn-8Jh" id="eaA-Ix-Bqw"/>
                         <outlet property="nightTotalTime" destination="VFK-mY-ROd" id="ZUD-O6-0Jy"/>
                         <outlet property="progressCardHeight" destination="foB-RP-sce" id="8fp-EN-y12"/>
+                        <outlet property="publishButton" destination="hKK-Bo-Pqv" id="kKD-V0-zS8"/>
+                        <outlet property="scrollContentView" destination="pEt-QB-ReE" id="lnW-Ff-wSQ"/>
+                        <outlet property="scrollView" destination="4ay-eU-NKf" id="sOq-ja-CfG"/>
                         <outlet property="tableView" destination="LNg-In-MDT" id="5v7-H5-1gx"/>
                         <outlet property="tableViewTopSpace" destination="rvB-OV-jPI" id="cqU-v0-6IV"/>
                         <outlet property="totalTripsLabel" destination="KES-VC-Qdl" id="I4J-xk-I6Q"/>
@@ -1714,6 +1717,8 @@
                     <connections>
                         <outlet property="carTextField" destination="WZj-ua-Zuh" id="dqt-ka-dHo"/>
                         <outlet property="odometerTextField" destination="YdN-gs-1tC" id="b2S-DQ-IH1"/>
+                        <outlet property="scrollContentView" destination="EjL-1H-8Of" id="rI3-tK-o6m"/>
+                        <outlet property="scrollView" destination="4Lb-qt-AJR" id="88M-ls-2AW"/>
                         <outlet property="startButton" destination="qks-hg-kdr" id="DPH-9S-0qn"/>
                         <outlet property="supervisorTextField" destination="XcL-g1-2iE" id="VWR-2H-MaC"/>
                     </connections>

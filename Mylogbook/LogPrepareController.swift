@@ -1,5 +1,6 @@
 
 import CoreStore
+import DZNEmptyDataSet
 import PopupDialog
 import UIKit
 
@@ -15,6 +16,10 @@ class LogPrepareController: UIViewController {
     
     var selectedSupervisor = 0
     
+    var isEmptyDataSet: Bool {
+        return cars.count == 0 || supervisors.count == 0
+    }
+    
     // MARK: Outlets
     
     @IBOutlet weak var carTextField: TextField!
@@ -23,11 +28,12 @@ class LogPrepareController: UIViewController {
     
     @IBOutlet weak var startButton: UIBarButtonItem!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollContentView: UIView!
+    
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
-        fetch()
-        
         setupValidator()
         
         setupTypePickers()
@@ -35,8 +41,26 @@ class LogPrepareController: UIViewController {
         odometerTextField.setupValueFormatting()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if scrollView.emptyDataSetSource == nil { setupEmptyDataSet() }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        if isViewLoaded { fetch() }
+        fetch()
+        
+        startButton.isEnabled = !isEmptyDataSet
+        
+        scrollContentView.isHidden = isEmptyDataSet
+        
+        scrollView.reloadEmptyDataSet()
+
+        if !isEmptyDataSet {
+            updateCarViews()
+            
+            updateSupervisorViews()
+        }
     }
     
     // MARK: Fetch
@@ -112,6 +136,36 @@ class LogPrepareController: UIViewController {
     }
 }
 
+// MARK: Empty Data Set
+
+extension LogPrepareController: EmptyView, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func setupEmptyDataSet() {
+        scrollView.emptyDataSetSource = self
+        scrollView.emptyDataSetDelegate = self
+        scrollView.reloadEmptyDataSet()
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "empty-log")
+    }
+    
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+        return isEmptyDataSet
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return emptyView(title: "Not Ready")
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return emptyView(description: "You'll be needing a car and supervisor")
+    }
+    
+    func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+        return emptyView(offset: -10)
+    }
+}
+
 // MARK: UI Picker View - Delegate + Data Source
 
 extension LogPrepareController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -129,8 +183,6 @@ extension LogPrepareController: UIPickerViewDelegate, UIPickerViewDataSource {
         typePicker.dataSource = self
         
         carTextField.inputView = typePicker
-        
-        updateCarViews()
     }
     
     func setupSupervisorPicker() {
@@ -141,8 +193,6 @@ extension LogPrepareController: UIPickerViewDelegate, UIPickerViewDataSource {
         typePicker.dataSource = self
         
         supervisorTextField.inputView = typePicker
-        
-        updateSupervisorViews()
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

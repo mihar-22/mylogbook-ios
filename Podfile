@@ -13,4 +13,5 @@ target 'Mylogbook' do
 	pod 'Charts'
 	pod 'Solar'
 	pod 'BEMCheckBox'
+	pod 'DZNEmptyDataSet'
 end
