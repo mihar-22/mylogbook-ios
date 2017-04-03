@@ -63,6 +63,7 @@
 		C9A0DFF31E5ACDE300102DE0 /* WeatherRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0DFF21E5ACDE300102DE0 /* WeatherRoute.swift */; };
 		C9B37B671E3D963800168846 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B37B661E3D963800168846 /* Trip.swift */; };
 		C9B552B91E90D0440042598E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B552B81E90D0440042598E /* Notification.swift */; };
+		C9B552BB1E91FD4E0042598E /* LastRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B552BA1E91FD4E0042598E /* LastRoute.swift */; };
 		C9C6F6761E54595300231949 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6F6751E54595300231949 /* Appearance.swift */; };
 		C9C6F6781E545A1B00231949 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6F6771E545A1B00231949 /* KeyboardManager.swift */; };
 		C9C6F67A1E55B75100231949 /* LogRecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6F6791E55B75100231949 /* LogRecordController.swift */; };
@@ -145,6 +146,7 @@
 		C9A0DFF21E5ACDE300102DE0 /* WeatherRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherRoute.swift; sourceTree = "<group>"; };
 		C9B37B661E3D963800168846 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		C9B552B81E90D0440042598E /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		C9B552BA1E91FD4E0042598E /* LastRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastRoute.swift; sourceTree = "<group>"; };
 		C9C6F6751E54595300231949 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		C9C6F6771E545A1B00231949 /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		C9C6F6791E55B75100231949 /* LogRecordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogRecordController.swift; sourceTree = "<group>"; };
@@ -199,15 +201,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		C908A9CF1E74CE410040AAB1 /* Cache */ = {
-			isa = PBXGroup;
-			children = (
-				C9FFDDB71E5DADC200AEFDC7 /* Cache.swift */,
-				C908A9D01E74CE510040AAB1 /* Entries.swift */,
-			);
-			name = Cache;
-			sourceTree = "<group>";
-		};
 		C908A9D41E74D22D0040AAB1 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,13 +232,13 @@
 		C92AA0271E11FD5900A92067 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				C908A9CF1E74CE410040AAB1 /* Cache */,
 				C908A9D41E74D22D0040AAB1 /* Statistics */,
 				C94406061E49B05C00D32AC3 /* Sync */,
 				C99FC9121E1B90A0003BAEC2 /* Validator */,
 				C9EC4D2B1E3ECE0300A80348 /* Stores */,
 				C9EBBD6E1E2C855600B5E509 /* Models */,
 				C935B73A1E0B7A2E00FD7FFF /* Networking */,
+				C9FFDDB71E5DADC200AEFDC7 /* Cache.swift */,
 				C908D3C61E24D5BF00A4E91C /* Keychain.swift */,
 				C9C6F6771E545A1B00231949 /* KeyboardManager.swift */,
 				C9B552B81E90D0440042598E /* Notification.swift */,
@@ -311,6 +304,7 @@
 				C978BF2D1E7F705F00C422D7 /* Publish */,
 				C9F193E31E77F49600B6AE9C /* Chart */,
 				C908A9D51E74D2CF0040AAB1 /* Tasks */,
+				C9B552BA1E91FD4E0042598E /* LastRoute.swift */,
 				C9EBBD5A1E28C45000B5E509 /* DashboardController.swift */,
 			);
 			name = Dashboard;
@@ -401,9 +395,9 @@
 		C997A5071E67F59100CF4F47 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				C9B552BC1E91FE710042598E /* Entries */,
 				C95CFB951E6E4EC100CC0BD1 /* StatesController.swift */,
 				C997A5051E67AF2C00CF4F47 /* SettingsController.swift */,
-				C942357C1E6BAFD6003E9D4E /* EntriesController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -415,6 +409,15 @@
 				C99FC9171E1BB534003BAEC2 /* Validation.swift */,
 			);
 			name = Validator;
+			sourceTree = "<group>";
+		};
+		C9B552BC1E91FE710042598E /* Entries */ = {
+			isa = PBXGroup;
+			children = (
+				C908A9D01E74CE510040AAB1 /* Entries.swift */,
+				C942357C1E6BAFD6003E9D4E /* EntriesController.swift */,
+			);
+			name = Entries;
 			sourceTree = "<group>";
 		};
 		C9CDFA741DEFDB2800CE0A2D = {
@@ -678,6 +681,7 @@
 				C970BCEA1E319F3500E1129A /* SupervisorController.swift in Sources */,
 				C908A9DE1E764B140040AAB1 /* Tasks.swift in Sources */,
 				C95B3B9E1E35FABD00533FB6 /* NavigationBar.swift in Sources */,
+				C9B552BB1E91FD4E0042598E /* LastRoute.swift in Sources */,
 				C951AEE91E80D8CE00E6DD00 /* TripCondition.swift in Sources */,
 				C98E778B1E37374900F34468 /* TextField.swift in Sources */,
 				C94BA8A11E5FF68D002E8F9E /* ChartValueFormatter.swift in Sources */,

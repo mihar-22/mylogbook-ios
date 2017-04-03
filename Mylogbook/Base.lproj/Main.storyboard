@@ -822,6 +822,7 @@
                         <outlet property="dayProgressBar" destination="wRB-1r-Lbz" id="oN7-ZC-HVs"/>
                         <outlet property="dayRequiredTimeStackView" destination="xLc-lC-bvR" id="tyF-YZ-lpm"/>
                         <outlet property="dayTotalTime" destination="tB8-Wp-zy0" id="YeC-yD-Gdc"/>
+                        <outlet property="lastRouteCard" destination="Omf-d2-IUy" id="JgW-1T-NaG"/>
                         <outlet property="lastRouteDistanceLabel" destination="js9-Bn-tob" id="YgT-5I-Deh"/>
                         <outlet property="lastRouteTimeLabel" destination="N5c-Do-JUH" id="T9p-a8-1PH"/>
                         <outlet property="mapView" destination="jx5-Jg-bkR" id="VAC-Mf-0ms"/>

@@ -70,7 +70,7 @@ class LogSummaryController: UIViewController {
         
         TripStore.add(trip)
         
-        Keychain.shared.setData(locations, for: .lastRoute)
+        saveLastRoute()
         
         cacheOdometer()
     }
@@ -78,6 +78,15 @@ class LogSummaryController: UIViewController {
     func saveLocations() {
         trip.startLocation = startLocationTextField.text!
         trip.endLocation = endLocationTextField.text!
+    }
+    
+    func saveLastRoute() {
+        let lastRoute = LastRoute(startedAt: trip.startedAt,
+                                  endedAt: trip.endedAt,
+                                  locations: locations,
+                                  distance: trip.distance)
+        
+        Keychain.shared.setData(lastRoute, for: .lastRoute)
     }
     
     func cacheOdometer() {

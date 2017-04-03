@@ -13,7 +13,7 @@ import UIKit
 
 class DashboardController: UIViewController {
     
-    var locations: [CLLocation]? { return Keychain.shared.getData(.lastRoute) }
+    var lastRoute: LastRoute? { return Keychain.shared.getData(.lastRoute) }
     
     var statistics: Statistics = { return Cache.shared.statistics }()
     
@@ -49,6 +49,7 @@ class DashboardController: UIViewController {
     @IBOutlet weak var barChartView: BarChartView!
     @IBOutlet weak var totalTripsLabel: UILabel!
     
+    @IBOutlet weak var lastRouteCard: Card!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var lastRouteTimeLabel: UILabel!
     @IBOutlet weak var lastRouteDistanceLabel: UILabel!
@@ -93,7 +94,7 @@ class DashboardController: UIViewController {
         
         reload()
         
-        showMap()
+        showLastRoute()
     }
     
     // MARK: Resets
@@ -103,7 +104,7 @@ class DashboardController: UIViewController {
         
         statistics.calculate()
         
-        mapView.isHidden = true
+        lastRouteCard.isHidden = true
         
         publishButton.isEnabled = !isEmptyDataSet
         
@@ -205,11 +206,11 @@ class DashboardController: UIViewController {
     }
     
     func syncPreparationCompleted() {
+        guard statistics.numberOfTrips == 0 else { return }
+        
         reset()
         
         reload()
-        
-        showMap()
     }
 }
 
@@ -520,33 +521,25 @@ extension DashboardController {
     }
 }
 
-// FIXME: Review Last Route saving + function
-
 // MARK: Map View Delegate
 
 extension DashboardController: MKMapViewDelegate {
-    func showMap() {
+    func showLastRoute() {
+        guard lastRoute != nil else { return }
+        
         let deadline = DispatchTime.now() + .seconds(1)
         
         DispatchQueue.main.asyncAfter(deadline: deadline) {
-            self.mapView.isHidden = false
+            self.lastRouteCard.isHidden = false
+            
+            self.setupLastRouteCard()
         }
     }
 
-    func buildLastRoute() {
-        // guard locations != nil && locations!.count > 0 && trips.count > 0 else { return }
+    func setupLastRouteCard() {
+        lastRouteTimeLabel.text = lastRoute!.totalTime.time()
         
-        guard locations != nil && locations!.count > 0 else { return }
-        
-        // let lastTrip = trips.last!
-        
-        // lastRouteTimeLabel.text = lastTrip.totalTime.time()
-        
-        // lastRouteDistanceLabel.text = lastTrip.distance.distance()
-        
-        lastRouteTimeLabel.text = "0s"
-        
-        lastRouteDistanceLabel.text = "0m"
+        lastRouteDistanceLabel.text = lastRoute!.distance.distance()
         
         setupMapView()
     }
@@ -554,7 +547,9 @@ extension DashboardController: MKMapViewDelegate {
     func setupMapView() {
         mapView.delegate = self
         
-        let center = locations![(locations!.count - 1) / 2].coordinate
+        let locations = lastRoute!.locations
+        
+        let center = locations[(locations.count - 1) / 2].coordinate
         
         let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         
@@ -562,10 +557,12 @@ extension DashboardController: MKMapViewDelegate {
         
         mapView.setRegion(region, animated: true)
         
-        var coordinates = locations!.map { $0.coordinate }
+        var coordinates = locations.map { $0.coordinate }
         
         let polyline = MKPolyline(coordinates: &coordinates,
                                   count: coordinates.count)
+        
+        mapView.removeOverlays(mapView.overlays)
         
         mapView.add(polyline)
         
@@ -577,17 +574,19 @@ extension DashboardController: MKMapViewDelegate {
         
         startAnnotation.title = "Started Here"
         
-        // startAnnotation.subtitle = trips.last!.startedAt.string(date: .none, time: .short)
+        startAnnotation.subtitle = lastRoute!.startedAt.local(date: .none, time: .short)
         
-        startAnnotation.coordinate = locations!.first!.coordinate
+        startAnnotation.coordinate = lastRoute!.locations.first!.coordinate
         
         let endAnnotation = MKPointAnnotation()
         
         endAnnotation.title = "Ended Here"
         
-        // endAnnotation.subtitle = trips.last!.endedAt.string(date: .none, time: .short)
+        endAnnotation.subtitle = lastRoute!.endedAt.local(date: .none, time: .short)
         
-        endAnnotation.coordinate = locations!.last!.coordinate
+        endAnnotation.coordinate = lastRoute!.locations.last!.coordinate
+        
+        mapView.removeAnnotations(mapView.annotations)
         
         mapView.addAnnotations([startAnnotation, endAnnotation])
     }
