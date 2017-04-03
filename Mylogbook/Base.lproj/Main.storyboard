@@ -1994,17 +1994,17 @@
                         <viewControllerLayoutGuide type="bottom" id="xB1-Fk-NMz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vlX-gC-fkt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1197"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1206"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YE0-4k-NsK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1197"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1206"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lEM-7G-Mor">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1082"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1094"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Dom-Y2-fBk">
-                                                <rect key="frame" x="16" y="16" width="343" height="1054"/>
+                                                <rect key="frame" x="16" y="16" width="343" height="1066"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="6D7-nM-l05">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="120"/>
@@ -2288,7 +2288,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bx-8D-Wbt" customClass="Card" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="728" width="343" height="326"/>
+                                                        <rect key="frame" x="0.0" y="728" width="343" height="338"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Route" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLn-FI-iDA">
                                                                 <rect key="frame" x="14" y="14" width="45" height="20.5"/>
@@ -2297,25 +2297,25 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="73i-qE-0Wo">
-                                                                <rect key="frame" x="16" y="46.5" width="311" height="267.5"/>
+                                                                <rect key="frame" x="16" y="47" width="311" height="278.5"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="tad-9T-WkG">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="311" height="19"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tad-9T-WkG">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="311" height="30"/>
                                                                         <subviews>
-                                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Suburb" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vbm-Rb-o8R">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="146" height="19"/>
+                                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start Suburb" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vbm-Rb-o8R">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="142" height="30"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
                                                                             </textField>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v95-l9-phF">
-                                                                                <rect key="frame" x="150" y="0.0" width="11.5" height="19"/>
+                                                                                <rect key="frame" x="150" y="0.0" width="11.5" height="30"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="End Suburb" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HCt-iV-8U6">
-                                                                                <rect key="frame" x="165.5" y="0.0" width="145.5" height="19"/>
+                                                                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="End Suburb" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HCt-iV-8U6">
+                                                                                <rect key="frame" x="169.5" y="0.0" width="141.5" height="30"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
@@ -2326,13 +2326,13 @@
                                                                         </constraints>
                                                                     </stackView>
                                                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ELQ-0B-GIf">
-                                                                        <rect key="frame" x="0.0" y="35" width="311" height="180"/>
+                                                                        <rect key="frame" x="0.0" y="46" width="311" height="180"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="180" id="Mft-6N-K3H"/>
                                                                         </constraints>
                                                                     </mapView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ysD-jj-AS7">
-                                                                        <rect key="frame" x="0.0" y="231" width="311" height="36.5"/>
+                                                                        <rect key="frame" x="0.0" y="242" width="311" height="36.5"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="iU8-Uv-1rD">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="155.5" height="36.5"/>
@@ -2380,7 +2380,7 @@
                                                         <constraints>
                                                             <constraint firstItem="LLn-FI-iDA" firstAttribute="top" secondItem="2bx-8D-Wbt" secondAttribute="topMargin" constant="6" id="AOI-qM-taM"/>
                                                             <constraint firstItem="73i-qE-0Wo" firstAttribute="leading" secondItem="2bx-8D-Wbt" secondAttribute="leadingMargin" constant="8" id="Cri-Pa-LUO"/>
-                                                            <constraint firstAttribute="height" constant="326" id="Miw-WP-IB3"/>
+                                                            <constraint firstAttribute="height" constant="338" id="Miw-WP-IB3"/>
                                                             <constraint firstAttribute="trailingMargin" secondItem="73i-qE-0Wo" secondAttribute="trailing" constant="8" id="SNJ-Oe-w4b"/>
                                                             <constraint firstItem="LLn-FI-iDA" firstAttribute="leading" secondItem="2bx-8D-Wbt" secondAttribute="leadingMargin" constant="6" id="djJ-sl-83l"/>
                                                             <constraint firstItem="73i-qE-0Wo" firstAttribute="top" secondItem="LLn-FI-iDA" secondAttribute="bottom" constant="12" id="xWK-o7-NQs"/>
@@ -2428,7 +2428,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1197"/>
+                    <size key="freeformSize" width="375" height="1206"/>
                     <connections>
                         <outlet property="carNameLabel" destination="DEO-im-Bs0" id="sp4-hi-xla"/>
                         <outlet property="carTypeImage" destination="ru1-xC-hcn" id="kJs-QT-SAz"/>

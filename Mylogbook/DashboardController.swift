@@ -104,7 +104,7 @@ class DashboardController: UIViewController {
         
         statistics.calculate()
         
-        lastRouteCard.isHidden = true
+        mapView.isHidden = true
         
         publishButton.isEnabled = !isEmptyDataSet
         
@@ -525,13 +525,18 @@ extension DashboardController {
 
 extension DashboardController: MKMapViewDelegate {
     func showLastRoute() {
-        guard lastRoute != nil else { return }
-        
         let deadline = DispatchTime.now() + .seconds(1)
         
         DispatchQueue.main.asyncAfter(deadline: deadline) {
+            guard self.lastRoute != nil else {
+                self.lastRouteCard.isHidden = true
+
+                return
+            }
+
             self.lastRouteCard.isHidden = false
-            
+            self.mapView.isHidden = false
+
             self.setupLastRouteCard()
         }
     }
