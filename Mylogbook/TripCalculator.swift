@@ -6,8 +6,10 @@ import Solar
 struct TripCalculation {
     var day: Int
     var night: Int
-    var sunrise: Int
-    var sunset: Int
+    
+    var total: Int {
+        return day + night
+    }
 }
 
 // MARK: Light Result
@@ -38,44 +40,49 @@ struct TripCalculator {
     
     static func calculate(for trip: Trip) -> TripCalculation {
         let start = trip.startedAt.secondsFromStartOfDay(in: trip.timeZone)
-        
         let end = trip.endedAt.secondsFromStartOfDay(in: trip.timeZone)
         
         let (sunrise, sunset) = calculateDayTime(for: trip)
         
         let secondsPerDay = 86_400
         
-        let days = (start + Int(trip.totalTime)) / secondsPerDay
+        let days = (start + Int(trip.totalTimeInterval)) / secondsPerDay
         
         var totalDay = 0
-        
         var totalNight = 0
         
         for day in 0 ... days {
             let start = (day == 0) ? start : 0
-
             let end = (day == days) ? end : secondsPerDay
             
             totalDay += max(0, min(end, sunset) - max(start, sunrise))
-            
             totalNight += max(0, end - max(start, sunset)) + max(0, min(end, sunrise) - start)
         }
         
-        return TripCalculation(day: totalDay, night: totalNight, sunrise: sunrise, sunset: sunset)
+        return TripCalculation(day: totalDay, night: totalNight)
+    }
+    
+    // MARK: Calculate Bonus
+    
+    static func calculateBonus(for value: Int, bonusRemaining: inout Int) -> Int {
+        let bonus = min(bonusRemaining, value * Cache.shared.residingState.bonusMultiplier)
+        
+        bonusRemaining -= bonus
+        
+        return bonus
     }
     
     // MARK: Calculate Light Conditions
     
     static func calculateLightConditions(for trip: Trip) -> LightResult {
         let start = trip.startedAt.secondsFromStartOfDay(in: trip.timeZone)
-        
         let end = trip.endedAt.secondsFromStartOfDay(in: trip.timeZone)
         
         let twilight = calculateTwilight(for: trip)
         
         let secondsPerDay = 86_400
         
-        let days = (start + Int(trip.totalTime)) / secondsPerDay
+        let days = (start + Int(trip.totalTimeInterval)) / secondsPerDay
         
         let dawn = twilight.astronomicalDawn ... twilight.civilDawn
         let day = twilight.civilDawn ... twilight.civilDusk
@@ -87,7 +94,6 @@ struct TripCalculator {
         
         for _day in 0 ... days {
             let start = (_day == 0) ? start : 0
-            
             let end = (_day == days) ? end : secondsPerDay
             
             let trip = start ... end

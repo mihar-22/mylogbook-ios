@@ -15,7 +15,7 @@ class Trip: NSManagedObject {
         return TimeZone(identifier: timeZoneIdentifier)!
     }
     
-    var totalTime: TimeInterval {
+    var totalTimeInterval: TimeInterval {
         return endedAt.timeIntervalSince(startedAt)
     }
     

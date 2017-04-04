@@ -104,9 +104,9 @@ struct LogTask: Task  {
     var completionTime: Int
     
     init(time: Int, completionTime: Int, dependencies: [Task]) {
-        self.time = time / (secondsPerHour: 3600)
+        self.time = time.convert(from: .second, to: .hour)
         
-        self.completionTime = completionTime / (secondsPerHour: 3600)
+        self.completionTime = completionTime.convert(from: .second, to: .hour)
         
         self.dependencies = dependencies
     }

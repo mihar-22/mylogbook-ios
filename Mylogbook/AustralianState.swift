@@ -50,7 +50,7 @@ enum AustralianState: String {
     }
 }
 
-// MARK: Requirements
+// MARK: General Requirements
 
 extension AustralianState {
     var totalLoggedTimeRequired: Int {
@@ -112,42 +112,48 @@ extension AustralianState {
     }
 }
 
-// MARK: Bonus
+// MARK: Bonuses
 
 extension AustralianState {
-    var totalBonusAvailable: Int {
+    var timeBonusIsAvailable: Int {
         switch self {
-        case .queensland, .newSouthWhales:
-            return 72_000
-        default:
-            return 0
-        }
-    }
-        
-    var bonusMultiplier: Int {
-        switch self {
-        case .queensland, .newSouthWhales:
-            return 3
+        case .newSouthWhales, .queensland:
+            return 36_000
         default:
             return 0
         }
     }
     
+    var bonusMultiplier: Int {
+        switch self {
+        case .newSouthWhales, .queensland:
+            return 2
+        default:
+            return 0
+        }
+    }
+    
+    var totalBonusAvailable: Int {
+        return timeBonusIsAvailable * bonusMultiplier
+    }
+}
+
+// MARK: New South Whales Requirements
+
+extension AustralianState {    
     static var timeRequiredForSaferDrivers: Int {
         return 180_000
     }
     
-    static var saferDriversBonus: Int {        
+    static var saferDriversBonus: Int {
         return 72_000
     }
 }
 
-// MARK: Stages
+// MARK: Tasmania Requirements
 
 extension AustralianState {
     enum TasmaniaStage { case L1, L2 }
-    
-    enum WesternAustraliaStage { case S1, S2 }
     
     static func loggedTimeRequired(for stage: TasmaniaStage) -> Int {
         switch stage {
@@ -157,6 +163,21 @@ extension AustralianState {
             return 180_000
         }
     }
+
+    static func monthsRequired(for stage: TasmaniaStage) -> Int {
+        switch stage {
+        case .L1:
+            return 3
+        case .L2:
+            return 9
+        }
+    }
+}
+
+// MARK: Western Australia Requirements
+
+extension AustralianState {
+    enum WesternAustraliaStage { case S1, S2 }
     
     static func loggedTimeRequired(for stage: WesternAustraliaStage) -> Int {
         switch stage {
@@ -164,15 +185,6 @@ extension AustralianState {
             return 90_000
         case .S2:
             return 90_000
-        }
-    }
-    
-    static func monthsRequired(for stage: TasmaniaStage) -> Int {
-        switch stage {
-        case .L1:
-            return 3
-        case .L2:
-            return 9
         }
     }
     

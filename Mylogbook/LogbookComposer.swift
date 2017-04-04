@@ -129,4 +129,9 @@ extension LogbookComposer {
     func insertTraffic(for trip: Trip, into row: inout String) {
         row = row.replacingOccurrences(of: "#TRAFFIC#", with: trip.traffic)
     }
+    
+    func insertLocation(for trip: Trip, into row: inout String) {
+        row = row.replacingOccurrences(of: "#LOCATION_FROM#", with: trip.startLocation.truncate(length: 20))
+        row = row.replacingOccurrences(of: "#LOCATION_TO#", with: trip.endLocation.truncate(length: 20))
+    }
 }

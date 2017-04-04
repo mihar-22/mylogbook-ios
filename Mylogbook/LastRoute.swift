@@ -10,7 +10,7 @@ class LastRoute: NSObject, NSCoding {
     var locations: [CLLocation]
     var distance: Double
     
-    var totalTime: TimeInterval {
+    var totalTimeInterval: TimeInterval {
         return endedAt.timeIntervalSince(startedAt)
     }
     

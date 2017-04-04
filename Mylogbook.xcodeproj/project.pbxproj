@@ -59,11 +59,12 @@
 		C99FC90F1E1B5AF7003BAEC2 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC90E1E1B5AF7003BAEC2 /* SignUpController.swift */; };
 		C99FC9141E1BB395003BAEC2 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC9131E1BB395003BAEC2 /* Validator.swift */; };
 		C99FC9181E1BB534003BAEC2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC9171E1BB534003BAEC2 /* Validation.swift */; };
-		C9A006831E849E1700548775 /* NswComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A006821E849E1700548775 /* NswComposer.swift */; };
 		C9A0DFF31E5ACDE300102DE0 /* WeatherRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0DFF21E5ACDE300102DE0 /* WeatherRoute.swift */; };
 		C9B37B671E3D963800168846 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B37B661E3D963800168846 /* Trip.swift */; };
 		C9B552B91E90D0440042598E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B552B81E90D0440042598E /* Notification.swift */; };
 		C9B552BB1E91FD4E0042598E /* LastRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B552BA1E91FD4E0042598E /* LastRoute.swift */; };
+		C9B552BE1E922FE80042598E /* QldComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B552BD1E922FE80042598E /* QldComposer.swift */; };
+		C9B552C01E923D7C0042598E /* NswComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B552BF1E923D7C0042598E /* NswComposer.swift */; };
 		C9C6F6761E54595300231949 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6F6751E54595300231949 /* Appearance.swift */; };
 		C9C6F6781E545A1B00231949 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6F6771E545A1B00231949 /* KeyboardManager.swift */; };
 		C9C6F67A1E55B75100231949 /* LogRecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6F6791E55B75100231949 /* LogRecordController.swift */; };
@@ -142,11 +143,12 @@
 		C99FC90E1E1B5AF7003BAEC2 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		C99FC9131E1BB395003BAEC2 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		C99FC9171E1BB534003BAEC2 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		C9A006821E849E1700548775 /* NswComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NswComposer.swift; sourceTree = "<group>"; };
 		C9A0DFF21E5ACDE300102DE0 /* WeatherRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherRoute.swift; sourceTree = "<group>"; };
 		C9B37B661E3D963800168846 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		C9B552B81E90D0440042598E /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		C9B552BA1E91FD4E0042598E /* LastRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastRoute.swift; sourceTree = "<group>"; };
+		C9B552BD1E922FE80042598E /* QldComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QldComposer.swift; sourceTree = "<group>"; };
+		C9B552BF1E923D7C0042598E /* NswComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NswComposer.swift; sourceTree = "<group>"; };
 		C9C6F6751E54595300231949 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		C9C6F6771E545A1B00231949 /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
 		C9C6F6791E55B75100231949 /* LogRecordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogRecordController.swift; sourceTree = "<group>"; };
@@ -323,7 +325,9 @@
 			isa = PBXGroup;
 			children = (
 				C951AEF11E82140300E6DD00 /* VicComposer.swift */,
-				C9A006821E849E1700548775 /* NswComposer.swift */,
+				C9B552BF1E923D7C0042598E /* NswComposer.swift */,
+				C9B552BD1E922FE80042598E /* QldComposer.swift */,
+				C978BF301E7F713F00C422D7 /* LogbookComposer.swift */,
 			);
 			name = Composers;
 			sourceTree = "<group>";
@@ -377,7 +381,6 @@
 			isa = PBXGroup;
 			children = (
 				C951AEEE1E8210AB00E6DD00 /* Composers */,
-				C978BF301E7F713F00C422D7 /* LogbookComposer.swift */,
 			);
 			name = Publish;
 			sourceTree = "<group>";
@@ -650,10 +653,10 @@
 				C945AA521E5C25AB00FAF9E9 /* LogSummaryController.swift in Sources */,
 				C9A0DFF31E5ACDE300102DE0 /* WeatherRoute.swift in Sources */,
 				C9F1B98D1E094DCC002D4D61 /* Env.swift in Sources */,
-				C9A006831E849E1700548775 /* NswComposer.swift in Sources */,
 				C931A7B71E8A751200F916BC /* TabBar.swift in Sources */,
 				C98E778F1E382C8500F34468 /* NibView.swift in Sources */,
 				C9C6F6761E54595300231949 /* Appearance.swift in Sources */,
+				C9B552BE1E922FE80042598E /* QldComposer.swift in Sources */,
 				C95CFB921E6E419400CC0BD1 /* OnboardPermitController.swift in Sources */,
 				C925000D1E8A012E006BA96D /* TripItem.swift in Sources */,
 				C987DD121E64F5D00011F223 /* TripCalculator.swift in Sources */,
@@ -661,6 +664,7 @@
 				C9F193E01E769B1F00B6AE9C /* AustralianState.swift in Sources */,
 				C99FC90F1E1B5AF7003BAEC2 /* SignUpController.swift in Sources */,
 				C9EC4D391E40123400A80348 /* SyncManager.swift in Sources */,
+				C9B552C01E923D7C0042598E /* NswComposer.swift in Sources */,
 				C997A5061E67AF2C00CF4F47 /* SettingsController.swift in Sources */,
 				C9CDFA891DEFDB2800CE0A2D /* Mylogbook.xcdatamodeld in Sources */,
 				C9F193E21E77730900B6AE9C /* BarChart.swift in Sources */,

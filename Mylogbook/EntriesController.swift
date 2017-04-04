@@ -22,6 +22,12 @@ class EntriesController: UITableViewController {
     // MARK: View Lifecycles
     
     override func viewWillAppear(_ animated: Bool) {
+        guard !residingState.isBonusCreditsAvailable else {
+            setupWithBonus()
+            
+            return
+        }
+        
         setup()
     }
     
@@ -30,47 +36,63 @@ class EntriesController: UITableViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        guard !residingState.isBonusCreditsAvailable else {
+            saveWithBonus()
+            
+            return
+        }
+        
         save()
     }
     
     // MARK: Settings
     
     func setup() {
-        let secondsPerMinute = 60
+        let dayValue = entries.day.convert(from: .second, to: .minute)
+        let nightValue = entries.night.convert(from: .second, to: .minute)
+
+        if dayValue > 0 { dayTextField.valueText = String(dayValue) }
+        if nightValue > 0 { nightTextField.valueText = String(nightValue) }
+    }
+    
+    func setupWithBonus() {
+        let dayValue = entries.day.convert(from: .second, to: .minute)
+        let nightValue = entries.night.convert(from: .second, to: .minute)
+        let dayBonusValue = (entries.dayBonus ?? 0).convert(from: .second, to: .minute) / residingState.bonusMultiplier
+        let nightBonusValue = (entries.nightBonus ?? 0).convert(from: .second, to: .minute) / residingState.bonusMultiplier
         
-        if entries.day > 0 {
-            dayTextField.valueText = String(entries.day / secondsPerMinute)
-        }
+        let dayValueAdjusted = max(dayValue, dayBonusValue) - min(dayValue, dayBonusValue)
+        if dayValueAdjusted > 0 { dayTextField.valueText = String(dayValueAdjusted) }
         
-        if entries.night > 0 {
-            nightTextField.valueText = String(entries.night / secondsPerMinute)
-        }
+        let nightValueAdjusted = max(nightValue, nightBonusValue) - min(nightValue, nightBonusValue)
+        if nightValueAdjusted > 0 { nightTextField.valueText = String(nightValueAdjusted) }
         
-        if residingState.isBonusCreditsAvailable {
-            if let minutes = entries.dayBonus, minutes > 0 {
-                dayBonusTextField.valueText = String(minutes / secondsPerMinute)
-            }
-            
-            if let minutes = entries.nightBonus, minutes > 0 {
-                nightBonusTextField.valueText = String(minutes / secondsPerMinute)
-            }
-        }
+        if dayBonusValue > 0 { dayBonusTextField.valueText = String(dayBonusValue) }
+        if nightBonusValue > 0 { nightBonusTextField.valueText = String(nightBonusValue) }
     }
     
     func save() {
-        let secondsPerMinute = 60
+        let dayValue = dayTextField.value.convert(from: .minute, to: .second)
+        let nightValue = nightTextField.value.convert(from: .minute, to: .second)
         
-        entries.day = dayTextField.value * secondsPerMinute
-
-        entries.night = nightTextField.value * secondsPerMinute
-        
-        if residingState.isBonusCreditsAvailable {
-            entries.dayBonus = dayBonusTextField.value * secondsPerMinute
-            
-            entries.nightBonus = nightBonusTextField.value * secondsPerMinute
-        }
+        entries.day = dayValue
+        entries.night = nightValue
         
         Cache.shared.save()
+    }
+    
+    func saveWithBonus() {
+        let dayValue = dayTextField.value.convert(from: .minute, to: .second)
+        let nightValue = nightTextField.value.convert(from: .minute, to: .second)
+        let dayBonusValue = dayBonusTextField.value.convert(from: .minute, to: .second)
+        let nightBonusValue = nightBonusTextField.value.convert(from: .minute, to: .second)
+        
+        entries.day = dayValue + dayBonusValue
+        entries.night = nightValue + nightBonusValue
+        entries.dayBonus = dayBonusValue * residingState.bonusMultiplier
+        entries.nightBonus = nightBonusValue * residingState.bonusMultiplier
+        
+        Cache.shared.statistics.refresh()
     }
     
     // MARK: Table View
@@ -116,42 +138,41 @@ class EntriesController: UITableViewController {
 
 extension EntriesController: UITextFieldDelegate {
     func setupTextFields() {
-        setup(dayTextField, tag: 0)
+        setup(dayTextField)
 
-        setup(nightTextField, tag: 1)
+        setup(nightTextField)
         
         if residingState.isBonusCreditsAvailable {
-            setup(dayBonusTextField, tag: 2)
+            setup(dayBonusTextField)
             
-            setup(nightBonusTextField, tag: 3)
+            setup(nightBonusTextField)
         }
     }
     
-    func setup(_ textField: UITextField, tag: Int) {
-        textField.tag = tag
+    func setup(_ textField: UITextField) {
         textField.delegate = self
         textField.setupValueFormatting()
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard textField.value > 0 else { return }
-
+        
         let tag = textField.tag
         
         guard !residingState.is(.tasmania) && !residingState.is(.westernAustralia) else {
-            let otherTextField = (tag == 0) ? nightTextField : dayTextField
+            let otherTextField = (tag == dayTextField.tag) ? nightTextField : dayTextField
             
             adjustValueWithTotalLimit(textField, otherTextField!, isBonusSection: false)
             
             return
         }
         
-        if tag == 0 {
+        if tag == dayTextField.tag {
             adjustDayValue()
-        } else if tag == 1 {
+        } else if tag == nightTextField.tag {
             adjustNightValue()
         } else {
-            let otherTextField = (tag == 2) ? nightBonusTextField : dayBonusTextField
+            let otherTextField = (tag == dayBonusTextField.tag) ? nightBonusTextField : dayBonusTextField
             
             adjustValueWithTotalLimit(textField, otherTextField!, isBonusSection: true)
         }
@@ -160,28 +181,26 @@ extension EntriesController: UITextFieldDelegate {
     func adjustDayValue() {
         let minutes = dayTextField.value
         
-        let maxMinutes = residingState.loggedTimeRequired.day / (secondsPerMinute: 60)
+        let maxMinutes = residingState.loggedTimeRequired.day.convert(from: .second, to: .minute)
         
         let value = min(maxMinutes, minutes)
         
-        dayTextField.valueText = (value > 0) ? String(value) : nil
+        dayTextField.valueText = String(value)
     }
     
     func adjustNightValue() {
         let minutes = nightTextField.value
         
-        let maxMinutes = residingState.loggedTimeRequired.night / (secondsPerMinute: 60)
+        let maxMinutes = residingState.loggedTimeRequired.night.convert(from: .second, to: .minute)
         
         let value = min(maxMinutes, minutes)
         
-        nightTextField.valueText = (value > 0) ? String(value) : nil
+        nightTextField.valueText = String(value)
     }
     
     func adjustValueWithTotalLimit(_ textField: UITextField, _ otherTextField: UITextField, isBonusSection: Bool) {
-        let secondsPerMinute = 60
-        
-        let  maxTotalMinutes = isBonusSection ? residingState.totalBonusAvailable / secondsPerMinute :
-                                                residingState.totalLoggedTimeRequired / secondsPerMinute
+        let maxTotalMinutes = isBonusSection ? residingState.timeBonusIsAvailable.convert(from: .second, to: .minute):
+                                               residingState.totalLoggedTimeRequired.convert(from: .second, to: .minute)
         
         let totalMinutesLeft = max(0, maxTotalMinutes - otherTextField.value)
         

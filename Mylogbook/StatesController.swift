@@ -6,6 +6,10 @@ import UIKit
 class StatesController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var states: [AustralianState] = AustralianState.all
     
+    var previousState: AustralianState = {
+        return Cache.shared.residingState
+    }()
+    
     var currentState: AustralianState {
         get {
             return Cache.shared.residingState
@@ -19,7 +23,7 @@ class StatesController: UIViewController, UITableViewDataSource, UITableViewDele
     // MARK: View Lifecycles
     
     override func viewWillDisappear(_ animated: Bool) {
-        Cache.shared.save()
+        if previousState != currentState { Cache.shared.statistics.refresh() }
     }
     
     // MARK: Table View

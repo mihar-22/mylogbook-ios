@@ -13,7 +13,7 @@
     
     var subtotalRowTemplate: String? = nil
     
-    var allTotal = 0
+    var total = 0
     
     var nightTotal = 0
     
@@ -27,25 +27,16 @@
         var row = rowTemplate
         
         insertID(forRowAt: index, into: &row)
-        
         insertDate(for: trip, into: &row)
-        
         insertTime(for: trip, into: &row)
-        
         insertOdometer(for: trip, into: &row)
-        
         insertRegno(for: trip, into: &row)
-        
         insertSupervisor(for: trip, into: &row)
-        
         insertLoggedTime(for: trip, into: &row)
-        
+        insertLoggedTotal(into: &row)
         insertWeather(for: trip, into: &row)
-        
         insertTraffic(for: trip, into: &row)
-        
         insertRoads(for: trip, into: &row)
-        
         insertLight(for: trip, into: &row)
         
         return row
@@ -56,34 +47,25 @@
 
         let units: NSCalendar.Unit = [.hour, .minute]
 
-        let total = (calculation.day + calculation.night)
+        row = row.replacingOccurrences(of: "#ALL_TIME#", with: calculation.total.duration(in: units))
+        row = row.replacingOccurrences(of: "#NIGHT_TIME#", with: calculation.night.duration(in: units))
 
-        let allTime = TimeInterval(total).time(in: units)
+        self.total += calculation.total
+        
+        self.nightTotal += calculation.night
+    }
+    
+    func insertLoggedTotal(into row: inout String) {
+        let units: NSCalendar.Unit = [.hour, .minute]
 
-        let nightTime = TimeInterval(calculation.night).time(in: units)
-
-        row = row.replacingOccurrences(of: "#ALL_TIME#", with: allTime)
-
-        row = row.replacingOccurrences(of: "#NIGHT_TIME#", with: nightTime)
-
-        allTotal += total
-
-        nightTotal += calculation.night
-
-        let allTotalTime = TimeInterval(allTotal).time(in: units)
-
-        let nightTotalTime = TimeInterval(nightTotal).time(in: units)
-
-        row = row.replacingOccurrences(of: "#ALL_SUM#", with: allTotalTime)
-
-        row = row.replacingOccurrences(of: "#NIGHT_SUM#", with: nightTotalTime)
+        row = row.replacingOccurrences(of: "#ALL_SUM#", with: total.duration(in: units))
+        row = row.replacingOccurrences(of: "#NIGHT_SUM#", with: nightTotal.duration(in: units))
     }
 
     private func insertWeather(for trip: Trip, into row: inout String) {
         var weather = ""
 
         if trip.weather.containsAny(Weather.dry) { weather.add("D") }
-
         if trip.weather.containsAny(Weather.wet) { weather.add("W") }
 
         row = row.replacingOccurrences(of: "#WEATHER#", with: weather)
@@ -97,9 +79,7 @@
         var light = ""
         
         if trip.light.contains(Light.day) { light.add("D") }
-        
         if trip.light.contains(Light.dawn) || trip.light.contains(Light.dusk) { light.add("K") }
-        
         if trip.light.contains(Light.night) { light.add("N") }
         
         row = row.replacingOccurrences(of: "#LIGHT#", with: light)

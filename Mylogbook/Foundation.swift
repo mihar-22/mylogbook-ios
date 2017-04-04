@@ -122,6 +122,10 @@ extension String {
         self += self.isEmpty ? "\(code)" : ",\(code)"
     }
     
+    mutating func add(_ code: String) {
+        self += self.isEmpty ? code : ",\(code)"
+    }
+    
     mutating func remove(_ code: Character) {
         guard self.characters.contains(code) else {
             return
@@ -136,6 +140,56 @@ extension String {
         let target = (self.characters.first == code) ? "\(code)," : ",\(code)"
         
         self = self.replacingOccurrences(of: target, with: "")
+    }
+}
+
+// MARK: Int
+
+extension Int {
+    enum TimeUnit {
+        case second, minute, hour
+    }
+    
+    func convert(from: TimeUnit,  to: TimeUnit) -> Int {
+        switch from {
+        case .second:
+            switch to {
+            case .second:
+                return self
+            case .minute:
+                return self / 60
+            case .hour:
+                return self / 3600
+            }
+        case .minute:
+            switch to {
+            case .second:
+                return self * 60
+            case .minute:
+                return self
+            case .hour:
+                return self / 60
+            }
+        case .hour:
+            switch to {
+            case .second:
+                return self * 3600
+            case .minute:
+                return self * 60
+            case .hour:
+                return self
+            }
+        }
+    }
+    
+    func duration(style: DateComponentsFormatter.UnitsStyle = .abbreviated) -> String {
+        return TimeInterval(self).duration(style: style)
+    }
+    
+    func duration(in units: NSCalendar.Unit,
+                  style: DateComponentsFormatter.UnitsStyle = .abbreviated) -> String {
+        
+        return TimeInterval(self).duration(in: units)
     }
 }
 
@@ -162,7 +216,7 @@ extension Double {
 // MARK: Time Interval
 
 extension TimeInterval {
-    func time(style: DateComponentsFormatter.UnitsStyle = .abbreviated) -> String {
+    func duration(style: DateComponentsFormatter.UnitsStyle = .abbreviated) -> String {
         let formatter = DateComponentsFormatter()
         
         formatter.unitsStyle = style
@@ -170,8 +224,8 @@ extension TimeInterval {
         return formatter.string(from: self)!
     }
     
-    func time(in units: NSCalendar.Unit,
-              style: DateComponentsFormatter.UnitsStyle = .abbreviated) -> String {
+    func duration(in units: NSCalendar.Unit,
+                  style: DateComponentsFormatter.UnitsStyle = .abbreviated) -> String {
         
         let formatter = DateComponentsFormatter()
         

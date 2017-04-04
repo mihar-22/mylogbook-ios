@@ -116,7 +116,7 @@ class LogSummaryController: UIViewController {
         startLocationTextField.addTarget(self, action: #selector(didChangeTextField(_:)), for: .editingChanged)
         endLocationTextField.addTarget(self, action: #selector(didChangeTextField(_:)), for: .editingChanged)
         
-        totalTimeLabel.text = trip.totalTime.time()
+        totalTimeLabel.text = trip.totalTimeInterval.duration()
         totalDistanceLabel.text = trip.distance.distance()
         
         setupMapView()

@@ -151,6 +151,14 @@ enum Road: String, TripConditionable, ChartSettable {
     
     static let all = [localStreet, mainRoad, innerCity, freeway, ruralRoad, gravel]
     
+    static var sealed: [Road] {
+        return [localStreet, mainRoad, innerCity, freeway, ruralRoad]
+    }
+    
+    static var unsealed: [Road] {
+        return [gravel]
+    }    
+    
     var color: UIColor {
         switch self {
         case .localStreet:

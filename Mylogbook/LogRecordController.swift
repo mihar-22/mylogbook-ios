@@ -186,7 +186,7 @@ class LogRecordController: UIViewController, ActivityView {
     func eachTimerInterval(_ timer: Timer) {
         seconds += 1
         
-        timeLabel.text = TimeInterval(seconds).time()
+        timeLabel.text = seconds.duration()
     }
     
     // MARK: Navigation

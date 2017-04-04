@@ -11,7 +11,7 @@ import MBCircularProgressBar
 import PopupDialog
 import UIKit
 
-class DashboardController: UIViewController {
+class DashboardController: UIViewController, ActivityView {
     
     var lastRoute: LastRoute? { return Keychain.shared.getData(.lastRoute) }
     
@@ -102,7 +102,7 @@ class DashboardController: UIViewController {
     func reset() {
         resetTimeCard()
         
-        statistics.calculate()
+        statistics.update()
         
         mapView.isHidden = true
         
@@ -115,11 +115,9 @@ class DashboardController: UIViewController {
     
     func resetTimeCard() {
         dayTotalTime.alpha = 0
-        
         nightTotalTime.alpha = 0
         
         dayProgressBar.value = 0
-        
         nightProgressBar.value = 0
     }
     
@@ -154,24 +152,41 @@ class DashboardController: UIViewController {
         
         BarChart.build(barChartView, for: currentChartSegment())
         
-        totalTripsLabel.text = "\(statistics.numberOfTrips)"
+        totalTripsLabel.text = String(statistics.numberOfTrips)
     }
     
     // MARK: Actions
     
     @IBAction func didTapPublish(_ sender: UIBarButtonItem) {
-        let composer = NswComposer()
-        
-        let html = composer.renderHTML()
-        
-        let webView = UIWebView(frame: CGRect(x: 0,
-                                              y: 64,
-                                              width: view.bounds.width,
-                                              height: view.bounds.height - 49))
-        
-        view.addSubview(webView)
-        
-        webView.loadHTMLString(html, baseURL: nil)
+        DispatchQueue.main.async {
+            var composer: LogbookComposer!
+            
+            switch self.residingState {
+            case .victoria:
+                composer = VicComposer()
+            case .newSouthWhales:
+                composer = NswComposer()
+            case .queensland:
+                composer = QldComposer()
+            case .southAustralia:
+                break
+            case .tasmania:
+                break
+            case .westernAustralia:
+                break
+            }
+            
+            let html = composer.renderHTML()
+            
+            let webView = UIWebView(frame: CGRect(x: 0,
+                                                  y: 64,
+                                                  width: self.view.bounds.width,
+                                                  height: self.view.bounds.height - 49))
+            
+            self.view.addSubview(webView)
+            
+            webView.loadHTMLString(html, baseURL: nil)
+        }
     }
     
     func didTapEditButton(_ sender: UIButton) {
@@ -211,6 +226,8 @@ class DashboardController: UIViewController {
         reset()
         
         reload()
+        
+        showLastRoute()
     }
 }
 
@@ -270,9 +287,9 @@ extension DashboardController {
     func setProgressBarsValues() {
         let (day, night) = (statistics.dayLogged, statistics.nightLogged)
         
-        dayTotalTime.text = TimeInterval(day).time(in: [.hour, .minute])
+        dayTotalTime.text = day.duration(in: [.hour, .minute])
         
-        nightTotalTime.text = TimeInterval(night).time(in: [.hour, .minute])
+        nightTotalTime.text = night.duration(in: [.hour, .minute])
         
         UIView.animate(withDuration: 1.0) {
             self.dayTotalTime.alpha = 1
@@ -300,15 +317,13 @@ extension DashboardController {
             return
         }
         
-        let secondsPerHour = 3600
+        let dayMax = Int(dayProgressBar.maxValue).convert(from: .second, to: .hour)
         
-        let dayMax = Int(dayProgressBar.maxValue) / secondsPerHour
+        let nightMax = Int(nightProgressBar.maxValue).convert(from: .second, to: .hour)
         
-        let nightMax = Int(nightProgressBar.maxValue) / secondsPerHour
+        dayHoursRequiredLabel.text = String(dayMax)
         
-        dayHoursRequiredLabel.text = "\(dayMax)"
-        
-        nightHoursRequiredLabel.text = "\(nightMax)"
+        nightHoursRequiredLabel.text = String(nightMax)
         
         hideRequiredTime(false)
     }
@@ -481,8 +496,6 @@ extension DashboardController: BEMCheckBoxDelegate {
             
             reloadTasks(animated: true)
             
-            statistics.calculate()
-            
             configureProgressBars()
             
             Cache.shared.save()
@@ -542,7 +555,7 @@ extension DashboardController: MKMapViewDelegate {
     }
 
     func setupLastRouteCard() {
-        lastRouteTimeLabel.text = lastRoute!.totalTime.time()
+        lastRouteTimeLabel.text = lastRoute!.totalTimeInterval.duration()
         
         lastRouteDistanceLabel.text = lastRoute!.distance.distance()
         
