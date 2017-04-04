@@ -5,13 +5,17 @@
  
  class VicComposer: LogbookComposer {
     
-    var styleTemplate: String = ""
+    var styleTemplate = ""
     
-    var htmlTemplate: String = ""
+    var htmlTemplate = ""
     
-    var rowTemplate: String = ""
+    var rowTemplate = ""
     
     var subtotalRowTemplate: String? = nil
+    
+    var numberOfTrips = 0
+    
+    var units: NSCalendar.Unit = [.hour, .minute]
     
     var total = 0
     
@@ -45,8 +49,6 @@
     private func insertLoggedTime(for trip: Trip, into row: inout String) {
         let calculation = TripCalculator.calculate(for: trip)
 
-        let units: NSCalendar.Unit = [.hour, .minute]
-
         row = row.replacingOccurrences(of: "#ALL_TIME#", with: calculation.total.duration(in: units))
         row = row.replacingOccurrences(of: "#NIGHT_TIME#", with: calculation.night.duration(in: units))
 
@@ -55,9 +57,7 @@
         self.nightTotal += calculation.night
     }
     
-    func insertLoggedTotal(into row: inout String) {
-        let units: NSCalendar.Unit = [.hour, .minute]
-
+    private func insertLoggedTotal(into row: inout String) {
         row = row.replacingOccurrences(of: "#ALL_SUM#", with: total.duration(in: units))
         row = row.replacingOccurrences(of: "#NIGHT_SUM#", with: nightTotal.duration(in: units))
     }

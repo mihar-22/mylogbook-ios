@@ -14,7 +14,9 @@ protocol LogbookComposer: class {
     
     var subtotalRowTemplate: String? { get set }
     
-    init()
+    var numberOfTrips: Int { get set }
+    
+    var units: NSCalendar.Unit { get set }
         
     func renderHTML() -> String
     
@@ -33,6 +35,10 @@ extension LogbookComposer {
             basePath += (Cache.shared.currentEntries.isAssessmentComplete ?? false) ? "L2/tas-L2" : "L1/tas-L1"
         } else {
             basePath += "\(state)"
+        }
+        
+        if Cache.shared.residingState.is(.westernAustralia) {
+            basePath = "tables/tas/L2/tas-L2"
         }
         
         let htmlURL = Bundle.main.url(forResource: "\(basePath)", withExtension: "html")!
@@ -69,6 +75,9 @@ extension LogbookComposer {
     func renderHTMLRows() -> String {
         let trips = Store.shared.stack.fetchAll(From<Trip>(),
                                                 OrderBy(.ascending("startedAt")))!
+        
+        numberOfTrips = trips.count
+        
         var rows = ""
         
         for (index, trip) in trips.enumerated() {

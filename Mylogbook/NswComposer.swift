@@ -1,21 +1,32 @@
  
  import Foundation
  
- // MARK: Nsw Composer
+ // MARK: New South Whales Composer
  
  class NswComposer: LogbookComposer {
     
-    var styleTemplate: String = ""
+    var styleTemplate = ""
     
-    var htmlTemplate: String = ""
+    var htmlTemplate = ""
     
-    var rowTemplate: String = ""
+    var rowTemplate = ""
     
     var subtotalRowTemplate: String? = nil
+    
+    var numberOfTrips = 0
+    
+    var units: NSCalendar.Unit = [.hour, .minute]
     
     var dayTotal = 0
     
     var nightTotal = 0
+    
+    var bonusRemaining: Int = {
+        let dayBonus = Cache.shared.currentEntries.dayBonus
+        let nightBonus = Cache.shared.currentEntries.nightBonus
+        
+        return (Cache.shared.residingState.totalBonusAvailable - (dayBonus ?? 0) - (nightBonus ?? 0))
+    }()
     
     // MARK: Initializers
     
@@ -38,17 +49,17 @@
         insertTime(for: trip, into: &row)
         insertLoggedTime(for: trip, into: &row)
         
-        if index > 1 && index % 7 == 0 { appendSubtotal(onto: &row) }
+        if (index > 1 && index % 7 == 0) || (index == (numberOfTrips - 1)){ appendSubtotal(onto: &row) }
         
         return row
     }
     
-    func insertRoads(for trip: Trip, into row: inout String) {
+    private func insertRoads(for trip: Trip, into row: inout String) {
         var roads = ""
         
         if trip.roads.containsAny(Road.unsealed) { roads.add("U") }
-        if trip.roads.contains(Road.localStreet.code) && trip.traffic.contains(Traffic.light.code) { roads.add("QS") }
-        if trip.roads.contains(Road.mainRoad.code) { roads.add("MR") }
+        if trip.roads.contains(Road.localStreet) && trip.traffic.contains(Traffic.light) { roads.add("QS") }
+        if trip.roads.contains(Road.mainRoad) { roads.add("MR") }
         if trip.roads.containsAny(Road.sealed) {
             roads.add("S")
             
@@ -58,22 +69,27 @@
         row = row.replacingOccurrences(of: "#ROADS#", with: roads)
     }
     
-    func insertWeather(for trip: Trip, into row: inout String) {
+    private func insertWeather(for trip: Trip, into row: inout String) {
         var weather = ""
         
-        if trip.weather.contains(Weather.clear.code) { weather.add("F") }
-        if trip.weather.contains(Weather.rain.code) { weather.add("R") }
-        if trip.weather.contains(Weather.snow.code) { weather.add("S") }
-        if trip.weather.contains(Weather.hail.code) { weather.add("I") }
-        if trip.weather.contains(Weather.fog.code) { weather.add("FG") }
+        if trip.weather.contains(Weather.clear) { weather.add("F") }
+        if trip.weather.contains(Weather.rain) { weather.add("R") }
+        if trip.weather.contains(Weather.snow) { weather.add("S") }
+        if trip.weather.contains(Weather.hail) { weather.add("I") }
+        if trip.weather.contains(Weather.fog) { weather.add("FG") }
         
         row = row.replacingOccurrences(of: "#WEATHER#", with: weather)
     }
     
-    func insertLoggedTime(for trip: Trip, into row: inout String) {
-        let calculation = TripCalculator.calculate(for: trip)
+    private func insertLoggedTime(for trip: Trip, into row: inout String) {
+        var calculation = TripCalculator.calculate(for: trip)
         
-        let units: NSCalendar.Unit = [.hour, .minute]
+        if bonusRemaining > 0 && trip.supervisor.isAccredited {
+            let dayBonus = TripCalculator.calculateBonus(for: calculation.day, bonusRemaining: &bonusRemaining)
+            let nightBonus = TripCalculator.calculateBonus(for: calculation.night, bonusRemaining: &bonusRemaining)
+            
+            calculation.day += (dayBonus + nightBonus)
+        }
         
         row = row.replacingOccurrences(of: "#DAY_TIME#", with: calculation.day.duration(in: units))
         row = row.replacingOccurrences(of: "#NIGHT_TIME#", with: calculation.night.duration(in: units))
@@ -82,10 +98,8 @@
         nightTotal += calculation.night
     }
     
-    func appendSubtotal(onto row: inout String) {
+    private func appendSubtotal(onto row: inout String) {
         var subtotalRow = subtotalRowTemplate!
-        
-        let units: NSCalendar.Unit = [.hour, .minute]
         
         subtotalRow = subtotalRow.replacingOccurrences(of: "#DAY_TOTAL#", with: dayTotal.duration(in: units))
         subtotalRow = subtotalRow.replacingOccurrences(of: "#NIGHT_TOTAL#", with: nightTotal.duration(in: units))

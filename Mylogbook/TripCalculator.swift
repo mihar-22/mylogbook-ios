@@ -65,6 +65,8 @@ struct TripCalculator {
     // MARK: Calculate Bonus
     
     static func calculateBonus(for value: Int, bonusRemaining: inout Int) -> Int {
+        guard bonusRemaining > 0 else { return 0 }
+        
         let bonus = min(bonusRemaining, value * Cache.shared.residingState.bonusMultiplier)
         
         bonusRemaining -= bonus

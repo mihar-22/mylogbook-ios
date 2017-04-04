@@ -169,11 +169,11 @@ class DashboardController: UIViewController, ActivityView {
             case .queensland:
                 composer = QldComposer()
             case .southAustralia:
-                break
+                composer = SaComposer(version: .night)
             case .tasmania:
-                break
+                composer = TasmaniaComposer()
             case .westernAustralia:
-                break
+                composer = WaComposer()
             }
             
             let html = composer.renderHTML()
