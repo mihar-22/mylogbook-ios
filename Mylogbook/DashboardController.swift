@@ -8,6 +8,7 @@ import DZNEmptyDataSet
 import Foundation
 import MapKit
 import MBCircularProgressBar
+import MessageUI
 import PopupDialog
 import UIKit
 
@@ -158,35 +159,57 @@ class DashboardController: UIViewController, ActivityView {
     // MARK: Actions
     
     @IBAction func didTapPublish(_ sender: UIBarButtonItem) {
-        DispatchQueue.main.async {
-            var composer: LogbookComposer!
-            
-            switch self.residingState {
-            case .victoria:
-                composer = VicComposer()
-            case .newSouthWhales:
-                composer = NswComposer()
-            case .queensland:
-                composer = QldComposer()
-            case .southAustralia:
-                composer = SaComposer(version: .night)
-            case .tasmania:
-                composer = TasmaniaComposer()
-            case .westernAustralia:
-                composer = WaComposer()
-            }
-            
-            let html = composer.renderHTML()
-            
-            let webView = UIWebView(frame: CGRect(x: 0,
-                                                  y: 64,
-                                                  width: self.view.bounds.width,
-                                                  height: self.view.bounds.height - 49))
-            
-            self.view.addSubview(webView)
-            
-            webView.loadHTMLString(html, baseURL: nil)
+        var composer: LogbookComposer!
+        
+        switch self.residingState {
+        case .victoria:
+            composer = VicComposer()
+        case .newSouthWhales:
+            composer = NswComposer()
+        case .queensland:
+            composer = QldComposer()
+        case .southAustralia:
+            composer = SaComposer(version: .day)
+        case .tasmania:
+            composer = TasComposer()
+        case .westernAustralia:
+            composer = WaComposer()
         }
+        
+        let pdf = composer.createPDF()
+        
+        let actionSheet = UIAlertController(title: "How would you like to export your logbook?",
+                                            message: nil,
+                                            preferredStyle: .actionSheet)
+        
+        let emailAction = UIAlertAction(title: "Email", style: .default) { _ in
+            
+        }
+
+        let printAction = UIAlertAction(title: "Print", style: .default) { _ in
+            let printer = UIPrintInteractionController.shared
+            
+            let options = UIPrintInfo(dictionary: nil)
+
+            options.jobName = "Logbook"
+            options.outputType = .general
+            options.duplex = .none 
+            
+            printer.printingItem = pdf
+            printer.printInfo = options
+            
+            printer.present(animated: true, completionHandler: nil)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        actionSheet.addAction(emailAction)
+        actionSheet.addAction(printAction)
+        actionSheet.addAction(cancelAction)
+        
+        present(actionSheet, animated: true, completion: nil)
     }
     
     func didTapEditButton(_ sender: UIButton) {

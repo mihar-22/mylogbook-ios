@@ -3,17 +3,12 @@
  
  // MARK: Tasmania Composer
  
- class TasmaniaComposer: LogbookComposer {
-    
-    var styleTemplate = ""
-    
-    var htmlTemplate = ""
-    
+ class TasComposer: LogbookComposer {
     var rowTemplate = ""
     
     var subtotalRowTemplate: String? = nil
     
-    var numberOfTrips = 0
+    var numberOfRows = 0
     
     var units: NSCalendar.Unit = [.minute]
     
@@ -23,13 +18,7 @@
         return Cache.shared.currentEntries.isAssessmentComplete ?? false
     }()
     
-    // MARK: Initializers
-    
-    required init() {
-        loadHTMLTemplates()
-    }
-    
-    // MARK: Render Rows
+    // MARK: Render Row
     
     func renderHTMLRow(forRowAt index: Int, with trip: Trip) -> String {
         var row = rowTemplate
@@ -50,7 +39,7 @@
             insertSupervisor(for: trip, into: &row)
         }
         
-        if (index > 1 && index % 11 == 0) || (index == (numberOfTrips - 1)) {
+        if (index > 1 && index % 11 == 0) || (index == (numberOfRows - 1)) {
             appendSubtotal(onto: &row)
             
             totalMinutes = 0
@@ -58,6 +47,8 @@
         
         return row
     }
+    
+    // MARK: Insertions
     
     private func insertDistance(for trip: Trip, into row: inout String) {
         row = row.replacingOccurrences(of: "#DISTANCE#", with: trip.distance.distance())
@@ -99,8 +90,7 @@
         var roads = ""
         
         if trip.roads.contains(Road.localStreet) { roads.add("S") }
-        if trip.roads.contains(Road.freeway) { roads.add("H") }
-        if trip.roads.contains(Road.mainRoad) { roads.add("M") }
+        if trip.roads.contains(Road.mainRoad) { roads.add("M, H") }
         if trip.roads.contains(Road.ruralRoad) { roads.add("R") }
         if trip.roads.contains(Road.innerCity) { roads.add("C") }
         if trip.roads.contains(Road.gravel) { roads.add("G") }

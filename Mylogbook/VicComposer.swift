@@ -4,28 +4,19 @@
  // MARK: Victoria Composer
  
  class VicComposer: LogbookComposer {
-    
-    var styleTemplate = ""
-    
-    var htmlTemplate = ""
-    
     var rowTemplate = ""
     
     var subtotalRowTemplate: String? = nil
     
-    var numberOfTrips = 0
+    var numberOfRows = 0
     
     var units: NSCalendar.Unit = [.hour, .minute]
     
     var total = 0
     
     var nightTotal = 0
-    
-    // MARK: Initializers
-    
-    required init() { loadHTMLTemplates() }
-    
-    // MARK: Render Rows
+        
+    // MARK: Render Row
     
     func renderHTMLRow(forRowAt index: Int, with trip: Trip) -> String {
         var row = rowTemplate
@@ -45,7 +36,9 @@
         
         return row
      }
-     
+    
+    // MARK: Insertions
+    
     private func insertLoggedTime(for trip: Trip, into row: inout String) {
         let calculation = TripCalculator.calculate(for: trip)
 

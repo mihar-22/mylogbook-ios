@@ -4,16 +4,11 @@
  // MARK: Queensland Composer
  
  class QldComposer: LogbookComposer {
-    
-    var styleTemplate = ""
-    
-    var htmlTemplate = ""
-    
     var rowTemplate = ""
     
     var subtotalRowTemplate: String? = nil
     
-    var numberOfTrips = 0
+    var numberOfRows = 0
 
     var units: NSCalendar.Unit = [.minute]
 
@@ -30,11 +25,7 @@
         return (Cache.shared.residingState.totalBonusAvailable - (dayBonus ?? 0) - (nightBonus ?? 0))
     }()
     
-    // MARK: Initializers
-    
-    required init() { loadHTMLTemplates() }
-    
-    // MARK: Render Rows
+    // MARK: Render Row
     
     func renderHTMLRow(forRowAt index: Int, with trip: Trip) -> String {
         var row = rowTemplate
@@ -48,7 +39,7 @@
         insertTime(for: trip, into: &row)
         insertLoggedTime(for: trip, into: &row)
         
-        if (index > 1 && index % 8 == 0) || (index == (numberOfTrips - 1)) {
+        if (index > 1 && index % 8 == 0) || (index == (numberOfRows - 1)) {
             appendSubtotal(onto: &row)
             
             accreditedTotal = 0
@@ -58,6 +49,8 @@
         
         return row
     }
+    
+    // MARK: Insertions
     
     private func insertLoggedTime(for trip: Trip, into row: inout String) {
         let calculation = TripCalculator.calculate(for: trip)

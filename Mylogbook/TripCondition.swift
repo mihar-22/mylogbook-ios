@@ -157,7 +157,11 @@ enum Road: String, TripConditionable, ChartSettable {
     
     static var unsealed: [Road] {
         return [gravel]
-    }    
+    }
+    
+    static var multiLaned: [Road] {
+        return [mainRoad, freeway, innerCity]
+    }
     
     var color: UIColor {
         switch self {

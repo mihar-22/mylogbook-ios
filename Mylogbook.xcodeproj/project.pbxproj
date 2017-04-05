@@ -18,6 +18,7 @@
 		C91051BE1E93B7DE00B42F9D /* SaComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91051BD1E93B7DE00B42F9D /* SaComposer.swift */; };
 		C91051C11E93BDAE00B42F9D /* TasComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91051C01E93BDAE00B42F9D /* TasComposer.swift */; };
 		C91051C31E93C7CE00B42F9D /* WaComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91051C21E93C7CE00B42F9D /* WaComposer.swift */; };
+		C91051C71E950E4F00B42F9D /* tables in Resources */ = {isa = PBXBuildFile; fileRef = C91051C61E950E4F00B42F9D /* tables */; };
 		C924540E1E90B46300AEC83A /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924540D1E90B46300AEC83A /* ActivityView.swift */; };
 		C925000B1E8A0117006BA96D /* TripItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C925000A1E8A0117006BA96D /* TripItem.xib */; };
 		C925000D1E8A012E006BA96D /* TripItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C925000C1E8A012E006BA96D /* TripItem.swift */; };
@@ -36,7 +37,6 @@
 		C94BA89F1E5FF612002E8F9E /* ChartSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BA89E1E5FF612002E8F9E /* ChartSegment.swift */; };
 		C94BA8A11E5FF68D002E8F9E /* ChartValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BA8A01E5FF68D002E8F9E /* ChartValueFormatter.swift */; };
 		C951AEE91E80D8CE00E6DD00 /* TripCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C951AEE81E80D8CE00E6DD00 /* TripCondition.swift */; };
-		C951AEEB1E8205EA00E6DD00 /* tables in Resources */ = {isa = PBXBuildFile; fileRef = C951AEEA1E8205EA00E6DD00 /* tables */; };
 		C951AEF21E82140300E6DD00 /* VicComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C951AEF11E82140300E6DD00 /* VicComposer.swift */; };
 		C95487CA1E4C209B00C48F54 /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95487C91E4C209B00C48F54 /* Foundation.swift */; };
 		C95487D01E4D859600C48F54 /* Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95487CF1E4D859600C48F54 /* Sync.swift */; };
@@ -105,6 +105,7 @@
 		C91051BD1E93B7DE00B42F9D /* SaComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaComposer.swift; sourceTree = "<group>"; };
 		C91051C01E93BDAE00B42F9D /* TasComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasComposer.swift; sourceTree = "<group>"; };
 		C91051C21E93C7CE00B42F9D /* WaComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaComposer.swift; sourceTree = "<group>"; };
+		C91051C61E950E4F00B42F9D /* tables */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tables; sourceTree = "<group>"; };
 		C924540D1E90B46300AEC83A /* ActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		C925000A1E8A0117006BA96D /* TripItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TripItem.xib; sourceTree = "<group>"; };
 		C925000C1E8A012E006BA96D /* TripItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripItem.swift; sourceTree = "<group>"; };
@@ -123,7 +124,6 @@
 		C94BA89E1E5FF612002E8F9E /* ChartSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSegment.swift; sourceTree = "<group>"; };
 		C94BA8A01E5FF68D002E8F9E /* ChartValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartValueFormatter.swift; sourceTree = "<group>"; };
 		C951AEE81E80D8CE00E6DD00 /* TripCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripCondition.swift; sourceTree = "<group>"; };
-		C951AEEA1E8205EA00E6DD00 /* tables */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tables; sourceTree = "<group>"; };
 		C951AEF11E82140300E6DD00 /* VicComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VicComposer.swift; sourceTree = "<group>"; };
 		C95487C91E4C209B00C48F54 /* Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
 		C95487CF1E4D859600C48F54 /* Sync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sync.swift; sourceTree = "<group>"; };
@@ -336,7 +336,6 @@
 				C91051BD1E93B7DE00B42F9D /* SaComposer.swift */,
 				C91051C01E93BDAE00B42F9D /* TasComposer.swift */,
 				C91051C21E93C7CE00B42F9D /* WaComposer.swift */,
-				C978BF301E7F713F00C422D7 /* LogbookComposer.swift */,
 			);
 			name = Composers;
 			sourceTree = "<group>";
@@ -381,7 +380,7 @@
 		C978BF2C1E7F6FFD00C422D7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C951AEEA1E8205EA00E6DD00 /* tables */,
+				C91051C61E950E4F00B42F9D /* tables */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -390,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				C951AEEE1E8210AB00E6DD00 /* Composers */,
+				C978BF301E7F713F00C422D7 /* LogbookComposer.swift */,
 			);
 			name = Publish;
 			sourceTree = "<group>";
@@ -593,8 +593,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C91051C71E950E4F00B42F9D /* tables in Resources */,
 				C9CDFA8E1DEFDB2800CE0A2D /* LaunchScreen.storyboard in Resources */,
-				C951AEEB1E8205EA00E6DD00 /* tables in Resources */,
 				C9CDFA861DEFDB2800CE0A2D /* Main.storyboard in Resources */,
 				C925000B1E8A0117006BA96D /* TripItem.xib in Resources */,
 				C931A7B91E8A821D00F916BC /* Assets.xcassets in Resources */,

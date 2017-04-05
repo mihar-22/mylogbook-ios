@@ -33,7 +33,7 @@ class Tasks {
     func build() {
         tasks.removeAll()
         
-        switch Cache.shared.residingState {
+        switch residingState {
         case .victoria:
             buildTasksForVictoria()
         case .newSouthWhales:

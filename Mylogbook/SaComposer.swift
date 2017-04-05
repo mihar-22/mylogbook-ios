@@ -4,16 +4,11 @@
  // MARK: South Australia Composer
  
  class SaComposer: LogbookComposer {
-    
-    var styleTemplate = ""
-    
-    var htmlTemplate = ""
-    
     var rowTemplate = ""
     
     var subtotalRowTemplate: String? = nil
     
-    var numberOfTrips = 0
+    var numberOfRows = 0
     
     var units: NSCalendar.Unit = [.minute]
     
@@ -29,13 +24,17 @@
     
     required init(version: Version) {
         self.version = version
-        
-        loadHTMLTemplates()
     }
     
-    // MARK: Render Rows
+    // MARK: Render Row
     
     func renderHTMLRow(forRowAt index: Int, with trip: Trip) -> String {
+        let light = TripCalculator.calculateLightConditions(for: trip)
+        
+        guard (version == .day && light.day) || (version == .night && light.night) else {
+            return ""
+        }
+        
         var row = rowTemplate
         
         insertID(forRowAt: index, into: &row)
@@ -48,7 +47,7 @@
         insertTraffic(for: trip, into: &row)
         insertSupervisor(for: trip, into: &row)
         
-        if (index > 1 && index % 14 == 0) || (index == (numberOfTrips - 1)) {
+        if (index > 1 && index % 14 == 0) || (index == (numberOfRows - 1)) {
             appendSubtotal(onto: &row)
             
             totalMinutes = 0
@@ -56,6 +55,8 @@
         
         return row
     }
+    
+    // MARK: Insertions
     
     private func insertLoggedTime(for trip: Trip, into row: inout String) {
         let calculation = TripCalculator.calculate(for: trip)
@@ -76,22 +77,15 @@
     
     private func insertRoads(for trip: Trip, into row: inout String) {
         var roads = ""
-        
+
+        if trip.roads.containsAny(Road.sealed) { roads.add("S") }
         if trip.roads.containsAny(Road.unsealed) { roads.add("U") }
+        if trip.roads.containsAny(Road.multiLaned) { roads.add("ML") }
         if trip.roads.contains(Road.localStreet) && trip.traffic.contains(Traffic.light) { roads.add("Q") }
-        
-        if trip.roads.containsAny(Road.sealed) && (trip.traffic.contains(Traffic.moderate) ||
-                                                   trip.traffic.contains(Traffic.heavy)) {
+        if trip.roads.containsAny(Road.sealed) &&
+          (trip.traffic.contains(Traffic.moderate) ||
+           trip.traffic.contains(Traffic.heavy)) { roads.add("B") }
             
-            roads.add("B")
-        }
-        
-        if trip.roads.containsAny(Road.sealed) {
-            roads.add("S")
-            
-            roads.add("ML")
-        }
-        
         row = row.replacingOccurrences(of: "#ROADS#", with: roads)
     }
     
