@@ -28,6 +28,8 @@ class DashboardController: UIViewController, ActivityView {
     
     var editingTask: Task? = nil
     
+    var secondaryPdf: Data? = nil
+    
     var isEmptyDataSet: Bool {
         return statistics.numberOfTrips == 0
     }
@@ -159,7 +161,11 @@ class DashboardController: UIViewController, ActivityView {
     // MARK: Actions
     
     @IBAction func didTapPublish(_ sender: UIBarButtonItem) {
+        let publishButton = self.publishButton
+        
         var composer: LogbookComposer!
+        
+        var secondaryComposer: LogbookComposer? = nil
         
         switch self.residingState {
         case .victoria:
@@ -170,46 +176,25 @@ class DashboardController: UIViewController, ActivityView {
             composer = QldComposer()
         case .southAustralia:
             composer = SaComposer(version: .day)
+            
+            secondaryComposer = SaComposer(version: .night)
         case .tasmania:
             composer = TasComposer()
         case .westernAustralia:
             composer = WaComposer()
         }
         
-        let pdf = composer.createPDF()
-        
-        let actionSheet = UIAlertController(title: "How would you like to export your logbook?",
-                                            message: nil,
-                                            preferredStyle: .actionSheet)
-        
-        let emailAction = UIAlertAction(title: "Email", style: .default) { _ in
-            
-        }
+        showActivityIndicator()
 
-        let printAction = UIAlertAction(title: "Print", style: .default) { _ in
-            let printer = UIPrintInteractionController.shared
+        DispatchQueue.main.async {
+            let pdf = composer.createPDF()
             
-            let options = UIPrintInfo(dictionary: nil)
-
-            options.jobName = "Logbook"
-            options.outputType = .general
-            options.duplex = .none 
+            self.secondaryPdf = secondaryComposer?.createPDF() as? Data
             
-            printer.printingItem = pdf
-            printer.printInfo = options
+            self.showExportActionSheet(for: pdf)
             
-            printer.present(animated: true, completionHandler: nil)
+            self.hideActivityIndicator(replaceWith: publishButton)
         }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
-            self.dismiss(animated: true, completion: nil)
-        }
-        
-        actionSheet.addAction(emailAction)
-        actionSheet.addAction(printAction)
-        actionSheet.addAction(cancelAction)
-        
-        present(actionSheet, animated: true, completion: nil)
     }
     
     func didTapEditButton(_ sender: UIButton) {
@@ -251,6 +236,133 @@ class DashboardController: UIViewController, ActivityView {
         reload()
         
         showLastRoute()
+    }
+}
+
+// MARK: Alerting
+
+extension DashboardController: Alerting {
+    func showOfflineAlert() {
+        let title = "Offline Mode"
+        
+        let message = "You are currently offline and the learn more option requires you to be online. Connect online and try again."
+        
+        let cancelButton = CancelButton(title: "OKAY", action: nil)
+        
+        showAlert(title: title, message: message, buttons: [cancelButton])
+    }
+    
+    func showExportActionSheet(for pdf: NSData) {
+        let title = "How would you like to export your logbook?"
+        
+        let actionSheet = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
+        
+        let emailAction = UIAlertAction(title: "Email", style: .default) { _ in
+            self.exportWithMail(pdf)
+        }
+        
+        let printAction = UIAlertAction(title: "Print", style: .default) { _ in
+            self.exportWithPrinter(pdf)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        actionSheet.addAction(emailAction)
+        actionSheet.addAction(printAction)
+        actionSheet.addAction(cancelAction)
+        
+        present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func showMailCannotSendAlert() {
+        let title = "Setup Mail"
+        
+        let message = "The email cannot be sent because you have not setup mail on this device."
+
+        let settingsButton = DefaultButton(title: "SETTINGS") {
+            let url = URL(string: "App-Prefs:root=Mail")!
+            
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        
+        let cancelButton = CancelButton(title: "CANCEL", action: nil)
+        
+        showAlert(title: title, message: message, buttons: [cancelButton, settingsButton])
+    }
+    
+    func showPrintingNotAvailableAlert() {
+        let title = "Printing Not Available"
+        
+        let message = "Your device does not support printing."
+        
+        let cancelButton = CancelButton(title: "OKAY", action: nil)
+        
+        showAlert(title: title, message: message, buttons: [cancelButton])
+    }
+}
+
+// MARK: Export
+
+extension DashboardController {
+    func exportWithMail(_ pdf: NSData) {
+        guard MFMailComposeViewController.canSendMail() else {
+            showMailCannotSendAlert()
+            
+            return
+        }
+
+        let email = Keychain.shared.get(.email)!
+        
+        let mailer = MFMailComposeViewController()
+
+        mailer.mailComposeDelegate = self
+        mailer.setToRecipients([email])
+        mailer.setSubject("Logbook")
+        mailer.setMessageBody("Your logbook is attached as a PDF.", isHTML: false)
+        mailer.addAttachmentData(pdf as Data, mimeType: "application/pdf", fileName: "Logbook.pdf")
+        
+        if secondaryPdf != nil {
+            mailer.addAttachmentData(secondaryPdf!, mimeType: "application/pdf", fileName: "Night Logbook.pdf")
+        }
+        
+        present(mailer, animated: true, completion: nil)
+    }
+    
+    func exportWithPrinter(_ pdf: NSData) {
+        guard UIPrintInteractionController.isPrintingAvailable else {
+            showPrintingNotAvailableAlert()
+            
+            return
+        }
+        
+        let printer = UIPrintInteractionController.shared
+        
+        let options = UIPrintInfo(dictionary: nil)
+        
+        options.jobName = "Logbook"
+        options.outputType = .general
+        options.duplex = .none
+        options.orientation = .landscape
+        
+        printer.printingItem = pdf
+        printer.printInfo = options
+        
+        if secondaryPdf != nil { printer.printingItems = [pdf, secondaryPdf!] }
+        
+        printer.present(animated: true, completionHandler: nil)
+    }
+}
+
+// MARK: Mail Delegate
+
+extension DashboardController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController,
+                               didFinishWith result: MFMailComposeResult,
+                               error: Error?) {
+        
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -489,20 +601,6 @@ extension DashboardController: UITableViewDataSource, UITableViewDelegate {
         let task = tasks[indexPath.row]
         
         UIApplication.shared.open(task.learnMoreURL!)
-    }
-}
-
-// MARK: Alerting
-
-extension DashboardController: Alerting {
-    func showOfflineAlert() {
-        let title = "Offline Mode"
-        
-        let message = "You are currently offline and the learn more option requires you to be online. Connect online and try again."
-        
-        let cancelButton = CancelButton(title: "OKAY", action: nil)
-        
-        showAlert(title: title, message: message, buttons: [cancelButton])
     }
 }
 

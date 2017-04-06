@@ -48,7 +48,7 @@ extension LogbookComposer {
             
             rows += row
             
-            if (index > 1 && ((index + 1) % maximumRowsPerPage == 0)) {
+            if ((index > 1 && ((index + 1) % maximumRowsPerPage == 0)) || (index == (numberOfRows - 1))) {
                 var table = htmlTemplate
                 
                 table = table.replacingOccurrences(of: "#TABLE_BODY#", with: rows)
