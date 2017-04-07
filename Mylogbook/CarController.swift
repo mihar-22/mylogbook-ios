@@ -15,6 +15,12 @@ class CarController: UIViewController {
     var name: String? { return nameTextField.text }
     var type: String? { return typeTextField.text?.lowercased() }
     
+    var editCarType: String? {
+        guard car != nil else { return nil }
+        
+        return (car!.type == "suv") ? car!.type.uppercased() : car!.type.capitalized
+    }
+    
     let carTypes = [
         "Sedan",
         "SUV",
@@ -58,7 +64,7 @@ class CarController: UIViewController {
         
         registrationTextField.text = car!.registration
         nameTextField.text = car!.name
-        typeTextField.text = car!.type.capitalized
+        typeTextField.text = editCarType
         typeImage.image = car!.image(ofSize: .display)
         
         validator.revalidate()
@@ -100,6 +106,12 @@ extension CarController: UIPickerViewDelegate, UIPickerViewDataSource {
         
         typeTextField.text = carTypes[0]
         typeTextField.inputView = typePicker
+        
+        if isEdit {
+            let row = carTypes.index(of: editCarType!)!
+            
+            typePicker.selectRow(row, inComponent: 0, animated: false)
+        }
         
         setDisplayImage()
     }

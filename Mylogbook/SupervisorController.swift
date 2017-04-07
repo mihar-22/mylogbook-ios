@@ -94,8 +94,11 @@ extension SupervisorController: UIPickerViewDelegate, UIPickerViewDataSource {
         genderPicker.dataSource = self
         
         genderTextField.inputView = genderPicker
-
         genderTextField.text = genders[0]
+        
+        if isEdit && supervisor!.gender == "F" {
+            genderPicker.selectRow(1, inComponent: 0, animated: false)
+        }
         
         setDisplayImage()
     }
