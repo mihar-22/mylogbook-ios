@@ -92,7 +92,7 @@ extension CarsController: EmptyView, DZNEmptyDataSetSource, DZNEmptyDataSetDeleg
     }
     
     func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
-        return emptyView(offset: 0)
+        return -20
     }
 }
 

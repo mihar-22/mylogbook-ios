@@ -162,7 +162,7 @@ extension LogPrepareController: EmptyView, DZNEmptyDataSetSource, DZNEmptyDataSe
     }
     
     func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
-        return emptyView(offset: -10)
+        return -20
     }
 }
 

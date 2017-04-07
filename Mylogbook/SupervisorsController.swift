@@ -92,7 +92,7 @@ extension SupervisorsController: EmptyView, DZNEmptyDataSetSource, DZNEmptyDataS
     }
     
     func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
-        return emptyView(offset: 0)
+        return -20
     }
 }
 

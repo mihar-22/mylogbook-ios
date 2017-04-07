@@ -7,7 +7,6 @@ protocol EmptyView {
     func emptyView(title: String) -> NSAttributedString
     func emptyView(description: String) -> NSAttributedString
     func emptyViewButton(title: String) -> NSAttributedString
-    func emptyView(offset: CGFloat) -> CGFloat
 }
 
 extension EmptyView {
@@ -37,9 +36,5 @@ extension EmptyView {
         ]
         
         return NSAttributedString(string: title, attributes: attributes)
-    }
-    
-    func emptyView(offset: CGFloat) -> CGFloat {
-        return -40 + offset
     }
 }
