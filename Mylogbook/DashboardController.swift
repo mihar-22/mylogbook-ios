@@ -60,7 +60,7 @@ class DashboardController: UIViewController, ActivityView {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewTopSpace: NSLayoutConstraint!
 
-    @IBOutlet weak var publishButton: UIBarButtonItem!
+    @IBOutlet var publishButton: UIBarButtonItem!
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollContentView: UIView!
@@ -161,8 +161,6 @@ class DashboardController: UIViewController, ActivityView {
     // MARK: Actions
     
     @IBAction func didTapPublish(_ sender: UIBarButtonItem) {
-        let publishButton = self.publishButton
-        
         var composer: LogbookComposer!
         
         var secondaryComposer: LogbookComposer? = nil
@@ -193,7 +191,7 @@ class DashboardController: UIViewController, ActivityView {
             
             self.showExportActionSheet(for: pdf)
             
-            self.hideActivityIndicator(replaceWith: publishButton)
+            self.hideActivityIndicator(replaceWith: self.publishButton)
         }
     }
     

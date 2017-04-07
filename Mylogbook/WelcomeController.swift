@@ -5,10 +5,20 @@ import UIKit
 
 class WelcomeController: UIViewController {
  
+    var player: AVPlayer!
+    
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
         setupVideo()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        player.play()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        player.pause()
     }
     
     // MARK: Video
@@ -22,7 +32,7 @@ class WelcomeController: UIViewController {
         
         let playerItem = AVPlayerItem(asset: asset)
         
-        let player = AVPlayer(playerItem: playerItem)
+        player = AVPlayer(playerItem: playerItem)
         
         let playerLayer = AVPlayerLayer(player: player)
         
@@ -30,7 +40,5 @@ class WelcomeController: UIViewController {
         playerLayer.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height - 84)
         
         view.layer.addSublayer(playerLayer)
-        
-        player.play()
     }
 }

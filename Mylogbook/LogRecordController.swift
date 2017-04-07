@@ -47,7 +47,7 @@ class LogRecordController: UIViewController, ActivityView {
     // MARK: Outlets
     
     @IBOutlet weak var toolbar: UIToolbar!
-    @IBOutlet weak var pauseButton: UIBarButtonItem!
+    @IBOutlet var pauseButton: UIBarButtonItem!
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
