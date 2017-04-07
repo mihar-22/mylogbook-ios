@@ -266,7 +266,7 @@ extension DashboardController: Alerting {
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
-            self.dismiss(animated: true, completion: nil)
+            actionSheet.dismiss(animated: true, completion: nil)
         }
         
         actionSheet.addAction(emailAction)
