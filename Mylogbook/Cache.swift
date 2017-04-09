@@ -10,11 +10,19 @@ class Cache: NSObject, NSCoding {
         return "user_\(id)_cache"
     }
     
-    static var shared: Cache = {
-        guard let data = UserDefaults.standard.data(forKey: key) else { return Cache() }
+    private static var _shared: Cache?
+    
+    static var shared: Cache {
+        if _shared == nil {
+            if let data = UserDefaults.standard.data(forKey: key) {
+                _shared = NSKeyedUnarchiver.unarchiveObject(with: data) as? Cache
+            } else {
+                _shared = Cache()
+            }
+        }
         
-        return NSKeyedUnarchiver.unarchiveObject(with: data) as! Cache
-    }()
+        return _shared!
+    }
     
     var isSyncPrepared: Bool = false
     
@@ -39,15 +47,11 @@ class Cache: NSObject, NSCoding {
     // MARK: Initializers
     
     override init() { super.init() }
-
-    static func setup() {
-        guard let data = UserDefaults.standard.data(forKey: key) else {
-            shared = Cache()
-            
-            return
-        }
-        
-        shared = NSKeyedUnarchiver.unarchiveObject(with: data) as! Cache
+    
+    // MARK: Reset
+    
+    static func reset() {
+        _shared = nil
     }
     
     // MARK: Getters and Setters

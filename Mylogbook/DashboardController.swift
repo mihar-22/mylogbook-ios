@@ -71,15 +71,10 @@ class DashboardController: UIViewController, ActivityView {
         tabBarController!.renderOriginalImages()
         
         configureTableView()
-        
-        BarChart.configure(barChartView)
-        
+        configureBarChart()
         configureSegmentedControl()
-        
         configureDatePicker()
         configureDatePickerToolbar()
-        
-        observeNotifications()
     }
     
     override func viewDidLayoutSubviews() {
@@ -89,31 +84,29 @@ class DashboardController: UIViewController, ActivityView {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        reset()
+        refresh()
+        
+        reloadEmptyDataSet()
+        
+        observeNotifications()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        guard !isEmptyDataSet else { return }
-        
         reload()
-        
-        showLastRoute()
     }
     
-    // MARK: Resets
+    override func viewDidDisappear(_ animated: Bool) {
+        removeNotifications()
+    }
     
-    func reset() {
+    // MARK: Refresh
+    
+    func refresh() {
         resetTimeCard()
         
         statistics.update()
         
         mapView.isHidden = true
-        
-        publishButton.isEnabled = !isEmptyDataSet
-        
-        scrollContentView.isHidden = isEmptyDataSet
-        
-        scrollView.reloadEmptyDataSet()
     }
     
     func resetTimeCard() {
@@ -127,11 +120,25 @@ class DashboardController: UIViewController, ActivityView {
     // MARK: Reload
 
     func reload() {
+        reloadEmptyDataSet()
+        
+        guard !isEmptyDataSet else { return }
+        
         reloadTasks()
         
         configureProgressBars()
         
         reloadBarChart()
+        
+        showLastRoute()
+    }
+    
+    func reloadEmptyDataSet() {
+        publishButton.isEnabled = !isEmptyDataSet
+        
+        scrollContentView.isHidden = isEmptyDataSet
+        
+        scrollView.reloadEmptyDataSet()
     }
     
     func reloadTasks(animated: Bool = false) {
@@ -153,7 +160,7 @@ class DashboardController: UIViewController, ActivityView {
     func reloadBarChart() {
         chartSegmentedControl.selectedSegmentIndex = 0
         
-        BarChart.build(barChartView, for: currentChartSegment())
+        buildBarChart()
         
         totalTripsLabel.text = String(statistics.numberOfTrips)
     }
@@ -222,18 +229,28 @@ class DashboardController: UIViewController, ActivityView {
     func observeNotifications() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(syncPreparationCompleted),
-                                               name: Notification.syncPreparationComplete.name,
+                                               name: Notification.syncComplete.name,
                                                object: nil)
     }
     
+    func removeNotifications() {
+        NotificationCenter.default.removeObserver(self,
+                                                  name: Notification.syncComplete.name,
+                                                  object: nil)
+    }
+    
     func syncPreparationCompleted() {
-        guard statistics.numberOfTrips == 0 else { return }
+        let deadline = DispatchTime.now() + .seconds(1)
         
-        reset()
-        
-        reload()
-        
-        showLastRoute()
+        DispatchQueue.main.asyncAfter(deadline: deadline) {
+            let previousNumberOfTrips = self.statistics.numberOfTrips
+            
+            self.statistics.update()
+            
+            guard self.statistics.numberOfTrips > previousNumberOfTrips else { return }
+            
+            self.reload()
+        }
     }
 }
 
@@ -394,6 +411,60 @@ extension DashboardController: EmptyView, DZNEmptyDataSetSource, DZNEmptyDataSet
     }
 }
 
+// MARK: Bar Chart
+
+extension DashboardController {
+    func configureBarChart() {
+        barChartView.noDataText = "No trips have been recorded."
+        
+        barChartView.xAxis.enabled = true
+        barChartView.xAxis.drawAxisLineEnabled = false
+        barChartView.xAxis.drawGridLinesEnabled = false
+        barChartView.xAxis.labelPosition = .bottom
+        barChartView.xAxis.labelTextColor = UIColor.white
+        
+        barChartView.rightAxis.enabled = false
+        
+        barChartView.leftAxis.enabled = false
+        barChartView.leftAxis.axisMinimum = 0
+        
+        barChartView.chartDescription?.enabled = false
+        barChartView.pinchZoomEnabled = false
+        barChartView.drawGridBackgroundEnabled = false
+        barChartView.highlightPerTapEnabled = false
+        barChartView.highlightFullBarEnabled = false
+        barChartView.highlightPerDragEnabled = false
+        barChartView.doubleTapToZoomEnabled = false
+        
+        barChartView.legend.horizontalAlignment = .center
+        barChartView.legend.neededHeight = 10.0
+        barChartView.legend.formToTextSpace = 5.0
+        barChartView.fitBars = true
+    }
+    
+    func buildBarChart() {
+        let segment = currentChartSegment()
+        
+        guard segment.all.map({ $0.data > 0 }).contains(true) else { return }
+        
+        var sets = [BarChartDataSet]()
+        
+        for (index, item) in segment.all.enumerated() {
+            let entry = BarChartDataEntry(x: Double(index), y: item.data > 0 ? item.data : 0.2)
+            
+            let set = BarChartDataSet(values: [entry], label: item.label)
+            
+            set.setColor(item.color)
+            set.valueFont = UIFont.systemFont(ofSize: 12)
+            sets.append(set)
+        }
+        
+        barChartView.data = BarChartData(dataSets: sets)
+        barChartView.data?.setValueFormatter(ChartValueFormatter())
+        barChartView.animate(yAxisDuration: 1.0)
+    }
+}
+
 // MARK: Progress Card
 
 extension DashboardController {
@@ -482,7 +553,7 @@ extension DashboardController {
     }
     
     func segmentedControlChanged(_ control: UISegmentedControl) {
-        BarChart.build(barChartView, for: currentChartSegment())
+        buildBarChart()
     }
     
     func currentChartSegment() -> ChartSegment {

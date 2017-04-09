@@ -88,7 +88,6 @@
 		C9EC4D391E40123400A80348 /* SyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC4D381E40123300A80348 /* SyncManager.swift */; };
 		C9EC4D3F1E401DAF00A80348 /* SoftDeletingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC4D3E1E401DAF00A80348 /* SoftDeletingStore.swift */; };
 		C9F193E01E769B1F00B6AE9C /* AustralianState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F193DF1E769B1F00B6AE9C /* AustralianState.swift */; };
-		C9F193E21E77730900B6AE9C /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F193E11E77730900B6AE9C /* BarChart.swift */; };
 		C9F1B98D1E094DCC002D4D61 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1B98C1E094DCC002D4D61 /* Env.swift */; };
 		C9FFDDB81E5DADC200AEFDC7 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFDDB71E5DADC200AEFDC7 /* Cache.swift */; };
 /* End PBXBuildFile section */
@@ -179,7 +178,6 @@
 		C9EC4D381E40123300A80348 /* SyncManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncManager.swift; sourceTree = "<group>"; };
 		C9EC4D3E1E401DAF00A80348 /* SoftDeletingStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftDeletingStore.swift; sourceTree = "<group>"; };
 		C9F193DF1E769B1F00B6AE9C /* AustralianState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AustralianState.swift; sourceTree = "<group>"; };
-		C9F193E11E77730900B6AE9C /* BarChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
 		C9F1B98C1E094DCC002D4D61 /* Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
 		C9FFDDB71E5DADC200AEFDC7 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -525,7 +523,6 @@
 			children = (
 				C94BA89E1E5FF612002E8F9E /* ChartSegment.swift */,
 				C94BA8A01E5FF68D002E8F9E /* ChartValueFormatter.swift */,
-				C9F193E11E77730900B6AE9C /* BarChart.swift */,
 			);
 			name = Chart;
 			sourceTree = "<group>";
@@ -685,7 +682,6 @@
 				C9B552C01E923D7C0042598E /* NswComposer.swift in Sources */,
 				C997A5061E67AF2C00CF4F47 /* SettingsController.swift in Sources */,
 				C9CDFA891DEFDB2800CE0A2D /* Mylogbook.xcdatamodeld in Sources */,
-				C9F193E21E77730900B6AE9C /* BarChart.swift in Sources */,
 				C908A9D31E74CEC40040AAB1 /* Statistics.swift in Sources */,
 				C9EBBD711E2DA20F00B5E509 /* CarController.swift in Sources */,
 				C9EBBD611E2C61B700B5E509 /* CarsController.swift in Sources */,

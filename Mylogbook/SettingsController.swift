@@ -84,9 +84,13 @@ class SettingsController: UITableViewController {
     }
     
     @IBAction func didTapLogOut(_ sender: UIButton) {
+        logOut()
+        
         Keychain.shared.clear(.apiToken)
         
-        logOut()
+        Cache.reset()
+        
+        Store.reset()
         
         navigateToAuthScene()
     }

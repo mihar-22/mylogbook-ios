@@ -21,8 +21,6 @@ class SyncManager {
         
         set(date) {
             Cache.shared.lastSyncedAt = date
-            
-            Cache.shared.save()
         }
     }
     
@@ -33,8 +31,6 @@ class SyncManager {
         
         set(isPrepared) {
             Cache.shared.isSyncPrepared = isPrepared
-            
-            Cache.shared.save()
         }
     }
     
@@ -80,10 +76,6 @@ class SyncManager {
         group.notify(queue: queue) {
             SyncStore<Trip>.import(from: tripRoute) { _ in
                 self.isSyncPrepared = true
-                
-                DispatchQueue.main.async {
-                    NotificationCenter.default.post(name: Notification.syncPreparationComplete.name, object: nil)
-                }
                 
                 self.syncComplete()
             }
@@ -141,8 +133,14 @@ class SyncManager {
     }
     
     private func syncComplete() {
-        self.lastSyncedAt = Date()
-        
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+
+            self.lastSyncedAt = Date()
+            
+            Cache.shared.save()
+
+            NotificationCenter.default.post(name: Notification.syncComplete.name, object: nil)
+        }
     }
 }

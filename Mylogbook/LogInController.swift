@@ -108,11 +108,7 @@ class LogInController: UIViewController, ActivityView {
             
             DispatchQueue.main.async {
                 self.storeUserDetails(response.data!)
-                
-                Store.shared.setup()
-                
-                Cache.setup()
-                
+                                
                 self.navigateToDashboardScene()
                 
                 SyncManager().start()
