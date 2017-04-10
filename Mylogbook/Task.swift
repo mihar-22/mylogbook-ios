@@ -118,7 +118,7 @@ struct HoldTask: Task  {
     var title: NSMutableAttributedString {
         let months = min(self.months, self.monthsRequired)
         
-        let s1 = NSMutableAttributedString(string: "License held for ", attributes: baseAttributes)
+        let s1 = NSMutableAttributedString(string: "Licence held for ", attributes: baseAttributes)
         
         let s2 = NSMutableAttributedString(string: "\(months) / \(monthsRequired)", attributes: numericAttributes)
         
