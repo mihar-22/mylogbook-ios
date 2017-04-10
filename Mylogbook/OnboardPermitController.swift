@@ -12,9 +12,13 @@ class OnboardPermitController: UIViewController {
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
-        navigationController?.navigationBar.restyle(.transparent)
-        
         setupDatePicker()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationItem.setHidesBackButton(true, animated: false)
+
+        navigationController?.navigationBar.restyle(.transparent)
     }
     
     // MARK: Date Picker
