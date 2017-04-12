@@ -27,7 +27,7 @@
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isAccumulated" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="light" attributeType="String" minValueString="0" maxValueString="20" syncable="YES"/>
-        <attribute name="odometer" attributeType="Integer 64" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="odometer" attributeType="Integer 32" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="roads" attributeType="String" minValueString="0" maxValueString="100" syncable="YES"/>
         <attribute name="startedAt" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="startLatitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>

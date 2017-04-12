@@ -7,7 +7,7 @@ import SwiftyJSON
 // MARK: Syncable
 
 protocol Syncable {
-    var id: Int { get set }
+    var id: Int64 { get set }
     var updatedAt: Date { get set }
     var deletedAt: Date? { get set }
 }
@@ -85,7 +85,7 @@ class Sync<Model: NSManagedObject> where Model: Resourceable,
             group.enter()
             
             Session.shared.requestJSON(route) { response in
-                guard let id = response.data?["id"].int else { return }
+                guard let id = response.data?["id"].int64 else { return }
                 
                 SyncStore<Model>.set(model, id: id) { group.leave() }
             }

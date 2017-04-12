@@ -6,9 +6,9 @@ import SwiftyJSON
 
 class Car: NSManagedObject, SoftDeletable, Syncable {
     var uniqueIDValue: Int {
-        get { return self.id }
+        get { return Int(self.id) }
         
-        set(id) { self.id = id }
+        set(id) { self.id = Int64(id) }
     }
 }
 
@@ -61,7 +61,7 @@ extension Car: Resourceable {
 // MARK: Core Data Properties
 
 extension Car {
-    @NSManaged public var id: Int
+    @NSManaged public var id: Int64
     @NSManaged public var name: String
     @NSManaged public var registration: String
     @NSManaged public var type: String

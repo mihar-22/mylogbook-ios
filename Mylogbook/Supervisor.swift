@@ -6,9 +6,9 @@ import SwiftyJSON
 
 class Supervisor: NSManagedObject, SoftDeletable, Syncable {
     var uniqueIDValue: Int {
-        get { return self.id }
+        get { return Int(self.id) }
         
-        set(id) { self.id = id }
+        set(id) { self.id = Int64(id) }
     }
 }
 
@@ -67,7 +67,7 @@ extension Supervisor: Resourceable {
 // MARK: Core Data Properties
 
 extension Supervisor {
-    @NSManaged public var id: Int
+    @NSManaged public var id: Int64
     @NSManaged public var name: String
     @NSManaged public var gender: String
     @NSManaged public var trips: NSSet?

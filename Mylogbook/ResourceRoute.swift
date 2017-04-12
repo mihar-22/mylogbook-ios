@@ -7,7 +7,7 @@ import SwiftyJSON
 protocol Resourceable {
     static var resource: String { get }
     
-    var id: Int { get set }
+    var id: Int64 { get set }
     
     func toJSON() -> [String: Any]
 }

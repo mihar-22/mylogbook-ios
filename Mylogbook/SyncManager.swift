@@ -123,7 +123,7 @@ class SyncManager {
             group.enter()
             
             Session.shared.requestJSON(route) { response in
-                guard let id = response.data?["id"].int else { return }
+                guard let id = response.data?["id"].int64 else { return }
                 
                 SyncStore<Trip>.set(trip, id: id) { group.leave() }
             }

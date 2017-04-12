@@ -34,7 +34,7 @@ class Cache: NSObject, NSCoding {
     
     var statistics = Statistics()
     
-    private var odometers = [Int: Int]()
+    private var odometers = [Int64: Int32]()
     
     private var entries: [AustralianState: Entries] = {
         var settings = [AustralianState: Entries]()
@@ -56,11 +56,11 @@ class Cache: NSObject, NSCoding {
     
     // MARK: Getters and Setters
     
-    func getOdometer(for car: Car) -> Int? {
+    func getOdometer(for car: Car) -> Int32? {
         return odometers[car.id]
     }
     
-    func set(odometer: Int, for car: Car) {
+    func set(odometer: Int32, for car: Car) {
         odometers[car.id] = odometer
     }
     
@@ -77,7 +77,7 @@ class Cache: NSObject, NSCoding {
     required init?(coder aDecoder: NSCoder) {
         isSyncPrepared = aDecoder.decodeBool(forKey: "isSyncPrepared")
         lastSyncedAt = aDecoder.decodeObject(forKey: "lastSyncedAt") as! Date
-        odometers = aDecoder.decodeObject(forKey: "odometers") as! [Int: Int]
+        odometers = aDecoder.decodeObject(forKey: "odometers") as! [Int64: Int32]
         statistics = aDecoder.decodeObject(forKey: "statistics") as! Statistics
         
         let state =  aDecoder.decodeObject(forKey: "residingState") as! String

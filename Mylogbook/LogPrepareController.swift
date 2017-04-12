@@ -112,7 +112,7 @@ class LogPrepareController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "startRecordingSegue" {
             if let viewController = segue.destination as? LogRecordController {
-                let odometer = odometerTextField.value
+                let odometer = Int32(odometerTextField.value)
                 
                 let car = cars[selectedCar]
                 

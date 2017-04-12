@@ -46,7 +46,7 @@ class SyncStore<Model: NSManagedObject> where Model: Importable,
         }
     }
     
-    static func set(_ model: Model, id: Int, completion: @escaping () -> Void) {
+    static func set(_ model: Model, id: Int64, completion: @escaping () -> Void) {
         Store.shared.stack.beginAsynchronous { transaction in
             var model = transaction.edit(model)!
             

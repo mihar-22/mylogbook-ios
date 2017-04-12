@@ -6,9 +6,9 @@ import SwiftyJSON
 
 class Trip: NSManagedObject {
     var uniqueIDValue: Int {
-        get { return self.id }
+        get { return Int(self.id) }
         
-        set(id) { self.id = id }
+        set(id) { self.id = Int64(id) }
     }
     
     var timeZone: TimeZone {
@@ -80,19 +80,19 @@ extension Trip: Importable {
     func update(from source: JSON, in transaction: BaseDataTransaction) throws {
         let resources = source["resources"]
         
-        let carId = resources["car_id"].int!
+        let carId = resources["car_id"].int64!
         
         car = transaction.fetchOne(From(Car.self),
                                    Where("id = \(carId)"))!
         
-        let supervisorId = resources["supervisor_id"].int!
+        let supervisorId = resources["supervisor_id"].int64!
         
         supervisor = transaction.fetchOne(From(Supervisor.self),
                                           Where("id = \(supervisorId)"))!
         
         startedAt = source["started_at"].string!.utc(format: .dateTime)
         endedAt = source["ended_at"].string!.utc(format: .dateTime)
-        odometer = source["odometer"].int!
+        odometer = source["odometer"].int32!
         distance = source["distance"].double!
         
         let conditions = source["conditions"]
@@ -152,10 +152,10 @@ extension Trip: Resourceable {
 // MARK: Core Data Properties
 
 extension Trip {
-    @NSManaged public var id: Int
+    @NSManaged public var id: Int64
     @NSManaged public var startedAt: Date
     @NSManaged public var endedAt: Date
-    @NSManaged public var odometer: Int
+    @NSManaged public var odometer: Int32
     @NSManaged public var distance: Double
     
     @NSManaged public var weather: String
