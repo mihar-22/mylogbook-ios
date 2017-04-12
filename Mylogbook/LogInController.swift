@@ -111,6 +111,11 @@ class LogInController: UIViewController, ActivityView {
                                 
                 self.navigateToDashboardScene()
                 
+                // Force loading of cache and store
+                _ = Cache.shared
+                
+                _ = Store.shared
+                
                 SyncManager().start()
             }
         }
