@@ -21,11 +21,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app-icon-display" translatesAutoresizingMaskIntoConstraints="NO" id="9mj-dU-4B2">
-                                <rect key="frame" x="137.5" y="263.5" width="100" height="100"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app-icon-splash" translatesAutoresizingMaskIntoConstraints="NO" id="9mj-dU-4B2">
+                                <rect key="frame" x="127.5" y="253.5" width="120" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="DcH-Yo-Ffi"/>
-                                    <constraint firstAttribute="height" constant="100" id="TfI-xs-DBE"/>
+                                    <constraint firstAttribute="width" constant="120" id="DcH-Yo-Ffi"/>
+                                    <constraint firstAttribute="height" constant="120" id="TfI-xs-DBE"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -42,6 +42,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="app-icon-display" width="120" height="120"/>
+        <image name="app-icon-splash" width="120" height="120"/>
     </resources>
 </document>
