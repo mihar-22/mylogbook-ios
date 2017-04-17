@@ -51,6 +51,10 @@
 		C970BCEA1E319F3500E1129A /* SupervisorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCE91E319F3500E1129A /* SupervisorController.swift */; };
 		C970BCEC1E31A83E00E1129A /* Supervisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCEB1E31A83E00E1129A /* Supervisor.swift */; };
 		C970BCF01E31A96300E1129A /* SupervisorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCEF1E31A96300E1129A /* SupervisorCell.swift */; };
+		C977B8A61EA47674005F4966 /* privacy-policy.html in Resources */ = {isa = PBXBuildFile; fileRef = C977B8A41EA47674005F4966 /* privacy-policy.html */; };
+		C977B8A71EA47674005F4966 /* terms-of-service.html in Resources */ = {isa = PBXBuildFile; fileRef = C977B8A51EA47674005F4966 /* terms-of-service.html */; };
+		C977B8AA1EA4781E005F4966 /* PrivacyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C977B8A91EA4781E005F4966 /* PrivacyController.swift */; };
+		C977B8AC1EA47872005F4966 /* TermsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C977B8AB1EA47872005F4966 /* TermsController.swift */; };
 		C978BF311E7F713F00C422D7 /* LogbookComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978BF301E7F713F00C422D7 /* LogbookComposer.swift */; };
 		C979D6111E52A7E5009891C7 /* SyncStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979D6101E52A7E5009891C7 /* SyncStore.swift */; };
 		C987DD121E64F5D00011F223 /* TripCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987DD111E64F5D00011F223 /* TripCalculator.swift */; };
@@ -139,6 +143,10 @@
 		C970BCE91E319F3500E1129A /* SupervisorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupervisorController.swift; sourceTree = "<group>"; };
 		C970BCEB1E31A83E00E1129A /* Supervisor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Supervisor.swift; sourceTree = "<group>"; };
 		C970BCEF1E31A96300E1129A /* SupervisorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupervisorCell.swift; sourceTree = "<group>"; };
+		C977B8A41EA47674005F4966 /* privacy-policy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "privacy-policy.html"; sourceTree = "<group>"; };
+		C977B8A51EA47674005F4966 /* terms-of-service.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "terms-of-service.html"; sourceTree = "<group>"; };
+		C977B8A91EA4781E005F4966 /* PrivacyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyController.swift; sourceTree = "<group>"; };
+		C977B8AB1EA47872005F4966 /* TermsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsController.swift; sourceTree = "<group>"; };
 		C978BF301E7F713F00C422D7 /* LogbookComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogbookComposer.swift; sourceTree = "<group>"; };
 		C979D6101E52A7E5009891C7 /* SyncStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncStore.swift; sourceTree = "<group>"; };
 		C987DD111E64F5D00011F223 /* TripCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripCalculator.swift; sourceTree = "<group>"; };
@@ -261,6 +269,7 @@
 			children = (
 				C95CFB901E6E38E000CC0BD1 /* Onboarding */,
 				C997A5071E67F59100CF4F47 /* Settings */,
+				C977B8A81EA47804005F4966 /* Legal */,
 				C9EBBD6F1E2D9A9E00B5E509 /* Auth */,
 				C94BA89D1E5FF601002E8F9E /* Dashboard */,
 				C9EBBD5F1E2C61AD00B5E509 /* Cars */,
@@ -379,10 +388,29 @@
 			name = Supervisors;
 			sourceTree = "<group>";
 		};
+		C977B8A31EA47660005F4966 /* legal */ = {
+			isa = PBXGroup;
+			children = (
+				C977B8A41EA47674005F4966 /* privacy-policy.html */,
+				C977B8A51EA47674005F4966 /* terms-of-service.html */,
+			);
+			name = legal;
+			sourceTree = "<group>";
+		};
+		C977B8A81EA47804005F4966 /* Legal */ = {
+			isa = PBXGroup;
+			children = (
+				C977B8A91EA4781E005F4966 /* PrivacyController.swift */,
+				C977B8AB1EA47872005F4966 /* TermsController.swift */,
+			);
+			name = Legal;
+			sourceTree = "<group>";
+		};
 		C978BF2C1E7F6FFD00C422D7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				C91051CC1E9771F800B42F9D /* intro.mp4 */,
+				C977B8A31EA47660005F4966 /* legal */,
 				C91051C61E950E4F00B42F9D /* tables */,
 			);
 			name = Resources;
@@ -599,9 +627,11 @@
 				C91051CD1E97720200B42F9D /* intro.mp4 in Resources */,
 				C91051C71E950E4F00B42F9D /* tables in Resources */,
 				C9CDFA8E1DEFDB2800CE0A2D /* LaunchScreen.storyboard in Resources */,
+				C977B8A71EA47674005F4966 /* terms-of-service.html in Resources */,
 				C9CDFA861DEFDB2800CE0A2D /* Main.storyboard in Resources */,
 				C925000B1E8A0117006BA96D /* TripItem.xib in Resources */,
 				C931A7B91E8A821D00F916BC /* Assets.xcassets in Resources */,
+				C977B8A61EA47674005F4966 /* privacy-policy.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +735,7 @@
 				C98E778B1E37374900F34468 /* TextField.swift in Sources */,
 				C94BA8A11E5FF68D002E8F9E /* ChartValueFormatter.swift in Sources */,
 				C95487D01E4D859600C48F54 /* Sync.swift in Sources */,
+				C977B8AA1EA4781E005F4966 /* PrivacyController.swift in Sources */,
 				C9EBBD571E2882E200B5E509 /* LogInController.swift in Sources */,
 				C908A9D71E74D2D80040AAB1 /* TaskCell.swift in Sources */,
 				C95B3B8C1E33360900533FB6 /* ResourceRoute.swift in Sources */,
@@ -712,6 +743,7 @@
 				C91051C11E93BDAE00B42F9D /* TasComposer.swift in Sources */,
 				C970BCEC1E31A83E00E1129A /* Supervisor.swift in Sources */,
 				C908D3C51E24D4B500A4E91C /* Adapters.swift in Sources */,
+				C977B8AC1EA47872005F4966 /* TermsController.swift in Sources */,
 				C924540E1E90B46300AEC83A /* ActivityView.swift in Sources */,
 				C92AA02E1E1233D800A92067 /* Session.swift in Sources */,
 				C935B73C1E0B7A4600FD7FFF /* Router.swift in Sources */,
