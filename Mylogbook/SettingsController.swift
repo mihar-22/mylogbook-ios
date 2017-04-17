@@ -1,5 +1,7 @@
 
 import Alamofire
+import MessageUI
+import PopupDialog
 import UIKit
 
 class SettingsController: UITableViewController {
@@ -83,6 +85,24 @@ class SettingsController: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func didTapPromoteApp(_ sender: UIButton) {
+        guard MFMailComposeViewController.canSendMail() else {
+            showMailCannotSendAlert()
+            
+            return
+        }
+        
+        let name = Keychain.shared.get(.name)!
+        
+        let mailer = MFMailComposeViewController()
+        
+        mailer.mailComposeDelegate = self
+        mailer.setSubject("\(name) invited you to Mylogbook")
+        mailer.setMessageBody("Hello!\n\n I've been using Mylogbook and thought it could help you too. It's an easy way to record your hours for your logbook and track your progress towards your P's.", isHTML: false)
+        
+        present(mailer, animated: true, completion: nil)
+    }
+    
     @IBAction func didTapLogOut(_ sender: UIButton) {
         logOut()
         
@@ -130,5 +150,36 @@ class SettingsController: UITableViewController {
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+// MARK: Alerting
+
+extension SettingsController: Alerting {
+    func showMailCannotSendAlert() {
+        let title = "Setup Mail"
+        
+        let message = "You have not setup mail on this device."
+        
+        let settingsButton = DefaultButton(title: "SETTINGS") {
+            let url = URL(string: "App-Prefs:root=Mail")!
+            
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        
+        let cancelButton = CancelButton(title: "CANCEL", action: nil)
+        
+        showAlert(title: title, message: message, buttons: [cancelButton, settingsButton])
+    }
+}
+
+// MARK: Mail Delegate
+
+extension SettingsController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController,
+                               didFinishWith result: MFMailComposeResult,
+                               error: Error?) {
+        
+        controller.dismiss(animated: true, completion: nil)
     }
 }

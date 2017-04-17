@@ -269,7 +269,6 @@
 			children = (
 				C95CFB901E6E38E000CC0BD1 /* Onboarding */,
 				C997A5071E67F59100CF4F47 /* Settings */,
-				C977B8A81EA47804005F4966 /* Legal */,
 				C9EBBD6F1E2D9A9E00B5E509 /* Auth */,
 				C94BA89D1E5FF601002E8F9E /* Dashboard */,
 				C9EBBD5F1E2C61AD00B5E509 /* Cars */,
@@ -438,6 +437,7 @@
 		C997A5071E67F59100CF4F47 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				C977B8A81EA47804005F4966 /* Legal */,
 				C9B552BC1E91FE710042598E /* Entries */,
 				C95CFB951E6E4EC100CC0BD1 /* StatesController.swift */,
 				C997A5051E67AF2C00CF4F47 /* SettingsController.swift */,
