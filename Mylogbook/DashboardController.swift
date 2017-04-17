@@ -577,7 +577,7 @@ extension DashboardController {
 extension DashboardController: UITableViewDataSource, UITableViewDelegate {
     func configureTableView() {
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 59
+        tableView.estimatedRowHeight = 58
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

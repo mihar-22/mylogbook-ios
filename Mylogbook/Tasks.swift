@@ -263,7 +263,7 @@ class Tasks {
         tasks.append(s1LogTask)
         
         // 2. -> [1]
-        var practicalAssessment = createAssessmentTask(title: "Practical Driving Assessment", with: [s1LogTask])
+        var practicalAssessment = createAssessmentTask(title: "Driving Assessment", with: [s1LogTask])
         
         practicalAssessment.learnMoreURL = URL(string: "http://www.transport.wa.gov.au/licensing/step-3-pass-practical-assessment.asp")
         

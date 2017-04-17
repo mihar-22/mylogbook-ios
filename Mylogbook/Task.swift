@@ -24,11 +24,11 @@ extension Task {
     }
     
     var baseAttributes: [String: Any] {
-        return [NSFontAttributeName: UIFont.systemFont(ofSize: 14, weight: UIFontWeightRegular)]
+        return [NSFontAttributeName: UIFont.systemFont(ofSize: 13, weight: UIFontWeightRegular)]
     }
     
     var numericAttributes: [String: Any] {
-        return [NSFontAttributeName: UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)]
+        return [NSFontAttributeName: UIFont.systemFont(ofSize: 14, weight: UIFontWeightMedium)]
     }
 }
 
