@@ -29,7 +29,7 @@
 				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
 			</dict>
-			<key>mylogbook.com</key>
+			<key>mylb.com.au</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>
