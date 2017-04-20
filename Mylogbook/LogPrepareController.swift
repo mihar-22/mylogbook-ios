@@ -82,9 +82,9 @@ class LogPrepareController: UIViewController {
         
         carTextField.text = car.name
         
-        let odometer = "\(Cache.shared.getOdometer(for: car) ??  0)"
+        let odometer = (Cache.shared.getOdometer(for: car) ?? 0)
         
-        odometerTextField.valueText = odometer
+        odometerTextField.valueText = String(odometer)
         
         validator.revalidate()
     }

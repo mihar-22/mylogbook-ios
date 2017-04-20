@@ -85,8 +85,11 @@ class SyncManager {
     // MARK: Sync
     
     private func sync() {
-        guard network.isReachableOnEthernetOrWiFi ||
-              (timeSinceLastSync > (mins: 30) * (secsPerMin: 60)) else { return }
+        guard network.isReachableOnEthernetOrWiFi || (timeSinceLastSync > 1_800) else {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                
+            return
+        }
         
         let group = DispatchGroup()
         

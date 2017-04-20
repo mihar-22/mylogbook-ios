@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2dO-0w-bJd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2dO-0w-bJd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -101,10 +101,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="AyN-XI-Wr3" userLabel="Form">
-                                                <rect key="frame" x="16" y="32" width="343" height="156"/>
+                                                <rect key="frame" x="16" y="32" width="343" height="224"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qJH-3F-5p8" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
@@ -116,7 +116,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2VN-xl-c0Q" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="45" width="343" height="21"/>
+                                                        <rect key="frame" x="0.0" y="62" width="343" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
@@ -128,7 +128,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IY1-AM-01x" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="90" width="343" height="21"/>
+                                                        <rect key="frame" x="0.0" y="124" width="343" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
@@ -140,7 +140,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date of Birth" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqW-JE-dpu" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="135" width="343" height="21"/>
+                                                        <rect key="frame" x="0.0" y="186" width="343" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -185,7 +185,7 @@
                                 <action selector="didTapClose:" destination="So8-uU-Zcv" id="PPf-7z-ZdN"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Create" id="akV-cm-ddE">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Create" style="done" id="akV-cm-ddE">
                             <connections>
                                 <action selector="didTapCreate:" destination="So8-uU-Zcv" id="sxI-fP-SVa"/>
                             </connections>
@@ -217,10 +217,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ofU-Ix-3Gi" userLabel="Form">
-                                <rect key="frame" x="16" y="96" width="343" height="66"/>
+                                <rect key="frame" x="16" y="96" width="343" height="100"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cdK-5c-ipx" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="38"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
@@ -232,7 +232,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aRl-ac-Shy" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="45" width="343" height="21"/>
+                                        <rect key="frame" x="0.0" y="62" width="343" height="38"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
@@ -246,7 +246,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZi-3p-Poh">
-                                <rect key="frame" x="245" y="178" width="114" height="28"/>
+                                <rect key="frame" x="245" y="212" width="114" height="28"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                 <state key="normal" title="Forgot Password?"/>
                                 <state key="disabled">
@@ -272,7 +272,7 @@
                                 <action selector="didTapClose:" destination="4G5-9U-MMS" id="GY2-HM-C6i"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Log In" id="45c-rP-Ceh">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Log In" style="done" id="45c-rP-Ceh">
                             <connections>
                                 <action selector="didTapDone:" destination="4G5-9U-MMS" id="cSG-rB-RwJ"/>
                             </connections>
@@ -310,7 +310,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="fKK-Ze-EgC">
-                                <rect key="frame" x="32" y="80" width="311" height="150"/>
+                                <rect key="frame" x="32" y="80" width="311" height="167"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learner Permit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNL-tg-QyM">
                                         <rect key="frame" x="71.5" y="0.0" width="168" height="31.5"/>
@@ -325,7 +325,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Received Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="znF-qI-7Vg" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="129" width="311" height="21"/>
+                                        <rect key="frame" x="0.0" y="129" width="311" height="38"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -873,12 +873,12 @@
             <objects>
                 <tableViewController id="WPt-at-1ED" customClass="SettingsController" customModule="Mylogbook" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="40" sectionHeaderHeight="18" sectionFooterHeight="18" id="gTU-aM-lHJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" white="0.94999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                         <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last synced at" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eND-Hi-5KG">
-                            <rect key="frame" x="0.0" y="593" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="633" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1033,6 +1033,9 @@
                                                 <constraint firstItem="NjG-I9-fO8" firstAttribute="leading" secondItem="pa5-dX-6JW" secondAttribute="leadingMargin" constant="12" id="Q2X-vJ-ywt"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="5Ws-Kg-dFu" kind="show" id="g9r-b2-zoF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1095,46 +1098,63 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMH-7Y-bCn">
-                                                    <rect key="frame" x="87" y="5" width="202" height="30"/>
-                                                    <state key="normal" title="Tell Friends about Mylogbook">
-                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="didTapPromoteApp:" destination="WPt-at-1ED" eventType="touchUpInside" id="nHs-UQ-9ll"/>
-                                                    </connections>
-                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell Friends about Mylogbook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAt-cN-h9O">
+                                                    <rect key="frame" x="86.5" y="11.5" width="202" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="cMH-7Y-bCn" firstAttribute="centerX" secondItem="gat-tz-ZfF" secondAttribute="centerX" id="3uX-lF-Y1b"/>
-                                                <constraint firstItem="cMH-7Y-bCn" firstAttribute="centerY" secondItem="gat-tz-ZfF" secondAttribute="centerY" id="qUJ-wb-ZxF"/>
+                                                <constraint firstItem="aAt-cN-h9O" firstAttribute="centerX" secondItem="gat-tz-ZfF" secondAttribute="centerX" id="REH-8c-O0F"/>
+                                                <constraint firstItem="aAt-cN-h9O" firstAttribute="centerY" secondItem="gat-tz-ZfF" secondAttribute="centerY" id="iPe-bZ-zo0"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aF1-eD-GJH">
+                                        <rect key="frame" x="0.0" y="499" width="375" height="40"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aF1-eD-GJH" id="Xdk-OV-8NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeA-hL-yej">
+                                                    <rect key="frame" x="149" y="11" width="77" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WeA-hL-yej" firstAttribute="centerX" secondItem="Xdk-OV-8NO" secondAttribute="centerX" id="8Hb-g5-8Cs"/>
+                                                <constraint firstItem="WeA-hL-yej" firstAttribute="centerY" secondItem="Xdk-OV-8NO" secondAttribute="centerY" id="aRE-jH-bfl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="g0n-AK-fA9" kind="presentation" identifier="presentContactUsSegue" id="y0n-CB-I8V"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="MSG-r4-wUw">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="85f-vm-7mh">
-                                        <rect key="frame" x="0.0" y="535" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="575" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="85f-vm-7mh" id="NTx-c9-Sir">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLh-0q-QUo">
-                                                    <rect key="frame" x="160" y="5" width="55" height="30"/>
-                                                    <state key="normal" title="Log Out">
-                                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="didTapLogOut:" destination="WPt-at-1ED" eventType="touchUpInside" id="YD3-jl-YRE"/>
-                                                    </connections>
-                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJ4-Aj-fas">
+                                                    <rect key="frame" x="160" y="11" width="55" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="GLh-0q-QUo" firstAttribute="centerX" secondItem="NTx-c9-Sir" secondAttribute="centerX" id="hFw-vO-2KN"/>
-                                                <constraint firstItem="GLh-0q-QUo" firstAttribute="centerY" secondItem="NTx-c9-Sir" secondAttribute="centerY" id="tK0-Kj-hEm"/>
+                                                <constraint firstItem="eJ4-Aj-fas" firstAttribute="centerX" secondItem="NTx-c9-Sir" secondAttribute="centerX" id="aAl-k4-ko2"/>
+                                                <constraint firstItem="eJ4-Aj-fas" firstAttribute="centerY" secondItem="NTx-c9-Sir" secondAttribute="centerY" id="nlu-2F-NGg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1154,14 +1174,16 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="700"/>
                     <connections>
                         <outlet property="emailLabel" destination="U2C-Io-5gP" id="56W-iR-kzU"/>
                         <outlet property="lastSyncedAtLabel" destination="eND-Hi-5KG" id="Gzu-WL-y4A"/>
-                        <outlet property="manualEntriesCell" destination="c3x-Jp-Kjd" id="8O1-uc-3vz"/>
+                        <outlet property="logOutCell" destination="85f-vm-7mh" id="Gm3-zF-iMF"/>
                         <outlet property="nameLabel" destination="n10-zF-Zq9" id="Rqd-0u-TOQ"/>
                         <outlet property="permitReceivedTextField" destination="k27-2J-aAl" id="o0k-aK-lI1"/>
                         <outlet property="stateLabel" destination="7LF-rK-mCz" id="k7z-A9-JvG"/>
-                        <segue destination="5Ws-Kg-dFu" kind="show" identifier="showManualEntriesSegue" id="hxd-aw-vng"/>
+                        <outlet property="tellFriendsCell" destination="cDO-3g-YhW" id="mhY-UW-Qrv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S6D-kh-Tvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1180,7 +1202,7 @@
                             <tableViewSection headerTitle="Time" footerTitle="The total number of minutes that you have completed prior to using Mylogbook." id="VZB-kH-EL8">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wDi-os-UOO">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wDi-os-UOO" id="yol-wW-RWF">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
@@ -1210,7 +1232,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="CrQ-LX-x33">
-                                        <rect key="frame" x="0.0" y="96" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="95.5" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CrQ-LX-x33" id="tcy-59-CqC">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
@@ -1334,11 +1356,11 @@
                         <viewControllerLayoutGuide type="bottom" id="u2c-ng-dl4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JpF-wF-g7L">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" allowsInlineMediaPlayback="NO" mediaPlaybackRequiresUserAction="NO" mediaPlaybackAllowsAirPlay="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7d-Ya-G3U">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="636"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <dataDetectorType key="dataDetectorTypes"/>
                             </webView>
@@ -1360,12 +1382,102 @@
             </objects>
             <point key="canvasLocation" x="4023" y="917"/>
         </scene>
+        <!--Contact Us Controller-->
+        <scene sceneID="bNd-GV-cdk">
+            <objects>
+                <viewController id="g0n-AK-fA9" customClass="ContactUsController" customModule="Mylogbook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sHo-DJ-LWs"/>
+                        <viewControllerLayoutGuide type="bottom" id="MQm-wv-4GN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i7i-yq-Hk1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nHO-QT-edZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="kxr-v9-Ksk"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Contact Us" id="kN3-zC-XYs">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="kGk-hd-qVc">
+                                            <connections>
+                                                <action selector="didTapCancel:" destination="g0n-AK-fA9" id="CXe-Lw-BaG"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Send" style="done" id="kwl-25-5hO">
+                                            <connections>
+                                                <action selector="didTapSend:" destination="g0n-AK-fA9" id="xyZ-4k-Sim"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="GdN-6c-Ps9">
+                                <rect key="frame" x="16" y="88" width="343" height="254"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What are you contacting us about?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Arj-pW-aFh" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="38"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="floatingLabelYPadding">
+                                                <real key="value" value="-1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uY4-km-MR9" customClass="JVFloatLabeledTextView">
+                                        <rect key="frame" x="0.0" y="54" width="343" height="200"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="zP1-Lx-qDc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="floatingLabelYPadding">
+                                                <real key="value" value="-2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Tell us all about it ..."/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="uY4-km-MR9" firstAttribute="leading" secondItem="GdN-6c-Ps9" secondAttribute="leading" id="5Oq-ee-GSr"/>
+                                    <constraint firstAttribute="trailing" secondItem="Arj-pW-aFh" secondAttribute="trailing" id="a1t-Ll-xgc"/>
+                                    <constraint firstAttribute="trailing" secondItem="uY4-km-MR9" secondAttribute="trailing" id="dWd-o6-IFZ"/>
+                                    <constraint firstItem="Arj-pW-aFh" firstAttribute="leading" secondItem="GdN-6c-Ps9" secondAttribute="leading" id="yKg-iB-tAn"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="GdN-6c-Ps9" secondAttribute="trailing" id="BCG-cl-odf"/>
+                            <constraint firstAttribute="trailing" secondItem="nHO-QT-edZ" secondAttribute="trailing" id="L8y-KT-aUO"/>
+                            <constraint firstItem="GdN-6c-Ps9" firstAttribute="top" secondItem="nHO-QT-edZ" secondAttribute="bottom" constant="24" id="Lea-oB-j2B"/>
+                            <constraint firstItem="nHO-QT-edZ" firstAttribute="leading" secondItem="i7i-yq-Hk1" secondAttribute="leading" id="a5r-4L-dBd"/>
+                            <constraint firstItem="nHO-QT-edZ" firstAttribute="top" secondItem="i7i-yq-Hk1" secondAttribute="top" id="f4X-5e-PQl"/>
+                            <constraint firstItem="GdN-6c-Ps9" firstAttribute="leading" secondItem="i7i-yq-Hk1" secondAttribute="leadingMargin" id="s1O-WM-nQL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="aboutTextField" destination="Arj-pW-aFh" id="Mxp-tz-eR2"/>
+                        <outlet property="messageTextView" destination="uY4-km-MR9" id="dMJ-95-Rem"/>
+                        <outlet property="sendButton" destination="kwl-25-5hO" id="NJ6-Cu-L42"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AlT-ea-E3h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3142" y="1266"/>
+        </scene>
         <!--State-->
         <scene sceneID="GPV-3G-W4R">
             <objects>
                 <tableViewController id="Qnn-9k-KSg" customClass="StatesController" customModule="Mylogbook" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9d8-nC-jx6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="Qw9-g3-acH" userLabel="Footer">
@@ -1540,10 +1652,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="JQk-7g-Y9r" userLabel="Form">
-                                                <rect key="frame" x="16" y="222" width="343" height="111"/>
+                                                <rect key="frame" x="16" y="222" width="343" height="162"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hnu-x0-76l" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
@@ -1555,7 +1667,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Registration Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nkN-GH-lpA" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="45" width="343" height="21"/>
+                                                        <rect key="frame" x="0.0" y="62" width="343" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no"/>
@@ -1567,7 +1679,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cap-W4-VcD" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="90" width="343" height="21"/>
+                                                        <rect key="frame" x="0.0" y="124" width="343" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1767,10 +1879,10 @@
                                         <rect key="frame" x="0.0" y="-64" width="375" height="667"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="cgO-0h-hdV" userLabel="Form">
-                                                <rect key="frame" x="16" y="96" width="343" height="111"/>
+                                                <rect key="frame" x="16" y="96" width="343" height="162"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Car" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WZj-ua-Zuh" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1781,7 +1893,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Odometer (km)" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YdN-gs-1tC" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="45" width="343" height="21"/>
+                                                        <rect key="frame" x="0.0" y="62" width="343" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
@@ -1793,7 +1905,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Supervisor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XcL-g1-2iE" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="90" width="343" height="21"/>
+                                                        <rect key="frame" x="0.0" y="124" width="343" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1952,10 +2064,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="o3z-it-JkO" userLabel="Form">
-                                                <rect key="frame" x="16" y="264" width="343" height="125"/>
+                                                <rect key="frame" x="16" y="264" width="343" height="159"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bql-ZU-yNw" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
@@ -1967,7 +2079,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uwf-pZ-HMW" customClass="TextField" customModule="Mylogbook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="45" width="343" height="21"/>
+                                                        <rect key="frame" x="0.0" y="62" width="343" height="38"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1978,7 +2090,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="PwS-ga-bYu">
-                                                        <rect key="frame" x="0.0" y="90" width="343" height="35"/>
+                                                        <rect key="frame" x="0.0" y="124" width="343" height="35"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0q2-uh-nNJ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -2199,13 +2311,13 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ewC-gh-wpg">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ewC-gh-wpg">
                                                                 <rect key="frame" x="0.0" y="47" width="343" height="150"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="E08-k4-FOu">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="E08-k4-FOu">
                                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="67"/>
                                                                         <subviews>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UKa-oI-Rj9" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKa-oI-Rj9" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="114.5" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -2213,7 +2325,7 @@
                                                                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="weather-clear"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" horizontalHuggingPriority="249" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ID-hX-Egx" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                            <view contentMode="scaleToFill" horizontalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="9ID-hX-Egx" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
                                                                                 <rect key="frame" x="114.5" y="0.0" width="114" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -2221,7 +2333,7 @@
                                                                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="weather-rain"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EUk-0b-8P0" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUk-0b-8P0" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
                                                                                 <rect key="frame" x="228.5" y="0.0" width="114.5" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -2231,10 +2343,10 @@
                                                                             </view>
                                                                         </subviews>
                                                                     </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OTh-L0-hQV">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OTh-L0-hQV">
                                                                         <rect key="frame" x="0.0" y="83" width="343" height="67"/>
                                                                         <subviews>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X8Z-GE-zkc" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8Z-GE-zkc" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="114.5" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -2242,7 +2354,7 @@
                                                                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="weather-fog"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iiN-jX-WQb" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iiN-jX-WQb" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
                                                                                 <rect key="frame" x="114.5" y="0.0" width="114" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -2250,7 +2362,7 @@
                                                                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="weather-hail"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ima-Qc-jAj" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ima-Qc-jAj" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
                                                                                 <rect key="frame" x="228.5" y="0.0" width="114.5" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -2282,10 +2394,10 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xFb-HF-PyZ">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xFb-HF-PyZ">
                                                                 <rect key="frame" x="0.0" y="47" width="343" height="67"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2x8-yN-bLo" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2x8-yN-bLo" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="114.5" height="67"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -2293,7 +2405,7 @@
                                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="traffic-light"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
-                                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pts-d7-1BJ" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pts-d7-1BJ" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
                                                                         <rect key="frame" x="114.5" y="0.0" width="114" height="67"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -2301,7 +2413,7 @@
                                                                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="traffic-medium"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
-                                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NWq-8h-KhD" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NWq-8h-KhD" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
                                                                         <rect key="frame" x="228.5" y="0.0" width="114.5" height="67"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -2331,13 +2443,13 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Kuq-mW-urj">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Kuq-mW-urj">
                                                                 <rect key="frame" x="0.0" y="47" width="343" height="150"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ANC-pN-Cgr">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ANC-pN-Cgr">
                                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="67"/>
                                                                         <subviews>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FKF-gF-Gfb" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FKF-gF-Gfb" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="114.5" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -2345,7 +2457,7 @@
                                                                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="road-local-street"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b5q-Qi-LWZ" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5q-Qi-LWZ" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
                                                                                 <rect key="frame" x="114.5" y="0.0" width="114" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -2353,7 +2465,7 @@
                                                                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="road-main-road"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cN9-rI-307" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cN9-rI-307" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
                                                                                 <rect key="frame" x="228.5" y="0.0" width="114.5" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -2363,10 +2475,10 @@
                                                                             </view>
                                                                         </subviews>
                                                                     </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="32J-hQ-VMf">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="32J-hQ-VMf">
                                                                         <rect key="frame" x="0.0" y="83" width="343" height="67"/>
                                                                         <subviews>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RsR-uD-rXn" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RsR-uD-rXn" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="114.5" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -2374,7 +2486,7 @@
                                                                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="road-inner-city"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="473-Hn-KdN" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="473-Hn-KdN" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
                                                                                 <rect key="frame" x="114.5" y="0.0" width="114" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -2382,7 +2494,7 @@
                                                                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="road-rural-road"/>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NVK-kh-jTa" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVK-kh-jTa" customClass="TripItem" customModule="Mylogbook" customModuleProvider="target">
                                                                                 <rect key="frame" x="228.5" y="0.0" width="114.5" height="67"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -2534,7 +2646,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="5US-Rv-diQ">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" style="plain" id="yAU-hv-Tr5">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="yAU-hv-Tr5">
                             <connections>
                                 <action selector="didTapCancel:" destination="8it-f2-c2x" id="Myb-kG-hmv"/>
                             </connections>
@@ -2753,11 +2865,11 @@
                         <viewControllerLayoutGuide type="bottom" id="omR-o8-hIE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EZg-9y-bXw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" allowsInlineMediaPlayback="NO" mediaPlaybackRequiresUserAction="NO" mediaPlaybackAllowsAirPlay="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oub-pu-KBt">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="636"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <dataDetectorType key="dataDetectorTypes"/>
                             </webView>
@@ -2815,8 +2927,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="5j3-Nw-acl"/>
         <segue reference="Hb2-1e-Hpd"/>
-        <segue reference="oWf-Eg-yX6"/>
         <segue reference="hh4-YO-80O"/>
+        <segue reference="oWf-Eg-yX6"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.13333333333333333" green="0.70980392156862748" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
 </document>

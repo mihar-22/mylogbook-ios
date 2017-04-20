@@ -45,7 +45,7 @@ extension UITextField {
     }
     
     var value: Int {
-        return formatter.number(from: valueText) as Int? ?? 0
+        return (formatter.number(from: valueText) as? Int) ?? 0
     }
     
     var valueText: String? {

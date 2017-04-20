@@ -90,11 +90,9 @@ class LogSummaryController: UIViewController {
     }
     
     func cacheOdometer() {
-        let odometer =  (Cache.shared.getOdometer(for: trip.car) ?? 0)
+        let odometer = trip.odometer + (Int32(trip.distance) / 1000)
         
-        let distance = Int(trip.distance / (kmToMeters: 1000))
-        
-        Cache.shared.set(odometer: (odometer + distance), for: trip.car)
+        Cache.shared.set(odometer: odometer, for: trip.car)
         
         Cache.shared.save()        
     }

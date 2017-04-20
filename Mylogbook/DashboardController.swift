@@ -194,7 +194,7 @@ class DashboardController: UIViewController, ActivityView {
         DispatchQueue.main.async {
             let pdf = composer.createPDF()
             
-            self.secondaryPdf = secondaryComposer?.createPDF() as? Data
+            self.secondaryPdf = secondaryComposer?.createPDF() as Data?
             
             self.showExportActionSheet(for: pdf)
             
@@ -475,7 +475,9 @@ extension DashboardController {
         
         let tableHeight = tableView.contentSize.height
         
-        progressCardHeight.constant = (base: 200) + tableTopSpace + tableHeight
+        let baseHeight: CGFloat = 200
+        
+        progressCardHeight.constant = baseHeight + tableTopSpace + tableHeight
         
         UIView.animate(withDuration: 0.35) { self.view.layoutIfNeeded() }
     }

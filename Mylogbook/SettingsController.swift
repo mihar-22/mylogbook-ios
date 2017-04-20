@@ -17,7 +17,8 @@ class SettingsController: UITableViewController {
     
     @IBOutlet weak var stateLabel: UILabel!
     
-    @IBOutlet weak var manualEntriesCell: UITableViewCell!
+    @IBOutlet weak var tellFriendsCell: UITableViewCell!
+    @IBOutlet weak var logOutCell: UITableViewCell!
     
     @IBOutlet weak var lastSyncedAtLabel: UILabel!
     
@@ -85,7 +86,7 @@ class SettingsController: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func didTapPromoteApp(_ sender: UIButton) {
+    func didTapTellFriends() {
         guard MFMailComposeViewController.canSendMail() else {
             showMailCannotSendAlert()
             
@@ -103,7 +104,7 @@ class SettingsController: UITableViewController {
         present(mailer, animated: true, completion: nil)
     }
     
-    @IBAction func didTapLogOut(_ sender: UIButton) {
+    func didTapLogOut() {
         logOut()
         
         Keychain.shared.clear(.apiToken)
@@ -141,13 +142,22 @@ class SettingsController: UITableViewController {
         present(controller, animated: true, completion: nil)
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "presentContactUsSegue" && !network.isReachable {
+            showOfflineAlertForContacting()
+            
+            return false
+        }
+        
+        return true
+    }
+    
     // MARK: Table View
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath == tableView.indexPath(for: tellFriendsCell) { didTapTellFriends() }
         
-        if tableView.cellForRow(at: indexPath) == manualEntriesCell {
-            performSegue(withIdentifier: "showManualEntriesSegue", sender: nil)
-        }
+        if indexPath == tableView.indexPath(for: logOutCell) { didTapLogOut() }
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -156,6 +166,16 @@ class SettingsController: UITableViewController {
 // MARK: Alerting
 
 extension SettingsController: Alerting {
+    func showOfflineAlertForContacting() {
+        let title = "Offline Mode"
+        
+        let message = "You can't contact us while you're offline. Connect online and try again."
+        
+        let cancelButton = CancelButton(title: "TRY AGAIN", action: nil)
+        
+        showAlert(title: title, message: message, buttons: [cancelButton])
+    }
+    
     func showMailCannotSendAlert() {
         let title = "Setup Mail"
         
