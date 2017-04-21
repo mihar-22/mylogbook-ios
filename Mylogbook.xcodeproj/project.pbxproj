@@ -69,7 +69,6 @@
 		C99FC9141E1BB395003BAEC2 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC9131E1BB395003BAEC2 /* Validator.swift */; };
 		C99FC9181E1BB534003BAEC2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC9171E1BB534003BAEC2 /* Validation.swift */; };
 		C9A0DFF31E5ACDE300102DE0 /* WeatherRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0DFF21E5ACDE300102DE0 /* WeatherRoute.swift */; };
-		C9AC857E1EA8793900FA2657 /* ContactUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AC857D1EA8793900FA2657 /* ContactUsController.swift */; };
 		C9B37B671E3D963800168846 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B37B661E3D963800168846 /* Trip.swift */; };
 		C9B552B91E90D0440042598E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B552B81E90D0440042598E /* Notification.swift */; };
 		C9B552BB1E91FD4E0042598E /* LastRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B552BA1E91FD4E0042598E /* LastRoute.swift */; };
@@ -162,7 +161,6 @@
 		C99FC9131E1BB395003BAEC2 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		C99FC9171E1BB534003BAEC2 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		C9A0DFF21E5ACDE300102DE0 /* WeatherRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherRoute.swift; sourceTree = "<group>"; };
-		C9AC857D1EA8793900FA2657 /* ContactUsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsController.swift; sourceTree = "<group>"; };
 		C9B37B661E3D963800168846 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		C9B552B81E90D0440042598E /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		C9B552BA1E91FD4E0042598E /* LastRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastRoute.swift; sourceTree = "<group>"; };
@@ -443,7 +441,6 @@
 				C9B552BC1E91FE710042598E /* Entries */,
 				C95CFB951E6E4EC100CC0BD1 /* StatesController.swift */,
 				C997A5051E67AF2C00CF4F47 /* SettingsController.swift */,
-				C9AC857D1EA8793900FA2657 /* ContactUsController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -744,7 +741,6 @@
 				C95B3B8C1E33360900533FB6 /* ResourceRoute.swift in Sources */,
 				C95CFB961E6E4EC100CC0BD1 /* StatesController.swift in Sources */,
 				C91051C11E93BDAE00B42F9D /* TasComposer.swift in Sources */,
-				C9AC857E1EA8793900FA2657 /* ContactUsController.swift in Sources */,
 				C970BCEC1E31A83E00E1129A /* Supervisor.swift in Sources */,
 				C908D3C51E24D4B500A4E91C /* Adapters.swift in Sources */,
 				C977B8AC1EA47872005F4966 /* TermsController.swift in Sources */,

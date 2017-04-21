@@ -19,6 +19,7 @@ class SettingsController: UITableViewController {
     
     @IBOutlet weak var tellFriendsCell: UITableViewCell!
     @IBOutlet weak var logOutCell: UITableViewCell!
+    @IBOutlet weak var contactUsCell: UITableViewCell!
     
     @IBOutlet weak var lastSyncedAtLabel: UILabel!
     
@@ -104,6 +105,57 @@ class SettingsController: UITableViewController {
         present(mailer, animated: true, completion: nil)
     }
     
+    func didTapContactUs() {
+        guard MFMailComposeViewController.canSendMail() else {
+            showMailCannotSendAlert()
+            
+            return
+        }
+        
+        let mailer = MFMailComposeViewController()
+        
+        mailer.mailComposeDelegate = self
+        
+        let title = "What are you contacting us about?"
+        
+        let actionSheet = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
+        
+        let helpAction = UIAlertAction(title: "I need some help", style: .default) { _ in
+            mailer.setToRecipients(["support+help@mylb.com.au"])
+
+            mailer.setSubject("Help")
+            
+            self.present(mailer, animated: true, completion: nil)
+        }
+        
+        let feedbackAction = UIAlertAction(title: "I'd like to give some feedback", style: .default) { _ in
+            mailer.setToRecipients(["support+feedback@mylb.com.au"])
+
+            mailer.setSubject("Feedback")
+            
+            self.present(mailer, animated: true, completion: nil)
+        }
+
+        let bugAction = UIAlertAction(title: "I'm reporting a bug", style: .default) { _ in
+            mailer.setToRecipients(["support+bug@mylb.com.au"])
+
+            mailer.setSubject("Bug")
+            
+            self.present(mailer, animated: true, completion: nil)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            actionSheet.dismiss(animated: true, completion: nil)
+        }
+        
+        actionSheet.addAction(helpAction)
+        actionSheet.addAction(feedbackAction)
+        actionSheet.addAction(bugAction)
+        actionSheet.addAction(cancelAction)
+        
+        present(actionSheet, animated: true, completion: nil)
+    }
+    
     func didTapLogOut() {
         logOut()
         
@@ -142,20 +194,12 @@ class SettingsController: UITableViewController {
         present(controller, animated: true, completion: nil)
     }
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "presentContactUsSegue" && !network.isReachable {
-            showOfflineAlertForContacting()
-            
-            return false
-        }
-        
-        return true
-    }
-    
     // MARK: Table View
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath == tableView.indexPath(for: tellFriendsCell) { didTapTellFriends() }
+        
+        if indexPath == tableView.indexPath(for: contactUsCell) { didTapContactUs() }
         
         if indexPath == tableView.indexPath(for: logOutCell) { didTapLogOut() }
         
@@ -166,16 +210,6 @@ class SettingsController: UITableViewController {
 // MARK: Alerting
 
 extension SettingsController: Alerting {
-    func showOfflineAlertForContacting() {
-        let title = "Offline Mode"
-        
-        let message = "You can't contact us while you're offline. Connect online and try again."
-        
-        let cancelButton = CancelButton(title: "TRY AGAIN", action: nil)
-        
-        showAlert(title: title, message: message, buttons: [cancelButton])
-    }
-    
     func showMailCannotSendAlert() {
         let title = "Setup Mail"
         
