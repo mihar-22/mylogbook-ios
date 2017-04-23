@@ -180,7 +180,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="mylogbook" id="6Iq-r5-H4H">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="d4S-b7-8El">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="d4S-b7-8El">
                             <connections>
                                 <action selector="didTapClose:" destination="So8-uU-Zcv" id="PPf-7z-ZdN"/>
                             </connections>
@@ -267,7 +267,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="mylogbook" id="UKo-Tl-b3f">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="VUD-2A-4wI">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="VUD-2A-4wI">
                             <connections>
                                 <action selector="didTapClose:" destination="4G5-9U-MMS" id="GY2-HM-C6i"/>
                             </connections>
