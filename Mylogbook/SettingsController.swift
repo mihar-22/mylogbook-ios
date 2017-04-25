@@ -100,7 +100,7 @@ class SettingsController: UITableViewController {
         
         mailer.mailComposeDelegate = self
         mailer.setSubject("\(name) invited you to Mylogbook")
-        mailer.setMessageBody("Hello!\n\n I've been using Mylogbook and thought it could help you too. It's an easy way to record your hours for your logbook and track your progress towards your P's.", isHTML: false)
+        mailer.setMessageBody("<div>Hello!</div><p>I've been using Mylogbook and thought it could help you too. It's an easy way to record your hours for your learner logbook and track your progress towards your P's.<p><a href=\"App Store: itms-apps://itunes.apple.com/app/id1229419388?mt=8\">Open in App Store</a>", isHTML: true)
         
         present(mailer, animated: true, completion: nil)
     }
