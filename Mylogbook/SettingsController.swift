@@ -19,6 +19,7 @@ class SettingsController: UITableViewController {
     
     @IBOutlet weak var tellFriendsCell: UITableViewCell!
     @IBOutlet weak var logOutCell: UITableViewCell!
+    @IBOutlet weak var rateAppCell: UITableViewCell!
     @IBOutlet weak var contactUsCell: UITableViewCell!
     
     @IBOutlet weak var lastSyncedAtLabel: UILabel!
@@ -85,6 +86,12 @@ class SettingsController: UITableViewController {
     
     @IBAction func didTapClose(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func didTapRateApp() {
+        let url = URL(string: "itms-apps://itunes.apple.com/app/id1229419388?mt=8")!
+        
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
     func didTapTellFriends() {
@@ -202,6 +209,8 @@ class SettingsController: UITableViewController {
         if indexPath == tableView.indexPath(for: contactUsCell) { didTapContactUs() }
         
         if indexPath == tableView.indexPath(for: logOutCell) { didTapLogOut() }
+        
+        if indexPath == tableView.indexPath(for: rateAppCell) { didTapRateApp() }
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
