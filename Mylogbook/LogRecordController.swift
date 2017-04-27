@@ -33,6 +33,10 @@ class LogRecordController: UIViewController, ActivityView {
         
         manager.desiredAccuracy = kCLLocationAccuracyBest
         
+        manager.allowsBackgroundLocationUpdates = true
+        
+        manager.pausesLocationUpdatesAutomatically = false
+        
         manager.activityType = .automotiveNavigation
         
         manager.distanceFilter = 20.0
@@ -331,6 +335,8 @@ extension LogRecordController: CLLocationManagerDelegate {
         case.stop:
             stop()
         case .cancel:
+            stop()
+            
             navigationController!.popViewController(animated: true)
         }
     }
