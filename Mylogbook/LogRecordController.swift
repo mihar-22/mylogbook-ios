@@ -12,8 +12,6 @@ class LogRecordController: UIViewController, ActivityView {
     
     // MARK: Location
     
-    var seconds = 0
-    
     var distance = 0.0
     
     let desiredAccuracy = 20.0
@@ -159,7 +157,7 @@ class LogRecordController: UIViewController, ActivityView {
     }
     
     func eachTimerInterval(_ timer: Timer) {
-        seconds += 1
+        let seconds = Date().timeIntervalSince(trip.startedAt)
         
         timeLabel.text = seconds.duration()
     }
@@ -303,8 +301,6 @@ extension LogRecordController: CLLocationManagerDelegate {
     }
     
     func setRecordingDefaults() {
-        seconds = 0
-        
         distance = 0.0
         
         locations.removeAll()
