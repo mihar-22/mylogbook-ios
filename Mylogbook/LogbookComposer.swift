@@ -190,7 +190,7 @@ extension LogbookComposer {
         
         let odometerStart = trip.odometer
         
-        let odometerEnd = Int(odometerStart) + Int(trip.distance)
+        let odometerEnd = Int(odometerStart) + Int(trip.distance / 1000)
         
         let odometerStartFormatted = formatter.string(from: NSNumber(value: odometerStart))
         
