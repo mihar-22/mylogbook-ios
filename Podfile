@@ -1,7 +1,7 @@
 platform :ios, '10.0'
 use_frameworks!
 
-target 'Mylogbook' do
+def shared_pods
 	pod 'JVFloatLabeledTextField'
 	pod 'Alamofire', '~> 4.0'
 	pod 'KeychainAccess'
@@ -14,4 +14,12 @@ target 'Mylogbook' do
 	pod 'Solar'
 	pod 'BEMCheckBox'
 	pod 'DZNEmptyDataSet'
+end
+
+target 'Mylogbook' do
+	shared_pods
+end
+
+target 'Mylogbook Dev' do
+	shared_pods
 end

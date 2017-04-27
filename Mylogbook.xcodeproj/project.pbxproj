@@ -8,6 +8,93 @@
 
 /* Begin PBXBuildFile section */
 		B89AD3B71EF73BF77CCF6484 /* Pods_Mylogbook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5369675C6942A6E53CBCF1F0 /* Pods_Mylogbook.framework */; };
+		C908A1F51EB1F431001C8BE3 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD5A1E28C45000B5E509 /* DashboardController.swift */; };
+		C908A1F61EB1F431001C8BE3 /* LogRecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6F6791E55B75100231949 /* LogRecordController.swift */; };
+		C908A1F71EB1F431001C8BE3 /* Entries.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908A9D01E74CE510040AAB1 /* Entries.swift */; };
+		C908A1F81EB1F431001C8BE3 /* LogSummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945AA511E5C25AB00FAF9E9 /* LogSummaryController.swift */; };
+		C908A1F91EB1F431001C8BE3 /* WeatherRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0DFF21E5ACDE300102DE0 /* WeatherRoute.swift */; };
+		C908A1FA1EB1F431001C8BE3 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1B98C1E094DCC002D4D61 /* Env.swift */; };
+		C908A1FB1EB1F431001C8BE3 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931A7B61E8A751200F916BC /* TabBar.swift */; };
+		C908A1FC1EB1F431001C8BE3 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E778E1E382C8500F34468 /* NibView.swift */; };
+		C908A1FD1EB1F431001C8BE3 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6F6751E54595300231949 /* Appearance.swift */; };
+		C908A1FE1EB1F431001C8BE3 /* QldComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B552BD1E922FE80042598E /* QldComposer.swift */; };
+		C908A1FF1EB1F431001C8BE3 /* OnboardPermitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95CFB911E6E419400CC0BD1 /* OnboardPermitController.swift */; };
+		C908A2001EB1F431001C8BE3 /* TripItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C925000C1E8A012E006BA96D /* TripItem.swift */; };
+		C908A2011EB1F431001C8BE3 /* TripCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987DD111E64F5D00011F223 /* TripCalculator.swift */; };
+		C908A2021EB1F431001C8BE3 /* SupervisorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCEF1E31A96300E1129A /* SupervisorCell.swift */; };
+		C908A2031EB1F431001C8BE3 /* AustralianState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F193DF1E769B1F00B6AE9C /* AustralianState.swift */; };
+		C908A2041EB1F431001C8BE3 /* SaComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91051BD1E93B7DE00B42F9D /* SaComposer.swift */; };
+		C908A2051EB1F431001C8BE3 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC90E1E1B5AF7003BAEC2 /* SignUpController.swift */; };
+		C908A2061EB1F431001C8BE3 /* WaComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91051C21E93C7CE00B42F9D /* WaComposer.swift */; };
+		C908A2071EB1F431001C8BE3 /* SyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC4D381E40123300A80348 /* SyncManager.swift */; };
+		C908A2081EB1F431001C8BE3 /* NswComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B552BF1E923D7C0042598E /* NswComposer.swift */; };
+		C908A2091EB1F431001C8BE3 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C997A5051E67AF2C00CF4F47 /* SettingsController.swift */; };
+		C908A20A1EB1F431001C8BE3 /* Mylogbook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9CDFA871DEFDB2800CE0A2D /* Mylogbook.xcdatamodeld */; };
+		C908A20B1EB1F431001C8BE3 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908A9D21E74CEC40040AAB1 /* Statistics.swift */; };
+		C908A20C1EB1F431001C8BE3 /* CarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD701E2DA20F00B5E509 /* CarController.swift */; };
+		C908A20D1EB1F431001C8BE3 /* CarsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD601E2C61B700B5E509 /* CarsController.swift */; };
+		C908A20E1EB1F431001C8BE3 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91051C91E961E3A00B42F9D /* WelcomeController.swift */; };
+		C908A20F1EB1F431001C8BE3 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B37B661E3D963800168846 /* Trip.swift */; };
+		C908A2101EB1F431001C8BE3 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B552B81E90D0440042598E /* Notification.swift */; };
+		C908A2111EB1F431001C8BE3 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC9131E1BB395003BAEC2 /* Validator.swift */; };
+		C908A2121EB1F431001C8BE3 /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E77951E398FE900F34468 /* Toolbar.swift */; };
+		C908A2131EB1F431001C8BE3 /* EntriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942357C1E6BAFD6003E9D4E /* EntriesController.swift */; };
+		C908A2141EB1F431001C8BE3 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99FC9171E1BB534003BAEC2 /* Validation.swift */; };
+		C908A2151EB1F431001C8BE3 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFDDB71E5DADC200AEFDC7 /* Cache.swift */; };
+		C908A2161EB1F431001C8BE3 /* SupervisorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC4D2E1E3F1FAD00A80348 /* SupervisorStore.swift */; };
+		C908A2171EB1F431001C8BE3 /* ChartSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BA89E1E5FF612002E8F9E /* ChartSegment.swift */; };
+		C908A2181EB1F431001C8BE3 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6F6771E545A1B00231949 /* KeyboardManager.swift */; };
+		C908A2191EB1F431001C8BE3 /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95487C91E4C209B00C48F54 /* Foundation.swift */; };
+		C908A21A1EB1F431001C8BE3 /* SupervisorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCE91E319F3500E1129A /* SupervisorController.swift */; };
+		C908A21B1EB1F431001C8BE3 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908A9DD1E764B140040AAB1 /* Tasks.swift */; };
+		C908A21C1EB1F431001C8BE3 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B3B9D1E35FABD00533FB6 /* NavigationBar.swift */; };
+		C908A21D1EB1F431001C8BE3 /* LastRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B552BA1E91FD4E0042598E /* LastRoute.swift */; };
+		C908A21E1EB1F431001C8BE3 /* TripCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C951AEE81E80D8CE00E6DD00 /* TripCondition.swift */; };
+		C908A21F1EB1F431001C8BE3 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E778A1E37374900F34468 /* TextField.swift */; };
+		C908A2201EB1F431001C8BE3 /* ChartValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BA8A01E5FF68D002E8F9E /* ChartValueFormatter.swift */; };
+		C908A2211EB1F431001C8BE3 /* Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95487CF1E4D859600C48F54 /* Sync.swift */; };
+		C908A2221EB1F431001C8BE3 /* PrivacyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C977B8A91EA4781E005F4966 /* PrivacyController.swift */; };
+		C908A2231EB1F431001C8BE3 /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD561E2882E200B5E509 /* LogInController.swift */; };
+		C908A2241EB1F431001C8BE3 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908A9D61E74D2D80040AAB1 /* TaskCell.swift */; };
+		C908A2251EB1F431001C8BE3 /* ResourceRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B3B8B1E33360900533FB6 /* ResourceRoute.swift */; };
+		C908A2261EB1F431001C8BE3 /* StatesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95CFB951E6E4EC100CC0BD1 /* StatesController.swift */; };
+		C908A2271EB1F431001C8BE3 /* TasComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91051C01E93BDAE00B42F9D /* TasComposer.swift */; };
+		C908A2281EB1F431001C8BE3 /* Supervisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCEB1E31A83E00E1129A /* Supervisor.swift */; };
+		C908A2291EB1F431001C8BE3 /* Adapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908D3C41E24D4B500A4E91C /* Adapters.swift */; };
+		C908A22A1EB1F431001C8BE3 /* TermsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C977B8AB1EA47872005F4966 /* TermsController.swift */; };
+		C908A22B1EB1F431001C8BE3 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924540D1E90B46300AEC83A /* ActivityView.swift */; };
+		C908A22C1EB1F431001C8BE3 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92AA02D1E1233D800A92067 /* Session.swift */; };
+		C908A22D1EB1F431001C8BE3 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935B73B1E0B7A4600FD7FFF /* Router.swift */; };
+		C908A22E1EB1F431001C8BE3 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B3B871E31CB4100533FB6 /* Alert.swift */; };
+		C908A22F1EB1F431001C8BE3 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92AA0301E15185A00A92067 /* Palette.swift */; };
+		C908A2301EB1F431001C8BE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CDFA801DEFDB2800CE0A2D /* AppDelegate.swift */; };
+		C908A2311EB1F431001C8BE3 /* ValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C942357F1E6BC719003E9D4E /* ValueFormatter.swift */; };
+		C908A2321EB1F431001C8BE3 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987DD131E651DD70011F223 /* Button.swift */; };
+		C908A2331EB1F431001C8BE3 /* VicComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C951AEF11E82140300E6DD00 /* VicComposer.swift */; };
+		C908A2341EB1F431001C8BE3 /* LogbookComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978BF301E7F713F00C422D7 /* LogbookComposer.swift */; };
+		C908A2351EB1F431001C8BE3 /* AuthRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935B7351E0A6FFE00FD7FFF /* AuthRoute.swift */; };
+		C908A2361EB1F431001C8BE3 /* SoftDeletingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC4D3E1E401DAF00A80348 /* SoftDeletingStore.swift */; };
+		C908A2371EB1F431001C8BE3 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD641E2C65D000B5E509 /* Car.swift */; };
+		C908A2381EB1F431001C8BE3 /* LogPrepareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E77911E397B3100F34468 /* LogPrepareController.swift */; };
+		C908A2391EB1F431001C8BE3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94406041E42EB6D00D32AC3 /* Store.swift */; };
+		C908A23A1EB1F431001C8BE3 /* SupervisorsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970BCE71E319D9E00E1129A /* SupervisorsController.swift */; };
+		C908A23B1EB1F431001C8BE3 /* TripStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945AA531E5C2A4400FAF9E9 /* TripStore.swift */; };
+		C908A23C1EB1F431001C8BE3 /* SyncStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979D6101E52A7E5009891C7 /* SyncStore.swift */; };
+		C908A23D1EB1F431001C8BE3 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908D3C61E24D5BF00A4E91C /* Keychain.swift */; };
+		C908A23E1EB1F431001C8BE3 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EBBD5D1E2C5F2100B5E509 /* CarCell.swift */; };
+		C908A23F1EB1F431001C8BE3 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E77931E397DD900F34468 /* Card.swift */; };
+		C908A2401EB1F431001C8BE3 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93BBA7E1E8F5D1A0087B3EB /* EmptyView.swift */; };
+		C908A2411EB1F431001C8BE3 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908A9CD1E73926D0040AAB1 /* Task.swift */; };
+		C908A2421EB1F431001C8BE3 /* CarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EC4D2C1E3ECE1000A80348 /* CarStore.swift */; };
+		C908A2441EB1F431001C8BE3 /* Pods_Mylogbook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5369675C6942A6E53CBCF1F0 /* Pods_Mylogbook.framework */; };
+		C908A2461EB1F431001C8BE3 /* intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C9AC85831EA9F0C100FA2657 /* intro.mp4 */; };
+		C908A2471EB1F431001C8BE3 /* tables in Resources */ = {isa = PBXBuildFile; fileRef = C91051C61E950E4F00B42F9D /* tables */; };
+		C908A2481EB1F431001C8BE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CDFA8C1DEFDB2800CE0A2D /* LaunchScreen.storyboard */; };
+		C908A2491EB1F431001C8BE3 /* terms-of-service.html in Resources */ = {isa = PBXBuildFile; fileRef = C977B8A51EA47674005F4966 /* terms-of-service.html */; };
+		C908A24A1EB1F431001C8BE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CDFA841DEFDB2800CE0A2D /* Main.storyboard */; };
+		C908A24B1EB1F431001C8BE3 /* TripItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C925000A1E8A0117006BA96D /* TripItem.xib */; };
+		C908A24C1EB1F431001C8BE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C931A7B81E8A821D00F916BC /* Assets.xcassets */; };
+		C908A24D1EB1F431001C8BE3 /* privacy-policy.html in Resources */ = {isa = PBXBuildFile; fileRef = C977B8A41EA47674005F4966 /* privacy-policy.html */; };
 		C908A9CE1E73926D0040AAB1 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908A9CD1E73926D0040AAB1 /* Task.swift */; };
 		C908A9D11E74CE510040AAB1 /* Entries.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908A9D01E74CE510040AAB1 /* Entries.swift */; };
 		C908A9D31E74CEC40040AAB1 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908A9D21E74CEC40040AAB1 /* Statistics.swift */; };
@@ -98,8 +185,11 @@
 
 /* Begin PBXFileReference section */
 		3234582784334DC66A81283C /* Pods-Mylogbook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mylogbook.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mylogbook/Pods-Mylogbook.release.xcconfig"; sourceTree = "<group>"; };
+		360B3B44BE6D2069CA284220 /* Pods-Mylogbook Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mylogbook Dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mylogbook Dev/Pods-Mylogbook Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		3B6A91E9A10AA0CD1E0E3142 /* Pods-Mylogbook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mylogbook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mylogbook/Pods-Mylogbook.debug.xcconfig"; sourceTree = "<group>"; };
 		5369675C6942A6E53CBCF1F0 /* Pods_Mylogbook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mylogbook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		59D29FF408B2A18999CE7385 /* Pods_Mylogbook_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mylogbook_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C908A2531EB1F431001C8BE3 /* Mylogbook Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mylogbook Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C908A9CD1E73926D0040AAB1 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		C908A9D01E74CE510040AAB1 /* Entries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entries.swift; sourceTree = "<group>"; };
 		C908A9D21E74CEC40040AAB1 /* Statistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
@@ -188,9 +278,18 @@
 		C9F193DF1E769B1F00B6AE9C /* AustralianState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AustralianState.swift; sourceTree = "<group>"; };
 		C9F1B98C1E094DCC002D4D61 /* Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
 		C9FFDDB71E5DADC200AEFDC7 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		D57662ACA1F7CBE374EA13B9 /* Pods-Mylogbook Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mylogbook Dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mylogbook Dev/Pods-Mylogbook Dev.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C908A2431EB1F431001C8BE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C908A2441EB1F431001C8BE3 /* Pods_Mylogbook.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9CDFA7A1DEFDB2800CE0A2D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -206,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				5369675C6942A6E53CBCF1F0 /* Pods_Mylogbook.framework */,
+				59D29FF408B2A18999CE7385 /* Pods_Mylogbook_Dev.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -215,6 +315,8 @@
 			children = (
 				3B6A91E9A10AA0CD1E0E3142 /* Pods-Mylogbook.debug.xcconfig */,
 				3234582784334DC66A81283C /* Pods-Mylogbook.release.xcconfig */,
+				360B3B44BE6D2069CA284220 /* Pods-Mylogbook Dev.debug.xcconfig */,
+				D57662ACA1F7CBE374EA13B9 /* Pods-Mylogbook Dev.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -477,6 +579,7 @@
 			isa = PBXGroup;
 			children = (
 				C9CDFA7D1DEFDB2800CE0A2D /* Mylogbook.app */,
+				C908A2531EB1F431001C8BE3 /* Mylogbook Dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -558,6 +661,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C908A1F21EB1F431001C8BE3 /* Mylogbook Dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C908A2501EB1F431001C8BE3 /* Build configuration list for PBXNativeTarget "Mylogbook Dev" */;
+			buildPhases = (
+				C908A1F31EB1F431001C8BE3 /* [CP] Check Pods Manifest.lock */,
+				C908A1F41EB1F431001C8BE3 /* Sources */,
+				C908A2431EB1F431001C8BE3 /* Frameworks */,
+				C908A2451EB1F431001C8BE3 /* Resources */,
+				C908A24E1EB1F431001C8BE3 /* [CP] Embed Pods Frameworks */,
+				C908A24F1EB1F431001C8BE3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mylogbook Dev";
+			productName = Mylogbook;
+			productReference = C908A2531EB1F431001C8BE3 /* Mylogbook Dev.app */;
+			productType = "com.apple.product-type.application";
+		};
 		C9CDFA7C1DEFDB2800CE0A2D /* Mylogbook */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9CDFA921DEFDB2800CE0A2D /* Build configuration list for PBXNativeTarget "Mylogbook" */;
@@ -588,6 +711,9 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Rahim Alwer";
 				TargetAttributes = {
+					C908A1F21EB1F431001C8BE3 = {
+						DevelopmentTeam = F35GF67S6P;
+					};
 					C9CDFA7C1DEFDB2800CE0A2D = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = F35GF67S6P;
@@ -615,11 +741,27 @@
 			projectRoot = "";
 			targets = (
 				C9CDFA7C1DEFDB2800CE0A2D /* Mylogbook */,
+				C908A1F21EB1F431001C8BE3 /* Mylogbook Dev */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C908A2451EB1F431001C8BE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C908A2461EB1F431001C8BE3 /* intro.mp4 in Resources */,
+				C908A2471EB1F431001C8BE3 /* tables in Resources */,
+				C908A2481EB1F431001C8BE3 /* LaunchScreen.storyboard in Resources */,
+				C908A2491EB1F431001C8BE3 /* terms-of-service.html in Resources */,
+				C908A24A1EB1F431001C8BE3 /* Main.storyboard in Resources */,
+				C908A24B1EB1F431001C8BE3 /* TripItem.xib in Resources */,
+				C908A24C1EB1F431001C8BE3 /* Assets.xcassets in Resources */,
+				C908A24D1EB1F431001C8BE3 /* privacy-policy.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9CDFA7B1DEFDB2800CE0A2D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -683,9 +825,139 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		C908A1F31EB1F431001C8BE3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C908A24E1EB1F431001C8BE3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mylogbook/Pods-Mylogbook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C908A24F1EB1F431001C8BE3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mylogbook/Pods-Mylogbook-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C908A1F41EB1F431001C8BE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C908A1F51EB1F431001C8BE3 /* DashboardController.swift in Sources */,
+				C908A1F61EB1F431001C8BE3 /* LogRecordController.swift in Sources */,
+				C908A1F71EB1F431001C8BE3 /* Entries.swift in Sources */,
+				C908A1F81EB1F431001C8BE3 /* LogSummaryController.swift in Sources */,
+				C908A1F91EB1F431001C8BE3 /* WeatherRoute.swift in Sources */,
+				C908A1FA1EB1F431001C8BE3 /* Env.swift in Sources */,
+				C908A1FB1EB1F431001C8BE3 /* TabBar.swift in Sources */,
+				C908A1FC1EB1F431001C8BE3 /* NibView.swift in Sources */,
+				C908A1FD1EB1F431001C8BE3 /* Appearance.swift in Sources */,
+				C908A1FE1EB1F431001C8BE3 /* QldComposer.swift in Sources */,
+				C908A1FF1EB1F431001C8BE3 /* OnboardPermitController.swift in Sources */,
+				C908A2001EB1F431001C8BE3 /* TripItem.swift in Sources */,
+				C908A2011EB1F431001C8BE3 /* TripCalculator.swift in Sources */,
+				C908A2021EB1F431001C8BE3 /* SupervisorCell.swift in Sources */,
+				C908A2031EB1F431001C8BE3 /* AustralianState.swift in Sources */,
+				C908A2041EB1F431001C8BE3 /* SaComposer.swift in Sources */,
+				C908A2051EB1F431001C8BE3 /* SignUpController.swift in Sources */,
+				C908A2061EB1F431001C8BE3 /* WaComposer.swift in Sources */,
+				C908A2071EB1F431001C8BE3 /* SyncManager.swift in Sources */,
+				C908A2081EB1F431001C8BE3 /* NswComposer.swift in Sources */,
+				C908A2091EB1F431001C8BE3 /* SettingsController.swift in Sources */,
+				C908A20A1EB1F431001C8BE3 /* Mylogbook.xcdatamodeld in Sources */,
+				C908A20B1EB1F431001C8BE3 /* Statistics.swift in Sources */,
+				C908A20C1EB1F431001C8BE3 /* CarController.swift in Sources */,
+				C908A20D1EB1F431001C8BE3 /* CarsController.swift in Sources */,
+				C908A20E1EB1F431001C8BE3 /* WelcomeController.swift in Sources */,
+				C908A20F1EB1F431001C8BE3 /* Trip.swift in Sources */,
+				C908A2101EB1F431001C8BE3 /* Notification.swift in Sources */,
+				C908A2111EB1F431001C8BE3 /* Validator.swift in Sources */,
+				C908A2121EB1F431001C8BE3 /* Toolbar.swift in Sources */,
+				C908A2131EB1F431001C8BE3 /* EntriesController.swift in Sources */,
+				C908A2141EB1F431001C8BE3 /* Validation.swift in Sources */,
+				C908A2151EB1F431001C8BE3 /* Cache.swift in Sources */,
+				C908A2161EB1F431001C8BE3 /* SupervisorStore.swift in Sources */,
+				C908A2171EB1F431001C8BE3 /* ChartSegment.swift in Sources */,
+				C908A2181EB1F431001C8BE3 /* KeyboardManager.swift in Sources */,
+				C908A2191EB1F431001C8BE3 /* Foundation.swift in Sources */,
+				C908A21A1EB1F431001C8BE3 /* SupervisorController.swift in Sources */,
+				C908A21B1EB1F431001C8BE3 /* Tasks.swift in Sources */,
+				C908A21C1EB1F431001C8BE3 /* NavigationBar.swift in Sources */,
+				C908A21D1EB1F431001C8BE3 /* LastRoute.swift in Sources */,
+				C908A21E1EB1F431001C8BE3 /* TripCondition.swift in Sources */,
+				C908A21F1EB1F431001C8BE3 /* TextField.swift in Sources */,
+				C908A2201EB1F431001C8BE3 /* ChartValueFormatter.swift in Sources */,
+				C908A2211EB1F431001C8BE3 /* Sync.swift in Sources */,
+				C908A2221EB1F431001C8BE3 /* PrivacyController.swift in Sources */,
+				C908A2231EB1F431001C8BE3 /* LogInController.swift in Sources */,
+				C908A2241EB1F431001C8BE3 /* TaskCell.swift in Sources */,
+				C908A2251EB1F431001C8BE3 /* ResourceRoute.swift in Sources */,
+				C908A2261EB1F431001C8BE3 /* StatesController.swift in Sources */,
+				C908A2271EB1F431001C8BE3 /* TasComposer.swift in Sources */,
+				C908A2281EB1F431001C8BE3 /* Supervisor.swift in Sources */,
+				C908A2291EB1F431001C8BE3 /* Adapters.swift in Sources */,
+				C908A22A1EB1F431001C8BE3 /* TermsController.swift in Sources */,
+				C908A22B1EB1F431001C8BE3 /* ActivityView.swift in Sources */,
+				C908A22C1EB1F431001C8BE3 /* Session.swift in Sources */,
+				C908A22D1EB1F431001C8BE3 /* Router.swift in Sources */,
+				C908A22E1EB1F431001C8BE3 /* Alert.swift in Sources */,
+				C908A22F1EB1F431001C8BE3 /* Palette.swift in Sources */,
+				C908A2301EB1F431001C8BE3 /* AppDelegate.swift in Sources */,
+				C908A2311EB1F431001C8BE3 /* ValueFormatter.swift in Sources */,
+				C908A2321EB1F431001C8BE3 /* Button.swift in Sources */,
+				C908A2331EB1F431001C8BE3 /* VicComposer.swift in Sources */,
+				C908A2341EB1F431001C8BE3 /* LogbookComposer.swift in Sources */,
+				C908A2351EB1F431001C8BE3 /* AuthRoute.swift in Sources */,
+				C908A2361EB1F431001C8BE3 /* SoftDeletingStore.swift in Sources */,
+				C908A2371EB1F431001C8BE3 /* Car.swift in Sources */,
+				C908A2381EB1F431001C8BE3 /* LogPrepareController.swift in Sources */,
+				C908A2391EB1F431001C8BE3 /* Store.swift in Sources */,
+				C908A23A1EB1F431001C8BE3 /* SupervisorsController.swift in Sources */,
+				C908A23B1EB1F431001C8BE3 /* TripStore.swift in Sources */,
+				C908A23C1EB1F431001C8BE3 /* SyncStore.swift in Sources */,
+				C908A23D1EB1F431001C8BE3 /* Keychain.swift in Sources */,
+				C908A23E1EB1F431001C8BE3 /* CarCell.swift in Sources */,
+				C908A23F1EB1F431001C8BE3 /* Card.swift in Sources */,
+				C908A2401EB1F431001C8BE3 /* EmptyView.swift in Sources */,
+				C908A2411EB1F431001C8BE3 /* Task.swift in Sources */,
+				C908A2421EB1F431001C8BE3 /* CarStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9CDFA791DEFDB2800CE0A2D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -793,6 +1065,47 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C908A2511EB1F431001C8BE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B6A91E9A10AA0CD1E0E3142 /* Pods-Mylogbook.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = F35GF67S6P;
+				INFOPLIST_FILE = Mylogbook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mylb.mylogbook-dev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Mylogbook Development";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C908A2521EB1F431001C8BE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3234582784334DC66A81283C /* Pods-Mylogbook.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEVELOPMENT_TEAM = F35GF67S6P;
+				INFOPLIST_FILE = Mylogbook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mylb.mylogbook-dev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		C9CDFA901DEFDB2800CE0A2D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -893,15 +1206,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEVELOPMENT_TEAM = F35GF67S6P;
 				INFOPLIST_FILE = Mylogbook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mylb.mylogbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2d833225-422d-4fbd-a467-03be3f929b46";
-				PROVISIONING_PROFILE_SPECIFIER = "Mylogbook Debug";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -914,6 +1227,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = F35GF67S6P;
 				INFOPLIST_FILE = Mylogbook/Info.plist;
@@ -921,7 +1235,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mylb.mylogbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "464ae3de-4463-4bfd-bad5-0c53e7486cec";
 				PROVISIONING_PROFILE_SPECIFIER = "Mylogbook App Store Distribution";
 				SWIFT_VERSION = 3.0;
 			};
@@ -930,6 +1243,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C908A2501EB1F431001C8BE3 /* Build configuration list for PBXNativeTarget "Mylogbook Dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C908A2511EB1F431001C8BE3 /* Debug */,
+				C908A2521EB1F431001C8BE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C9CDFA781DEFDB2800CE0A2D /* Build configuration list for PBXProject "Mylogbook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
