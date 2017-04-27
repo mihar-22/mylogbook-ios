@@ -18,8 +18,6 @@ class LogRecordController: UIViewController, ActivityView {
     
     var isPositionFixed = false
     
-    var isPaused = false
-    
     var bestAccuracy = 1000.0
     
     var timer = Timer()
@@ -49,7 +47,6 @@ class LogRecordController: UIViewController, ActivityView {
     // MARK: Outlets
     
     @IBOutlet weak var toolbar: UIToolbar!
-    @IBOutlet var pauseButton: UIBarButtonItem!
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
@@ -71,8 +68,6 @@ class LogRecordController: UIViewController, ActivityView {
     @IBAction func didTapStop(_ sender: UIBarButtonItem) {
         guard locations.count > 1 else { return }
         
-        pauseButton.isEnabled = false
-        
         showActivityIndicator()
         
         recording(will: .stop)
@@ -90,18 +85,6 @@ class LogRecordController: UIViewController, ActivityView {
     
     @IBAction func didTapCancel(_ sender: UIBarButtonItem) {
         showCancelAlert()
-    }
-    
-    @IBAction func didTapPause(_ sender: UIBarButtonItem) {        
-        let action: RecordAction =  isPaused ? .play : .pause
-        
-        recording(will: action)
-
-        let item: UIBarButtonSystemItem = isPaused ? .pause : .play
-        
-        setToolBar(item: item)
-        
-        isPaused = !isPaused
     }
     
     func openSettings(string: String) {
@@ -134,18 +117,6 @@ class LogRecordController: UIViewController, ActivityView {
         guard !authorizationStatusWasChanged else { return }
         
         shouldStartRecording()
-    }
-    
-    // MARK: Toolbar
-    
-    func setToolBar(item: UIBarButtonSystemItem) {
-        let button = UIBarButtonItem(barButtonSystemItem: item,
-                                     target: self,
-                                     action: #selector(didTapPause(_:)))
-        
-        button.style = .done
-        
-        toolbar.setItems([button], animated: true)
     }
     
     // MARK: Timer
@@ -301,7 +272,7 @@ extension LogRecordController: Alerting {
 extension LogRecordController: CLLocationManagerDelegate {
     
     enum RecordAction {
-        case play, pause, start, stop, cancel
+        case play, start, stop, cancel
     }
     
     func setRecordingDefaults() {
@@ -326,8 +297,6 @@ extension LogRecordController: CLLocationManagerDelegate {
         switch action {
         case .play:
             start()
-        case .pause:
-            stop()
         case .start:
             setRecordingDefaults()
             start()
