@@ -7,10 +7,18 @@ class WelcomeController: UIViewController {
  
     var player: AVPlayer!
     
+    // MARK: Outlets
+    
+    @IBOutlet weak var logInButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
+    
     // MARK: View Lifecycles
     
     override func viewDidLoad() {
         setupVideo()
+
+        signUpButton.restyle(.shadow)
+        logInButton.restyle(.shadow)
     }
     
     override func viewWillAppear(_ animated: Bool) {

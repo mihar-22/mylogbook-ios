@@ -14,6 +14,7 @@ class LogInController: UIViewController, ActivityView {
     var password: String? { return passwordTextField.text }
     
     var signUpPassword: String?
+    var justSignedUp = false
 
     // MARK: Outlets
     
@@ -30,9 +31,11 @@ class LogInController: UIViewController, ActivityView {
         setupValidator()
                 
         attemptToPrefillForm()
+        
+        if justSignedUp { showEmailConfirmationAlert() }
     }
     
-    // MARK: Validator
+    // MARK: Validators
     
     func setupValidator() {
         validator.delegate = self
@@ -208,6 +211,18 @@ extension LogInController: Alerting {
         let cancelButton = CancelButton(title: "TRY AGAIN", action: nil)
         
         showAlert(title: title, message: message, buttons: [cancelButton])
+    }
+    
+    func showEmailConfirmationAlert() {
+        let title = "One More Step"
+        
+        let message = "An email has been sent to you. Please go to your inbox and click on the link. This will help verify your account and keep your details safe!"
+        
+        let cancelButton = CancelButton(title: "CANCEL", action: nil)
+        
+        let openMailButton = DefaultButton(title: "OPEN MAIL") { self.navigateToMailBox() }
+        
+        showAlert(title: title, message: message, buttons: [cancelButton, openMailButton])
     }
     
     func showInvalidEmailAlert() {

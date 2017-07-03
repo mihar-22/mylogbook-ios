@@ -12,6 +12,7 @@ class SignUpController: UIViewController, ActivityView {
     var email: String? { return emailTextField.text }
     var password: String? { return passwordTextField.text }
     var birthday: String?
+    var justSignedUp = false
     
     // MARK: Outlets
     
@@ -131,8 +132,10 @@ class SignUpController: UIViewController, ActivityView {
             
             DispatchQueue.main.async {
                 Keychain.shared.set(self.email!, for: .email)
-
-                self.showEmailConfirmationAlert()
+                
+                self.justSignedUp = true
+                
+                self.navigateToLoginScene()
             }
         }
     }
@@ -142,19 +145,14 @@ class SignUpController: UIViewController, ActivityView {
     func navigateToLoginScene() {
         performSegue(withIdentifier: "logInSegue", sender: self)
     }
-    
-    func navigateToMailBox() {
-        let mailUrl = URL(string: "message://")!
-        
-        if UIApplication.shared.canOpenURL(mailUrl) {
-            UIApplication.shared.open(mailUrl, options: [:], completionHandler: nil)
-        }
-    }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "logInSegue" {
-            if let controller = segue.destination as? LogInController {
-                controller.signUpPassword = password!
+        if let identifier = segue.identifier, identifier == "logInSegue" {
+            if let navigationController = segue.destination as? UINavigationController {
+                if let controller = navigationController.topViewController as? LogInController {
+                    controller.signUpPassword = password!
+                    controller.justSignedUp = justSignedUp
+                }
             }
         }
     }
@@ -173,18 +171,6 @@ extension SignUpController: Alerting {
         let logInButton = DefaultButton(title: "LOG IN") { self.navigateToLoginScene() }
         
         showAlert(title: title, message: message, buttons: [cancelButton, logInButton])
-    }
-    
-    func showEmailConfirmationAlert() {        
-        let title = "One More Step"
-        
-        let message = "An email has been sent to you. Please go to your inbox and click on the link. This will help verify your account and keep your details safe!"
-        
-        let cancelButton = CancelButton(title: "LOG IN") { self.navigateToLoginScene() }
-        
-        let openMailButton = DefaultButton(title: "OPEN MAIL") { self.navigateToMailBox() }
-        
-        showAlert(title: title, message: message, buttons: [cancelButton, openMailButton])
     }
     
     func showOfflineAlertFor(operation: String) {
