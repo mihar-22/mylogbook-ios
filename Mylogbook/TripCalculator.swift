@@ -1,5 +1,6 @@
 
 import Solar
+import CoreLocation
 
 // MARK: Trip Calculation
 
@@ -112,9 +113,7 @@ struct TripCalculator {
     // MARK: Calculate Day Time
     
     static func calculateDayTime(for trip: Trip) -> (sunrise: Int, sunset: Int) {
-        let solar = Solar.init(for: trip.startedAt,
-                               latitude: trip.startLatitude,
-                               longitude: trip.startLongitude)!
+        let solar = Solar.init(for: trip.startedAt, coordinate: trip.startCoordinate)!
         
         let sunrise = solar.civilSunrise!.secondsFromStartOfDay(in: trip.timeZone)
         let sunset = solar.civilSunset!.secondsFromStartOfDay(in: trip.timeZone)
@@ -125,9 +124,7 @@ struct TripCalculator {
     // MARK: Calculate Twilight
     
     static func calculateTwilight(for trip: Trip) -> Twilight {
-        let solar = Solar.init(for: trip.startedAt,
-                               latitude: trip.startLatitude,
-                               longitude: trip.startLongitude)!
+        let solar = Solar.init(for: trip.startedAt, coordinate: trip.startCoordinate)!
         
         let civilDawn = solar.civilSunrise!.secondsFromStartOfDay(in: trip.timeZone)
         let civilDusk = solar.civilSunset!.secondsFromStartOfDay(in: trip.timeZone)

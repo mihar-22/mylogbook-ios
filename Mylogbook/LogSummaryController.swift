@@ -51,13 +51,13 @@ class LogSummaryController: UIViewController {
         showCancelAlert()
     }
     
-    func didChangeTextField(_ sender: UITextField) {
+    @objc func didChangeTextField(_ sender: UITextField) {
         let maxLength = 50
         
-        if let text = sender.text, text.characters.count >= maxLength {
+        if let text = sender.text, text.count >= maxLength {
             let index = text.index(text.startIndex, offsetBy: maxLength)
             
-            sender.text = text.substring(to: index)
+            sender.text = String(text[...index])
         }
         
         validate()

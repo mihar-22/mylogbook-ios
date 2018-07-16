@@ -20,7 +20,7 @@ class Store {
     private init() {
         let id = Keychain.shared.get(.id)!
         
-        let stack = DataStack(modelName: "Mylogbook")
+        let stack = DataStack(xcodeModelName: "Mylogbook")
         
         let store = SQLiteStore(fileName: "Mylogbook\(id).sqlite")
         

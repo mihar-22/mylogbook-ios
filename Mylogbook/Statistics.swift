@@ -82,8 +82,8 @@ class Statistics: NSObject, NSCoding {
     
     func refresh() {
         let trips = Store.shared.stack.fetchAll(From<Trip>(),
-                                                Where("isAccumulated = true"),
-                                                OrderBy(.ascending("startedAt")))!
+                                                Where<Trip>("isAccumulated = true"),
+                                                OrderBy<Trip>(.ascending("startedAt")))!
         
         day = 0
         night = 0
@@ -99,8 +99,8 @@ class Statistics: NSObject, NSCoding {
     
     func update() {
         let trips = Store.shared.stack.fetchAll(From<Trip>(),
-                                                Where("isAccumulated = false"),
-                                                OrderBy(.ascending("startedAt")))!
+                                                Where<Trip>("isAccumulated = false"),
+                                                OrderBy<Trip>(.ascending("startedAt")))!
         
         guard trips.count > 0 else { return }
         

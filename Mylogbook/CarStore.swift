@@ -9,7 +9,7 @@ class CarStore: SoftDeletingStore {
                     name: String,
                     type: String) {
         
-        Store.shared.stack.beginSynchronous { transaction in
+        try! Store.shared.stack.perform(synchronous: { (transaction) in
             let car: Car = (car != nil) ? transaction.edit(car)! : transaction.create(Into<Car>())
             
             car.registration = registration
@@ -17,8 +17,6 @@ class CarStore: SoftDeletingStore {
             car.type = type
             
             car.updatedAt = Date()
-            
-            _ = transaction.commitAndWait()
-        }
+        }, waitForAllObservers: true)
     }
 }

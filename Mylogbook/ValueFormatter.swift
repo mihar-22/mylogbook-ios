@@ -70,7 +70,7 @@ extension UITextField {
     
     // MARK: Handlers
     
-    func _editingChangedHandler(_ sender: UITextField) {
+    @objc func _editingChangedHandler(_ sender: UITextField) {
         valueText = sender.text
     }
 }

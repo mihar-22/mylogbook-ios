@@ -175,7 +175,7 @@ class SettingsController: UITableViewController {
         navigateToAuthScene()
     }
     
-    func didChangePermitReceivedDate(_ sender: UIDatePicker) {
+    @objc func didChangePermitReceivedDate(_ sender: UIDatePicker) {
         Keychain.shared.set(sender.date.utc(format: .date), for: .permitReceivedAt)
         
         permitReceivedTextField.text = sender.date.local(date: .long, time: .none)

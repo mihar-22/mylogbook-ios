@@ -158,7 +158,7 @@ extension LogbookComposer {
     
     func fetchTrips() -> [Trip] {
         let trips = Store.shared.stack.fetchAll(From<Trip>(),
-                                                OrderBy(.ascending("startedAt")))!
+                                                OrderBy<Trip>(.ascending("startedAt")))!
         
         numberOfRows = trips.count
         

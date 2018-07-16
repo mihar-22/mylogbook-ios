@@ -19,7 +19,7 @@ extension Importable where Self: NSManagedObject, Self: Resourceable, Self: Sync
     static func shouldUpdate(from source: JSON, in transaction: BaseDataTransaction) -> Bool {
         let id = source["id"].int!
         
-        guard let model = transaction.fetchOne(From<Self>(), Where("id = \(id)")) else { return true }
+        guard let model = transaction.fetchOne(From<Self>(), Where<Self>("id = \(id)")) else { return true }
         
         return model.updatedAt < source["updated_at"].string!.utc(format: .dateTime) ||
                (model.deletedAt == nil && source["deleted_at"].string != nil)
@@ -30,8 +30,7 @@ extension Importable where Self: NSManagedObject, Self: Resourceable, Self: Sync
 
 class SyncStore<Model: NSManagedObject> where Model: Importable,
                                               Model: Resourceable,
-                                              Model.ImportSource == JSON,
-                                              Model.UniqueIDType: Hashable {
+                                              Model.ImportSource == JSON {
  
     static func `import`(from route: Routing, completion: @escaping ([Model]) -> Void){
         let route = ResourceRoute<Model>.index

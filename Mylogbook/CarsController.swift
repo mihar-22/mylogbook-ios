@@ -7,8 +7,8 @@ import PopupDialog
 class CarsController: UIViewController {
     
     var cars = Store.shared.stack.monitorList(From<Car>(),
-                                              Where("deletedAt = nil"),
-                                              OrderBy(.ascending("name")))
+                                              Where<Car>("deletedAt = nil"),
+                                              OrderBy<Car>(.ascending("name")))
     
     // MARK: Outlets
     
@@ -29,7 +29,9 @@ class CarsController: UIViewController {
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let viewController = segue.destination as? CarController {            
+        let destinationNavigationController = segue.destination as! UINavigationController
+        
+        if let viewController = destinationNavigationController.topViewController as? CarController {
             if segue.identifier == "editCarSegue" {
                 if let selectedCell = sender as? CarCell {
                     let indexPath = carsTable.indexPath(for: selectedCell)!

@@ -12,8 +12,8 @@ protocol EmptyView {
 extension EmptyView {
     func emptyView(title: String) -> NSAttributedString {
         let attributes = [
-            NSFontAttributeName: UIFont.systemFont(ofSize: 20, weight: UIFontWeightSemibold),
-            NSForegroundColorAttributeName: UIColor.gray
+            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.semibold),
+            NSAttributedStringKey.foregroundColor: UIColor.gray
         ]
         
         return NSAttributedString(string: title, attributes: attributes)
@@ -21,8 +21,8 @@ extension EmptyView {
     
     func emptyView(description: String) -> NSAttributedString {
         let attributes = [
-            NSFontAttributeName: UIFont.systemFont(ofSize: 14, weight: UIFontWeightRegular),
-            NSForegroundColorAttributeName: UIColor.lightGray
+            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.regular),
+            NSAttributedStringKey.foregroundColor: UIColor.lightGray
         ]
         
         return NSAttributedString(string: description, attributes: attributes)
@@ -31,8 +31,8 @@ extension EmptyView {
     
     func emptyViewButton(title: String) -> NSAttributedString {
         let attributes = [
-            NSFontAttributeName: UIFont.systemFont(ofSize: 14, weight: UIFontWeightRegular),
-            NSForegroundColorAttributeName: Palette.tint.uiColor
+            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.regular),
+            NSAttributedStringKey.foregroundColor: Palette.tint.uiColor
         ]
         
         return NSAttributedString(string: title, attributes: attributes)

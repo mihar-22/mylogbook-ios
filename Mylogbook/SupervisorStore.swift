@@ -9,7 +9,7 @@ class SupervisorStore: SoftDeletingStore {
                     gender: String,
                     isAccredited: Bool) {
         
-        Store.shared.stack.beginSynchronous { transaction in
+        try! Store.shared.stack.perform(synchronous: { (transaction) in
             let supervisor: Supervisor = (supervisor != nil) ? transaction.edit(supervisor)! :
                                                                transaction.create(Into<Supervisor>())
             
@@ -18,9 +18,6 @@ class SupervisorStore: SoftDeletingStore {
             supervisor.isAccredited = isAccredited
             
             supervisor.updatedAt = Date()
-            
-            _ = transaction.commitAndWait()
-        }
-        
+        }, waitForAllObservers: true)
     }
 }

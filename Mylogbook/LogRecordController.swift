@@ -109,11 +109,11 @@ class LogRecordController: UIViewController, ActivityView {
                                                object: UIApplication.shared)
     }
     
-    func applicationDidEnterBackground(_ notification: NSNotification) {
+    @objc func applicationDidEnterBackground(_ notification: NSNotification) {
         authorizationStatusWasChanged = false
     }
     
-    func applicationDidBecomeActive(_ notification: NSNotification) {
+    @objc func applicationDidBecomeActive(_ notification: NSNotification) {
         guard !authorizationStatusWasChanged else { return }
         
         shouldStartRecording()
@@ -131,7 +131,7 @@ class LogRecordController: UIViewController, ActivityView {
                                      repeats: true)
     }
     
-    func eachTimerInterval(_ timer: Timer) {
+    @objc func eachTimerInterval(_ timer: Timer) {
         let seconds = Date().timeIntervalSince(trip.startedAt)
         
         timeLabel.text = seconds.duration()

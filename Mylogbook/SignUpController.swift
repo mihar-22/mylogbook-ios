@@ -73,7 +73,7 @@ class SignUpController: UIViewController, ActivityView {
         dismiss(animated: true, completion: nil)
     }
 
-    func didChangeBirthday(_ sender: UIDatePicker) {
+    @objc func didChangeBirthday(_ sender: UIDatePicker) {
         birthday = sender.date.utc(format: .date)
 
         birthdayTextField.text = sender.date.local(date: .long, time: .none)

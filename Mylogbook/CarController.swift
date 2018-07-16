@@ -37,8 +37,6 @@ class CarController: UIViewController {
     
     // MARK: Outlets
     
-    @IBOutlet weak var navItem: UINavigationItem!
-    
     @IBOutlet weak var typeImage: UIImageView!
     
     @IBOutlet weak var registrationTextField: TextField!
@@ -60,7 +58,7 @@ class CarController: UIViewController {
     // MARK: Editing
     
     func setupEditing() {
-        navItem.title = "Edit Car"
+        navigationItem.title = "Edit Car"
         
         registrationTextField.text = car!.registration
         nameTextField.text = car!.name

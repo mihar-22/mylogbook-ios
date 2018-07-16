@@ -23,12 +23,12 @@ extension Task {
         return dependencies.filter({ !$0.isComplete }).count == 0
     }
     
-    var baseAttributes: [String: Any] {
-        return [NSFontAttributeName: UIFont.systemFont(ofSize: 13, weight: UIFontWeightRegular)]
+    var baseAttributes: [NSAttributedStringKey: Any] {
+        return [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.regular)]
     }
     
-    var numericAttributes: [String: Any] {
-        return [NSFontAttributeName: UIFont.systemFont(ofSize: 14, weight: UIFontWeightMedium)]
+    var numericAttributes: [NSAttributedStringKey: Any] {
+        return [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.medium)]
     }
 }
 

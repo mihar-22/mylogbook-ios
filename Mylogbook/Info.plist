@@ -36,7 +36,7 @@
 				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
 			</dict>
-			<key>mylogbook.dev</key>
+			<key>mylogbook.test</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>

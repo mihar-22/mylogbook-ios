@@ -1,14 +1,15 @@
 
 import CoreStore
+import CoreLocation
 import SwiftyJSON
 
 // MARK: Trip
 
 class Trip: NSManagedObject {
-    var uniqueIDValue: Int {
-        get { return Int(self.id) }
+    var uniqueIDValue: NSNumber {
+        get { return NSNumber(integerLiteral: Int(self.id)) }
         
-        set(id) { self.id = Int64(id) }
+        set(id) { self.id = Int64(truncating: id) }
     }
     
     var timeZone: TimeZone {
@@ -19,10 +20,18 @@ class Trip: NSManagedObject {
         return endedAt.timeIntervalSince(startedAt)
     }
     
+    var startCoordinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: startLatitude, longitude: startLongitude)
+    }
+    
+    var endCoordinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: endLatitude, longitude: endLongitude)
+    }
+    
     // MARK: Initializers
     
     convenience init() {
-        let context = Store.shared.stack.internalContext()
+        let context = Store.shared.stack.unsafeContext()
         
         let entity = NSEntityDescription.entity(forEntityName: "Trip", in: context)
         
@@ -82,13 +91,11 @@ extension Trip: Importable {
         
         let carId = resources["car_id"].int64!
         
-        car = transaction.fetchOne(From(Car.self),
-                                   Where("id = \(carId)"))!
+        car = transaction.fetchOne(From<Car>(), Where<Car>("id = \(carId)"))!
         
         let supervisorId = resources["supervisor_id"].int64!
         
-        supervisor = transaction.fetchOne(From(Supervisor.self),
-                                          Where("id = \(supervisorId)"))!
+        supervisor = transaction.fetchOne(From<Supervisor>(), Where<Supervisor>("id = \(supervisorId)"))!
         
         startedAt = source["started_at"].string!.utc(format: .dateTime)
         endedAt = source["ended_at"].string!.utc(format: .dateTime)

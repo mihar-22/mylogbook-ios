@@ -5,10 +5,10 @@ import SwiftyJSON
 // MARK: Car
 
 class Car: NSManagedObject, SoftDeletable, Syncable {
-    var uniqueIDValue: Int {
-        get { return Int(self.id) }
+    var uniqueIDValue: NSNumber {
+        get { return NSNumber(integerLiteral: Int(self.id)) }
         
-        set(id) { self.id = Int64(id) }
+        set(id) { self.id = Int64(truncating: id) }
     }
 }
 

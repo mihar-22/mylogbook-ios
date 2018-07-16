@@ -12,14 +12,12 @@ class SupervisorController: UIViewController {
     let validator = Validator()
 
     var name: String? { return nameTextField.text }
-    var gender: Character? { return genderTextField.text?.characters.first }
+    var gender: Character? { return genderTextField.text?.first }
     var isAccredited: Bool { return accreditedSwitch.isOn }
     
     let genders = ["Male", "Female"]
     
     // MARK: Outlets
-    
-    @IBOutlet weak var navItem: UINavigationItem!
     
     @IBOutlet weak var avatar: UIImageView!
     
@@ -44,7 +42,7 @@ class SupervisorController: UIViewController {
     // MARK: Editing
     
     func setupEditing() {
-        navItem.title = "Edit Supervisor"
+        navigationItem.title = "Edit Supervisor"
         
         nameTextField.text = supervisor!.name
         genderTextField.text = (supervisor!.gender == "M" ? genders[0] : genders[1])

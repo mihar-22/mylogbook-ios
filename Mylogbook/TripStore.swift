@@ -5,7 +5,7 @@ import CoreStore
 
 class TripStore {
     static func add(_ newTrip: Trip) {
-        Store.shared.stack.beginSynchronous { transaction in
+        try! Store.shared.stack.perform(synchronous: { (transaction) in
             let trip: Trip = transaction.create(Into<Trip>())
             
             trip.car = transaction.edit(newTrip.car)!
@@ -29,20 +29,16 @@ class TripStore {
             trip.startLocation = newTrip.startLocation
             trip.endLocation = newTrip.endLocation
             trip.timeZoneIdentifier = newTrip.timeZoneIdentifier
-            
-            _ = transaction.commitAndWait()
-        }
+        }, waitForAllObservers: true)
     }
     
     static func accumulated(_ trips: [Trip]) {
-        Store.shared.stack.beginSynchronous { transaction in
+        try! Store.shared.stack.perform(synchronous: { (transaction) in
             for trip in trips {
                 let trip = transaction.edit(trip)!
 
                 trip.isAccumulated = true
             }
-            
-            _ = transaction.commitAndWait()
-        }
+        }, waitForAllObservers: true)
     }
 }

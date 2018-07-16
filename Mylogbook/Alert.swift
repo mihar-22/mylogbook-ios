@@ -55,7 +55,7 @@ extension DefaultButton {
         case .normal:
             styleNormal()
         case .disabled:
-            styleDisabled()
+            styleDisable()
         }
     }
     
@@ -63,7 +63,7 @@ extension DefaultButton {
         titleColor = Palette.tint.uiColor
     }
     
-    override func styleDisabled() {
+    private func styleDisable() {
         titleColor = UIColor.lightGray
     }
 }

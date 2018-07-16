@@ -1,18 +1,20 @@
 PODS:
-  - Alamofire (4.4.0)
-  - BEMCheckBox (1.4.0)
-  - Charts (3.0.2):
-    - Charts/Core (= 3.0.2)
-  - Charts/Core (3.0.2)
-  - CoreStore (3.1.0)
+  - Alamofire (4.7.2)
+  - BEMCheckBox (1.4.1)
+  - Charts (3.1.1):
+    - Charts/Core (= 3.1.1)
+  - Charts/Core (3.1.1)
+  - CoreStore (5.1.1)
+  - DynamicBlurView (2.0.2)
   - DZNEmptyDataSet (1.8.1)
-  - IQKeyboardManagerSwift (4.0.9)
-  - JVFloatLabeledTextField (1.1.1)
-  - KeychainAccess (3.0.2)
+  - IQKeyboardManagerSwift (6.0.4)
+  - JVFloatLabeledTextField (1.2.1)
+  - KeychainAccess (3.1.1)
   - MBCircularProgressBar (0.3.5)
-  - PopupDialog (0.5.4)
-  - Solar (2.0.0)
-  - SwiftyJSON (3.1.4)
+  - PopupDialog (0.7.1):
+    - DynamicBlurView (~> 2.0)
+  - Solar (2.1.0)
+  - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
@@ -29,19 +31,20 @@ DEPENDENCIES:
   - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  BEMCheckBox: e18e4a148905b290bd03d98b767651c104f4eda3
-  Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
-  CoreStore: 30b67eaf4204f33facd2b5605366ed684ad446b4
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
+  Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
+  CoreStore: 40c48542f6d48b825326fbc3a6f5934e3353533b
+  DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  IQKeyboardManagerSwift: 2eefe6c429b86aa08bfbc1b5c891164d754adf91
-  JVFloatLabeledTextField: 0e5524b097f102036214dd8279edc8ecf08b5e18
-  KeychainAccess: a986406022dfc7c634c691ad3bec670cc6a32002
+  IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
+  JVFloatLabeledTextField: cfc44e3c4d493b2ed92ede8035e8e89c2912ba64
+  KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
   MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
-  PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
-  Solar: ea092f7660c1b58d2b754227decb61a1c6710826
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  PopupDialog: 39598b7d41719f5c025b4b70e62728bae7734fef
+  Solar: 2dc6e7cc39186cb0c8228fa08df76fb50c7d8f24
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: c47c4c6486ddf2ae6022ba8dbf329a274ac25326
+PODFILE CHECKSUM: 73f54754970f6c840d0ff024eace8ac81d5b116c
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.4.0.beta.2

@@ -44,7 +44,7 @@ class WelcomeController: UIViewController {
         
         let playerLayer = AVPlayerLayer(player: player)
         
-        playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         playerLayer.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height - 82)
         
         view.layer.addSublayer(playerLayer)

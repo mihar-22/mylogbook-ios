@@ -118,7 +118,7 @@ class SyncManager {
         let transaction = Store.shared.stack.beginUnsafe()
         
         let trips = transaction.fetchAll(From<Trip>(),
-                                         Where("id = 0"))!
+                                         Where<Trip>("id", isEqualTo: 0))!
         
         for trip in trips {
             let route = ResourceRoute<Trip>.store(trip)

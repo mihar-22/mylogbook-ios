@@ -5,10 +5,10 @@ import IQKeyboardManagerSwift
 
 class KeyboardManager {
     static func start() {
-        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.shared.enable = true
         
-        IQKeyboardManager.sharedManager().shouldShowTextFieldPlaceholder = false
+        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
         
-        IQKeyboardManager.sharedManager().toolbarTintColor = Palette.tint.uiColor
+        IQKeyboardManager.shared.toolbarTintColor = Palette.tint.uiColor
     }
 }

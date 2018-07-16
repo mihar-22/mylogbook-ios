@@ -17,7 +17,6 @@ protocol Syncable {
 class Sync<Model: NSManagedObject> where Model: Resourceable,
                                          Model: Syncable,
                                          Model: Importable,
-                                         Model.UniqueIDType: Hashable,
                                          Model.ImportSource == JSON {
     
     private var queue = DispatchQueue(label: "com.mylogbook.sync",

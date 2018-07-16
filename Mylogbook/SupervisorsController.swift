@@ -7,8 +7,8 @@ import PopupDialog
 class SupervisorsController: UIViewController {
     
     var supervisors = Store.shared.stack.monitorList(From<Supervisor>(),
-                                                     Where("deletedAt = nil"),
-                                                     OrderBy(.ascending("name")))
+                                                     Where<Supervisor>("deletedAt = nil"),
+                                                     OrderBy<Supervisor>(.ascending("name")))
     
     // MARK: Outlets
     
@@ -29,7 +29,9 @@ class SupervisorsController: UIViewController {
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let viewController = segue.destination as? SupervisorController {
+        let destinationNavigationController = segue.destination as! UINavigationController
+        
+        if let viewController = destinationNavigationController.topViewController as? SupervisorController {
             if segue.identifier == "editSupervisorSegue" {
                 if let selectedCell = sender as? SupervisorCell {
                     let indexPath = supervisorsTable.indexPath(for: selectedCell)!

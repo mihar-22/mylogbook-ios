@@ -202,7 +202,7 @@ class DashboardController: UIViewController, ActivityView {
         }
     }
     
-    func didTapEditButton(_ sender: UIButton) {
+    @objc func didTapEditButton(_ sender: UIButton) {
         let index = sender.tag
         
         editingTask = tasks[index]
@@ -211,7 +211,7 @@ class DashboardController: UIViewController, ActivityView {
         datePickerToolbar.isHidden = false
     }
     
-    func didTapDoneOnToolbar(_ sender: UIButton) {
+    @objc func didTapDoneOnToolbar(_ sender: UIButton) {
         datePicker.isHidden = true
         datePickerToolbar.isHidden = true
         
@@ -239,7 +239,7 @@ class DashboardController: UIViewController, ActivityView {
                                                   object: nil)
     }
     
-    func syncPreparationCompleted() {
+    @objc func syncPreparationCompleted() {
         let deadline = DispatchTime.now() + .seconds(1)
         
         DispatchQueue.main.asyncAfter(deadline: deadline) {
@@ -554,7 +554,7 @@ extension DashboardController {
                                         for: .valueChanged)
     }
     
-    func segmentedControlChanged(_ control: UISegmentedControl) {
+    @objc func segmentedControlChanged(_ control: UISegmentedControl) {
         buildBarChart()
     }
     
@@ -641,7 +641,7 @@ extension DashboardController: UITableViewDataSource, UITableViewDelegate {
         cell.accessoryView = button
     }
     
-    func didTapAccessoryView(_ sender: UIButton) {
+    @objc func didTapAccessoryView(_ sender: UIButton) {
         tableView(tableView, accessoryButtonTappedForRowWith: IndexPath(row: sender.tag, section: 0))
     }
     
